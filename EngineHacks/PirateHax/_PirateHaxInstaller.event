@@ -57,3 +57,6 @@
 
 #include "GetBlueUnitCountASMC/GetBlueUnitCountASMC.lyn.event"
 //Sme
+
+#include "GroupAI/GroupAI.event"
+//PhantomSentine
