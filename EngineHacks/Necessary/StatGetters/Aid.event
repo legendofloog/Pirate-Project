@@ -5,6 +5,7 @@
 
 pAidModifiers: // Aid
 	POIN prAddUnitFinalConstitution prSubstractOne prAdjustAidIfMounted
+	POIN prSkillProtector
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
 	#endif
@@ -16,10 +17,14 @@ prAddUnitFinalConstitution:
 prSubstractOne:
 	rSubConst(1)
 
+prSkillProtector:
+	rIfUnitHasSkill(ProtectorID)
+		rAddConst(10)
+
 prAdjustAidIfMounted:
 {
 	rIfUnitHasAttribute(CA_MOUNTEDAID)
-		rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfNotFemale)
+		rCallSequence(_prNegate _prAddBaseMountedAidBonus _prAddMoreIfHorse)
 
 _prNegate:
 	rMinus(rCurrent)
@@ -27,8 +32,8 @@ _prNegate:
 _prAddBaseMountedAidBonus:
 	rAddConst(19)
 
-_prAddMoreIfNotFemale: // Stupid mechanic imo, but we're going vanilla so :shrug:
-	rIfUnitHasNotAttribute(CA_FEMALE, rAddConst(5))
+_prAddMoreIfHorse:
+	rIfUnitHasAttribute(CA_MOUNTED, rAddConst(5))
 }
 
 #endif // MODULAR_GETTER_AID_EVENT

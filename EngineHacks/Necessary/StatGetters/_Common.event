@@ -6,6 +6,11 @@ prHalveIfRescuing:
 		rIfUnitHasNotSkill(SaviorID)
 			rHalved
 
+prProtectorRescuing:
+	rIfUnitHasState(US_RESCUING)
+		rIfUnitHasSkill(ProtectorID)
+			rAddConst(2)
+
 prHalveIfCapturing:
 	#incbin "_asm/HalveIfCapturing.bin"
 	POIN Is_Capture_Set

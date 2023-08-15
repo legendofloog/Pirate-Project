@@ -1,78 +1,88 @@
 //CLASSES
 
 //SWORD
-//#define Mercenary $f
-//#define Mercenary_F $10
-//#define Myrmidon $13
-//#define Myrmidon_F $14
-#define SwordCav $87
-#define PegasusRider $48
+//#define Mercenary 0xf
+//#define Mercenary_F 0x10
+//#define Myrmidon 0x13
+//#define Myrmidon_F 0x14
+#define SwordCav 0x87
+#define PegasusRider 0x48
 
 // SWORD/LANCE
-#define Warden $9
+#define Warden 0x9
 
 
 // SWORD/GUN
-#define Captain $80
+#define Captain 0x80
 
 //LANCE
-#define LanceCav $5
-#define LanceCav_F $6
-//#define Soldier $4e
-#define Deserter $84
-#define GriffinRider $89
+#define LanceCav 0x5
+#define LanceCav_F 0x6
+//#define Soldier 0x4e
+#define Deserter 0x84
+#define GriffinRider 0x89
+
+//LANCE/SWORD
+#define Champion 0x8B
 
 // LANCE/AXE
-#define Vanguard $82
+#define Vanguard 0x82
 
 //AXE
-//#define Fighter $3f
-//#define Brigand $41
-#define DragonRider $1f
-#define DragonRider_F $20
-#define AxeCav $88
+//#define Fighter 0x3f
+//#define Brigand 0x41
+#define DragonRider 0x1f
+#define DragonRider_F 0x20
+#define AxeCav 0x88
 
 //BOW
-//#define Archer $19
-//#define Archer_F $1a
+//#define Archer 0x19
+//#define Archer_F 0x1a
 
-#define Hunter $85
+#define Hunter 0x85
+#define Hunter_F 0x8A
 
 //TOME
-//#define Mage $25
-//#define Mage_F $26
+//#define Mage 0x25
+//#define Mage_F 0x26
 
-//#define Shaman $2d
-//#define Shaman_F $2e
+//#define Shaman 0x2d
+//#define Shaman_F 0x2e
 
 //KNIVES
-//#define Thief $d
+//#define Thief 0xd
 
-#define Ninja $81
+#define Ninja 0x81
 
 //STAVES
-//#define Priest $45
-//#define Cleric $4a
+//#define Priest 0x45
+//#define Cleric 0x4a
 
-#define Curate $83
+#define Curate 0x83
 
 //GUNS
-#define Gunner $86
+#define Gunner 0x86
+
+//MISCELLANEOUS
+#define Log 0x8C
 
 
 //STANDING MAP SPRITES
-#define CaptainMapSprite $6b 
-#define NinjaMapSprite $6c
-#define VanguardMapSprite $6d
-#define CurateMapSprite $6e
-#define DeserterMapSprite $6f
-#define HunterMapSprite $70
-#define SigilTrapMapSprite $71
-#define GunnerMapSprite $72
-#define LanceCavMapSprite $73
-#define SwordCavMapSprite $74
-#define AxeCavMapSprite $75
-#define DragonRiderMapSprite $76
-#define PegasusRiderMapSprite $77
-#define GriffinRiderMapSprite $78
-#define SoldierMapSprite $79
+#define CaptainMapSprite 0x6b 
+#define NinjaMapSprite 0x6c
+#define VanguardMapSprite 0x6d
+#define CurateMapSprite 0x6e
+#define DeserterMapSprite 0x6f
+#define HunterMapSprite 0x70
+#define SigilTrapMapSprite 0x71
+#define GunnerMapSprite 0x72
+#define LanceCavMapSprite 0x73
+#define SwordCavMapSprite 0x74
+#define AxeCavMapSprite 0x75
+#define DragonRiderMapSprite 0x76
+#define PegasusRiderMapSprite 0x77
+#define GriffinRiderMapSprite 0x78
+#define SoldierMapSprite 0x79
+#define Hunter_FMapSprite 0x7A
+#define ChampionMapSprite 0x7B
+#define LogMapSprite 0x7C

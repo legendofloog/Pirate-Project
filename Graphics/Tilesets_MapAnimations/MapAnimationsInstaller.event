@@ -39,3 +39,74 @@ tilesetAnimation(0x1C,0x1000,FlasubanVillageTileAnimations5)
 tilesetAnimation(0x1C,0x1000,FlasubanVillageTileAnimations6)
 tilesetAnimation(0x1C,0x1000,FlasubanVillageTileAnimations7)
 WORD 0 0
+
+EventPointerTable(FF5CaveTileAnimationsID, FF5CaveTileAnimations)
+
+ALIGN 4
+FF5CaveTileAnimations0:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_000.dmp"
+ALIGN 4
+FF5CaveTileAnimations1:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_001.dmp"
+ALIGN 4
+FF5CaveTileAnimations2:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_002.dmp"
+ALIGN 4
+FF5CaveTileAnimations3:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_003.dmp"
+ALIGN 4
+FF5CaveTileAnimations4:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_004.dmp"
+ALIGN 4
+FF5CaveTileAnimations5:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_005.dmp"
+ALIGN 4
+FF5CaveTileAnimations6:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_006.dmp"
+ALIGN 4
+FF5CaveTileAnimations7:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_007.dmp"
+ALIGN 4
+FF5CaveTileAnimations8:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_008.dmp"
+ALIGN 4
+FF5CaveTileAnimations9:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_009.dmp"
+ALIGN 4
+FF5CaveTileAnimations10:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_010.dmp"
+ALIGN 4
+FF5CaveTileAnimations11:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_011.dmp"
+ALIGN 4
+FF5CaveTileAnimations12:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_012.dmp"
+ALIGN 4
+FF5CaveTileAnimations13:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_013.dmp"
+ALIGN 4
+FF5CaveTileAnimations14:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_014.dmp"
+ALIGN 4
+FF5CaveTileAnimations15:
+#incbin "TilesetAnimations/FF5-Caves 01-Tile-Animations/FF5_Caves_TileAnimations.mapanime1_015.dmp"
+
+ALIGN 4
+FF5CaveTileAnimations:
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations0)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations1)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations2)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations3)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations4)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations5)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations6)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations7)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations8)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations9)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations10)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations11)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations12)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations13)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations14)
+tilesetAnimation(0x1C,0x1000,FF5CaveTileAnimations15)
+WORD 0 0

@@ -132,6 +132,12 @@ Greatbow[X]
 ## SlimshotName
 Slimshot[X]
 
+## ShiningBowName
+Shining Bow[X]
+
+## ShiningBowDesc
+Uses Mag. Can counter at melee.[X]
+
 //TOMES
 
 ## BoltingDesc

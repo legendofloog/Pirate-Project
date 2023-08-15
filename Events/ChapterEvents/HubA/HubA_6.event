@@ -28,11 +28,14 @@ END_MAIN
 
 Units1:
 LoadUnit(0,0,Lua)
-UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, Mortar] NoAI
+//UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, Mortar] NoAI
+UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, SkillScroll] NoAI
 UNIT
 
 EnemyUnits1:
-UNIT Blackheart Fighter 0 Level(3, Enemy, True) [4,3] 0 0 0 0 [IronAxe] BossAI
+UNIT Blackheart Fighter 0 Level(3, Enemy, True) [4,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
+UNIT Blackheart Vanguard 0 Level(3, Enemy, True) [5,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
+UNIT Blackheart Warden 0 Level(3, Enemy, True) [6,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
 UNIT
 
 Traps1:
@@ -46,6 +49,10 @@ ALIGN 4
 BeginningScene:
 LoadPlayerUnits(Units1)
 LoadEnemies(EnemyUnits1)
+
+SetUnitItemDurability(4, 3, 1, ProtectorID)
+SetUnitItemDurability(Suzanne, 3, ProtectorID)
+
 GotoPrepScreen
 NoFade
 ENDA

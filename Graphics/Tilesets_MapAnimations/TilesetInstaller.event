@@ -23,6 +23,19 @@
     DesertBastionNightSkyMapchipConfig:
     #incbin "Dmp/Config/DesertBastionNightSky_comp.dmp"
 
+    ALIGN 4
+    FF5CaveObject:
+    #incbin "Dmp/Object/FF5Cave(Wave).dmp"
+
+    ALIGN 4
+    FF5CavePalette:
+    #incbin "Dmp/Palette/FF5Cave(Wave)_pal.dmp"
+
+    ALIGN 4
+    FF5CaveMapchipConfig:
+    #incbin "Dmp/Config/FF5Cave(Wave)_comp.dmp"
+
+
     EventPointerTable(FlasubanVillageSkyObjectID,FlasubanVillageSkyObject)
     EventPointerTable(FlasubanVillageSkyPaletteID,FlasubanVillageSkyPalette)
     EventPointerTable(FlasubanVillageSkyConfigID,FlasubanVillageSkyMapchipConfig)
@@ -30,3 +43,7 @@
 	EventPointerTable(DesertBastionNightSkyObjectID,DesertBastionNightSkyObject)
     EventPointerTable(DesertBastionNightSkyPaletteID,DesertBastionNightSkyPalette)
     EventPointerTable(DesertBastionNightSkyConfigID,DesertBastionNightSkyMapchipConfig)
+
+    EventPointerTable(FF5CaveObjectID,FF5CaveObject)
+    EventPointerTable(FF5CavePaletteID,FF5CavePalette)
+    EventPointerTable(FF5CaveConfigID,FF5CaveMapchipConfig)

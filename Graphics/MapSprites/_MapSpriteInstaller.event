@@ -208,3 +208,36 @@ SoldierSMS:
 ALIGN 4
 SoldierMMS:
 #incbin "Dmp/Soldier (M) Shield Lance {Rexacuse, Peerless, Alusq}-walk.dmp"
+
+StandingMapSprite(Hunter_FMapSprite,MapSprite16x16,Hunter_FSMS)
+MovingMapSprite(Hunter_F, $1C3D7C, Hunter_FMMS)
+
+ALIGN 4
+Hunter_FSMS:
+#incbin "Dmp/Hunter (F) {MeatOfJustice}-stand.dmp"
+
+ALIGN 4
+Hunter_FMMS:
+#incbin "Dmp/Hunter (F) {MeatOfJustice}-walk.dmp"
+
+StandingMapSprite(ChampionMapSprite,MapSprite16x32,ChampionSMS)
+MovingMapSprite(Champion, $1C3D7C, ChampionMMS)
+
+ALIGN 4
+ChampionSMS:
+#incbin "Dmp/Sergeant (M) {Spud}-stand.dmp"
+
+ALIGN 4
+ChampionMMS:
+#incbin "Dmp/Sergeant (M) {Spud}-walk.dmp"
+
+StandingMapSprite(LogMapSprite,MapSprite16x16,LogSMS)
+MovingMapSprite(Log, $1C3D7C, LogMMS)
+
+ALIGN 4
+LogSMS:
+#incbin "Dmp/Log {Pikmin1211}-stand.dmp"
+
+ALIGN 4
+LogMMS:
+#incbin "Dmp/Log {Pikmin1211}-walk.dmp"

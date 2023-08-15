@@ -60,3 +60,20 @@
 
 #include "GroupAI/GroupAI.event"
 //PhantomSentine
+
+#include "FE8-Set Condition/FE8-Set Condition.event"
+//Tequila
+
+#include "ReworkForPrepScreenRightTopImage/Installer.event"
+//7743
+
+
+
+//Further MNC2 fixes that fix the chapter title being wonky on skirmish maps
+PUSH 
+ORG 0x897B2
+BYTE 0x0 0x0 0x0 0x0
+ORG 0x897C4
+BYTE 0x0E 0x20 0x20 0x56
+POP
+//7743

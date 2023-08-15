@@ -24,6 +24,7 @@
 	MagicSwordEntry(LightBrand,Sword,False,HitRes,HitRes)
 	MagicSwordEntry(FlameSword,Sword,False,HitRes,HitRes)
 	MagicSwordEntry(ArcaneKnife,Knife,False,HitRes,HitRes)
+	MagicSwordEntry(ShiningBow,Bow,False,HitRes,HitRes)
 	BYTE 0 0 0 //terminator
 
 

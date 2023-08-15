@@ -31,8 +31,15 @@ AREA 0 GotoChapter3 [12, 3] [12, 3]
 AREA 0 GotoChapter4 [2, 8] [2, 8]
 AREA 0 GotoChapter5 [7, 8] [7, 8]
 AREA 0 GotoChapter6 [12, 8] [12, 8]
+AFEV 0 RefreshLua 0
 CauseGameOverIfLordDies
 END_MAIN
+
+RefreshLua:
+SVAL s1 0x42
+UNSET_CONDITION Lua
+NoFade
+ENDA
 
 GotoChapter1:
 CHECK_EVENTID SeenHubA1Pitch
@@ -72,6 +79,7 @@ NoFade
 ENDA
 
 GotoChapter6:
+Text(HubA6Pitch)
 TutorialYesNoText(HubA6Prompt) 
 GotoHubChapterIfYes(6, HubA_6)
 NoFade

@@ -1,6 +1,11 @@
 ## HubATitle
 Hub A - Port Greagor[X]
 
+//Hub A of Pirate Project
+//Scenario: The crew arrives in Port Greagor and heads to port to sell the boat (first go-around).
+//Various events occur in Port Greagor, and Hermenegildo/Estelle join you in the first run through the hub.
+//Second and afterwards ones don't have the initial scene and just have hub events, changing every two chapters.
+
 ## HubA1Pitch
 [ML][LoadMentor]
 [R][LoadLua]
@@ -99,6 +104,181 @@ Go to Chapter A4?[N]
 Go to Chapter A5?[N]
 [No][X]
 
+## HubA6Pitch
+[ML][LoadLua][MR][LoadRochefort]
+[MR]
+Excuse me, madam, would you happen[N]
+to be Captain Lua?[AN]
+[1LB][ML]
+That I am, and you are?[AN]
+[3LB][MR]
+I am Rochefort, a merchant by trade.[AN]
+Rumor has it your crew is looking for[N]
+work, and it just so happens that I've[N]
+been looking for some hired muscle.[AN]
+[1LB][ML]
+I'm listening. But we don't come cheap.[AN]
+[3LB][MR]
+Oh, I wouldn't dream of underpaying.[N]
+I'll offer 5,000 gold for your troubles.[AN]
+You see, I hired another crew to deliver[N]
+a shipment of spices to a buyer in the[N]
+inner empire, but they swindled me![AN]
+The scoundrels must have thought they[N]
+could profit more by selling the goods[N]
+themselves than delivering them.[AN]
+[2LB][ML]
+So you want us to retrieve[N]
+this shipment for you?[AN]
+[3LB][MR]
+Precisely! I'll tag along, of course,[N]
+in order to inspect the goods.[AN]
+I imagine they'll put up some resistance,[N]
+but your crew looks rather accustomed[N]
+to violence.[AN]
+I know the location of their hideout,[N]
+and there shouldn't be more than[N]
+a dozen or so of them there.[AN]
+Nothing you can't handle, I'm sure.[AN]
+My bodyguard, Suzanne, will accompany[N]
+us as well. She's a bit of a hothead,[N]
+but dependable in a fight.[AN]
+[2LB][ML]
+A tempting offer. Let me think a[N]
+little more and get back to you.[AN]
+[MR]
+Very well, but please keep in mind[N]
+this is a time-sensitive matter.[AN]
+[ClearFace]
+[3LB][ML]
+This job may be just what we need,[N]
+but I can't shake the feeling that[N]
+Rochefort's hiding something.[AN]
+He certainly doesn't seem from around[N]
+here, but if he's a merchant of good[N]
+repute I ought to recognize his name.[AN]
+Still, 5,000 gold is a lot of money and[N]
+I doubt he'd be foolish enough to try[N]
+and double-cross me.[AN]
+[X]
+
 ## HubA6Prompt
 Go to Chapter A6?[N]
 [No][X]
+
+//Scene 1
+//Lua and the crew sail towards their destination, and as they get close, Lua, Desiderio, and Pilar discuss the details of selling their new ship.
+//Desiderio and Pilar "cleaned" the ship by getting rid of the Blackhearts so that they could sell it; Lua is mildly displeased but accepts Desiderio's logic.
+//Lua brings up the possibility of keeping it for their fleet on their growing crew, but denies it due to the vessel being too wide for quick travel.
+//Desiderio says that they need a name for the crew before even considering that, to which Lua is noncommited, blaming her lack of creativity.
+//The group splits: Pilar and Desiderio take the Blackheart ship and head to port to sell it, while Lua and the rest head back to the crew's hideout.
+
+## HubABeginningScene1
+[FarLeft][LoadPilar]
+[Left][LoadDesiderio]
+[MidRight][LoadLua]
+Placeholder Text 1![A][X]
+
+//Scene 2
+//Lua docks the boat, and Razvan thanks the Maker that they finally made it back. Lua asks if he wants her to accompany him into town and purchase anything,
+//but he says no, wanting to be nowhere near such a gathering of pirates. The two are greeted by Hermenegildo, another novice of the crew who was saved by
+//Lua from a life of servitude to a different pirate crew (who saved him from starvation when he was stranded). Lua thanks him for keeping an eye on the base,
+//saying that his debt to her has been reduced: she paid to free him from those pirates, after realizing he was a well-learned individual that she could use.
+//Hermenegildo pleads Lua for a tome he can use, to which Lua replies that she'll purchase one for him if he's willing to increase his debt: he relents.
+//Razvan asks Hermenegildo if he can teach him some of his tome knowledge, as he wants to learn how to defend himself, and Lua offers to decrease Hermenegildo's
+//debt if he does: The scholar agrees immediately, and the two set off for the hideout's library. Lua plans to make for port, wanting to check on the boat's sale.
+
+## HubABeginningScene2
+[MidLeft][LoadRazvan]
+[MidRight][LoadLua]
+[MidLeft][MoveLeft]
+[FarLeft][LoadHermenegildo]
+[Left][ClearFace]
+[FarLeft][ClearFace]
+[MidRight]
+Placeholder Text 1![A][X]
+
+// BREAK HERE: THE PLAYER GAINS CONTROL AND CAN DO STUFF IN THE BASE BEFORE GOING TO PORT GREAGOR
+
+//Scene 3
+//Lua goes into port, briefly commenting on the affairs of the town and counting out how much gold she can pocket after paying the rest of the crew for the journey.
+//She states her appreciation for the lack of imperial patrols, order instead upheld by the various guilds in Port Greagor, each leader a member of the Greagor Council.
+//Just as she says that, the chief of the Shipwright's Guild approaches her, telling her that a strange fellow down by the docks has been asking after her.
+//Lua thanks her for letting her know and asks if she can handle repairs for her boat; Ida responds that she'll send one of her proteges to take a look at the one in her cove,
+//and that it better pay well. She agrees and bids her farewell.
+
+## HubABeginningScene3
+[MidRight][LoadLua]
+[MidLeft][LoadIda]
+[MidLeft][ClearFace]
+[MidRight]
+Placeholder Text 1![A][X]
+
+// BREAK HERE: THE PLAYER GAINS CONTROL AND CAN DO STUFF IN THE PORT BEFORE GOING TO THE DOCKS
+
+//Scene 4
+//Lua comes across a young woman being kicked off a ship for "being mad" and, despite her best attempts, is roped into a conversation with her.
+//She introduces herself as Estelle and explains that she had tried to pay the crew to take her to the stars, which led to them throwing her off the boat.
+//Estelle then asks Lua if her and her pirates will take her instead; Lua is surprised that she knows, but Estelle simply responds that she divined that a pirate would come to her rescue.
+//Perplexed, Lua questions her about her divining and gathers that she may be useful, so she accepts, admitting that she has no idea how but will do her best to take her there.
+//Ecstatic, Estelle offers payment but can't find what she means to give, so Lua tells her to do so later and ask a man Desiderio for more details about her new life as a pirate.
+
+## HubABeginningScene4
+[MidRight][LoadLua]
+[MidLeft][LoadEstelle]
+[MidRight]
+Placeholder Text 1![A][X]
+
+//Scene 5
+//Lua goes down to the docks and sees Desiderio arguing with a man in the distance, saying that he won't sell the boat without the captain's approval.
+//The man keeps trying to convince him otherwise, saying he knows his boss well, and Lua gets annoyed enough to go to him himself... only to find out that he does.
+//Enter Orlando, an older merchant who taught Lua the ropes and a well-known member of the Incendivis Merchant's Guild. When he sees Lua, he drops his argument immediately,
+//telling her that he was looking all over for her. Lua cuts the hellos short, questioning him as to why he's here and asking after their newly-acquired ship.
+//He responds that he simply wanted her company, and asks if they can speak somewhere more private. Exasperated, she says yes, but only as a buyer for the ship.
+
+## HubABeginningScene5
+[MidRight][LoadLua]
+[FarFarRight]
+[MidRight][ClearFace]
+[MidRight][LoadLua]
+[Left][LoadDesiderio]
+[FarLeft][LoadOrlando]
+[MidRight]
+Placeholder Text 1![A][X]
+
+//Scene 6
+//The two return to the hideout. At the same time, the shipwright apprentice, Rahel, arrives, and Lua allows her in, answering the "passcode" that Hermenegildo asks.
+//The apprentice gets to work, and Hermenegildo returns to the library while Orlando and Lua retreat to the captain's quarters. Orlando again begins his small talk,
+//but Lua shuts him down. She asks why he's really here. Orlando remarks that he really would like to purchase that merchant ship and resell it at a profit,
+//but admits that when he heard some rumors of a pirate fitting her description, he had no choice but to come. The head of the Merchant's Guild requested it of him,
+//wanting her to return to the fold: Lua flatly declines, to which Orlando shrugs. He remarks that she's a true woman of the seas now, asking if that "tragedy" was the cause.
+//Lua says that, even though her pirating was caused by the theft of all her wares and subsequent dismissal by the Incendivis Marines who rejected her request for aid,
+//it was always fated to happen: The empire was too strict, too small-minded. Orlando sympathizes with her, but asks if she's truly satisfied with the life she has now.
+//Pirates are meant to adventure, and robbing small-time merchants isn't fit for a woman of her station. Lua scoffs, but asks what he's getting at.
+//Orlando tells her that he's heard of and seen an imperial venture deep into uncharted lands, all in search of something... in his view, the Fire Emblem.
+//Lua rejects this, saying the Fire Emblem and the riches around it are nothing more than tales that drunk pirates weave in run-down taverns;
+//Orlando relents that it may be far-fetched, but the empire wouldn't move because of a fable. Whatever the reason, it's profitable and full of adventure:
+//Just up Lua's alley. Lua is silent, but tells him she'll mull it over. Content, Orlando tells her he'll stay a while at the base and that she should gather coin and allies for the journey.
+//Lua agrees, saying she's stayed in the same place too long and that she'll see what the crew can gain from Port Greagor.
+
+## HubABeginningScene6
+[MidLeft][LoadRahel]
+[Right][LoadLua]
+[FarRight][LoadOrlando]
+[MidLeft][ClearFace]
+[Right][ClearFace]
+[FarRight][ClearFace]
+[MidRight][LoadLua]
+[MidLeft][LoadOrlando]
+[MidRight]
+Placeholder Text 1![A][X]
+
+//Base Scene 1; Characters: Carmen and Ximo
+
+//Base Scene 2; Characters: Razvan and Hermenegildo
+
+//Base Scene 3; Characters: Rahel and Orlando
+
+//Base Scene 4; Characters: Desiderio and Estelle
+
+//Base Scene 5; Characters: Pilar

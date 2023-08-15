@@ -1,0 +1,11 @@
+PUSH
+ORG $96B10		//FE8U
+jumpToHack(ReworkForPrepScreenRightTopImage)
+POP
+
+ALIGN 4
+ReworkForPrepScreenRightTopImage:
+#incbin "ReworkForPrepScreenRightTopImage.dmp"
+POIN ReworkForPrepScreenRightTopImage_Table
+
+#include "ReworkForPrepScreenRightTopImage_Table.event"

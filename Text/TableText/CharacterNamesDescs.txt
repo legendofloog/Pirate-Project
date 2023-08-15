@@ -134,6 +134,20 @@ Bonemender[N]
 She trains healers for the rebels, but[N]
 is always looking for new opportunities.[X]
 
+## OndehName
+Ondeh[X]
+
+## OndehDesc
+A young woman forced to grow up[N]
+too soon. Biko's elder sister.[X]
+
+## BikoName
+Biko[X]
+
+## BikoDesc
+A young man trying to find[N]
+his confidence. Ondeh's brother.[X]
+
 ## SuzanneName
 Suzanne[X]
 
@@ -236,3 +250,15 @@ Scoundrel[X]
 ## ScoundrelDesc
 An independent thief using the chaos[N]
 of battle to line their pockets.[X]
+
+## SargargalaName
+Sargargala[X]
+
+## SargargalaDesc
+ [X]
+
+## LogPirateName
+R. Reaper[X]
+
+## LogPirateDesc
+ [X]

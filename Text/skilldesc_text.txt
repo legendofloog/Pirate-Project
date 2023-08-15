@@ -1673,3 +1673,7 @@ with guns in melee, gaining WTA and[N]
 ## SD_Canter
 Canter: Unit can move 2[N]
 spaces after combat.[X]
+
+## SD_Protector
+Protector: Gain +10 Aid. Increase Def[N]
+and Res by 2 while rescuing an ally.[X]

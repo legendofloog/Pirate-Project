@@ -60,16 +60,12 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
 		}
 
         int levelDiff = GetLevelDifference(actor, target);
-
-		// killed
-		if (target->unit.curHP == 0){
-			
-            int bossFactor = 1;
-
-			if (target->unit.pCharacterData->attributes & CA_BOSS){
+        int bossFactor = 1;
+        if (target->unit.pCharacterData->attributes & CA_BOSS){
 				bossFactor = 2;
-			}
-			
+		}
+		// killed
+		if (target->unit.curHP == 0){		
             int initialKillExp = (30 + 3 * levelDiff) * bossFactor;
 
 			if(initialKillExp <= 3){
@@ -126,9 +122,8 @@ int GetUnitEffectiveLevel(Unit* unit){
 
 	int effectiveLevel = unit->level;
 
-    if (unit->pClassData->attributes & CA_PROMOTED)
-    {
-        effectiveLevel += 10; //add 10 if promoted
+    if (unit->pClassData->attributes & CA_PROMOTED){
+        effectiveLevel += 5;
     }
 
 	return effectiveLevel;
@@ -163,25 +158,103 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
 	if (actor->unit.curHP == 0){
 		return 0;
 	}
-
-	const ItemData* staffData = GetItemData(GetItemIndex(actor->weapon));
-	int staffRank = staffData->weaponRank;
 	
-    if( staffRank == D_WEXP ){ // d rank
-		return 20;
+    const ItemData* staffData = GetItemData(GetItemIndex(actor->weapon));
+	int staffRank = staffData->weaponRank;
+
+    int exp = 0;
+    if (staffRank == D_WEXP){
+        exp += 15;
+    }
+    else if (staffRank == C_WEXP){
+        exp += 20;
+    }
+    else if (staffRank == B_WEXP){
+        exp += 25;
+    }
+    else if (staffRank == A_WEXP){
+        exp += 30;
+    }
+    else{
+        exp += 40;
+    }
+
+    int levelDiff = GetLevelDifference(actor, &gBattleTarget);
+
+    exp += levelDiff * 2;
+
+    if (exp >= 50){
+        return 50;
+    }
+    else if (exp <= 2){
+        return 2;
+    }
+    else{
+        return exp;
+    }
+}
+
+s8 ActionSteal(Proc* proc) {
+    int item;
+
+    item = GetUnit(gActionData.targetIndex)->items[gActionData.itemSlotIndex];
+
+    UnitRemoveItem(GetUnit(gActionData.targetIndex), gActionData.itemSlotIndex);
+    
+    UnitAddItem(GetUnit(gActionData.subjectIndex), item);
+
+    BattleInitItemEffect(GetUnit(gActionData.subjectIndex), -1);
+    gBattleTarget.terrainId = 0x1; //plains id
+    InitBattleUnit(&gBattleTarget, GetUnit(gActionData.targetIndex));
+    gBattleTarget.weapon = item;
+    BattleApplyStealAction(proc, item);
+
+    MU_EndAll();
+    BeginMapAnimForSteal();
+
+    return 0;
+}
+
+void BattleApplyStealAction(struct Proc* proc, int item) {
+    BattleApplyStealActionExpGains(item);
+    ProcStartBlocking(sProcScr_BattleAnimSimpleLock, proc);
+}
+
+void BattleApplyStealActionExpGains(int item) { 
+    if (UNIT_FACTION(&gBattleActor.unit) != FACTION_BLUE){
+		return;
+	}  
+    if (!CanBattleUnitGainLevels(&gBattleActor)){
+		return;
+	}    
+    if (gChapterData.chapterStateBits & CHAPTER_FLAG_7){
+		return;
 	}
-	else if( staffRank == C_WEXP){ // c rank
-		return 25;
-	} 
-	else if( staffRank == B_WEXP){ // b rank
-		return 30;
-	}
-	else if( staffRank == A_WEXP ){ // a rank
-		return 35;
-	}
-	else{ // s rank
-		return 40;
-	}
+
+    gBattleActor.expGain = GetStealExpValue(item);
+    gBattleActor.unit.exp += GetStealExpValue(item);
+
+    CheckBattleUnitLevelUp(&gBattleActor);
+}
+
+int GetStealExpValue(int item){
+    
+    const ItemData* stolenItemData = GetItemData(GetItemIndex(item));
+    u16 costPerUse = stolenItemData->costPerUse;
+    u8 durability = item >> 8;
+    int totalCost = costPerUse * durability; 
+    
+    int stealExp = totalCost / 50 + GetLevelDifference(&gBattleActor, &gBattleTarget);
+
+    if (stealExp >= 33){
+        return 33;
+    }
+    else if (stealExp <= 1){
+        return 1;
+    }
+    else{
+        return stealExp;
+    }
 }
 
 // makes autolevels fixed
@@ -283,20 +356,6 @@ int CanUnitRescue(const struct Unit* actor, const struct Unit* target){
     return (actorAid >= targetCon) ? TRUE : FALSE;
 }
 
-int GetUnitAid(const struct Unit* unit) {
-    int aid;
-	if (UNIT_CATTRIBUTES(unit) & CA_MOUNTED){
-		aid = 25 - UNIT_CON(unit);
-	}
-	else if (UNIT_CATTRIBUTES(unit) & CA_WYVERN || UNIT_CATTRIBUTES(unit) & CA_PEGASUS){
-		aid = 20 - UNIT_CON(unit);
-	}
-	else{
-		aid = UNIT_CON(unit) - 1;
-	}
-    return aid;
-}
-
 void UnitAutolevelWExp(struct Unit* unit, const struct UnitDefinition* uDef) {
     if (uDef->autolevel) {
         int i;
@@ -327,43 +386,67 @@ void UnitAutolevelWExp(struct Unit* unit, const struct UnitDefinition* uDef) {
 
 void ApplyUnitDefaultPromotion(struct Unit* unit) {
     const struct ClassData* promotedClass = GetClassData(unit->pClassData->promotion);
-
-    int baseClassId = unit->pClassData->number;
-    int promClassId = promotedClass->number;
+    const struct ClassData* currentClass = unit->pClassData;
 
     int i;
 
     // Apply stat ups
 
-    unit->maxHP += promotedClass->promotionHp;
+    unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > promotedClass->maxHP)
-        unit->maxHP = promotedClass->maxHP;
+    if (unit->maxHP > 60){
+        unit->maxHP = 60;
+    }
+        
+    unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    unit->pow += promotedClass->promotionPow;
+    if (unit->curHP > unit->maxHP){
+        unit->curHP = unit->maxHP;
+    }
 
-    if (unit->pow > promotedClass->maxPow)
-        unit->pow = promotedClass->maxPow;
+    unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    unit->skl += promotedClass->promotionSkl;
+    if (unit->pow > 30){
+        unit->pow = 30;
+    }
 
-    if (unit->skl > promotedClass->maxSkl)
-        unit->skl = promotedClass->maxSkl;
+	unit->mag += (MagClassTable[promotedClass->number].promotionMag - MagClassTable[currentClass->number].promotionMag);
 
-    unit->spd += promotedClass->promotionSpd;
+	if (unit->mag > 30){
+        unit->mag = 30;
+    }
+		
+    unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->spd > promotedClass->maxSpd)
-        unit->spd = promotedClass->maxSpd;
+    if (unit->skl > 30){
+        unit->skl = 30;
+    }
+        
 
-    unit->def += promotedClass->promotionDef;
+    unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->def > promotedClass->maxDef)
-        unit->def = promotedClass->maxDef;
+    if (unit->spd > 30){
+        unit->spd = 30;
+    }
+        
 
-    unit->res += promotedClass->promotionRes;
+    unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->res > promotedClass->maxRes)
-        unit->res = promotedClass->maxRes;
+    if (unit->def > 30){
+        unit->def = 30;
+    }
+
+    unit->res += (promotedClass->baseRes - currentClass->baseRes);
+
+    if (unit->res > 30){
+		unit->res = 30;
+	}
+
+	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
+
+	if (unit->lck > 30){
+        unit->lck = 30;
+    }
 
     // Remove base class' base wexp from unit wexp
     for (i = 0; i < 8; ++i)
@@ -378,57 +461,77 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
 
         wexp += unit->pClassData->baseRanks[i];
 
-        if (wexp > WPN_EXP_S)
-            wexp = WPN_EXP_S;
+        if (wexp > S_WEXP)
+            wexp = S_WEXP;
 
         unit->ranks[i] = wexp;
     }
-
-    unit->curHP += promotedClass->promotionHp;
-
-    if (unit->curHP > GetUnitMaxHp(unit))
-        unit->curHP = GetUnitMaxHp(unit);
 }
 
 void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
     const struct ClassData* promotedClass = GetClassData(classId);
-
-    int baseClassId = unit->pClassData->number;
-    int promClassId = promotedClass->number;
+    const struct ClassData* currentClass = unit->pClassData;
 
     int i;
 
     // Apply stat ups
 
-    unit->maxHP += promotedClass->promotionHp;
+    unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > promotedClass->maxHP)
-        unit->maxHP = promotedClass->maxHP;
+    if (unit->maxHP > 60){
+        unit->maxHP = 60;
+    }
+        
+    unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    unit->pow += promotedClass->promotionPow;
+    if (unit->curHP > unit->maxHP){
+        unit->curHP = unit->maxHP;
+    }
 
-    if (unit->pow > promotedClass->maxPow)
-        unit->pow = promotedClass->maxPow;
+    unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    unit->skl += promotedClass->promotionSkl;
+    if (unit->pow > 30){
+        unit->pow = 30;
+    }
 
-    if (unit->skl > promotedClass->maxSkl)
-        unit->skl = promotedClass->maxSkl;
+	unit->mag += (MagClassTable[promotedClass->number].promotionMag - MagClassTable[currentClass->number].promotionMag);
 
-    unit->spd += promotedClass->promotionSpd;
+	if (unit->mag > 30){
+        unit->mag = 30;
+    }
+		
+    unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->spd > promotedClass->maxSpd)
-        unit->spd = promotedClass->maxSpd;
+    if (unit->skl > 30){
+        unit->skl = 30;
+    }
+        
 
-    unit->def += promotedClass->promotionDef;
+    unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->def > promotedClass->maxDef)
-        unit->def = promotedClass->maxDef;
+    if (unit->spd > 30){
+        unit->spd = 30;
+    }
+        
 
-    unit->res += promotedClass->promotionRes;
+    unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->res > promotedClass->maxRes)
-        unit->res = promotedClass->maxRes;
+    if (unit->def > 30){
+        unit->def = 30;
+    }
+
+    unit->res += (promotedClass->baseRes - currentClass->baseRes);
+
+    if (unit->res > 30){
+		unit->res = 30;
+	}
+
+	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
+
+	if (unit->lck > 30){
+        unit->lck = 30;
+    }
+		
 
     // Remove base class' base wexp from unit wexp
     for (i = 0; i < 8; ++i)
@@ -443,14 +546,61 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
 
         wexp += unit->pClassData->baseRanks[i];
 
-        if (wexp > WPN_EXP_S)
-            wexp = WPN_EXP_S;
+        if (wexp > S_WEXP)
+            wexp = S_WEXP;
 
         unit->ranks[i] = wexp;
     }
 
-    unit->curHP += promotedClass->promotionHp;
+}
 
-    if (unit->curHP > GetUnitMaxHp(unit))
-        unit->curHP = GetUnitMaxHp(unit);
+int GetBattleUnitUpdatedWeaponExp(BattleUnit* battleUnit) {
+    int i, result;
+
+    if (UNIT_FACTION(&battleUnit->unit) != FACTION_BLUE){
+		return -1;
+	}
+    if (battleUnit->unit.curHP == 0){
+		return -1;
+	}
+    if (gChapterData.chapterStateBits & CHAPTER_FLAG_7){
+        return -1;
+	}
+    if (gGameState.statebits & 0x40){ // TODO: GAME STATE BITS CONSTANTS
+ 		return -1;
+	} 
+    if (!(gBattleStats.config & BATTLE_CONFIG_ARENA)) {
+        if (!battleUnit->canCounter){
+ 			return -1;
+		}
+        if (!(battleUnit->weaponAttributes & IA_REQUIRES_WEXP)){
+			return -1;
+		}
+            
+	}
+    
+	result = battleUnit->unit.ranks[battleUnit->weaponType] + 1;
+
+    for (i = 0; i < 8; ++i) {
+        if (i == battleUnit->weaponType){
+            continue;
+		}
+        if (battleUnit->unit.pClassData->baseRanks[i] == S_WEXP){
+            continue;
+		}
+        if (battleUnit->unit.ranks[i] < S_WEXP){
+            continue;
+		}
+        if (result >= S_WEXP){
+			result = S_WEXP;
+		}
+            
+        break;
+    }
+
+   	if (result > S_WEXP){
+        result = S_WEXP;
+    } 
+
+    return result;
 }

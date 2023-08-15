@@ -26,7 +26,23 @@ CauseGameOverIfLordDies
 END_MAIN
 
 Units1:
+UNIT Lua Captain 0 Level(10,Ally,False) [2,6] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Ondeh Hunter 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [IronBow,Vulnerary] NoAI
+UNIT Biko Soldier 0 Level(1,Ally,False) [3,5] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [2,5] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [1,4] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [2,4] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [3,4] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [1,3] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [2,3] 0 0 0 0 [Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(8,Ally,False) [3,3] 0 0 0 0 [Vulnerary] NoAI
 UNIT
+
+NewPlayerUnits:
+UNIT Ondeh Hunter 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Biko Soldier 0 Level(1,Ally,False) [3,5] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
+UNIT
+
 
 Traps1:
 ENDTRAP
@@ -36,7 +52,17 @@ Traps2:
 ENDTRAP
 ALIGN 4
 
+EnemyGroup:
+UNIT Sargargala Mercenary 0 Level(5,Enemy,False) [17,14] 0 0 0 0 [SteelSword] BossAI
+UNIT RiojaReaper Deserter 0 Level(3, Enemy, True) [17,13] 0 0 0 0 [SteelLance] AttackInTwoAI
+UNIT RiojaReaper Hunter 0 Level(3, Enemy, True) [17,15] 0 0 0 0 [SteelBow] AttackInRangeAI
+UNIT
+
 BeginningScene:
+LOAD1 1 NewPlayerUnits
+LOAD1 1 EnemyGroup
+ENUN
+GotoPrepScreen
 NoFade
 ENDA
 

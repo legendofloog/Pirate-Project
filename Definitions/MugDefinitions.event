@@ -13,7 +13,15 @@
 #define BartzMug $45
 #define IndioMug $c
 #define LeandraMug $d
+#define JaimeMug $e
+#define LeonorMug $f
+#define OndehMug $10
+#define BikoMug $11
 
-#define MentorMug $16
+#define OrlandoMug $16
+#define RahelMug $17
 
 #define KhazhakMug $31
+
+#define IdaMug $51
+#define SargargalaMug $52

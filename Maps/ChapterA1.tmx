@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="29" height="22" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="29" height="22" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="1">
  <editorsettings>
-  <export format="tmx"/>
+  <export target="." format="tmx"/>
  </editorsettings>
  <tileset firstgid="1" name="Desert_Bastion_Night_NoWater" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
-  <image source="DesertBastionNightSky.png" width="512" height="512"/>
+  <image source="Tilesets/DesertBastionNightSky.png" width="512" height="512"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="29" height="22">
   <properties>

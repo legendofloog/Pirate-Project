@@ -23,8 +23,8 @@
 #define Leandra $c
 #define Jaime $d
 #define Leonor $e
-#define AChapterUnit5 $f
-#define AChapterUnit6 $10
+#define Ondeh $f
+#define Biko $10
 #define AChapterUnit7 $11
 #define AChapterUnit8 $12
 #define AChapterUnit9 $13
@@ -39,11 +39,10 @@
 #define Khazhak $46
 #define Blackheart $47
 
-//Hub A2
-#define Felipe $53
-#define Incendivis $54
-#define Rebel $55
-// HUB A CHAPTER UNITS
+
+// HUB A CHAPTER ENEMIES + NPCS
+
+//Hub A1
 #define DragzArmorBoss1 $48
 #define DragzArmorBoss2 $49
 #define DragzMercBoss $4a
@@ -52,3 +51,13 @@
 #define Contractor $4d
 #define Sentinel $4e
 #define Scoundrel $4f
+
+//Hub A2
+#define Felipe $53
+#define Incendivis $54
+#define Rebel $55
+
+//Hub A3
+#define Sargargala $5B
+#define LogPirate $5C
+#define RiojaReaper LogPirate

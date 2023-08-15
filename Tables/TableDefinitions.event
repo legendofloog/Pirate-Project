@@ -20,9 +20,9 @@
 #define NoRank 0
 #define ERank 1
 #define DRank 51
-#define CRank 101
-#define BRank 151
-#define ARank 201
+#define CRank 76
+#define BRank 116
+#define ARank 176
 #define SRank 251
 
 //Weapon Ability

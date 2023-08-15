@@ -71,3 +71,6 @@
 
 //Canter: Unit can move 2 spaces after combat. (Dragz)
 #define CanterID 22
+
+//Protector: Gain +10 Aid. Increase Def and Res by 2 while rescuing an ally. (bpat)
+#define ProtectorID 23

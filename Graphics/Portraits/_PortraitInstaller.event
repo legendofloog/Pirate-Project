@@ -33,3 +33,19 @@ PilarMugData:
 #incbin "Dmp/Pilar_palette.dmp"
 #incbin "Dmp/Pilar_minimug.dmp"
 setMugEntry(PilarMug, PilarMugData, 5, 4, 5, 2)
+
+ALIGN 16
+MrYodsenMugData:
+#incbin "Dmp/MrYodsen_mug.dmp"
+#incbin "Dmp/MrYodsen_frames.dmp"
+#incbin "Dmp/MrYodsen_palette.dmp"
+#incbin "Dmp/MrYodsen_minimug.dmp"
+setMugEntry(MrYodsenMug, MrYodsenMugData, 3, 5, 3, 3)
+
+ALIGN 16
+MedwynMugData:
+#incbin "Dmp/Medwyn_mug.dmp"
+#incbin "Dmp/Medwyn_frames.dmp"
+#incbin "Dmp/Medwyn_palette.dmp"
+#incbin "Dmp/Medwyn_minimug.dmp"
+setMugEntry(MedwynMug, MedwynMugData, 3, 5, 3, 3)

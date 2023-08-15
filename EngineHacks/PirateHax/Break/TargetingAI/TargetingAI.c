@@ -7,10 +7,6 @@ void ComputeAiAttackWeight(struct AiCombatSimulationSt* st) {
     score = AiBattleGetDamageDealtWeight(); //max score: 110
     backup = score;
 
-    //12 - 10 = 2 priority
-    //14 - 7 = 7 priority??
-    //why is solomin being targeted
-
     score -= AiBattleGetDamageTakenWeight(); //minimum score: -110
 
     if (score < 0) {
@@ -84,7 +80,7 @@ int AiBattleGetDamageTakenWeight(void) {
         return 0; //if they would kill, consider no damage taken to prioritize it
     }
 
-    if (gBattleTarget.weapon) {
+    if (gBattleTarget.weapon == 0) {
         return 0; //they have no weapon, so no counter
     }
 

@@ -111,3 +111,15 @@ Griffin Rider[X]
 
 ## GriffinRiderDesc
  [X]
+
+## ChampionName
+Champion[X]
+
+## ChampionDesc
+ [X]
+
+## LogName
+Log[X]
+
+## LogDesc
+ [X]

@@ -1,0 +1,16 @@
+#define ChapterNumberRework(mapID,type,flag) "BYTE mapID type ;SHORT flag; "
+
+#define ChapterImage 1
+ReworkForPrepScreenRightTopImage_Table:
+
+//塔 Tower
+ChapterNumberRework(Chapter1,ChapterImage,0)
+ChapterNumberRework(HubA,ChapterImage,0)
+ChapterNumberRework(HubA_1,ChapterImage,0)
+ChapterNumberRework(HubA_2,ChapterImage,0)
+ChapterNumberRework(HubA_3,ChapterImage,0)
+ChapterNumberRework(HubA_4,ChapterImage,0)
+ChapterNumberRework(HubA_5,ChapterImage,0)
+ChapterNumberRework(HubA_6,ChapterImage,0)
+ChapterNumberRework(Chapter2,ChapterImage,0)
+ChapterNumberRework(0xFF,0xFF,0xFFFF)  // Term

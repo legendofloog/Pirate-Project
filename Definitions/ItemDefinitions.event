@@ -59,6 +59,7 @@
 #define MagekillerBow $35
 #define Greatbow $36
 #define Slimshot $37
+#define ShiningBow $d4
 
 //TOMES
 
