@@ -1,0 +1,446 @@
+#######################################################
+#15 Swordmaster Sword
+#
+#When importing to FEEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1                            #Melee Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+1 p- Dagger_000.png
+5 p- Dagger_001.png
+3 p- Dagger_002.png
+3 p- Dagger_003.png
+5 p- Dagger_004.png
+C3C
+2 p- Dagger_005.png
+4 p- Dagger_006.png
+3 p- Dagger_007.png
+3 p- Dagger_008.png
+3 p- Dagger_009.png
+4 p- Dagger_010.png
+15 p- Dagger_011.png
+4 p- Dagger_012.png
+C25
+2 p- Dagger_013.png
+3 p- Dagger_014.png
+4 p- Dagger_015.png
+4 p- Dagger_016.png
+4 p- Dagger_017.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+3 p- Dagger_018.png
+C24                                     #Play sword slashing air SFE
+2 p- Dagger_019.png
+C1A                                     #Normal hit
+C20                                     #Play hit SFE (sounds like Knight Lord with Durandal's hit)
+2 p- Dagger_020.png
+2 p- Dagger_021.png
+3 p- Dagger_022.png
+3 p- Dagger_023.png
+3 p- Dagger_024.png
+3 p- Dagger_025.png
+3 p- Dagger_026.png
+1 p- Dagger_027.png
+C01                                     #NOP
+2 p- Dagger_028.png
+2 p- Dagger_029.png
+3 p- Dagger_030.png
+3 p- Dagger_031.png
+3 p- Dagger_032.png
+3 p- Dagger_033.png
+3 p- Dagger_034.png
+15 p- Dagger_035.png
+10 p- Dagger_036.png
+C25
+2 p- Dagger_037.png
+3 p- Dagger_038.png
+4 p- Dagger_039.png
+4 p- Dagger_040.png
+C38
+3 p- Dagger_041.png
+3 p- Dagger_042.png
+3 p- Dagger_043.png
+3 p- Dagger_044.png
+3 p- Dagger_045.png
+3 p- Dagger_046.png
+3 p- Dagger_047.png
+C34                                     #Play heavy stepping SFE
+3 p- Dagger_048.png
+3 p- Dagger_049.png
+3 p- Dagger_050.png
+3 p- Dagger_051.png
+3 p- Dagger_052.png
+8 p- Dagger_053.png
+3 p- Dagger_054.png
+2 p- Dagger_055.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+1 p- Dagger_000.png
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 3                            #Melee Critical Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+1 p- Dagger_000.png
+3 p- Dagger_056.png
+4 p- Dagger_057.png
+C23
+3 p- Dagger_058.png
+2 p- Dagger_059.png
+2 p- Dagger_060.png
+2 p- Dagger_061.png
+15 p- Dagger_062.png
+3 p- Dagger_063.png
+C23
+2 p- Dagger_064.png
+2 p- Dagger_065.png
+13 p- Dagger_066.png
+2 p- Dagger_067.png
+S011F
+4 p- Dagger_068.png
+4 p- Dagger_069.png
+S0130
+4 p- Dagger_070.png
+3 p- Dagger_071.png
+3 p- Dagger_072.png
+2 p- Dagger_073.png
+2 p- Dagger_074.png
+1 p- Dagger_075.png
+1 p- Dagger_076.png
+1 p- Dagger_077.png
+1 p- Dagger_078.png
+1 p- Dagger_079.png
+1 p- Dagger_080.png
+2 p- Dagger_081.png
+2 p- Dagger_082.png
+2 p- Dagger_083.png
+2 p- Dagger_084.png
+25 p- Dagger_085.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+1 p- Dagger_086.png
+1 p- Dagger_087.png
+C24                                     #Play sword slashing air SFE
+1 p- Dagger_088.png
+C08                                     #Critical hit
+C20                                     #Play hit SFE (sounds like Knight Lord with Durandal's hit)
+1 p- Dagger_089.png
+1 p- Dagger_090.png
+18 p- Dagger_085.png
+1 p- Dagger_027.png
+1 p- Dagger_085.png
+1 p- Dagger_027.png
+1 p- Dagger_085.png
+1 p- Dagger_027.png
+1 p- Dagger_085.png
+1 p- Dagger_027.png
+1 p- Dagger_085.png
+1 p- Dagger_027.png
+1 p- Dagger_085.png
+1 p- Dagger_027.png
+C01                                     #NOP
+2 p- Dagger_028.png
+2 p- Dagger_029.png
+3 p- Dagger_030.png
+3 p- Dagger_031.png
+3 p- Dagger_032.png
+3 p- Dagger_033.png
+3 p- Dagger_034.png
+15 p- Dagger_035.png
+10 p- Dagger_036.png
+C25
+2 p- Dagger_037.png
+3 p- Dagger_038.png
+4 p- Dagger_039.png
+4 p- Dagger_040.png
+C38
+3 p- Dagger_041.png
+3 p- Dagger_042.png
+3 p- Dagger_043.png
+3 p- Dagger_044.png
+3 p- Dagger_045.png
+3 p- Dagger_046.png
+3 p- Dagger_047.png
+C34                                     #Play heavy stepping SFE
+3 p- Dagger_048.png
+3 p- Dagger_049.png
+3 p- Dagger_050.png
+3 p- Dagger_051.png
+3 p- Dagger_052.png
+8 p- Dagger_053.png
+3 p- Dagger_054.png
+2 p- Dagger_055.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+1 p- Dagger_000.png
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 5                            #Ranged Animation 
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+1 p- Dagger_000.png
+5 p- Dagger_001.png
+3 p- Dagger_002.png
+3 p- Dagger_091.png
+5 p- Dagger_092.png
+C23
+2 p- Dagger_093.png
+C05                                     #Call spell associated with equipped weapon
+4 p- Dagger_094.png
+4 p- Dagger_095.png
+4 p- Dagger_096.png
+4 p- Dagger_097.png
+4 p- Dagger_098.png
+4 p- Dagger_099.png
+4 p- Dagger_100.png
+4 p- Dagger_101.png
+C01                                     #NOP
+4 p- Dagger_102.png
+4 p- Dagger_103.png
+C25
+4 p- Dagger_104.png
+4 p- Dagger_105.png
+4 p- Dagger_106.png
+4 p- Dagger_107.png
+4 p- Dagger_108.png
+C06                                     #Begin opponent's turn after hit.next code 0D
+1 p- Dagger_000.png
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 6                            #Ranged Critical Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+1 p- Dagger_000.png
+2 p- Dagger_057.png
+3 p- Dagger_109.png
+4 p- Dagger_110.png
+4 p- Dagger_111.png
+3 p- Dagger_112.png
+C23
+4 p- Dagger_113.png
+4 p- Dagger_114.png
+4 p- Dagger_115.png
+4 p- Dagger_116.png
+15 p- Dagger_117.png
+3 p- Dagger_118.png
+C23
+2 p- Dagger_119.png
+4 p- Dagger_120.png
+13 p- Dagger_121.png
+S011F
+4 p- Dagger_122.png
+4 p- Dagger_123.png
+S0130
+4 p- Dagger_124.png
+3 p- Dagger_125.png
+3 p- Dagger_126.png
+2 p- Dagger_127.png
+2 p- Dagger_128.png
+1 p- Dagger_129.png
+1 p- Dagger_130.png
+1 p- Dagger_131.png
+1 p- Dagger_132.png
+1 p- Dagger_133.png
+1 p- Dagger_134.png
+2 p- Dagger_081.png
+2 p- Dagger_082.png
+2 p- Dagger_083.png
+2 p- Dagger_084.png
+25 p- Dagger_085.png
+4 p- Dagger_135.png
+4 p- Dagger_136.png
+3 p- Dagger_137.png
+4 p- Dagger_138.png
+3 p- Dagger_139.png
+3 p- Dagger_140.png
+4 p- Dagger_141.png
+5 p- Dagger_142.png
+4 p- Dagger_143.png
+4 p- Dagger_144.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+3 p- Dagger_145.png
+C24                                     #Play sword slashing air SFE
+C05                                     #Call spell associated with equipped weapon
+5 p- Dagger_146.png
+3 p- Dagger_147.png
+3 p- Dagger_148.png
+C34                                     #Play heavy stepping SFE
+3 p- Dagger_149.png
+3 p- Dagger_150.png
+3 p- Dagger_151.png
+3 p- Dagger_152.png
+3 p- Dagger_153.png
+1 p- Dagger_154.png
+C01                                     #NOP
+3 p- Dagger_155.png
+3 p- Dagger_156.png
+C25
+4 p- Dagger_104.png
+4 p- Dagger_105.png
+4 p- Dagger_106.png
+4 p- Dagger_107.png
+4 p- Dagger_108.png
+C06                                     #Begin opponent's turn after hit.next code 0D
+1 p- Dagger_000.png
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 7                            #Dodge Melee Attack
+C02                               #Start of dodge
+1 p- Dagger_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- Dagger_157.png
+2 p- Dagger_158.png
+10 p- Dagger_159.png
+S00D6
+1 p- Dagger_160.png
+1 p- Dagger_085.png
+1 p- Dagger_160.png
+1 p- Dagger_085.png
+1 p- Dagger_160.png
+8 p- Dagger_085.png
+S011F
+2 p- Dagger_084.png
+2 p- Dagger_083.png
+2 p- Dagger_082.png
+2 p- Dagger_081.png
+2 p- Dagger_080.png
+S02E2
+1 p- Dagger_079.png
+1 p- Dagger_078.png
+1 p- Dagger_077.png
+1 p- Dagger_076.png
+1 p- Dagger_075.png
+2 p- Dagger_074.png
+2 p- Dagger_073.png
+3 p- Dagger_072.png
+3 p- Dagger_071.png
+4 p- Dagger_070.png
+4 p- Dagger_069.png
+1 p- Dagger_068.png
+1 p- Dagger_067.png
+C01                               #NOP
+2 p- Dagger_066.png
+3 p- Dagger_161.png
+1 p- Dagger_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8                            #Dodge Ranged Attack
+C02                               #Start of dodge
+1 p- Dagger_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- Dagger_157.png
+2 p- Dagger_158.png
+10 p- Dagger_159.png
+S00D6
+1 p- Dagger_160.png
+1 p- Dagger_085.png
+1 p- Dagger_160.png
+1 p- Dagger_085.png
+1 p- Dagger_160.png
+8 p- Dagger_085.png
+S011F
+2 p- Dagger_084.png
+2 p- Dagger_083.png
+2 p- Dagger_082.png
+2 p- Dagger_081.png
+2 p- Dagger_080.png
+S02E2
+1 p- Dagger_079.png
+1 p- Dagger_078.png
+1 p- Dagger_077.png
+1 p- Dagger_076.png
+1 p- Dagger_075.png
+2 p- Dagger_074.png
+2 p- Dagger_073.png
+3 p- Dagger_072.png
+3 p- Dagger_071.png
+4 p- Dagger_070.png
+4 p- Dagger_069.png
+1 p- Dagger_068.png
+1 p- Dagger_067.png
+C01                               #NOP
+2 p- Dagger_066.png
+3 p- Dagger_161.png
+1 p- Dagger_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9                            #Equiped with Melee Weapon
+1 p- Dagger_000.png
+C01                                     #NOP
+~~~
+/// - Mode 10                           #standing motions?
+1 p- Dagger_000.png
+C01                                     #NOP
+~~~
+/// - Mode 11                           #Equiped with Ranged weapon
+1 p- Dagger_000.png
+C01                                     #NOP
+~~~
+/// - Mode 12                           #Attack Missed Animation
+C03                                     #Start attack animation; should be followed by 0x07
+C07                                     #Start attack animation; should be preceeded by 0x03
+1 p- Dagger_000.png
+5 p- Dagger_001.png
+3 p- Dagger_002.png
+3 p- Dagger_003.png
+5 p- Dagger_004.png
+C3C
+2 p- Dagger_005.png
+4 p- Dagger_006.png
+3 p- Dagger_007.png
+3 p- Dagger_008.png
+3 p- Dagger_009.png
+4 p- Dagger_010.png
+15 p- Dagger_011.png
+4 p- Dagger_012.png
+C25
+2 p- Dagger_013.png
+3 p- Dagger_014.png
+4 p- Dagger_015.png
+4 p- Dagger_016.png
+4 p- Dagger_017.png
+C04                                     #Prepare HP depletion routine; needed to animate return to standing frame after hit
+3 p- Dagger_162.png
+C24                                     #Play sword slashing air SFE
+2 p- Dagger_163.png
+2 p- Dagger_020.png
+2 p- Dagger_021.png
+3 p- Dagger_022.png
+3 p- Dagger_023.png
+3 p- Dagger_024.png
+3 p- Dagger_025.png
+3 p- Dagger_026.png
+1 p- Dagger_027.png
+C01                                     #NOP
+2 p- Dagger_028.png
+2 p- Dagger_039.png
+3 p- Dagger_030.png
+3 p- Dagger_031.png
+3 p- Dagger_032.png
+3 p- Dagger_033.png
+3 p- Dagger_034.png
+15 p- Dagger_035.png
+10 p- Dagger_036.png
+C25
+2 p- Dagger_037.png
+3 p- Dagger_038.png
+4 p- Dagger_039.png
+4 p- Dagger_040.png
+C38
+3 p- Dagger_041.png
+3 p- Dagger_042.png
+3 p- Dagger_043.png
+3 p- Dagger_044.png
+3 p- Dagger_045.png
+3 p- Dagger_046.png
+3 p- Dagger_047.png
+C34                                     #Play heavy stepping SFE
+3 p- Dagger_048.png
+3 p- Dagger_049.png
+3 p- Dagger_050.png
+3 p- Dagger_051.png
+3 p- Dagger_052.png
+8 p- Dagger_053.png
+3 p- Dagger_054.png
+2 p- Dagger_055.png
+C06                                     #Begin opponent's turn after hit.next code 0D.
+1 p- Dagger_000.png
+C0D                                     #End of dodge animation. preceeded by 0x06
+~~~
+/// - End of animation

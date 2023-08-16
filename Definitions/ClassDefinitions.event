@@ -1,67 +1,76 @@
 //CLASSES
 
-//SWORD
-//#define Mercenary 0xf
-//#define Mercenary_F 0x10
-//#define Myrmidon 0x13
-//#define Myrmidon_F 0x14
-#define SwordCav 0x87
-#define PegasusRider 0x48
-
-// SWORD/LANCE
-#define Warden 0x9
-
-
-// SWORD/GUN
+//LORD
 #define Captain 0x80
 
-//LANCE
-#define LanceCav 0x5
-#define LanceCav_F 0x6
+//INFANTRY
+
+//T1
+/*
+#define Mercenary 0xf
+#define Mercenary_F 0x10
+#define Myrmidon 0x13
+#define Myrmidon_F 0x14
+*/
+
 //#define Soldier 0x4e
 #define Deserter 0x84
-#define GriffinRider 0x89
 
-//LANCE/SWORD
-#define Champion 0x8B
-
-// LANCE/AXE
-#define Vanguard 0x82
-
-//AXE
 //#define Fighter 0x3f
 //#define Brigand 0x41
-#define DragonRider 0x1f
-#define DragonRider_F 0x20
-#define AxeCav 0x88
 
-//BOW
 //#define Archer 0x19
 //#define Archer_F 0x1a
-
 #define Hunter 0x85
 #define Hunter_F 0x8A
 
-//TOME
+//#define Thief 0xd
+#define Ninja 0x81
+
+#define Gunner 0x86
+
+//T2
+#define Champion 0x8B
+#define MasterNinja 0x8D
+//#define Assassin 0x17
+//#define Assassin_F 0x18
+
+//ARMOR
+
+//T1
+#define Warden 0x9
+#define Vanguard 0x82
+
+//T2
+#define Cataphract 0x35
+#define Cataphract_F 0x36
+#define Dreadnought 0x84
+
+//CAVALIER
+#define SwordCav 0x87
+#define LanceCav 0x5
+#define LanceCav_F 0x6
+#define AxeCav 0x88
+//#define Troubadour 0x4b
+
+//FLIER
+#define PegasusRider 0x48
+#define GriffinRider 0x89
+#define DragonRider 0x1f
+#define DragonRider_F 0x20
+
+//MAGE
+
 //#define Mage 0x25
 //#define Mage_F 0x26
 
 //#define Shaman 0x2d
 //#define Shaman_F 0x2e
 
-//KNIVES
-//#define Thief 0xd
-
-#define Ninja 0x81
-
-//STAVES
 //#define Priest 0x45
 //#define Cleric 0x4a
 
 #define Curate 0x83
-
-//GUNS
-#define Gunner 0x86
 
 //MISCELLANEOUS
 #define Log 0x8C
@@ -86,3 +95,5 @@
 #define Hunter_FMapSprite 0x7A
 #define ChampionMapSprite 0x7B
 #define LogMapSprite 0x7C
+#define MasterNinjaMapSprite 0x7D
+#define DreadnoughtMapSprite 0x7E

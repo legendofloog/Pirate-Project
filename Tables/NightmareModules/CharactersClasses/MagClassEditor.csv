@@ -22,8 +22,8 @@ Myrmidon,3,30,20,0
 Myrmidon (F),3,30,20,0
 Swordmaster,2,30,23,1
 Swordmaster (F),2,30,23,1
-Assassin,1,0,22,0
-Assassin (F),1,0,22,0
+Assassin,3,25,30,0
+Assassin (F),3,25,30,0
 Archer,1,20,20,0
 Archer (F),1,20,20,0
 Sniper,1,20,24,1
@@ -52,8 +52,8 @@ Summoner,5,50,27,0
 Summoner (F),5,50,27,0
 Rogue,3,25,26,3
 Gorgon Egg,0,0,30,0
-Great Knight,0,0,21,0
-Great Knight (F),0,0,21,0
+Great Knight,1,20,30,0
+Great Knight (F),1,20,30,0
 Recruit (2),0,0,20,0
 Journeyman (3),0,0,22,0
 Pupil (3),5,55,29,2
@@ -138,10 +138,10 @@ SwordCav,1,20,20,0
 AxeCav,1,20,20,0
 GriffinRider,2,25,20,0
 Hunter_F,4,35,20,0
-Champion,2,20,20,0
+Champion,1,20,20,0
 Log,0,0,0,0
-Ephraim Lord,1,10,20,0
-Ephraim Lord,1,10,20,0
+Master Ninja,4,30,30,0
+Dreadnought,1,20,30,0
 Ephraim Lord,1,10,20,0
 Ephraim Lord,1,10,20,0
 Ephraim Lord,1,10,20,0

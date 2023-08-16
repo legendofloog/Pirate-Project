@@ -123,3 +123,24 @@ Log[X]
 
 ## LogDesc
  [X]
+
+## AssassinDesc
+ [X]
+
+## CataphractName
+Cataphract[X]
+
+## CataphractDesc
+ [X]
+
+## MasterNinjaName
+Master Ninja[X]
+
+## MasterNinjaDesc
+ [X]
+
+## DreadnoughtName
+Dreadnought[X]
+
+## DreadnoughtDesc
+ [X]

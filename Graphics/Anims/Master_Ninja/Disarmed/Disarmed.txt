@@ -1,0 +1,136 @@
+#######################################################
+#15 Swordmaster Item
+#
+#When importing to FEEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+4 p- Disarmed_001.png
+C01                               #NOP
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 3               #Melee Critical Animation
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+4 p- Disarmed_001.png
+C01                               #NOP
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 5               #Ranged Animation 
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+4 p- Disarmed_001.png
+C01                               #NOP
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 6               #Ranged Critical Animation
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+4 p- Disarmed_001.png
+C01                               #NOP
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 7               #Dodge Melee Attack
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- Disarmed_001.png
+2 p- Disarmed_002.png
+10 p- Disarmed_003.png
+S00D6
+1 p- Disarmed_004.png
+1 p- Disarmed_005.png
+1 p- Disarmed_003.png
+1 p- Disarmed_004.png
+1 p- Disarmed_005.png
+8 p- Disarmed_006.png
+S011F
+2 p- Disarmed_007.png
+2 p- Disarmed_008.png
+2 p- Disarmed_009.png
+2 p- Disarmed_010.png
+2 p- Disarmed_011.png
+S02E2
+1 p- Disarmed_012.png
+1 p- Disarmed_013.png
+1 p- Disarmed_014.png
+1 p- Disarmed_015.png
+1 p- Disarmed_016.png
+2 p- Disarmed_017.png
+2 p- Disarmed_018.png
+3 p- Disarmed_019.png
+3 p- Disarmed_020.png
+4 p- Disarmed_021.png
+4 p- Disarmed_022.png
+1 p- Disarmed_023.png
+C01                               #NOP
+2 p- Disarmed_024.png
+3 p- Disarmed_025.png
+1 p- Disarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+2 p- Disarmed_001.png
+2 p- Disarmed_002.png
+10 p- Disarmed_003.png
+S00D6
+1 p- Disarmed_004.png
+1 p- Disarmed_005.png
+1 p- Disarmed_003.png
+1 p- Disarmed_004.png
+1 p- Disarmed_005.png
+8 p- Disarmed_006.png
+S011F
+2 p- Disarmed_007.png
+2 p- Disarmed_008.png
+2 p- Disarmed_009.png
+2 p- Disarmed_010.png
+2 p- Disarmed_011.png
+S02E2
+1 p- Disarmed_012.png
+1 p- Disarmed_013.png
+1 p- Disarmed_014.png
+1 p- Disarmed_015.png
+1 p- Disarmed_016.png
+2 p- Disarmed_017.png
+2 p- Disarmed_018.png
+3 p- Disarmed_019.png
+3 p- Disarmed_020.png
+4 p- Disarmed_021.png
+4 p- Disarmed_022.png
+1 p- Disarmed_023.png
+C01                               #NOP
+2 p- Disarmed_024.png
+3 p- Disarmed_025.png
+1 p- Disarmed_000.png
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+1 p- Disarmed_000.png
+C01                               #NOP
+~~~
+/// - Mode 10               #standing motions?
+1 p- Disarmed_000.png
+C01                               #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+1 p- Disarmed_000.png
+C01                               #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+C02                               #Start of dodge
+1 p- Disarmed_000.png
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+4 p- Disarmed_001.png
+C01                               #NOP
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - End of animation
