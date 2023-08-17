@@ -196,22 +196,22 @@ Revolutionary[N]
 They fight against the empire[N]
 to secure their freedom.[X]
 
-## DragzArmorBoss1Name
-Baza[X]
+## BuzuName
+Buzu[X]
 
-## DragzArmorBoss1Desc
+## BuzuDesc
 Guardshelm[X]
 
-## DragzArmorBoss2Name
+## BozoName
 Bozo[X]
 
-## DragzArmorBoss2Desc
+## BozoDesc
 Guardshelm[X]
 
-## DragzMercBossName
-Bizi[X]
+## GeraldoName
+Geraldo[X]
 
-## DragzMercBossDesc
+## GeraldoDesc
 Wrangler[X]
 
 ## DragzChampionBossName

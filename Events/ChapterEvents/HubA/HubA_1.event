@@ -19,6 +19,7 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0, InformObjective, 1)
 END_MAIN
 
 CharacterBasedEvents:
@@ -39,26 +40,31 @@ CauseGameOverIfLordDies
 END_MAIN
 
 Units1:
-UNIT Indio Shaman 0 Level(1, Ally, False) [4,4] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [5,4] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [6,4] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [7,4] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [4,5] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [7,5] 0 0 0 0 [Surge, Vulnerary] NoAI
 UNIT Indio Shaman 0 Level(1, Ally, False) [5,5] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [6,5] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [7,5] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT Indio Shaman 0 Level(1, Ally, False) [7,5] 0 0 0 0 [Surge, Vulnerary] NoAI
-UNIT
-
-EnemyUnits1:
-UNIT Scoundrel Myrmidon 0 Level(3, Enemy, True) [28, 5] 0 0 0 0 [IronSword] AttackInRangeAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [4,4] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [6,4] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [5,3] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [25,8] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [27,8] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [26,7] 0 0 0 0 [Surge, Vulnerary] NoAI
+UNIT Indio Shaman 0 Level(1, Ally, False) [28,7] 0 0 0 0 [Surge, Vulnerary] NoAI
 UNIT
 
 LuaRazvanCutsceneUnits:
-UNIT Lua Captain 0 Level(1, Ally, False) [0,3] 0 0 0 0 [0x0, 0x0, 0x0, 0x0] NoAI
+UNIT Lua Captain 0 Level(1, Ally, False) [0,3] 0 0 1 REDA6R2 [0, 0, 0, 0] NoAI
+UNIT Razvan Curate 0 Level(1, Ally, False) [0,4] 0 0 1 REDA5R2 [0, 0, 0, 0] NoAI
 UNIT
 
 IndioCutsceneUnit:
+UNIT Indio Shaman 0 Level(1, Ally, False) [0,4] 0 0 1 REDA4R2 [Surge, Vulnerary] NoAI
+UNIT
+
+ContractorInitialEnemies:
+UNIT Leandra Fighter Geraldo Level(5, Enemy, False) [11, 5] 0 0 0 0 [Bloodaxe, HandAxe, Vulnerary] AttackInTwoAI
+UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [SteelSword] AttackInRangeAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [10, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [12, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
 UNIT
 
 Traps1:
@@ -70,14 +76,35 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
+LOAD1 1 LuaRazvanCutsceneUnits
+ENUN
+Text(ChA1BeginningScene1)
+CAMERA [26, 9]
+CURSOR_FLASHING [26, 9]
+CURSOR_FLASHING [27, 9]
+STAL 60
+REMOVE_CURSORS 
+Text(ChA1BeginningScene2)
+CAMERA [16, 17]
+Text(ChA1BeginningScene3)
+CAMERA Lua
+LOAD1 0 IndioCutsceneUnit
+ENUN
+Text(ChA1BeginningScene4)
 ENUT EscapeDisallowed
 ENUT AllUnitsMustEscapeFlag
+LOAD1 1 ContractorInitialEnemies
+ENUN
 TILECHANGE 0x8
-LOAD1 1 Units1
-ENUN
-LOAD1 1 EnemyUnits1
-ENUN
+TILECHANGE 0x6
 GotoPrepScreen
+NoFade
+ENDA
+
+InformObjective:
+CAMERA_CENTERED [18, 7]
+Text(ChA1BeginningScene5)
+AddTrap(GreenSigilTrapID, 18, 7)
 NoFade
 ENDA
 
