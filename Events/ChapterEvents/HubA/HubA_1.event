@@ -1,10 +1,11 @@
 EventPointerTable(HubA_1EventsID, PointerList)
 
 #define CarmenIndioTalkSeen 0x7
-#define LeandraRecruited 0x8
-#define RelicRecovered 0x9
-#define ObjectiveSwitched 0xA
-#define EscapeDisallowed 0xB
+#define LeandraTalkSeen 0x8
+#define LeandraRecruited 0x9
+#define RelicRecovered 0xA
+#define ObjectiveSwitched 0xB
+#define EscapeDisallowed 0xC
 
 PointerList:
 POIN TurnBasedEvents
@@ -20,9 +21,14 @@ POIN BeginningScene EndingScene
 
 TurnBasedEvents:
 TurnEventPlayer(0, InformObjective, 1)
+TurnEventEnemy(0, GeraldoLeaves, 1)
+TurnEventPlayer(0, TimerWarning, 4)
 END_MAIN
 
 CharacterBasedEvents:
+CharacterEventBothWays(CarmenIndioTalkSeen, CarmenIndioTalk, Carmen, Indio)
+CharacterEventBothWays(LeandraRecruited, LuaRecruitLeandra, Lua, Leandra)
+CharacterEventBothWays(LeandraRecruited, DesiderioRecruitLeandra, Desiderio, Leandra)
 END_MAIN
 
 LocationBasedEvents:
@@ -60,8 +66,8 @@ IndioCutsceneUnit:
 UNIT Indio Shaman 0 Level(1, Ally, False) [0,4] 0 0 1 REDA4R2 [Surge, Vulnerary] NoAI
 UNIT
 
-ContractorInitialEnemies:
-UNIT Leandra Fighter Geraldo Level(5, Enemy, False) [11, 5] 0 0 0 0 [Bloodaxe, HandAxe, Vulnerary] AttackInTwoAI
+ContractorInitialEnemies:							//11, 5
+UNIT Leandra Fighter Geraldo Level(5, Enemy, False) [6, 8] 0 0 0 0 [Bloodaxe, HandAxe, Vulnerary] AttackInTwoAI
 UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [SteelSword] AttackInRangeAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [10, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [12, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
@@ -79,6 +85,7 @@ BeginningScene:
 LOAD1 1 LuaRazvanCutsceneUnits
 ENUN
 Text(ChA1BeginningScene1)
+EVBIT_F 8
 CAMERA [26, 9]
 CURSOR_FLASHING [26, 9]
 CURSOR_FLASHING [27, 9]
@@ -101,15 +108,92 @@ GotoPrepScreen
 NoFade
 ENDA
 
+ALIGN 4
 InformObjective:
 CAMERA_CENTERED [18, 7]
-Text(ChA1BeginningScene5)
-AddTrap(GreenSigilTrapID, 18, 7)
+CURSOR_FLASHING [18, 7]
+STAL 60
+REMOVE_CURSORS
+Text(ChA1InformObjectiveDialogue)
+NoFade
+ENDA
+
+ALIGN 4
+CarmenIndioTalk:
+Text(ChA1CarmenIndioTalkDialogue)
+NoFade
+ENDA
+
+ALIGN 4
+GeraldoLeaves:
+CAMERA_CENTERED [11, 5]
+CURSOR_FLASHING [11, 5]
+STAL 60
+REMOVE_CURSORS
+Text(ChA1GeraldoLeavesDialogue)
+MOVE 60 Geraldo [9, 4]
+ENUN
+DISA Geraldo
+NoFade
+ENDA
+
+ALIGN 4
+LuaRecruitLeandra:
+CHECK_EVENTID LeandraTalkSeen
+BNE 1 sC s0
+Text(ChA1LuaLeandraTalkDialogue)
+ENUT LeandraTalkSeen
+LABEL 1
+SVAL s1 3000
+CHECK_MONEY
+BLT 2 sC s1
+Text(ChA1LeandraRecruitPrompt)
+SVAL s1 0x1
+BNE 2 s1 sC
+Text(ChA1LeandraRecruitedDialogue)
+SVAL s3 3000
+TAKEMONEY
+CUSA Leandra
+GOTO 3
+LABEL 2
+ENUF LeandraRecruited
+LABEL 3
+NoFade
+ENDA
+
+ALIGN 4
+DesiderioRecruitLeandra:
+CHECK_EVENTID LeandraTalkSeen
+BNE 4 sC s0
+Text(ChA1DesiderioLeandraTalkDialogue)
+ENUT LeandraTalkSeen
+SVAL s1 3000
+CHECK_MONEY
+BLT 5 sC s1
+LABEL 4
+Text(ChA1LeandraRecruitPrompt)
+SVAL s1 0x1
+BNE 5 s1 sC
+Text(ChA1LeandraRecruitedDialogue)
+SVAL s3 3000
+TAKEMONEY 
+CUSA Leandra
+GOTO 6
+LABEL 5
+ENUF LeandraRecruited
+LABEL 6
+NoFade
+ENDA
+
+ALIGN 4
+TimerWarning:
+Text(ChA1TimerWarningDialogue)
 NoFade
 ENDA
 
 ALIGN 4
 SwitchObjective:
+Text(ChA1RelicRecoveredDialogue)
 AddTrap(BlueSigilTrapID, 5, 2)
 AddTrap(BlueSigilTrapID, 6, 2)
 AddTrap(BlueSigilTrapID, 26, 8)
@@ -118,16 +202,18 @@ ENUF EscapeDisallowed
 NoFade
 ENDA
 
+ALIGN 4
 EscapeEventCheck:
 ENUF EscapeDisallowed
 NoFade
 ENDA
 
+ALIGN 4
 CheckNoUnits:
 ASMC GetBlueUnitCountASMC
 BNE 1 s0 sC
-    ENUT 0x03
-    CALL EndingScene
+ENUT 0x03
+CALL EndingScene
 LABEL 1
 NoFade
 ENDA

@@ -107,6 +107,8 @@ ALIGN 4
 BeginningScene:
 LOAD1 1 NewUnits
 ENUN
+SVAL s3 3000
+GIVEMONEY Lua
 GotoPrepScreen
 NoFade
 ENDA
