@@ -102,3 +102,12 @@
 
 // EQUIPS
 #define HideShield $ca
+
+//Items
+
+#define BravesCrest $64
+#define KnightsPlate $65
+#define HuntersMark $66
+#define FliersPermit $67
+#define MagesRing $68
+#define RidersBadge $97

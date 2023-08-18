@@ -17,7 +17,12 @@ POP
 
 ALIGN 4
 PromoItemsList:
-PromoItemEntry(HeroCrest,HeroCrestPromoList)
+PromoItemEntry(BravesCrest,BravesCrestPromoList)
+PromoItemEntry(HuntersMark,HuntersMarkPromoList)
+PromoItemEntry(KnightsPlate,KnightsPlatePromoList)
+PromoItemEntry(RidersBadge,RidersBadgePromoList)
+PromoItemEntry(MagesRing,MagesRingPromoList)
+PromoItemEntry(FliersPermit,FliersPermitPromoList)
 PromoItemsEnd
 
 ALIGN 4
@@ -28,8 +33,40 @@ BYTE 0
 #define PromoListEnd "SHORT 0"
 
 ALIGN 4
-HeroCrestPromoList:
-PromoListEntry(Mercenary, Hero)
+BravesCrestPromoList:
+PromoListEntry(Deserter, Champion)
+PromoListEntry(Ninja, MasterNinja)
 PromoListEnd
 
+ALIGN 4
+HuntersMarkPromoList:
+PromoListEntry(Ninja, Assassin)
+PromoListEntry(Archer, Sniper)
+PromoListEntry(Archer_F, Sniper_F)
+PromoListEnd
 
+ALIGN 4
+KnightsPlatePromoList:
+PromoListEntry(Vanguard, Dreadnought)
+PromoListEnd
+
+ALIGN 4
+RidersBadgePromoList:
+PromoListEntry(Vanguard, Cataphract)
+PromoListEntry(Mage, MageKnight)
+PromoListEntry(Mage_F, MageKnight_F)
+PromoListEnd
+
+ALIGN 4
+MagesRingPromoList:
+PromoListEntry(Curate, Sage)
+PromoListEntry(Mage, Sage)
+PromoListEntry(Mage_F, Sage_F)
+PromoListEnd
+
+ALIGN 4
+FliersPermitPromoList:
+PromoListEntry(Curate, Seraph)
+PromoListEntry(Archer, Bombardier)
+PromoListEntry(Archer_F, Bombardier)
+PromoListEnd

@@ -94,6 +94,9 @@ UNIT Estelle Troubadour 0 Level(3,Ally,False) [7,5] 0 0 0 0 [Heal, Torch] NoAI
 UNIT Hermenegildo Myrmidon 0 Level(1,Ally,False) [7,6] 0 0 0 0 [IronSword, LightBrand, Vulnerary] NoAI
 UNIT Durgham LanceCav 0 Level(5,NPC,False) [5,8] 0 0 0 0 [IronLance, SteelLance, Vulnerary] NoAI
 UNIT MrYodsen Gunner 0 Level(3,NPC,False) [9,8] 0 0 0 0 [SteelMusket, Mortar, Vulnerary, PureWater] NoAI
+UNIT Triana Shaman_F 0 Level(4,NPC,False) [2,0] 0 0 0 0 [Surge, Elfire, Vulnerary] NoAI
+UNIT Medwyn Warden 0 Level(6,NPC,False) [7,0] 0 0 0 0 [SteelSword, Javelin, PureWater] NoAI
+UNIT Bartz Deserter 0 Level(8,NPC,False) [12,0] 0 0 0 0 [SteelLance, Vulnerary] NoAI
 UNIT
 
 Traps1:

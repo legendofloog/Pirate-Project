@@ -34,6 +34,8 @@
 #define MasterNinja 0x8D
 //#define Assassin 0x17
 //#define Assassin_F 0x18
+//#define Sniper 0x1b
+//#define Sniper_F 0x1c
 
 //ARMOR
 
@@ -42,9 +44,7 @@
 #define Vanguard 0x82
 
 //T2
-#define Cataphract 0x35
-#define Cataphract_F 0x36
-#define Dreadnought 0x84
+#define Dreadnought 0x8E
 
 //CAVALIER
 #define SwordCav 0x87
@@ -59,6 +59,9 @@
 #define DragonRider 0x1f
 #define DragonRider_F 0x20
 
+//T2
+#define Bombardier 0x90
+
 //MAGE
 
 //#define Mage 0x25
@@ -72,8 +75,26 @@
 
 #define Curate 0x83
 
+//T2
+//#define Sage 0x27
+//#define Sage_F 0x28
+
 //MISCELLANEOUS
 #define Log 0x8C
+
+
+//HORSE/ARMOR
+#define Cataphract 0x35
+#define Cataphract_F 0x36
+
+//MAGE/HORSE
+//#define MageKnight 0x29
+//#define MageKnight_F 0x2a
+
+//MAGE/FLIER
+#define Seraph 0x8F
+
+
 
 
 //STANDING MAP SPRITES
@@ -97,3 +118,5 @@
 #define LogMapSprite 0x7C
 #define MasterNinjaMapSprite 0x7D
 #define DreadnoughtMapSprite 0x7E
+#define SeraphMapSprite 0x7F
+#define BombardierMapSprite 0x80

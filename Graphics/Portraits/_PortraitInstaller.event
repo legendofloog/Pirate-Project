@@ -49,3 +49,19 @@ MedwynMugData:
 #incbin "Dmp/Medwyn_palette.dmp"
 #incbin "Dmp/Medwyn_minimug.dmp"
 setMugEntry(MedwynMug, MedwynMugData, 3, 5, 3, 3)
+
+ALIGN 16
+HermenegildoMugData:
+#incbin "Dmp/Hermenegildo_mug.dmp"
+#incbin "Dmp/Hermenegildo_frames.dmp"
+#incbin "Dmp/Hermenegildo_palette.dmp"
+#incbin "Dmp/Hermenegildo_minimug.dmp"
+setMugEntry(HermenegildoMug, HermenegildoMugData, 3, 5, 3, 3)
+
+ALIGN 16
+TrianaMugData:
+#incbin "Dmp/Triana_mug.dmp"
+#incbin "Dmp/Triana_frames.dmp"
+#incbin "Dmp/Triana_palette.dmp"
+#incbin "Dmp/Triana_minimug.dmp"
+setMugEntry(TrianaMug, TrianaMugData, 3, 5, 3, 3)

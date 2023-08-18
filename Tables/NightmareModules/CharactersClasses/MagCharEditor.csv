@@ -3,11 +3,11 @@ None,0,0
 0x01 Lua,0,15
 0x02 Pilar,2,20
 0x03 Desiderio,1,5
-0x04 Razvan,2,65
+0x04 Razvan,2,60
 0x05 Carmen,0,55
 0x06 Ximo,0,25
 0x07 Estelle,1,40
-0x08 Hermenegildo,4,50
+0x08 Hermenegildo,7,55
 0x09 MrYodsen,3,40
 0x0A Durgham,0,5
 0x0B Indio,(-1),49
@@ -20,58 +20,58 @@ None,0,0
 0x12 AChapterUnit8,2,25
 0x13 AChapterUnit9,5,50
 0x14 Suzanne,3,35
-Tethys,0,5
-Marisa,1,10
-Saleh,11,30
-Ewan,2,45
-L'Arachel,5,50
-Dozla,0,5
-#NAME?,0,50
-Rennac,3,35
-Duessel,0,5
-Myrrh,2,85
-Knoll,10,50
-Joshua,0,20
-Syrene,4,20
-Tana,2,15
-Lyon,13,50
-Orson,3,10
-Glen,2,0
-Selena,10,40
-Valter,2,10
-Riev,10,45
-Caellach,2,5
-Fado,4,5
-Ismaire,7,15
-Hayden,2,10
-FakeEirika,0,0
-#NAME?,0,0
-0,0,0
-0,0,0
-0,0,0
-0,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-#NAME?,0,0
-Lyon's Summon,0,0
-#NAME?,0,0
-#NAME?,0,0
-Knoll's Summon,0,0
-Ewan's Summon,0,0
-Lyon (Ch 17),13,50
-Morva (Ch 20),6,85
-Orson (Ch 5x),3,10
-Valter (Ch 15),2,5
-Selena (Ch 10B +ACY- 13B),10,40
-Valter (Prologue),2,5
-Breguet (Ch 1),0,5
-Bone (Ch 2),0,5
-Bazba (Ch 3),1,10
+0x15 Tethys,0,5
+0x16 Marisa,1,10
+0x17 Saleh,11,30
+0x18 Ewan,2,45
+0x19 L'Arachel,5,50
+0x1A Dozla,0,5
+0x1B -,0,50
+0x1C Rennac,3,35
+0x1D Duessel,0,5
+0x1E Myrrh,2,85
+0x1F Knoll,10,50
+0x20 Joshua,0,20
+0x21 Syrene,4,20
+0x22 Tana,2,15
+0x23 Lyon,13,50
+0x24 Orson,3,10
+0x25 Glen,2,0
+0x26 Selena,10,40
+0x27 Valter,2,10
+0x28 Riev,10,45
+0x29 Caellach,2,5
+0x2A Fado,4,5
+0x2B Ismaire,7,15
+0x2C Hayden,2,10
+0x2D -,0,0
+0x2E -,0,0
+0x2F -,0,0
+0x30 -,0,0
+0x31 -,0,0
+0x32 -,0,0
+0x33 -,0,0
+0x34 -,0,0
+0x35 -,0,0
+0x36 -,0,0
+0x37 -,0,0
+0x38 -,0,0
+0x39 -,0,0
+0x3A -,0,0
+0x3B Lyon's Summon,0,0
+0x3C <Summon>,0,0
+0x3D <'Summonern'>,0,0
+0x3E Knoll's Summon,0,0
+0x3F Ewan's Summon,0,0
+0x40 Lyon (Ch 17),13,50
+0x41 Morva (Ch 20),6,85
+0x42 Orson (Ch 5x),3,10
+0x43 Triana,2,70
+0x44 Medwyn,3,35
+0x45 Bartz,0,15
+0x46 Khazhak,0,5
+0x47 Blackheart,0,5
+0x48 Dragz Armor Boss 1,1,10
 Entombed (Ch 4),1,5
 Saar (Ch 5),1,5
 Novala (Ch 6),8,50
