@@ -110,8 +110,7 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
-LOAD1 1 NewUnits
-ENUN
+// only here for chapter A1 testing
 SVAL s3 3000
 GIVEMONEY Lua
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeCave)
