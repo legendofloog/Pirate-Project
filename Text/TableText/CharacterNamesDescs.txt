@@ -200,30 +200,38 @@ to secure their freedom.[X]
 Buzu[X]
 
 ## BuzuDesc
-Guardshelm[X]
+Guardshelm[N]
+One half of House Sanz's guardian duo,[N]
+who were selected by an arena victory.[X]
 
 ## BozoName
 Bozo[X]
 
 ## BozoDesc
-Guardshelm[X]
+Guardshelm[N]
+The other half of House Sanz's guardian duo,[N]
+who were selected by an arena victory.[X]
 
 ## GeraldoName
 Geraldo[X]
 
 ## GeraldoDesc
-Wrangler[X]
+Rehabilitator[N]
+An honorable and complacent merc known for[N]
+reforming and taking in hardened criminals.[X]
 
-## DragzChampionBossName
-Buzu[X]
+## YurenaName
+Yurena[X]
 
-## DragzChampionBossDesc
-Minder[X]
+## YurenaDesc
+Minder[N]
+The personal bodyguard of Count Sanz,[N]
+a labor she faces with greatest valor.[X]
 
-## DragzNobleName
-Beze[X]
+## SanzName
+Sanz[X]
 
-## DragzNobleDesc
+## SanzDesc
 Parasite[N]
 The head of House Sanz, whose relic[N]
 collection hoards cultures worldwide.[X]

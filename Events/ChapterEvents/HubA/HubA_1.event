@@ -23,6 +23,7 @@ TurnBasedEvents:
 TurnEventPlayer(0, InformObjective, 1)
 TurnEventEnemy(0, GeraldoLeaves, 1)
 TurnEventPlayer(0, TimerWarning, 4)
+TurnEventEnemy(0, SuperbossesAppear, 2)
 END_MAIN
 
 CharacterBasedEvents:
@@ -57,20 +58,33 @@ UNIT Indio Shaman 0 Level(1, Ally, False) [26,7] 0 0 0 0 [Surge, Vulnerary] NoAI
 UNIT Indio Shaman 0 Level(1, Ally, False) [28,7] 0 0 0 0 [Surge, Vulnerary] NoAI
 UNIT
 
-LuaRazvanCutsceneUnits:
+LuaDesiderioCutsceneUnits:
 UNIT Lua Captain 0 Level(1, Ally, False) [0,3] 0 0 1 REDA6R2 [0, 0, 0, 0] NoAI
-UNIT Razvan Curate 0 Level(1, Ally, False) [0,4] 0 0 1 REDA5R2 [0, 0, 0, 0] NoAI
+UNIT Desiderio Vanguard 0 Level(1, Ally, False) [0,4] 0 0 1 REDA5R2 [0, 0, 0, 0] NoAI
 UNIT
 
 IndioCutsceneUnit:
 UNIT Indio Shaman 0 Level(1, Ally, False) [0,4] 0 0 1 REDA4R2 [Surge, Vulnerary] NoAI
 UNIT
 
-ContractorInitialEnemies:							//11, 5
-UNIT Leandra Fighter Geraldo Level(5, Enemy, False) [6, 8] 0 0 0 0 [Bloodaxe, HandAxe, Vulnerary] AttackInTwoAI
-UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [SteelSword] AttackInRangeAI
-UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [10, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
-UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [12, 4] 0 0 0 0 [SteelSword] AttackInTwoAI
+ContractorInitialEnemies:
+UNIT Leandra Fighter Geraldo Level(5, Enemy, False) [11, 5] 0 0 0 0 [Bloodaxe, HandAxe, Vulnerary] AttackInTwoAI
+UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [IronSword] AttackInRangeAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [10, 4] 0 0 0 0 [IronSword] AttackInTwoAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [12, 4] 0 0 0 0 [IronSword] AttackInTwoAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [23, 10] 0 0 0 0 [IronSword] AttackInTwoAI
+UNIT Contractor Myrmidon Geraldo Level(3, Enemy, False) [23, 12] 0 0 0 0 [IronSword] AttackInTwoAI
+UNIT
+
+SentinelInitialEnemies:
+UNIT Buzu Vanguard Sanz Level(5, Enemy, False) [17, 7] 0 0 0 0 [HandAxe, Pike] BossAI
+UNIT Bozo Warden Sanz Level(5, Enemy, False) [19, 7] 0 0 0 0 [FlameSword, Onigiri] BossAI
+UNIT
+
+SuperbossGang:
+UNIT Yurena Champion Sanz Level(20, Enemy, False) [12, 21] 0 0 1 REDA12R20 [BraveLance, Saunion] BossAI
+UNIT Sanz Sage Sanz Level(20, Enemy, False) [13, 21] 0 0 1 REDA13R20 [Tornado, Warp] BossAI
+UNIT Orlando Captain Orlando Level(1, Enemy, False) [14, 21] 0 0 1 REDA14R20 [0] BossAI
 UNIT
 
 Traps1:
@@ -82,10 +96,10 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
-LOAD1 1 LuaRazvanCutsceneUnits
+EVBIT_F 8
+LOAD2 1 LuaDesiderioCutsceneUnits
 ENUN
 Text(ChA1BeginningScene1)
-EVBIT_F 8
 CAMERA [26, 9]
 CURSOR_FLASHING [26, 9]
 CURSOR_FLASHING [27, 9]
@@ -101,6 +115,8 @@ Text(ChA1BeginningScene4)
 ENUT EscapeDisallowed
 ENUT AllUnitsMustEscapeFlag
 LOAD1 1 ContractorInitialEnemies
+ENUN
+LOAD1 1 SentinelInitialEnemies
 ENUN
 TILECHANGE 0x8
 TILECHANGE 0x6
@@ -188,6 +204,16 @@ ENDA
 ALIGN 4
 TimerWarning:
 Text(ChA1TimerWarningDialogue)
+NoFade
+ENDA
+
+ALIGN 4
+SuperbossesAppear:
+CAMERA_CENTERED [13, 20]
+STAL 30
+LOAD1 1 SuperbossGang
+ENUN
+Text(ChA1SanzOrlandoAppearDialogue)
 NoFade
 ENDA
 
