@@ -255,16 +255,16 @@ _080817FA:		@ NEW CODE BEGINS HERE
 	b NoBreak
 BreakTime:
 	cmp r6, #0xd2	@ is this a normal break via hit, or kill?
-	beq BreakKill	@ if it isn't a hit, branch to kill stuff
+	beq BreakHit	@ if it isn't a kill, branch to hit stuff
 	mov r6, #0x26
 	lsl r6, #4		
-	add r6, #0xE	@ shifts to 0x26E, where I put the break hit sound
+	add r6, #0xE	@ shifts to 0x26E, where I put the break kill sound
 	b BreakDisplay
 
-BreakKill:
+BreakHit:
 	mov r6, #0x26
 	lsl r6, #4	@ shifts to 0x260
-	add r6, #0xF	@ makes r6 0x26F, where I put the break kill sound
+	add r6, #0xF	@ makes r6 0x26F, where I put the break hit sound
 
 BreakDisplay:
 	add r0, r4, r5

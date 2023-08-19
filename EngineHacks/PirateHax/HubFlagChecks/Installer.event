@@ -1,0 +1,6 @@
+#include "HubFlagChecks.lyn.event"
+
+//#define CheckIfHubVisited "ASMC CheckIfHubVisitedASMC"
+//#define CheckIfHubChaptersCompleted "ASMC CheckIfHubChaptersCompletedASMC"
+//#define SetHubChapterFlag(flagId) "SVAL s1 flagId; ASMC SetHubChapterFlagASMC"
+//#define UnsetAllHubChapterFlags "ASMC UnsetAllHubChapterFlagsASMC"

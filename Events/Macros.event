@@ -7,9 +7,20 @@
 #define RefreshSMS "ASMC 0x8026689"
 #define CenterTextbox(textid) "CenterTutorialTextBox; TUTORIALTEXTBOXSTART; TEXTSHOW textid; TEXTEND; REMA"
 #define TutorialYesNoText(textid) "EVBIT_MODIFY 1; CenterTextbox(textid); EVBIT_MODIFY 0"
+#define RemoveAll "REMOVEALL_BLUE; REMOVEALL_GREEN; REMOVEALL_RED"
 
-#define GotoHubChapterIfYes(labelid, chapterid) "SVAL s1 0x1; BNE labelid s1 sC; MNC2 chapterid; LABEL labelid"
-#define GotoHubChapterIfYes(labelid, chapterid, dialogue) "SVAL s1 0x1; BNE labelid s1 sC; Text(dialogue); MNC2 chapterid; LABEL labelid"
+#define GotoHubChapterIfYes(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; SetHubChapterFlagAndGo(labelId, chapterId); LABEL labelId"
+#define GotoHubChapterIfYes(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; Text(dialogue); SetHubChapterFlagAndGo(labelId, chapterId); LABEL labelId"
+
+#define SkipEventIfTileChangeDone(labelId, tileChangeId, eventId) "CALL eventId"
+#define CheckIfHubVisited "ASMC CheckIfHubVisitedASMC"
+#define CheckIfHubChaptersCompleted "ASMC CheckIfHubChaptersCompletedASMC"
+#define BranchIfHubNotVisited(labelId, eventId) "CheckIfHubVisited; BNE labelId s0 sC; CALL eventId; LABEL labelId"
+
+
+#define SetHubChapterFlag(flagId) "SVAL s1 flagId; ASMC SetHubChapterFlagASMC"
+#define UnsetAllHubChapterFlags "ASMC UnsetAllHubChapterFlagsASMC"
+#define SetHubChapterFlagAndGo(flagId, chapterId) "SetHubChapterFlag(flagId); MNC2 chapterId"
 
 // bpat macros
 #define LoadPlayerUnits(unitPtr) "LOAD1 0x0 unitPtr; ENUN"

@@ -1,0 +1,125 @@
+EventPointerTable(Chapter2EventsID, PointerList)
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1
+POIN $0 $0 $0 
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+AREA 0 GotoLuasQuarters [7,4] [7,4]
+AREA 0 GotoPortGreagor [1,0] [3,0]
+AFEV 0 RefreshLua 0
+CauseGameOverIfLordDies
+END_MAIN
+
+GotoLuasQuarters:
+SkipEventIfTileChangeDone(1, 0, ClearChapter2Traps)
+NoFade
+ENDA
+
+GotoPortGreagor:
+SkipEventIfTileChangeDone(1, 0, CheckFirstTimePortGreagor)
+NoFade
+ENDA
+
+CheckFirstTimePortGreagor:
+BranchIfHubNotVisited(1, BeginningSceneFirstTimePortGreagor)
+NoFade
+ENDA
+
+BeginningSceneFirstTimePortGreagor:
+FADI 10
+RemoveAll
+LOMA HubA
+LOAD1 1 LuaInDaHub
+ENUN
+FADU 10
+Text(HubABeginningScene3)
+Text(HubABeginningScene4)
+Text(HubABeginningScene5)
+FADI 10
+LOAD1 1 NewUnits
+ENUN
+GotoPrepScreen
+NoFade
+ENDA
+
+LuaInDaHub:
+UNIT Lua Captain 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+NewUnits:
+UNIT Estelle Troubadour 0 Level(3,Ally,False) [7,5] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Hermenegildo Myrmidon 0 Level(1,Ally,False) [7,6] 0 0 0 0 [IronSword, LightBrand, Vulnerary] NoAI
+UNIT
+
+RefreshLua:
+SVAL s1 0x42
+UNSET_CONDITION Lua
+NoFade
+ENDA
+
+Units1:
+UNIT
+
+Traps1:
+BlueSigil(1,0)
+BlueSigil(2,0)
+BlueSigil(3,0)
+BlueSigil(7,4)
+BlueSigil(5,13)
+BlueSigil(0,17)
+BlueSigil(0,18)
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+ClearChapter2Traps:
+RemoveTrapAtCoords(1,0)
+RemoveTrapAtCoords(2,0)
+RemoveTrapAtCoords(3,0)
+RemoveTrapAtCoords(7,4)
+RemoveTrapAtCoords(5,13)
+RemoveTrapAtCoords(0,17)
+RemoveTrapAtCoords(0,18)
+NoFade
+ENDA
+
+BeginningScene:
+NoFade
+ENDA
+
+EndingScene:
+NoFade
+ENDA
+
+Dunno1: //down here because nothing here is really used
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN

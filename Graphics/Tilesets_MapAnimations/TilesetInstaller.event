@@ -35,6 +35,18 @@
     FF5CaveMapchipConfig:
     #incbin "Dmp/Config/FF5Cave(Wave)_comp.dmp"
 
+    ALIGN 4
+    FF5CaveExpandedObject:
+    #incbin "Dmp/Object/FF5CaveExpanded.dmp"
+
+    ALIGN 4
+    FF5CaveExpandedPalette:
+    #incbin "Dmp/Palette/FF5CaveExpanded_pal.dmp"
+
+    ALIGN 4
+    FF5CaveExpandedMapchipConfig:
+    #incbin "Dmp/Config/pirate_cave_with_boat_comp.dmp"
+
 
     EventPointerTable(FlasubanVillageSkyObjectID,FlasubanVillageSkyObject)
     EventPointerTable(FlasubanVillageSkyPaletteID,FlasubanVillageSkyPalette)
@@ -47,3 +59,8 @@
     EventPointerTable(FF5CaveObjectID,FF5CaveObject)
     EventPointerTable(FF5CavePaletteID,FF5CavePalette)
     EventPointerTable(FF5CaveConfigID,FF5CaveMapchipConfig)
+
+    EventPointerTable(FF5CaveExpandedObjectID, FF5CaveExpandedObject)
+    EventPointerTable(FF5CaveExpandedPaletteID, FF5CaveExpandedPalette)
+    EventPointerTable(FF5CaveExpandedConfigID, FF5CaveExpandedMapchipConfig)
+    

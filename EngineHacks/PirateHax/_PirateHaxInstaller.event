@@ -67,6 +67,8 @@
 #include "ReworkForPrepScreenRightTopImage/Installer.event"
 //7743
 
+#include "HubFlagChecks/Installer.event"
+//Loog
 
 
 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps

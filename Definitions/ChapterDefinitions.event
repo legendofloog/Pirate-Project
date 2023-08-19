@@ -43,6 +43,9 @@
 #define HubA_6MapChangesID 0x23
 #define HubA_6EventsID 0x24
 
+#define Chapter2MapID 0x25
+#define Chapter2MapChangesID 0x26
+#define Chapter2EventsID 0x27
 
 
 //TILESET IDs (START FROM 0x88 when replacing stuff)
@@ -65,3 +68,8 @@
 #define MountainousPaletteID 0x6D
 #define MountainousConfigID 0x6E
 #define MountainousTileAnimationsID 0x5
+
+#define FF5CaveExpandedObjectID 0x94
+#define FF5CaveExpandedPaletteID 0x95
+#define FF5CaveExpandedConfigID 0x96
+#define FF5CaveExpandedTileAnimationsID FF5CaveTileAnimationsID
