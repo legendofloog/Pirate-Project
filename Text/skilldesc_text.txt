@@ -1678,6 +1678,21 @@ spaces after combat.[X]
 Protector: Gain +10 Aid. Increase Def[N]
 and Res by 2 while rescuing an ally.[X]
 
+## SD_Kleptomania
+Kleptomania: After stealing, recover[N]
+all HP and gain +10 avoid for 2 turns.[X]
+
+## SD_Adaptable
+Versatile: Can use the [OpenQuote]Shift"[N]
+command to swap Str with Spd.[N]
+Growths remain the same.[X]
+
+## UM_Shift
+ Shift[X]
+
+## UM_ShiftDesc
+Swap Str with Spd.[X]
+
 ## SD_Hardworking
 Hardworking: For every kill unit gets,[N]
 +1 STR/MAG until end of chapter (max 5).[X]

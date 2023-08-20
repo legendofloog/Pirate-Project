@@ -12,6 +12,7 @@
 #define FlameSword $c
 //#define KillingEdge $d
 #define Cutlass $e
+#define Estoc $d5
 
 //#define LightBrand $10
 
@@ -30,6 +31,7 @@
 //#define Javelin $1c
 //#define Spear $1d
 //#define Axereaver $1e
+#define Harpoon $d6
 
 //AXES
 //#define IronAxe $1f
@@ -45,6 +47,7 @@
 //#define Tomahawk $29
 //#define Swordreaver $2a
 #define BattleAxe $2b
+#define SlimAxe $d7
 
 //BOWS
 #define DeadeyeBow $2c
@@ -102,6 +105,8 @@
 
 // EQUIPS
 #define HideShield $ca
+#define GlassShield $d2
+#define ShoveGlove $d3
 
 //Items
 

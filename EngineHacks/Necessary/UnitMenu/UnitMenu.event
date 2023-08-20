@@ -99,6 +99,9 @@ UnitMenuTable:
 
 	//Capture
 	MenuCommand(UM_Capture, UM_CaptureDesc, NormalText, Capture_Usability, Capture_Effect_Func, $22c31, $22c99)
+
+  //Shift
+  MenuCommand(UM_Shift, UM_ShiftDesc, BlueText, ShiftUsability, ShiftEffect, $22c31, $22c99)
   #endif // COMBAT_ARTS
 
   UM_Staff

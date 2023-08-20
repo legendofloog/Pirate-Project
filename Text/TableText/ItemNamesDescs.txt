@@ -51,6 +51,9 @@ Cutlass[X]
 ## CutlassDesc
 Lua only. Doubles attacks dealt.[X]
 
+## EstocName
+Estoc[X]
+
 //LANCES
 
 ## SaunionName
@@ -74,6 +77,12 @@ Ignores enemy defense.[X]
 ## HorseslayerDesc
 Eff. vs. horses.[X]
 
+## HarpoonName
+Harpoon[X]
+
+## HarpoonDesc
+Eff. vs. horses and fliers.[X]
+
 //AXES
 
 ## BloodaxeName
@@ -96,6 +105,9 @@ Battle Axe[X]
 
 ## BattleAxeDesc
 A metal heap with unparalleled might.[X]
+
+## SlimAxeName
+Slim Axe[X]
 
 //BOWS
 
@@ -258,4 +270,16 @@ Extremely long-ranged artillery.[X]
 Hide Shield[X]
 
 ## HideShieldDesc
-Grants a boost to defense.[X]
+Grants +3 Def.[X]
+
+## GlassShieldName
+Glass Shield[X]
+
+## GlassShieldDesc
+Grants +7 Def/Res but breaks easily.[X]
+
+## ShoveGloveName
+Shove Glove[X]
+
+## ShoveGloveDesc
+Allows the holder to shove units 1 tile.[X]

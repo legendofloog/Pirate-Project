@@ -33,7 +33,8 @@
 
     ALIGN 4
     FF5CaveMapchipConfig:
-    #incbin "Dmp/Config/FF5Cave(Wave)_comp.dmp"
+    //#incbin "Dmp/Config/FF5Cave(Wave)_comp.dmp"
+    #incbin "Dmp/Config/FF5Cave(Wave)_edit_comp.dmp" // Edited mapchip to count barrel bottoms as floor
 
     ALIGN 4
     FF5CaveExpandedObject:

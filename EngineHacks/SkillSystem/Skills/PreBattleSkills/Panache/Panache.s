@@ -32,21 +32,29 @@ ldrb r0,[r0,#2] @range
 cmp r0,#1
 bne End
 
+@store speed in r0
+mov		r1,#0x16
+ldrb	r0,[r4,r1]
+
+@set AS = speed
+mov r1, #0x5E
+strh r0, [r4,r1]
+
 @store magic in r6
-mov		r1,#0x3A
-ldrb	r6,[r4,r1]
+@mov		r1,#0x3A
+@ldrb	r6,[r4,r1]
 
 @increase AS by magic
-mov r1, #0x5E
-ldrh r0, [r4, r1]
-add r0, r6
-strh r0, [r4,r1]
+@mov r1, #0x5E
+@ldrh r0, [r4, r1]
+@add r0, r6
+@strh r0, [r4,r1]
 
 @increase crit by 17
-mov r1, #0x66
-ldrh r0, [r4, r1]
-add r0, #17
-strh r0, [r4,r1]
+@mov r1, #0x66
+@ldrh r0, [r4, r1]
+@add r0, #17
+@strh r0, [r4,r1]
 
 End:
 pop {r4-r7, r15}

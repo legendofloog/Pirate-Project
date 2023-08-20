@@ -75,18 +75,25 @@
 //Protector: Gain +10 Aid. Increase Def and Res by 2 while rescuing an ally. (bpat)
 #define ProtectorID 23
 
+// (bpat)
+#define KleptomaniaID 24
+
+//Adaptable: Can use the "Shift" command to swap Str with Spd. Growths are unaffected. (bpat)
+#define AdaptableID 25
+
+#define ShoveID 26
+
 //Hardworking: For every kill unit gets, +1 STR/MAG until end of chapter (max 5). (Dragz?)
-#define HardworkingID 24
+#define HardworkingID 27
 
 //Well-Rested: When unit isn't deployed for a chapter, +1 MOV. If deployed two maps in a row, -1 MOV (cannot go below base).
-#define WellRestedID 25
+#define WellRestedID 28
 
 //Forest Friend: Unit can walk through Thickets for 2 MOV and Forests for 1 MOV. (Dragz?)
-#define ForestFriendID 26
+#define ForestFriendID 29
 
 //Dogfight: If unit's AS > foe's AS, unit can counter regardless of foe's range. (Dragz?)
-#define DogfightID 27
+#define DogfightID 30
 
 //Equalizer: Unit and allies within 2 tiles add foe's level - their level (cannot go below 0) to their damage. (Dragz)
-#define EqualizerID 28
-
+#define EqualizerID 31

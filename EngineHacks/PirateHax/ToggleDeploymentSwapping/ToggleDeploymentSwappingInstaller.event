@@ -55,6 +55,8 @@ ForcedDeployment(Lua,UnlockedPosition,AllModes,AllChapters)
 ForcedDeployment(Indio,UnlockedPosition,AllModes,HubA_1)
 ForcedDeployment(Ondeh,UnlockedPosition,AllModes,HubA_3)
 ForcedDeployment(Biko,UnlockedPosition,AllModes,HubA_3)
+ForcedDeployment(Matteo,UnlockedPosition,AllModes,HubA_6)
+ForcedDeployment(Suzanne,UnlockedPosition,AllModes,HubA_6)
 EndForcedDeploymentList
 
 DeploymentGroupChapterList:

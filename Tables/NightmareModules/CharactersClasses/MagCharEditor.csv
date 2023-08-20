@@ -18,7 +18,7 @@ None,0,0
 0x10 Biko,0,20
 0x11 AChapterUnit7,0,10
 0x12 AChapterUnit8,2,25
-0x13 AChapterUnit9,5,50
+0x13 Matteo,1,20
 0x14 Suzanne,3,35
 0x15 Tethys,0,5
 0x16 Marisa,1,10
@@ -79,13 +79,13 @@ Murray (Ch 7),2,5
 Tirado (Ch 8),3,15
 Binks (Ch 9A),2,10
 Pablo (Ch 10A),8,50
-Maelduin (Ch 12A),2,10
-Aias (Ch 13A),2,5
-Carlyle (Ch 14A),5,30
+Slicer,1,10
+Dicer,1,5
+Santiago,2,30
 Felipe,0,5
 Incendivis,0,5
 Rebel,0,5
-Gorgon (Ch 18),10,65
+IncendivisHP,0,5
 Riev (Ch 19 +ACY- 20),10,45
 0,0,0
 0,0,0

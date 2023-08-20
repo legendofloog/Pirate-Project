@@ -1053,7 +1053,7 @@
 
 //Shove: Allows unit to push other units one tile away.
 //By StanH
-#define ShoveID 255
+//#define ShoveID 255
 
 //Smite: Allows unit to push other units two tiles away.
 //By StanH

@@ -2,6 +2,7 @@ EventPointerTable(HubAEventsID, PointerList)
 
 // temp flags
 #define SeenHubA1Pitch 0x7
+#define SeenHubA2Pitch 0x8
 
 PointerList:
 POIN TurnBasedEvents
@@ -55,8 +56,15 @@ NoFade
 ENDA
 
 GotoChapter2:
-TutorialYesNoText(HubA2Prompt) 
-GotoHubChapterIfYes(2, HubA_2)
+CHECK_EVENTID SeenHubA2Pitch
+BNE 7 sC s0
+Text(HubA2Pitch)
+LABEL 7
+EVBIT_MODIFY 4
+Text(HubA2Prompt) 
+ENUT SeenHubA1Pitch
+EVBIT_MODIFY 0
+GotoHubChapterIfYes(2, HubA_2, HubA2Accepted)
 NoFade
 ENDA
 
@@ -80,6 +88,8 @@ ENDA
 
 GotoChapter6:
 Text(HubA6Pitch)
+Text(ChA6Pre1)
+Text(ChA6Pre2)
 TutorialYesNoText(HubA6Prompt) 
 GotoHubChapterIfYes(6, HubA_6)
 NoFade

@@ -148,12 +148,20 @@ Biko[X]
 A young man trying to find[N]
 his confidence. Ondeh's brother.[X]
 
+## MatteoName
+Matteo[X]
+
+## MatteoDesc
+Swashbuckler[N]
+An intrepid sellsword skilled with a blade,[N]
+but not as skilled as he thinks he is.[X]
+
 ## SuzanneName
 Suzanne[X]
 
 ## SuzanneDesc
 Gunslinger[N]
-An intrepid mercenary whose talents[N]
+A hotheaded mercenary whose talents[N]
 are only rivaled by her ego.[X]
 
 ## KhazhakName
@@ -270,3 +278,22 @@ R. Reaper[X]
 
 ## LogPirateDesc
  [X]
+
+## SlicerName
+Slicer[X]
+
+## DicerName
+Dicer[X]
+
+## SlicerDesc
+Co-Captain[N]
+Leads a small-time pirate crew with[N]
+his twin. Thinks he's the smart one.[X]
+
+## SantiagoName
+Santiago[X]
+
+## SantiagoDesc
+Commander[N]
+A rebel leader zealously devoted to the[N]
+cause. Respected by his subordinates.[X]

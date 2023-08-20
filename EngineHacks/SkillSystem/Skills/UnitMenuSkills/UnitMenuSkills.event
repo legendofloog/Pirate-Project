@@ -63,3 +63,12 @@ MercyEffect:
 
 #include "CombatArts/CombatArts.event"
 
+ALIGN 4
+ShiftUsability:
+#incbin "Shift/ShiftUsability.dmp"
+POIN SkillTester
+WORD AdaptableID
+
+ALIGN 4
+ShiftEffect:
+#incbin "Shift/ShiftEffect.dmp"

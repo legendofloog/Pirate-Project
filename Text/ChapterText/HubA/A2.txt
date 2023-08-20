@@ -1,0 +1,114 @@
+// Jaime:
+// Age: late 20s
+// Appearence: same hair color as Carmen, long hair that covers one of his eyes,
+// square chin, stubble, aggressive but worried expression, some sort of hat.
+// A young rebel. Aggressive and quick to anger, with strong convictions. However,
+// he's actually a runaway noble and a relative of Carmen. He's trying to hide this, because
+// he doesn't think the rebels will accept him if they knew the truth. Probably have
+// him interact with her a few times if she's alive. His real name is Hector del Rian.
+
+// Leonor:
+// Age: mid 30s
+// Appearence: Muscular, reddish hair, 
+// battered clerical garb, some sort of facial scar.
+// Originally a laborer for hire, she was attacked by a drunk Imperial soldier
+// and became bitter when the Empire wouldn't take action against him. This,
+// combined with universally low pay for difficult manual labor, convinced her
+// to join the rebellion. Despite lacking magical talent, she was trained as a
+// healer, and after a paricularly fatal battle with the Empire in which most of
+// the highest-ranking rebel healers were killed, she rose to a leadership position.
+// Secretly, she's a bit tired of being a prominent rebel, and is looking for new
+// side opportunities so she can disappear for a while.
+
+// Felipe
+// Age: early 30s
+// Appearence: Dark skin, messy hair, tiny moustache, fancy armor
+// An imperial noble who used his social status to become a lieutenant in
+// the imperial army. His confidence in his abilities is greater than
+// his actual abilities, but he does have somewhat absurd luck.
+
+## A2PrePrepsCutscene
+[MidLeft][LoadFelipe][MidRight][LoadLeonor]
+[MidLeft][2LB]
+Leonor Diaz! Rebel scum! You are surrounded![N]
+Surrender now, or be annihilated![AN]
+[MidRight]
+Annihilated? We can beat you Incendivis[N]
+pawns with one hand tied behind our backs![AN]
+[MidLeft]
+Hmph. I see you're not going to listen to[N]
+reason, so you leave me no choice![AN]
+[MidLeft][CloseSpeechSlow][MoveFarFarLeft][ClearFace]
+// This next load should be a generic soldier so I just chose someone random
+[MidLeft][LoadRebel][3LB]
+Uh[Beat] Boss? One of those soldiers has[N]
+a mortar. We're new recruits, and I doubt[N]
+we can face such a powerful weapon.[AN]
+[MidRight]
+If we're captured, we'll be executed at best.[N]
+Better to go out fighting, in my opinion.[N]
+I just hope Jaime arrives with help in time[Beat][AN]
+[X]
+
+## A2JaimeJoins
+[MidLeft][LoadJaime][MidRight][LoadLua]
+[MidLeft][2LB]
+Commander Leonor is somewhere in there[Beat][N]
+You'd better not fail.[AN]
+[MidRight]
+My crew doesn't fail easily.[N]
+Your commander will be in good hands.[AN]
+[MidLeft][3LB]
+Still, I'd like to assist. I think[N]
+that a pegasus rider would be an asset[N]
+to a rescue mission like this.[AN]
+[MidRight][2LB]
+Make sure not to get yourself killed.[N]
+It's hard to pay us when you're dead.[AN]
+[MidLeft]
+I don't like the implication that I'd[N]
+lose, but fine.[AN]
+[X]
+
+## A2LeonorRecruitment
+[MidLeft][LoadLeonor][MidRight][LoadJaime]
+[MidLeft][2LB]
+Jaime! You're here![AN]
+[MidRight][3LB]
+Yeah. I hired some pirates to[N]
+fight off the Imperials, so[N]
+we should be safe.[AN]
+[MidLeft]
+Pirates[Beat] I don't trust their[N]
+kind. They do whatever nets them[N]
+the most money, disregarding[AN]
+morality for their own gain.[N]
+[Beat]Still, I do want to be alive,[N]
+so I guess you're in command here.[AN]
+[MidRight]
+Splendid[Beat] I mean, good![N]
+I won't let you down, Commander Leonor![N]
+(Even though you insulted my hires[Beat])[AN]
+[X]
+
+## A2Village
+[MidLeft][LoadVillager][MidRight][LoadCurrent]
+[MidLeft][3LB]
+What? The Empire's here?[N]
+Damn! I hate those scoundrels![N]
+I was going to give this staff[AN]
+to the rebel Leonor, so could[N]
+you get it to her? I hadn't even[N]
+seen her yet[Beat][AN]
+[X]
+
+## A2FelipeFreaksOut
+[MidLeft][LoadFelipe]
+[MidLeft][3LB]
+D-Damn! The villains are upon[N]
+us! Charge them! Do whatever![N]
+Just don't let them kill me![AN]
+[X]
+
+## A2Ending1
+[X]

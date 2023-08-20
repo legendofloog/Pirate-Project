@@ -15,3 +15,8 @@ ShieldStatBonuses:
 StatBonus(0,0,0,0,0,3,0,0,0,0)  
 // StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB)
 
+ALIGN 4
+GlassShieldStatBonuses:
+StatBonus(0,0,0,0,0,7,7,0,0,0)  
+// StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB)
+

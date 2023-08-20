@@ -107,20 +107,30 @@
 [LoadBiko] = [LoadFace][0x11][0x1]
 [LoadSuzanne] = [LoadFace][0x1b][0x1]
 
+[LoadRedSoldier] = [LoadFace][0x6B][0x1]
+[LoadRedFighter] = [LoadFace][0x6D][0x1]
+
 [LoadMentor] = [LoadFace][0x16][0x1]
 [LoadOrlando] = [LoadMentor]
 [LoadRahel] = [LoadFace][0x17][0x1]
 
 [LoadKhazhak] = [LoadFace][0x31][0x1]
-[LoadSantiago] = [LoadFace][0x31][0x1]
+
 [LoadRochefort] = [LoadFace][0x31][0x1]
+[LoadSantiago] = [LoadFace][0x31][0x1]
+[LoadSlicer] = [LoadFace][0x31][0x1]
+[LoadDicer] = [LoadFace][0x31][0x1]
 [LoadGeraldo] = [LoadFace][0x31][0x1]
+
 [LoadYurena] = [LoadFace][0x31][0x1]
 [LoadSanz] = [LoadFace][0x31][0x1]
 [ilike0x31asourplaceholderportraitidlol] = [LoadFace][0x31][0x1]
+[LoadFelipe] = [LoadFace][0x36][0x1]
 
 [LoadIda] = [LoadFace][0x51][0x1]
 [LoadSailor] = [LoadFace][0x6B][0x1]
+[LoadRebel] = [LoadFace][0x6C][0x1]
+[LoadVillager] = [LoadFace][0x58][0x1]
 
 [Font] = [0x80][0x26]
 [TextPalette] = [0x80][0x27]

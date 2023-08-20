@@ -27,16 +27,82 @@ CauseGameOverIfLordDies
 END_MAIN
 
 Units1:
-LoadUnit(0,0,Lua)
+LoadUnit(4,23,Lua)
 //UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, Mortar] NoAI
-UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, SkillScroll] NoAI
+//UNIT Suzanne Gunner 0 Level(4,Ally,False) [6,23] 0 0 0 0 [Pistol, Blunderbuss, Vulnerary] NoAI
+//UNIT Matteo Mercenary 0 Level(5,Ally,False) [6,23] 0 0 0 0 [Estoc, Harpoon, SlimAxe, Vulnerary] NoAI
+UNIT Matteo Mercenary 0 Level(5,Ally,False) [6,23] 0 0 0 0 [SteelSword, IronSword, Estoc, Vulnerary] NoAI
+UNIT Suzanne Gunner 0 Level(4,Ally,False) [9,23] 0 0 0 0 [Pistol, IronMusket, Blunderbuss, Vulnerary] NoAI
+
+//LoadUnit(9,23)
+LoadUnit(5,24)
+LoadUnit(7,24)
+LoadUnit(8,24)
+LoadUnit(10,24)
+LoadUnit(6,25)
+LoadUnit(7,25)
+LoadUnit(9,25)
 UNIT
 
+#define A6PirateLevel 2
+#define A6RebelLevel 4
+
 EnemyUnits1:
-UNIT Blackheart Fighter 0 Level(3, Enemy, True) [4,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
-UNIT Blackheart Vanguard 0 Level(3, Enemy, True) [5,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
-UNIT Blackheart Warden 0 Level(3, Enemy, True) [6,3] 0 0 0 0 [IronAxe,SkillScroll] BossAI
+// Bosses
+UNIT Santiago Gunner 0 Level(9, Enemy, True) [13,3] 0 0 0 0 [Culverin, Blunderbuss, GlassShield] BossAI
+UNIT Slicer Brigand 0 Level(7, Enemy, True) [7,11] 0 0 0 0 [SteelAxe, Swordreaver] AttackInRangeAI
+UNIT Dicer Mercenary 0 Level(7, Enemy, True) [17,17] 0 0 0 0 [SteelBlade, Lancereaver] AttackInRangeAI
+
+// Left pirates
+UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [6,20] 0 0 0 0 [SteelAxe] PursueWithoutHeedAI
+//UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [7,19] 0 0 0 0 [IronLance] PursueWithoutHeedAI
+UNIT Blackheart Mercenary 0 Level(A6PirateLevel, Enemy, True) [9,20] 0 0 0 0 [IronSword] PursueWithoutHeedAI
+
+//UNIT Blackheart Hunter 0 Level(A6PirateLevel, Enemy, True) [3,17] 0 0 0 0 [IronBow] PursueWithoutHeedAI
+UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [5,16] 0 0 0 0 [IronLance] PursueWithoutHeedAI
+//UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [8,16] 0 0 0 0 [IronAxe] PursueWithoutHeedAI
+UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [8,14] 0 0 0 0 [IronAxe] PursueWithoutHeedAI
+//UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [10,17] 0 0 0 0 [Fire] PursueWithoutHeedAI
+
+//UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [4,12] 0 0 0 0 [Fire] AttackInRangeAI
+UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [1,14] 0 0 0 0 [Fire] PursueWithoutHeedAI
+UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [2,8] 0 0 0 0 [SlimAxe] PursueWithoutHeedAI
 UNIT
+
+EnemyUnits2:
+// Right pirates
+UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [12,22] 0 0 0 0 [IronLance] PursueWithoutHeedAI
+UNIT Blackheart Mercenary 0 Level(A6PirateLevel, Enemy, True) [15,19] 0 0 0 0 [IronSword] PursueWithoutHeedAI
+UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [18,20] 0 0 0 0 [Fire] PursueWithoutHeedAI
+
+UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [19,17] 0 0 0 0 [SlimAxe] PursueWithoutHeedAI
+UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [17,11] 0 0 0 0 [SteelLance] PursueWithoutHeedAI
+UNIT Blackheart Hunter 0 Level(A6PirateLevel, Enemy, True) [20,10] 0 0 0 0 [IronBow] PursueWithoutHeedAI
+
+// Left rebels
+UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [10,17] 0 0 0 0 [Fire] AttackInRangeAI
+
+UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [7,19] 0 0 0 0 [IronLance] AttackInRangeAI
+//UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [4,12] 0 0 0 0 [HandAxe, SteelLance] AttackInRangeAI
+UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [4,12] 0 0 0 0 [Javelin, SlimAxe] AttackInRangeAI
+UNIT Rebel Warden 0 Level(A6RebelLevel, Enemy, True) [10,11] 0 0 0 0 [Harpoon, SteelBlade] AttackInRangeAI
+UNIT
+
+EnemyUnits3:
+//UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [3,14] 0 0 0 0 [Longbow] AttackInRangeAI
+UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [4,7] 0 0 0 0 [SteelBow,MiniBow] AttackInRangeAI
+UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [6,5] 0 0 0 0 [IronKnife,IronDagger] AttackInRangeAI
+
+// Right rebels
+UNIT Rebel Myrmidon 0 Level(A6RebelLevel, Enemy, True) [14,15] 0 0 0 0 [Estoc] AttackInRangeAI
+UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [20,14] 0 0 0 0 [IronMusket] AttackInRangeAI
+
+// Top rebels
+UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [9,6] 0 0 0 0 [Pistol] AttackInRangeAI
+UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [11,9] 0 0 0 0 [SteelAxe] AttackInRangeAI
+UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [12,7] 0 0 0 0 [Elfire] AttackInRangeAI
+UNIT
+
 
 Traps1:
 ENDTRAP
@@ -49,9 +115,12 @@ ALIGN 4
 BeginningScene:
 LoadPlayerUnits(Units1)
 LoadEnemies(EnemyUnits1)
+LoadEnemies(EnemyUnits2)
+LoadEnemies(EnemyUnits3)
 
-SetUnitItemDurability(4, 3, 1, ProtectorID)
-SetUnitItemDurability(Suzanne, 3, ProtectorID)
+//SetUnitItemDurability(4, 3, 1, ProtectorID)
+//SetUnitItemDurability(Suzanne, 3, ProtectorID)
+//SetUnitItemDurability(Santiago, 2, KleptomaniaID)
 
 GotoPrepScreen
 NoFade
