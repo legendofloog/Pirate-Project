@@ -174,5 +174,12 @@ WORD SuppressiveFireID
 POIN NewAuraSkillCheck
 POIN GetUnitsInRange
 
+ALIGN 4
+Equalizer:
+#incbin "Equalizer/Equalizer.dmp"
+POIN SkillTester
+WORD EqualizerID
+POIN NewAuraSkillCheck
+
 #include "ClassTypeSkills/ClassTypeSkills.event"
 
