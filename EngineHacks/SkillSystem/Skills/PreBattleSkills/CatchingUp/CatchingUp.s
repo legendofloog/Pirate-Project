@@ -27,14 +27,14 @@ beq SwapAttackerDefender
 mov r0, #0x5E
 ldrh r1, [r4,r0] @load attacker's AS into r1
 ldrh r2, [r5,r0] @load defender's AS into r2
-add r1, #0x4
-cmp r1, r2 @if we're being doubled, attacker's AS+4 <= defender's AS
+add r1, #0x5
+cmp r1, r2 @if we're being doubled, attacker's AS+5 <= defender's AS
 bgt SwapAttackerDefender @if we're not being doubled, no boost for us
 
-@add amount being doubled by as extra damage
+@add amount above being doubled by as extra damage
 mov r0, #0x5A
 ldrh r3, [r4,r0] @atk
-sub r2, r1 @amount doubled by = defender's AS - (attacker's AS+4)
+sub r2, r1 @amount above doubled by = defender's AS - (attacker's AS+5)
 add r3, r2
 strh r3, [r4,r0]
 
