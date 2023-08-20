@@ -2,7 +2,7 @@
 	#define MODULAR_MMB
 
 	ALIGN 4
-	MESSAGE MMB code begins at CURRENTOFFSET
+	//MESSAGE MMB code begins at CURRENTOFFSET
 /*
 
 Comment out (by typing // before a line's #define) or delete module options you don't want.
@@ -381,6 +381,6 @@ ALIGN 4
 
 #include "../MMBCore.event"
 
-MESSAGE MMB code ends at CURRENTOFFSET
+//MESSAGE MMB code ends at CURRENTOFFSET
 
 #endif // MODULAR_MMB
