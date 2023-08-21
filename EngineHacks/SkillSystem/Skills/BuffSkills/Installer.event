@@ -85,7 +85,7 @@ WORD 4
 
 ALIGN 4 
 TakerMaxBuff_Link: 
-WORD 10 // Won't buff above 10. 
+WORD 5 // Won't buff above 5. 
 
 ALIGN 4 
 TakerSkillsStackable_Link: 
@@ -93,7 +93,7 @@ WORD True
 
 ALIGN 4 
 StrTakerBuffAmount_Link: 
-WORD 4 
+WORD 4
 SklTakerBuffAmount_Link: 
 WORD 4 
 SpdTakerBuffAmount_Link: 
@@ -108,7 +108,8 @@ MagTakerBuffAmount_Link:
 WORD 4 
 MovTakerBuffAmount_Link: 
 WORD 3 
-
+HardworkingBuffAmount_Link:
+WORD 1
 
 
 

@@ -322,4 +322,41 @@ pop {r0}
 bx r0 
 .ltorg 
 
-
+.global Hardworking 
+.type Hardworking, %function 
+Hardworking: 
+push {lr} 
+mov r0, r4 @ unit 
+ldr r1, =HardworkingID @ skill ID 
+sub sp, #12 
+mov r3, sp 
+str r5, [r3, #0]
+ldr r2, =HardworkingBuffAmount_Link
+ldr r2, [r2] 
+str r2, [r3, #4] 
+mov r2, #StrAnim 
+lsl r2, #8 @ 0x100 
+str r2, [r3, #8] 
+ldr r2, =DebuffStatBitOffset_Str @ bit offset 
+ldr r2, [r2] 
+bl PossiblyApplyTaker 
+add sp, #12 
+mov r0, r4 @ unit 
+ldr r1, =HardworkingID @ skill ID 
+sub sp, #12 
+mov r3, sp 
+str r5, [r3, #0]
+ldr r2, =HardworkingBuffAmount_Link
+ldr r2, [r2] 
+str r2, [r3, #4] 
+mov r2, #MagAnim 
+lsl r2, #8 @ 0x100 
+str r2, [r3, #8] 
+ldr r2, =DebuffStatBitOffset_Mag @ bit offset 
+ldr r2, [r2] 
+bl PossiblyApplyTaker 
+add sp, #12 
+End_Hardworking:  
+pop {r0} 
+bx r0 
+.ltorg 
