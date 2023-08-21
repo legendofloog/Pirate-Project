@@ -285,3 +285,14 @@ BombardierSMS:
 ALIGN 4
 BombardierMMS:
 #incbin "Dmp/Griffon Rider Bow {N426}-walk.dmp"
+
+StandingMapSprite(BombMapSprite,MapSprite32x32,BombSMS)
+MovingMapSprite(BombClass, $2055A8, BombMMS)
+
+ALIGN 4
+BombSMS:
+#incbin "Dmp/Crates (U) {Primefusion}-stand.dmp"
+
+ALIGN 4
+BombMMS:
+#incbin "Dmp/Crates (U) {Primefusion}-walk.dmp"

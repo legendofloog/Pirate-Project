@@ -1,0 +1,115 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    gui91_levelup_grp  GUIVoices
+        #define    gui91_levelup_pri  0
+        #define    gui91_levelup_rev  0
+        #define    gui91_levelup_key  0
+
+        // .rodata
+        // gui91_levelup
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+gui91_levelup_0:
+        BYTE   KEYSH   gui91_levelup_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   200/2
+        BYTE           VOICE   8
+        BYTE           VOL     85
+        BYTE           PAN     c_v+8
+        BYTE           N18     As3   v100
+        BYTE   W18
+        BYTE           N06     Dn4
+        BYTE   W09
+        BYTE                   As3
+        BYTE   W09
+        BYTE           N15     Dn4
+        BYTE   W18
+        BYTE           N54     Cn4
+        BYTE   W42
+// 001   ----------------------------------------
+        BYTE   W12
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+gui91_levelup_1:
+        BYTE   KEYSH   gui91_levelup_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   23
+        BYTE           PAN     c_v-8
+        BYTE           VOL     64
+        BYTE           N18     Fn3   v100
+        BYTE   W18
+        BYTE           N06     Gn3
+        BYTE   W09
+        BYTE                   Fn3
+        BYTE   W09
+        BYTE           N15
+        BYTE   W18
+        BYTE           N54     Gn3
+        BYTE   W42
+// 001   ----------------------------------------
+        BYTE   W12
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+gui91_levelup_2:
+        BYTE   KEYSH   gui91_levelup_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   24
+        BYTE           PAN     c_v+16
+        BYTE           VOL     59
+        BYTE           N15     Dn2   v100
+        BYTE   W18
+        BYTE           N12     En2
+        BYTE   W18
+        BYTE           N15     Fn2
+        BYTE   W18
+        BYTE           N54     Cn3
+        BYTE   W42
+// 001   ----------------------------------------
+        BYTE   W12
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+gui91_levelup_3:
+        BYTE   KEYSH   gui91_levelup_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   24
+        BYTE           PAN     c_v-16
+        BYTE           VOL     59
+        BYTE           N15     Fn2   v100
+        BYTE   W18
+        BYTE           N12     Gn2
+        BYTE   W18
+        BYTE           N15     As2
+        BYTE   W18
+        BYTE           N54     Gn2
+        BYTE   W42
+// 001   ----------------------------------------
+        BYTE   W12
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+gui91_levelup:
+        BYTE   4                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   gui91_levelup_pri       // Priority
+        BYTE   gui91_levelup_rev       // Reverb
+
+        POIN2   gui91_levelup_grp      
+
+        POIN2   gui91_levelup_0
+        POIN2   gui91_levelup_1
+        POIN2   gui91_levelup_2
+        POIN2   gui91_levelup_3
+
+        

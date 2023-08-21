@@ -45,6 +45,7 @@ void SetHubChapterFlagASMC(){
     else{
 
     }
+    UnsetEventId(0xA0); //unset this bc we are no longer in a hub
 }
 
 void UnsetAllHubChapterFlagsASMC(){
@@ -54,4 +55,14 @@ void UnsetAllHubChapterFlagsASMC(){
     UnsetEventId(0x8d);
     UnsetEventId(0x8e);
     UnsetEventId(0x8f);
+}
+
+
+int GetLuaMovement(Unit* unit){
+    if (CheckEventId(0xA0)){ //the "in a hub" flag
+        return 15; //max move
+    }
+    else{
+        return unit->move;
+    }
 }

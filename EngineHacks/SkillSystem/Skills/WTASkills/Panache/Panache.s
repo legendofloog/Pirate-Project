@@ -1,6 +1,8 @@
 .thumb
 .equ PanacheID, SkillTester+4
 
+.equ gBattleData, 0x203A4D4
+
 push {r4-r7, lr}
 mov r4, r0 @attacker
 mov r5, r1 @defender
@@ -15,14 +17,14 @@ cmp r0, #0x0
 beq End
 
 @make sure we're in combat (or combat prep)
-ldrb	r3, =gBattleData
+ldr	r3, =gBattleData
 ldrb	r3, [r3]
 cmp		r3, #4
 beq		End
 
 @check range
 ldr r0,=#0x203A4D4 @battle stats
-ldrb r0,[r0,#2] @range
+ldrh r0,[r0,#2] @range
 cmp r0,#1
 bne End
 

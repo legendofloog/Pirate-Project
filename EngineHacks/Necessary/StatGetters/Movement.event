@@ -2,11 +2,14 @@
 #define MODULAR_GETTER_MOVEMENT_EVENT
 
 #include "_Common.event"
+
+#define rGetLuaMovement "rCallExternal(GetLuaMovement^1)"
+
 ALIGN 4
 pMovModifiers: // Movement
 	POIN prAddUnitBaseMov prAddUnitMovBonus prGetItemMovBonus 
 	POIN prDebuffMov 
-	POIN prItemPassiveMov prRallyMov prSkillCelerity prSkillPoise prArmorMarchCheck prEquipmentMov
+	POIN prItemPassiveMov prRallyMov prSkillCelerity prSkillPoise prArmorMarchCheck prEquipmentMov prLuaHubMovement
 	#ifdef STAIRS_ASM
 	POIN StairsMoveDebuff
 	#endif
@@ -43,6 +46,10 @@ prNullifyIfGuardAI:
 prNullifyIfFreeze:
 	rIfUnitHasStatus(0x9)
 		rConstant(0)
+
+prLuaHubMovement:
+	rIfUnitHasSkill(SuppressiveFireID)
+		rGetLuaMovement
 
 ALIGN 4
 prAddEquipMov:

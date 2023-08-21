@@ -204,6 +204,21 @@ Revolutionary[N]
 They fight against the empire[N]
 to secure their freedom.[X]
 
+## BombName
+Bomb[X]
+
+## BombDesc
+Explosive Device[N]
+With a lit fuse, it threatens all[N]
+in the vicinity with a fiery grave![X]
+
+## BombClassName
+Explosive[X]
+
+## BombClassDesc
+No armor can withstand its power.[N]
+Disarm it if you hope to survive.[X]
+
 ## BuzuName
 Buzu[X]
 

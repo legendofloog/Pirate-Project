@@ -1,6 +1,13 @@
 ## ChA6Title
 Chapter A-6[X]
 
+## ChA6GoalWindow
+Rout[X]
+
+## ChA6StatusObjective
+Defeat all enemies,[N]
+and disarm all bombs.[X]
+
 ## ChA6Pre1
 [FL][LoadRedFighter][L][LoadRedSoldier][MR][LoadSantiago]
 [FL]
@@ -135,7 +142,22 @@ filled with lead![AN]
 [2LB][L]
 Bring it on, girl![N]
 I've been itching for a good fight.[AN]
+[ClearFace][R][ClearFace]
+[3LB][R][LoadMatteo]
+Don't get started without me![AN]
+You don't look like much, think[N]
+you can keep up with a swordsman[N]
+of my caliber?[AN]
+[2LB][FL][MoveLeft]
+Is that a challenge? Lucky for you, you[N]
+won't live long enough to regret it![AN]
+[ClearFace][R][ClearFace]
 [FR]
 Oh no... Looks like we're going with[N]
 plan A, crew! To arms![AN]
+[X]
+
+## ChA6BombExplodes
+[L][LoadLua]
+Oh no a bomb exploded![AN]
 [X]

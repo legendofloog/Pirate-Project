@@ -94,7 +94,8 @@
 //MAGE/FLIER
 #define Seraph 0x8F
 
-
+//SPECIAL
+#define BombClass 0x91
 
 
 //STANDING MAP SPRITES
@@ -120,3 +121,5 @@
 #define DreadnoughtMapSprite 0x7E
 #define SeraphMapSprite 0x7F
 #define BombardierMapSprite 0x80
+
+#define BombMapSprite 0x6a

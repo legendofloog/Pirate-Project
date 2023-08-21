@@ -33,18 +33,8 @@ WORD 0
 SwordEffectiveness:
 SetWeaponEffectiveness(SwordType, 6)
 WORD 0
-MonsterEffectiveness:
-SetWeaponEffectiveness(MonsterType, 6)
-WORD 0
-SacredWeaponEffectiveness:
-SetWeaponEffectiveness(MonsterType, 4)
-WORD 0
-FlierAndMonster1: //Beacon bow
-SetWeaponEffectiveness(FlierType|MonsterType, 6)
-WORD 0
-FlierAndMonster2: //Nidhogg
-SetWeaponEffectiveness(FlierType, 6)
-SetWeaponEffectiveness(MonsterType, 4)
+MageEffectiveness:
+SetWeaponEffectiveness(MageType, 6)
 WORD 0
 BeastEffectiveness:
 SetWeaponEffectiveness(FlierType|HorseType, 6)

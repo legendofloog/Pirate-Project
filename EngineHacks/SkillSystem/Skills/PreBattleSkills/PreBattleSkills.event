@@ -414,6 +414,12 @@ PanachePreBattle:
 POIN SkillTester
 WORD PanacheID
 
+ALIGN 4
+FusePreBattle:
+#incbin "Fuse/Fuse.dmp"
+POIN SkillTester
+WORD FuseID
+
 
 #ifdef MODULAR_PRE_BATTLE_SKILLS
 	ALIGN 4

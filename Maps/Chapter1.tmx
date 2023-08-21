@@ -12,7 +12,7 @@
    <property name="MapChangesID" value="Chapter1MapChangesID"/>
    <property name="MapID" value="Chapter1MapID"/>
    <property name="ObjectType" value="FlasubanVillageSkyObjectID"/>
-   <property name="PaletteID" value="FlasubanVillageSkyPaletteID"/>
+   <property name="PaletteID" value="FlasubanVillageOurplePaletteID"/>
    <property name="TileConfig" value="FlasubanVillageSkyConfigID"/>
   </properties>
   <data encoding="csv">

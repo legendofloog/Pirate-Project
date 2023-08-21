@@ -45,6 +45,7 @@ POIN AxefaithHit
 POIN StancesASM
 POIN AirRaidSkillCheck
 POIN StudiousBlowAtkBonus
+POIN FusePreBattle // This needs to happen after any hit modifiers
 #ifdef ENABLE_GBA_LETHALITY
 POIN LethalitySkill 
 #else

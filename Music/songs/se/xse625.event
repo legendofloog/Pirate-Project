@@ -1,0 +1,113 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    xse625_grp  GUIVoices
+        #define    xse625_pri  0
+        #define    xse625_rev  0
+        #define    xse625_key  0
+
+        // .rodata
+        // xse625
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+xse625_0:
+        BYTE   KEYSH   xse625_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   25
+        BYTE           VOL     72
+        BYTE           N11     An2   v100
+        BYTE   W12
+        BYTE           VOL     63
+        BYTE           N23     An2   v048
+        BYTE   W24
+        BYTE           VOL     36
+        BYTE           PAN     c_v+10
+        BYTE           VOICE   26
+        BYTE           N03     Ds3   v080
+        BYTE   W03
+        BYTE                   Fs3   v100
+        BYTE   W03
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+xse625_1:
+        BYTE   KEYSH   xse625_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   21
+        BYTE           PAN     c_v+8
+        BYTE           VOL     48
+        BYTE           BEND    c_v+63
+        BYTE           N07     Gs6   v100
+        BYTE   W03
+        BYTE           BEND    c_v+38
+        BYTE   W03
+        BYTE           VOL     39
+        BYTE           BEND    c_v+0
+        BYTE   W03
+        BYTE           PAN     c_v-8
+        BYTE           VOL     36
+        BYTE           BEND    c_v+63
+        BYTE           N07
+        BYTE   W03
+        BYTE           BEND    c_v+38
+        BYTE   W03
+        BYTE           VOL     30
+        BYTE           BEND    c_v+0
+        BYTE   W03
+        BYTE           PAN     c_v+16
+        BYTE           VOL     27
+        BYTE           BEND    c_v+63
+        BYTE           N07
+        BYTE   W03
+        BYTE           BEND    c_v+38
+        BYTE   W03
+        BYTE           VOL     24
+        BYTE           BEND    c_v+0
+        BYTE   W03
+        BYTE           PAN     c_v-16
+        BYTE           VOL     21
+        BYTE           BEND    c_v+63
+        BYTE           N07
+        BYTE   W03
+        BYTE           BEND    c_v+38
+        BYTE   W03
+        BYTE           VOL     18
+        BYTE           BEND    c_v+0
+        BYTE   W03
+        BYTE           VOL     12
+        BYTE   W06
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+xse625_2:
+        BYTE   KEYSH   xse625_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   31
+        BYTE           VOL     124
+        BYTE           N36     Cn3   v127   gtp1
+        BYTE   W12
+        BYTE           VOL     94
+        BYTE   W30
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+xse625:
+        BYTE   3                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   xse625_pri              // Priority
+        BYTE   xse625_rev              // Reverb
+
+        POIN2   xse625_grp             
+
+        POIN2   xse625_0
+        POIN2   xse625_1
+        POIN2   xse625_2
+
+        

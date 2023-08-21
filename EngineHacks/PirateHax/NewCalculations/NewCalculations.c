@@ -604,3 +604,32 @@ int GetBattleUnitUpdatedWeaponExp(BattleUnit* battleUnit) {
 
     return result;
 }
+
+int CanUnitUseWeapon(struct Unit* unit, int item) {
+    if (item == 0){
+		return FALSE;
+	}
+
+    if (!(GetItemAttributes(item) & IA_WEAPON))
+        return FALSE;
+
+    if (GetItemAttributes(item) & IA_LOCK_ANY) {
+        // Check for item locks
+
+        if ((GetItemAttributes(item) & IA_LOCK_1) && !(UNIT_CATTRIBUTES(unit) & CA_LOCK_1))
+            return FALSE;
+
+        if (GetItemAttributes(item) & IA_UNUSABLE)
+            if (!(IsItemUnsealedForUnit(unit, item)))
+                return FALSE;
+    }
+
+    if ((unit->statusIndex == UNIT_STATUS_SILENCED) && (GetItemAttributes(item) & IA_MAGIC)){
+		return FALSE;
+	}
+        
+    int wRank = GetItemRequiredExp(item);
+    int uRank = (unit->ranks[GetItemType(item)]);
+
+    return (uRank >= wRank) ? TRUE : FALSE;
+}

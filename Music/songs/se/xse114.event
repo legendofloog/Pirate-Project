@@ -1,0 +1,54 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    xse114_grp  GUIVoices
+        #define    xse114_pri  0
+        #define    xse114_rev  0
+        #define    xse114_key  0
+
+        // .rodata
+        // xse114
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+xse114_0:
+        BYTE   KEYSH   xse114_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   17
+        BYTE           VOL     80
+        BYTE           N01     Cs3   v127
+        BYTE   W02
+        BYTE                   Gs3
+        BYTE   W02
+        BYTE                   An3
+        BYTE   W02
+        BYTE                   Dn3
+        BYTE   W02
+        BYTE                   An3
+        BYTE   W02
+        BYTE                   As3
+        BYTE   W02
+        BYTE                   Ds3
+        BYTE   W02
+        BYTE                   As3
+        BYTE   W02
+        BYTE                   Bn3
+        BYTE   W01
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+xse114:
+        BYTE   1                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   xse114_pri              // Priority
+        BYTE   xse114_rev              // Reverb
+
+        POIN2   xse114_grp             
+
+        POIN2   xse114_0
+
+        

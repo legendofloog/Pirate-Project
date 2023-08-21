@@ -1,0 +1,122 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    xse121_grp  GUIVoices
+        #define    xse121_pri  0
+        #define    xse121_rev  0
+        #define    xse121_key  0
+
+        // .rodata
+        // xse121
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+xse121_0:
+        BYTE   KEYSH   xse121_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   3
+        BYTE           VOL     16
+        BYTE           BENDR   18
+        BYTE           BEND    c_v+63
+        BYTE           N20     Gn2   v127
+        BYTE   W04
+        BYTE           VOL     24
+        BYTE           BEND    c_v+62
+        BYTE   W01
+        BYTE                   c_v+61
+        BYTE   W01
+        BYTE                   c_v+60
+        BYTE   W01
+        BYTE                   c_v+59
+        BYTE   W01
+        BYTE           VOL     32
+        BYTE           BEND    c_v+58
+        BYTE   W01
+        BYTE                   c_v+56
+        BYTE   W01
+        BYTE                   c_v+54
+        BYTE   W01
+        BYTE                   c_v+53
+        BYTE   W01
+        BYTE           VOL     40
+        BYTE           BEND    c_v+51
+        BYTE   W01
+        BYTE                   c_v+47
+        BYTE   W01
+        BYTE                   c_v+43
+        BYTE   W01
+        BYTE                   c_v+37
+        BYTE   W01
+        BYTE           VOL     48
+        BYTE           BEND    c_v+29
+        BYTE   W01
+        BYTE                   c_v+21
+        BYTE   W01
+        BYTE                   c_v+11
+        BYTE   W01
+        BYTE                   c_v+0
+        BYTE   W01
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+xse121_1:
+        BYTE   KEYSH   xse121_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   15
+        BYTE           VOL     127
+        BYTE           BENDR   18
+        BYTE           BEND    c_v+62
+        BYTE           N20     Gn2   v127
+        BYTE   W04
+        BYTE           BEND    c_v+61
+        BYTE   W01
+        BYTE                   c_v+60
+        BYTE   W01
+        BYTE                   c_v+59
+        BYTE   W01
+        BYTE                   c_v+58
+        BYTE   W01
+        BYTE                   c_v+57
+        BYTE   W01
+        BYTE                   c_v+55
+        BYTE   W01
+        BYTE                   c_v+53
+        BYTE   W01
+        BYTE                   c_v+52
+        BYTE   W01
+        BYTE                   c_v+50
+        BYTE   W01
+        BYTE                   c_v+46
+        BYTE   W01
+        BYTE                   c_v+42
+        BYTE   W01
+        BYTE                   c_v+36
+        BYTE   W01
+        BYTE                   c_v+28
+        BYTE   W01
+        BYTE                   c_v+20
+        BYTE   W01
+        BYTE                   c_v+10
+        BYTE   W01
+        BYTE                   c_v-1
+        BYTE   W01
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+xse121:
+        BYTE   2                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   xse121_pri              // Priority
+        BYTE   xse121_rev              // Reverb
+
+        POIN2   xse121_grp             
+
+        POIN2   xse121_0
+        POIN2   xse121_1
+
+        

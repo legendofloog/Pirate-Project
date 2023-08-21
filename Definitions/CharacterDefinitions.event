@@ -69,3 +69,5 @@
 #define Slicer 0x50
 #define Dicer 0x51
 #define Santiago 0x52
+
+#define Bomb 0x57

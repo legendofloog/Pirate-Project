@@ -97,3 +97,5 @@
 
 //Equalizer: Unit and allies within 2 tiles add foe's level - their level (cannot go below 0) to their damage. (Dragz)
 #define EqualizerID 31
+
+#define FuseID 32

@@ -13,28 +13,228 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0, LeftThiefEvent, 6)
+TurnEventPlayer(0, RightThiefEvent, 7)
+
+TurnEventEnemy(0, Turn1EP, 1)
+TurnEventEnemy(0, Turn2EP, 2)
+TurnEventEnemy(0, Turn3EP, 3)
+TurnEventEnemy(0, Turn4EP, 4)
+TurnEventEnemy(0, Turn5EP, 5)
+TurnEventEnemy(0, Turn6EP, 6)
+TurnEventEnemy(0, Turn7EP, 7)
+TurnEventEnemy(0, Turn8EP, 8)
+TurnEventEnemy(0, Turn9EP, 9)
+TurnEventEnemy(0, Turn10EP, 10)
+TurnEventEnemy(0, Turn11EP, 11)
+TurnEventEnemy(0, Turn12EP, 12)
 END_MAIN
+
+#define Bomb1Timer 3
+#define Bomb2Timer 6
+#define Bomb3Timer 4
+#define Bomb4Timer 5
+#define Bomb5Timer 11
+#define Bomb6Timer 9
+#define Bomb7Timer 6
+#define Bomb8Timer 8
+
+BombExplodes:
+ENUT 0x65
+Text(ChA6BombExplodes)
+CALL 0x592104
+NoFade
+ENDA
+
+Turn1EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+1,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+NoFade
+ENDA
+
+Turn2EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+2,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+NoFade
+ENDA
+
+Turn3EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+3,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+NoFade
+ENDA
+
+Turn4EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem) // Explode!
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+4,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+CHECK_AT [3,16]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+Turn5EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+5,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+NoFade
+ENDA
+
+Turn6EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem) // Explode!
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+6,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+CHECK_AT [11,14]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+Turn7EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer+7,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem) // Explode!
+CHECK_AT [21,16]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+Turn8EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+8,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+8,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+8,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+8,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+8,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+NoFade
+ENDA
+
+Turn9EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+9,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer+9,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem) // Explode!
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+9,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+9,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer+9,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem) // Explode!
+CHECK_AT [5,8]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+CHECK_AT [14,12]
+SMOV s0 Bomb
+BEQ 2 s0 sC
+CALL BombExplodes
+LABEL 2
+NoFade
+ENDA
+
+Turn10EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+10,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+10,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer+10,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem) // Explode!
+CHECK_AT [19,6]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+Turn11EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+11,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer+11,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem) // Explode!
+CHECK_AT [12,10]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+Turn12EP:
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer+12,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem) // Explode!
+CHECK_AT [13,2]
+SMOV s0 Bomb
+BEQ 1 s0 sC
+CALL BombExplodes
+LABEL 1
+NoFade
+ENDA
+
+LeftThiefEvent:
+SpawnReinforcements(LeftThiefUnits)
+NoFade
+ENDA
+
+RightThiefEvent:
+SpawnReinforcements(RightThiefUnits)
+NoFade
+ENDA
 
 CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
+DurabilityChest(SkillScroll,ProtectorID,11,3)
+DurabilityChest(SkillScroll,KleptomaniaID,15,3)
+Chest(ShoveGlove,18,12)
 END_MAIN
 
 MiscBasedEvents:
-DefeatBoss(EndingScene)
+DefeatAll(EndingScene)
 CauseGameOverIfLordDies
 END_MAIN
 
 Units1:
 LoadUnit(4,23,Lua)
-//UNIT Suzanne Gunner 0 Level(3,Ally,False) [1,1] 0 0 0 0 [Pistol, Culverin, Blunderbuss, Mortar] NoAI
-//UNIT Suzanne Gunner 0 Level(4,Ally,False) [6,23] 0 0 0 0 [Pistol, Blunderbuss, Vulnerary] NoAI
-//UNIT Matteo Mercenary 0 Level(5,Ally,False) [6,23] 0 0 0 0 [Estoc, Harpoon, SlimAxe, Vulnerary] NoAI
 UNIT Matteo Mercenary 0 Level(5,Ally,False) [6,23] 0 0 0 0 [SteelSword, IronSword, Estoc, Vulnerary] NoAI
 UNIT Suzanne Gunner 0 Level(4,Ally,False) [9,23] 0 0 0 0 [Pistol, IronMusket, Blunderbuss, Vulnerary] NoAI
-
-//LoadUnit(9,23)
 LoadUnit(5,24)
 LoadUnit(7,24)
 LoadUnit(8,24)
@@ -47,64 +247,87 @@ UNIT
 #define A6PirateLevel 2
 #define A6RebelLevel 4
 
-EnemyUnits1:
+EnemyUnitsBosses:
 // Bosses
-UNIT Santiago Gunner 0 Level(9, Enemy, True) [13,3] 0 0 0 0 [Culverin, Blunderbuss, GlassShield] BossAI
-UNIT Slicer Brigand 0 Level(7, Enemy, True) [7,11] 0 0 0 0 [SteelAxe, Swordreaver] AttackInRangeAI
-UNIT Dicer Mercenary 0 Level(7, Enemy, True) [17,17] 0 0 0 0 [SteelBlade, Lancereaver] AttackInRangeAI
+UNIT Santiago Gunner 0 Level(8, Enemy, True) [13,3] 0 0 0 0 [Culverin, Blunderbuss, GlassShield] BossAI
+UNIT Slicer Mercenary 0 Level(6, Enemy, True) [18,14] 0 0 0 0 [SteelBlade, Lancereaver] AttackInRangeAI
+UNIT Dicer Thief 0 Level(6, Enemy, True) [7,9] 0 0 0 0 [SilverDagger] AttackInRangeAI
+UNIT
 
+EnemyUnits1:
 // Left pirates
-UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [6,20] 0 0 0 0 [SteelAxe] PursueWithoutHeedAI
-//UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [7,19] 0 0 0 0 [IronLance] PursueWithoutHeedAI
-UNIT Blackheart Mercenary 0 Level(A6PirateLevel, Enemy, True) [9,20] 0 0 0 0 [IronSword] PursueWithoutHeedAI
+UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [6,19] 0 0 0 0 [IronAxe] PursueWithoutHeedAI
 
-//UNIT Blackheart Hunter 0 Level(A6PirateLevel, Enemy, True) [3,17] 0 0 0 0 [IronBow] PursueWithoutHeedAI
 UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [5,16] 0 0 0 0 [IronLance] PursueWithoutHeedAI
-//UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [8,16] 0 0 0 0 [IronAxe] PursueWithoutHeedAI
 UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [8,14] 0 0 0 0 [IronAxe] PursueWithoutHeedAI
-//UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [10,17] 0 0 0 0 [Fire] PursueWithoutHeedAI
 
-//UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [4,12] 0 0 0 0 [Fire] AttackInRangeAI
 UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [1,14] 0 0 0 0 [Fire] PursueWithoutHeedAI
 UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [2,8] 0 0 0 0 [SlimAxe] PursueWithoutHeedAI
 UNIT
 
 EnemyUnits2:
 // Right pirates
-UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [12,22] 0 0 0 0 [IronLance] PursueWithoutHeedAI
-UNIT Blackheart Mercenary 0 Level(A6PirateLevel, Enemy, True) [15,19] 0 0 0 0 [IronSword] PursueWithoutHeedAI
-UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [18,20] 0 0 0 0 [Fire] PursueWithoutHeedAI
+UNIT Blackheart Shaman 0 Level(A6PirateLevel, Enemy, True) [12,21] 0 0 0 0 [Surge] PursueWithoutHeedAI
+UNIT Blackheart Mercenary 0 Level(A6PirateLevel, Enemy, True) [16,18] 0 0 0 0 [IronSword] PursueWithoutHeedAI
 
 UNIT Blackheart Brigand 0 Level(A6PirateLevel, Enemy, True) [19,17] 0 0 0 0 [SlimAxe] PursueWithoutHeedAI
-UNIT Blackheart Deserter 0 Level(A6PirateLevel, Enemy, True) [17,11] 0 0 0 0 [SteelLance] PursueWithoutHeedAI
-UNIT Blackheart Hunter 0 Level(A6PirateLevel, Enemy, True) [20,10] 0 0 0 0 [IronBow] PursueWithoutHeedAI
 
 // Left rebels
-UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [10,17] 0 0 0 0 [Fire] AttackInRangeAI
+UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [9,20] 0 0 0 0 [Fire] AttackInRangeAI
+UNIT Rebel Myrmidon 0 Level(A6RebelLevel, Enemy, True) [10,17] 0 0 0 0 [IronSword] AttackInRangeAI
+UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [11,15] 0 0 0 0 [SteelDagger] AttackInRangeAI
 
-UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [7,19] 0 0 0 0 [IronLance] AttackInRangeAI
-//UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [4,12] 0 0 0 0 [HandAxe, SteelLance] AttackInRangeAI
 UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [4,12] 0 0 0 0 [Javelin, SlimAxe] AttackInRangeAI
 UNIT Rebel Warden 0 Level(A6RebelLevel, Enemy, True) [10,11] 0 0 0 0 [Harpoon, SteelBlade] AttackInRangeAI
+
+UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [4,7] 0 0 0 0 [SteelBow,MiniBow] AttackInRangeAI
+UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [6,5] 0 0 0 0 [IronKnife,IronDagger] AttackInRangeAI
 UNIT
 
 EnemyUnits3:
-//UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [3,14] 0 0 0 0 [Longbow] AttackInRangeAI
-UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [4,7] 0 0 0 0 [SteelBow,MiniBow] AttackInRangeAI
-UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [6,5] 0 0 0 0 [IronKnife,IronDagger] AttackInRangeAI
-
 // Right rebels
-UNIT Rebel Myrmidon 0 Level(A6RebelLevel, Enemy, True) [14,15] 0 0 0 0 [Estoc] AttackInRangeAI
+UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [14,22] 0 0 0 0 [IronLance] AttackInRangeAI
+
+UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [19,19] 0 0 0 0 [Fire] AttackInRangeAI
+UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [14,15] 0 0 0 0 [IronAxe] AttackInRangeAI
 UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [20,14] 0 0 0 0 [IronMusket] AttackInRangeAI
 
+UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [18,9] 0 0 0 0 [IronLance] AttackInRangeAI
+
 // Top rebels
+UNIT Rebel Myrmidon 0 Level(A6RebelLevel, Enemy, True) [17,8] 0 0 0 0 [Estoc] AttackInRangeAI
+UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [19,7] 0 0 0 0 [SteelKnife] AttackInRangeAI
+
 UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [9,6] 0 0 0 0 [Pistol] AttackInRangeAI
 UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [11,9] 0 0 0 0 [SteelAxe] AttackInRangeAI
-UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [12,7] 0 0 0 0 [Elfire] AttackInRangeAI
+
+UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [13,6] 0 0 0 0 [SteelBow] AttackInRangeAI
+UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [11,4] 0 0 0 0 [HandAxe,IronLance] AttackInRangeAI
+UNIT Rebel Warden 0 Level(A6RebelLevel, Enemy, True) [15,4] 0 0 0 0 [LightBrand,IronLance] AttackInRangeAI
+UNIT
+
+EnemyUnitsBombs:
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [13,2] 0 0 0 0 [0x0] NoAI // 1hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [5,8] 0 0 0 0 [0x0] NoAI // 3hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [12,10] 0 0 0 0 [0x0] NoAI // 2hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [19,6] 0 0 0 0 [0x0] NoAI // 3hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [3,16] 0 0 0 0 [0x0] NoAI // 6hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [11,14] 0 0 0 0 [0x0] NoAI // 5hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [14,12] 0 0 0 0 [0x0] NoAI // 5hp
+UNIT Bomb BombClass 0 Level(1, Enemy, True) [21,16] 0 0 0 0 [0x0] NoAI // 4hp
+UNIT
+
+LeftThiefUnits:
+UNIT Blackheart Thief 0 Level(2, Enemy, True) [0,15] 0 0 0 0 [IronKnife, ChestKey] ThiefAI
+UNIT
+
+RightThiefUnits:
+UNIT Blackheart Thief 0 Level(2, Enemy, True) [21,11] 0 0 0 0 [IronKnife, ChestKey, ChestKey] ThiefAI
 UNIT
 
 
 Traps1:
+RedSigil(17,3)
 ENDTRAP
 ALIGN 4
 
@@ -114,13 +337,29 @@ ALIGN 4
 
 BeginningScene:
 LoadPlayerUnits(Units1)
+LoadEnemies(EnemyUnitsBosses)
+
 LoadEnemies(EnemyUnits1)
 LoadEnemies(EnemyUnits2)
 LoadEnemies(EnemyUnits3)
 
-//SetUnitItemDurability(4, 3, 1, ProtectorID)
-//SetUnitItemDurability(Suzanne, 3, ProtectorID)
-//SetUnitItemDurability(Santiago, 2, KleptomaniaID)
+LoadEnemies(EnemyUnitsBombs)
+
+SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
+SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+
+SetBackground(0x28)
+Text(ChA6Pre1)
+ClearBackground
+SetBackground(0x34)
+Text(ChA6Pre2)
+ClearBackground
 
 GotoPrepScreen
 NoFade

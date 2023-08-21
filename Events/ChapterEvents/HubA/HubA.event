@@ -3,6 +3,19 @@ EventPointerTable(HubAEventsID, PointerList)
 // temp flags
 #define SeenHubA1Pitch 0x7
 #define SeenHubA2Pitch 0x8
+#define SeenHubA6Pitch 0xc
+#define MainRoomToOtherRooms 30
+#define MainRoomToPort 31
+#define TreasureRoomToMainRoom 32
+#define PortToDocks 33
+#define PortToOtherAreas 34
+#define DocksToPort 35
+#define PortToBase 36
+//global flags
+#define WentToPortGreagor 0x92
+#define WentToPortGreagorDocks 0x93
+#define WentToBaseAgain 0x94
+#define CameBackFromDocks 0x95
 
 PointerList:
 POIN TurnBasedEvents
@@ -26,15 +39,117 @@ LocationBasedEvents:
 END_MAIN
 
 MiscBasedEvents:
-AREA 0 GotoChapter1 [2, 3] [2, 3]
-AREA 0 GotoChapter2 [7, 3] [7, 3]
-AREA 0 GotoChapter3 [12, 3] [12, 3]
-AREA 0 GotoChapter4 [2, 8] [2, 8]
-AREA 0 GotoChapter5 [7, 8] [7, 8]
-AREA 0 GotoChapter6 [12, 8] [12, 8]
+AREA WentToPortGreagorDocks PortGreagorDocksFirstTime [29,15] [29,16]
+AREA PortToDocks PortGreagorDocks [29,15] [29,16]
+
+AREA CameBackFromDocks CameBackFromDocksFirstTime [0,13] [0,14]
+AREA DocksToPort GotoPortFromDocks [0,13] [0,14]
+
+AREA WentToBaseAgain BackToLuaBaseFirstTime [20,4] [21,4]
+AREA PortToBase BackToLuaBase [20,4] [21,4]
+
+AREA 0 GotoChapter1 [12, 5] [12, 5]
+AREA 0 GotoChapter2 [12, 9] [12, 9]
+AREA 0 GotoChapter3 [14, 9] [14, 9]
+AREA 0 GotoChapter4 [18, 9] [18, 9]
+AREA 0 GotoChapter5 [20, 9] [20, 9]
+AREA 0 GotoChapter6 [20, 13] [20, 13]
 AFEV 0 RefreshLua 0
 CauseGameOverIfLordDies
 END_MAIN
+
+PortGreagorDocksFirstTime:
+FADI 10
+SET_ACTIVE 0
+RemoveAll
+TILECHANGE 0
+CALL ClearHubATraps
+LoadPlayerUnits(LuaAtDaDocks)
+CALL AddDockTraps
+ENUF TreasureRoomToMainRoom
+CAMERA_CENTERED Lua
+FADU 10
+Text(HubABeginningScene4)
+Text(HubABeginningScene5)
+ENUT DocksToPort
+ENUF CameBackFromDocks
+NoFade
+ENDA
+
+PortGreagorDocks:
+FADI 10
+SET_ACTIVE 0
+RemoveAll
+TILECHANGE 0
+CALL ClearHubATraps
+LoadPlayerUnits(LuaAtDaDocks)
+CALL AddDockTraps
+ENUF TreasureRoomToMainRoom
+CAMERA_CENTERED Lua
+FADU 10
+NoFade
+ENDA
+
+LuaAtDaDocks:
+UNIT Lua Captain 0 Level(10,Ally,False) [0,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+CameBackFromDocksFirstTime:
+FADI 10
+SET_ACTIVE 0
+RemoveAll
+TILEREVERT 0
+CALL ClearDockTraps
+LoadPlayerUnits(LuaBackFromDaDocks)
+CALL AddHubATraps
+ENUF TreasureRoomToMainRoom
+CAMERA_CENTERED Lua
+FADU 10
+ENUT PortToBase
+ENUF WentToBaseAgain
+NoFade
+ENDA
+
+
+GotoPortFromDocks:
+FADI 10
+SET_ACTIVE 0
+RemoveAll
+TILEREVERT 0
+CALL ClearDockTraps
+LoadPlayerUnits(LuaBackFromDaDocks)
+CALL AddHubATraps
+ENUF TreasureRoomToMainRoom
+CAMERA_CENTERED Lua
+FADU 10
+NoFade
+ENDA
+
+LuaBackFromDaDocks:
+UNIT Lua Captain 0 Level(10,Ally,False) [29,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+BackToLuaBase:
+NoFade
+ENDA
+
+BackToLuaBaseFirstTime:
+FADI 10
+SET_ACTIVE 0
+RemoveAll
+SetBackground(Fort)
+Text(HubABeginningScene6)
+Text(HubABeginningScene6_2)
+FADI 10
+CAMERA_CENTERED [20,14]
+GotoPrepScreen
+NoFade
+ENDA
+
+NewUnits:
+UNIT Estelle Troubadour 0 Level(3,Ally,False) [0,5] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Hermenegildo Myrmidon 0 Level(1,Ally,False) [14,5] 0 0 0 0 [IronSword, LightBrand, Vulnerary] NoAI
+UNIT
 
 RefreshLua:
 SVAL s1 0x42
@@ -62,7 +177,7 @@ Text(HubA2Pitch)
 LABEL 7
 EVBIT_MODIFY 4
 Text(HubA2Prompt) 
-ENUT SeenHubA1Pitch
+ENUT SeenHubA2Pitch
 EVBIT_MODIFY 0
 GotoHubChapterIfYes(2, HubA_2, HubA2Accepted)
 NoFade
@@ -87,16 +202,27 @@ NoFade
 ENDA
 
 GotoChapter6:
+CHECK_EVENTID SeenHubA6Pitch
+BNE 7 sC s0
+Text(HubA6Pitch)
+LABEL 7
+EVBIT_MODIFY 4
+Text(HubA6Prompt) 
+ENUT SeenHubA6Pitch
+EVBIT_MODIFY 0
+GotoHubChapterIfYes(2, HubA_6, HubA6Accepted)
+/*
 Text(HubA6Pitch)
 Text(ChA6Pre1)
 Text(ChA6Pre2)
-TutorialYesNoText(HubA6Prompt) 
+TutorialYesNoText(HubA6Prompt)
 GotoHubChapterIfYes(6, HubA_6)
+*/
 NoFade
 ENDA
 
 Units1:
-UNIT Lua Captain 0 Level(10,Ally,False) [7,5] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(10,Ally,False) [20,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT
 
 PortUnits:
@@ -112,8 +238,74 @@ UNIT Lua Captain 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, Iron
 UNIT
 
 Traps1:
+BlueSigil(0, 11)
+BlueSigil(0, 12)
+BlueSigil(0, 13)
+BlueSigil(20, 4)
+BlueSigil(21, 4)
+BlueSigil(29, 15)
+BlueSigil(29, 16)
+BlueSigil(8, 20)
+
+RedSigil(12, 5)
+RedSigil(12, 9)
+RedSigil(14, 9)
+RedSigil(18, 9)
+RedSigil(20, 9)
+RedSigil(20, 13)
 ENDTRAP
 ALIGN 4
+
+AddHubATraps:
+AddTrap(BlueSigilTrapID,0, 11)
+AddTrap(BlueSigilTrapID,0, 12)
+AddTrap(BlueSigilTrapID,0, 13)
+AddTrap(BlueSigilTrapID,20, 4)
+AddTrap(BlueSigilTrapID,21, 4)
+AddTrap(BlueSigilTrapID,29, 15)
+AddTrap(BlueSigilTrapID,29, 16)
+AddTrap(BlueSigilTrapID,8, 20)
+
+AddTrap(RedSigilTrapID,12, 5)
+AddTrap(RedSigilTrapID,12, 9)
+AddTrap(RedSigilTrapID,14, 9)
+AddTrap(RedSigilTrapID,18, 9)
+AddTrap(RedSigilTrapID,20, 9)
+AddTrap(RedSigilTrapID,20, 13)
+NoFade
+ENDA
+
+ClearHubATraps:
+RemoveTrapAtCoords(0, 11)
+RemoveTrapAtCoords(0, 12)
+RemoveTrapAtCoords(0, 13)
+RemoveTrapAtCoords(20, 4)
+RemoveTrapAtCoords(21, 4)
+RemoveTrapAtCoords(29, 15)
+RemoveTrapAtCoords(29, 16)
+RemoveTrapAtCoords(8, 20)
+
+RemoveTrapAtCoords(12, 5)
+RemoveTrapAtCoords(12, 9)
+RemoveTrapAtCoords(14, 9)
+RemoveTrapAtCoords(18, 9)
+RemoveTrapAtCoords(20, 9)
+RemoveTrapAtCoords(20, 13)
+NoFade
+ENDA
+
+AddDockTraps:
+AddTrap(BlueSigilTrapID,0,13)
+AddTrap(BlueSigilTrapID,0,14)
+NoFade
+ENDA
+
+ClearDockTraps:
+RemoveTrapAtCoords(0, 13)
+RemoveTrapAtCoords(0, 14)
+NoFade
+ENDA
+
 
 Traps2:
 ENDTRAP
@@ -121,8 +313,8 @@ ALIGN 4
 
 BeginningScene:
 // only here for chapter A1 testing
-SVAL s3 3000
-GIVEMONEY Lua
+ENUT InAHubFlag
+ENUT PortToOtherAreas
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeCave)
 GotoPrepScreen
 ENUN
@@ -134,8 +326,15 @@ SetBackground(Ship)
 Text(HubABeginningScene1)
 SetBackground(Fort)
 Text(HubABeginningScene2)
+ENUT MainRoomToPort //sets immediate temp flag that i don't want triggered
+ENUT WentToPortGreagorDocks //sets future global flag events that I don't want triggered yet
+ENUT CameBackFromDocks
+ENUT WentToBaseAgain 
 FADI 10
 LOMA Chapter2
+LOAD1 1 NewUnits
+ENUN
+RemoveAll
 EraseBackground
 LOAD1 0 LuaFirstTripCaveGroup
 ENUN

@@ -8,3 +8,4 @@
 #include "AIDefinitions.event"
 #include "MugDefinitions.event"
 #include "EventDefinitions.event"
+#include "MusicDefinitions.event"

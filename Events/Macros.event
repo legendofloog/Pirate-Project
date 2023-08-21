@@ -30,3 +30,5 @@
 
 //SetUnitItemDurability(xcoord, ycoord, itemslot, durability)
 //SetUnitItemDurability(unitid, itemslot, durability)
+
+#define InAHubFlag 0xA0

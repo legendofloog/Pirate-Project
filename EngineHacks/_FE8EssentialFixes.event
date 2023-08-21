@@ -79,16 +79,6 @@ POP
   ORG $2b168
   SHORT 0
 
-//12 Tracks/16 Sounds Fix (credit Agro/Brendor)
-  ORG $2900
-  SHORT $e00c
-  ORG $2924
-  SHORT $280c $d00e $200c
-  ORG $22440c
-  BYTE $10
-  ORG $224414
-  SHORT $67b0 $0300 $0010
-
 //Fix Weak Promoted Enemies (credit Gryz)
   ORG $180b4
   SHORT $2a00 $dc00 $2201
@@ -122,10 +112,6 @@ POP
   BYTE $a0
   // ORG $2b482
   // BYTE $a0
-
-//Unlock Sound Room songs
-  ORG $aede0
-  BYTE $FF
 
 //CG Fade glitch
   ORG $EBCA

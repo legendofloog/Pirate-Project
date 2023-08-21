@@ -1667,8 +1667,8 @@ Reavers have no effect.[X]
 
 ## SD_Panache
 Panache: Unit can initiate combat[N]
-with guns in melee, gaining WTA and[N]
-17% crit, and adding magic to AS.[X]
+with guns in melee, gaining WTA[N]
+and ignoring weapon weight.[X]
 
 ## SD_Canter
 Canter: Unit can move 2[N]
@@ -1683,7 +1683,7 @@ Kleptomania: After stealing, recover[N]
 all HP and gain +10 avoid for 2 turns.[X]
 
 ## SD_Adaptable
-Versatile: Can use the [OpenQuote]Shift"[N]
+Versatile: Unit can use the [OpenQuote]Shift"[N]
 command to swap Str with Spd.[N]
 Growths remain the same.[X]
 
@@ -1714,3 +1714,9 @@ can counter regardless of foe's range.[X]
 Equalizer: Unit and allies within 2[N]
 tiles add foe's level - their level[N]
 (cannot go below 0) to their damage.[X]
+
+## SD_Fuse
+Countdown: Gain one HP each turn.[N]
+Game over at max HP! Attack at melee[N]
+to disarm (sword/lance/axe/knife only).[X]
+

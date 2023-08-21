@@ -18,15 +18,20 @@
     //Graphics
     #include "Graphics/_GraphicsInstaller.event"
 
+    //Music
+    #include "Music/music_installer_proj2023.event"
+
     //Engine Hacks
     #include "EngineHacks/_MasterHackInstaller.event"
     MESSAGE Used hax space ends at currentOffset
 
     //Events
     #include "Events/_EventsInstaller.event"
-
+    
     //Maps
     #include "Maps/MasterMapInstaller.event"
+
+    
 	
 	//ASSERT (FreeSpaceEnd - currentOffset) // So that you don't overwrite vanilla tables if using default freespace
 	
