@@ -1,0 +1,7 @@
+#include "PotentBrew.lyn.event"
+
+ALIGN 4
+PotentBrewID_Link:
+BYTE PotentBrewID
+
+ALIGN 4

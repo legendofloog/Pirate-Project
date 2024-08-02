@@ -80,3 +80,6 @@ ShiftEffect:
 #incbin "Shift/ShiftEffect.dmp"
 
 #include "Disarm/Installer.event"
+
+#include "ReapingBlade/ReapingBlade.event"
+

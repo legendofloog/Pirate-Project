@@ -47,3 +47,7 @@ ALIGN 4
 PulverizeIDLink:
 BYTE PulverizeID
 ALIGN 4
+
+HandCannonIDLink:
+BYTE HandCannonID
+ALIGN 4

@@ -6,7 +6,7 @@
 pSkillModifiers: // Skill
 	POIN prAddUnitSkill prHalveIfRescuing prHalveIfCapturing 
 	POIN prDebuffSkl prSklTonicBonus
-	POIN prAddEquipSkill prItemPassiveSkl prRallySkl prResolve prDefiantSkl prPushSkl prEquipmentSkl AstralBlessingSklBoost
+	POIN prAddEquipSkill prItemPassiveSkl prRallySkl prResolve prDefiantSkl prPushSkl prEquipmentSkl AstralBlessingSklBoost PotentBrew_Skill
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
 	#endif

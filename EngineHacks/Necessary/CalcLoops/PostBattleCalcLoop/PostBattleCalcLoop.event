@@ -13,12 +13,12 @@ POIN PostCombatSkills
 PostCombatSkills: //I like having savage blow as the first one because it makes the activation sound play first
 POIN InitSkillBuffers //Refresh skill buffers so freshly learned post-battle skills can apply
 POIN GroupAI BreakPostBattle SavageBlow StudiousBlow NailedDown Delegation ClearDelegation BreathOfLife Despoil Lifetaker Fury PoisonStrike GrislyWound //lifetaker should probably go after any messages because it can mess with the palette a bit
-POIN Kleptomania
+POIN Kleptomania 
 POIN ChapterKillCounter
 POIN DeftHands
 POIN BreatherPostBattle
 // POIN StrTaker SklTaker SpdTaker DefTaker ResTaker LukTaker MagTaker MovTaker Hardworking // these should be replaced with versions using the kill counter and be placed in stat getters
-POIN Canto CantoPlus CantoAttack SeaShanty Canter Galeforce ReMove Powerstaff CulturedPostCombat Gridmaster LiquidCourage  //this order for canto and friends is the only one I tested
+POIN Canto CantoPlus CantoAttack ReapingBlade_Refresh SeaShanty Canter Galeforce ReMove Powerstaff CulturedPostCombat Gridmaster LiquidCourage  //this order for canto and friends is the only one I tested
 POIN DelayedTonicDeletion //this goes last
 WORD 0 //Terminator
 

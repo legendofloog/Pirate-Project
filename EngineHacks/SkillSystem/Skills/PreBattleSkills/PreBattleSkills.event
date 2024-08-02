@@ -436,3 +436,5 @@ WORD EyepatchID
 	ALIGN 4
 	#include "ModularPreBattleSkills/ModularPreBattleSkill.event"
 #endif //MODULAR_PRE_BATTLE_SKILLS
+
+#include "Finesse/Finesse.event"

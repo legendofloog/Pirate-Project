@@ -1,0 +1,7 @@
+#include "Finesse.lyn.event"
+
+ALIGN 4
+FinesseID_Link:
+BYTE FinesseID
+
+ALIGN 4

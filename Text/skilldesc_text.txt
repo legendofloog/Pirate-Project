@@ -1795,3 +1795,18 @@ they heal for 50% of their max HP.[X]
 ## SD_Disarm
 Disarm: Command. This unit Breaks[N]
 an enemy and reduces their Def by 5.[X]
+
+## SD_PotentBrew
+Potent Brew: Tonic effectiveness[N]
+is increased by +2 for this unit.[X]
+
+## SD_Finesse
+Finesse: Unit gains Skill/2 crit.[X]
+
+## SD_ReapingBlade
+Reaping Blade: On kill, unit moves[N]
+again, but their weapon is destroyed.[X]
+
+## SD_HandCannon
+Hand Cannon: Weapon breaks with[N]
+every attack.[X]

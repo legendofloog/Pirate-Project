@@ -1,0 +1,17 @@
+#include "ReapingBlade.lyn.event"
+
+ALIGN 4
+ReapingBladeID_Link:
+BYTE ReapingBladeID
+ReapingBladeAttackType_Link:
+BYTE 15 // Reaping Blade attack type; change if conflict
+
+ALIGN 4
+UnitActionMenu_Attack:
+WORD 0x8022B30|1
+
+ALIGN 4
+AttackTypeByte_Link:
+WORD 0x203F101
+
+ALIGN 4

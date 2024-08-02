@@ -238,3 +238,12 @@ Debilitates an enemy.[X]
 
 ## DisarmHelpText
 Select a unit to disarm.[X]
+
+## UM_ReapingBlade
+ Reap[X]
+
+## UM_ReapingBladeDesc
+On kill, unit moves again.[N]
+Equipped weapon is destroyed.[X]
+
+

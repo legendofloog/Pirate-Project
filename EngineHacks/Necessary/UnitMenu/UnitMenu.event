@@ -88,6 +88,9 @@ UnitMenuTable:
   #ifdef COMBAT_ARTS
 	MenuCommand(UM_CombatArts, UM_CombatArtsDesc, NormalText, CombatArtsUsability, CombatArtsEffect, $22c31, $22c99)
   #else // COMBAT_ARTS
+	//Reaping Blade
+	MenuCommand(UM_ReapingBlade, UM_ReapingBladeDesc, NormalText, ReapingBladeUsability, ReapingBladeEffect, $22c31, $22c99)
+  
 	//Lunge
 	MenuCommand(UM_Lunge, UM_LungeDesc, NormalText, LungeUsability, LungeEffect, $22c31, $22c99)
 

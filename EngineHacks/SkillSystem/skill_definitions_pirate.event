@@ -208,3 +208,12 @@
 #define BreatherID 65
 
 #define DisarmID 66
+
+#define PotentBrewID 67
+
+#define FinesseID 68
+
+#define ReapingBladeID 69
+
+#define HandCannonID 70
+

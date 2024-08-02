@@ -33,3 +33,6 @@ WORD GutsID
 #include "WellRested/WellRested.event"
 
 #include "Swift/Installer.event"
+
+#include "PotentBrew/PotentBrew.event"
+
