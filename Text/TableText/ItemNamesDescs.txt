@@ -511,3 +511,24 @@ Supplies[X]
 ## SuppliesItemDesc
 Contains fuel, along with[N]
 other pilfered loot.[X]
+
+## QuickdrawName
+Quickdraw[X]
+
+## QuickdrawDesc
+Designed with a hair trigger.[N]
+User may move two spaces after combat.[X]
+
+## ToradarName
+Toradar[X]
+
+## ToradarDesc
+Effective against infantry.[X]
+
+## HandCannonName
+Hand Cannon[X]
+
+## HandCannonDesc
+Fires staggering shells that[N]
+Break, but cannot follow-up.[X]
+

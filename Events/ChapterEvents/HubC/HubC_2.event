@@ -1,0 +1,174 @@
+EventPointerTable(HubC_2EventsID, PointerList)
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1
+POIN $0 $0 $0 
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Units1:
+//Middle Units
+UNIT Lua Captain 0 Level(10,Ally,False) [9,26] 0 0 0 0 [IronSword] NoAI
+//Valerie
+UNIT Valerie Archer 0 Level(3,Ally,False) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
+LoadUnit(11,26)
+LoadUnit(8,27)
+LoadUnit(10,27)
+LoadUnit(12,27)
+LoadUnit(9,28)
+LoadUnit(11,28)
+
+//Left side units
+LoadUnit(1,26)
+LoadUnit(3,26)
+LoadUnit(1,27)
+LoadUnit(2,27)
+LoadUnit(2,28)
+UNIT
+
+Traps1:
+//AddTrap(MineTrapID,3,6)
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+TheEnemy:
+//Fort units, left to right
+UNIT BlackheartPlus Shaman 0 Level(16,Enemy,True) [8,21] 0 0 0 0 [Sagittae] GroupOneAI
+UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [11,21] 0 0 0 0 [SteelKnife] AttackInRangeAI
+//Left Units
+UNIT BlackheartPlus Warrior 0 Level(16,Enemy,True) [0,15] 0 0 0 0 [SteelAxe] GroupOneAI
+UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) [1,19] 0 0 0 0 [SteelAxe, HandAxe] GroupOneAI
+UNIT BlackheartPlus Hunter 0 Level(16,Enemy,True) [3,21] 0 0 0 0 [Longbow] GroupOneAI
+UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [2,24] 0 0 0 0 [SteelLance] GroupOneAI
+//Middle Units
+UNIT BlackheartPlus Mercenary 0 Level(16,Enemy,True) [9,23] 0 0 0 0 [SteelSword, Vulnerary] ChargeAI
+UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) [10,22] 0 0 0 0 [SteelAxe] ChargeAI
+//Right Units
+UNIT BlackheartPlus Archer 0 Level(16,Enemy,True) [16,17] 0 0 0 0 [ShiningBow] ChargeAI
+UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [15,19] 0 0 0 0 [SteelLance] ChargeAI
+UNIT BlackheartPlus Mercenary 0 Level(16,Enemy,True) [17,20] 0 0 0 0 [SteelSword] ChargeAI
+UNIT BlackheartPlus Berserker 0 Level(16,Enemy,True) [15,15] 0 0 0 0 [KillerAxe, BlueGem] ChargeAI
+
+//Misc troops
+UNIT BlackheartPlus Vanguard 0 Level(16,Enemy,True) [9,19] 0 0 0 0 [HandAxe, Vulnerary] ChargeAI
+UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [5,17] 0 0 0 0 [ArcaneKnife] AttackInRangeAI 
+UNIT 
+
+MiddleUnits:
+UNIT BlackheartPlus WarMonk 0 Level(17,Enemy,True) [9,14] 0 0 0 0 [Oversize, Silence] AttackInRangeAI
+UNIT BlackheartPlus WarMonk 0 Level(17,Enemy,True) [10,14] 0 0 0 0 [Oversize, Sleep] AttackInRangeAI
+UNIT BlackheartPlus Gunner 1 Level(16,Enemy,True) [8,13] 0 0 0 0 [HandCannon] AttackInTwoAI
+UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [11,13] 0 0 0 0 [Impaler, Javelin] AttackInTwoAI
+UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [12,10] 0 0 0 0 [SteelKnife, SteelDagger] GroupFourAI
+
+//Right middle, protecting the chests
+UNIT BlackheartPlus Gunner 1 Level(17,Enemy,True) [21,9] 0 0 0 0 [SteelMusket, Quickdraw] GroupTwoAI
+UNIT BlackheartPlus Hunter 1 Level(15,Enemy,True) [19,7] 0 0 0 0 [Longbow, Vulnerary] GroupTwoAI
+UNIT BlackheartPlus Mercenary_F 1 Level(16,Enemy,True) [21,12] 0 0 0 0 [SteelSword] GroupTwoAI
+
+//Left middle, some static, some gunning for the captain
+
+//First wave attacking the other captain
+
+UNIT BlackheartPlus Brigand 0 Level(16,Enemy,True) [5,5] 0 0 0 0 [IronAxe] ChargeAI
+UNIT BlackheartPlus Archer 0 Level(16,Enemy,True) [6,6] 0 0 0 0 [SteelBow] ChargeAI
+UNIT
+
+RearUnits:
+//UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [17,6] 0 0 0 0 [SteelKnife, SteelDagger] AttackInRangeAI
+//UNIT BlackheartPlus Hero 0 Level(16,Enemy,True) [16,5] 0 0 0 0 [SteelSword, HandAxe, Elixir] AttackInRangeAI
+UNIT BlackheartElite Sniper 0 Level(18, Enemy, True) [12,3] 0 0 0 0 [Greatbow] AttackInRangeAI
+//UNIT BlackheartPlus Warrior 0 Level(18, Enemy, True) [8,1] 0 0 0 0 [SilverAxe, IronBow] AttackInRangeAI
+//UNIT BlackheartPlus Brigand 0 Level(16,Enemy,True) [9,2] 0 0 0 0 [SteelAxe] GroupSixAI
+//UNIT BlackheartPlus Mercenary_F 0 Level(16,Enemy,True) [10,3] 0 0 0 0 [SteelSword] GroupSixAI
+//UNIT BlackheartPlus Fighter 0 Level(16, Enemy, True) [14,5] 0 0 0 0 [Bloodaxe] GroupSevenAI
+
+//Left stair formation
+UNIT BlackheartPlus Marksman 0 Level(18,Enemy,True) [4,14] 0 0 0 0 [Pistol, Pistol, HideShield] AttackInTwoAI
+UNIT BlackheartPlus Archer 0 Level(16,Enemy,True) [3,13] 0 0 0 0 [SteelBow] AttackInTwoAI //3-13 archer is back!!
+UNIT BlackheartPlus Brigand 0 Level(16,Enemy,True) [5,13] 0 0 0 0 [IronAxe] AttackInTwoAI 
+
+//Boss group
+
+UNIT BlackheartElite Champion 0 Level(20,Enemy,True) [19,1] 0 0 0 0 [KillingEdge, KillerLance] AttackInRangeAI
+//UNIT BlackheartPlus Assassin 1 Level(19,Enemy,True) [18,0] 0 0 0 0 [SteelKnife, SteelDagger, RedGem] AttackInRangeAI
+//UNIT BlackheartPlus Marksman 0 Level(19,Enemy,True) [20,2] 0 0 0 0 [Quickdraw] AttackInRangeAI
+UNIT
+
+//These guys are going to go charge on Turn 4, when the bridge gets dropped
+//Meant to kill the imperial captain if you aren't quick enough! 
+GriffonReinforcements:
+UNIT BlackheartPlus GriffinRider 0 Level(16,Enemy,True) [7,0] 0 0 0 0 [SteelLance, Horseslayer] ChargeAI
+UNIT BlackheartPlus GriffinRider 0 Level(16,Enemy,True) [6,0] 0 0 0 0 [Impaler] ChargeAI
+UNIT
+
+
+SmallRebelGarrison:
+UNIT KeeperAlly Halberdier 0 Level(16,NPC,True) [17,24] 0 0 0 0 [SilverLance, Axereaver, Elixir] ChargeAI
+UNIT KeeperAlly Mercenary 0 Level(14,NPC,True) [15,24] 0 0 0 0 [SteelSword, Wingclipper, Vulnerary] ChargeAI
+UNIT KeeperAlly Mage 0 Level(13,NPC,True) [16,26] 0 0 0 0 [Elfire, Surge, Vulnerary] ChargeAI
+UNIT KeeperAlly Curate 0 Level(14,NPC,True) [18,28] 0 0 0 0 [Physic] [0xE,0x3,0x0,0x00] //Follow Lua and heal
+UNIT KeeperAlly Vanguard 0 Level(12,NPC,True) [19,22] 0 0 0 0 [SteelAxe, SteelSword] AttackInRangeAI
+UNIT
+
+CalistaTrapped:
+UNIT Calista Dragoon 0 Level(17,NPC,False) [0,5] 0 0 0 0 [Toradar, SilverSword, Elixir] AttackInRangeAI
+UNIT
+
+BeginningScene:
+ASMC ClearAllDebuffs // now clears tonics, too. If you add a prep screen to this chapter, then restarting the chapter after saving will remove any tonic boosts because this ASMC is being called each time. 
+WEATHER 7
+FadeToBlack
+EraseBackground
+REMOVEALL_BLUE
+LoadEnemies(TheEnemy)
+LoadEnemies(SmallRebelGarrison)
+LoadEnemies(CalistaTrapped)
+LoadEnemies(MiddleUnits)
+LoadEnemies(RearUnits)
+SetUnitItemDurability(7, 16, 2, StrTonic) //Give valerie a str tonic
+GotoPrepScreen
+NoFade
+ENDA
+
+EndingScene:
+//replace with HubC when editing
+GoToHubChapter(HubB)
+NoFade
+ENDA
+
+Dunno1: //down here because nothing here is really used
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN

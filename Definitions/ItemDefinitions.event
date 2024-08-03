@@ -118,6 +118,9 @@
 #define Blunderbuss $d0
 #define Mortar $d1
 #define Mincemaker $de
+#define Quickdraw $f2
+#define Toradar $f3
+#define HandCannon $f4
 
 // STAVES
 #define TakeAim $e3

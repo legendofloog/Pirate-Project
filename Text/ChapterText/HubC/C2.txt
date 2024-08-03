@@ -1,0 +1,14 @@
+## HubC_2Title
+Ch. C-2: Nullptr[X]
+
+## HubC_2StatusObjective_A
+Defeat the[N]
+Blackhearts.[X]
+
+## HubC_2GoalWindow_A
+Defeat Boss[X]
+
+## C2ExplanationText
+
+(Note: There's no reward for all[N]
+the rebel units surviving the map.)[X]

@@ -895,3 +895,23 @@ Blackbows[X]
 Elite[N]
 Known for their unflinching arrows[N]
 that pierce their enemies' hearts.[X]
+
+## ValerieName
+Valerie[X]
+
+## ValerieDesc
+Aspirant[X]
+
+## CalistaName
+Calista[X]
+
+## CalistaDesc
+Imperial Captain[X]
+
+## BlackheartPlusName
+Blackheart[X]
+
+## BlackheartPlusDesc
+Raider[N]
+Hardened grunts of the Blackhearts,[N]
+proven with sheer brutality.[X]

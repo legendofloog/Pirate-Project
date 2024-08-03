@@ -116,36 +116,52 @@ EventPointerTable(SnowyBernAnimationsID, SnowyBernAnimations)
 ALIGN 4
 BernAnim0:
 #incbin "TilesetAnimations/SnowyBern/Frame0.dmp"
+ALIGN 4
 BernAnim1:
 #incbin "TilesetAnimations/SnowyBern/Frame1.dmp"
+ALIGN 4
 BernAnim2:
 #incbin "TilesetAnimations/SnowyBern/Frame2.dmp"
+ALIGN 4
 BernAnim3:
 #incbin "TilesetAnimations/SnowyBern/Frame3.dmp"
+ALIGN 4
 BernAnim4:
 #incbin "TilesetAnimations/SnowyBern/Frame4.dmp"
+ALIGN 4
 BernAnim5:
 #incbin "TilesetAnimations/SnowyBern/Frame5.dmp"
+ALIGN 4
 BernAnim6:
 #incbin "TilesetAnimations/SnowyBern/Frame6.dmp"
+ALIGN 4
 BernAnim7:
 #incbin "TilesetAnimations/SnowyBern/Frame7.dmp"
+ALIGN 4
 BernAnim8:
 #incbin "TilesetAnimations/SnowyBern/Frame8.dmp"
+ALIGN 4
 BernAnim9:
 #incbin "TilesetAnimations/SnowyBern/Frame9.dmp"
+ALIGN 4
 BernAnim10:
 #incbin "TilesetAnimations/SnowyBern/Frame10.dmp"
+ALIGN 4
 BernAnim11:
 #incbin "TilesetAnimations/SnowyBern/Frame11.dmp"
+ALIGN 4
 BernAnim12:
 #incbin "TilesetAnimations/SnowyBern/Frame12.dmp"
+ALIGN 4
 BernAnim13:
 #incbin "TilesetAnimations/SnowyBern/Frame13.dmp"
+ALIGN 4
 BernAnim14:
 #incbin "TilesetAnimations/SnowyBern/Frame14.dmp"
+ALIGN 4
 BernAnim15:
 #incbin "TilesetAnimations/SnowyBern/Frame15.dmp"
+ALIGN 4
 
 SnowyBernAnimations:
 tilesetAnimation(0x1C,0x1000,BernAnim0)
@@ -165,3 +181,43 @@ tilesetAnimation(0x1C,0x1000,BernAnim13)
 tilesetAnimation(0x1C,0x1000,BernAnim14)
 tilesetAnimation(0x1C,0x1000,BernAnim15)
 WORD 0 0
+
+EventPointerTable(FlasubanFrontierAnimationsID, FlasubanFrontierAnimations)
+
+ALIGN 4
+FlasubanFrontierTileAnim0:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_000.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim1:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_001.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim2:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_002.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim3:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_003.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim4:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_004.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim5:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_005.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim6:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_006.dmp"
+ALIGN 4
+FlasubanFrontierTileAnim7:
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_007.dmp"
+
+ALIGN 4
+FlasubanFrontierAnimations:
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim0)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim1)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim2)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim3)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim4)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim5)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim6)
+tilesetAnimation(0x1C,0x1000,FlasubanFrontierTileAnim7)
+WORD 0 0
+

@@ -39,6 +39,9 @@ WORD 0
 BeastEffectiveness:
 SetWeaponEffectiveness(FlierType|HorseType, 6)
 WORD 0
+InfantryEffectiveness:
+SetWeaponEffectiveness(InfantryType, 6)
+WORD 0
 
 
 #define SetProtection(type_list) "SHORT 0 type_list"

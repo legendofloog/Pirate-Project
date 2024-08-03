@@ -61,6 +61,10 @@
 #define Flint $3E //these two are mutually exclusive
 #define Gerald $3F //these two are mutually exclusive
 
+// HUB C CHAPTER UNITS
+#define Valerie $26
+#define Calista $27
+
 
 // ENEMY/NPC ($46 through $FF)
 
@@ -191,3 +195,7 @@
 #define Dalila 0x7B
 #define AlonsoChapter3 0x7C
 #define BlackheartElite 0x7D
+
+// Hub C2 
+#define BlackheartPlus 0x7E
+#define KeeperAlly 0x80
