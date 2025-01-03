@@ -1,5 +1,8 @@
 EventPointerTable(HubB_1EventsID, PointerList)
 
+#define TC_B1Cutscene1 0xB
+#define TC_B1Cutscene2 0xC
+
 PointerList:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
@@ -13,6 +16,8 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(0, WyvernWarning, 4)
+TurnEventEnemy(0, WyvernSpawn, 5)
 TurnEventPlayer(0, ThiefSpawnB, 6)
 TurnEventPlayer(0, ThiefSpawnC, 7)
 END_MAIN
@@ -21,12 +26,12 @@ CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
-Chest(GlassShield, 2, 2)
+Chest(HexlockShield, 2, 2)
 Chest(Elsurge, 5, 2)
 Chest(FliersPermit, 12, 9)
 Chest(SilverBow, 16, 12)
 Chest(FlameSword, 0, 15)
-Chest(Arcfire, 2, 15)
+Chest(InfiltratorGun, 2, 15)
 Door(3,4)
 Door(4,4)
 Door(12,11)
@@ -109,6 +114,13 @@ UNIT Antlion Warden 0 Level(10, Enemy, True) [16,11] 0 0 0 0 [SteelSword] Attack
 UNIT Antlion Vanguard 0 Level(10, Enemy, True) [14,9] 0 0 0 0 [Oversize] AttackWhenInRangeAI
 UNIT
 
+WyvernReinforcements:
+UNIT Antlion MaligKnight 0 Level(11, Enemy, True) [18,3] 0 0 1 REDA15R3 [SteelAxe, Elfire] ChargeAI
+UNIT Antlion DragonRider 0 Level(10, Enemy, True) [18,2] 0 0 1 REDA16R2 [SteelAxe, HandAxe] ChargeAI
+UNIT Antlion DragonRider_F 0 Level(10, Enemy, True) [18,4] 0 0 1 REDA16R4 [SteelAxe, Hammer] ChargeAI
+UNIT
+
+
 ThiefA:
 UNIT Antlion Thief 0 Level(9, Enemy, True) [1,3] 0 0 0 0 [IronKnife] ThiefAI
 UNIT
@@ -125,21 +137,239 @@ DmitrSpawn:
 UNIT Dmitr Brigand 0 Level(9,Ally,True) [1,1] 0 0 0 0 [Bloodaxe] NoAI
 UNIT
 
+IntroCutsceneNPCs:
+UNIT GreagorGuard Hunter 0 Level(3,NPC, False) [2, 6] 0 0 0 0 [] NoAI
+UNIT GreagorPatron VillagerMAdult 0 Level(1,NPC,False) [11,1] 0 0 0 0 [] NoAI
+UNIT GreagorPatron VillagerFAdult 0 Level(1,NPC,False) [7,0] 0 0 0 0 [] NoAI
+UNIT GreagorGuard Deserter 0 Level(3,NPC, False) [10, 6] 0 0 0 0 [] NoAI
+UNIT
+
+//1st cutscene
+
+IntroCutsceneLuaRaz:
+UNIT Lua Captain 0 Level(10,Ally,False) [2,2] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Razvan 0 0 Level(1,Ally,True) [8,3] 0x0 0x0 0 0 [0x0] NoAI
+UNIT
+
+//pilar appears shortly after lua
+IntroCutscenePilar:
+UNIT Pilar 0 0 Level(1,Ally,True) [2,2] 0x0 0x0 0 0 [0x0] NoAI
+UNIT
+
+IntroCutsceneDmitr:
+UNIT Dmitr Brigand 0 Level(9,NPC,True) [8,3] 0 0 0 0 [Bloodaxe] NoAI
+UNIT
+
+IntroCutsceneDesiderio:
+UNIT Desiderio 0 0 Level(4,Ally,True) [6,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT
+
+
+//2nd part of cutscene
+
+IntroCutsceneDesertCrew1:
+UNIT Lua Captain 0 Level(10,Ally,False) [9,0] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Dmitr Brigand 0 Level(9,NPC,True) [10,0] 0 0 0 0 [Bloodaxe] NoAI
+UNIT
+
+IntroCutsceneDesertCrew2:
+UNIT Pilar 0 0 Level(1,Ally,True) [10,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Razvan 0 0 Level(1,Ally,True) [9,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Desiderio Cataphract 0 Level(4,Ally,True) [8,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT
+
+IntroCutsceneAntlionScout:
+UNIT Antlion MaligKnight 0 Level(4,Enemy,True) [0,4] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 
+
+//3rd part of cutscene
+
+UNIT:
+IntroCutsceneKiril:
+UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [13,4] 0 0 0 0 [SteelDagger, Wingclipper] BossAI
+UNIT Antlion Ninja 0 Level(13,Enemy,True) [12,5] 0 0 0 0 [SteelDagger, Wingclipper] BossAI
+UNIT
+
+IntroCutsceneAntlionAlerted:
+UNIT GreagorGuard WyvernRider 0 Level(4,Enemy,True) [18,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT GreagorPatron MaligKnight 0 Level(4,Enemy,True) [17,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT GreagorLibrarian WyvernRider 0 Level(4,Enemy,True) [16,0] 0x0 0x0 0 0 [0x0] NoAI
+UNIT
+
 CutsceneUnits:
-UNIT Lua Captain 0 Level(10,Ally,False) [18,1] 0 0 1 REDA15R3 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(10,Ally,False) [18,0] 0 0 1 REDA16R4 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Dmitr Brigand 0 Level(10,NPC,False) [17,0] 0 0 1 REDA15R3 [Bloodaxe, RecoilAxe, Vulnerary] NoAI
+UNIT Desiderio Captain 0 Level(10,Ally,False) [16,0] 0 0 1 REDA15R5 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT
 
 BeginningScene:
-	SetBackground(Inn)
-	MUSC StillZephyrsID
+
+	//The Skysabers are in a small village near the destination they're looking for.
+	FADI 60
+	LoadCutsceneUnits(IntroCutsceneNPCs)
+	TILECHANGE TC_B1Cutscene1
+	MUSC MeetTheCrewID
+	CAMERA_CENTERED [0,0]
+	FADU 16
+	BROWNBOX HubB_1TownName [0,0]
+	STAL 60
+	REMA
+	CameraCursor(2,2)
+	SetBackground(Village)
 	Text(HubB_1BeginningScene1)
-	SetBackground(Desert)
+	EraseBackground
+	STAL 20
+	FlashCursor(8,3, 60)
+	SetBackground(Village)
 	Text(HubB_1BeginningScene2)
-	SetBackground(Fort_2)
+	EraseBackground
+	
+	//The crew fail to get any good information, and gather outside. 
+	MUSC StillZephyrsID
+	STAL 20
+	LoadCutsceneUnits(IntroCutsceneLuaRaz)
+	MOVE 5 Lua [2,4]
+	MOVE 5 Razvan [4,3] 
+	STAL 15
+	LoadCutsceneUnits(IntroCutscenePilar)
+	MOVE 5 Pilar [2,3]
+	ENUN
+	CameraCursor(Lua)
+	SetBackground(Outside_Village_Evening)
+	CHECK_EVENTID WentToHub2
+	BNE 775 0xC 0x0 //if hub 2 completed, play slightly altered dialogue.
+		Text(HubB_1BeginningScene3_B2NotCompleted)
+		GOTO 776
+	LABEL 775
+		Text(HubB_1BeginningScene3_B2Completed)
+	LABEL 776
+	EraseBackground
+	
+	//Dmitr comes in, inquires about the ruins. 
+	LoadCutsceneUnits(IntroCutsceneDmitr)
+	MOVE 5 Dmitr [5,4]
+	ENUN
+	CameraCursor(Dmitr)
+	SetBackground(Outside_Village_Evening)
+	Text(HubB_1BeginningScene4)
+	EraseBackground
+	
+	//Desiderio arrives after looking for supplies, he's a little late, but it's so whole crew can be there
+	LoadCutsceneUnits(IntroCutsceneDesiderio)
+	MOVE 4 Desiderio [3,5]
+	ENUN
+	CameraCursor(Desiderio)
+	SetBackground(Outside_Village_Evening)
+	Text(HubB_1BeginningScene5)
+	EraseBackground
+	
+	//Clean-up and SFX before next scene
+	STAL 20
+	FADI 10
+	MUSC 0x7FFF
+	MOVE 5 Lua [3,9]
+	MOVE 5 Razvan [4,9] 
+	MOVE 5 Pilar [5,9]
+	MOVE 5 Desiderio [5,9]
+	ENUN
+	CLEA 0
+	CLEN 0
+	CLEE 0
+	ENUN
+	
+	//Crew arrive at the desert. 
+	//"Ah, the desert...count how many grains of sand there are, Razvan."
+	TILEREVERT TC_B1Cutscene1
+	MUSC ToTheSkiesID
+	TILECHANGE TC_B1Cutscene2
+	CAMERA_CENTERED [8,0]
+	LoadCutsceneUnits(IntroCutsceneAntlionScout)
+	LoadCutsceneUnits(IntroCutsceneDesertCrew1)
+	FADU 16
+	MOVE 5 Lua [12,5]
+	MOVE 5 Dmitr [11,6]
+	ENUN
+	LoadCutsceneUnits(IntroCutsceneDesertCrew2)
+	MOVE 4 Desiderio [9,4]
+	MOVE 5 Razvan [10,3] 
+	MOVE 5 Pilar [11,4]
+	ENUN
+	//Now in the desert, Lua and Dmitr discuss briefly on how much further they need to go. 
+	FlashCursor(Lua, 60)
+	SetBackground(Desert)
+	Text(HubB_1BeginningScene6)
+	EraseBackground
+	
+	MOVE 5 Lua [12,12]
+	MOVE 5 Dmitr [13,12]
+	ENUN
+	MOVE 3 Desiderio [11,8]
+	MOVE 4 Razvan [12,7] 
+	MOVE 4 Pilar [13,8]
+	ENUN
+	FlashCursor(Desiderio,60)
+	SetBackground(Desert)
+	//Cue a small conversation about Desiderio walking through the 
+	//desert, with different dialogue if promoted into a cataphract.
+	SVAL s1 Cataphract
+	CHECK_CLASS Desiderio
+	BNE 778 0xC 0x1 //If Desiderio promoted into a Cataphract, play slightly different dialogue. 
+		Text(HubB_1BeginningScene7_DesiMounted)
+		GOTO 779
+	LABEL 778
+		Text(HubB_1BeginningScene7_DesiNotMounted)
+	LABEL 779
+	EraseBackground
+	
+	//Rest of the crew moves out, not wanting to fall behind.
+	MUSC 0x7FFF
+	MOVE 4 Desiderio [11,13]
+	MOVE 4 Razvan [12,13]
+	MOVE 4 Pilar [13,13]
+	ENUN
+	STAL 60
+
+	//Oh-no, a wyvern was stalking them the whole time!
+	CAMERA_CENTERED [0,0]
+	STAL 30
 	MUSC SwabbieTalkID
-	Text(HubB_1BeginningScene3)
-	FADI 6
+	CameraCursor(0,4)
+	Text(HubB_1BeginningScene8)
+	MOVE 10 Antlion [1,11]
+	STAL 15
+	FADI 16
+	ENUN
+	CLEA 0
+	CLEN 0
+	CLEE 0
+	TILEREVERT TC_B1Cutscene2
 	CLEAN
+	
+	//Wyvern returns to base in-tow with other wyverns, reporting in the info.
+	CAMERA_CENTERED [13,0]
+	LoadCutsceneUnits(IntroCutsceneKiril)
+	FADU 12
+	LoadCutsceneUnits(IntroCutsceneAntlionAlerted)
+	MOVE 7 GreagorPatron [13,2]
+	MOVE 7 GreagorLibrarian [14,2] 
+	MOVE 7 GreagorGuard [12,2]
+	ENUN
+	FlashCursor(Kiril, 60)
+	Text(HubB_1BeginningScene9)
+	MOVE 7 GreagorPatron [18,4]
+	MOVE 7 GreagorLibrarian [18,3] 
+	MOVE 7 GreagorGuard [18,2]
+	ENUN
+	REMOVEUNIT GreagorPatron
+	REMOVEUNIT GreagorLibrarian
+	REMOVEUNIT GreagorGuard
+	STAL 50
+	Text(HubB_1BeginningScene10)
+	FADI 12
+	ENUN
+	CLEE 0
+	
+	//Map reloads, with enemies deployed. 
 	LOAD1 1 AntlionsInitial
 	ENUN
 	FADU 5
@@ -150,7 +380,9 @@ BeginningScene:
 	CamOff
 	CAMERA Lua
 	MUSC AvastMeHeartiesID
-	Text(HubB_1BeginningScene4)
+	Text(HubB_1BeginningScene11)
+	CUSA Dmitr
+	STAL 40
 	FADI 10
 	LOAD1 1 DmitrSpawn
 	REMOVEALL_BLUE
@@ -160,7 +392,6 @@ BeginningScene:
 	NoFade
 	//CALL EndingScene
 	ENDA
-
 
 	/*LOAD1 1 DmitrSpawn
 	LOAD1 1 AntlionsInitial
@@ -182,6 +413,47 @@ EndingScene:
 	Text(HubB_1EndingScene1)
 	LABEL 2
 	GoToHubChapter(HubB)
+	ENDA
+	
+WyvernWarning:
+	MUSI
+	STAL 20
+	CAMERA_CENTERED [15,2]
+	STAL 30
+	SOUN 0x263
+	STAL 15
+	SOUN 0x263
+	STAL 15
+	SOUN 0x263
+	STAL 15
+	SOUN 0x264
+	STAL 40
+	CHECK_DEPLOYED Pilar
+	BEQ 1 0xC 0x0 //If Pilar isn't deployed, check Dmitr to warn.
+		CameraCursor(Pilar)
+		Text(HubB_1WyvernWarning_Pilar)
+		Text(HubB_1WyvernWarning_LuaResponse)
+		GOTO 776
+	LABEL 1
+	CHECK_ALIVE Dmitr
+	BEQ 2 0xC 0x0 //If Dmitr also isn't alive, then fallback to Lua. 
+		CameraCursor(Dmitr)
+		Text(HubB_1WyvernWarning_Dmitr)
+		Text(HubB_1WyvernWarning_LuaResponse)
+		GOTO 776
+	LABEL 2
+	//Else, have Lua warn about the wyverns.
+	CameraCursor(Lua)
+	Text(HubB_1WyvernWarning_LuaSolo)
+	LABEL 776
+	MUNO
+	NoFade
+	ENDA
+
+WyvernSpawn:
+	SpawnReinforcements(WyvernReinforcements)
+	Text(HubB_1WyvernsAppear)
+	NoFade
 	ENDA
 
 ThiefSpawnB:

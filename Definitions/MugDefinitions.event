@@ -91,7 +91,7 @@
 #define DicerMug $41
 
 // A-6 placeholders, these are all Khazhak
-#define SantiagoMug $59
+#define SantiagoMug $B2
 #define RochefortMug $58
 
 

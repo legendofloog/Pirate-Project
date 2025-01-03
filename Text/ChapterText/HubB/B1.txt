@@ -79,109 +79,594 @@ charting us a course there.[A]
 Right away captain![A]
 [X]
 
-
-
+##HubB_1TownName
+Sobremesa Village[X]
 
 ##HubB_1BeginningScene1
-[MidLeft][LoadLua][Right][LoadRazvan][FarRight][LoadPilar]
-[MidLeft][2LB]
-Typical,[.4] not a single person around[N]
-here wants to tell us anything.[A]
+[FL][LoadPilar][L][LoadLua]
+[MR][LoadGreagorLibrarian]
 
-[FarRight][2LB]
-Everyone I spoke to alludes to it[N]
+[MidRight]
+W-What, are you crazy?![AN]
+Y-You can't go out there, the[N]
+sand wyverns will eat you up![AN]
+
+[FL]
+[Beat]Sand wyverns?[AN]
+
+[L]
+First time we're hearing of[N]
+this from who we've talked to[Beat][AN]
+We're capable of handling wild wyverns;[N]
+already dealt with a couple of riders.[AN]
+
+[MR]
+B-But they hunt in packs here![AN]
+Imagine, baking in the heat, too[N]
+exhausted to run at all[Beat][AN]
+You see a shadow approaching[N]
+out of nowhere and...[AN][MoMR]
+Chomp![.5] Snuffed out![AN]
+
+[FL]
+[Beat]And do you think us foolish[N]
+enough to travel in the desert sun?[AN]
+Wyverns have poor night vision, and[N]
+we'd travel near dusk regardless. [AN]
+They'll be of no threat.[AN]
+
+[MR]
+But they'd just smell you![AN]
+[Beat][.5]Then again, you all are[N]
+sailors, maybe that smell wouldn't--[AN]
+
+[L][1LB]
+[HalfCloseEyes]And what do you mean by that[Beat]?[AN]
+
+[MR]
+[Beat][AN]
+I-I'm just going to go now[Beat][AN][CSS]
+[MoFFL]
+
+[L][OpenEyes]
+
+[FL][2LB]
+Hmph.[AN]
+Our investigation has yet[N]
+to bear any sort of fruit.[AN]
+
+[L]
+It would seem so.[AN]
+[CloseEyes]Damn[Beat][.5][OpenEyes]I hope Razvan's[N]
+been a bit more fortunate[Beat][AN][X]
+
+##HubB_1BeginningScene2
+[FFL][LoadRazvan]
+[MR][LoadGreagorLibrarianB]
+[FFL]
+Ah, excuse me sir![AN][CSS]
+[MoML]
+[ML]
+Would you happen to--[AN]
+
+[MidRight]
+That staff[Beat]my, are you[N]
+a wondering pilgrim?[AN]
+
+[ML]
+A pilgrim? [A]N-No sir, I'm a sailor.[N]
+Would you happen to know--[AN]
+
+[MR][3LB]
+I remember my pilgrimages to[N]
+monumental sites on the isles![AN]
+Oh yes, they were a spiritual[N]
+awakening, enlightening me on[N]
+the world that you and I live on.[AN]
+Through the mountains, the desert,[N]
+the rain, the snow[Beat][.4]it was[N]
+tough, but I endured it all![AN]
+Even if we fell into The Lands Below,[N]
+my faith in what is beyond would[N]
+keep me comforted in my last moments[Beat][AN]
+
+
+[ML][1LB]
+[Beat][AN]
+
+[MR]
+Er, now what was it that you needed?[AN][N]
+
+[MidLeft][2LB]
+N-Never mind sir, I hope[N]
+you have a good day.[AN][CSS]
+[MR][ClearFace]
+[ML][1LB]
+[Beat][CloseEyes](Maker, this seems hopeless[Beat])[AN][X]
+
+//Here, Pilar will reference still needing supplies
+//for the ship if B-2 (Port Reculoso) is not yet complete.
+
+##HubB_1BeginningScene3_B2NotCompleted
+[FarLeft][LoadPilar][Left][LoadLua][MidRight][LoadRazvan]
+[L][2LB]
+Typical,[.4] not a single person around[N]
+here wants to tell us anything.[AN]
+
+[MR]
+Oh no, neither of you managed[N]
+to find any clues either[Beat]?[AN]
+
+[FL][2LB]
+Unfortunately not, Razvan.[AN]
+Everyone we spoke to alludes to it[N]
 being dangerous,[.4] not worth the risk.[AN]
 All seems to be hearsay though.[A]
 
-[Right]
-We have to be able to find someone[N]
+[MR][MoMR]
+We have to be able to find someone,[N]
 surely![.5] Someone must know![A]
 
-[MidLeft][2LB]
+[Left][2LB]
 I'd say at this point it's unlikely[N]
-to go anywhere Razvan,[.4] sorry.[AN]
-Let's just enjoy a night at this[N]
+to go anywhere Razvan,[.4] [CloseEyes]sorry.[AN][OpenEyes]
+
+[MR]
+[Beat]I should be the one[N]
+apologizing, Captain Lua.[AN]
+I brought everyone all[N]
+the way out here for nothing.[AN]
+
+[FL]
+Hey, hey.[A] Desiderio is out trying[N]
+to find any sort of shop here.[AN]
+It won't completely solve our[N]
+issues, but it'll ease the burden.[AN]
+It was worth a shot coming[N]
+here just for that alone.[AN]
+
+[L]
+Let's just enjoy a night at a[N]
 tavern and cut our losses for today.[AN]
 No use trekking in the desert blindly.[N]
-We'll set off again in the morning.[A]
+We'll set off again in the morning.[AN]
 
 [FarFarRight][LoadDmitr][1LB]
-I might be able to help with that.[A]
+I might be able to help with that.[AN][X]
 
-[Right][ClearFace][FarRight][ClearFace]
-[FarFarRight][MoveMidRight]
-[MidLeft][1LB]
+//Here, Pilar will reference still needing supplies
+//for the ship if B-2 (Port Reculoso) is not yet complete.
+
+##HubB_1BeginningScene3_B2Completed
+[FarLeft][LoadPilar][Left][LoadLua][MidRight][LoadRazvan]
+[L][2LB]
+Typical,[.4] not a single person around[N]
+here wants to tell us anything.[AN]
+
+[MR]
+Oh no, neither of you managed[N]
+to find any clues either[Beat]?[AN]
+
+[FL][2LB]
+Unfortunately not, Razvan.[AN]
+Everyone we spoke to alludes to it[N]
+being dangerous,[.4] not worth the risk.[AN]
+All seems to be hearsay though.[A]
+
+[MR][MoMR]
+We have to be able to find someone,[N]
+surely![.5] Someone must know![A]
+
+[Left][2LB]
+I'd say at this point it's unlikely[N]
+to go anywhere Razvan,[.4] [CloseEyes]sorry.[AN][OpenEyes]
+
+[MR]
+[Beat]I should be the one[N]
+apologizing, Captain Lua.[AN]
+I brought everyone all[N]
+the way out here for nothing.[AN]
+
+[FL]
+Hey, hey.[A] Desiderio is out trying[N]
+to find any sort of shop here.[AN]
+We might already have a quantity of[N]
+supplies, but it's good to be prudent.[AN]
+Wasn't a bad idea to come[N]
+out here just to check.[AN]
+
+[L]
+Let's just enjoy a night at a[N]
+tavern and cut our losses for today.[AN]
+No use trekking in the desert blindly.[N]
+We'll set off again in the morning.[AN]
+
+[FarFarRight][LoadDmitr][1LB]
+I might be able to help with that.[AN][X]
+
+##HubB_1BeginningScene4
+[FarFarRight][LoadDmitr][MoveRight]
+[FL][LoadPilar]
+[L][LoadLua][1LB]
+[FR][LoadRazvan]
+
+[L][1LB]
 Oh?[.5] And who might you be?[A]
 
-[MidRight][2LB]
+[Right][2LB]
 I'm Dmitr.[.5] I heard you asking[N]
 around about those treasure rumors.[AN]
 I have spent much time in the[N]
 desert, I am willing to be your guide.[A]
 
-[MidLeft][3LB]
-Is that so?[.5] And what's in it for[N]
-you?[.5] Why haven't you claimed[N]
+[FL][2LB]
+Is that so?[AN]
+What's in it for you?[AN]
+Why haven't you claimed[N]
 the treasure for yourself?[AN]
-Seems a bit suspect you[N]
-have to admit?[A]
+We're all for chasing rumors,[N]
+but it sounds a bit suspect.[AN]
 
-[MidRight][3LB]
+[R][3LB]
 I ask for payment for my services.[AN]
 People speak of vengeful spirits[N]
 inhabiting those ruins and none,[.4][N]
 even I,[.4] dare set foot there.[AN]
-But for the right price with your[N]
+But for the right price, and with your[N]
 party in tow,[.4] I could be swayed.[AN]
 
-[MidLeft][2LB]
+[L][2LB]
 I see[Beat] Well, I don't know[N]
 about vengeful spirits,[AN]
 but we certainly can't find our[N]
 way around the desert on our own.[AN]
 What's your fee for your guidance?[A]
 
-[MidRight][2LB]
+[R][2LB]
 A cut of the treasure itself[N]
 should suffice for me.[A]
 
+[L][2LB]
+Acceptable terms for me.[AN]
+
+[FR]
+Wait[Beat]first, where's Desiderio?[AN]
+Before we head out, we should[N]
+go ahead and find him first.[AN]
+
+[FL]
+There's no need to.[AN]
+[Beat]He's walking down the[N]
+road above as we speak.[AN]
+Even out here in open, I[N]
+can hear him just as well.[AN]
+
+[FR]
+[Beat]How do you even hear that?[AN][X]
+
+##HubB_1BeginningScene5
+[L][LoadLua]
+[R][LoadDmitr]
+[FL][LoadPilar]
+[FR][LoadRazvan]
+
+[FR]
+I shouldn't question it, huh?[AN]
+[CF][CSS]
+
+[FFL][LoadDesiderio][MoFR]
+[.5]
+[FR][ClearFace]
+[FR][LoadDesiderio]
+Sorry boss, no one here's giving[N]
+us any fair deal on supplies.[AN]
+4000 gold for a barrel of saltmeats[Beat][AN]
+I about started an argument with[N]
+the shopkeeper when I heard that.[AN]
+Should've asked Orlando to be[N]
+doing all of this instead.[AN]
+[Beat]But who's this guy?[AN]
+You manage to find a guide?[AN]
+
+[R]
+Indeed; I'm Dmitr.[AN]
+I know the location of the[N]
+ruins your crew hopes to see.[AN]
+What these ruins used to[N]
+be, I'm clueless on[Beat][AN]
+But, I am sure it still[N]
+contains valuables.[AN]
+
+[FR]
+[ToggleSmile]Ha![A] Knew the boy had some[N]
+sort of lead all along.[AN][ToggleSmile]
+
+[FFR][1LB]
+I'm right here![AN]
+
+[L][1LB]
+Well, I'm happy to put trust in my crew.[AN]
+How far away are the ruins?[AN]
+
+[R][3LB]
+Only an hour away.[AN]
+Though the sun sets soon enough,[N]
+we will have enough time to explore[N]
+and return before the cold overwhelms.[AN]
+
+[L][2LB]
+Then let's not waste any more time.[AN]
+Lead the way, Dmitr.[AN][X]
+
+##HubB_1BeginningScene6
+[MidLeft][LoadLua][MidRight][LoadDmitr]
 [MidLeft][2LB]
-Acceptable terms for me.[N]
-We'll set out tomorrow.[A][X]
-
-
-##HubB_1BeginningScene2
-[FarLeft][LoadLua][Left][LoadRazvan][Right][LoadDmitr][FarRight][LoadPilar]
-[FarLeft][2LB]
 Never did I think I could get[N]
 so tired of seeing sand.[A]
 
-[Right][2LB]
+[MR][2LB]
 It's not far now,[.4] we should[N]
 be able to see it soon.[A]
 
-[Left][2LB]
-It's a good thing we left later[N]
-on.[.5] It would be way too hot earlier.[A]
+[ML][2LB]
+We can't be out here[N]
+too long though.[.4][AN]
+It'll be freezing once[N]
+it gets really dark.[AN]
 
-[FarRight][2LB]
-We can't be out here too long[N]
-though.[.4][A] It'll be freezing[N]
-once it gets really dark.[A]
-
-[Right][2LB]
+[MR][2LB]
 I think I see it in the distance.[.5][N]
 Only a half hour more at most.[A]
 
-[FarLeft][2LB]
-Good.[.5] I don't think I want[N]
-to keep walking much longer.[AN]
+[ML][2LB]
+Good.[.5] I don't think I want to[N]
+keep walking in this much longer.[AN]
 Let's get this over with and[Beat][.5][N]
-Walk another hour back[Beat][A]
-[X]
+Walk another hour back[Beat][A][X]
+
+##HubB_1BeginningScene7_DesiNotMounted
+[MR][LoadPilar]
+[FL][LoadRazvan]
+[L][LoadDesiderio]
+
+[L][2LB]
+You hear the boss?[AN]
+Another hour of[N]
+walking on sand[Beat][.5][AN]
+[CloseEyes]A real treat to me[N]
+and my heavy plate.[AN][OpenEyes]
+
+[MR]
+Well, you should be glad that[N]
+you aren't slow-cooking in there.[AN]
+Maybe if we stick around too long,[N]
+you'll instead be an icicle.[AN]
+
+[FL]
+Seems like the real problem is[N]
+staying steady on the sand[Beat][AN]
+I can tell you're not really[N]
+comfortable walking here.[AN]
+
+[L]
+I'm plenty used to the metal boots[Beat][.5][N]
+on a stable surface, not this crap.[AN]
+Switch it up to a bunch of coarse,[N]
+rough particles, and it's trickier.[AN]
+I can do this, but I'm not[N]
+having fun while doing so.[AN]
+
+[MR]
+Please.[A] You just need to have[N]
+a more careful step in the sand.[AN]
+Do it in a way so you don't sink[N]
+down as much, make each step easier.[AN]
+
+[L]
+Armor's weight is going to naturally[N]
+just sink me in further.[AN]
+How about you try being nimble and[N]
+fleet-footed while having this on?[AN]
+Raz, you're invited to try it too.[AN]
+
+[FL]
+N-No thank you, Desiderio.[AN]
+Still[Beat]to think we'll be[N]
+spending a night out here.[AN]
+Do you all think T.O.R.C.H[N]
+will catch wind of us?[AN]
 
 
-##HubB_1BeginningScene3
+[MR]
+With a village this isolated from[N]
+the main isles, its unlikely.[AN]
+The winds don't flow near here.[AN]
+We might even be the first visitors[N]
+they've had in practically weeks.[AN]
+
+[L]
+Explains why the people[N]
+here are so damn antsy[Beat][AN]
+Rumors will spread, and I'm sure[N]
+another ship will take those rumors.[AN]
+By the time that happens though, we'll[N]
+hopefully be long away to the unknown.[AN]
+
+[FL]
+Just as it was when I was[N]
+growing up, always so quiet[Beat][AN]
+Even a single ship showing up[N]
+at the docks would be a surprise.[AN]
+It's always strange to match[N]
+that quietness now and again.[AN]
+
+[MR]
+Maybe we should go and get[N]
+attacked by sand wyverns.[AN]
+That would certainly make[N]
+things a little less quiet.[AN]
+
+[FL]
+Sand wyverns?[A] What are--[AN]
+
+[FFR]
+Do you all want to[N]
+freeze back there?[AN]
+Keep up the pace![AN]
+
+[FL][MoFL]
+Oops![A] S-Sorry Captain Lua![AN]
+Seems like we got carried away[N]
+talking instead of walking[Beat][AN]
+
+[MR]
+Let's keep on moving.[AN]
+If you need a hand parting through[N]
+the sand Desiderio, I don't mind.[AN]
+
+[L]
+Hey,[.4] I'll be fine![AN]
+Don't need to be babied around[N]
+the desert like a blind dog.[AN]
+[Beat][ToggleSmile]Appreciate the offer though.[AN][X]
+
+##HubB_1BeginningScene7_DesiMounted
+[MR][LoadPilar]
+[FL][LoadRazvan]
+[L][LoadDesiderio]
+
+[L][2LB]
+You hear the boss?[AN]
+Another hour of[N]
+walking on sand[Beat][.5][AN]
+[CloseEyes]A real treat to[N]
+my horse, I bet.[AN]
+
+[MR]
+With all the armor you[N]
+and the horse have on?[AN]
+I don't doubt it[Beat]at least[N]
+you're not getting slow cooked.[AN]
+
+[FL]
+This has me curious though[Beat][AN]
+Desiderio, haven't you been fighting[N]
+for more than a decade by now?[AN]
+What had you decide to pick up[N]
+the saddle and fight on horseback?[AN]
+
+[L]
+[CloseEyes]Hmph, call me an old geezer[N]
+while you're at it, boy[Beat][AN][OpenEyes]
+But, I supposed it was time[N]
+to get my feet a proper break.[AN]
+I've picked up enough on steeds[N]
+know how to properly care for one.[AN]
+Seems like it's been paying off,[N]
+being able to take point quicker.[AN]
+
+[MR]
+Convenient that the Igniswords' ship[N]
+had plenty of mounts to spare.[AN]
+Not a bad idea to take the opportunity,[N]
+I wonder if others will do the same.[AN]
+
+[FL]
+Unfortunately, I don't think[N]
+your steed expected the sand[Beat][AN]
+It seems pretty antsy walking[N]
+through the rough terrain.[AN]
+
+[MR]
+Can't say I have much advice on[N]
+easing traversal for your horse.[AN]
+
+[L]
+Yeah, feel sorry for the big guy[Beat][AN]
+[Beat]Hmm[Beat][AN][MoL]
+Don't worry boy[Beat]Rahel has[N]
+a bunch of apples on the ship[Beat][AN]
+Once we get back, I'll give some[N]
+of them as a treat for your work.[AN]
+(Wonder if this sort of thing is[N]
+what Ernie felt with his beast[Beat])[AN]
+
+[FL]
+Once we get back, indeed[Beat][AN]
+To think we'll be spending[N]
+a night out in that village.[AN]
+Do you all think T.O.R.C.H[N]
+will catch wind of us?[AN]
+
+[MR]
+With a village this isolated from[N]
+the main isles, its unlikely.[AN]
+The winds don't flow near here.[AN]
+We might even be the first visitors[N]
+they've had in practically weeks.[AN]
+
+[L]
+Explains why the people[N]
+here are so damn antsy[Beat][AN]
+Rumors will spread, and I'm sure[N]
+another ship will take those rumors.[AN]
+By the time that happens though, we'll[N]
+hopefully be long away to the unknown.[AN]
+
+[FL]
+Just as it was when I was[N]
+growing up, always so quiet[Beat][AN]
+Even a single ship showing up[N]
+at the docks would be a surprise.[AN]
+It's always strange to match[N]
+that quietness now and again.[AN]
+
+[MR]
+Maybe we should go and get[N]
+attacked by sand wyverns.[AN]
+That would certainly make[N]
+things a little less quiet.[AN]
+
+[FL]
+Sand wyverns?[A] What are--[AN]
+
+[FFR]
+Do you all want to[N]
+freeze back there?[AN]
+Keep up the pace![AN]
+
+[FL][MoFL]
+Oops![A] S-Sorry Captain Lua![AN]
+Seems like we got carried away[N]
+talking instead of walking[Beat][AN]
+
+[MR]
+Or trotting, in Desiderio's case.[AN]
+I'd offer to lend a hand Desiderio,[N]
+but not much I can do to help the horse.[AN]
+
+[FL]
+If you want me to, I could lead the way.[AN]
+I didn't visit the desert much, but my mother[N]
+still taught me what firmer sand looks like.[AN]
+It might make it easier on our feet[Beat][.6][N]
+[ToggleSmile]A-And of course, the hooves.[AN][ToggleSmile]
+
+[L]
+Huh, you're able to[N]
+tell the difference?[AN]
+Not bad, Raz[Beat][ToggleSmile][N]
+I appreciate it.[AN][ToggleSmile]
+I'll follow your lead.[AN][X]
+
+##HubB_1BeginningScene8
+[ML][LoadPirate]
+[Beat]
+Tch[Beat]strangers, out here[N]
+in this part of the island?[AN]
+Their mistake.[Beat][AN][X]
+
+##HubB_1BeginningScene9
 [MidLeft][LoadKiril][MidRight][LoadPirate]
 [MidRight][3LB]
 Boss.[.5] It looks like we got some[N]
@@ -191,29 +676,38 @@ group too,[.4] not the usual adventurers.[A]
 [MidLeft][3LB]
 Tch.[.5] This late in the evening?[.5][N]
 Get everyone ready then,[.4] this[N]
-could potentially be a big haul[Beat][A]
+could potentially be a big haul[Beat][AN]
+Gather your wyverns, and prepare[N]
+to pincer them on my command.[AN]
 
 [MidRight][1LB]
-Of course,[.4] right away.[A]
+Of course,[.4] right away.[A][X]
 
-[MidRight][ClearFace]
+##HubB_1BeginningScene10
+[MidLeft][LoadKiril]
 [MidLeft][2LB]
 A big wandering desert beast falling[N]
 into the sand pit of the Antlion[Beat][AN]
-This haul will keep us going[N]
+[ToggleSmile]This haul will keep us going[N]
 for a long time[Beat][A][X]
 
+##HubB_1BeginningScene11
+[FarFarRight][LoadDesiderio][MoveFarLeft]
 
-##HubB_1BeginningScene4
-[FarFarRight][LoadLua][MoveMidRight]
-[MidRight][2LB]
-The hell?[.5] This place is[N]
-infested with bandits![A][CSS]
+[FL][2LB]
+Great[Beat][.5] Boss, we've[N]
+got company in the ruins![AN][CSS]
+[CF]
+[FL][LoadDesiderio]
 
-[MidRight][MoveMidLeft][CF]
-[MidLeft][LoadLua][2LB]
+[FFR][LoadLua][MoL]
+[L]
+[1LB]
+Damn, they were waiting for us![AN][CSS]
+[L][CF]
+[L][LoadLua][2LB]
 Dmitr?![.5] Is this trap[N]
-your bloody doing?[A]
+your bloody doing?![A]
 
 [MidRight][LoadDmitr][2LB]
 I swear I have nothing[N]
@@ -223,16 +717,49 @@ of vengeful spirits come from.[AN]
 But I promise I am a mere guide![.5][N]
 I will help fight with you.[A]
 
-[MidLeft][2LB]
+[L][2LB]
 Tch.[.5] Good enough for me.[.5][N]
 Can't go anywhere without a damn fight.[AN]
-Everyone ready up,[.4] lets clear[N]
-out this blasted den.[A][X]
+Everyone ready up,[.4] let's clear[N]
+out this blasted den![A][X]
 
+## HubB_1WyvernWarning_Pilar
+[ML][LoadPilar]
+[Beat]Well well[Beat][N]
+Guess the girl was right.[AN]
+We've got wyvern riders inbound,[N]
+[ToggleRed]and they're swooping in![AN][ToggleRed][X]
 
+## HubB_1WyvernWarning_Dmitr
+[ML][LoadDmitr]
+It seems as if our bandit friends[N]
+have managed to tame sand wyverns![AN]
+They're coming in right behind us,[N]
+[ToggleRed]and are ready to strike immediately![AN][ToggleRed][X]
 
+## HubB_1WyvernWarning_LuaResponse
+[MR][LoadLua]
+As if we needed more trouble[N]
+to pounce on top of us[Beat][AN]
+Get ready, Skysabers! Don't let[N]
+them catch us off-guard![AN][X]
 
+## HubB_1WyvernWarning_LuaSolo
+[MR][LoadLua]
+As if we needed more trouble[N]
+to pounce on top of us[Beat][AN]
+We have wyvern riders incoming.[AN]
+They look like they're going to[ToggleRed][N]
+try to strike first, and fast.[AN][ToggleRed]
+Get ready, Skysabers![.4]Don't let[N]
+them catch us off-guard![AN][X]
 
+## HubB_1WyvernsAppear
+
+[MR][LoadPirate]
+Wyverns, strike![AN]
+Punish these sailors for[N]
+setting foot in here![AN][X]
 
 ## HubB_1EndingScene1
 [FarLeft][LoadLua][Left][LoadRazvan][Right][LoadDmitr][FarRight][LoadPilar]
@@ -246,25 +773,56 @@ had to end in such a way.[AN]
 I can't imagine hiding in a ruin[N]
 waiting for travellers is much of a life.[A]
 
-[FarRight][1LB]
+[Right][2LB]
 No,[.4] but it's the life they chose.[A]
+[CloseEyes]All lives that were led by my cousin.[AN]
+
+[FL]
+[Beat]Hold on, you were family[N]
+with the leader of this group?[AN]
+
+[Right]
+Yes. Before my wandering days, I caught[N]
+him assaulting a pair of adventurers.[AN]
+[Beat]With one of those people already dead.[N]
+Though I turned him in, he escaped out[N]
+into the sands, and never saw him again.[AN]
+To think this is where his life[N]
+further descended on into[Beat][AN]
+
+[L]
+What a path to slip into[Beat][AN]
+
+[Right][1LB]
+[CloseEyes]Indeed[Beat][AN]
 
 [FarLeft][2LB]
 I suppose we should think about[N]
 setting on back now[Beat][A]
 
-[Right][2LB]
-Indeed,[.4] it'll take us around[N]
-an hour to get back to town.[AN]
+[Right][2LB][OpenEyes]
+Yes[Beat]I would rather not stay[N]
+in these dreadful ruins either.[AN]
 We will want to set off immediately[N]
 to avoid being stuck freezing at night.[A]
 
-[Left][1LB]
+[Left][2LB]
+No rest after all of this?[AN]
 I can hardly walk anymore[Beat][A]
 
-[Right][2LB]
-If you don't mind my asking,[.4][N]
-what will you do when you return?[A]
+[FL][2LB]
+Chin up, Razvan.[A] I'm sure they[N]
+have sweets at one of the taverns.[AN]
+
+[Left][2LB]
+[Beat]Perhaps I have a bit[N]
+of energy left in me after all.[AN]
+
+[Right]
+I'm inclined to agree[Beat]I'd[N]
+prefer thinking of sweets now.[AN]
+If you don't mind my asking Captain,[.4][N]
+what will you do in the morning?[A]
 
 [FarLeft][2LB]
 I suppose we'll be sailing off[N]
@@ -288,7 +846,9 @@ You'll be expected to pull your weight.[A]
 
 [Right][2LB]
 No problem, I'd figured you were.[N]
-I'm merely concerned with travel.[A]
+You all seem friendlier than most gangs[N]
+I've seen, including this one[Beat][AN]
+Thus, I was merely concerned with travel.[A]
 
 [FarLeft]
 Then welcome to the crew, Dmitr.[AN]
@@ -335,7 +895,7 @@ navigate us back to town?[A]
 I wouldn't be much of a[N]
 navigator if I couldn't, Lua.[AN]
 I'll have us back before[N]
-we end up dying of heat stroke.[A]
+we end up freezing out there.[A]
 
 [MidLeft]
 The quicker we get back, the more loot[N]
@@ -352,6 +912,112 @@ I'll pick what I can and be gone[N]
 before anyone can notice me.[AN]
 By the time Kiril finds out,[N]
 they'll have no chance of finding me.[A][X]
+
+
+## B1_BossQuote_Noah
+[FR][LoadNoah]
+[FR][CloseEyes]*Huff, huff...*[A][OpenEyes] Whew![AN]
+Fighting through here isn't easy![AN]
+It might be the evening, but[N]
+I'm working up a real sweat![AN]
+[CSS][CF]
+
+[FL][LoadKiril]
+[FL]Fool...[AN]
+You and your crew hunt us,[N]
+yet you speak so casually?[AN]
+[CSS][CF]
+
+[FR][LoadNoah]
+Hunt?[A] Ah[Beat]I'm not much[N]
+of a hunter, actually.[AN]
+Just trying to do my job, which[N]
+means hitting bad guys like you![AN]
+[CSS][CF]
+
+[FL][LoadKiril]
+Silence![A] Once I slice you open,[N]
+I'll feed you to the wyverns![AN]
+[CSS][CF]
+
+[FR][LoadNoah]
+[FR][ToggleSmile]
+H-Hah, I'd like to see you try[N]
+getting through my armor![AN]
+Those dinky knives of yours[N]
+are better for cutting onions![A][X]
+
+
+## B1_BossQuote_Dmitr
+[FR][LoadDmitr]
+No[Beat]you're the leader of[N]
+these damned brigands?[AN]
+[CSS][CF]
+
+[FL][LoadKiril]
+Cousin[Beat]after your betrayal,[N]
+I never expected to see you again.[AN]
+[CSS][CF]
+
+[FR][LoadDmitr]
+[OQ]Betrayal?[CQ][AN]
+Turning your back on a[N]
+murderer is betrayal?[AN]
+You went too far, Kiril;[.6][N]
+I couldn't let that go on![AN]
+[CSS][CF]
+
+[FL][LoadKiril]
+So you still have yet[N]
+to learn anything[Beat][AN]
+Fool[Beat]I will enjoy[N]
+beating you down personally.[AN]
+[CSS][CF]
+
+[FR][LoadDmitr]
+[CloseEyes]
+You really are a vengeful spirit[Beat][AN]
+[OpenEyes]
+Then it will be my axe that judges[N]
+you, and brings you to rest.[AN][X]
+
+
+## B1_BossQuote_Juan
+[FR][LoadJuan]
+[FR]Ah, looks like you play[N]
+around with knives too![AN]
+[ToggleSmile]Got anything fancy in those[N]
+pockets of yours?[AN]
+[AN][CSS][CF]
+
+[FL][LoadKiril]
+I'd like to see you try[N]
+and see, you common thief!
+[AN][CSS][CF]
+
+[FR][LoadJuan]
+Oh, well, I suppose I am [N]
+just a common thief, sure![AN]
+But, at least I don't go around [N]
+shanking the wrong people![AN]
+And us motley crew, are[N]
+pretty much the wrong people![AN]
+[Beat]In this specific[N]
+context, of course![AN]
+[AN][CSS][CF]
+
+[FL][LoadKiril]
+[Beat][AN]
+(The nerve of this man[Beat])[AN]
+(Not even the vultures would[N]
+to peck away at him[Beat])[A][X]
+
+## B1_BossQuote_Generic
+[FarLeft][LoadKiril]
+[Beat]The Antlions have stalked[N]
+these sands for years.[AN]
+We will not be your prey![AN]
+[A][X]
 
 ## KirilDeathQuote
 [MidLeft][LoadKiril]

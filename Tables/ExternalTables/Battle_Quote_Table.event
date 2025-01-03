@@ -64,6 +64,12 @@ UnspecifiedBattleConvo(Juliana, Chapter2, 0x14, JulianaBossQuote)
 UnspecifiedBattleConvo(Ignacio, Chapter2, 0x15, IgnacioBossQuote)
 UnspecifiedBattleConvo(ElodiaBoss, Chapter2, 0x16, ElodiaBossQuoteCh2)
 
+//Chapter B-1
+SpecifiedBattleConvo(Kiril,Noah,HubB_1,0x11,B1_BossQuote_Noah)
+SpecifiedBattleConvo(Kiril,Juan,HubB_1,0x12,B1_BossQuote_Juan)
+SpecifiedBattleConvo(Kiril,Dmitr,HubB_1,0x13,B1_BossQuote_Dmitr)
+UnspecifiedBattleConvo(Kiril,HubB_1,0x1A,B1_BossQuote_Generic)
+
 // Chapter B-2a, used in the cutscene when Cruz kills Magdalena if you don't catch him. 
 UnspecifiedBattleConvo(Cruz, CutsceneHubB_2a, 0x16, B2a_BQ_Cruz)
 
