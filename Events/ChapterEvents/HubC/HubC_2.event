@@ -4,6 +4,10 @@ EventPointerTable(HubC_2EventsID, PointerList)
 #define WaitOneTurnAI [0x0, 0x12, 0x4, 0x0]
 #define ChargeAIRecovery1 [0x0, 0x0, 0x1, 0x0]
 
+#define TC_C2CutsceneForest 	0x0
+#define TC_C2CutsceneVillage	0x1
+#define TC_C2CutsceneRetreat	0x2
+
 
 PointerList:
 POIN TurnBasedEvents
@@ -35,14 +39,6 @@ Chest(BraveBow, 21, 9)
 Village(20,QuickdrawVillage,13,24)
 END_MAIN
 
-QuickdrawVillage:
-//SetBackground(HouseBG)
-//Text(A2Village)
-//EraseBackground
-GiveItem(Quickdraw,0xFFFF)
-NoFade
-ENDA
-
 MiscBasedEvents:
 DefeatBoss(EndingScene)
 CauseGameOverIfLordDies
@@ -59,7 +55,6 @@ LoadUnit(10,27)
 LoadUnit(12,27)
 LoadUnit(9,28)
 LoadUnit(11,28)
-
 //Left side units
 LoadUnit(1,26)
 LoadUnit(3,26)
@@ -182,9 +177,59 @@ UNIT KeeperAlly Vanguard 0 Level(12,NPC,True) [19,22] 0 0 0 0 [SteelAxe, SteelLa
 UNIT KeeperAlly Warden 0 Level(13,NPC,True) [20,27] 0 0 0 0 [KillingEdge, Javelin] BossAI //blocking the arena, lol
 UNIT
 
+IntroCutsceneBlackhearts_Forest:
+UNIT Salvador 0 0 Level(20,Enemy,True) 				[7,5] 	0 0 0 0 [KillingEdge, KillerLance, FliersPermit] AttackInRangeAI
+UNIT BlackheartPlus Assassin 1 Level(19,Enemy,True)	[7,2] 	0 0 0 0 [SteelKnife, Stiletto] AttackInRangeAI
+UNIT BlackheartPlus WarMonk 0 Level(17,Enemy,True)	[10,14] 0 0 0 0 [HandAxe, Physic] [0xE, 0x3, 0x4, 0x20]
+UNIT BlackheartPlus Sniper 0 Level(16,Enemy,True) 	[0,4] 0 0 0 0 [Greatbow, MiniBow] BossAI
+UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [1,7] 	0 0 0 0 [Impaler, Javelin] WaitOneTurnAI
+UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) 	[0,9] 0 0 0 0 [SilverDagger] ChargeAI 
+UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) 	[4,9] 0 0 0 0 [SteelLance] ChargeAI
+UNIT BlackheartPlus Mercenary 0 Level(16,Enemy,True)[8,8] 0 0 0 0 [SteelSword] ChargeAI
+UNIT BlackheartPlus Berserker 0 Level(17,Enemy,True)[11,6] 0 0 0 0 [SteelAxe] ChargeAI
+UNIT BlackheartPlus Shaman 0 Level(16,Enemy,True) 	[12,7] 0 0 0 0 [Luna, SecretBook] WaitOneTurnAI
+UNIT BlackheartPlus Gunner 0 Level(16,Enemy,True) 	[10,2] 0 0 0 0 [Blunderbuss] WaitOneTurnAI
+UNIT BlackheartPlus Warrior 0 Level(18,Enemy,True) 	[8,0] 	0 0 0 0 [SteelAxe] GroupOneAI
+UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) 	[14,1] 	0 0 0 0 [SteelAxe, HandAxe] GroupOneAI
+UNIT BlackheartPlus Hunter 0 Level(16,Enemy,True) 	[14,8] 	0 0 0 0 [Longbow] GroupOneAI
+
+IntroCutsceneImperials_Forest:
+UNIT Valerie Archer 0 Level(5,Enemy,True) 	[6,4] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
+UNIT Calista Dragoon 0 Level(20,Enemy,True) [5,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
+//use 0x32 - 0x35 for allegience changes
+UNIT 0x32 Gunner 0 Level(3, Enemy, True) 	[3,5] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
+UNIT 0x33 Fighter 0 Level(3, Enemy, True) 	[4,3] 0 0 0 0 [] ChargeAI
+UNIT 0x34 Soldier 0 Level(3, Enemy, True) 	[3,2] 0 0 0 0 [] ChargeAI
+UNIT 0x35 Knight 0 Level(3, Enemy, True) 	[5,1] 0 0 0 0 [] ChargeAI
+
+IntroCutsceneBlackheart_Scout:
+
+IntroCutsceneVillage_FirstArrival:
+
+IntroCutsceneImperialDuoFleeing:
+
+IntroCutsceneVillage_AttackIncoming:
+UNIT Valerie Archer 0 Level(5,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
+
+IntroCutsceneVillage_PiratesSwarming:
+
+UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
+
 BeginningScene:
 ASMC ClearAllDebuffs // now clears tonics, too. If you add a prep screen to this chapter, then restarting the chapter after saving will remove any tonic boosts because this ASMC is being called each time. 
 WEATHER 7
+
+TILECHANGE TC_C2CutsceneForest
+CAMERA_CENTERED [0,0]
+MUSC WindGustSoundID
+// Inner monologue from Calista, the captain 
+// that was first encountered in A-4.
+Text(Hub_C2_Intro_1)
+FADU 12
+
+
+
+
 FadeToBlack
 EraseBackground
 REMOVEALL_BLUE
@@ -212,6 +257,14 @@ SetUnitItemDurability(14, 5, 1, RainbowTonic) //Give a fighter a droppable rainb
 SetUnitItemDurability(0, 5, 3, 7) //Callista used 3 mines as preperation! 
 
 GotoPrepScreen
+NoFade
+ENDA
+
+QuickdrawVillage:
+//SetBackground(HouseBG)
+//Text(A2Village)
+//EraseBackground
+GiveItem(Quickdraw,0xFFFF)
 NoFade
 ENDA
 

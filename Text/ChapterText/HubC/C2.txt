@@ -1,5 +1,154 @@
-## HubC_2Title
+ ## HubC_2Title
 Ch. C-2: Supply and Demand[X]
+
+## HubC2Objective
+Objective: Rescue, Boss [X]
+
+## HubC2Units
+Units: Calista (Dragoon), Valerie (Archer)[X]
+
+## HubC2Loot
+Loot: A variety of guns and bows.[X]
+
+## HubC2Confirm
+Trade with the Keepers?[X]
+
+##Hub_C2_Starting_Text
+
+[ML][LoadRebelSupplier]
+[MR][LoadLua]
+
+[ML]
+Ah, you must be the captain[N]
+Quispe told me about, yes?[AN]
+An unexpected visitor?[AN]
+
+[MR]
+You could say that.[AN]
+And a visitor that's in[N]
+need for a lot of materials.[AN]
+
+[ML]
+Yes, he also told me that your[N]
+landing was[Beat]less than ideal.[AN]
+Worry not though, I'm preparing[N]
+to head back to a supply depot.[AN]
+The name's Pavel, I work with[N]
+logistics here with the Keepers.[AN]
+Normally, I don't deal much with pirates[.4]-[N]
+but your connection with Pilar is good.[AN]
+
+[MR]
+[Beat][AN]
+
+[ML]
+I have a big convoy[N]
+coming in a few days[Beat][AN]
+But for a crew like yours,[N]
+I doubt that'd be enough.[AN]
+
+
+[MR]
+What's that supposed to imply?[AN]
+
+[ML]
+N-Nothing bad, if that's[N]
+what you're thinking.[AN]
+Just that you have a rather[N]
+large crew of pirates and all[Beat][AN]
+What exactly are you looking[N]
+to acquire for yourself?[AN]
+
+[MR][3LB]
+Nothing that scales[N]
+to the size of my crew.[AN]
+Just my ship[AN]which is pretty[N]
+dinged up, and needs lumber and[N]
+iron for serious hull repairs.[AN]
+[Beat]And perhaps some[N]
+able shipwrights to help repair[N]
+her in a timely manner? [AN]
+
+[ML][2LB]
+That is a tall request, captain.[AN]
+Raw materials are one thing,[N]
+but shipwrights-[AN]
+
+[MR]
+Are people hard to come by[N]
+around here, yeah, I get it.[AN]
+Is it off the table, or do you have[N]
+a job that'll make up for it?[AN]
+
+[ML]
+[ToggleSmile]
+It's as if you're begging to turn[N]
+into laborers for a few days.[AN]
+
+[MR][3LB]
+Laborers?[A] That seriously[N]
+can't be the first thing you think[N]
+of with a crew of crack pirates.[AN]
+
+[ML][MoML]
+W-Well, I can't say I'm[N]
+versed much with combat.[AN]
+I'm more of a supply officer-[.4]I[N]
+see value in just having more hands.[AN]
+But[Beat]to get to your language, I'd also[N]
+take getting some cold, hard, coin.[AN]
+
+
+[MR]
+In that case[Beat]we might[N]
+be able to work something out.[AN][TMM]
+(Not having to do a job would[N]
+be a nice change of pace[Beat])[AN]
+[Beat]
+[HalfCloseEyes]
+(But, something tells me these prices[N]
+are going to be less than reasonable.)[AN]
+[CloseEyes]
+(Still[Beat]it might be one of the[N]
+only chances we've got[Beat])[AN][X]
+
+## HubC2Accepted
+
+[ML][LoadRebelSupplier]
+[MR][LoadLua]
+
+[MR]
+I'll hear your offer out.[AN]
+Not like I really have a[N]
+lot of choices out here.[AN]
+
+[ML]
+Heh, if you're going to be[N]
+here in the Old World[Beat][AN]
+Gotta make use of whatever[N]
+opportunities come along.[AN]
+Get your crew ready, we'll[N]
+be leaving pretty shortly.[AN]
+
+
+[AN][ClearFace][CSS]
+
+[MR]
+[Beat]If this is going to be his attitude,[N]
+then I don't like where this is going.[AN][X]
+
+## HubC2Rejected
+
+[ML][LoadRebelSupplier]
+[MR][LoadLua]
+I'll need time to[N]
+consider this.[AN]
+
+[ML]
+[Beat]Really, not raring to go?[AN]
+Ah well, I'll wait until you've[N]
+got a better idea on things.[AN][X]
+
 
 ## HubC_2StatusObjective_A
 Defeat the[N]
@@ -68,6 +217,384 @@ Lua listens, and agrees, but[N]
 cannot make any promises.[AN][X]
 
 
+##Hub_C2_Intro_1
+
+//Black screen.
+
+[FFL][LoadCalista][3LB]
+Heh[Beat][AN]
+To think we're working with killers[N]
+in the middle of nowhere.[AN]
+What the hells have[N]
+I gotten into[Beat]?[AN]
+
+[FFR][LoadValerie]
+Captain?[AN]
+Captain, are you alright?[AN]
+
+[FFL]
+Hmm[Beat]huh?[AN][X]
+
+##Hub_C2_Intro_2
+
+[L][LoadCalista][CloseEyes]
+[FL][LoadValerie]
+
+[FL]
+You dozed off there for a bit.[AN]
+Just asked if you were good?[AN]
+
+Y-Yes.[.4] Yes.[AN]
+The rough terrain's not too bad,[N]
+so I'm simply[Beat]relaxing.[AN]
+
+[R][LoadSalvador]
+So, you're just, relaxing, eh?[AN]
+Hah![A] You getting tired up[N]
+on your high horse, 'captain'?[AN]
+How about you come down here[N]
+and get blisters like the rest of us?[AN]
+
+[FL]
+The captain can do what she wants![AN]
+She was helping gather earlier too,[N]
+there's nothing wrong with a break![AN]
+
+[FR][LoadPirate]
+We just found a couple wyverns[N]
+here and called it a day![AN]
+Damn things like being out[N]
+here more than anything, hah![AN][CSS]
+
+[FL][ClearFace][LoadRedSoldier]
+And Maker knows I don't want[N]
+to hear what you fed 'em.[AN]
+
+[FR]
+Making assumptions, eh?[N]
+Well well, if you're all[AN]
+
+[FFL][LoadRedSoldier]
+Hey, hey![AN]
+We're all on the same side,[N]
+doing some routine f-all.[AN]
+The least you all can do is[N]
+act civilized while at it![AN]
+
+[L][CloseEyes]
+
+[FFR]
+Look at that, the mongrels[N]
+trying to tell us to be civilized?[AN]
+Tell ya what, I'll be civilized once[N]
+you stick your lance up your-[AN]
+
+[L][MoL][OpenEyes]
+That's enough, all of you![AN]
+
+
+[R]
+Whatever you say.[AN][X]
+
+##Hub_C2_Intro_3
+
+[L][LoadCalista]
+[FL][LoadValerie]
+[MR][LoadRedSoldier]
+
+[L]
+[Beat]All this over me closing[N]
+my eyes for just a moment.[AN]
+Damn Blackhearts[AN]
+
+[R]
+Simple captain.
+They've never taken a moment[N]
+to think before in their lives.[AN]
+
+[L]
+I feel that way, Ramirez, but that[N]
+attitude is getting us nowhere. [AN]
+
+[R]
+Aren't we supposed to be their retinue?[AN]
+They oughta show some respect here.[AN]
+
+[FL]
+And their captain didn't even care[Beat]![AN]
+Guh, he had a stupid, cocky smirk[N]
+in the back while that went down[Beat][AN]
+
+[FL][1LB]
+Hmm[Beat]what's going on there?[AN]
+
+[L][2LB]
+A wyvern.[A] Looks like one of[N]
+their scouts has returned.[AN]
+Keep forging, I'll go investigate.[AN][X]
+
+##Hub_C2_Intro_4
+
+[L][LoadSalvador]
+[R][LoadPirate]
+
+[L]
+[Beat]off to the south?[AN]
+Well well, things are[N]
+gettin' real interesting.[AN]
+Boys, stop your gatherin',[N]
+and get ready for a march![AN][CSSCF]
+
+[R][LoadSalvador]
+[FFL][LoadCalista][MoL]
+[L]
+Now hold on just a moment.[AN]
+What did your scout see that's[N]
+gotten you so riled up?[AN]
+
+[R]
+Apparently they saw a village[N]
+down past all of these woods.[AN]
+Never saw it 'cause we were too[N]
+busy chopping wood and crap.[AN]
+
+[FR]
+It's gotta be one of 'em rebel bases[Beat][AN]
+Finally, can we get some action![AN]
+
+[L]
+We can just fall back, and relay[N]
+the position back to the base.[AN]
+We've gathered enough food, and[N]
+can wait for more reinforcements.[AN]
+
+[FL]
+Reinforcements[Beat][N]
+Just how long are those again?[AN]
+
+[L]
+Depending how bad the storms[N]
+are-might take several days.[AN]
+
+[FR]
+Several days[Beat][A][MoFR]you're[N]
+just screwing with us![AN]
+
+[R]
+Yeah, not so fast, captain![AN]
+We've already got plenty of men[N]
+with our little band here.[AN][Clear]
+That place won't give us Lua's corpse, [N]
+but we'll take what we can get, eh?[AN]
+It'd be a bonus to fill our wagons[N]
+with more than just food and water.[AN]
+
+[L]
+You band of merry men might be[N]
+raring to go, but we have orders.[AN]
+It may not be glamorous, but[N]
+we're expected to follow them.[AN]
+
+[R]
+This is rebel territory here![AN]
+The untamed isles and wilderness![AN]
+If there's a village here[Beat]they're[N]
+practically begging to be raided.[AN]
+
+[L]
+But we need to make sure that-[AN]
+
+[FR]
+And, what if they find our camp[N]
+while we sit on our asses?[AN]
+Just let the whole island mobilize?[.4][CloseEyes][N]
+Only makes sense to hit 'em first![AN]
+
+##Hub_C2_Intro_5
+//Valerie walks up to Calista quickly.
+
+[FL][LoadValerie]
+[L][LoadCalista]
+
+[FL]
+C-Captain, wait.[AN]
+Permission to[N]
+speak freely?[AN]
+
+[L]
+[Beat]I let you speak[AN]
+freely, what's bothering you?[N]
+
+[FL]
+I-It's just that[Beat][N]
+C-Captain,[.4] we can't just[Beat][AN][MoML]
+We can't just let these[N]
+guys order you around![AN]
+Y-You're the one in charge[Beat][AN]
+
+[MR][ToggleSmile]
+
+[L]
+[Beat]Valerie, hush. [A]I know that[N]
+I'm the one in charge here.[AN]
+[Beat]But, he does bring up[N]
+a good point about the area.[AN]
+You've heard the reports-[.4]expect[N]
+high rebel activity in the Old World[AN]
+
+[FL]
+So what if he has a point?[N]
+We're assuming this whole[N]
+place wants to kill us[Beat][AN]
+That village could just have[N]
+innocent people inside it![AN]
+
+[MR][ToggleSmile]
+What the? Aren't you imperials[N]
+hellbent on flogging rebels?![AN]
+
+[L]
+B-But we don't have proof,[N]
+you bloodthirsty dastard![AN]
+
+[MR]
+[Beat]Why you little-[AN]
+
+[FL]
+Besides[Beat][AN]
+Don't[Beat]don't we have a main[N]
+objective here over anything?[AN]
+
+[L]
+...Capture Lua. Dead or alive[N]
+Isn't that what you wanted, Durian?[AN]
+The reason why you volunteered[N]
+to fly into those horrid storms?[AN]
+
+[MR]
+'course I want to have Lua's[AN]
+crew six thousand feet under![N]
+But you, you're going to listen[N]
+to this girl and not-[AN]
+
+[L][3LB]
+I've decided this![.5][N]
+We cannot go gung-ho[N]
+on an unknown force.[AN]
+I'm ordering us all to head to[N]
+camp, then get more intel on the[N]
+village, and Lua's whereabouts.[AN]
+We only strike if the rebels are[N]
+there for sure, and we don't have[N]
+any other leads-that's final.[AN]
+Is that clear, Durian?[AN]
+
+
+[R]
+[TMM][1LB]
+............[.5][AN]
+...............[.4][TMM]Heh.[.4][AN]
+Hahahaha![AN]
+
+[L]
+What is the matter-[.6][N]
+
+[R]
+This wench thinks she can boss[AN]
+the Blackhearts around![N]
+Y'know what? I think we've all[AN]
+have had it with your crap![X]
+
+##Hub_C2_Intro_6_A
+//Imperials turn into green units oh boy
+
+[ML][LoadCalista]
+[MR][LoadSalvador]
+
+[ML]
+Y-You bastards![A] Are you[N]
+going to betray us like this?![AN]
+Elodia will have your heads[N]
+once she finds out![AN]
+
+[MR]
+Not like she was gonna bother[N]
+showing up here anyways![AN]
+Did you really think your leader[N]
+had guts to fly through eventually?[AN]
+No[Beat]no, you're trapped with[N]
+us, and have nowhere to hide![AN]
+
+[ML]
+S-Squad, raise your weapons![AN][X]
+
+##Hub_C2_Intro_6_B
+[MR]
+We'll raze and plunder on[N]
+our own, and bleed them out to[N]
+find Lua while we're at it![AN]
+Kill them![N][X]
+
+##Hub_C2_Intro_7
+//Lua's crew arrives at the rebel outpost, being led by the rebel supplier.
+
+[FR][LoadOrlando]
+[R][LoadRazvan]
+[L][LoadLua]
+[FL][LoadRebelSupplier]
+
+[FL]
+And we're here.[AN][X]
+
+##Hub_C2_Intro_8
+[FR][LoadValerie][CloseEyes]
+[R][LoadCalista]
+
+[FR]
+Ow, ow[Beat][N]
+The rest of our squad[Beat][AN][X]
+
+##Hub_C2_Intro_9
+
+[R][LoadLua]
+[FR][LoadOrlando]
+[MR][LoadRebelSupplier]
+
+[R]
+You're crazy.[AN][X]
+
+##Hub_C2_Intro_10
+
+[FL][LoadBlueSoldier]
+[ML][LoadValerie][CloseEyes]
+[L][LoadBlueSoldier][AN]
+[FR][LoadLua][1LB]
+Valerie![AN][X]
+
+##Hub_C2_Intro_11
+
+[MR][LoadRebelSupplier]
+
+[Beat]
+Alright, spill it then, trooper?
+What's going on?
+Why is there a band of
+pirates attacking our depot?{AN][X]
+
+##Hub_C2_Intro_12
+
+[FFR][LoadBlueSoldier]
+Sir! We're already taking heavy
+losses at the northwest gate![AN]
+The north gate is engaging too,
+but it's not looking good either![AN]
+There's still more coming too![AN][X]
+
+
+
+
+
+
 ## C2ExplanationText_1
 Calista is currently holding[N]
 off against the Blackhearts.[AN]
@@ -126,14 +653,14 @@ flipped as soon as we took losses![AN]
 And how are we supposed to
 take your word for that?
 
-Sir, I saw a girl wearing imperial 
+Sir, I saw a girl wearing imperial
 armor behind in their lines.[AN]
 With Captain Calista also
 fighting his forces...[AN]
 He's telling the truth.[AN]
 
 Bloody...
-Very well. 
+Very well.
 Lieutenant, follow me and we'll
 send a report back to the camp.
 You two, maneuver from the back,
@@ -149,16 +676,15 @@ Not close enough for a shot...[CloseEyes]
 this isn't looking good.[AN][X]
 
 ## C2_T11_CalistaAlive
-//All enemies are set to charge AI. 
+//All enemies are set to charge AI.
 [MR][LoadAlonso]
-The crew's on its last legs[Beat][AN] 
-And that imperial dog[N] 
+The crew's on its last legs[Beat][AN]
+And that imperial dog[N]
 still managed to live?![AN]
 ...Damn Skysabers![AN]
 We aren't going to
 die facing down![....][N]
 All remaining hands,[N]
 charge, now![AN][X]
-
 
 
