@@ -235,9 +235,9 @@ Captain, are you alright?[AN]
 [FFL]
 Hmm[Beat]huh?[AN][X]
 
-##Hub_C2_Intro_2
+##Hub_C2_Intro_2A
 
-[L][LoadCalista][CloseEyes]
+[L][LoadCalista]
 [FL][LoadValerie]
 
 [FL]
@@ -246,9 +246,14 @@ Just asked if you were good?[AN]
 
 Y-Yes.[.4] Yes.[AN]
 The rough terrain's not too bad,[N]
-so I'm simply[Beat]relaxing.[AN]
+so I'm simply[Beat]relaxing.[AN][X]
 
-[R][LoadSalvador]
+##Hub_C2_Intro_2B
+[L][LoadCalista]
+[FL][LoadValerie]
+[FFR][LoadSalvador]
+[MoR]
+[R]
 So, you're just, relaxing, eh?[AN]
 Hah![A] You getting tired up[N]
 on your high horse, 'captain'?[AN]
@@ -296,7 +301,7 @@ That's enough, all of you![AN]
 [R]
 Whatever you say.[AN][X]
 
-##Hub_C2_Intro_3
+##Hub_C2_Intro_3A
 
 [L][LoadCalista]
 [FL][LoadValerie]
@@ -323,7 +328,13 @@ They oughta show some respect here.[AN]
 [FL]
 And their captain didn't even care[Beat]![AN]
 Guh, he had a stupid, cocky smirk[N]
-in the back while that went down[Beat][AN]
+in the back while that went down[Beat][AN][X]
+
+##Hub_C2_Intro_3B
+
+[L][LoadCalista]
+[FL][LoadValerie]
+[MR][LoadRedSoldier]
 
 [FL][1LB]
 Hmm[Beat]what's going on there?[AN]
@@ -333,20 +344,21 @@ A wyvern.[A] Looks like one of[N]
 their scouts has returned.[AN]
 Keep forging, I'll go investigate.[AN][X]
 
-##Hub_C2_Intro_4
+##Hub_C2_Intro_4A
 
-[L][LoadSalvador]
-[R][LoadPirate]
+[ML][LoadPirate]
+[MR][LoadSalvador]
 
-[L]
+[MR]
 [Beat]off to the south?[AN]
 Well well, things are[N]
 gettin' real interesting.[AN]
 Boys, stop your gatherin',[N]
-and get ready for a march![AN][CSSCF]
+and get ready for a march![AN][X]
 
+##Hub_C2_Intro_4B
 [R][LoadSalvador]
-[FFL][LoadCalista][MoL]
+[FFL][LoadCalista][MoML]
 [L]
 Now hold on just a moment.[AN]
 What did your scout see that's[N]
@@ -408,7 +420,7 @@ But we need to make sure that-[AN]
 And, what if they find our camp[N]
 while we sit on our asses?[AN]
 Just let the whole island mobilize?[.4][CloseEyes][N]
-Only makes sense to hit 'em first![AN]
+Only makes sense to hit 'em first![AN][X]
 
 ##Hub_C2_Intro_5
 //Valerie walks up to Calista quickly.
@@ -489,7 +501,7 @@ there for sure, and we don't have[N]
 any other leads-that's final.[AN]
 Is that clear, Durian?[AN]
 
-
+[LoadOverworldFaces]
 [R]
 [TMM][1LB]
 ............[.5][AN]
@@ -503,9 +515,9 @@ What is the matter-[.6][N]
 This wench thinks she can boss[AN]
 the Blackhearts around![N]
 Y'know what? I think we've all[AN]
-have had it with your crap![X]
+have had it with your shit![AN][X]
 
-##Hub_C2_Intro_6_A
+##Hub_C2_Intro_6A
 //Imperials turn into green units oh boy
 
 [ML][LoadCalista]
@@ -526,14 +538,14 @@ No[Beat]no, you're trapped with[N]
 us, and have nowhere to hide![AN]
 
 [ML]
-S-Squad, raise your weapons![AN][X]
+Squad, raise your weapons![AN][X]
 
-##Hub_C2_Intro_6_B
-[MR]
+##Hub_C2_Intro_6B
+[MR][3LB][LoadSalvador]
 We'll raze and plunder on[N]
 our own, and bleed them out to[N]
 find Lua while we're at it![AN]
-Kill them![N][X]
+Kill them![AN][X]
 
 ##Hub_C2_Intro_7
 //Lua's crew arrives at the rebel outpost, being led by the rebel supplier.
@@ -589,11 +601,6 @@ losses at the northwest gate![AN]
 The north gate is engaging too,
 but it's not looking good either![AN]
 There's still more coming too![AN][X]
-
-
-
-
-
 
 ## C2ExplanationText_1
 Calista is currently holding[N]

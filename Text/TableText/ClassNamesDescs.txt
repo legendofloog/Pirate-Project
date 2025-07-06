@@ -408,3 +408,11 @@ Admiral[X]
 ## AdmiralDesc
 Weapons: Sword, Gun[N]
 Traits: Steal, Locktouch[X]
+
+## SupplierName
+Supplier[X]
+
+## SupplierDesc
+Weapons: Knives[N]
+Traits: Logistics[X]
+

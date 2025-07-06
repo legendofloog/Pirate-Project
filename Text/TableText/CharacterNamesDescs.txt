@@ -1415,3 +1415,12 @@ Trapper[X]
 ## WoodsmanDesc
 A huntsman who now relies on nature's[N]
 bounty instead of living with others.[X]
+
+## PavelName
+Pavel[X]
+
+## PavelDesc
+Logistics Officer[N]
+An expert at organizing the Keepers'[N]
+limited supplies to full effectiveness.[X]
+

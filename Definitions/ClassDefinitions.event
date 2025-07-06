@@ -123,12 +123,14 @@
 #define Log 0x8C
 
 #define PirateClass 0x42
+#define VillagerMChild 0x6d
 #define VillagerFChild 0x6e
 #define VillagerMAdult 0x6f
 #define VillagerFAdult 0x70
 
 #define Kite 0xab
 
+#define Supplier 0xAF
 
 //HORSE/ARMOR
 #define Cataphract 0x35
