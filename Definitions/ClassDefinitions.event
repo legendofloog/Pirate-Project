@@ -208,6 +208,7 @@
 #define HorseMapSprite 0x9c
 #define Gryphknight_DMapSprite 0x9d
 #define AirshipMapSprite 0x9e
+#define SupplierMapSprite 0x9f
 #define KiteMapSprite LogMapSprite // 0x9e
 #define AdmiralMapSprite CaptainMapSprite
 

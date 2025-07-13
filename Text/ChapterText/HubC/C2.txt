@@ -573,7 +573,9 @@ The rest of our squad[Beat][AN][X]
 [MR][LoadRebelSupplier]
 
 [R]
-You're crazy.[AN][X]
+You're crazy.[AN]
+[LoadOverworldFaces][AN]
+[X]
 
 ##Hub_C2_Intro_10
 
@@ -584,6 +586,10 @@ You're crazy.[AN][X]
 Valerie![AN][X]
 
 ##Hub_C2_Intro_11
+[FR][LoadLua][1LB]
+Valerie![AN][X]
+
+##Hub_C2_Intro_12
 
 [MR][LoadRebelSupplier]
 
@@ -591,9 +597,18 @@ Valerie![AN][X]
 Alright, spill it then, trooper?
 What's going on?
 Why is there a band of
-pirates attacking our depot?{AN][X]
+pirates attacking our depot?[AN][X]
 
-##Hub_C2_Intro_12
+##Hub_C2_Intro_13
+
+[FFR][LoadBlueSoldier]
+Sir! We're already taking heavy
+losses at the northwest gate![AN]
+The north gate is engaging too,
+but it's not looking good either![AN]
+There's still more coming too![AN][X]
+
+##Hub_C2_Intro_14
 
 [FFR][LoadBlueSoldier]
 Sir! We're already taking heavy

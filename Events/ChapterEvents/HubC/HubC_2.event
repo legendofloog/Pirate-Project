@@ -7,6 +7,13 @@ EventPointerTable(HubC_2EventsID, PointerList)
 #define TC_C2CutsceneForest 	0x0
 #define TC_C2CutsceneVillage	0x1
 #define TC_C2CutsceneRetreat	0x2
+#define TC_C2Snag		0x3
+#define TC_C2Bridge 	0x4
+#define TC_C2Chest 		0x5
+#define TC_C2Village 	0x6
+
+#define FlagC2_Village 0x20
+#define FlagC2_Outpost 0x21
 
 
 PointerList:
@@ -25,7 +32,7 @@ TurnBasedEvents:
 TurnEventPlayer(0, Turn1_Explanation, 1)
 TurnEventPlayer(0, Turn3_Reinforcements, 3)
 TurnEventPlayer(0, Turn5_BridgeLowered, 5)
-TurnEventPlayer(0, Turn8_SpawnGriffons, 8)
+TurnEventPlayer(0, Turn8_SpawnWyverns, 8)
 TurnEventPlayer(0, Turn11_AggroBoss, 11)
 //TurnEventPlayer(0, EndingScene,1,255)
 END_MAIN
@@ -35,11 +42,13 @@ CharacterEventBothWays(9, CalistaRecruitment, 0x0, Calista) //anyone can talk wi
 END_MAIN
 
 LocationBasedEvents:
-Chest(BraveBow, 21, 9)
+Chest(RedGem, 21, 9)
 Village(20,QuickdrawVillage,13,24)
 END_MAIN
 
 MiscBasedEvents:
+// You get the Charge scroll here, but something more unique could be added maybe
+AREA FlagC2_Outpost HiddenOutpost [4,0][4,0] 
 DefeatBoss(EndingScene)
 CauseGameOverIfLordDies
 END_MAIN
@@ -109,7 +118,7 @@ UNIT
 MiddleUnits:
 UNIT BlackheartPlus WarMonk 0 Level(17,Enemy,True) [9,14] 0 0 0 0 [IronAxe, Silence] BossAI
 UNIT BlackheartPlus WarMonk 0 Level(17,Enemy,True) [10,14] 0 0 0 0 [HandAxe, Physic] [0xE, 0x3, 0x4, 0x20]
-UNIT BlackheartPlus Sniper 0 Level(16,Enemy,True) [11,13] 0 0 0 0 [Greatbow, MiniBow] BossAI
+UNIT BlackheartElite Sniper 0 Level(18,Enemy,True) [11,13] 0 0 0 0 [Greatbow, ShiningBow] BossAI
 UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [8,13] 0 0 0 0 [Impaler, Javelin] WaitOneTurnAI
 UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [12,10] 0 0 0 0 [SilverDagger] ChargeAI 
 
@@ -148,9 +157,9 @@ UNIT BlackheartPlus Hero 0 Level(18,Enemy,True) [16,5] 0 0 0 0 [SteelSword, Hand
 UNIT
 
 Reinforcements_T3:
-//Small trickle of units to attack Calista
-UNIT BlackheartPlus Gunner 0 Level(16,Enemy,True) [14,0] 0 0 1 REDA12R0 [SteelMusket] ChargeAI
-UNIT BlackheartPlus Mercenary_F 0 Level(16,Enemy,True) [15,0] 0 0 1 REDA13R0 [SteelSword] ChargeAI
+//Small trickle of weak units to attack Calista
+UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) [14,0] 0 0 1 REDA12R0 [IronAxe, HandAxe] ChargeAI
+UNIT BlackheartPlus Mercenary_F 0 Level(15,Enemy,True) [15,0] 0 0 1 REDA13R0 [SteelSword] ChargeAI
 UNIT
 
 Reinforcements_T5:
@@ -161,21 +170,23 @@ UNIT
 
 //Meant to kill the imperial captain if you aren't quick enough! 
 GriffonReinforcements:
-UNIT TorchUnit Gryphoknight 0 Level(18,Enemy,True) [3,0] 0 0 0 0 [Impaler] ChargeAI
-UNIT TorchUnit Gryphoknight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [SteelLance, Horseslayer] ChargeAI
+UNIT BlackheartPlus WyvernRider 0 Level(17,Enemy,True) [3,0] 0 0 0 0 [Halberd] ChargeAI
+UNIT BlackheartPlus WyvernKnight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [Swordreaver] ChargeAI
 UNIT
 
 CalistaTrapped:
 UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
 UNIT
 
+// The keeper units have slightly improved stats that'll let them handle their own early in Hub C,
+// but will likely get overwhelmed if you do this chapter later. 
 SmallRebelGarrison:
-UNIT KeeperAlly Halberdier 0 Level(17,NPC,True) [17,24] 0 0 0 0 [SilverLance, Axereaver, Elixir] ChargeAIRecovery1 //ChargeAI, but with recovery mode 30% HP. 
-UNIT KeeperAlly Mercenary 0 Level(16,NPC,True) [15,24] 0 0 0 0 [SteelSword, Wingclipper, IronShield, Vulnerary] ChargeAIRecovery1
-UNIT KeeperAlly Mage 0 Level(15,NPC,True) [16,26] 0 0 0 0 [Elfire, Thunder, Vulnerary] ChargeAIRecovery1
-UNIT KeeperAlly Curate 0 Level(14,NPC,True) [18,28] 0 0 0 0 [Physic] [0xE,0xA,0x0,0x00] //Follow Lua and heal
-UNIT KeeperAlly Vanguard 0 Level(12,NPC,True) [19,22] 0 0 0 0 [SteelAxe, SteelLance] ChargeAI 
-UNIT KeeperAlly Warden 0 Level(13,NPC,True) [20,27] 0 0 0 0 [KillingEdge, Javelin] BossAI //blocking the arena, lol
+UNIT KeeperC2 Halberdier 0 Level(17,NPC,True) [17,24] 0 0 0 0 [SilverLance, Axereaver, Elixir] ChargeAIRecovery1 //ChargeAI, but with recovery mode 30% HP. 
+UNIT KeeperC2 Mercenary 0 Level(16,NPC,True) [15,24] 0 0 0 0 [SteelSword, Wingclipper, IronShield, Vulnerary] ChargeAIRecovery1
+UNIT KeeperC2 Mage 0 Level(15,NPC,True) [16,26] 0 0 0 0 [Elfire, Thunder, Vulnerary] ChargeAIRecovery1
+UNIT KeeperC2 Curate 0 Level(14,NPC,True) [18,28] 0 0 0 0 [Physic] [0xE,0xA,0x0,0x00] //Follow Lua and heal
+UNIT KeeperC2 Vanguard 0 Level(12,NPC,True) [19,22] 0 0 0 0 [SteelAxe, SteelLance] ChargeAI 
+UNIT KeeperC2 Warden 0 Level(13,NPC,True) [20,27] 0 0 0 0 [KillingEdge, Javelin] BossAI //blocking the arena, lol
 UNIT
 
 IntroCutsceneBlackhearts_Forest:
@@ -201,11 +212,6 @@ UNIT 0x59 			Hunter 1 Level(15,Enemy,True) 	[16,4] 0 0 0 0 [Longbow, Vulnerary] 
 UNIT 0x5A 			Hero_F 1 Level(18,Enemy,True) 	[16,5] 0 0 0 0 [SilverSword] WaitOneTurnAI
 UNIT
 
-//UNIT 0x53 			Mercenary 0 Level(16,Enemy,True)[11,10] 0 0 0 0 [SteelSword] ChargeAI
-//UNIT 0x54 			WarMonk 0 Level(17,Enemy,True)	[13, 4] 0 0 0 0 [HandAxe, Physic] [0xE, 0x3, 0x4, 0x20]
-//UNIT 0x55 			Fighter 0 Level(16,Enemy,True) 	[14,1] 	0 0 0 0 [SteelAxe, HandAxe] GroupOneAI
-//UNIT 0x56 			Hunter 0 Level(16,Enemy,True) 	[14,8] 	0 0 0 0 [Longbow] GroupOneAI
-
 IntroCutsceneImperials_Forest:
 UNIT Valerie Archer 0 Level(5,Enemy,True) 	[5,2] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
 UNIT Calista Dragoon 0 Level(20,Enemy,True) [5,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
@@ -221,11 +227,11 @@ UNIT 0x36 WyvernRider 0 Level(16,Enemy,True) 	[0,8] 	0 0 0 0 [Longbow] GroupOneA
 UNIT
 
 IntroCutsceneVillage_FirstArrival:
-UNIT Lua Captain 0 Level(10,Ally,False) [15,2] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Pilar 0 0 Level(1,Ally,True) [28,6] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Razvan 0 0 Level(1,Ally,True) [21,4] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Orlando 0 0 Level(4,Ally,True) [6,8] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Pavel Supplier 0 Level(4,NPC,True) [6,8] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Pavel Supplier 0 Level(4,NPC,True) [14,21] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Orlando 0 0 Level(4,Ally,True) [15,22] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Lua Captain 0 Level(10,Ally,False) [14,22] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(1,Ally,True) [13,22] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Razvan 0 0 Level(1,Ally,True) [14,23] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Rebel VillagerMAdult 0 Level(4,NPC,True) [6,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Rebel VillagerMChild 0 Level(4,NPC,True) [20,16] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Rebel VillagerFAdult 0 Level(4,NPC,True) [16,13] 0x0 0x0 0 0 [0x0] NoAI
@@ -247,28 +253,30 @@ UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SteelSword, El
 IntroCutsceneVillage_AttackIncoming:
 UNIT Lua Captain 0 Level(10,Ally,False) [10,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [13,15] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Razvan 0 0 Level(1,Ally,True) [9,14] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Razvan 0 0 Level(1,Ally,True) [8,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Orlando 0 0 Level(4,Ally,True) [12,15] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Pavel Supplier 0 Level(4,NPC,True) [11,14] 0x0 0x0 0 0 [0x0] NoAI
-UNIT 0x50 VillagerMAdult 0 Level(4,NPC,True) [6,14] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x91 VillagerMAdult 0 Level(4,NPC,True) [9,16] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x51 VillagerMChild 0 Level(4,NPC,True) [20,16] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x52 VillagerFAdult 0 Level(4,NPC,True) [16,13] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x53 VillagerFAdult 0 Level(4,NPC,True) [0,19] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x54 VillagerMAdult 0 Level(4,NPC,True) [6,10] 0x0 0x0 0 0 [0x0] NoAI
 //actual armed rebels, not many of them since most are on a mission 
 UNIT Rebel Warden 0 Level(4,NPC,True) [20,11] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Rebel Mage 0 Level(4,NPC,True) [12,17] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Rebel Mercenary 0 Level(4,NPC,True) [3,14] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Rebel Halberdier 0 Level(4,NPC,True) [10,12] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Rebel Curate 0 Level(4,NPC,True) [7,15] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0xAA Mage 0 Level(4,NPC,True) [12,17] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0xAB Mercenary 0 Level(4,NPC,True) [3,14] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0xAC Halberdier 0 Level(4,NPC,True) [15,17] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0xAD Curate 0 Level(4,NPC,True) [17,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Valerie Archer 0 Level(5,NPC,True) [9,4] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
 //these guys actively move once pirates spotted
-UNIT 0x60 Fighter 0 Level(4,NPC,True) [7,10] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x60 Knight 0 Level(4,NPC,True) [11,5] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x61 Soldier 0 Level(4,NPC,True) [8,5] 0x0 0x0 0 0 [0x0] NoAI
-UNIT 0x62 Vanguard 0 Level(4,NPC,True) [7,15] 0x0 0x0 0 0 [0x0] NoAI
-UNIT 0x63 Gunner 0 Level(4,NPC,True) [3,5] 0x0 0x0 0 0 [0x0] NoAI
-UNIT 0x64 Deserter 0 Level(4,NPC,True) [1,7] 0x0 0x0 0 0 [0x0] NoAI
-UNIT 0x65 SwordCav 0 Level(4,NPC,True) [12,6] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x62 Vanguard 0 Level(4,NPC,True) [3,5] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x63 Fighter 0 Level(4,NPC,True) [13,6] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x64 Deserter 0 Level(4,NPC,True) [5,7] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x90 SwordCav 0 Level(4,NPC,True) [12,9] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x66 Gunner 0 Level(4,NPC,True) [4,11] 0x0 0x0 0 0 [0x0] NoAI
+UNIT 0x67 LanceCav 0 Level(4,NPC,True) [2,9] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 
 
 //these guys are going to appear in-frame, starting to take position
@@ -381,7 +389,7 @@ REMA
 
 STAL 15
 //Pirates turn hostile, start moving in...
-SOUN ScalleywagsOnDeckID
+SOUN AvastMeHeartiesID
 MUSI 
 
 MOVE 5 0x50 [5,1] //warrior
@@ -427,6 +435,7 @@ Text(Hub_C2_Intro_6B)
 
 
 //fade to black, moving to village
+EVBIT_F 2 //stop scene skip here for tile changes
 MUSC 0x7FFF
 FADI 10
 STAL 30
@@ -436,27 +445,141 @@ CLEE 0
 TILECHANGE TC_C2CutsceneVillage
 MUSC StillZephyrsID
 LoadCutsceneUnits(IntroCutsceneVillage_FirstArrival)
-CAMERA_CENTERED [11,16]
+CAMERA_CENTERED [14,16]
 FADU 5
 
 //Village time. 
 STAL 60
+MOVE 5 Pavel 	[14,14]
+STAL 20
+MOVE 5 Lua 		[13,15]
+STAL 15
+MOVE 5 Pilar 	[15,15]
+STAL 15
+MOVE 5 Razvan 	[14,16]
+ENUN
+FlashCursor(Pavel, 60)
+Text(Hub_C2_Intro_7)
 
+//negotiations begin, fade to black
 
+FADI 5
+STAL 60
+REMOVEALL_BLUE
+REMOVEALL_GREEN
+LoadCutsceneUnits(IntroCutsceneVillage_AttackIncoming)
+CAMERA_CENTERED [11,15]
+FADU 5
+STAL 30
+FlashCursor(Lua, 60)
+TEXTSTART
+TEXTSHOW Hub_C2_Intro_9
+TEXTEND
+SOUN 0x7FFF //pause music
+STAL 15
+TEXTCONT
+TEXTEND
 
+//commotion at the gates
 
-
-
+MUSC 0x7FFF
+CAMERA_CENTERED [8,8]
 //lua moves towards the commotion
 MOVE 4 Lua [9,10]
+MUSC SwabbieTalkID
+ENUN
+STAL 60
+Text(Hub_C2_Intro_10)
 
-FadeToBlack
+//valerie comes forward, while rebels
+//move in to rapidly intercept
+MOVE 5 Valerie [9,9]
+MOVE 8 0x67 [0,1]
+MOVE 7 0x66 [1,2] 
+MOVE 4 0x54 [5,9] //villager 
+STAL 10
+REMOVEUNIT 0x54
+ENUN
+MOVE 8 0x90 [9,1]
+MOVE 7 0x64 [8,2]
+MOVE 7 0x63 [11,2]
+MOVE 5 Razvan [10,10]
+ENUN
+STAL 5
+FlashCursor(Valerie,40)
+Text(Hub_C2_Intro_11)
+
+//The supplier and other units
+//come up out of curiosity
+MOVE 30 0xAC [13,15] //halb
+MOVE 30 0xAA [14,16] //mage
+MOVE 30 0xAB [14,14] //merc
+MOVE 30 0xAD [15,15] //cura
+CAMERA_CENTERED [8,12]
+MOVE 5 Pavel [9,12]
+MOVE 5 Pilar [11,11]
+MOVE 5 Orlando [8,13]
+ENUN 
+STAL 15
+FlashCursor(Pavel,60)
+Text(Hub_C2_Intro_12)
+ENUF 0x84 //need to disable this in order to see HP bars
+
+
+
+//injured cavalier rushes
+//down, warns about enemies
+SVAL s1 0x07 //set hp to 7
+SET_HP 0x90
+MOVE 9 0x90 [11,12]
+ENUN
+FlashCursor(0x90, 60)
+Text(Hub_C2_Intro_13)
+
+//cavalier finds more reinforcements,
+//Pavel moves out with remaining troops
+MOVE 9 0x90 [13,21]
+MOVE 6 Pavel [18,14]
+ENUN
+MOVE 6 0xAC [20,15] //halb
+STAL 30
+MOVE 5 0xAA [19,16] //mage
+MOVE 5 0xAB [19,14] //merc
+MOVE 4 0xAD [19,15] //cura
+ENUN
+ENUT 0x84 //re-enabled, boss bars no longer wanted
+REMOVEUNIT 0x60
+REMOVEUNIT 0x61
+REMOVEUNIT 0x62
+LoadCutsceneUnits(IntroCutsceneVillage_PiratesSwarming)
+STAL 10
+CAMERA_CENTERED [8,8]
+STAL 50
+MOVE 5 0x73 [8,5]
+MOVE 5 0x74 [11,5]
+STAL 15
+MOVE 6 0x75 [9,6]
+MOVE 6 0x76 [10,4]
+MOVE 6 0x72 [2,6]
+MOVE 6 0x71 [1,5]
+STAL 30
+MOVE 6 Valerie [7,10]
+MOVE 6 Razvan [9,12]
+MOVE 6 Orlando [8,11]
+MOVE 6 Pilar [10,11]
+
+STAL 60
+Text(Hub_C2_Intro_14)
+
+STAL 60
 EraseBackground
+FadeToBlack
 TILEREVERT TC_C2CutsceneVillage
 REMOVEALL_BLUE
 REMOVEALL_GREEN
+REMOVEALL_RED
 
-CenterTextbox(C2_Synopsis_A)
+//CenterTextbox(C2_Synopsis_A)
 
 LoadEnemies(CalistaTrapped)
 LoadEnemies(SmallRebelGarrison)
@@ -467,11 +590,8 @@ LoadEnemies(EnemiesAttackingCalista)
 
 LOAD1 0 Units1
 
-PanToTileThenFlashCursorForXSeconds(9, 26, 60)
-CenterTextbox(C2_Synopsis_B)
-
-TILECHANGE 0x1 //callista is now exposed
-AddTrap(MineTrapID,1,5)
+TILECHANGE TC_C2Snag //callista is now exposed...
+AddTrap(MineTrapID,1,5) //...but she's got explosives, baby. 
 AddTrap(MineTrapID,1,6)
 AddTrap(MineTrapID,0,6)
 SetUnitItemDurability(7, 16, 2, StrTonic) //Give valerie a str tonic
@@ -487,6 +607,14 @@ QuickdrawVillage:
 //Text(A2Village)
 //EraseBackground
 GiveItem(Quickdraw,0xFFFF)
+NoFade
+ENDA
+
+HiddenOutpost:
+//SetBackground(HouseBG)
+//Text(A2Village)
+//EraseBackground
+GiveItemWithDurability(SkillScroll,ChargeID,0xFFFF)
 NoFade
 ENDA
 
@@ -506,13 +634,13 @@ ENDA
 
 Turn5_BridgeLowered:
 //Turn 5, the right side bridge gets pushed down one space, allowing for more units to swoop in.
-//This is used to set the enemy AIs here to 0. 
 CameraCursor(19,1)
 Text(C2BridgeLowered_T4)
 CameraCursor(11,28)
 STAL 30
 SOUN 0x2D7 //snag falling
-TILECHANGE 0x0
+TILECHANGE TC_C2Bridge
+//This is used to set the enemy AIs here to 0. 
 SVAL s1 0
 CHAI [14, 5]
 CHAI [17, 6]
@@ -521,7 +649,7 @@ LoadReinforcements(Reinforcements_T5)
 NoFade
 ENDA
 
-Turn8_SpawnGriffons:
+Turn8_SpawnWyverns:
 LoadReinforcements(GriffonReinforcements)
 NoFade
 ENDA

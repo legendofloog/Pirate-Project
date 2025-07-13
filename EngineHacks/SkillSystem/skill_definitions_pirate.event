@@ -290,3 +290,7 @@
 
 //Misfortune
 #define MisfortuneID 104
+
+//Charge: Gain +1 damage for every two squares moved.
+//By Datagne
+#define ChargeID 105

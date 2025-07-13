@@ -45,6 +45,12 @@ SwimwearStatBonuses:
 StatBonus(0,0,0,0,0,(-2),0,2,0,0) 
 // StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB)
 
+ALIGN 4
+MarchRingStatBonuses:
+StatBonus(0,0,0,0,0,0,0,0,1,0) 
+// StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB)
+
+ALIGN 4
 WildAxeStatBonuses:
 StatBonus(0,0,0,0,3,0,0,0,0,0)  
 
