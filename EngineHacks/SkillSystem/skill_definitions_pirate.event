@@ -297,3 +297,10 @@
 //Shade+: Enemies will not target this unit.
 //By Sme
 #define ShadePlusID 106
+
+//Home Turf
+#define HomeTurfID 107
+
+//Siege Tower
+#define SiegeTowerID 108
+

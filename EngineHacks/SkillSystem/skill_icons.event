@@ -1195,6 +1195,10 @@ ORG SkillIcon(PrecisionID)
 #incbin "SkillIcons/BowRangeUp.dmp"
 ORG SkillIcon(MisfortuneID)
 #incbin "SkillIcons/Fortune.dmp"
+ORG SkillIcon(HomeTurfID)
+#incbin "SkillIcons/Pass.dmp"
+ORG SkillIcon(SiegeTowerID)
+#incbin "SkillIcons/TowerShield.dmp"
 
 
 //don't need them

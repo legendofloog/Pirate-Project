@@ -1884,3 +1884,12 @@ range, this unit's Skl is added to Crit.[X]
 ## SD_Misfortune
 Lucky Misfortune: All units within 2[N]
 tiles of this unit have halved Avoid.[X]
+
+## SD_HomeTurf
+Spaces occupied by allies cost this[N]
+unit 0 Move to pass through.[X]
+
+## SD_SiegeTower
+Siege Tower: When initiating combat with[N]
+a bow without moving, +4 max range.[X]
+

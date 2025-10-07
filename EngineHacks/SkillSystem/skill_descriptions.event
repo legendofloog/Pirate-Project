@@ -442,3 +442,6 @@ SkillDescription(ThornSkillID, SD_Thorn)
 SkillDescription(ThunderingHoovesID, SD_ThunderingHooves)
 SkillDescription(PrecisionID, SD_Precision)
 SkillDescription(MisfortuneID, SD_Misfortune)
+SkillDescription(SiegeTowerID, SD_SiegeTower)
+SkillDescription(HomeTurfID, SD_HomeTurf)
+

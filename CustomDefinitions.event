@@ -70,4 +70,4 @@
 
 // #define __CHAPTERJUMP__ // Uncomment to enable chapter jump
 
-// #define __DEBUG__ // Uncomment to get the Debug startup menu :p
+ #define __DEBUG__ // Uncomment to get the Debug startup menu :p
