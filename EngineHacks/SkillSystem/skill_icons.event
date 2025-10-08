@@ -1199,7 +1199,8 @@ ORG SkillIcon(HomeTurfID)
 #incbin "SkillIcons/Pass.dmp"
 ORG SkillIcon(SiegeTowerID)
 #incbin "SkillIcons/TowerShield.dmp"
-
+ORG SkillIcon(SpecialOrdinanceID)
+#incbin "SkillIcons/AirRaidAtk.dmp"
 
 //don't need them
 ORG SkillIcon(ProtectorID)

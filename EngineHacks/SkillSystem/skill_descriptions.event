@@ -444,4 +444,4 @@ SkillDescription(PrecisionID, SD_Precision)
 SkillDescription(MisfortuneID, SD_Misfortune)
 SkillDescription(SiegeTowerID, SD_SiegeTower)
 SkillDescription(HomeTurfID, SD_HomeTurf)
-
+SkillDescription(SpecialOrdinanceID, SD_SpecialOrdinance)

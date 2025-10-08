@@ -1865,7 +1865,7 @@ Double Falcon: On a kill, unit's[N]
 attacks are brave next combat.[X]
 
 ## SD_Thorn
-If unit's Str > enemy's Str,[N]
+Thorn: If unit's Str > enemy's Str,[N]
 unit always Breaks on hit.[X]
 
 ## SD_Incantation
@@ -1886,10 +1886,14 @@ Lucky Misfortune: All units within 2[N]
 tiles of this unit have halved Avoid.[X]
 
 ## SD_HomeTurf
-Spaces occupied by allies cost this[N]
-unit 0 Move to pass through.[X]
+Home Turf: Spaces occupied by allies[N]
+cost this unit 0 Move to pass through.[X]
 
 ## SD_SiegeTower
 Siege Tower: When initiating combat with[N]
 a bow without moving, +4 max range.[X]
 
+## SD_SpecialOrdinance
+Special Ordinance: Unit can plant a single[N]
+mine without ending their turn. These[N]
+mines also Break the triggering unit.[X]
