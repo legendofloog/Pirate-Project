@@ -167,39 +167,3 @@ void ComputeBattleObstacleStats(void) {
     gBattleTarget.wTriangleHitBonus = 0;
     gBattleTarget.wTriangleDmgBonus = 0;
 }
-
-//Override
-int ExecTrap(Proc* proc, Unit* unit, int exec_type)
-{
-    struct ProcBmTrap * proc2;
-
-    switch (GetTriggeredTrapType(unit)) {
-        case TRAP_8:
-            proc2 = ProcStartBlocking(0x859E5AC, proc);
-            proc2->post_exec_type = exec_type;
-            proc2->unit = unit;
-            break;
-
-        case TRAP_MINE:
-            RemoveTrap(GetTypedTrapAt(unit->xPos, unit->yPos, TRAP_MINE));
-            proc2 = Proc_StartBlocking(sProcScr_ExecTrapMine, proc);
-            proc2->post_exec_type = exec_type;
-            proc2->unit = unit;
-            break;
-
-        case TRAP_FIRE_THIEF:
-            RemoveTrap(GetTrapAt(unit->xPos, unit->yPos));
-            PlaySoundEffect(SONG_B1);
-            NewPopup2_PlanA(proc, -1, GetStringFromIndex(0x20));    /* Disabled trap. */
-            break;
-
-        case TRAP_MINE_ASSASSIN:
-            RemoveTrap(GetTrapAt(unit->xPos, unit->yPos));
-            PlaySoundEffect(SONG_B1);
-            NewPopup2_PlanA(proc, -1, GetStringFromIndex(0x21));    /* Recovered mine. */
-            UnitAddItem(unit, MakeNewItem(ITEM_MINE));
-            break;
-    }
-
-    return 0;
-}
