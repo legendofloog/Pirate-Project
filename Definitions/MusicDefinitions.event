@@ -40,7 +40,12 @@
 #define DeadWindsStillTidesID 0x29
 #define FallingFalloutID 0x2A
 #define SkysEndID 0x2B
+#define HeavensHorizonID SkysEndID
 #define BeforeTheGallowsID 0x2C
+#define AtSkysEndID 0x2D
+#define AKeepersOathID 0x2E
+#define ASoldiersDutyID 0x2F
+#define SailingIntoTheHorizonID 0x30
 
 #define WindAmbienceID 0x47
 #define WindAmbianceID 0x47

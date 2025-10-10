@@ -100,7 +100,7 @@ UNIT
 
 CutsceneUnitsPt2:
 UNIT Lua Captain 0 Level(1, Ally, False) [11,10] 0 0 0 0 [0, 0, 0, 0] NoAI
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [13, 22] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(20, Enemy, False) [13, 22] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
 UNIT
 
 CutsceneUnitsPt2Razvan:
@@ -199,7 +199,8 @@ GotoChapter1:
 HubChapterFirstTimeEvent(1, SeenHubA1Pitch, HubA1Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubA_1, Castle_Hall_Night, Chapter2, LuaBaseCallbackA1)
-GotoHubChapterIfYes(2, HubA_1, HubA1Accepted)
+GotoHubChapterIfYes(2, HubA_1, HubA1Selection_Yes)
+Text(HubA1Selection_No)
 ENUF OrlandoHubATalk
 NoFade
 ENDA
@@ -328,9 +329,6 @@ UNIT
 LibrarySpawnEvent:
 LoadCutsceneUnits(HubALibraryRazvanGroup)
 LoadPlayerUnits(HubALibraryHermenegildoGroup)
-TurnUnitGreenIfAlive(Razvan, 1)
-TurnUnitGreenIfAlive(Hermenegildo, 2)
-
 LoadCutsceneUnits(NPCLibrarianBGroup)
 CheckHowManyHubChaptersCompleted
 SVAL s1 2 //if 2 or more chapters completed
@@ -365,8 +363,6 @@ ENDA
 
 TreasureRoomSpawnEvent:
 LoadPlayerUnits(CarmenXimoBaseGroup)
-TurnUnitGreenIfAlive(Carmen, 1)
-TurnUnitGreenIfAlive(Ximo, 2)
 NoFade
 ENDA
 
@@ -376,15 +372,9 @@ UNIT Ximo Archer 0 Level(1,Ally,False) [29,22] 0 0 0 0 [IronBow, Vulnerary] NoAI
 UNIT 
 
 GoBackToMainRoomFromTreasureRoom:
-InitiateTileRevertInHub(CUSAScrubDuo, ClearTreasureRoomTraps, AddChapter2Traps, 1, LuaOnDaStairs, MainRoomSpawnEvent)
+InitiateTileRevertInHub(ClearTreasureRoomTraps, AddChapter2Traps, 1, LuaOnDaStairs, MainRoomSpawnEvent)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
-NoFade
-ENDA
-
-CUSAScrubDuo:
-TurnUnitBlueIfAlive(Carmen, 1)
-TurnUnitBlueIfAlive(Ximo, 2)
 NoFade
 ENDA
 
@@ -400,7 +390,6 @@ UNIT Rahel Civilian_F_2 0 Level(1,NPC,False) [19,10] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 GotoPortGreagorFirstTime:
-SHOWUNIT Razvan
 InitiateLoadMapHub(HubA, LuaInDaHubFirstTime, PortGreagorSpawnEventFirstTime)
 Text(HubABeginningScene3_1)
 CamOn
@@ -807,7 +796,7 @@ UNIT Igniswords Shaman Ignacio Level(8,Enemy,True) [37,8] 0 0 0 0 [Elfire] BossA
 UNIT
 
 TORCHGroupLeft:
-UNIT Hugo 0 Hugo Level(12, Enemy, True) [2,1] 0 0 0 0 [SilverSword, BravesCrest] AttackWhenInRangeAI
+UNIT Hugo 0 Hugo Level(10, Enemy, False) [2,1] 0 0 0 0 [SilverSword, BravesCrest] AttackWhenInRangeAI
 
 UNIT TorchUnit2 WyvernRider Hugo Level(9, Enemy, True) [11,4] 0 0 0 0 [IronAxe] GoForThroneAI
 
@@ -825,7 +814,7 @@ UNIT TorchUnit Archer Hugo Level(9,Enemy,True) [0,5] 0 0 0 0 [IronBow] GroupTwoA
 UNIT
 
 TORCHGroupBottom:
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [38, 23] 0 0 0 0 [Baselard, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(20, Enemy, False) [38, 23] 0 0 0 0 [Baselard, KnightRing] GroupSixAI
 UNIT TorchUnit AxeCav ElodiaBoss Level(10,Enemy,True) [33,22] 0 0 0 0 [SteelAxe] GroupSixAI
 UNIT TorchUnit LanceCav ElodiaBoss Level(10,Enemy,True) [33,23] 0 0 0 0 [IronLance] GroupSixAI
 
@@ -842,7 +831,7 @@ UNIT TorchUnit2 AxeCav ElodiaBoss Level(10,Enemy,True) [39,24] 0 0 0 0 [IronAxe]
 UNIT
 
 TORCHMagiDivisionGroup:
-UNIT Juliana 0 ElodiaBoss Level(12,Enemy,False) [0,24] 0 0 0 0 [Arcfire, MagesRing] GroupTwelveAI
+UNIT Juliana 0 ElodiaBoss Level(10,Enemy,False) [0,24] 0 0 0 0 [Arcfire, MagesRing] GroupTwelveAI
 UNIT TorchUnit Shaman ElodiaBoss Level(9,Enemy,True) [3,23] 0 0 0 0 [Nosferatu] GroupTwelveAI
 UNIT TorchUnit Mage ElodiaBoss Level(9,Enemy,True) [3,24] 0 0 0 0 [Luna] GroupTwelveAI
 UNIT
@@ -857,7 +846,7 @@ UNIT Orlando 0 0 Level(15,Ally,False) [30,12] 0x0 0x0 0 0 [SilverDagger, Thani] 
 UNIT
 
 EndingSceneElodiaCutscene:
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [12, 20] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(20, Enemy, False) [12, 20] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
 UNIT
 
 EndingSceneAlonsoCutscene:

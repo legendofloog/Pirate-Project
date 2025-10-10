@@ -447,3 +447,15 @@ SwordAnim(Champion_FSwordAnim)
 LanceAnim(Champion_FLanceAnim)
 UnarmedAnim(Champion_FUnarmedAnim)
 EndAnim
+
+ALIGN 4
+Thief_FAnims:
+KnifeAnim(ThiefFKnifeAnim)
+UnarmedAnim(ThiefFKnifeAnim)
+EndAnim
+
+ALIGN 4
+Rogue_FAnims:
+KnifeAnim(RogueFKnifeAnim)
+UnarmedAnim(RogueFUnarmedAnim)
+EndAnim

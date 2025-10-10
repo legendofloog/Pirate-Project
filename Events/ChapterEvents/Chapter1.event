@@ -128,37 +128,41 @@ CamOn
 MOVE 15 Khazhak [17,8]
 ENUN
 CamOff
-FadeOutMusic
 CAMERA_CENTERED Lua
 LOAD1 1 RazvanCarmenGroup
-ENUN 
+ENUN
+FadeOutMusic
 FlashCursor(Carmen,60)
 MUSC NewHandsOnDeckID
 Text(Ch1BeginningScene5)
 FlashCursor(Razvan,60)
 Text(Ch1BeginningScene6)
 Text(Ch1BeginningScene7)
+//LOAD1 1 KhazhakTestGroup
 ENUN
 NoFade
 ENDA
 
+KhazhakTestGroup:
+UNIT Khazhak Fighter 0 Level(5,Enemy,False) [9,19] 0 0 0 0 [SteelAxe, HandAxe, HideShield] BossAI
+UNIT
 
 XimoGroup:
 UNIT Ximo Archer 0 Level(1,Ally,False) [5,19] 0 0 0 0 [IronBow, Vulnerary] NoAI
 UNIT
 
 RazvanGroup:
-UNIT Razvan Curate 0 Level(4,Ally,False) [4,18] 0 0 1 REDA4R23 [Mend, Heal, Vulnerary] NoAI
+UNIT Razvan Curate 0 Level(3,Ally,False) [4,18] 0 0 1 REDA4R23 [Mend, Heal, Vulnerary] NoAI
 UNIT
 
 PilarLuaDesiGroup:
-UNIT Lua Captain 0 Level(8,Ally,False) [4,18] 0 0 1 REDA5R20 [Cutlass, SteelSword, IronMusket,Vulnerary] NoAI
-UNIT Desiderio Vanguard 0 Level(8,Ally,False) [3,18] 0 0 1 REDA6R19 [SteelAxe, HandAxe, IronLance,Vulnerary] NoAI
-UNIT Pilar Ninja 0 Level(12,Ally,False) [3,18] 0 0 1 REDA4R19 [SilverKnife, IronKnife, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(6,Ally,False) [4,18] 0 0 1 REDA5R20 [Cutlass, IronSword, SteelMusket, Vulnerary] NoAI
+UNIT Desiderio Vanguard 0 Level(8,Ally,False) [3,18] 0 0 1 REDA6R19 [SteelAxe, IronLance, Vulnerary] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [3,18] 0 0 1 REDA4R19 [SilverKnife, IronKnife, Vulnerary] NoAI
 UNIT
 
 RazvanCarmenGroup:
-UNIT Razvan Curate 0 Level(4,Ally,False) [3,23] 0 0 1 REDA5R20 [Mend, Heal, Vulnerary] NoAI
+UNIT Razvan Curate 0 Level(3,Ally,False) [3,23] 0 0 1 REDA5R20 [Mend, Heal, Vulnerary] NoAI
 UNIT Carmen Mage_F 0 Level(1,Ally,False) [4,23] 0 0 1 REDA6R18 [Fire, Vulnerary] NoAI
 UNIT 
 

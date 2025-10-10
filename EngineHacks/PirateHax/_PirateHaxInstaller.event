@@ -24,9 +24,6 @@
 #include "Equip/Installer.event"
 //Pikmin1211
 
-#include "FixedDifficulty.event"
-//StanH
-
 #include "Break/Installer.event"
 //Loog
 
@@ -173,9 +170,6 @@ ALIGN 4
 #include "RecoilAxe/RecoilAxe.event" //Aura Wolf
 
 ALIGN 4
-#include "GetItemHealAmount/GetItemHealAmount.event"
-
-ALIGN 4
 #include "AssistStaff/AssistStaff.event" //Aura Wolf
 
 ALIGN 4
@@ -192,7 +186,9 @@ ALIGN 4
 
 #include "CHAI_Pirate/Installer.event" // Loog
 
-#include "SoundRoomText/Installer.event"
+#include "SoundRoomText/Installer.event" //Pikmin1211
+
+#include "UltimateModularItemHealing/UltimateModularItemHealing.event" // Dragz
 
 PUSH
 ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743

@@ -6,8 +6,13 @@
 #define TC_RightshipFloor1 0x4
 #define TC_RightshipFloor2 0x5
 
+
+
 //7-14: all used already (here or in outskirts map)
 #define Turn1EventFlag 12
+
+// i can probably just use the other temp flags down here
+#define HubBJaimeLeonorTempTalkFlag 2
 
 //15-19: hub b talk convo flags
 #define HubBDesiTempTalkFlag 15
@@ -69,10 +74,10 @@ END_MAIN
 
 Turn1Event:
 FADI 15
+CAMERA_CENTERED Lua
 CALL SpawnDeckUnits
 CALL Traps_Deck
 CALL SetAllHubBTalkFlags
-CAMERA_CENTERED Lua
 ENUT Flag_Midship_ToDeck
 ENUT Flag_MidShip_ToFloor2
 ENUT Flag_MidShip_ToFloor3 //turn off all flags except the ones that go to floor 1
@@ -113,6 +118,7 @@ CheckIfHubBTalkLegalTwoChar(Orlando, Durgham, 3, 4, HubBOrlandoGlobalTalkFlag, H
 CheckIfHubBTalkLegalOneChar(Neltume, 5, 6, HubBNeltumeGlobalTalkFlag, HubBNeltumeTempTalkFlag)
 CheckIfHubBTalkLegalOneChar(Triana, 7, 8, HubBTrianaGlobalTalkFlag, HubBTrianaTempTalkFlag)
 CheckIfHubBTalkLegalOneChar(Magdalena, 9, 10, HubBMagdalenaGlobalTalkFlag, HubBMagdalenaTempTalkFlag)
+CheckIfHubBTalkLegalTwoChar(Jaime, Leonor, 43, 44, HubBJaimeLeonorGlobalTalkFlag, HubBJaimeLeonorTempTalkFlag)
 
 //Right Ship Floor 2
 CheckIfHubBTalkLegalTwoChar(Pilar, Kai, 11, 12, HubBPilarGlobalTalkFlag, HubBPilarTempTalkFlag)
@@ -206,7 +212,15 @@ CharacterEvent(HubBEstelleIndioTempTalkFlag, HubBEstelleIndioConvo, Lua, Indio)
 CharacterEvent(HubBYodsenDmitrTempTalkFlag, HubBYodsenDmitrConvo, Lua, Yodsen)
 CharacterEvent(HubBYodsenDmitrTempTalkFlag, HubBYodsenDmitrConvo, Lua, Dmitr)
 
+CharacterEvent(HubBJaimeLeonorTempTalkFlag, HubBJaimeLeonorConvo, Lua, Jaime)
+CharacterEvent(HubBJaimeLeonorTempTalkFlag, HubBJaimeLeonorConvo, Lua, Leonor)
+
 END_MAIN
+
+HubBJaimeLeonorConvo:
+DisplayTextThenSetGlobalFlag(HubBLuaJaimeLeonorTalk, HubBJaimeLeonorGlobalTalkFlag)
+NoFade
+ENDA
 
 HubBDesiderioErnestLeandraConvo:
 SET_ACTIVE 0
@@ -410,7 +424,7 @@ UNIT Woodsman Hunter 0 Level(10,NPC,False) [7,35] 0 0 0 0 [0x0] BossAI
 UNIT
 
 PassarolaUnitGroup:
-UNIT Passarola Adventurer 0 Level(10,NPC,True) [3,28] 0 0 0 0 [Rescue, MiniBow, Vulnerary] BossAI
+UNIT Passarola Adventurer 0 Level(15,NPC,True) [3,28] 0 0 0 0 [Rescue, MiniBow, Vulnerary] BossAI
 UNIT 
 
 SpawnInHubBQuests:
@@ -777,7 +791,6 @@ NoFade
 ENDA
 
 Traps1:
-GreenSigil(17,5)
 ENDTRAP
 ALIGN 4
 
@@ -790,7 +803,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [17,5] 0 0 0 0 [Cutlass, IronSword, Iron
 UNIT
 
 NewUnits:
-UNIT Ponte 0 0 Level(7,Ally,False) [5,22] 0 0 0 0 [Hammer, Hammer] NoAI
+UNIT Ponte 0 0 Level(6,Ally,False) [5,22] 0 0 0 0 [Hammer, Hammer] NoAI
 UNIT 
 
 BeginningScene:

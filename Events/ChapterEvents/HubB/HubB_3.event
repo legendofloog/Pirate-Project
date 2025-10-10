@@ -215,7 +215,7 @@ UNIT Rebel Archer 0 Level(10,Enemy,True) [23,1] 0 0 0 0 [Longbow] AttackInRangeA
 UNIT Rebel Archer 0 Level(10,Enemy,True) [26,3] 0 0 0 0 [Longbow] AttackInRangeAI
 
 //kai group (turn 2-3)
-UNIT Kai Ninja 0 Level(7,Enemy,True) [17,0] 0 0 0 0 [IronKnife, RuneDagger] BossAI
+UNIT Kai Ninja 0 Level(6,Enemy,True) [17,0] 0 0 0 0 [IronKnife, RuneDagger] BossAI
 UNIT Rebel Rogue 0 Level(11,Enemy,True) [18,1] 0 0 0 0 [Stiletto, SteelKnife] BossAI
 UNIT Rebel Thief 0 Level(11,Enemy,True) [19,0] 0 0 0 0 [SteelKnife] BossAI
 

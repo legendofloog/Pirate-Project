@@ -67,6 +67,7 @@ RemoveAll
 LOMA HubC
 ENUN
 CALL SpawnHubCUnits
+LOAD1 1 LuaBackFromMazeGroup
 ENUN
 SET_ACTIVE Lua
 CAMERA_CENTERED Lua
@@ -76,6 +77,10 @@ ENUT InAHubFlag
 FADU 15
 NoFade
 ENDA
+
+LuaBackFromMazeGroup:
+UNIT Lua Captain 0 Level(10,Ally,False) [23,9] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
 
 RefreshLua:
 SVAL s1 0x42

@@ -1668,7 +1668,7 @@ in combat, using the Reverse command.[X]
 
 ## SD_Panache
 Panache: Unit can initiate combat[N]
-with guns at 1 RNG, giving WTA and 5 AS.[X]
+with guns at 1 RNG, giving WTA + 5 AS.[X]
 
 ## SD_Canter
 Canter: Unit can move 2[N]

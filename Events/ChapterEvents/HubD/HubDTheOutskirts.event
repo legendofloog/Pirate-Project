@@ -22,17 +22,18 @@ LocationBasedEvents:
 END_MAIN
 
 MiscBasedEvents:
+AREA Flag_HubD_Ending_Allowed EndingScene [7,8] [8,8]
 AREA WentToHub1 GotoHubD1 [35,8] [36,8]
 AREA WentToHub2 GotoHubD2 [14,15] [14,17]
 AREA WentToHub3 GotoHubD3 [34,27] [35,27]
-AREA 0 SwitchBackToArmada [25,15] [25,15]
+AREA 0 SwitchBackToArmada [13,30] [13,30]
 AFEV 0 RefreshLiberator 0
 END_MAIN
 
 SwitchBackToArmada:
 FADI 15
 SET_ACTIVE 0
-REMOVEUNIT Liberator
+REMOVEUNIT Arbitrator
 STAL 30
 RemoveAll
 CALL RemoveOutskirtsTraps
@@ -82,7 +83,7 @@ ENDA
 
 HubDCallback:
 WEATHER 7
-CAMERA_CENTERED Liberator //refocus on the airship
+CAMERA_CENTERED Arbitrator //refocus on the airship
 //restores all the quest sigils 
 CALL SpawnInHubDQuests
 NoFade
@@ -109,16 +110,16 @@ NoFade
 ENDA
 
 RefreshLiberator:
-CHECK_EXISTS Liberator
+CHECK_EXISTS Arbitrator
 BEQ 776 s0 sC //if it does not, then branch past this
     SVAL s1 0x42
-    UNSET_CONDITION Liberator
+    UNSET_CONDITION Arbitrator
 LABEL 776
 NoFade
 ENDA
 
 Traps1:
-GreenSigil(25,15)
+GreenSigil(13,30)
 ENDTRAP
 ALIGN 4
 

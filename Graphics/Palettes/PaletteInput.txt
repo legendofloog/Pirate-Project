@@ -294,3 +294,64 @@
 
 #char{95} "ElodiaWolfrider" set{Elodia, 1, Wolfrider}
 	555384207039CB24BC429F5F72250E461567FF7FE720492DCB241932712D1442
+
+// Hub B player palettes now
+
+// Ponte
+// Brigand
+// Berserker
+// War Monk
+
+// Passarola
+// Adventurer_F
+
+// Neltume
+// Cleric
+// Adventurer
+// War Monk
+
+// Dmitr
+// Brigand
+// Berserker
+// War Monk
+
+// Magdalena
+// Sage_F
+
+// Avocado
+// Deserter
+// Champion
+// Wolfrider
+
+// Husniye
+// Thief_F //need to address thief/rogue anims?
+// Rogue_F
+// Wolfrider
+
+// Kai
+// Ninja
+// Master Ninja
+// Trickster
+
+// Ernest
+// Gryphoknight
+
+// Adrian
+// Fighter
+// Warrior
+// Marshall
+
+// Lexa
+// Myrmidon_F
+// Swordmaster_F
+// Slayer_F
+
+// Noah
+// Warden
+// General
+// Runeshield
+
+// Fata
+// Conjurer_F
+// Slayer_F
+// Trickster_F

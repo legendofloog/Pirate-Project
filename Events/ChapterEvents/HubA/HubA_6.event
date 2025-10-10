@@ -313,7 +313,7 @@ UNIT
 
 
 NewUnits:
-UNIT Matteo Mercenary 0 Level(4,Ally,True) [6,23] 0 0 0 0 [SteelSword, IronBlade, ShoveGlove, Vulnerary] NoAI
+UNIT Matteo Mercenary 0 Level(4,Ally,True) [6,23] 0 0 0 0 [SteelSword, SteelBlade, ShoveGlove, Vulnerary] NoAI
 UNIT Suzanne Gunner 0 Level(4,Ally,True) [9,23] 0 0 0 0 [Pistol, IronMusket, Blunderbuss, Vulnerary] NoAI
 UNIT
 

@@ -91,6 +91,7 @@ UNIT Estelle Troubadour 0 Level(1,Ally,False) [6,10] 0 0 0 0 [0x0] NoAI
 UNIT Suzanne Gunner 0 Level(1,Ally,False) [17,18] 0 0 0 0 [0x0] NoAI
 UNIT Biko Soldier 0 Level(1,Ally,False) [10,6] 0 0 0 0 [0x0] NoAI
 UNIT Ernest Gryphoknight 0 Level(1,Ally,False) [11,5] 0 0 0 0 [0x0] NoAI
+UNIT Ponte Brigand 0 Level(1,Ally,False) [15,21] 0 0 0 0 [0x0] NoAI
 //not placed
 UNIT
 
@@ -107,7 +108,7 @@ UNIT Adrian Fighter 0 Level(1,Ally,False) [4,5] 0 0 0 0 [0x0] NoAI
 UNIT
 
 ValerieHubCGroup:
-UNIT Valerie Gunner 0 Level(1,Ally,False) [0,13] 0 0 0 0 [0x0] NoAI
+UNIT Valerie Archer 0 Level(1,Ally,False) [0,13] 0 0 0 0 [0x0] NoAI
 UNIT
 
 CalistaHubCGroup:
@@ -121,7 +122,6 @@ UNIT
 MedwynHubCGroup:
 UNIT Medwyn Warden 0 Level(1,Ally,False) [21,9] 0 0 0 0 [0x0] NoAI
 UNIT
-
 
 WindyAllyHubCGroup:
 UNIT Windy SwordCav 0 Level(6,Ally,False) [3,19] 0 0 0 0 [0x0] NoAI
@@ -197,10 +197,6 @@ UNIT
 
 AvocadoHubCGroup:
 UNIT Avocado Deserter 0 Level(1,Ally,False) [12,5] 0 0 0 0 [0x0] NoAI
-UNIT
-
-PonteHubCGroup:
-UNIT Ponte Brigand 0 Level(1,Ally,False) [15,21] 0 0 0 0 [0x0] NoAI
 UNIT
 
 PassarolaHubCGroup:

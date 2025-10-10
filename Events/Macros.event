@@ -40,12 +40,12 @@
 #define TextWithMusicChange(textId, songId) "TEXTSTART; TEXTSHOW textId; TEXTEND; MUSC songId; TEXTCONT; TEXTEND; REMA"
 #define TextWithMusicChange2(textId, songId) "TEXTSTART; TEXTSHOW textId; TEXTEND; MUSS songId; TEXTCONT; TEXTEND; REMA"
 
-#define GotoHubChapterIfYes(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
-#define GotoHubChapterIfYes(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
+#define GotoHubChapterIfYes(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; FADI 15; CALL ShowAllPlayers; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
+#define GotoHubChapterIfYes(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; FADI 15; CALL ShowAllPlayers; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
 #define GotoHubChapterIfYesHubB(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
 #define GotoHubChapterIfYesHubB(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
 
-
+#define ShowUnitIfAlive(charId) "SHOWUNIT charId"
 
 #define HubChapterFirstTimeEvent(labelId, seenEID, selectionText) "EVBIT_MODIFY 4; CHECK_EVENTID seenEID; BNE labelId s0 sC; Text(selectionText); ENUT seenEID; LABEL labelId"
 #define HubChapterFirstTimeEvent_DeathConditional(skipLabel, deathLabel, charID, seenEID, aliveText, deadText) "EVBIT_MODIFY 4; CHECK_EVENTID seenEID; BNE skipLabel s0 sC; ENUT seenEID; CHECK_ALIVE charID; BEQ deathLabel s0 sC; Text(aliveText); GOTO skipLabel; LABEL deathLabel; Text(deadText); LABEL skipLabel"
@@ -106,9 +106,9 @@
 //This is called whenever a questgiver is spawned, and easily 'cutscene' swap them into a green unit. 
 #define LoadHubBQuestgiverIfEIDNotSet(eventId, labelId, unitGroup, unitName) "CHECK_EVENTID eventId; BNE labelId s0 sC; LoadEnemies(unitGroup); CUSN unitName ; LABEL labelId"
 
-#define InitiateTileRevertInHub(clearTraps, addTraps, tilechangeId, luaGroup, spawn) "FADI 10; SET_ACTIVE 0; RemoveAll; CALL clearTraps; STAL 10; CALL addTraps; STAL 10; TILEREVERT tilechangeId; LoadPlayerUnits(luaGroup); CAMERA_CENTERED Lua; CALL spawn; FADU 15"
+#define InitiateTileRevertInHub(clearTraps, addTraps, tilechangeId, luaGroup, spawn) "FADI 15; SET_ACTIVE 0; STAL 30; RemoveAll; CALL clearTraps; STAL 10; CALL addTraps; STAL 10; TILEREVERT tilechangeId; LoadPlayerUnits(luaGroup); CAMERA_CENTERED Lua; CALL spawn; FADU 15"
 
-#define InitiateTileRevertInHub(initialEvent, clearTraps, addTraps, tilechangeId, luaGroup, spawn) "FADI 10; SET_ACTIVE 0; CALL initialEvent; RemoveAll; CALL clearTraps; STAL 10; CALL addTraps; STAL 10; TILEREVERT tilechangeId; LoadPlayerUnits(luaGroup); CAMERA_CENTERED Lua; CALL spawn; FADU 15"
+#define InitiateTileRevertInHub(initialEvent, clearTraps, addTraps, tilechangeId, luaGroup, spawn) "FADI 15; SET_ACTIVE 0; STAL 30; CALL initialEvent; RemoveAll; CALL clearTraps; STAL 10; CALL addTraps; STAL 10; TILEREVERT tilechangeId; LoadPlayerUnits(luaGroup); CAMERA_CENTERED Lua; CALL spawn; FADU 15"
 
 
 #define InitiateLoadMapHub(chapterId, luaGroup, spawn) "FADI 10; SET_ACTIVE 0; RemoveAll; LOMA chapterId; LoadPlayerUnits(luaGroup); CAMERA_CENTERED Lua; CALL spawn; FADU 15"
@@ -140,7 +140,7 @@
 #define DisplayConditionalTextOnCharAndSetEID(labelNotAliveID, labelEndID, charID, aliveTextID, notAliveTextID, globalFlag) "SET_ACTIVE 0; ENUN; ENUT globalFlag; CHECK_ALIVE charID; BEQ labelNotAliveID s0 sC; Text(aliveTextID); GOTO labelEndID; LABEL labelNotAliveID; Text(notAliveTextID); LABEL labelEndID; SET_ACTIVE Lua"
 
 #define CheckIfHubCTalkLegalTwoChar(char1, char2, label1, label2, globalFlag, tempFlag) "CHECK_ALIVE char1; BEQ label1 s0 sC; CHECK_ALLEGIANCE char1; BNE label1 s0 sC; CHECK_ALIVE char2; BEQ label1 s0 sC; CHECK_ALLEGIANCE char2; BNE label1 s0 sC; CHECK_EVENTID globalFlag; BNE label1 s0 sC; GOTO label2; LABEL label1; ENUT tempFlag; LABEL label2"
-
+#define CheckIfHubCTalkLegalThreeChar(char1, char2, char3, label1, label2, globalFlag, tempFlag) "CHECK_ALIVE char1; BEQ label1 s0 sC; CHECK_ALLEGIANCE char1; BNE label1 s0 sC; CHECK_ALIVE char2; BEQ label1 s0 sC; CHECK_ALLEGIANCE char2; BNE label1 s0 sC; CHECK_ALIVE char3; BEQ label1 s0 sC; CHECK_ALLEGIANCE char3; BNE label1 s0 sC; CHECK_EVENTID globalFlag; BNE label1 s0 sC; GOTO label2; LABEL label1; ENUT tempFlag; LABEL label2"
 
 #define GoToHubChapter(chapterId) "ASMC EyeForAnEyeResetASMC; MNC2 chapterId"
 
@@ -178,3 +178,5 @@
 //hub D
 #define CheckForCharAtCoordsThenCHAI(x,y,charId, labelId, ai1,ai2,ai3,ai4) "CHECK_AT [x, y]; SVAL s1 charId; BNE labelId s1 sC; SetAI(x,y,ai1,ai2,ai3,ai4); LABEL labelId"
 
+//monster macro, this was a mistake.
+#define CheckIfHubDTalkLegal(char1, char2, char3, conditionalChar1, conditionalChar2, conditionalChar3, label1, label2, label3, char1Label, char2Label, char3Label, conditionalChar2Label, conditionalChar3Label, globalFlag, tempFlag) "CHECK_ALIVE char1; BEQ label1 s0 sC; LABEL char1Label; SVAL s1 char2; BEQ char2Label s1 s0; CHECK_ALIVE char2; BEQ label1 s0 sC; LABEL char2Label; SVAL s1 char3; BEQ char3Label s1 s0; CHECK_ALIVE char3; BEQ label1 s0 sC; LABEL char3Label; CHECK_ALIVE conditionalChar1; BNE label3 s0 sC; SVAL s1 conditionalChar2; BEQ conditionalChar2Label s1 s0; CHECK_ALIVE conditionalChar2; BNE label3 s0 sC;   LABEL conditionalChar2Label; SVAL s1 conditionalChar3; BEQ conditionalChar3Label s1 s0; CHECK_ALIVE conditionalChar3; BNE label3 s0 sC; GOTO label1; LABEL conditionalChar3Label; LABEL label3; CHECK_EVENTID globalFlag; BNE label1 s0 sC; GOTO label2; LABEL label1; ENUT tempFlag; LABEL label2"

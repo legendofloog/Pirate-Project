@@ -91,15 +91,15 @@ UNIT Pilar Ninja 0 Level(10,Ally,False) [5,2] 0 0 0 0 [Cutlass, IronSword, IronM
 UNIT
 
 NewUnit_Bolton:
-UNIT Bolton DarkKnight 0 Level(18,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,Sidepierce,RustyHook] NoAI
+UNIT Bolton DarkKnight 0 Level(16,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,Sidepierce,RustyHook] NoAI
 UNIT
 
 NewUnit_RimaOffscreen:
-UNIT Rima AxeCav 0 Level(15,Ally,True) [255,1] 0 0 0 0 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
+UNIT Rima AxeCav 0 Level(14,Ally,True) [255,1] 0 0 0 0 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
 UNIT
 
 NewUnit_Rima:
-UNIT Rima AxeCav 0 Level(15,Ally,True) [0,20] 0 0 1 REDA4R21 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
+UNIT Rima AxeCav 0 Level(14,Ally,True) [0,20] 0 0 1 REDA4R21 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
 UNIT
 
 EnemyUnits:

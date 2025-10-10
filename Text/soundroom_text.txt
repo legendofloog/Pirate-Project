@@ -114,10 +114,22 @@ Falling Fallout[X]
 All Hands on Deck[X]
 
 ## SongName_SkysEnd
-Sky's End[X]
+Heaven's Horizon[X]
 
 ## SongName_BeforeTheGallows
 Before The Gallows[X]
+
+## SongName_AtSkysEnd
+At Sky's End[X]
+
+## SongName_AKeepersOath
+A Keeper's Oath[X]
+
+## SongName_ASoldiersDuty
+A Soldier's Duty[X]
+
+## SongName_SailingIntoTheHorizon
+Sailing into the Horizon[X]
 
 ## Musician_Alusq
 Alusq[X]

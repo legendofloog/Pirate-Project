@@ -230,6 +230,11 @@
 #define Champion_FLanceAnim 0x161
 #define Champion_FUnarmedAnim 0x162
 
+#define ThiefFKnifeAnim 0x163
+
+#define RogueFKnifeAnim 0x164
+#define RogueFUnarmedAnim 0x165
+
 //vanilla repal type stuff, just put it in same slot
 
 #define ArcherBowAnim 0x26

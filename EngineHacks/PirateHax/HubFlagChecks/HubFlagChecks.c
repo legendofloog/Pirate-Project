@@ -59,7 +59,8 @@ void UnsetAllHubChapterFlagsASMC(){
 
 
 bool LuaIsInHub(Unit* unit){
-    if (CheckEventId(0xA0)){ 
+    if (CheckEventId(0xA0) && !(gChapterData.chapterStateBits & CHAPTER_FLAG_PREPSCREEN)) //if we're in a hub and not in the prep screen
+    {
         return true; //give 15 move
     }
     return false;

@@ -243,7 +243,7 @@ SongTable(TheStormUponUsID,TheStormUponUs,MapMusicGroup)
   #include "songs/map/FallingFallout.event" 
 }
 
-//43 - Sky's End
+//43 - Heaven's Horizon
 {
   SongTable(SkysEndID,SkysEnd,MapMusicGroup)
   #include "songs/map/SkysEnd.event" 
@@ -254,6 +254,34 @@ SongTable(TheStormUponUsID,TheStormUponUs,MapMusicGroup)
   SongTable(BeforeTheGallowsID,BeforeTheGallows,BattleMusicGroup)
   #include "songs/boss/BeforeTheGallows.event" 
 }
+
+//44 - At Sky's End
+
+{
+  SongTable(AtSkysEndID,AtSkysEnd,MapMusicGroup)
+  #include "songs/map/AtSkysEnd.event" 
+}
+
+
+//44 - A Keeper's Oath
+{
+  SongTable(AKeepersOathID,AKeepersOath,BattleMusicGroup)
+  #include "songs/event/AKeepersOath.event" 
+}
+
+//44 - A Soldier's Duty
+{
+  SongTable(ASoldiersDutyID,ASoldiersDuty,BattleMusicGroup)
+  #include "songs/event/ASoldiersDuty.event" 
+}
+
+//44 - Sailing Into The Horizon
+{
+  SongTable(SailingIntoTheHorizonID,SailingIntoTheHorizon,BattleMusicGroup)
+  #include "songs/event/SailingIntoTheHorizon.event" 
+}
+
+
 
 
 // --------------- SONGS: GUI AND SFX ---------------

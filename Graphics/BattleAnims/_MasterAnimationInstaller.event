@@ -382,3 +382,12 @@
     #include "Animations/Mercenary/Sword Installer.event"
     #include "Animations/Mercenary/Unarmed Installer.event"
 }
+
+{
+    #include "Animations/Thief_F/Knife Installer.event"
+}
+
+{
+    #include "Animations/Rogue_F/Knife Installer.event"
+    #include "Animations/Rogue_F/Unarmed Installer.event"
+}

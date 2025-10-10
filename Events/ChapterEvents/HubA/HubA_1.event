@@ -106,7 +106,7 @@ UNIT
 
 ContractorInitialEnemies:
 UNIT Leandra Fighter_F Geraldo Level(5, Enemy, True) [11, 5] 0 0 0 0 [SteelAxe, HandAxe, Vulnerary] AttackInTwoAI
-UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
+UNIT Geraldo Mercenary Geraldo Level(7, Enemy, True) [12, 5] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [10, 4] 0 0 0 0 [IronSword] AttackInTwoAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [12, 4] 0 0 0 0 [IronSword] AttackInTwoAI
 
@@ -149,7 +149,7 @@ UNIT Contractor Mage Geraldo Level(3, Enemy, True) [20, 4] 0 0 0 0 [Fire] Attack
 UNIT
 
 UndergroundReinforcements:
-UNIT Geraldo Mercenary Geraldo Level(5, Enemy, True) [4, 4] 0 0 0 0 [SteelSword] ChargeAI
+UNIT Geraldo Mercenary Geraldo Level(7, Enemy, True) [4, 4] 0 0 0 0 [SilverSword] ChargeAI
 UNIT Sentinel Archer Sanz Level(4, Enemy, True) [3, 10] 0 0 0 0 [IronBow] ChargeAI
 UNIT Sentinel Archer Sanz Level(4, Enemy, True) [21, 12] 0 0 0 0 [IronBow] ChargeAI
 UNIT Contractor Brigand Sanz Level(3, Enemy, True) [5, 16] 0 0 0 0 [IronAxe] ChargeAI

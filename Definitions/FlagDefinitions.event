@@ -108,13 +108,14 @@
 #define HubBCarmenFataGlobalTalkFlag 0xA5
 #define HubBBartzGlobalTalkFlag 0xA6
 #define HubBAvocadoGlobalTalkFlag 0xA7
-
 #define HubBPassarolaXimoGlobalTalkFlag 0xA9
 #define HubBHusniyeGlobalTalkFlag 0xAA
 #define HubBRazvanRahelGlobalTalkFlag 0xAB
 #define HubBSuzanneMatteoTangyuanGlobalTalkFlag 0xAC
 #define HubBEstelleIndioGlobalTalkFlag 0xAD
 #define HubBYodsenDmitrGlobalTalkFlag 0xAE
+#define HubBJaimeLeonorGlobalTalkFlag 0xAF
+
 
 
 //and again for Hub C - Loog
@@ -143,3 +144,20 @@
 // Hub D flags - Decide whether the character will stay no matter what, or not
 #define D3_Rogelio_Alive_Flag 0xB7
 #define D3_Razvan_Mother_Alive_Flag 0xB8
+
+#define HubD_Desiderio_Razvan_Pilar_Global_Talk_Flag 0x92
+#define HubD_Ximo_Carmen_Hermen_Global_Talk_Flag 0x93
+#define HubD_Matteo_Suzanne_Kurt_Global_Talk_Flag 0x94
+#define HubD_Kai_Theana_Global_Talk_Flag 0x95
+#define HubD_Jaime_Leonor_Windy_Global_Talk_Flag 0x96
+#define HubD_Estelle_Indio_Remora_Global_Talk_Flag 0x97
+#define HubD_Leandra_Juan_Tanyuan_Global_Talk_Flag 0x98
+#define HubD_Calista_Fidel_Valerie_Global_Talk_Flag 0x99
+#define HubD_Ernest_Biko_Ondeh_Global_Talk_Flag 0xA1
+#define HubD_Orlando_Lexa_Adrian_Global_Talk_Flag 0xA2
+#define HubD_Fata_Neltume_Dmitr_Global_Talk_Flag 0xA3
+#define HubD_Ruby_Kaisa_Global_Talk_Flag 0xA4
+#define HubD_Bolton_Rima_Global_Talk_Flag 0xA5
+#define HubD_Noah_Global_Talk_Flag 0xA6
+#define HubD_Durgham_Yodsen_Global_Talk_Flag 0xA7
+#define HubD_Rahel_Ida_Ponte_Global_Talk_Flag 0xA9

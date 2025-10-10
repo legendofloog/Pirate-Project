@@ -8,6 +8,19 @@ HP Bars[.][X]
 # 0x00B2
 Set health bar display[X]
 
+# 0x047F
+Increases an ally's Res by 7,[NL]
+reducing by 1 each turn. +1 WEXP.[X]
+
+# 0x471
+Restores Mag + 5 HP.[X]
+
+# 0x472
+Restores Mag + 15 HP.[X]
+
+# 0x473
+Restores Mag + 30 HP.[X]
+
 # 0x50A
 Tome[X]
 
@@ -47,13 +60,28 @@ Res[X]
 # 0x4f6
 Mov[X]
 
+# 0x0149 ^
+A laid-back voyage.[N]
+Weakened enemies[N]
+(-5 autolevels).[X]
+
+# 0x014A ^
+The intended adventure.[N]
+Players are on par[N]
+with enemies.[X]
+
+# 0x014B ^
+A journey for the bold.[N]
+Bolstered enemies[N]
+(+5 autolevels).[X]
+
 # 0x055D
 Chance that the attack will hit.[NL]
-Skl x 5 + Weapon Hit + Triangle Adv.[X]
+Skl x 4 + Weapon Hit + Triangle Adv.[X]
 
 # 0x0560
 Ability to dodge enemy attacks.[NL]
-Lck x 5 + Terrain Avoid[X]
+Eva x 3 + AS + Terrain Avoid[X]
 
 # 0x055C
 Amount of damage this weapon causes.[NL]

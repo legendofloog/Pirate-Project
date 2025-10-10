@@ -720,7 +720,7 @@ ElodiaMugData:
 #incbin "Dmp/Elodia_frames.dmp"
 #incbin "Dmp/Elodia_palette.dmp"
 #incbin "Dmp/Elodia_minimug.dmp"
-setMugEntry(ElodiaMug, ElodiaMugData, 2, 5, 3, 3)
+setMugEntry(ElodiaMug, ElodiaMugData, 2, 5, 2, 3)
 
 // credit to, uh, obsidian daddy? i think?
 ALIGN 16
@@ -756,3 +756,11 @@ D3BanditBossMugData:
 #incbin "Dmp/GreenAzahar_palette.dmp"
 #incbin "Dmp/GreenAzahar_minimug.dmp"
 setMugEntry(D3BanditBossMug, D3BanditBossMugData, 3, 5, 3, 3)
+
+ALIGN 16
+ForestProtectorMugData:
+#incbin "Dmp/ForestProtector_mug.dmp"
+#incbin "Dmp/ForestProtector_frames.dmp"
+#incbin "Dmp/ForestProtector_palette.dmp"
+#incbin "Dmp/ForestProtector_minimug.dmp"
+setMugEntry(ForestProtectorMug, ForestProtectorMugData, 3, 5, 3, 3)

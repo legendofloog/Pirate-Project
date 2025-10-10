@@ -73,6 +73,7 @@ AddTrap(BlueSigilTrapID, 2, 23)
 AddTrap(BlueSigilTrapID, 7, 23)
 LABEL 778
 //middle
+AddTrap(GreenSigilTrapID, 17, 5)
 AddTrap(BlueSigilTrapID, 17, 10)
 AddTrap(BlueSigilTrapID, 18, 10)
 AddTrap(BlueSigilTrapID, 20, 8)

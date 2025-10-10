@@ -149,7 +149,10 @@
 
 [LoadRemora] = [LoadFace][0x4f][0x1]
 
-
+[LoadFidel] = [LoadFace][0xBD][0x1]
+[LoadKaisa] = [LoadFace][0x51][0x1]
+[LoadAristides] = [LoadFace][0x51][0x1]
+[LoadFlorencia] = [LoadFace][0x51][0x1]
 
 
 [LoadElodia] = [LoadFace][0x47][0x1]
@@ -162,6 +165,7 @@
 
 [LoadPirate] = [LoadFace][0x31][0x1]
 
+[LoadForestProtector] = [LoadFace][0x9B][0x1]
 [LoadA4ImperialCaptain] = [LoadFace][0x55][0x1]
 [LoadCalista] = [LoadA4ImperialCaptain]
 [LoadValerie] = [LoadFace][0x54][0x1]
@@ -174,7 +178,7 @@
 [LoadSagargala] = [LoadFace][0x52][0x1]
 
 [LoadRochefort] = [LoadFace][0x58][0x1]
-[LoadSantiago] = [LoadFace][0x59][0x1]
+[LoadSantiago] = [LoadFace][0xB2][0x1]
 [LoadSlicer] = [LoadFace][0x40][0x1]
 [LoadDicer] = [LoadFace][0x41][0x1]
 
@@ -267,7 +271,6 @@
 
 [LoadD3SoldierBro1] = [LoadFace][0x70][0x1]
 [LoadD3SoldierBro2] = [LoadFace][0x71][0x1]
-[LoadFidel] = [LoadFace][0xBD][0x1]
 [LoadEnrique] = [LoadFace][0xBB][0x1]
 [LoadInka] = [LoadFace][0xBC][0x1]
 [LoadCorina] = [LoadFace][0x60][0x1]

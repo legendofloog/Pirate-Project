@@ -19,3 +19,15 @@ ALIGN 4
 Load2AlwaysTable:
 BYTE Desiderio Pilar Razvan Orlando Rahel //Add units here
 BYTE 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 // separator
+
+ALIGN 4
+ShowAllPlayers:
+ShowUnitIfAlive(Pilar)
+ShowUnitIfAlive(Desiderio)
+ShowUnitIfAlive(Razvan)
+ShowUnitIfAlive(Carmen)
+ShowUnitIfAlive(Ximo)
+ShowUnitIfAlive(Estelle)
+ShowUnitIfAlive(Hermenegildo)
+NoFade
+ENDA

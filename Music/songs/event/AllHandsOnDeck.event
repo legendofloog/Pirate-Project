@@ -1129,7 +1129,6 @@ AllHandsOnDeck_7:
         BYTE   W96
 // 001   ----------------------------------------
         BYTE           VOL     8
-        BYTE           MOD     32
         BYTE           TIE     Gn3   v063
         BYTE   W12
         BYTE           VOL     16

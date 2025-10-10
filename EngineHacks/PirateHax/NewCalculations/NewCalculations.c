@@ -12,7 +12,7 @@ void ComputeBattleUnitHitRate(BattleUnit* bu) {
 }
 
 void ComputeBattleUnitAvoidRate(BattleUnit* bu) {
-    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 4);
+    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 3) + bu->battleSpeed;
 
     if (bu->battleAvoidRate < 0){
         bu->battleAvoidRate = 0;
@@ -168,25 +168,17 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
     else if (staffRank == B_WEXP){
         exp += 24;
     }
-    else if (staffRank == S_RANK){
+    else if (staffRank == A_WEXP){
         exp += 27;
     }
-    else{
-        exp += 33;
-    }
-
-    int levelDiff = GetLevelDifference(actor, &gBattleTarget);
-
-    if (levelDiff < 0){ //if the target is lower level than actor, reduce exp by 2 * level diff
-        exp += levelDiff * 3;
-    }
-   
-    if (exp <= 3){
-        return 3;
+    else if(staffRank == S_WEXP){
+        exp += 30;
     }
     else{
-        return exp;
+
     }
+
+    return exp;
 }
 
 s8 ActionSteal(Proc* proc) {
@@ -580,18 +572,30 @@ int CanUnitUseWeapon(struct Unit* unit, int item) {
 }
 
 // makes autolevels fixed
-int GetAutoleveledStatIncrease(int growth, int levelCount) {
+int GetAutoleveledStatIncrease(int growth, int levelCount)
+{
     return GetNPCStatIncrease(growth * (levelCount + 1));
 }
 
 int GetNPCStatIncrease(int growth){
 	int result = 0;
 	
-	while (growth >= 100) {
-        result++;
-        growth -= 100;
+    if (growth < 0)
+    {
+        while (growth <= 0) //if there's any negative left over, need to subtract still
+        {
+            result--;
+            growth += 100;
+        }
     }
-
+    else
+    {
+        while (growth >= 100) //if there's not enough for a full level, don't give more
+        {
+            result++;
+            growth -= 100;
+        }
+    }
 	return result;
 }
 
@@ -629,6 +633,36 @@ struct Unit* LoadUnit(const struct UnitDefinition* uDef) {
         }
         UnitAutolevel(unit);
         UnitAutolevelWExp(unit, uDef);
+
+    }
+    else{
+        int autolevelCount = 0; //autoleveling, but only for enemies, and only based off of the difficulty; catches edge cases like bosses outside of hubs
+        if (IsDifficultMode()){
+            autolevelCount = 5;
+        }
+        else if (TUTORIAL_MODE())
+        {
+            autolevelCount = -5;
+        }
+
+        if (autolevelCount != 0)
+        {
+            bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
+            bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
+            
+            if (isUnitPlayer){ //players get nothing, so skip them
+                
+            }
+            else if (IsUnitBoss) //boss or enemies could get negative stats, so need to floor them just in case
+            {
+                AutolevelUnit(unit, autolevelCount);
+                FloorStats(unit);
+            }
+            else{
+                AutolevelClass(unit, autolevelCount);
+                FloorStats(unit);           
+            }
+        }
 
     }
 
@@ -704,28 +738,95 @@ void UnitAutolevel(struct Unit* unit) {
 void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
     bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
     bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
+
+    int autolevelCount = levelCount;
+    int difficultyLevelChange = 0; //for normal mode       
+    if (IsDifficultMode())
+    {
+        difficultyLevelChange = 5;
+    }
+    else if (TUTORIAL_MODE())
+    {
+        difficultyLevelChange = -5;
+    }
+
+    autolevelCount += difficultyLevelChange; //add the levels from difficulty: example: level 6 fighter on easy gets +5, -5, same as a normal fighter at level 1
+
     if (levelCount) {
-        if (isUnitPlayer || IsUnitBoss){
-            unit->maxHP += GetAutoleveledStatIncrease(unit->pCharacterData->growthHP,  levelCount);
-            unit->pow   += GetAutoleveledStatIncrease(unit->pCharacterData->growthPow, levelCount);
-            unit->mag   += GetAutoleveledStatIncrease(MagCharTable[unit->pCharacterData->number].growthMag, levelCount);
-            unit->skl   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSkl, levelCount);
-            unit->spd   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSpd, levelCount);
-            unit->def   += GetAutoleveledStatIncrease(unit->pCharacterData->growthDef, levelCount);
-            unit->res   += GetAutoleveledStatIncrease(unit->pCharacterData->growthRes, levelCount);
-            unit->lck   += GetAutoleveledStatIncrease(unit->pCharacterData->growthLck, levelCount);
+        if (isUnitPlayer){ //players do not get the easy/hard mode difficulty changes, so just use initial level count
+            AutolevelUnit(unit, levelCount);
+            
+        }
+        else if (IsUnitBoss) //boss or enemies could get negative stats, so need to floor them just in case
+        {
+            AutolevelUnit(unit, autolevelCount);
+            FloorStats(unit);
         }
         else{
-            unit->maxHP += GetAutoleveledStatIncrease(unit->pClassData->growthHP,  levelCount);
-            unit->pow   += GetAutoleveledStatIncrease(unit->pClassData->growthPow, levelCount);
-            unit->mag   += GetAutoleveledStatIncrease(MagClassTable[unit->pClassData->number].growthMag, levelCount);
-            unit->skl   += GetAutoleveledStatIncrease(unit->pClassData->growthSkl, levelCount);
-            unit->spd   += GetAutoleveledStatIncrease(unit->pClassData->growthSpd, levelCount);
-            unit->def   += GetAutoleveledStatIncrease(unit->pClassData->growthDef, levelCount);
-            unit->res   += GetAutoleveledStatIncrease(unit->pClassData->growthRes, levelCount);
-            unit->lck   += GetAutoleveledStatIncrease(unit->pClassData->growthLck, levelCount);
+            AutolevelClass(unit, autolevelCount);
+            FloorStats(unit);           
         }
         
+    }
+
+}
+
+void AutolevelUnit(struct Unit* unit, int levelCount){
+    unit->maxHP += GetAutoleveledStatIncrease(unit->pCharacterData->growthHP,  levelCount);
+    unit->pow   += GetAutoleveledStatIncrease(unit->pCharacterData->growthPow, levelCount);
+    unit->mag   += GetAutoleveledStatIncrease(MagCharTable[unit->pCharacterData->number].growthMag, levelCount);
+    unit->skl   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSkl, levelCount);
+    unit->spd   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSpd, levelCount);
+    unit->def   += GetAutoleveledStatIncrease(unit->pCharacterData->growthDef, levelCount);
+    unit->res   += GetAutoleveledStatIncrease(unit->pCharacterData->growthRes, levelCount);
+    unit->lck   += GetAutoleveledStatIncrease(unit->pCharacterData->growthLck, levelCount);
+}
+
+void AutolevelClass(struct Unit* unit, int levelCount)
+{
+    unit->maxHP += GetAutoleveledStatIncrease(unit->pClassData->growthHP,  levelCount);
+    unit->pow   += GetAutoleveledStatIncrease(unit->pClassData->growthPow, levelCount);
+    unit->mag   += GetAutoleveledStatIncrease(MagClassTable[unit->pClassData->number].growthMag, levelCount);
+    unit->skl   += GetAutoleveledStatIncrease(unit->pClassData->growthSkl, levelCount);
+    unit->spd   += GetAutoleveledStatIncrease(unit->pClassData->growthSpd, levelCount);
+    unit->def   += GetAutoleveledStatIncrease(unit->pClassData->growthDef, levelCount);
+    unit->res   += GetAutoleveledStatIncrease(unit->pClassData->growthRes, levelCount);
+    unit->lck   += GetAutoleveledStatIncrease(unit->pClassData->growthLck, levelCount);
+}
+
+void FloorStats(struct Unit* unit)
+{
+    if (unit->maxHP < 0 || unit->maxHP >= 200) //to prevent underflow, check the high point
+    {
+        unit->maxHP = 0;
+    }
+    if (unit->pow < 0 || unit->pow >= 100)
+    {
+        unit->pow = 0;
+    }
+    if (unit->mag < 0 || unit->mag >= 100)
+    {
+        unit->mag = 0;
+    }
+    if (unit->skl < 0 || unit->skl >= 100)
+    {
+        unit->skl = 0;
+    }
+    if (unit->spd < 0 || unit->spd >= 100)
+    {
+        unit->spd = 0;
+    }
+    if (unit->def < 0 || unit->def >= 100)
+    {
+        unit->def = 0;
+    }
+    if (unit->res < 0 || unit->res >= 100)
+    {
+        unit->res = 0;
+    }
+    if (unit->lck < 0 || unit->lck >= 100)
+    {
+        unit->lck = 0;
     }
 }
 

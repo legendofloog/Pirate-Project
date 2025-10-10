@@ -458,7 +458,7 @@ END_MAIN
 
 
 FataTemp:
-UNIT Fata Monk 0 Level(11,Ally,True) [3,6] 0 0 1 REDA3R6 [Elfire,Luna] NoAI
+UNIT Fata Monk_F 0 Level(11,Ally,True) [3,6] 0 0 1 REDA3R6 [Elfire,Luna] NoAI
 UNIT
 
 BadGuys:
@@ -551,7 +551,7 @@ UNIT 0x94 Fighter Nicodemus Level(10,Enemy,True) [12,13] 0 0 0 0 [SteelLance] No
 UNIT 0x95 Mage Nicodemus Level(10,Enemy,True) [2,7] 0 0 0 0 [SteelMusket] GroupOneAI
 UNIT 0x96 Gunner Nicodemus Level(10,Enemy,True) [12,10] 0 0 0 0 [SteelMusket] GroupOneAI
 UNIT 0x97 Shaman Nicodemus Level(10,Enemy,True) [10,1] 0 0 0 0 [SteelLance] NoAI
-UNIT Fata Monk 0 Level(10,NPC,True) [1,15] 0 0 0 0 [Elfire,Luna] NoAI
+UNIT Fata Monk_F 0 Level(10,NPC,True) [1,15] 0 0 0 0 [Elfire,Luna] NoAI
 UNIT
 
 //these guys appear mid-cutscene to show troops re-rallying
@@ -588,7 +588,7 @@ UNIT
 //Used for the final convo between Fata and Lua
 CutsceneLuaShipwreck_2:
 UNIT Lua 0 0 Level(10,Ally,False) [2,8] 0 0 0 0 [IronSword] NoAI
-UNIT Fata Monk 0 Level(10,Ally,True) [3,8] 0 0 0 0 [Elfire,Luna] NoAI
+UNIT Fata Monk_F 0 Level(10,Ally,True) [3,8] 0 0 0 0 [Elfire,Luna] NoAI
 UNIT
 
 //Will be replaced with the units you deployed this chapter as flavor, woo

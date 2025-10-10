@@ -7,7 +7,23 @@ EventPointerTable(HubDEventsID, PointerList)
 #define Flag_HubD_DiningQuarters_ToDeck 11
 #define Flag_HubD_LivingQuarters_ToDeck 12
 #define Flag_HubD_DeckToOtherAreas 13
-#define Flag_HubD_CaptainsQuarters_ToEnd 14
+#define Flag_HubD_Ending_Allowed 14
+#define HubD_Desiderio_Razvan_Pilar_Temp_Talk_Flag 15
+#define HubD_Ximo_Carmen_Hermen_Temp_Talk_Flag 16
+#define HubD_Matteo_Suzanne_Kurt_Temp_Talk_Flag 17
+#define HubD_Kai_Theana_Temp_Talk_Flag 18
+#define HubD_Jaime_Leonor_Windy_Temp_Talk_Flag 19
+#define HubD_Estelle_Indio_Remora_Temp_Talk_Flag 20
+#define HubD_Leandra_Juan_Tanyuan_Temp_Talk_Flag 21
+#define HubD_Calista_Fidel_Valerie_Temp_Talk_Flag 22
+#define HubD_Ernest_Biko_Ondeh_Temp_Talk_Flag 23
+#define HubD_Orlando_Lexa_Adrian_Temp_Talk_Flag 24
+#define HubD_Fata_Neltume_Dmitr_Temp_Talk_Flag 25
+#define HubD_Ruby_Kaisa_Temp_Talk_Flag 26
+#define HubD_Bolton_Rima_Temp_Talk_Flag 27
+#define HubD_Noah_Temp_Talk_Flag 28
+#define HubD_Durgham_Yodsen_Temp_Talk_Flag 29
+#define HubD_Rahel_Ida_Ponte_Temp_Talk_Flag 30
 
 
 PointerList:
@@ -31,12 +47,12 @@ PostPrepsEvent:
 FADI 15
 CALL SpawnHubD_DeckUnits
 CALL HubD_Traps_Deck
-//CALL SetAllHubDTalkFlags
+CALL SetAllHubDTalkFlags
 CAMERA_CENTERED Lua
 ENUT Flag_HubD_CaptainsQuarters_ToDeck
 ENUT Flag_HubD_DiningQuarters_ToDeck
 ENUT Flag_HubD_LivingQuarters_ToDeck //turn off all flags except the ones that go to floor 1
-ENUT Flag_HubD_CaptainsQuarters_ToEnd
+ENUT Flag_HubD_Ending_Allowed
 ENUF Flag_HubD_DeckToOtherAreas
 FADU 15
 CheckHowManyHubChaptersCompleted
@@ -50,14 +66,217 @@ LABEL 3
 NoFade
 ENDA
 
+SetAllHubDTalkFlags:
+// the talks in question
+CheckIfHubBTalkLegalThreeChar(Razvan, Desiderio, Pilar, 1, 2, HubD_Desiderio_Razvan_Pilar_Global_Talk_Flag, HubD_Desiderio_Razvan_Pilar_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Ximo, Carmen, Hermenegildo, 3, 4, HubD_Ximo_Carmen_Hermen_Global_Talk_Flag, HubD_Ximo_Carmen_Hermen_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Matteo, Suzanne, Kurt, 5, 6, HubD_Matteo_Suzanne_Kurt_Global_Talk_Flag, HubD_Matteo_Suzanne_Kurt_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Kai, Theana, 7, 8, HubD_Kai_Theana_Global_Talk_Flag, HubD_Kai_Theana_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Estelle, Indio, Remora, 11, 12, HubD_Estelle_Indio_Remora_Global_Talk_Flag, HubD_Estelle_Indio_Remora_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Leandra, Juan, Tangyuan, 13, 14, HubD_Leandra_Juan_Tanyuan_Global_Talk_Flag, HubD_Leandra_Juan_Tanyuan_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Jaime, Leonor, Windy, 9, 10, HubD_Jaime_Leonor_Windy_Global_Talk_Flag, HubD_Jaime_Leonor_Windy_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Calista, Fidel, Valerie, 17, 18, HubD_Calista_Fidel_Valerie_Global_Talk_Flag, HubD_Calista_Fidel_Valerie_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Ernest, Biko, Ondeh, 19, 20, HubD_Ernest_Biko_Ondeh_Global_Talk_Flag, HubD_Ernest_Biko_Ondeh_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Orlando, Lexa, Adrian, 21, 22, HubD_Orlando_Lexa_Adrian_Global_Talk_Flag, HubD_Orlando_Lexa_Adrian_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Fata, Neltume, Dmitr, 23, 24, HubD_Fata_Neltume_Dmitr_Global_Talk_Flag, HubD_Fata_Neltume_Dmitr_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Bolton, Rima, Passarola, 27, 28, HubD_Bolton_Rima_Global_Talk_Flag, HubD_Bolton_Rima_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Rahel, Ponte, IdaReal, 51, 52, HubD_Rahel_Ida_Ponte_Global_Talk_Flag, HubD_Rahel_Ida_Ponte_Temp_Talk_Flag)
+
+//now, check for the cases where it's conditional: new macro
+CheckIfHubDTalkLegal(Noah, 0, 0, Magdalena, Avocado, Husniye, 35, 36, 37, 38, 39, 40, 41, 42, HubD_Noah_Global_Talk_Flag, HubD_Noah_Temp_Talk_Flag)
+CheckIfHubDTalkLegal(Yodsen, Durgham, 0, Triana, Bartz, Medwyn, 43, 44, 45, 46, 47, 48, 49, 50, HubD_Durgham_Yodsen_Global_Talk_Flag, HubD_Durgham_Yodsen_Temp_Talk_Flag)
+CheckIfHubDTalkLegal(Ruby, Kaisa, 0, Aristides, Florencia, 0, 53, 54, 55, 56, 57, 58, 59, 60, HubD_Ruby_Kaisa_Global_Talk_Flag, HubD_Ruby_Kaisa_Temp_Talk_Flag)
+NoFade
+ENDA
+
+
 CharacterBasedEvents:
+CharacterEvent(HubD_Desiderio_Razvan_Pilar_Temp_Talk_Flag, HubD_Desiderio_Razvan_Pilar_Convo, Lua, Desiderio)
+CharacterEvent(HubD_Desiderio_Razvan_Pilar_Temp_Talk_Flag, HubD_Desiderio_Razvan_Pilar_Convo, Lua, Razvan)
+CharacterEvent(HubD_Desiderio_Razvan_Pilar_Temp_Talk_Flag, HubD_Desiderio_Razvan_Pilar_Convo, Lua, Pilar)
+
+CharacterEvent(HubD_Ximo_Carmen_Hermen_Temp_Talk_Flag, HubD_Ximo_Carmen_Hermen_Convo, Lua, Ximo)
+CharacterEvent(HubD_Ximo_Carmen_Hermen_Temp_Talk_Flag, HubD_Ximo_Carmen_Hermen_Convo, Lua, Carmen)
+CharacterEvent(HubD_Ximo_Carmen_Hermen_Temp_Talk_Flag, HubD_Ximo_Carmen_Hermen_Convo, Lua, Hermenegildo)
+
+CharacterEvent(HubD_Jaime_Leonor_Windy_Temp_Talk_Flag, HubD_Jaime_Leonor_Windy_Convo, Lua, Jaime)
+CharacterEvent(HubD_Jaime_Leonor_Windy_Temp_Talk_Flag, HubD_Jaime_Leonor_Windy_Convo, Lua, Leonor)
+CharacterEvent(HubD_Jaime_Leonor_Windy_Temp_Talk_Flag, HubD_Jaime_Leonor_Windy_Convo, Lua, Windy)
+
+CharacterEvent(HubD_Ernest_Biko_Ondeh_Temp_Talk_Flag, HubD_Ernest_Biko_Ondeh_Convo, Lua, Ernest)
+CharacterEvent(HubD_Ernest_Biko_Ondeh_Temp_Talk_Flag, HubD_Ernest_Biko_Ondeh_Convo, Lua, Biko)
+CharacterEvent(HubD_Ernest_Biko_Ondeh_Temp_Talk_Flag, HubD_Ernest_Biko_Ondeh_Convo, Lua, Ondeh)
+
+CharacterEvent(HubD_Estelle_Indio_Remora_Temp_Talk_Flag, HubD_Estelle_Indio_Remora_Convo, Lua, Estelle)
+CharacterEvent(HubD_Estelle_Indio_Remora_Temp_Talk_Flag, HubD_Estelle_Indio_Remora_Convo, Lua, Indio)
+CharacterEvent(HubD_Estelle_Indio_Remora_Temp_Talk_Flag, HubD_Estelle_Indio_Remora_Convo, Lua, Remora)
+
+CharacterEvent(HubD_Calista_Fidel_Valerie_Temp_Talk_Flag, HubD_Calista_Fidel_Valerie_Convo, Lua, Calista)
+CharacterEvent(HubD_Calista_Fidel_Valerie_Temp_Talk_Flag, HubD_Calista_Fidel_Valerie_Convo, Lua, Fidel)
+CharacterEvent(HubD_Calista_Fidel_Valerie_Temp_Talk_Flag, HubD_Calista_Fidel_Valerie_Convo, Lua, Valerie)
+
+CharacterEvent(HubD_Orlando_Lexa_Adrian_Temp_Talk_Flag, HubD_Orlando_Lexa_Adrian_Convo, Lua, Orlando)
+CharacterEvent(HubD_Orlando_Lexa_Adrian_Temp_Talk_Flag, HubD_Orlando_Lexa_Adrian_Convo, Lua, Lexa)
+CharacterEvent(HubD_Orlando_Lexa_Adrian_Temp_Talk_Flag, HubD_Orlando_Lexa_Adrian_Convo, Lua, Adrian)
+
+CharacterEvent(HubD_Rahel_Ida_Ponte_Temp_Talk_Flag, HubD_Rahel_Ida_Ponte_Convo, Lua, Rahel)
+CharacterEvent(HubD_Rahel_Ida_Ponte_Temp_Talk_Flag, HubD_Rahel_Ida_Ponte_Convo, Lua, Ponte)
+CharacterEvent(HubD_Rahel_Ida_Ponte_Temp_Talk_Flag, HubD_Rahel_Ida_Ponte_Convo, Lua, IdaReal)
+
+CharacterEvent(HubD_Durgham_Yodsen_Temp_Talk_Flag, HubD_Durgham_Yodsen_Convo, Lua, Durgham)
+CharacterEvent(HubD_Durgham_Yodsen_Temp_Talk_Flag, HubD_Durgham_Yodsen_Convo, Lua, Yodsen)
+CharacterEvent(HubD_Durgham_Yodsen_Temp_Talk_Flag, HubD_Durgham_Yodsen_Convo, Lua, Triana)
+CharacterEvent(HubD_Durgham_Yodsen_Temp_Talk_Flag, HubD_Durgham_Yodsen_Convo, Lua, Bartz)
+CharacterEvent(HubD_Durgham_Yodsen_Temp_Talk_Flag, HubD_Durgham_Yodsen_Convo, Lua, Medwyn)
+
+CharacterEvent(HubD_Bolton_Rima_Temp_Talk_Flag, HubD_Bolton_Rima_Convo, Lua, Bolton)
+CharacterEvent(HubD_Bolton_Rima_Temp_Talk_Flag, HubD_Bolton_Rima_Convo, Lua, Rima)
+CharacterEvent(HubD_Bolton_Rima_Temp_Talk_Flag, HubD_Bolton_Rima_Convo, Lua, Passarola)
+
+CharacterEvent(HubD_Leandra_Juan_Tanyuan_Temp_Talk_Flag, HubD_Leandra_Juan_Tanyuan_Convo, Lua, Leandra)
+CharacterEvent(HubD_Leandra_Juan_Tanyuan_Temp_Talk_Flag, HubD_Leandra_Juan_Tanyuan_Convo, Lua, Juan)
+CharacterEvent(HubD_Leandra_Juan_Tanyuan_Temp_Talk_Flag, HubD_Leandra_Juan_Tanyuan_Convo, Lua, Tangyuan)
+
+CharacterEvent(HubD_Fata_Neltume_Dmitr_Temp_Talk_Flag, HubD_Fata_Neltume_Dmitr_Convo, Lua, Fata)
+CharacterEvent(HubD_Fata_Neltume_Dmitr_Temp_Talk_Flag, HubD_Fata_Neltume_Dmitr_Convo, Lua, Neltume)
+CharacterEvent(HubD_Fata_Neltume_Dmitr_Temp_Talk_Flag, HubD_Fata_Neltume_Dmitr_Convo, Lua, Dmitr)
+
+CharacterEvent(HubD_Ruby_Kaisa_Temp_Talk_Flag, HubD_Ruby_Kaisa_Convo, Lua, Ruby)
+CharacterEvent(HubD_Ruby_Kaisa_Temp_Talk_Flag, HubD_Ruby_Kaisa_Convo, Lua, Kaisa)
+CharacterEvent(HubD_Ruby_Kaisa_Temp_Talk_Flag, HubD_Ruby_Kaisa_Convo, Lua, Aristides)
+CharacterEvent(HubD_Ruby_Kaisa_Temp_Talk_Flag, HubD_Ruby_Kaisa_Convo, Lua, Florencia)
+
+CharacterEvent(HubD_Noah_Temp_Talk_Flag, HubD_Noah_Convo, Lua, Noah)
+CharacterEvent(HubD_Noah_Temp_Talk_Flag, HubD_Noah_Convo, Lua, Magdalena)
+CharacterEvent(HubD_Noah_Temp_Talk_Flag, HubD_Noah_Convo, Lua, Avocado)
+CharacterEvent(HubD_Noah_Temp_Talk_Flag, HubD_Noah_Convo, Lua, Husniye)
+
+CharacterEvent(HubD_Kai_Theana_Temp_Talk_Flag, HubD_Kai_Theana_Convo, Lua, Kai)
+CharacterEvent(HubD_Kai_Theana_Temp_Talk_Flag, HubD_Kai_Theana_Convo, Lua, Theana)
 END_MAIN
+
+HubD_Desiderio_Razvan_Pilar_Convo:
+DisplayTextThenSetGlobalFlag(HubD_RazvanDesiderioPilar_Text, HubD_Desiderio_Razvan_Pilar_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Ximo_Carmen_Hermen_Convo:
+DisplayTextThenSetGlobalFlag(HubD_XimoCarmenHermenegildo_Text, HubD_Ximo_Carmen_Hermen_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Jaime_Leonor_Windy_Convo:
+DisplayTextThenSetGlobalFlag(HubD_JaimeLeonorWindy_Text, HubD_Jaime_Leonor_Windy_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Ernest_Biko_Ondeh_Convo:
+DisplayTextThenSetGlobalFlag(HubD_ErnestBikoOndeh_Text, HubD_Ernest_Biko_Ondeh_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Estelle_Indio_Remora_Convo:
+DisplayTextThenSetGlobalFlag(HubD_EstelleIndioRemora_Text, HubD_Estelle_Indio_Remora_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Calista_Fidel_Valerie_Convo:
+DisplayTextThenSetGlobalFlag(HubD_CalistaFidelValerie_Text, HubD_Calista_Fidel_Valerie_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Orlando_Lexa_Adrian_Convo:
+DisplayTextThenSetGlobalFlag(HubD_OrlandoAdrianLexa_Text, HubD_Orlando_Lexa_Adrian_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Rahel_Ida_Ponte_Convo:
+DisplayTextThenSetGlobalFlag(HubD_RahelIdaPonte_Text, HubD_Rahel_Ida_Ponte_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Durgham_Yodsen_Convo:
+CHECK_ALIVE Triana
+BEQ 1 s0 sC //if she's not here, then we move
+    Text(HubD_DurghamYodsenTriana_Text)
+    ENUT HubD_Durgham_Yodsen_Global_Talk_Flag
+    GOTO 3
+LABEL 1
+CHECK_ALIVE Medwyn
+BEQ 2 s0 sC 
+    Text(HubD_DurghamYodsenMedwyn_Text)
+    ENUT HubD_Durgham_Yodsen_Global_Talk_Flag
+    GOTO 3
+LABEL 2
+CHECK_ALIVE Bartz
+BEQ 3 s0 sC 
+    Text(HubD_DurghamYodsenBartz_Text)
+    ENUT HubD_Durgham_Yodsen_Global_Talk_Flag
+LABEL 3
+NoFade
+ENDA
+
+HubD_Bolton_Rima_Convo:
+DisplayTextThenSetGlobalFlag(HubD_BoltonRimaPassarola_Text, HubD_Bolton_Rima_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Leandra_Juan_Tanyuan_Convo:
+DisplayTextThenSetGlobalFlag(HubD_LeandraJuanTangyuan_Text, HubD_Leandra_Juan_Tanyuan_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Fata_Neltume_Dmitr_Convo:
+DisplayTextThenSetGlobalFlag(HubD_FataNeltumeDmitr_Text, HubD_Fata_Neltume_Dmitr_Global_Talk_Flag) 
+NoFade
+ENDA
+
+HubD_Ruby_Kaisa_Convo:
+CHECK_ALIVE Aristides
+BEQ 1 s0 sC //if she's not here, then we move
+    Text(HubD_RubyKaisaAristides_Text)
+    ENUT HubD_Ruby_Kaisa_Global_Talk_Flag
+    GOTO 3
+LABEL 1
+CHECK_ALIVE Florencia
+BEQ 2 s0 sC 
+    Text(HubD_RubyKaisaFlorencia_Text)
+    ENUT HubD_Ruby_Kaisa_Global_Talk_Flag
+    GOTO 3
+LABEL 2
+NoFade
+ENDA
+
+HubD_Noah_Convo:
+CHECK_ALIVE Magdalena
+BEQ 1 s0 sC //if she's not here, then we move
+    Text(HubD_NoahMagdalena_Text)
+    ENUT HubD_Noah_Global_Talk_Flag
+    GOTO 3
+LABEL 1
+CHECK_ALIVE Avocado
+BEQ 2 s0 sC 
+    Text(HubD_NoahAvocado_Text)
+    ENUT HubD_Noah_Global_Talk_Flag
+    GOTO 3
+LABEL 2
+CHECK_ALIVE Husniye
+BEQ 3 s0 sC 
+    Text(HubD_NoahHusniye_Text)
+    ENUT HubD_Noah_Global_Talk_Flag
+LABEL 3
+NoFade
+ENDA
+
+HubD_Kai_Theana_Convo:
+DisplayTextThenSetGlobalFlag(HubD_KaiTheana_Text, HubD_Kai_Theana_Global_Talk_Flag) 
+NoFade
+ENDA
 
 LocationBasedEvents:
 END_MAIN
 
 MiscBasedEvents:
-AREA Flag_HubD_CaptainsQuarters_ToEnd EndingScene [7,8] [8,8]
 AREA Flag_HubD_DeckToOtherAreas GotoCaptainQuarters [7,14] [8,14]
 AREA Flag_HubD_DeckToOtherAreas GotoDiningQuarters [5,20] [5,20]
 AREA Flag_HubD_DeckToOtherAreas GotoDiningQuarters [10,20] [10,20]
@@ -73,21 +292,21 @@ END_MAIN
 GotoCaptainQuarters:
 CALL RemoveAllTraps
 ENUF Flag_HubD_CaptainsQuarters_ToDeck
-InitiateHubDTileChange(HubD_Traps_CaptainsQuarters, 0, SpawnHubD_DeckUnits)
+InitiateHubDTileChange(HubD_Traps_CaptainsQuarters, 0, SpawnHubD_CaptainsQuartersUnits)
 NoFade
 ENDA
 
 GotoDiningQuarters:
 CALL RemoveAllTraps
 ENUF Flag_HubD_DiningQuarters_ToDeck
-InitiateHubDTileChange(HubD_Traps_DiningQuarters, 1, SpawnHubD_DeckUnits)
+InitiateHubDTileChange(HubD_Traps_DiningQuarters, 1, SpawnHubD_DiningQuartersUnits)
 NoFade
 ENDA
 
 GotoLivingQuarters:
 CALL RemoveAllTraps
 ENUF Flag_HubD_LivingQuarters_ToDeck
-InitiateHubDTileChange(HubD_Traps_LivingQuarters, 2, SpawnHubD_DeckUnits)
+InitiateHubDTileChange(HubD_Traps_LivingQuarters, 2, SpawnHubD_LivingQuartersUnits)
 NoFade
 ENDA
 
@@ -101,12 +320,6 @@ ENDA
 HubD_Traps_CaptainsQuarters:
 AddTrap(BlueSigilTrapID, 7, 14)
 AddTrap(BlueSigilTrapID, 8, 14)
-CHECK_EVENTID GoToNextHubFlagID //has to be unset to be "on"
-BNE 776 s0 sC
-    AddTrap(GreenSigilTrapID, 7, 8)
-    AddTrap(GreenSigilTrapID, 8, 8)
-    ENUF Flag_HubD_CaptainsQuarters_ToEnd //unset this flag if we're in this space only
-LABEL 776
 NoFade
 ENDA
 
@@ -135,7 +348,6 @@ ENUT Flag_HubD_DeckToOtherAreas
 ENUT Flag_HubD_CaptainsQuarters_ToDeck
 ENUT Flag_HubD_DiningQuarters_ToDeck 
 ENUT Flag_HubD_LivingQuarters_ToDeck
-ENUT Flag_HubD_CaptainsQuarters_ToEnd
 NoFade
 ENDA
 
@@ -148,8 +360,8 @@ LOMA HubDTheOutskirts
 LOAD1 1 LiberatorShipGroup
 ENUN
 //LoadNPCUnitGroupIfEIDNotSet(PassarolaRecruitedFlag, 1337, PassarolaUnitGroup)
-SET_ACTIVE Liberator
-CAMERA_CENTERED Liberator
+SET_ACTIVE Arbitrator
+CAMERA_CENTERED Arbitrator
 HIDEUNIT Lua
 CALL SpawnInHubDQuests
 ENUN
@@ -158,7 +370,7 @@ NoFade
 ENDA
 
 LiberatorShipGroup:
-UNIT Liberator Airship 0 Level(20,Ally,False) [25,15] 0 0 0 0 [0x0] NoAI
+UNIT Arbitrator Airship 0 Level(20,Ally,False) [13,30] 0 0 0 0 [0x0] NoAI
 UNIT
 
 RefreshLua:
@@ -195,6 +407,7 @@ BNE 2 sC s0 //first time seeing it in this case, play first time event (both mea
     MUSC OrlandosThemeID
     Text(HubDBeginningScene1)
     Text(HubDBeginningScene2)
+    CALL UnsetHubDFlags
     GOTO 3
 LABEL 2
 SVAL s1 3
@@ -208,6 +421,26 @@ BNE 3 sC s1 //if chapters completed != 3, skip
 LABEL 3
 STAL 1
 GotoPrepScreenHub
+NoFade
+ENDA
+
+UnsetHubDFlags:
+ENUF HubD_Desiderio_Razvan_Pilar_Global_Talk_Flag 
+ENUF HubD_Ximo_Carmen_Hermen_Global_Talk_Flag 
+ENUF HubD_Matteo_Suzanne_Kurt_Global_Talk_Flag 
+ENUF HubD_Kai_Theana_Global_Talk_Flag 
+ENUF HubD_Jaime_Leonor_Windy_Global_Talk_Flag 
+ENUF HubD_Estelle_Indio_Remora_Global_Talk_Flag 
+ENUF HubD_Leandra_Juan_Tanyuan_Global_Talk_Flag 
+ENUF HubD_Calista_Fidel_Valerie_Global_Talk_Flag 
+ENUF HubD_Ernest_Biko_Ondeh_Global_Talk_Flag 
+ENUF HubD_Orlando_Lexa_Adrian_Global_Talk_Flag 
+ENUF HubD_Fata_Neltume_Dmitr_Global_Talk_Flag 
+ENUF HubD_Ruby_Kaisa_Global_Talk_Flag 
+ENUF HubD_Bolton_Rima_Global_Talk_Flag 
+ENUF HubD_Noah_Global_Talk_Flag 
+ENUF HubD_Durgham_Yodsen_Global_Talk_Flag 
+ENUF HubD_Rahel_Ida_Ponte_Global_Talk_Flag 
 NoFade
 ENDA
 

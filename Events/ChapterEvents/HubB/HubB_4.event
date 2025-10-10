@@ -557,7 +557,7 @@ UnitPlacement:
 		UNIT
 
 	NoahUnit:
-		UNIT Noah Warden 0 Level(8,Ally,True) [25,16] 0 0 1 REDA25R17 [SteelLance,IronBlade] NoAI
+		UNIT Noah Warden 0 Level(6,Ally,True) [25,16] 0 0 1 REDA25R17 [SteelLance,IronBlade] NoAI
 		UNIT
 
 //End

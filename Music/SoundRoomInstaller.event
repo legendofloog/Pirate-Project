@@ -48,8 +48,10 @@ SoundRoomEntry(TimesTickingID, 0, SongName_TimesTickingID)
 SoundRoomEntry(ScalleywagsOnDeckID,0,SongName_ScalleywagsOnDeck)
 SoundRoomEntry(StormsBrewingID, 0, SongName_StormsBrewing)
 SoundRoomEntry(WellAndTrulyLostID, 0, SongName_WellAndTrulyLost)
-SoundRoomEntry(SkysEndID, 0, SongName_SkysEnd)
-// hub D theme here
+SoundRoomEntry(HeavensHorizonID, 0, SongName_SkysEnd)
+
+// final map theme
+SoundRoomEntry(AtSkysEndID, 0, SongName_AtSkysEnd)
 
 // hub themes
 SoundRoomEntry(PortGreagorID,0,SongName_PortGreagor)
@@ -71,6 +73,12 @@ SoundRoomEntry(TougherTussleID, 0, SongName_TougherTussleID)
 SoundRoomEntry(TheStormUponUsID, 0, SongName_TheStormUponUs)
 SoundRoomEntry(BeforeTheGallowsID, 0, SongName_BeforeTheGallows)
 
+// special mechanics themes
+SoundRoomEntry(LookAtMeWaresID,0,SongName_LookAtMeWares)
+SoundRoomEntry(ToTheCrowsNestID,0,SongName_ToTheCrowsNest)
+SoundRoomEntry(DrownInGoodIntentionsID,0,SongName_DrownInGoodIntentions)
+SoundRoomEntry(SleepinWithTheSkyFishesID,0,SongName_SleepinWithTheSkyFishes)
+
 // cutscene themes
 // happy cutscenes
 SoundRoomEntry(MeetTheCrewID, 0, SongName_MeetTheCrew)
@@ -84,16 +92,15 @@ SoundRoomEntry(WelcomeAboardMateyID,0,SongName_WelcomeAboardMatey)
 // spooky cutscenes
 SoundRoomEntry(SwabbieTalkID,0,SongName_SwabbieTalk)
 SoundRoomEntry(OrlandoThemeID,0,SongName_OrlandoTheme)
-SoundRoomEntry(ABlackheartsPrideID,0,SongName_ABlackheartsPride)
 // violence cutscenes
 SoundRoomEntry(FinInTheCloudsID, 0, SongName_FinInTheClouds)
 SoundRoomEntry(AvastMeHeartiesID,0,SongName_AvastMeHearties)
-
-// special mechanics themes
-SoundRoomEntry(LookAtMeWaresID,0,SongName_LookAtMeWares)
-SoundRoomEntry(ToTheCrowsNestID,0,SongName_ToTheCrowsNest)
-SoundRoomEntry(DrownInGoodIntentionsID,0,SongName_DrownInGoodIntentions)
-SoundRoomEntry(SleepinWithTheSkyFishesID,0,SongName_SleepinWithTheSkyFishes)
+// faction representative people
+SoundRoomEntry(ABlackheartsPrideID,0,SongName_ABlackheartsPride)
+SoundRoomEntry(AKeepersOathID,0,SongName_AKeepersOath)
+SoundRoomEntry(ASoldiersDutyID,0,SongName_ASoldiersDuty)
+//ending theme
+SoundRoomEntry(SailingIntoTheHorizonID,0,SongName_SailingIntoTheHorizon)
 SoundRoomTerminator
 
 
@@ -117,7 +124,9 @@ SoundRoomSource(ScalleywagsOnDeckID, Musician_Eric)
 SoundRoomSource(StormsBrewingID,  Musician_RandomWizard)
 SoundRoomSource(WellAndTrulyLostID,  Musician_ArcherBias)
 SoundRoomSource(SkysEndID, Musician_TheColorRed)
-// hub D theme here
+
+// final map theme
+SoundRoomSource(AtSkysEndID, Musician_Eric)
 
 // hub themes
 SoundRoomSource(PortGreagorID, Musician_Eric)
@@ -139,6 +148,11 @@ SoundRoomSource(TougherTussleID,  Musician_ArcherBias)
 SoundRoomSource(TheStormUponUsID,  Musician_RandomWizard)
 SoundRoomSource(BeforeTheGallowsID, Musician_Eric)
 
+// special mechanics themes
+SoundRoomSource(LookAtMeWaresID, Musician_Eric)
+SoundRoomSource(ToTheCrowsNestID, Musician_Eric)
+SoundRoomSource(DrownInGoodIntentionsID, Musician_ArcherBias)
+SoundRoomSource(SleepinWithTheSkyFishesID, Musician_ArcherBias)
 
 // cutscene themes
 // happy cutscenes
@@ -153,14 +167,14 @@ SoundRoomSource(WelcomeAboardMateyID, Musician_Eric)
 // spooky cutscenes
 SoundRoomSource(SwabbieTalkID, Musician_Eric)
 SoundRoomSource(OrlandoThemeID, Musician_catball)
-SoundRoomSource(ABlackheartsPrideID, Musician_Eric)
 // violence cutscenes
 SoundRoomSource(FinInTheCloudsID,  Musician_ArcherBias)
 SoundRoomSource(AvastMeHeartiesID, Musician_Eric)
 
-// special mechanics themes
-SoundRoomSource(LookAtMeWaresID, Musician_Eric)
-SoundRoomSource(ToTheCrowsNestID, Musician_Eric)
-SoundRoomSource(DrownInGoodIntentionsID, Musician_ArcherBias)
-SoundRoomSource(SleepinWithTheSkyFishesID, Musician_ArcherBias)
+// faction representative people
+SoundRoomSource(ABlackheartsPrideID, Musician_Eric)
+SoundRoomSource(AKeepersOathID,Musician_Eric)
+SoundRoomSource(ASoldiersDutyID,Musician_Eric)
+//ending theme
+SoundRoomSource(SailingIntoTheHorizonID,Musician_Eric)
 WORD 0 0 // term

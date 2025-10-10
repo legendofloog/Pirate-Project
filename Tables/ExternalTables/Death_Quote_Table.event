@@ -11,6 +11,11 @@ DeathQuote(Carmen, AllChapters, 0, CarmenDQ)
 DeathQuote(Ximo, AllChapters, 0, XimoDQ)
 DeathQuote(Hermenegildo, AllChapters, 0, HermenegildoDQ)
 DeathQuote(Estelle, AllChapters, 0, EstelleDQ)
+
+//where are my hub A death quotes.
+
+
+
 //B-2a unique death for Magdalena in cutscene.
 DeathQuote(Magdalena, CutsceneHubB_2a, 0, B2a_DQ_Magdalena)
 
@@ -48,9 +53,6 @@ DeathQuote(Fidel, HubD_3, 0, FidelDQ)
 
 // Bosses
 
-DeathQuote(AlonsoChapter3, Chapter3, 2, Ch3AlonsoDQ)
-DeathQuote(Dalila, Chapter3, 10, Ch3DalilaDQ)
-
 DeathQuote(Khazhak,Chapter1, 2, Ch1KhazhakDQ)
 
 DeathQuote(Geraldo, HubA_1, 0x0, GeraldoDeathQuote)
@@ -86,6 +88,9 @@ DeathQuote(RebelThief, HubB_3, 0xF, 0x0)
 DeathQuote(Javier, HubB_4, 0x2, JavierDQ)
 
 DeathQuote(Nicodemus, HubB_5, 0, NicodemusDeathQuote)
+
+DeathQuote(AlonsoChapter3, Chapter3, 2, Ch3AlonsoDQ)
+DeathQuote(Dalila, Chapter3, 10, Ch3DalilaDQ)
 
 DeathQuote(Baltasar, HubC_1, 0xA, BaltasarDQ)
 DeathQuote(TheCloser, HubC_1, 0xC, TheCloserDQ)

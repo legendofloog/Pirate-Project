@@ -656,7 +656,7 @@ WarlockMMS:
 #incbin "Dmp/Tactician (U) {SALVAGED}-walk.dmp"
 
 StandingMapSprite(ClericMapSprite,MapSprite16x16, ClericSMS)
-MovingMapSprite(Cleric, $1C3D7C, ClericMMS)
+MovingMapSprite(Cleric_M, $1C3D7C, ClericMMS)
 
 ALIGN 4
 ClericSMS:
@@ -687,3 +687,25 @@ Champion_FSMS:
 ALIGN 4
 Champion_FMMS:
 #incbin "Dmp/Sergeant (F) {Spud, Dora Drago}-walk.dmp"
+
+StandingMapSprite(Thief_FMapSprite,MapSprite16x16,Thief_FSMS)
+MovingMapSprite(Thief_F, $1C3D7C, Thief_FMMS)
+
+ALIGN 4
+Thief_FSMS:
+#incbin "Dmp/Thief (F) {IS}-stand.dmp"
+
+ALIGN 4
+Thief_FMMS:
+#incbin "Dmp/Thief (F) {IS}-walk.dmp"
+
+StandingMapSprite(Rogue_FMapSprite,MapSprite16x16,Rogue_FSMS)
+MovingMapSprite(Rogue_F, $1C3D7C, Rogue_FMMS)
+
+ALIGN 4
+Rogue_FSMS:
+#incbin "Dmp/Rogue (F) {Unknown}-stand.dmp"
+
+ALIGN 4
+Rogue_FMMS:
+#incbin "Dmp/Rogue (F) {Unknown}-walk.dmp"

@@ -28,6 +28,8 @@
 #define Hunter_F 0x8A
 
 //#define Thief 0xd
+#define Thief_F 0xB0
+
 #define Ninja 0x81
 
 #define Gunner 0x86
@@ -51,6 +53,7 @@
 #define Adventurer_F 0x9f
 #define Warrior_F 0xa1
 #define Marksman 0xa4
+#define Rogue_F 0xB1
 
 //ARMOR
 
@@ -117,6 +120,7 @@
 //#define Cleric 0x4a
 #undef Cleric
 #define Cleric 0x45
+#define Cleric_M Cleric
 #define Cleric_F 0x4a
 
 
@@ -219,6 +223,9 @@
 #define ClericMapSprite 0xa0
 #define Cleric_FMapSprite 0xa1
 #define Champion_FMapSprite 0xa2
+#define Thief_FMapSprite 0xa3
+#define Rogue_FMapSprite 0xa4
+
 #define DragoonMapSprite SwordKnightMapSprite //placeholders for now
 #define KiteMapSprite LogMapSprite // 0x9e
 #define AdmiralMapSprite CaptainMapSprite

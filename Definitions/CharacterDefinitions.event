@@ -83,8 +83,18 @@
 
 // HUB D Units
 #define Fidel $32
+#define IdaReal $33
+#define Kaisa $34
+#define Florencia $35
+#define Aristides $36
+#define Arbitrator $39 //the gang's new ship
 
-#define YurenaReal // ??? somewhere, not sure yet
+#define AlonsoReal $28
+#define ElodiaReal $29
+#define QuispeReal $2A
+
+
+//#define YurenaReal $38 // will show up, somehow?
 
 // ENEMY/NPC ($46 through $FF)
 
@@ -161,7 +171,7 @@
 #define Guard $64
 #define Jozef $65
 #define TheCloser $66
-#define Closer $66
+#define Closer TheCloser
 #define BrickBoys $67
 
 //Hub A6

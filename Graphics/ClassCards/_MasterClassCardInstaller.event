@@ -475,3 +475,19 @@ ALIGN 4
 ChampionFClassCardPal:
 #incbin "Dmp/Sergeant (F) {Spud, Rasdel, Pushwall}.png_pal.dmp"
 setCardEntry(ChampionFClassCard, ChampionFClassCardData, ChampionFClassCardPal)
+
+ALIGN 4
+Thief_FClassCardData:
+#incbin "Dmp/Thief (F) Sword {L95}.dmp"
+ALIGN 4
+Thief_FClassCardPal:
+#incbin "Dmp/Thief (F) Sword {L95}.png_pal.dmp"
+setCardEntry(Thief_FClassCard, Thief_FClassCardData, Thief_FClassCardPal)
+
+ALIGN 4
+Rogue_FClassCardData:
+#incbin "Dmp/Rogue (F) {L95}.dmp"
+ALIGN 4
+Rogue_FClassCardPal:
+#incbin "Dmp/Rogue (F) {L95}.png_pal.dmp"
+setCardEntry(Rogue_FClassCard, Rogue_FClassCardData, Rogue_FClassCardPal)

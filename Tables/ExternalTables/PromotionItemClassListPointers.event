@@ -8,7 +8,7 @@ BYTE Vanguard Warden Shaman Shaman_F Fighter Fighter_F Soldier AxeCav 0x0
 
 ALIGN 4
 HuntersMarkClassList:
-BYTE Archer Archer_F Hunter Hunter_F Thief Priest Cleric Monk Monk_F Fighter Fighter_F SwordCav Gunner 0x0
+BYTE Archer Archer_F Hunter Hunter_F Thief Thief_F Priest Cleric Monk Monk_F Fighter Fighter_F SwordCav Gunner 0x0
 
 ALIGN 4
 FliersPermitClassList:
@@ -20,6 +20,6 @@ BYTE Warden Myrmidon Myrmidon_F Mage Mage_F Curate Brigand Hunter Hunter_F Ninja
 
 ALIGN 4
 RidersBadgeClassList:
-BYTE Vanguard Mage Mage_F Mercenary Mercenary_F Gunner Deserter Thief SwordCav LanceCav AxeCav BowCav Troubadour 0x0
+BYTE Vanguard Mage Mage_F Mercenary Mercenary_F Gunner Deserter Thief Thief_F SwordCav LanceCav AxeCav BowCav Troubadour 0x0
 
 ALIGN 4

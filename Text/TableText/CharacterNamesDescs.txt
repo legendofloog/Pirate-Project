@@ -433,7 +433,7 @@ Traits: Countdown[X]
 Buzu[X]
 
 ## BozoName
-Bozo[X]
+Zobo[X]
 
 ## GuardhelmOccupation
 Guardshelm[X]
@@ -1499,3 +1499,39 @@ Crook[X]
 One of a pair of brothers, committing[N]
 crime petty enough to be ignored.[X]
 
+## ArbitratorName
+Arbitrator[X]
+
+## ArbitratorOccupation
+Galleon[X]
+
+## ArbitratorDesc
+The new airship of the Skysabers,[N]
+armed to the teeth with cannons.[X]
+
+## KaisaName
+Kaisa[X]
+
+## KaisaOccupation
+Kaisa[X]
+
+## KaisaDesc
+Kaisa[X]
+
+## FlorenciaName
+Florencia[X]
+
+## FlorenciaOccupation
+Florencia[X]
+
+## FlorenciaDesc
+Florencia[X]
+
+## AristidesName
+Aristides[X]
+
+## AristidesOccupation
+Aristides[X]
+
+## AristidesDesc
+Aristides[X]

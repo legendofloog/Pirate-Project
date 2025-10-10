@@ -377,7 +377,7 @@ Quickdraw[X]
 Take Aim![X]
 
 ## TakeAimDesc
-+30 hit to an ally for 1 turn.[X]
++30 hit to an ally for 1 turn. +1 WEXP.[X]
 
 ## FortuneStaffSubtitleText
 Select ally to instruct aim.[X]
@@ -386,8 +386,8 @@ Select ally to instruct aim.[X]
 Assist[X]
 
 ## AssistStaffDesc
-Heal an ally for (Mag+10) HP and[N]
-grant them +30 hit for 1 turn.[X]
+Heal an ally for (Mag+10) HP and grant[N]
+them +30 hit for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffUseDesc
 Mag+10 healing and[N]
@@ -400,8 +400,8 @@ Select an ally to heal and buff.[X]
 Rush[X]
 
 ## RushStaffDesc
-Grant an ally +2 Mov and Canto+[N]
-for 1 turn. Mov cannot exceed 15.[X]
+Grant an ally +2 Mov and Canto+ [N]
+for 1 turn. Max Mov is 15. +1 WEXP.[X]
 
 ## RushStaffUseDesc
 +2 Mov and Canto+[N]

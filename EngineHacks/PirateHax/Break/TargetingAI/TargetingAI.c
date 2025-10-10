@@ -15,8 +15,11 @@ void ComputeAiAttackWeight(struct AiCombatSimulationSt* st) {
     if (DidUnitBreak() && gBattleActor.battleEffectiveHitRate > 0){
         score += (40 * gBattleActor.battleEffectiveHitRate) / 100; 
     }
-    if (gBattleTarget.weapon == 0 && (gBattleActor.battleAttack - gBattleTarget.battleDefense) > 0) {
+    else if (gBattleTarget.weapon == 0 && (gBattleActor.battleAttack - gBattleTarget.battleDefense) > 0) {
         score += (50 * gBattleActor.battleEffectiveHitRate) / 100; 
+    }
+    else{
+
     }
 
     if (score != 0) {
@@ -34,7 +37,7 @@ int AiBattleGetDamageDealtWeight(void) {
     int score;
     
     if (gBattleTarget.unit.curHP == 0) {
-        return 120; //if enemy dies and actor doesn't, maximum value considered
+        return 500; //if enemy dies and actor doesn't, very big value considered
     }
 
     if ((gBattleActor.battleAttack - gBattleTarget.battleDefense) <= 0){
