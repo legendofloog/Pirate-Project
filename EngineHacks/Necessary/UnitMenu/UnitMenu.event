@@ -118,6 +118,8 @@ UnitMenuTable:
   
   MenuCommand(UM_Pollenate, UM_PollenateDesc, NormalText, PollenateUsability, PollenateEffect)
   
+  MenuCommand(UM_SpecialOrdinance, UM_SpecialOrdinanceDesc, NormalText, SpecialOrdinanceUsability, SpecialOrdinanceEffect)
+  
   UM_Staff
   UM_Ride
   UM_Exit

@@ -1,0 +1,6 @@
+//Siege Tower: When initiating combat with a bow without moving, +4 max range.
+
+#include "SiegeTower.lyn.event"
+
+SiegeTowerIDLink:
+BYTE SiegeTowerID

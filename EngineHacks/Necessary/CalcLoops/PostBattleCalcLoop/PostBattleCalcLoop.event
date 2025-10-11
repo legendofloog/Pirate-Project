@@ -19,7 +19,7 @@ POIN DeftHands
 POIN BreatherPostBattle 
 POIN Pollenate_IncrementFromStaff 
 // POIN StrTaker SklTaker SpdTaker DefTaker ResTaker LukTaker MagTaker MovTaker Hardworking // these should be replaced with versions using the kill counter and be placed in stat getters
-POIN Canto CantoPlus CantoAttack  ReapingBlade_Refresh SeaShanty Canter Galeforce ReMove Powerstaff CulturedPostCombat Gridmaster LiquidCourage LikeDominoes_PostBattle ContraryWinds_PostBattle RushStaffCanto //this order for canto and friends is the only one I tested
+POIN Canto CantoPlus CantoAttack  ReapingBlade_Refresh SeaShanty Canter Galeforce ReMove Powerstaff CulturedPostCombat Gridmaster LiquidCourage LikeDominoes_PostBattle ContraryWinds_PostBattle RushStaffCanto SpecialOrdinance_PostBattle //this order for canto and friends is the only one I tested
 POIN RecoilAxePostBattle
 POIN DelayedTonicDeletion //this goes last
 WORD 0 //Terminator

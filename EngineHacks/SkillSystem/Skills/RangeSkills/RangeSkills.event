@@ -23,3 +23,5 @@ PanacheBonus:
 #incbin "Panache/Panache.dmp"
 
 #include "Dogfight/Dogfight.event"
+
+#include "SiegeTower/SiegeTower.event"

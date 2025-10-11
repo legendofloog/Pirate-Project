@@ -279,3 +279,10 @@ Select a unit to pollinate.[X]
  
 ## UM_KiteDesc
 Summon a kite.[X]
+
+## UM_SpecialOrdinance
+ Mine[X]
+
+## UM_SpecialOrdinanceDesc
+Place an extra-powerful mine.[X]
+
