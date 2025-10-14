@@ -26,17 +26,18 @@ POIN BeginningScene EndingScene
 //19 - rebel arrival event flag (can't share with other turn based events for whatever reason)
 
 TurnBasedEvents:
-TurnEventPlayer(0, SurvivorsTalk, 1)
+//TurnEventPlayer(0, SurvivorsTalk, 1)
+//TurnEventPlayer(0, EndingScene, 1)
 TurnEventPlayer(0, RebelPremonition, 2)
 TurnEventPlayer(0, ThiefArrival, 4)
 TurnEventPlayer(19, RebelArrival, 3, 5)
 TurnEventPlayer(12, RebelWarning1, 3)
-TurnEventPlayer(12, RebelWarning2, 5)
-TurnEventPlayer(12, RebelWarning3, 6)
+TurnEventPlayer(12, RebelWarning2, 4)
+TurnEventPlayer(12, RebelWarning3, 5)
 END_MAIN
 
-SurvivorsTalk:
-Music(ABlackheartsPrideID)
+SurvivorsTalk: //for now, not playing this event since it seems unnecessary given how much is already established in the start event
+Music(ASoldiersDutyID) 
 CameraCursor(0,25)
 SetBackground(Inn)
 Text(A4_TurnEvent0)
@@ -254,7 +255,7 @@ UNIT Razorblood Deserter 0 Level(3, Enemy, True) [12,17] 0 0 0 0 [IronLance] Gro
 UNIT Razorblood Ninja 0 Level(3, Enemy, True) [5,15] 0 0 0 0 [IronDagger,IronKnife] AttackInRangeAI
 UNIT Razorblood Vanguard 0 Level(3, Enemy, True) [10,13] 0 0 0 0 [IronAxe] GroupTwoAI
 //turn 5
-UNIT Razorblood Brigand 0 Level(3, Enemy, True) [11,17] 0 0 0 0 [IronAxe] AttackInRangeAI
+//UNIT Razorblood Brigand 0 Level(3, Enemy, True) [11,17] 0 0 0 0 [IronAxe] AttackInRangeAI
 UNIT Razorblood Deserter 0 Level(3, Enemy, True) [8,17] 0 0 0 0 [IronLance] GroupTwoAI
 UNIT Razorblood Hunter 0 Level(3, Enemy, True) [13,19] 0 0 0 0 [IronBow, PureWater] GroupTwoAI
 //turn 6
@@ -275,7 +276,7 @@ UNIT Rebel Warden 0 Level(3, Enemy, True) [18,14] 0 0 0 0 [Javelin, SteelSword] 
 UNIT Rebel Warden 0 Level(3, Enemy, True) [20,12] 0 0 0 0 [Javelin, SteelSword] ChargeAI
 UNIT Rebel Archer 0 Level(3, Enemy, True) [22,15] 0 0 0 0 [Longbow] ChargeAI
 UNIT Rebel Fighter 0 Level(3, Enemy, True) [20,19] 0 0 0 0 [IronAxe, HandAxe] ChargeAI
-UNIT Rebel GriffinRider 0 Level(3, Enemy, True) [21,10] 0 0 0 0 [Pike] ChargeAI
+UNIT Rebel GriffinRider 0 Level(3, Enemy, True) [21,10] 0 0 0 0 [IronLance] ChargeAI
 UNIT
 
 RebelScoutSpawn:
@@ -289,8 +290,8 @@ UNIT
 CutsceneGreens:
 // We're being clever here and just reusing the Greagor NPCs as the non-dying units here. 
 // The imperials that die reuse Incendivis and IncendivisMage. 
-UNIT GreagorCaptain Captain 0 Level(13, NPC, True) [10,16] 0 0 0 0 [SilverMusket] ChargeAI //imperial captain
-UNIT GreagorVillager Gunner 0 Level(3, NPC, True) [10,17] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
+UNIT GreagorCaptain Gunner 0 Level(13, NPC, True) [10,16] 0 0 0 0 [SilverMusket] ChargeAI //imperial captain
+UNIT GreagorVillager Archer 0 Level(3, NPC, True) [10,17] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
 UNIT Incendivis Soldier 0 Level(3, NPC, True) [11,15] 0 0 0 0 [Javelin] ChargeAI //first imperial who gets owned
 UNIT IncendivisMageA2 Mage_F 0 Level(3, NPC, True) [7,16] 0 0 0 0 [Fire] ChargeAI //second dead imperial
 UNIT GreagorLibrarian Fighter 0 Level(3, NPC, True) [6,18] 0 0 0 0 [] ChargeAI
@@ -304,7 +305,7 @@ UNIT
 
 CutsceneReds:
 UNIT Razorblood Fighter 0 Level(3, Enemy, True) [8,15] 0 0 0 0 [SteelAxe] GroupFiveAI //kills second imperial, and attempts to attack recruit
-UNIT A4FunnyArcher Hunter 0 Level(3, Enemy, True) [11,13] 0 0 0 0 [SteelBow] ChargeAI //kills first imperial
+UNIT A4FunnyArcher Hunter 0 Level(3, Enemy, True) [11,13] 0 0 0 0 [KillerBow] ChargeAI //kills first imperial
 // All the units below are stock, and just use the Rebel label for their ID.  
 UNIT Rebel Thief 0 Level(3, Enemy, True) [9, 10] 0 0 0 0 [SteelAxe] ChargeAI
 UNIT Rebel Deserter 0 Level(3, Enemy, True) [10,11] 0 0 0 0 [SteelAxe] ChargeAI
@@ -343,11 +344,11 @@ UNIT Razvan 0x0 0x0 Level(1, Ally, False) [16,9] 0 0 0 0 [Vulnerary] NoAI
 UNIT
 
 EndingSceneCaptain:
-UNIT GreagorCaptain Captain 0 Level(13, NPC, True) [8,19] 0 0 0 0 [SilverMusket] ChargeAI //imperial captain
+UNIT GreagorCaptain Gunner 0 Level(13, NPC, True) [8,19] 0 0 0 0 [SilverMusket] ChargeAI //imperial captain
 UNIT
 
 EndingSceneImperialCrew:
-UNIT GreagorVillager Gunner 0 Level(3, NPC, True) [7,19] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
+UNIT GreagorVillager Archer 0 Level(3, NPC, True) [7,19] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
 UNIT GreagorLibrarian Fighter 0 Level(3, NPC, True) [8,19] 0 0 0 0 [] ChargeAI
 UNIT GreagorGuard Soldier 0 Level(3, NPC, True) [8,19] 0 0 0 0 [] ChargeAI
 UNIT GreagorSmuggler Fighter 0 Level(3, NPC, True) [7,19] 0 0 0 0 [] ChargeAI
@@ -394,24 +395,25 @@ LoadCutsceneUnits(CutsceneGreens)
 LoadCutsceneUnits(CutsceneReds)
 CAMERA_CENTERED [9,15]
 TILECHANGE 5 //imperial ship tile change
-Music(ScalleywagsOnDeckID)
+Music(ASoldiersDutyID)
 EraseBackground
-FADU 13
-STAL 60
+STAL 30
 
-FlashCursor(A4FunnyArcher, 40)
+FlashCursor(A4FunnyArcher, 30)
 StartBattle
-CriticalHit(0, 36)
+CriticalHit(0, 39)
 EndAttack
+SetBattleNumbers(90,13,33,80,16,0)
 FIGHT_MAP A4FunnyArcher Incendivis 0x00 0x00
 
 MOVE 5 Razorblood [8,16]
 ENUN
-FlashCursor(Razorblood, 40)
+FlashCursor(Razorblood, 30)
 
 StartBattle
 NormalDamage(0, 30)
 EndAttack
+SetBattleNumbers(75,30,0,85,20,0)
 FIGHT_MAP Razorblood IncendivisMageA2 0x00 0x00
 FlashCursor(GreagorCaptain, 60)
 
@@ -425,8 +427,9 @@ MOVE 5 Razorblood [9,17]
 ENUN
 FlashCursor(GreagorCaptain,40)
 StartBattle
-NormalDamage(0, 35)
+NormalDamage(0, 45)
 EndAttack
+SetBattleNumbers(85,45,0,75,20,0)
 FIGHT_MAP GreagorCaptain Razorblood SilverMusket 0x00
 TEXTSTART
 TEXTSHOW A4StartEventBase_4
@@ -435,7 +438,6 @@ REMA
 
 //Stingray, captain of the Razorbloods, appears. 
 LoadCutsceneUnits(CutsceneStingray);
-Music(AvastMeHeartiesID)
 //have pirate captain walk up
 MOVE 12 Stingray [10,14]
 ENUN
@@ -477,6 +479,7 @@ TEXTEND
 MUSI
 FAWI 15
 SOUN 0xF8 //elfire sfx, supposed to be explosion
+STAL 60
 FAWU 15
 MUNO
 TEXTCONT
@@ -494,12 +497,10 @@ CLEN 0
 SOUN 0xB1 //lockpick sound
 TILECHANGE 0x6 //doors closing
 STAL 30
-FlashCursor(Stingray, 40)
+FlashCursor(Stingray, 30)
 SetBackground(Ship)
 Text(A4StartEventBase_7)
-ClearBackground
-
-FADI 60 //fade to black and revert the cutscene tile changes. 
+FADI 15
 TILEREVERT 5 
 TILEREVERT 6
 CLEE 0 //clear all cutscene enemies, we want them to be back to their normal forms for the map. 
@@ -509,8 +510,8 @@ LOAD1 1 NPCGroup
 LOAD1 1 EnemyGroup
 LOAD1 1 CutsceneUnits
 ENUN
-FADU 15
-STAL 30 
+EraseBackground
+STAL 30
 SOUN 0xAF //snag falling
 TILECHANGE 0x7 //show planks falling
 MOVE 8 Lua [5,3]
@@ -522,7 +523,6 @@ FlashCursor(Lua, 60)
 SetBackground(Ship)
 Text(A4StartEventBase_8)
 FADI 15
-EraseBackground
 SetUnitItemDurability(9, 11, 1, SpdTonic) 
 SetUnitItemDurability(6, 21, 1, DefTonic) 
 STAL 1
@@ -531,7 +531,6 @@ NoFade
 ENDA
 
 EndingScene:
-
 FADI 15
 CLEE 0
 CLEN 0
@@ -539,28 +538,26 @@ CLEA 0 //clear all units for cutscene purposes
 CAMERA_CENTERED [9,19] //center of the bottom of the pirate ship
 LOAD1 1 EndingSceneBaseCrew //Lua, Razvan, Desiderio and Pilar. 
 FADU 15
-Music(ABlackheartsPrideID)
+MUSC 0x47 //windy day
 STAL 30
 FlashCursor(Lua, 60)
 Text(A4_EndEvent_1)
-MOVE 15 Pilar [18, 18]
-MOVE 5 Desiderio [9, 16]
+MOVE 15 Pilar [9, 16]
+MOVE 10 Desiderio [15, 18]
+MOVE 15 Razvan [4,21]
+MOVE 15 Lua [4,22]
+FADI 15
 ENUN
 HIDEUNIT Pilar
 HIDEUNIT Desiderio
-STAL 30
-Text(A4_EndEvent_2)
-FADI 15
-CLEA 0
-MUSC 0x47 //windy day
-
+RemoveAll
 //Lua and Razvan move onboard the imperial ship. Seems as if there's no sign of life.
 CAMERA_CENTERED [9,14]
 TILECHANGE 0x5 //show imperial ship 
 TILECHANGE 0x6 //doors closed still
 LOAD1 1 EndingSceneLuaAndRazvan
+ENUN
 FADU 15
-
 MOVE 10 Lua [10, 13] //Lua are walking from pirate galleon to crusier. 
 MOVE 10 Razvan [11, 12]
 ENUN
@@ -581,7 +578,7 @@ MUSC 0x7FFF //silence
 CAMERA_CENTERED [9,17]
 STAL 20 
 SOUN 0xB1 //lockpick sound
-Music(ABlackheartsPrideID)
+Music(ASoldiersDutyID)
 TILECHANGE 8 //doors opening (new tile change was needed, hacky solution so that doors don't reappear.)
 STAL 40
 LOAD1 1 EndingSceneCaptain
@@ -661,7 +658,7 @@ ENUN
 FlashCursor(GreagorCaptain, 60)
 Text(A4_EndEvent_7)
 
-Music(BeatToQuartersID)
+Music(StillZephyrsID)
 SetBackground(Inn)
 Text(A4_EndEvent_8)
 FADI 15

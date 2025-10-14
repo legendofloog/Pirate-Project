@@ -112,7 +112,7 @@ Will you take the job?[A][X]
 ## HubA1Prompt
 A-1: Rights to Own (Loot, Escape)[N]
 Units: Indio (Shaman), Leandra (Fighter)[N]
-Loot: Axe and knife users will benefit.[N]
+Loot: Tome and knife users will benefit.[N]
 Will Lua take Orlando's job?[N]
 [No][X]
 
@@ -126,7 +126,7 @@ Objective: Loot, Escape[X]
 Units: Indio (Shaman), Leandra (Fighter)[X]
 
 ## HubA1Loot
-Loot: Axe and knife users will benefit.[X]
+Loot: Tome and knife users will benefit.[X]
 
 ## HubA1Confirm
 Take Orlando's job?[X]
@@ -1873,55 +1873,43 @@ the hell Rochefort was doing[Beat][AN]
 [X]
 
 ##PeddlerEncounterEvent
-
 [R][LoadLua]
 [FFL][LoadPeddler]
-[FFR][MoFL]
-
-[FL]
-Good morning to you, captain.[AN]
+[FFL][MoFL]
+[FL][3LB]
+Good morning to you, captain.[N]
 Seems like you've had some[N]
 productive days recently.[AN]
 Sailing out from port every so often,[N]
 returning with a larger crew[Beat][AN]
-
 [R]
-You've been watching our movements?[AN]
-Already, I don't like you.[AN]
-
+And being watched by some creep.[N]
+What's your angle? What do you want?[AN]
 [FL]
-Simple observational awareness is[N]
-something you should respect, Captain.[AN]
-Besides, would I open myself up so[N]
-easily were I to have hostile intent?[AN]
-
+So hostile[Beat] I'll get to the point then.[N]
+Clearly, with all that activity, you and[N]
+your crew must have gathered some gold.[AN]
+And I sell rare items that you may find[N]
+useful. So, I say, why not make a deal?[AN]
 [R]
-Perhaps you're ready to blackmail me.[AN]
-But I'm listening.[AN]
-
+So you're just a pushy peddler[Beat][N]
+Planning on charging me an arm and[N]
+a leg, or reporting my activities?[AN]
 [FL]
-Very well, I'll get to the point then.[AN]
-Since I've noticed you've had plenty of[N]
-activity, I know you must have some wealth.[AN]
-Plundered from haughty nobles or the[N]
-struggling commonfolk, I really don't care.[AN]
-What I do care about, however, is some[N]
-of that coin[Beat]for a helpful item.[AN]
-
+Oh, I would never draw the marines here.[N]
+Just[Beat] I only offer my goods to those[N]
+that can afford them and interest me.[AN]
+That is the purpose of me watching[N]
+your little crew. Truly, I mean no harm.[AN]
 [R]
-So you're one of those peddler types?[AN]
-You tend to charge arms and legs[N]
-for some of your valuables.[AN] 
-
+[Beat]Well, show off your wares, then.[N]
+No promises that I'll buy, though.[AN]
 [FL]
-Only to those I know would want them--[.4][N]
-And can afford the cost, of course.[AN]
-I have a small selection of exotic goods,[N]
-so pick your poison, so I should say.[AN]
-Though, I can only offer one of[N]
-these goods to you and your crew.[AN]
-Choose wisely[Beat]or don't[N]
-choose at all! [.4]It's your choice.[AN][X]
+Excellent! I have a choice selection[N]
+of exotic goods, though I can only[N]
+offer one of these items to you.[AN]
+Choose wisely[Beat] or don't choose[N]
+at all. It's your choice, captain.[A][X]
 
 //Selection menu, choose one of them to purchase. Just rough ideas. 
 

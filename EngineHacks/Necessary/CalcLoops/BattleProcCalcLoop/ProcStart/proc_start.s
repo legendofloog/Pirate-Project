@@ -34,7 +34,7 @@ lsl     r1,r2,#0xD                @ 0802B42C 0351
 lsr     r1,r1,#0xD                @ 0802B42E 0B49     
 mov     r0,#0x2           @miss flag     @ 0802B430 2002  
 orr     r1,r0                @ 0802B432 4301     
-ldr     r0,=#0xFFF80000                @ 0802B434 4804     
+ldr     r0,=0xFFF80000                @ 0802B434 4804     
 and     r0,r2                @ 0802B436 4010     
 orr     r0,r1                @ 0802B438 4308     
 str     r0,[r6]    @store the new battle buffer   
@@ -68,7 +68,7 @@ beq SkipBarricadePlus
 @ I mean it really doesn't matter which it is as long as it's consistent.
 
 mov r1, r11
-ldr r2, =#0x0203A56C
+ldr r2, =0x0203A56C
 cmp r2, r4
 beq Attacker
 	@ Defender
@@ -83,7 +83,7 @@ beq Attacker
 	add r1, r1, #1 @ r1 has the counter to write (to be corrected to the second byte)
 	lsl r1, r1, #0x08 @ Shifted to the second byte
 	mov r2, r11	@ r2 has the previous counter (including all bytes)
-	ldr r3, =#0xFFFF00FF
+	ldr r3, =0xFFFF00FF
 	and r2, r2, r3 @ Eliminates previous counter
 	orr r1, r1, r2
 	mov r11, r1 @ Store new counter to r11
@@ -99,7 +99,7 @@ Attacker:
 	
 	add r1, r1, #1 @ r1 has the counter to write (in the first byte)
 	mov r2, r11 @ r2 has the previous counter (including all bytes)
-	ldr r3, =#0xFFFFFF00
+	ldr r3, =0xFFFFFF00
 	and r2, r2, r3 @ Eliminates previous counter.
 	orr r1, r1, r2
 	mov r11, r1 @ Store new counter to r11
@@ -116,7 +116,7 @@ pop { r0 }
 beq StoreDamage2
 
 mov r1, r11
-ldr r2, =#0x0203A56C
+ldr r2, =0x0203A56C
 cmp r2, r4
 beq Attacker2
 	@ Defender2
@@ -154,8 +154,8 @@ StoreDamage2:
 strh r0, [r7, #4] @final damage
 
 @check if current round is first defender round
-ldr r0,=#0x203AAC0 //start of rounds buffer
-bl getFirstDefenderRound //returns pointer to first defender round
+ldr r0,=0x203AAC0 @ start of rounds buffer
+bl getFirstDefenderRound @ returns pointer to first defender round
 cmp r0,r6
 bne NormalCritCheck
 
@@ -177,12 +177,12 @@ bne End
 
 @if crit:
 IsCrit:
-mov r0,r4
-ldr r1,=CritthriftIDLink
-ldrb r1,[r1]
-blh SkillTester, r3
-cmp r0,#1
-beq SkipCritDamageBoost
+@ mov r0,r4
+@ ldr r1,=CritthriftIDLink
+@ ldrb r1,[r1]
+@ blh SkillTester, r3
+@ cmp r0,#1
+@ beq SkipCritDamageBoost
 
 mov r0,r5		@defender
 ldr r1, =ExpertiseIDLink
@@ -205,9 +205,9 @@ lsl     r1,r2,#0xD                @ 0802B42C 0351
 lsr     r1,r1,#0xD                @ 0802B42E 0B49     
 mov r0, #1
 orr r1, r0
-ldr     r0,=#0x7FFFF                @ 0802B516 4815     
+ldr     r0,=0x7FFFF                @ 0802B516 4815     
 and     r1,r0                @ 0802B518 4001
-ldr     r0,=#0xFFF80000                @ 0802B434 4804     
+ldr     r0,=0xFFF80000                @ 0802B434 4804     
 and     r0,r2                @ 0802B436 4010     
 orr     r0,r1                @ 0802B438 4308     
 str     r0,[r6]                @ 0802B43A 6018   

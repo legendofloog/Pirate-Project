@@ -1,3 +1,65 @@
+
+// Hub B player palettes now
+
+// Ponte
+// Brigand
+// Berserker
+// War Monk
+
+// Passarola
+// Adventurer_F
+
+// Neltume
+// Cleric
+// Adventurer
+// War Monk
+
+// Dmitr
+// Brigand
+// Berserker
+// War Monk
+
+// Magdalena
+// Sage_F
+
+// Avocado
+// Deserter
+// Champion
+// Wolfrider
+
+// Husniye
+// Thief_F //need to address thief/rogue anims?
+// Rogue_F
+// Wolfrider
+
+// Kai
+// Ninja
+// Master Ninja
+// Trickster
+
+// Ernest
+// Gryphoknight
+
+// Adrian
+// Fighter
+// Warrior
+// Marshall
+
+// Lexa
+// Myrmidon_F
+// Swordmaster_F
+// Slayer_F
+
+// Noah
+// Warden
+// General
+// Runeshield
+
+// Fata
+// Conjurer_F
+// Slayer_F
+// Trickster_F
+
 #char{1} "DesiderioVanguard" set{Desiderio, 1, Vanguard}"
 	344FFF7FF65AEC495F3BDA3AD325B02909194A29E71C1825F420D01CAC18A514
 
@@ -126,13 +188,13 @@
 	5553A5141C635D52993DD228D61C9018FF7FB0392B29C81CBE6BF62993210F1D
 
 #char{42} "LeandraFighter" set{Leandra, 1, Fighter_F}
-	5553A514042E852D062DC4184F3DEB30FF7F1863734EA828BE6B1E3B9831EE1C
+	F24AFF7FDD463932B4250E1DB6250F29B97B14736F5ECA18271EA6190411A514
 
 #char{43} "LeandraWarrior" set{Leandra, 2, Warrior_F}
-	5553A514042E852D062DC4184F3DEB30FF7F1863734EA828BE6B1E3B9831EE1C
+	5553DD463932372ECA180823271E4619FF7F987FD1660C52F82D5329CD20A514
 
 #char{44} "LeandraMarshall" set{Leandra, 3, Marshall}
-	5553A514042E852D062DC4184F3DEB30FF7F1863734EA828BE6B1E3B9831EE1C
+	5553FF7FBD5FDA3AB315D34D4F3DCB2C98772D56693D271EA61946190411A514
 
 #char{45} "JaimePegRider" set{Jaime, 1, PegasusRider}
 	5553DF577D2ED7292C25AA49273DC724D969514D6D3D0A352D56AA49273DA514
@@ -294,64 +356,3 @@
 
 #char{95} "ElodiaWolfrider" set{Elodia, 1, Wolfrider}
 	555384207039CB24BC429F5F72250E461567FF7FE720492DCB241932712D1442
-
-// Hub B player palettes now
-
-// Ponte
-// Brigand
-// Berserker
-// War Monk
-
-// Passarola
-// Adventurer_F
-
-// Neltume
-// Cleric
-// Adventurer
-// War Monk
-
-// Dmitr
-// Brigand
-// Berserker
-// War Monk
-
-// Magdalena
-// Sage_F
-
-// Avocado
-// Deserter
-// Champion
-// Wolfrider
-
-// Husniye
-// Thief_F //need to address thief/rogue anims?
-// Rogue_F
-// Wolfrider
-
-// Kai
-// Ninja
-// Master Ninja
-// Trickster
-
-// Ernest
-// Gryphoknight
-
-// Adrian
-// Fighter
-// Warrior
-// Marshall
-
-// Lexa
-// Myrmidon_F
-// Swordmaster_F
-// Slayer_F
-
-// Noah
-// Warden
-// General
-// Runeshield
-
-// Fata
-// Conjurer_F
-// Slayer_F
-// Trickster_F

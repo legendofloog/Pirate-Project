@@ -183,13 +183,11 @@ UNIT KeeperAlly Warden 0 Level(13,NPC,True) [20,27] 0 0 0 0 [KillingEdge, Javeli
 UNIT
 
 BeginningScene:
-ASMC ClearAllDebuffs // now clears tonics, too. If you add a prep screen to this chapter, then restarting the chapter after saving will remove any tonic boosts because this ASMC is being called each time. 
+//ASMC ClearAllDebuffs // now clears tonics, too. If you add a prep screen to this chapter, then restarting the chapter after saving will remove any tonic boosts because this ASMC is being called each time. 
 WEATHER 7
 FadeToBlack
 EraseBackground
-REMOVEALL_BLUE
-
-CenterTextbox(C2_Synopsis_A)
+//REMOVEALL_BLUE
 
 LoadEnemies(CalistaTrapped)
 LoadEnemies(SmallRebelGarrison)
@@ -198,10 +196,27 @@ LoadEnemies(MiddleUnits)
 LoadEnemies(RearUnits)
 LoadEnemies(EnemiesAttackingCalista)
 
-LOAD1 0 Units1
+// TBD: Add Eventing to this
+
+MUSC SwabbieTalkID
+Text(HubC_2_BeginningScene1)
+MUSC ASoldiersDutyID
+Text(HubC_2_BeginningScene2)
+Text(HubC_2_BeginningScene3)
+Text(HubC_2_BeginningScene4)
+Text(HubC_2_BeginningScene4_2)
+Text(HubC_2_BeginningScene5)
+ 
+Text(HubC_2_BeginningScene6)
+MUSC StillZephyrsID
+
+Text(HubC_2_BeginningScene7)
+MUSC FinInTheCloudsID
+Text(HubC_2_BeginningScene8)
+Text(HubC_2_BeginningScene8_2)
+Text(HubC_2_BeginningScene8_3)
 
 PanToTileThenFlashCursorForXSeconds(9, 26, 60)
-CenterTextbox(C2_Synopsis_B)
 
 TILECHANGE 0x1 //callista is now exposed
 AddTrap(MineTrapID,1,5)
@@ -272,7 +287,37 @@ NoFade
 ENDA
 
 EndingScene:
-//replace with HubC when editing
+Text(C2_EndingScene1)
+Text(C2_EndingScene1_2)
+Text(C2_EndingScene1_3)
+CHECK_ALIVE Calista // 4 variations of next scene, depending
+BEQ 775 s0 sC
+	CHECK_ALIVE Valerie
+	BEQ 776 s0 sC
+        MUSC CastawayHeartID
+		Text(C2_EndingScene2_CalistaValerieAlive) //If both Calista and Valerie are alive
+		GOTO 780
+    LABEL 776
+    MUSC CherishTheDeadID
+    Text(C2_EndingScene2_CalistaAlive) // just calista
+    GOTO 780
+LABEL 775
+CHECK_ALIVE Valerie
+BEQ 778 s0 sC
+    MUSC CherishTheDeadID
+    Text(C2_EndingScene2_ValerieAlive) // just valerie
+LABEL 778
+MUSC CherishTheDeadID
+Text(C2_EndingScene2_NoneAlive) //if you somehow got both killed
+LABEL 780
+
+MUSC ABlackheartsPrideID
+Text(C2_EndingScene_Elodia)
+FADI 15
+STAL 60
+FADU 15
+Text(C2_EndingScene_Alonso)
+
 GoToHubChapter(HubC)
 NoFade
 ENDA

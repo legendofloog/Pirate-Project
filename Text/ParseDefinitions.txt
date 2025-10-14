@@ -220,6 +220,8 @@
 [LoadKiril] = [LoadFace][0x4A][0x1]
 [LoadNicodemus] = [LoadFace][0x20][0x1]
 
+[LoadSalvador] = [LoadFace][0xB8][0x1]
+
 [LoadKrezke] = [LoadFace][0x23][0x1]
 [LoadBaltasar] = [LoadFace][0x28][0x1]
 

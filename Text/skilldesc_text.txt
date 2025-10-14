@@ -1725,9 +1725,8 @@ Game over at zero HP! Attack at melee[N]
 to disarm (sword/lance/axe/knife only).[X]
 
 ## SD_Critthrift
-Critthrift: +30 crit. Unit's crits[N]
-no longer deal extra damage, but[N]
-durability isn't used up during crits.[X]
+Critthrift: This unit's critical[N]
+attacks do not use durability.[X]
 
 ## SD_DeftHands
 Deft Hands: Unit can act again,[N]
