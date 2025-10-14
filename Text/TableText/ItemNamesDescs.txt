@@ -325,7 +325,7 @@ Heartpiercer[X]
 Compass[X]
 
 ## CompassDesc
-Brave/Magic/IgnoreRes/x2first.[X]
+Brave. Ignores Def. Follows up first.[X]
 
 // GUNS
 

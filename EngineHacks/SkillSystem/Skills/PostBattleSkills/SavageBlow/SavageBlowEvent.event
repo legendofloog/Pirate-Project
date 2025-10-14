@@ -1,5 +1,6 @@
+ALIGN 4
 SavageBlowEvent:
-CAM1 0xFFFF
+CAM1 Lua //should be windy normally
 SOUN 0xCB
 STAL 0x16
 SOUN 0xCB

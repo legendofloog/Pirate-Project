@@ -1,0 +1,21 @@
+#include "AstralBlessing.lyn.event"
+
+ALIGN 4
+AstralBlessing_Spd:
+BYTE 2
+
+ALIGN 4
+AstralBlessing_Skl:
+BYTE 3
+
+ALIGN 4
+AstralBlessing_Luk:
+BYTE 4
+
+ALIGN 4
+AstralBlessing_Range:
+BYTE 3
+
+ALIGN 4
+AstralBlessingIDLink:
+BYTE AstralBlessingID

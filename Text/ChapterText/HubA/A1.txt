@@ -628,9 +628,9 @@ Did you hear me? Go![AN]
 [Beat]Nobody's wronged the Blackhearts[N]
 and lived to tell the tale. And I[N]
 ain't gonna let them start now![AN]
-Khazhak[Beat] I'll make things right.[N]
-These bastards'll regret the day[N]
-that they crossed us. I promise.[AN][X]
+They don't call me the Ebon Nerve[N]
+for nothin'[Beat] I'll make those bastards[N]
+regret the day they crossed us, Khazhak![A][X]
 
 ## GeraldoGenericBattleQuote
 [FL][LoadGeraldo]

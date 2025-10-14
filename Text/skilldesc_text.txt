@@ -1734,8 +1734,8 @@ but not move, after stealing.[X]
 
 ## SD_FaithsAegis
 Miraclemaker: If this unit uses a staff[N]
-on an ally, ally can survive fatal damage[N]
-once (lasts until end of turn).[X]
+on an ally, the ally will survive fatal[N]
+damage once (lasts until end of turn).[X]
 
 ## SD_Shuffle
 Shuffle: Command. Equips target with a[N]
@@ -1873,8 +1873,8 @@ and +30% Crit on unit's next attack.[X]
 
 ## SD_ThunderingHooves
 Thundering Hooves: Each turn, enemies[N]
-within 2 tiles of this unit take damage[N]
-equal to 25% of their max HP.[X]
+within 2 tiles of this unit take[N]
+damage equal to 25% of their max HP.[X]
 
 ## SD_Precision
 Killer's Precision: When attacking at[N]
@@ -1896,3 +1896,16 @@ a bow without moving, +4 max range.[X]
 Special Ordinance: Unit can plant a single[N]
 mine without ending their turn. These[N]
 mines also Break the triggering unit.[X]
+
+## SD_HolyHaymaker
+Holy Haymaker: If this unit uses a staff[N]
+on an ally, the ally gains +10 Atk[N]
+(lasts until end of turn).[X]
+
+## SD_Conviction
+Conviction: When this unit Rescues[N]
+or Drops an ally, they can act again.[X]
+
+## SD_Daredevil
+Daredevil: If this unit would die[N]
+in combat, their Crit doubles.[X]

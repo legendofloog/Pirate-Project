@@ -21,6 +21,10 @@ Restores Mag + 15 HP.[X]
 # 0x473
 Restores Mag + 30 HP.[X]
 
+# 0x494
+A medicinal solution that mends[NL]
+minor wounds. Heals unit for 15 HP.[X]
+
 # 0x50A
 Tome[X]
 

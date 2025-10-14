@@ -77,6 +77,12 @@
 #define PeddlerHubAEncounterFlag 0xB0
 #define ShipwrightCaptainHubATalkFlag 0xB1
 #define TwoPatronsHubATalkFlag 0xB2
+#define HubAGreagorDocksChestOpenedFlag 0xB3
+#define HubAGreagorVillageVisitedFlag 0xB4
+#define HubALuaBaseChestOpenedFlag 0xB5
+
+
+
 // The peddler will be on the map as long as this flag is triggered. 1st hub event that occurs after two maps.
 
 

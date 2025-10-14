@@ -1,9 +1,0 @@
-#include "FrigidAura.lyn.event"
-
-ALIGN 4
-FrigidAuraID_Link:
-WORD FrigidAuraID
-
-ALIGN 4
-FrigidAuraDamage_Link:
-WORD 20

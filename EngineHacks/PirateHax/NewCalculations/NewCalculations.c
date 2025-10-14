@@ -62,13 +62,13 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
         int levelDiff = GetLevelDifference(actor, target);
 		// killed
 		if (target->unit.curHP == 0){		
-            int initialKillExp = 25 + 5 * levelDiff;
+            int initialKillExp = 30 + 6 * levelDiff;
 
-			if(initialKillExp <= 5){
-				return 5;
+			if(initialKillExp < 6){
+				return 6;
 			}
-            else if (initialKillExp >= 50){
-                return 50;
+            else if (initialKillExp > 100){
+                return 100;
             }
 			else{
 				return initialKillExp; //50 kill exp cap
@@ -76,13 +76,13 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
 		}
 
 		// hit
-		int initialHitExp = 5 + 1 * levelDiff;
+		int initialHitExp = 10 + 2 * levelDiff;
 
-			if(initialHitExp <= 1){
-				return 1;
+			if(initialHitExp < 2){
+				return 2;
 			}
-			else if(initialHitExp >= 10){
-				return 10;
+			else if(initialHitExp > 33){
+				return 33;
 			}
 			else{
 				return initialHitExp;

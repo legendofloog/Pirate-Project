@@ -48,26 +48,8 @@ ALIGN 4
 WaitForVulneraryEndName:
 String(WaitForVulneraryEnd);	BYTE 0x0
 
+#include "AstralBlessing/Installer.event"
 
+#include "ThunderingHooves/Installer.event"
 
-#include "AstralBlessing.lyn.event"
-
-AstralBlessing_Spd:
-BYTE 2
-
-AstralBlessing_Skl:
-BYTE 3
-
-AstralBlessing_Luk:
-BYTE 4
-
-AstralBlessing_Range:
-BYTE 3
-
-AstralBlessingIDLink:
-BYTE AstralBlessingID
-
-#include "FrigidAura/Installer.event"
-
-ALIGN 4
 #include "EarlyLeave/EarlyLeave.event"

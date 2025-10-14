@@ -12,7 +12,7 @@ ALIGN 4
 TurnCalcLoop_Silent: // Standalone things that loop through all units and do not pause the game
 POIN ProcessDebuffs ArmorMarch_StartOfTurn VigorDanceReset AstralBlessing ClearStudiousBlow 
 POIN ClearFortuneBitEachTurn ClearNailedDownPenalty Miraclemaker_BitReset SwiftStartOfTurn 
-POIN FrigidAura ContraryWinds_ClearNoMoveBit RushStaffClearBit
+POIN ThunderingHooves ContraryWinds_ClearNoMoveBit RushStaffClearBit
 WORD 0 
 
 
@@ -151,6 +151,8 @@ StartOfTurnBuffFunctionEntry(AstralBlessingID,	IsAstralBlessingApplicable, DoAst
 StartOfTurnBuffFunctionEntry(LiquidCourageID, AlwaysTrueFunc, ResetLiquidCourage)
 
 StartOfTurnBuffFunctionEntry(EarlyLeaveID, EarlyLeaveTurnCheckFunc, CallEarlyLeaveEvent)
+
+StartOfTurnBuffFunctionEntry(ThunderingHoovesID, IsThunderingHoovesApplicable, DoThunderingHoovesEvent)
 
 #include "StartOfTurn_CalcLoop.lyn.event" 
 

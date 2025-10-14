@@ -1,4 +1,5 @@
 
+ALIGN 4
 EarlyLeaveCustomChapterConditionList:
 //WORD chapterID; POIN routine
 WORD HubC_3; POIN EarlyLeaveC3Condition

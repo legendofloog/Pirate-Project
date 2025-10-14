@@ -46,7 +46,7 @@ ENDA
 
 Units1:
 UNIT Lua Captain 0 Level(10,Ally,False) [13,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Tangyuan DragonRider_F 0 Level(5,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
+UNIT Tangyuan DragonRider_F 0 Level(6,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [14,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [13,17] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [14,17] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
@@ -58,7 +58,7 @@ UNIT
 
 Units2:
 UNIT Lua Captain 0 Level(10,Ally,False) [13,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Tangyuan DragonRider_F 0 Level(5,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
+UNIT Tangyuan DragonRider_F 0 Level(6,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [14,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [13,17] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [14,17] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
@@ -82,7 +82,7 @@ UNIT Gunsmith Gunner 0 Level(3, Enemy, True) [9,5] 0 0 0 0 [IronMusket, Blunderb
 UNIT Gunsmith Gunner 0 Level(3, Enemy, True) [0,7] 0 0 0 0 [IronMusket] AttackInRangeAI
 UNIT Gunsmith Gunner 0 Level(3, Enemy, True) [14,1] 0 0 0 0 [Pistol] AttackInRangeAI
 UNIT Gunsmith Gunner 0 Level(3, Enemy, True) [13,11] 0 0 0 0 [Blunderbuss] BossAI
-UNIT BrickBoys Thief 0 Level(3, Enemy, True) [3,12] 0 0 0 0 [IronDagger] AttackInTwoAI
+UNIT BrickBoys Thief 0 Level(3, Enemy, True) [2,12] 0 0 0 0 [IronDagger] AttackInTwoAI
 //UNIT BrickBoys Thief 0 Level(3, Enemy, True) [6,2] 0 0 0 0 [IronKnife] AttackInRangeAI
 UNIT BrickBoys Thief 0 Level(3, Enemy, True) [12,8] 0 0 0 0 [IronKnife] AttackInRangeAI
 UNIT BrickBoys Deserter 0 Level(3, Enemy, True) [7,17] 0 0 0 0 [IronLance] AttackInRangeAI
@@ -121,7 +121,7 @@ UNIT Jozef Gunner 0 Level(10, Enemy, True) [16,19] 0 0 0x1 REDA16R19 [SilverMusk
 UNIT
 
 TheCad:
-UNIT Tangyuan DragonRider_F 0 Level(5,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
+UNIT Tangyuan DragonRider_F 0 Level(6,Ally,True) [6,16] 0 0 0 0 [IronAxe, Oversize, Vulnerary] NoAI
 UNIT
 
 TheMads:

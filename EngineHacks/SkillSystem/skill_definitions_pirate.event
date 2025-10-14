@@ -304,3 +304,12 @@
 //Siege Tower
 #define SiegeTowerID 108
 
+//Powerstaff: Get another action after using a staff.
+//By Sme
+#define PowerstaffID 109
+
+#define HolyHaymakerID 110
+
+#define ConvictionID 111
+
+#define DaredevilID 112

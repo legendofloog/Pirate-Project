@@ -363,10 +363,6 @@
 //By Snakey1
 #define GrislyWoundID 255
 
-//Powerstaff: Get another action after using a staff.
-//By Sme
-#define PowerstaffID 255
-
 //Re-Move: Luck% chance to get another action at end of turn.
 //By Sme
 #define ReMoveID 255
