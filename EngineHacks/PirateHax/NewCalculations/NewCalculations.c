@@ -160,23 +160,32 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
 
     int exp = 0;
     if (staffRank == D_WEXP){
-        exp += 18;
+        exp += 20;
     }
     else if (staffRank == C_WEXP){
-        exp += 21;
-    }
-    else if (staffRank == B_WEXP){
         exp += 24;
     }
+    else if (staffRank == B_WEXP){
+        exp += 32;
+    }
     else if (staffRank == A_WEXP){
-        exp += 27;
+        exp += 44;
     }
     else if(staffRank == S_WEXP){
-        exp += 30;
+        exp += 60;
     }
     else{
 
     }
+
+    //gives the base exp: then, we reduce it by their effective level? minimum of 4 exp
+    exp -= GetUnitEffectiveLevel(&actor->unit);
+
+    if (exp < 4)
+    {
+        exp = 4;
+    }
+
 
     return exp;
 }
@@ -950,4 +959,18 @@ void UnitCheckStatCaps(struct Unit* unit) {
     if (unit->lck > GetUnitLuckCap(unit)){
         unit->lck = GetUnitLuckCap(unit);
     }
+}
+
+int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target){
+    int result = 50 + 2 * (prMagGetter(actor) + GetUnitSkill(actor) - GetUnitResistance(target) - GetUnitLuck(target));
+
+    if (result < 0) result = 0;
+
+    if (result > 100) result = 100;
+
+    return result;
+}
+
+int GetUnitMagBy2Range(struct Unit* unit) {
+    return 5 + prMagGetter(unit) / 3;
 }

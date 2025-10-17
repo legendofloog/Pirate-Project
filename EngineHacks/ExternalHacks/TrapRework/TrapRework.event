@@ -38,12 +38,14 @@
 	#define NPCTrapPaletteWord 0xFFFFE080
 	#define GreyTrapPaletteWord 0xFFFFF080
 	#define GrayTrapPaletteWord GreyTrapPaletteWord //language is dumb
-	
+	#define PurpleTrapPaletteWord 0xFFFF0080 //honestly i just screwed around and found a decent palette, it's not gold but purple
+
 	#define ExampleMapSpriteTrapID 0x10
 
 	#define BlueSigilTrapID 0x11
 	#define RedSigilTrapID 0x12
 	#define GreenSigilTrapID 0x13
+	#define PurpleSigilTrapID 0x14
 	
 	
 	#include "TrapRework_Internal.event"
@@ -68,6 +70,7 @@
 	SetTrapEventInit(BlueSigilTrapID,TrapRework_GenericInitializer)
 	SetTrapEventInit(RedSigilTrapID,TrapRework_GenericInitializer)
 	SetTrapEventInit(GreenSigilTrapID,TrapRework_GenericInitializer)
+	SetTrapEventInit(PurpleSigilTrapID,TrapRework_GenericInitializer)
 	
 	
 	#define SetTrapMapSprite(trapID,mapSpriteID) "PUSH; ORG TrapMapSpriteTable+(trapID-1); BYTE mapSpriteID; POP"
@@ -89,6 +92,7 @@
 	SetTrapMapSprite(BlueSigilTrapID,SigilTrapMapSprite)
 	SetTrapMapSprite(RedSigilTrapID,SigilTrapMapSprite)
 	SetTrapMapSprite(GreenSigilTrapID,SigilTrapMapSprite)
+	SetTrapMapSprite(PurpleSigilTrapID,SigilTrapMapSprite)
 	
 	//Macro for setting unique cases on trap map sprites
 	#define SetTrapMapSpriteFunc(trapID,ptr) "PUSH; ORG (TrapMapSpriteFuncTable+((trapID-1)*4)); POIN ptr; POP"
@@ -102,6 +106,7 @@
 	SetTrapMapSpritePalette(BlueSigilTrapID,PlayerTrapPaletteWord)
 	SetTrapMapSpritePalette(RedSigilTrapID,EnemyTrapPaletteWord)
 	SetTrapMapSpritePalette(GreenSigilTrapID,NPCTrapPaletteWord)
+	SetTrapMapSpritePalette(PurpleSigilTrapID,PurpleTrapPaletteWord)
 	
 	
 
@@ -154,6 +159,7 @@
 	#define BlueSigil(x,y) "MapSpriteTrap(BlueSigilTrapID,x,y)"
 	#define RedSigil(x,y) "MapSpriteTrap(RedSigilTrapID,x,y)"
 	#define GreenSigil(x,y) "MapSpriteTrap(GreenSigilTrapID,x,y)"
+	#define PurpleSigil(x,y) "MapSpriteTrap(PurpleSigilTrapID,x,y)"
 	
 	//This is here to satiate a hardcoded requirement if heal tiles are not installed.
 	#ifndef HEAL_TILES

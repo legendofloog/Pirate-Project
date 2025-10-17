@@ -43,6 +43,7 @@
 #define LuaInAHubFlag 0xA0
 #define InAHubFlag 0xA0
 #define GoToNextHubFlagID 0xA8 //for going to the next hub
+#define DifficultyChangeFlag 0xEC //for switching difficulties mid-hub
 
 // Hub A globals
 #define WentToHubA1 0x83
@@ -80,7 +81,8 @@
 #define HubAGreagorDocksChestOpenedFlag 0xB3
 #define HubAGreagorVillageVisitedFlag 0xB4
 #define HubALuaBaseChestOpenedFlag 0xB5
-
+#define HubAGreagorDocksChestReactionFlag 0xB6
+#define HubALuaBaseChestReactionFlag 0xB7
 
 
 // The peddler will be on the map as long as this flag is triggered. 1st hub event that occurs after two maps.

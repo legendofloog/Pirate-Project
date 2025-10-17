@@ -41,15 +41,15 @@ NoFade
 ENDA
 
 Turn3Reinforcements:
-UNIT Incendivis AxeCav 0 Level(3,Enemy,False) [0,10] 0 0 1 REDA0R10 [IronAxe] ChargeAI
-UNIT Incendivis SwordCav 0 Level(3,Enemy,False) [0,11] 0 0 1 REDA0R11 [IronSword] ChargeAI
-UNIT Incendivis LanceCav 0 Level(3,Enemy,False) [4,0] 0 0 1 REDA4R0 [IronLance] ChargeAI
-UNIT Incendivis AxeCav 0 Level(3,Enemy,False) [6,0] 0 0 1 REDA6R0 [IronAxe] ChargeAI
+UNIT Incendivis AxeCav 0 Level(3,Enemy,True) [0,10] 0 0 1 REDA0R10 [IronAxe] ChargeAI
+UNIT Incendivis SwordCav 0 Level(3,Enemy,True) [0,11] 0 0 1 REDA0R11 [IronSword] ChargeAI
+UNIT Incendivis LanceCav 0 Level(3,Enemy,True) [4,0] 0 0 1 REDA4R0 [IronLance] ChargeAI
+UNIT Incendivis AxeCav 0 Level(3,Enemy,True) [6,0] 0 0 1 REDA6R0 [IronAxe] ChargeAI
 UNIT
 
 CrimsonHeartReinforce:
-UNIT Incendivis Brigand 0 Level(3,Enemy,False) [21,5] 0 0 1 REDA21R5 [IronAxe] ChargeAI
-UNIT Incendivis Deserter 0 Level(3,Enemy,False) [21,8] 0 0 1 REDA21R8 [IronLance] ChargeAI
+UNIT Incendivis Brigand 0 Level(3,Enemy,True) [21,5] 0 0 1 REDA21R5 [IronAxe] ChargeAI
+UNIT Incendivis Deserter 0 Level(3,Enemy,True) [21,8] 0 0 1 REDA21R8 [IronLance] ChargeAI
 UNIT
 
 CharacterBasedEvents:
@@ -57,7 +57,8 @@ CharacterEventBothWays(0xF,CarmenJaimeTalk,Carmen,Jaime)
 END_MAIN
 
 LocationBasedEvents:
-Village(0xD,ScrollVillage,6,8)
+Village(0xD,RescueVillage,6,8)
+House(0xE,WingclipperTavern,14,6 )
 END_MAIN
 
 MiscBasedEvents:
@@ -72,31 +73,31 @@ NoFade
 ENDA
 
 Units1:
-UNIT Lua Captain 0 Level(10,Ally,False) [11,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, IronSword, Vulnerary] NoAI
-UNIT Leonor Cleric 0 Level(6,Ally,True) [11,11] 0 0 0 0 [Barrier, Heal] NoAI
+UNIT Leonor Cleric_F 0 Level(6,Ally,True) [10,11] 0 0 0 0 [Barrier, Heal, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [11,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [12,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Pilar 0 0 Level(10,Ally,False) [12,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(10,Ally,False) [11,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT
 
 Units2:
-UNIT Lua Captain 0 Level(10,Ally,False) [11,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, IronSword, Vulnerary] NoAI
-UNIT Leonor Cleric 0 Level(6,Ally,True) [11,11] 0 0 0 0 [Barrier, Heal] NoAI
+UNIT Leonor Cleric_F 0 Level(6,Ally,True) [10,11] 0 0 0 0 [Barrier, Heal, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [11,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [12,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Pilar 0 0 Level(10,Ally,False) [12,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(10,Ally,False) [11,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Pilar 0 0 Level(10,Ally,False) [11,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(10,Ally,False) [12,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT
 
 JaimeAndLua:
@@ -268,11 +269,19 @@ LABEL 0x2
 NoFade
 ENDA
 
-ScrollVillage:
+RescueVillage:
 SetBackground(HouseBG)
 Text(A2Village)
 EraseBackground
 GiveItem(Rescue,0xFFFF)
+NoFade
+ENDA
+
+WingclipperTavern:
+SetBackground(HouseBG)
+Text(A2Village)
+EraseBackground
+GiveItem(Wingclipper,0xFFFF)
 NoFade
 ENDA
 

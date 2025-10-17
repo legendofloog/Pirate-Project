@@ -73,6 +73,8 @@
 
 #define RedFSoldierMug $4F
 
+#define SleepyDockhandMug 0xFB
+
 //A-3 Mug Data
 #define ForestProtectorMug $9B
 

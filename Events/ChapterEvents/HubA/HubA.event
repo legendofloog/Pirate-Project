@@ -80,6 +80,7 @@ CharacterEvent(0, NPCGuardTalk, Lua, GreagorGuard)
 CharacterEvent(0, NPCSmugglerTalk, Lua, GreagorSmuggler)
 CharacterEvent(0, NPCPeddlerTalk, Lua, GreagorPeddler)
 CharacterEvent(0, NPCVillagerCTalk, Lua, GreagorVillagerC)
+CharacterEvent(0, NPCSleepyGuardTalk, Lua, GreagorShirker)
 CharacterEvent(ShipwrightCaptainHubATalkFlag, NPCShipwrightCaptainArgumentTalk, Lua, GreagorCaptain)
 CharacterEvent(ShipwrightCaptainHubATalkFlag, NPCShipwrightCaptainArgumentTalk, Lua, GreagorShipwright)
 CharacterEvent(TwoPatronsHubATalkFlag, NPCPatronsDrinkingTalk, Lua, GreagorPatron)
@@ -176,6 +177,11 @@ LABEL 777
 NoFade
 ENDA
 
+NPCSleepyGuardTalk:
+Text(HubASleepyGuardText)
+NoFade
+ENDA
+
 NPCSailorTalk:
 Text(NPCSailorDialogue)
 NoFade
@@ -218,7 +224,7 @@ ENDA
 
 NPCPeddlerTalk:
 // sorry mufflebuns. hopefully this doesn't break anything. -RW
-ASMC (prCallFirstChoiceMenu+1)
+CallMenu(PeddlerPurchaseMenu)
 SVAL s1 0 //if tonic chosen
 BNE 900 s1 sC 
 	CALL NPCPeddlerTonicSelected
@@ -369,7 +375,15 @@ ENDA
 LocationBasedEvents:
 Armory(HubAArmory,16,13)
 Vendor(HubAVendor,24,13)
+Village(HubAGreagorVillageVisitedFlag, SilenceVillage,4,6) //only accessible on layer 0
+CHES HubAGreagorDocksChestOpenedFlag KillerBow [13,4] 0x14 //chest, AFEV triggers giving the actual item and the event
 END_MAIN
+
+SilenceVillage:
+Text(HubASilenceVillageText)
+GiveItem(Silence, Lua)
+NoFade
+ENDA
 
 ALIGN 4
 HubAArmory:
@@ -390,11 +404,24 @@ AREA WentToBaseAgain BackToLuaBaseFirstTime [20,4] [21,4]
 AREA PortToBase BackToLuaBase [20,4] [21,4]
 
 AREA PortToTavern FromPortToTavern [8,20] [8,20]
-AREA TavernToPort ToPortFromTavern [8,20] [8,20] 
+AREA TavernToPort ToPortFromTavern [8,20] [8,20]
+AREA HubAGreagorDocksChestReactionFlag LuaReactsToLootingDockChest [13,4] [13,4]
 
 AFEV 0 RefreshLua 0
+
 CauseGameOverIfLordDies
 END_MAIN
+
+LuaReactsToLootingDockChest:
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC
+	Text(HubAKillerBowText) //if the chest flag's set, then this will play the first time that it's looted
+LABEL 776
+ENUF HubAGreagorDocksChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
+LABEL 777
+NoFade
+ENDA
+
 
 Traps1:
 BlueSigil(20, 4)
@@ -414,6 +441,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [13,11] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
+ENUT DifficultyChangeFlag
 ASMC EyeForAnEyeResetASMC
 ENUT LuaInAHubFlag
 ENUT PortToOtherAreas
@@ -549,6 +577,10 @@ ENDA
 // AREA EVENTS HERE
 
 FromPortToTavern:
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 InitiateTileChangeInHub(ClearHubATraps, AddTavernTraps, 1, LuaInDaTavern, TavernGreensSpawnEvent)
 ENUF TavernToPort
 CallEventIfEIDNotSet(TavernFirstTime, 1, BarGangIntro)
@@ -573,6 +605,10 @@ ENDA
 ToPortFromTavern:
 InitiateTileRevertInHub(ClearTavernTraps, AddHubATraps, 1, LuaInFrontOfDaTavern, PortSpawnEvent)
 ENUF PortToTavern
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
@@ -606,10 +642,18 @@ NoFade
 ENDA
 
 PortGreagorDocks:
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 InitiateTileChangeInHub(ClearHubATraps, AddDockTraps, 0, LuaAtDaDocks, DocksSpawnEvent)
 ENUF DocksToPort
 ENUT PortToBase
 ENUT PortToTavern
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 2
+LABEL 776
 NoFade
 ENDA
 
@@ -620,10 +664,18 @@ ENUF PeddlerHubAEncounterFlag
 HIDEUNIT Desiderio
 HIDEUNIT Pilar
 REMOVEUNIT Estelle
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 InitiateTileRevertInHub(ClearDockTraps, AddHubABackToBaseTraps, 0, LuaBackFromDaDocks, PortSpawnEventFirstTime)
 SetAllHubChapterFlags
 ENUT PortToBase
 ENUF WentToBaseAgain
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 2
+LABEL 776
 NoFade
 ENDA
 
@@ -638,10 +690,18 @@ NoFade
 ENDA
 
 GotoPortFromDocks:
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILEREVERT 2
+LABEL 776
 InitiateTileRevertInHub(ClearDockTraps, AddHubATraps, 0, LuaBackFromDaDocks, PortSpawnEvent)
 ENUF PortToDocks
 ENUF PortToBase
 ENUF PortToTavern
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
@@ -714,6 +774,7 @@ EraseBackground
 MUSC PortGreagorID
 HIDEUNIT Estelle
 HIDEUNIT Hermenegildo
+CenterTextbox(HubTutorial2)
 NoFade
 ENDA
 
@@ -865,7 +926,7 @@ DesiderioPilarGroup:
 UNIT Desiderio 0 0 Level(4,Ally,True) [8,22] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [4,12] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Docksman 0 0 Level(3, NPC, True) [6,4] 0 0 0 0 [SteelLance] NoAI
-UNIT Docksman Fighter 0 Level(3, NPC, True) [12,2] 0 0 0 0 [IronAxe] NoAI
+UNIT GreagorShirker Fighter 0 Level(3, NPC, True) [12,2] 0 0 0 0 [IronAxe] NoAI
 UNIT Docksman Mercenary 0 Level(4, NPC, True) [18,13] 0 0 0 0 [KillingEdge] NoAI
 UNIT
 

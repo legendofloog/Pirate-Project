@@ -13,13 +13,6 @@ void Momentum(BattleUnit* bunitA, BattleUnit* bunitB) {
 		{
 			return;
 		}
-		else if(gActionData.moveCount == (bunitA->unit.movBonus)) //has unit moved as much as their movement
-		{
-			bunitA->wTriangleHitBonus = 2 * WTHitBonus_Link;
-			bunitA->wTriangleDmgBonus = 2 * WTMtBonus_Link;
-			bunitB->wTriangleHitBonus = -2 * WTHitBonus_Link;
-			bunitB->wTriangleDmgBonus = -2 * WTMtBonus_Link;
-		}
 		else if((gActionData.moveCount * 2) >= (bunitA->unit.movBonus)) //has unit moved half or more of their move
 		{
 			bunitA->wTriangleHitBonus = 1 * WTHitBonus_Link;
@@ -27,10 +20,5 @@ void Momentum(BattleUnit* bunitA, BattleUnit* bunitB) {
 			bunitB->wTriangleHitBonus = -1 * WTHitBonus_Link;
 			bunitB->wTriangleDmgBonus = -1 * WTMtBonus_Link;
 		}
-		else
-		{
-
-		}
-
 	}
 }

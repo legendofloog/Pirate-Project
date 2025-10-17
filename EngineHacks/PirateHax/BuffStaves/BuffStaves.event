@@ -1,0 +1,102 @@
+#include "BuffStaves.lyn.event"
+
+#include "BuffStavesWrappers.lyn.event"
+
+#define FortuneBuffAmount 30
+#define ProtectBuffAmount 10
+#define ConcentrateBuffAmount 50
+
+// Fortune Stuff
+
+ALIGN 4
+FortuneStaffBuffAmount_Link:
+WORD FortuneBuffAmount
+
+ALIGN 4
+FortuneStaffID_Link:
+WORD TakeAim
+
+ALIGN 4
+FortuneStaffSubtitleText_Link:
+WORD BuffStaffBottomText
+
+ALIGN 4
+FortuneStaffSelectInfo:
+POIN FortuneStaffInitSelect|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN FortuneStaffTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+// Protect Stuff
+
+ALIGN 4
+ProtectStaffBuffAmount_Link:
+WORD ProtectBuffAmount
+
+ALIGN 4
+ProtectStaffID_Link:
+WORD Protect
+
+ALIGN 4
+ProtectStaffSubtitleText_Link:
+WORD BuffStaffBottomText
+
+ALIGN 4
+ProtectStaffSelectInfo:
+POIN ProtectStaffInitSelect|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN ProtectStaffTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+// Concentrate Stuff
+
+ALIGN 4
+ConcentrateStaffBuffAmount_Link:
+WORD ConcentrateBuffAmount
+
+ALIGN 4
+ConcentrateStaffID_Link:
+WORD Concentrate
+
+ALIGN 4
+ConcentrateStaffSubtitleText_Link:
+WORD BuffStaffBottomText
+
+ALIGN 4
+ConcentrateStaffSelectInfo:
+POIN ConcentrateStaffInitSelect|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN ConcentrateStaffTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+ALIGN 4
+HealArrowIDLink:
+SHORT HealArrowText
+
+
+ALIGN 4
+BarrierStaffSelectInfo:
+POIN BarrierStaffInitSelect|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN BarrierStaffTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0
+
+ALIGN 4
+BarrierStaffSubtitleText_Link:
+SHORT 0x47F

@@ -92,9 +92,9 @@ int AiBattleGetDamageTakenWeight(void) {
         return 0; //if unit would break in this combat, they believe they face no counter
     }
 
-    if (gBattleActor.unit.curHP == 0){
-        return 60; //if the unit dies in the combat, lowered priority
-    } 
+    //if (gBattleActor.unit.curHP == 0){ removed self-preservation instincts
+        //return 60; 
+    //} 
     
     score = (gBattleTarget.battleAttack - gBattleActor.battleDefense) * (gBattleTarget.battleEffectiveHitRate);
     score /= 100; //score for one attack from the enemy

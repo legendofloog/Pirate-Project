@@ -1,0 +1,47 @@
+#define MenuDefinition(x, y, w, h, style, commands) "BYTE x y w h; WORD style; POIN commands; WORD 0 0 0 0 0x0804F521 0x0804F459"
+#define MenuOption(name, desc, flag) "WORD 0; SHORT name desc; BYTE 0 flag 0 0; POIN FlagUsabilityMenuOption 0 ChoiceMenu_OnSelect 0 0 0"
+#define MenuTerminator "WORD 0 0 0 0 0 0 0 0 0"
+#define CallMenu(menu) "SVAL s1 menu|IsPointer; ASMC CallChoiceMenuASMC|1"
+
+
+// example menu provided below. there are a couple moving parts but it's not as daunting as it looks.
+// MenuDefinition() creates a menu under a specific label. the parameters are x, y, width, height, style (0 or 1), and a label for the menu options.
+// MenuOption() creates a menu option under a specific label. the parameters are option name, option description, and flag. if the flag is NOT set, the menu option will be grayed out and disabled.
+// CallMenu() calls that choice menu in events
+
+ALIGN 4
+DifficultySelectMenu:
+MenuDefinition(9, 6, 13, 0, 1, DifficultySelectOptions)
+
+ALIGN 4
+DifficultySelectOptions:
+MenuOption(EasyName, EasyDesc, 0)
+MenuOption(NormalName, NormalDesc, 0)
+MenuOption(HardName, HardDesc, 0)
+MenuTerminator
+
+ALIGN 4
+PeddlerPurchaseMenu:
+MenuDefinition(6, 8, 18, 0, 1, PeddlerPurchaseOptions)
+
+ALIGN 4
+PeddlerPurchaseOptions:
+MenuOption(SplitMenuTonic, 0, 0)
+MenuOption(SplitMenuShield, 0, 0)
+MenuOption(SplitMenuMentis, 0, 0)
+MenuTerminator
+
+ALIGN 4
+HubB2ChoiceMenu:
+MenuDefinition(7, 4, 16, 0, 1, HubB2ChoiceOptions)
+
+ALIGN 4
+HubB2ChoiceOptions:
+MenuOption(B2a_Choice_Husniye, 0, 0)
+MenuOption(B2a_Choice_Cruz, 0, 0)
+MenuOption(B2a_Choice_Avocado, 0, 0)
+MenuOption(B2a_Choice_NotYet, 0, 0)
+MenuTerminator
+
+
+#include "LordSplitMenuPlus.lyn.event"

@@ -3,3 +3,4 @@
 #include "CharacterNamesDescs.txt"
 #include "EscapeQuotes.txt"
 #include "DeathQuotes.txt"
+#include "DifficultyNamesDescs.txt"

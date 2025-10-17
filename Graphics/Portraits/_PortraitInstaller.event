@@ -764,3 +764,11 @@ ForestProtectorMugData:
 #incbin "Dmp/ForestProtector_palette.dmp"
 #incbin "Dmp/ForestProtector_minimug.dmp"
 setMugEntry(ForestProtectorMug, ForestProtectorMugData, 3, 5, 3, 3)
+
+ALIGN 16
+SleepyDockhandMugData:
+#incbin "Dmp/RedYadney_mug.dmp"
+#incbin "Dmp/RedYadney_frames.dmp"
+#incbin "Dmp/RedYadney_palette.dmp"
+#incbin "Dmp/RedYadney_minimug.dmp"
+setMugEntry(SleepyDockhandMug, SleepyDockhandMugData, 3, 5, 2, 3)

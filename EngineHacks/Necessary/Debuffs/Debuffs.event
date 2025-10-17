@@ -205,6 +205,12 @@ DoubleFalconBitOffset_Link:
 WORD MiscOffset+25
 // 83 bits/11 bytes
 
+ProtectStaffBitOffset_Link:
+WORD MiscOffset+26
+
+ConcentrateStaffBitOffset_Link:
+WORD MiscOffset+27
+
 //out of room after 12 bytes
 
 ALIGN 4 

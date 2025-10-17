@@ -126,6 +126,7 @@
 #define GreagorVillagerB $AB
 #define GreagorPatronB $AC
 #define GreagorVillagerC $AE
+#define GreagorShirker $9F
 
 //Hub A1
 #define Buzu $48

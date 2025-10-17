@@ -277,6 +277,8 @@
 [LoadInka] = [LoadFace][0xBC][0x1]
 [LoadCorina] = [LoadFace][0x60][0x1]
 
+[LoadRedYadney] = [LoadFace][0xFB][0x1]
+
 
 // 0x49 portrait id is open now
 

@@ -55,10 +55,6 @@ ENDA
 A3Explanation:
 CAMERA_CENTERED [18,14]
 STAL 30
-CenterTextbox(ChA3ObjectiveExplanation)
-PanToTileThenFlashCursorForXSeconds(18, 0, 30)
-PanToTileThenFlashCursorForXSeconds(10, 9, 30)
-PanToTileThenFlashCursorForXSeconds(0, 14, 30)
 CenterTextbox(ChA3SideObjectiveExplanation)
 NoFade
 ENDA
@@ -332,7 +328,6 @@ ENUN
 ENUT A3Spawn1TurnFlag
 ENUT A3Spawn2TurnFlag
 ENUT A3Spawn3TurnFlag
-ENUT LordMustEscapeLastFlag
 GotoPrepScreen
 NoFade
 ENDA

@@ -206,7 +206,7 @@ Uses Mag. Can attack at melee.[X]
 Snapshot[X]
 
 ## SnapshotDesc
-+2 speed. Cannot miss.[X]
++3 speed. Cannot miss.[X]
 
 ## ScorpioName
 Scorpio[X]
@@ -373,25 +373,26 @@ Quickdraw[X]
 
 // STAVES
 
+## BuffStaffBottomText
+Select an ally to buff.[X]
+
 ## TakeAimName
 Take Aim![X]
 
 ## TakeAimDesc
-+30 hit to an ally for 1 turn. +1 WEXP.[X]
-
-## FortuneStaffSubtitleText
-Select ally to instruct aim.[X]
++30 Hit to an ally[N]
+for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffName
 Assist[X]
 
 ## AssistStaffDesc
-Heal an ally for (Mag+10) HP and grant[N]
+Heal an ally for (Mag+5) HP and grant[N]
 them +30 hit for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffUseDesc
-Mag+10 healing and[N]
-+30 hit for 1 turn.[X]
+Heals for Mag+10 HP and[N]
+gives +30 Hit for 1 turn.[X]
 
 ## AssistStaffBottomText
 Select an ally to heal and buff.[X]
@@ -404,11 +405,43 @@ Grant an ally +2 Mov and Canto+ [N]
 for 1 turn. Max Mov is 15. +1 WEXP.[X]
 
 ## RushStaffUseDesc
-+2 Mov and Canto+[N]
-for 1 turn.[X]
+Gives +2 Mov and[N]
+Canto+ for 1 turn.[X]
 
-## RushStaffBottomText
-Select an ally to buff.[X]
+## RewarpName
+Rewarp[X]
+
+## RewarpDesc
+Warps the user to a targeted tile.[X]
+
+## RewarpUseDesc
+Warps the user to[N]
+a targeted tile.[X]
+
+## RewarpBottomText
+Select a tile to warp to.[X]
+
+## ProtectName
+Protect[X]
+
+## ProtectDesc
++10 Def/Res to an ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ProtectUseDesc
++10 Def/Res to ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ConcentrateName
+Concentrate[X]
+
+## ConcentrateDesc
++50 Crit to an ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ConcentrateUseDesc
++50 Crit to ally[N]
+for 1 turn. +1 WEXP.[X]
 
 // EQUIPS
 

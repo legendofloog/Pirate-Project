@@ -156,9 +156,9 @@ UNIT Razvan Curate 0 Level(3,Ally,False) [4,18] 0 0 1 REDA4R23 [Mend, Heal, Vuln
 UNIT
 
 PilarLuaDesiGroup:
-UNIT Lua Captain 0 Level(6,Ally,False) [4,18] 0 0 1 REDA5R20 [Cutlass, IronSword, SteelMusket, Vulnerary] NoAI
+UNIT Lua Captain 0 Level(8,Ally,False) [4,18] 0 0 1 REDA5R20 [Cutlass, IronSword, SteelMusket, Vulnerary] NoAI
 UNIT Desiderio Vanguard 0 Level(8,Ally,False) [3,18] 0 0 1 REDA6R19 [SteelAxe, IronLance, Vulnerary] NoAI
-UNIT Pilar Ninja 0 Level(10,Ally,False) [3,18] 0 0 1 REDA4R19 [SilverKnife, IronKnife, Vulnerary] NoAI
+UNIT Pilar MasterNinja 0 Level(10,Ally,False) [3,18] 0 0 1 REDA4R19 [SilverKnife, SteelSword, IronKnife, Vulnerary] NoAI
 UNIT
 
 RazvanCarmenGroup:

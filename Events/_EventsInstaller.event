@@ -31,3 +31,32 @@ ShowUnitIfAlive(Estelle)
 ShowUnitIfAlive(Hermenegildo)
 NoFade
 ENDA
+
+ALIGN 4
+DifficultyChangeEvent:
+EVBIT_MODIFY 4
+CenterTextbox(ChangeDifficultyQuestionText)
+SVAL s1 0x1
+BNE 778 s1 sC //if the answer is not yes, then skip past all this
+    EVBIT_MODIFY 0
+    CallMenu(DifficultySelectMenu)
+    SVAL s1 0 //if easy
+    BNE 776 s1 sC 
+        SetDifficulty(0)
+        CenterTextbox(DifficultyChangedText)
+        GOTO 778
+    LABEL 776
+    SVAL s1 1 //if normal
+    BNE 777 s1 sC 
+        SetDifficulty(1)
+        CenterTextbox(DifficultyChangedText)
+        GOTO 778
+    LABEL 777
+    SVAL s1 2  //if hard
+    BNE 778 s1 sC 
+        SetDifficulty(2)
+        CenterTextbox(DifficultyChangedText)
+LABEL 778
+ENUF DifficultyChangeFlag //not really meant to be set to begin with, except such that it can't be used until we get to the main room
+NoFade
+ENDA

@@ -229,7 +229,7 @@ ENDA
 B2a_Magdalena:
 EVBIT_MODIFY 3 //scene skipping causing a softlock, disable that. 
 Text(B2a_TalkToMag)
-ASMC (prCallSecondChoiceMenu+1) // hus, cruz, avo, none
+CallMenu(HubB2ChoiceMenu)
 SVAL s1 0
 BNE 11 s1 sC // only continue if Husniye, otherwise jump to 11
 	ENUT HusniyeAccused

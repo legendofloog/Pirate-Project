@@ -1535,3 +1535,13 @@ Aristides[X]
 
 ## AristidesDesc
 Aristides[X]
+
+## GreagorShirkerName
+Ryker[X]
+
+## GreagorShirkerDesc
+Tasked with protecting his crew's[N]
+ship, though he does it poorly.[X]
+
+## GreagorShirkerOccupation
+Layabout[X]

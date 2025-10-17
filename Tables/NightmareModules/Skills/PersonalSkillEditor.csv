@@ -39,9 +39,9 @@ INLINE PersonalSkillTable,Skill
 0x25 Noah,BreatherID
 0x26 Valerie,DoubleFalconID
 0x27 Calista,SpecialOrdinanceID
-0x28 AlonsoReal,0x0
-0x29 ElodiaReal,0x0
-0x2A QuispeReal,0x0
+0x28 AlonsoReal,PowerstaffID
+0x29 ElodiaReal,PowerstaffID
+0x2A QuispeReal,GaleforceID
 0x2B Windy,ThunderingHoovesID
 0x2C Ruby,ReapingBladeID
 0x2D Remora,BashID
@@ -63,9 +63,9 @@ INLINE PersonalSkillTable,Skill
 0x3D Summoned Kite,0x0
 0x3E Flint,0x0
 0x3F Gerald,0x0
-0x40 Quispe,ConvictionID
-0x41 Alonso,PowerstaffID
-0x42 Elodia,GaleforceID
+0x40 Quispe,0x0
+0x41 Alonso,0x0
+0x42 Elodia,0x0
 0x43 Triana,AnalyzeID
 0x44 Medwyn,HangoverID
 0x45 Bartz,UnderhandedID

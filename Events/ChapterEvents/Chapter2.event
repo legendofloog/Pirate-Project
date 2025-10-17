@@ -222,6 +222,7 @@ ENDA
 
 LocationBasedEvents:
 DurabilityChest(SkillScroll,ImbueID,31,15)
+CHES HubALuaBaseChestOpenedFlag SilverAxe [32,13] 0x14 //chest, only accessible on layer 1
 END_MAIN
 
 MiscBasedEvents:
@@ -242,9 +243,23 @@ AREA MainRoomToPort GotoPortGreagor [1,0] [3,0]
 
 AREA GotoChapter2Flag AllDoneWithHubA [24,21] [24,21]
 
+AREA HubALuaBaseChestReactionFlag LuaReactsToLootingTreasureChest [32,13] [32,13]
+
+AREA DifficultyChangeFlag DifficultyChangeEvent [19,18] [19,18]
+
 AFEV Ch2ThisIsAChapter RefreshLua 0
 CauseGameOverIfLordDies
 END_MAIN
+
+LuaReactsToLootingTreasureChest:
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC
+	Text(HubASilverAxeText) //if the chest flag's set, then this will play the first time that it's looted
+LABEL 776
+ENUF HubALuaBaseChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
+LABEL 777
+NoFade
+ENDA
 
 AllDoneWithHubA:
 FADI 10
@@ -284,6 +299,7 @@ GotoLuasQuarters:
 InitiateTileChangeInHub(ClearChapter2Traps, AddLuaQuartersTraps, 2, LuaInHerQuarters)
 ENUT MainRoomToPort
 ENUF LuaQuartersToMainRoom
+ENUF DifficultyChangeFlag //we can set the difficulty here
 NoFade
 ENDA
 
@@ -293,6 +309,7 @@ BNE 776 s0 sC
     AddTrap(GreenSigilTrapID,24, 21)
 LABEL 776
 AddTrap(BlueSigilTrapID, 19, 25)
+AddTrap(PurpleSigilTrapID, 19, 18)
 NoFade
 ENDA
 
@@ -313,6 +330,7 @@ GoBackToMainRoomFromLuaQuarters:
 InitiateTileRevertInHub(ClearLuaQuartersTraps, AddChapter2Traps, 2, LuaBackFromQuarters, MainRoomSpawnEvent)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
+ENUT DifficultyChangeFlag //no longer can set the difficulty
 NoFade
 ENDA
 
@@ -358,6 +376,10 @@ GotoBarracksAndTreasureRoom:
 InitiateTileChangeInHub(ClearChapter2Traps, AddTreasureRoomTraps, 1, LuaInDaTreasureRoom, TreasureRoomSpawnEvent)
 ENUF TreasureRoomToMainRoom
 ENUT MainRoomToPort
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 9
+LABEL 776
 NoFade
 ENDA
 
@@ -372,6 +394,10 @@ UNIT Ximo Archer 0 Level(1,Ally,False) [29,22] 0 0 0 0 [IronBow, Vulnerary] NoAI
 UNIT 
 
 GoBackToMainRoomFromTreasureRoom:
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC 
+	TILEREVERT 9
+LABEL 776
 InitiateTileRevertInHub(ClearTreasureRoomTraps, AddChapter2Traps, 1, LuaOnDaStairs, MainRoomSpawnEvent)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
@@ -437,6 +463,10 @@ ENDA
 GotoPortGreagor:
 InitiateLoadMapHub(HubA, LuaInDaHub, PortGreagorSpawnEvent)
 ENUF PortToBase
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
@@ -485,7 +515,7 @@ UNIT Rochefort 0 0 Level(1,NPC,False) [20,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(2,NPC,False) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
+UNIT Jaime PegasusRider 0 Level(2,NPC,True) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
 UNIT
 
 LuaInDaHub:
@@ -599,6 +629,8 @@ ENUT LuaQuartersToMainRoom
 ENUT LibraryToMainRoom
 ENUT MainRoomToPort
 ENUT GotoChapter2Flag
+ENUT HubALuaBaseChestReactionFlag
+ENUT DifficultyChangeFlag
 //these are all set for the objective to work
 ENUT WindUpFlag1
 ENUT WindUpFlag2

@@ -14,7 +14,7 @@ POIN BeginningScene EndingScene
 
 TurnBasedEvents:
 TurnEventPlayer(0, HomiesHere, 5)
-TurnEventPlayer(0, HereTheyCome, 9)
+TurnEventPlayer(0, HereTheyCome, 8)
 END_MAIN
 
 CharacterBasedEvents:
@@ -98,7 +98,7 @@ UNIT TheDukes Mercenary 0 Level(3, Enemy, True) [4,7] 0 0 0 0 [IronSword] Attack
 UNIT TheDukes Mercenary 0 Level(3, Enemy, True) [15,0] 0 0 0 0 [SteelSword] AttackInRangeAI
 UNIT TheDukes Hunter 0 Level(3, Enemy, True) [13,10] 0 0 0 0 [Greatbow] BossAI
 UNIT TheDukes Hunter 0 Level(3, Enemy, True) [4,6] 0 0 0 0 [IronBow] AttackInRangeAI
-UNIT TheDukes Hunter 0 Level(3, Enemy, True) [11,2] 0 0 0 0 [MiniBow] AttackInRangeAI
+UNIT TheDukes Hunter 0 Level(3, Enemy, True) [11,3] 0 0 0 0 [MiniBow] AttackInRangeAI
 UNIT TheDukes Shaman 0 Level(3, Enemy, True) [9,18] 0 0 0 0 [Fire] AttackInRangeAI
 UNIT TheDukes Shaman 0 Level(3, Enemy, True) [11,8] 0 0 0 0 [Surge] AttackInRangeAI
 UNIT TheDukes Shaman 0 Level(3, Enemy, True) [0,0] 0 0 0 0 [Thani] AttackInTwoAI
@@ -143,6 +143,7 @@ ALIGN 4
 
 BeginningScene:
 SetBackground(Ship)
+MUSC SwabbieTalkID
 Text(ThePlan)
 FADI 15
 Clean
@@ -158,7 +159,6 @@ CAMERA Tangyuan
 CURSOR Tangyuan
 STAL 45
 REMOVE_CURSORS
-MUSC SwabbieTalkID
 Text(Tangyuan1)
 STAL 30
 CAMERA MrMist
@@ -219,8 +219,8 @@ SetBackground(Fort_Ruins)
 MUSC SwabbieTalkID
 Text(Jozef3)
 SetBackground(Ship)
+MUSC CastawayHeartID
 Text(WeWin)
-GiveGold(500)
 GoToHubChapter(HubA)
 NoFade
 ENDA

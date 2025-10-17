@@ -1,4 +1,4 @@
-#include "gbafe.h"
+#include "ASMCS.h"
 
 #define DesiderioCharId 3
 extern u8 SuppliesItemIDLink;
@@ -194,4 +194,52 @@ void CheckIfTileChangeTriggered(){
         return;
     }
     gEventSlot[0xC] = 0;
+}
+
+void SetDifficultyASMC(){
+    switch(gEventSlot[0x1]){
+        case 0: //we're supposed to be setting it to easy here
+            if (IsDifficultMode()) //if we're on hard, unset flag
+            {
+                gPlaySt.chapterStateBits ^= PLAY_FLAG_HARD; //this unsets the hard flag, i think.
+                gPlaySt.config.controller = 0; //this sets easy mode
+                //gPlaySt.chapterStateBits |= PLAY_FLAG_TUTORIAL;
+            }
+            else if (TUTORIAL_MODE()) //if we're on easy mode, do nothing
+            {   
+
+            }
+            else // normal mode, so do nothing
+            {
+                gPlaySt.config.controller = 0;
+                //gPlaySt.chapterStateBits |= PLAY_FLAG_TUTORIAL;
+            }
+        case 1: //normal
+            if (IsDifficultMode()) //if we're on hard, unset flag
+            {
+                gPlaySt.chapterStateBits ^= PLAY_FLAG_HARD; 
+            }
+            else if (TUTORIAL_MODE()) //if we're on easy mode, do some stuff
+            {   
+                gPlaySt.config.controller = 1; //unsets easy mode
+            }
+            else // normal mode, so do nothing
+            {
+
+            }
+        case 2: //hard
+            if (IsDifficultMode()) //if we're already on hard, don't do anything
+            {
+
+            }
+            else if (TUTORIAL_MODE()) //if we're on easy mode, do some stuff
+            {
+                gPlaySt.config.controller = 1;
+                gPlaySt.chapterStateBits |= PLAY_FLAG_HARD; //makes sure hard flag's set
+            }
+            else //all we have to do for normal
+            {
+                gPlaySt.chapterStateBits |= PLAY_FLAG_HARD; 
+            }
+    }
 }

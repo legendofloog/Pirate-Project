@@ -246,3 +246,6 @@ extern struct PlaySt gPlaySt; //! FE8U = (0x202BCF0)
 void AutolevelUnit(struct Unit* unit, int levelCount);
 void AutolevelClass(struct Unit* unit, int levelCount);
 void FloorStats(struct Unit* unit);
+
+int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target);
+extern s8 prMagGetter(Unit* unit);

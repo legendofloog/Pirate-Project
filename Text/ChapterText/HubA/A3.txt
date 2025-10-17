@@ -20,13 +20,11 @@ Dft. Boss, Escape[X]
  Defeat Sagargala[N]
    and escape.[X]
 
-## ChA3ObjectiveExplanation
-When escaping, Lua must be[N]
-the last unit to leave.[A][X]
-
 ## ChA3SideObjectiveExplanation
+Escape to the east with all[N]
+units to clear this chapter.[AN]
 As a side-objective, try to Drop[N]
-the logs onto the Ruins tiles.[N]
+the logs onto the Ruins tiles.[AN]
 If all of them are escorted there,[N]
 then you will get a reward at the end.[N]
 Enemies will not attack the logs.[A][X]

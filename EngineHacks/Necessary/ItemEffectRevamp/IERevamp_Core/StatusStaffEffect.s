@@ -27,7 +27,7 @@ ldr 	r4, =BattleActingUnit
 mov 	r1, r4
 add 	r1, #0x64
 strh 	r0, [r1]
-bl RNCheck_Single
+bl Roll2RN
 lsl 	r0, r0, #0x18
 cmp 	r0, #0x0
 bne StatusStaffHit
@@ -39,7 +39,7 @@ lsl 	r1, r2, #0xD
 lsr 	r1, r1, #0xD
 mov 	r0, #0x2
 orr 	r1, r0
-ldr 	r0, =#0xFFF80000
+ldr 	r0, =0xFFF80000
 and 	r0, r2
 orr 	r0, r1
 str 	r0, [r3]
@@ -69,7 +69,7 @@ ldrh 	r0, [r0]
 bl 	Item_GetStat_EPV_Jump	@get effect value byte
 @mov 	r1, #0xF
 @and 	r1,r0	@get status effect
-ldr 	r1, =#BattleTargetUnit
+ldr 	r1, =BattleTargetUnit
 add 	r1, #0x6F
 strb 	r0,[r1]
 Skip:

@@ -1797,8 +1797,8 @@ an enemy and reduces their Def by 5.[X]
 
 ## SD_Momentum
 Momentum: If this unit moves half or[N]
-more of their Mov, they gain WTA.[N]
-If they use all Mov, WTA is doubled.[X]
+more of their Mov, they gain WTA. If[N]
+all Mov is used, they ignore defenses.[X]
 
 ## SD_PotentBrew
 Potent Brew: Tonic effectiveness[N]
