@@ -41,3 +41,14 @@ extern u32* GetUnitDebuffEntry(struct Unit* unit);
 
 extern int BreakBitOffset_Link;
 extern int BreakInBattleBitOffset_Link;
+
+struct Item
+{
+	u8 number;
+	u8 durability;
+};
+
+
+extern struct Item GetUnitEquippedItem(Unit* unit);
+
+extern u8 KnightRingIDLink;

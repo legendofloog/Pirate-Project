@@ -21,6 +21,18 @@ Restores Mag + 15 HP.[X]
 # 0x473
 Restores Mag + 30 HP.[X]
 
+# 0x477
+Halts target's magic[N]
+and words for 3 turns.[X]
+
+# 0x478
+Makes target unable to[N]
+move or act for 3 turns.[X]
+
+# 0x479
+Spurs target to attack[N]
+all units for 3 turns.[X]
+
 # 0x494
 A medicinal solution that mends[NL]
 minor wounds. Heals unit for 15 HP.[X]
@@ -97,7 +109,7 @@ and damage dealt by firearms.[X]
 
 # 0x0549
 Speed. Determines whether a unit can[N]
-perform a follow-up attack on an enemy.[X]
+perform a follow-up attack and evasion.[X]
 
 # 0x054A
 Evasion. Increases the chance[N]

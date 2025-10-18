@@ -450,6 +450,10 @@ BranchIfHubNotVisited(1, BeginningSceneFirstTimeCave)
 ENUT DocksToPort
 ENUT TavernToPort
 ENUT GotoChapter2Flag
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 ENUT 4 //port music only
 CALL PortSpawnEvent
 CheckHowManyHubChaptersCompleted
@@ -524,7 +528,7 @@ ENDA
 TalkToDurgham:
 HubFirstTimeTalkToUnit(DurghamSpokeToOnce, 1, DurghamFirstTimeText)
 LABEL 1
-SVAL s1 500
+SVAL s1 1000
 CHECK_MONEY
 BLE 4 s1 sC //if you have more money than the cost, branch to 4
     Text(DurghamTellsLuaShesBrokeText)
@@ -896,7 +900,7 @@ UNIT Hermenegildo Myrmidon 0 Level(2,Ally,False) [14,5] 0 0 0 0 [LightBrand, Iro
 UNIT
 
 DurghamUnitGroup:
-UNIT Durgham LanceCav 0 Level(4,NPC,True) [1,20] 0 0 0 0 [IronLance, SteelLance, Vulnerary] NoAI
+UNIT Durgham LanceCav 0 Level(4,NPC,True) [1,20] 0 0 0 0 [Horseslayer, IronLance, Vulnerary] NoAI
 UNIT
 
 SamsonArranUnitGroup:

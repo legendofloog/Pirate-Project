@@ -100,3 +100,14 @@ WORD 0
 ALIGN 4
 BarrierStaffSubtitleText_Link:
 SHORT 0x47F
+
+ALIGN 4
+DebuffStaffSelectInfo:
+POIN AttackStaffMapSelect_Init|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN AttackStaffMapSelect_SwitchIn|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0

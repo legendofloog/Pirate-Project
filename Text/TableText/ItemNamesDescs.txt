@@ -526,8 +526,7 @@ blow.[X]
 Knight Ring[X]
 
 ## KnightRingDesc
-Allows this unit to move again after[N]
-an action with remaining movement.[X]
+Allows this unit to not be broken.[X]
 
 ## LightRuneName
 Light Rune[X]

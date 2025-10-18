@@ -55,4 +55,7 @@ BYTE ThornSkillID
 ALIGN 4
 gRoundCount:
 WORD RoundCountRAM
+
 ALIGN 4
+KnightRingIDLink:
+BYTE KnightRing
