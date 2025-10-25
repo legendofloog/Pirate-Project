@@ -78,7 +78,7 @@ LoadUnit(12,13)
 UNIT
 
 BeginningScene:
-
+//GiveItem(SilverBow, Lua)
 SetBackground(Ship)
 // storm ambience specifically
 Music(WindGustSoundID)
@@ -129,6 +129,7 @@ STAL 60
 SVAL sB 0
 LOMA CutsceneHubB_5
 LOAD1 1 CutsceneNicoSquad
+ENUN
 SVAL s1 0x14 //set hp values to lower ones for all the units
 SET_HP 0x91
 SET_HP 0x92
@@ -140,6 +141,7 @@ SVAL s1 0x20 //'nico' is a little healthier
 SET_HP 0x90
 SVAL s1 0x01 //meanwhile this fighter dies next to a curate RIP
 SET_HP 0x94
+//WEATHER 7
 EraseBackground
 
 CAM1 0x90
@@ -197,7 +199,7 @@ DISA Fata
 LoadCutsceneUnits(LuaIntroSquad)
 
 EraseBackground
-FadeBackFromBlack
+//FadeBackFromBlack
 
 MOVE 4 Lua [13, 17]
 MOVE 4 Desiderio [15, 15]
@@ -323,16 +325,16 @@ ENUN
 STAL 20
 REMOVEALL_BLUE
 LOMA CutsceneHubB_5
-
 //They arrive at the ship, Razvan now in tow.
 
 // idk; some sort of spooky ambient-ish song? Dire Tides?
-Music(OrlandosThemeID)
 LoadCutsceneUnits(CutsceneLuaShipwreck_1)
+STAL 5
 CAM1 [13,4]
 FadeBackFromBlack
 STAL 30
 FlashCursor(Pilar, 60)
+Music(OrlandosThemeID)
 Text(B5_Wreckage_1)
 
 //They enter the ship, to see the interior mostly intact.
@@ -403,6 +405,7 @@ FadeToBlack
 //crew has removed some spoils, but Lua
 //has gotta talk to Fata first (if alive).
 FlagIsSet(0x10, 0x1A1)
+STAL 30
 CHECK_ALIVE Fata
 BEQ 0x1A1 s0 sC
 
@@ -436,10 +439,9 @@ LABEL 0x2B2
 Text(B5_Fata_NoGraves)
 LABEL 0x3C3
 // done with either fata scene
-EraseBackground
-STAL 30
+//EraseBackground
 FadeToBlack
-
+STAL 30
 LABEL 0x1A1
 GoToHubChapter(HubB)
 ENDA
@@ -458,7 +460,7 @@ END_MAIN
 
 
 FataTemp:
-UNIT Fata Monk_F 0 Level(11,Ally,True) [3,6] 0 0 1 REDA3R6 [Elfire,Luna] NoAI
+UNIT Fata Monk_F 0 Level(11,Ally,True) [3,6] 0 0 1 REDA3R6 [Nosferatu,Luna, Vulnerary] NoAI
 UNIT
 
 BadGuys:
@@ -515,7 +517,7 @@ UNIT Incendivis Mercenary Nicodemus Level(10,Enemy,True) [15,2] 0 0 0 0 [SteelSw
 // UNIT Incendivis Gunner Nicodemus Level(10,Enemy,True) [18,3] 0 0 0 0 [SteelMusket] GroupFourAI
 //commenting out this one guy
 //UNIT Incendivis LanceCav Nicodemus Level(10,Enemy,True) [22,3] 0 0 0 0 [SteelLance] AttackInTwoAI
-UNIT Incendivis Curate Nicodemus Level(10,Enemy,True) [5,10] 0 0 0 0 [Heal,Restore] [0x0E,0x03,0x04,0x0]
+UNIT Incendivis Curate Nicodemus Level(10,Enemy,True) [5,10] 0 0 0 0 [Heal,Barrier] [0x0E,0x03,0x04,0x0]
 UNIT Incendivis Vanguard Nicodemus Level(10,Enemy,True) [20,2] 0 0 0 0 [SteelLance,HandAxe] BossAI
 UNIT Incendivis Warden Nicodemus Level(10,Enemy,True) [21,1] 0 0 0 0 [SteelSword,Javelin] BossAI
 UNIT

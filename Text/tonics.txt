@@ -32,13 +32,13 @@ Str +2 for[N]
 one chapter.[X]
 
 ## SklTonicName
-Skl Tonic[X]
+Dex Tonic[X]
 
 ## SklTonicDescription
-Skl +2 for one chapter.[X]
+Dex +2 for one chapter.[X]
 
 ## SklTonicUseText
-Skl +2 for[N]
+Dex +2 for[N]
 one chapter.[X]
 
 ## SpdTonicName

@@ -21,6 +21,7 @@ TurnBasedEvents:
 TurnEventPlayer(0,JaimeConvo,1)
 TurnEventPlayer(0,Reinforcements1,3)
 TurnEventPlayer(0,Reinforcements1,5)
+TurnEventPlayer(0,GameOverMan,9)
 TurnEventPlayer(0x13, SierraCharge, 1, 255)
 END_MAIN
 
@@ -52,13 +53,60 @@ UNIT Incendivis Brigand 0 Level(3,Enemy,True) [21,5] 0 0 1 REDA21R5 [IronAxe] Ch
 UNIT Incendivis Deserter 0 Level(3,Enemy,True) [21,8] 0 0 1 REDA21R8 [IronLance] ChargeAI
 UNIT
 
+GameOverMan:
+SpawnReinforcements(NorthGroup)
+SpawnReinforcements(EastGroup)
+SpawnReinforcements(WestGroup)
+CameraCursor(Hugo)
+Text(A2GameOverHugo)
+CameraCursor(Lua)
+Text(A2GameOverLua)
+CALL GameOverStart
+NoFade
+ENDA
+
+NorthGroup:
+UNIT Hugo Hero 0 Level(12,Enemy,False) [5,0] 0 0 1 REDA5R2 [SilverSword] PursueWithoutHeedAI
+UNIT Incendivis Mercenary 0 Level(10,Enemy,False) [4,0] 0 0 1 REDA4R1 [SteelSword] PursueWithoutHeedAI
+UNIT Incendivis Mercenary 0 Level(10,Enemy,False) [5,0] 0 0 1 REDA5R1 [SteelSword] PursueWithoutHeedAI
+UNIT Incendivis Mercenary 0 Level(10,Enemy,False) [6,0] 0 0 1 REDA6R1 [SteelSword] PursueWithoutHeedAI
+UNIT Incendivis Mage 0 Level(10,Enemy,False) [3,0] 0 0 1 REDA3R0 [Elfire] PursueWithoutHeedAI
+UNIT Incendivis Mage 0 Level(10,Enemy,False) [4,0] 0 0 1 REDA4R0 [Elfire] PursueWithoutHeedAI
+UNIT Incendivis Mage 0 Level(10,Enemy,False) [5,0] 0 0 1 REDA5R0 [Elfire] PursueWithoutHeedAI
+UNIT Incendivis Mage 0 Level(10,Enemy,False) [6,0] 0 0 1 REDA6R0 [Elfire] PursueWithoutHeedAI
+UNIT Incendivis Mage 0 Level(10,Enemy,False) [7,0] 0 0 1 REDA7R0 [Elfire] PursueWithoutHeedAI
+UNIT
+
+EastGroup:
+UNIT Incendivis Warrior 0 Level(10,Enemy,False) [21,6] 0 0 1 REDA19R6 [SilverAxe, SteelBow] PursueWithoutHeedAI
+UNIT Incendivis Fighter 0 Level(8,Enemy,False) [21,6] 0 0 1 REDA20R6 [SteelAxe] PursueWithoutHeedAI
+UNIT Incendivis Fighter 0 Level(8,Enemy,False) [21,5] 0 0 1 REDA20R5 [SteelAxe] PursueWithoutHeedAI
+UNIT Incendivis Fighter 0 Level(8,Enemy,False) [21,7] 0 0 1 REDA20R7 [SteelAxe] PursueWithoutHeedAI
+UNIT Incendivis Archer 0 Level(8,Enemy,False) [21,6] 0 0 1 REDA21R6 [SteelBow] PursueWithoutHeedAI
+UNIT Incendivis Archer 0 Level(8,Enemy,False) [21,5] 0 0 1 REDA21R5 [SteelBow] PursueWithoutHeedAI
+UNIT Incendivis Archer 0 Level(8,Enemy,False) [21,7] 0 0 1 REDA21R7 [SteelBow] PursueWithoutHeedAI
+UNIT Incendivis Archer 0 Level(8,Enemy,False) [21,4] 0 0 1 REDA21R4 [SteelBow] PursueWithoutHeedAI
+UNIT Incendivis Archer 0 Level(8,Enemy,False) [21,8] 0 0 1 REDA21R8 [SteelBow] PursueWithoutHeedAI
+UNIT
+
+WestGroup:
+UNIT Incendivis Champion 0 Level(10,Enemy,True) [0,10] 0 0 1 REDA2R10 [SilverLance, SteelSword] PursueWithoutHeedAI
+UNIT Incendivis Soldier 0 Level(8,Enemy,True) [0,9] 0 0 1 REDA1R9 [SteelLance] PursueWithoutHeedAI
+UNIT Incendivis Soldier 0 Level(8,Enemy,True) [0,10] 0 0 1 REDA1R10 [SteelLance] PursueWithoutHeedAI
+UNIT Incendivis Soldier 0 Level(8,Enemy,True) [0,11] 0 0 1 REDA1R11 [SteelLance] PursueWithoutHeedAI
+UNIT Incendivis Gunner 0 Level(8,Enemy,True) [0,8] 0 0 1 REDA0R8 [SteelMusket] PursueWithoutHeedAI
+UNIT Incendivis Gunner 0 Level(8,Enemy,True) [0,9] 0 0 1 REDA0R9 [SteelMusket] PursueWithoutHeedAI
+UNIT Incendivis Gunner 0 Level(8,Enemy,True) [0,10] 0 0 1 REDA0R10 [SteelMusket] PursueWithoutHeedAI
+UNIT Incendivis Gunner 0 Level(8,Enemy,True) [0,11] 0 0 1 REDA0R11 [SteelMusket] PursueWithoutHeedAI
+UNIT Incendivis Gunner 0 Level(8,Enemy,True) [0,12] 0 0 1 REDA0R12 [SteelMusket] PursueWithoutHeedAI
+UNIT
+
 CharacterBasedEvents:
 CharacterEventBothWays(0xF,CarmenJaimeTalk,Carmen,Jaime)
 END_MAIN
 
 LocationBasedEvents:
 Village(0xD,RescueVillage,6,8)
-House(0xE,WingclipperTavern,14,6 )
 END_MAIN
 
 MiscBasedEvents:
@@ -133,7 +181,7 @@ UNIT Incendivis Vanguard 0 Level(4,Enemy,True) [2,10] 0 0 0 0 [HandAxe] BossAI
 
 //Top Left
 UNIT IncendivisMageA2 Monk 0 Level(3,Enemy,True) [5,0] 0 0 0 0 [Bolt] BossAI
-UNIT Sierra Vanguard 0 Level(6,Enemy,True) [5,1] 0 0 0 0 [Bloodaxe,HandAxe] BossAI
+UNIT Sierra Vanguard 0 Level(6,Enemy,True) [5,1] 0 0 0 0 [SlimAxe,HandAxe] BossAI
 UNIT Incendivis LanceCav 0 Level(3,Enemy,True) [4,2] 0 0 0 0 [IronLance] ChargeAI
 UNIT Incendivis AxeCav 0 Level(3,Enemy,True) [6,2] 0 0 0 0 [IronAxe] ChargeAI
 
@@ -277,6 +325,7 @@ GiveItem(Rescue,0xFFFF)
 NoFade
 ENDA
 
+/*
 WingclipperTavern:
 SetBackground(HouseBG)
 Text(A2Village)
@@ -284,6 +333,7 @@ EraseBackground
 GiveItem(Wingclipper,0xFFFF)
 NoFade
 ENDA
+*/
 
 EndingScene:
 SetBackground(Town_Day)

@@ -161,9 +161,8 @@ SOUN 0x02D7
 STAL 40
 LoadCutsceneUnits(IntroUnits)
 EraseBackground
-FADU 16
 CAMERA_CENTERED [5,8]
-Music(CastawayHeartID)
+Music(SwabbieTalkID)
 STAL 40
 MOVE 5 Lua [2,8]
 MOVE 5 Pilar [1,9]
@@ -174,23 +173,26 @@ ENUN
 STAL 30
 SetBackground(Harbor)
 Text(B2a_OnDocks_1)
+FadeOutMusic
 EraseBackground
+Music(CastawayHeartID)
 LoadCutsceneUnits(IntroRazvan)
 MOVE 5 Razvan [1,8]
 ENUN
 CameraCursor(Razvan)
 SetBackground(Harbor)
 Text(B2a_OnDocks_2)
-
+FADI 16
 //Cut to Lua and Magdalena walking
 CLEA 0
 CLEN 0
 CLEE 0
-FADI 16
 LoadCutsceneUnits(MainCastTrio)
+/*
 CUSN Desiderio
-CUSN Pilar
+CUSN Pilar 			//fine if they're blue
 CUSN Razvan
+*/
 LOAD1 1 VillagerGroup
 LOAD1 1 Units1
 ENUN
@@ -200,7 +202,7 @@ SetUnitItemDurability(9, 23, 2, LuckTonic)
 ENUT LuaInAHubFlag
 CAMERA_CENTERED [9,20]
 EraseBackground
-FADU 16
+//FADU 16
 MUSC LetterOpenerID
 ASMC MakeMusicAhoyASMC
 //Lua and Magdalena walk down
@@ -275,7 +277,7 @@ ENDA
 B2a_Hedge:
 CenterTextbox(B2a_TalkToHedge)
 RemoveTrapAtCoords(10,10)
-GiveItem(Peshkatz,0xFFFF)
+GiveItem(Heartpiercer,0xFFFF)
 NoFade
 ENDA
 
@@ -346,9 +348,6 @@ ENDA
 
 
 EndingScene:
-CUSA Desiderio
-CUSA Pilar
-CUSA Razvan
 FADI 16
 ENUF LuaInAHubFlag
 CLEA 0

@@ -329,13 +329,40 @@ POP
 
 PUSH
 ORG $87132
-BYTE 40
+BYTE 45
 ORG $87142
-BYTE 40
+BYTE 45
 ORG $870fe
-BYTE 40
+BYTE 45
 ORG $87102
-BYTE 40
+BYTE 45
 ORG $87154
-BYTE 40
+BYTE 45
+POP
+
+// getting rid of weird gold hardcoded stuff by isolating it to two item only
+
+PUSH
+ORG $115AA
+BYTE 0x9F
+ORG $115AE
+BYTE 0xA0
+ORG $115B6
+BYTE 0x9F
+ORG $115B2
+BYTE 0xA0
+ORG $324DA
+BYTE 0x9F
+ORG $324D2
+BYTE 0xA0
+ORG $324CE
+BYTE 0x9F
+ORG $324D6
+BYTE 0xA0
+POP
+
+// hopefully getting rid of got a, an, some
+PUSH
+ORG $1619C
+BYTE 0x04 0xE1
 POP

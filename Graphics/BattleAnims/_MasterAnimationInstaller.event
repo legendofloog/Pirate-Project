@@ -391,3 +391,9 @@
     #include "Animations/Rogue_F/Knife Installer.event"
     #include "Animations/Rogue_F/Unarmed Installer.event"
 }
+
+{
+    #include "Animations/Barbarian/Axe Installer.event"
+    #include "Animations/Barbarian/Handaxe Installer.event"
+    #include "Animations/Barbarian/Unarmed Installer.event"
+}

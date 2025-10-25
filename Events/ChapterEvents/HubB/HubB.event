@@ -424,7 +424,7 @@ UNIT Woodsman Hunter 0 Level(10,NPC,False) [7,35] 0 0 0 0 [0x0] BossAI
 UNIT
 
 PassarolaUnitGroup:
-UNIT Passarola Adventurer 0 Level(15,NPC,True) [3,28] 0 0 0 0 [Rescue, MiniBow, Vulnerary] BossAI
+UNIT Passarola Adventurer 0 Level(15,NPC,True) [3,28] 0 0 0 0 [AssistStaff, Rewarp, MiniBow] BossAI
 UNIT 
 
 SpawnInHubBQuests:

@@ -30,8 +30,7 @@ TurnEventPlayer(0, B3FirstTurnEvent, 1)
 TurnEventPlayer(0, B3KaiIntroductionEvent, 3)
 TurnEventPlayer(0, MoreThievesShowUp, 3)
 TurnEventPlayer(0, B3KaiFleesEvent, 4)
-TurnEventPlayer(0, YetAnotherThiefShowsUp, 7)
-TurnEventPlayer(0, B3AzaharWarnsThatSheWillLeave, 10)
+TurnEventPlayer(0, B3AzaharWarnsThatSheWillLeave, 9)
 TurnEventEnemy(0, B3AzaharLeaves, 10)
 END_MAIN
 
@@ -42,11 +41,11 @@ NoFade
 ENDA
 
 TopThief:
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [21,1] 0 0 0 0 [SteelKnife, ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [21,1] 0 0 0 0 [ChestKey] ThieveryAI
 UNIT
 
 BotThief:
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [19,17] 0 0 0 0 [SteelKnife, ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [19,17] 0 0 0 0 [ChestKey] ThieveryAI
 UNIT
 
 B3FirstTurnEvent:
@@ -79,19 +78,9 @@ LABEL 776
 NoFade
 ENDA
 
-YetAnotherThiefShowsUp:
-SpawnReinforcements(FinalThief)
-NoFade
-ENDA
-
-FinalThief:
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [30,17] 0 0 0 0 [SilverKnife, SuppliesItem] EscapeOnlyAI
-UNIT
-
 B3AzaharWarnsThatSheWillLeave:
 CameraCursor(Azahar)
 Text(B3AzaharWarningText)
-LABEL 776
 NoFade
 ENDA
 
@@ -116,6 +105,7 @@ CharacterEventBothWays(LeandraErnestTalkFlag, LeandraErnestTalkEvent, Leandra, E
 END_MAIN
 
 KaiPilarTalkEvent:
+MUSC NewHandsOnDeckID
 Text(B3KaiPilarTalk)
 CUSA Kai
 SetAI(Kai,0,0,0,0)
@@ -123,6 +113,7 @@ NoFade
 ENDA
 
 KaiLuaTalkEvent:
+MUSC NewHandsOnDeckID
 Text(B3KaiLuaTalk)
 CUSA Kai
 SetAI(Kai,0,0,0,0)
@@ -193,12 +184,12 @@ UNIT Desiderio 0 0 Level(10,Ally,False) [6,2] 0 0 0 0 [Cutlass, IronSword, IronM
 UNIT
 
 NewUnits:
-UNIT Ernest Gryphoknight 0 Level(10,Ally,True) [10,12] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
+UNIT Ernest Gryphoknight 0 Level(11,Ally,True) [10,12] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
 UNIT
 
 EnemyUnits:
 //end battle
-UNIT Azahar Champion 0 Level(13, Enemy, True) [28,1] 0 0 0 0 [Spear, SilverSword] BossAI
+UNIT Azahar Champion_F 0 Level(12, Enemy, True) [28,1] 0 0 0 0 [Spear, SilverSword] BossAI
 
 UNIT Rebel Hero 0 Level(11,Enemy,True) [30,3] 0 0 0 0 [Peacekeeper, HandAxe] GroupOneAI
 UNIT Rebel Mercenary 0 Level(10,Enemy,True) [29,2] 0 0 0 0 [SteelBlade] GroupOneAI
@@ -215,7 +206,7 @@ UNIT Rebel Archer 0 Level(10,Enemy,True) [23,1] 0 0 0 0 [Longbow] AttackInRangeA
 UNIT Rebel Archer 0 Level(10,Enemy,True) [26,3] 0 0 0 0 [Longbow] AttackInRangeAI
 
 //kai group (turn 2-3)
-UNIT Kai Ninja 0 Level(6,Enemy,True) [17,0] 0 0 0 0 [IronKnife, RuneDagger] BossAI
+UNIT Kai Ninja 0 Level(6,Enemy,True) [17,0] 0 0 0 0 [IronKnife, RuneDagger, Vulnerary] BossAI
 UNIT Rebel Rogue 0 Level(11,Enemy,True) [18,1] 0 0 0 0 [Stiletto, SteelKnife] BossAI
 UNIT Rebel Thief 0 Level(11,Enemy,True) [19,0] 0 0 0 0 [SteelKnife] BossAI
 
@@ -227,10 +218,10 @@ UNIT Rebel Deserter 0 Level(10,Enemy,True) [4,12] 0 0 0 0 [SteelLance] PursueWit
 UNIT Rebel Mercenary 0 Level(10,Enemy,True) [8,4] 0 0 0 0 [SteelSword] PursueWithoutHeedAI
 
 //fleeing thieves
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [7,8] 0 0 0 0 [IronKnife, SuppliesItem] EscapeOnlyAI
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [16,7] 0 0 0 0 [IronKnife, ChestKey] ThieveryAI
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [11,0] 0 0 0 0 [IronKnife, SuppliesItem] EscapeOnlyAI
-UNIT RebelThief Thief 0 Level(10,Enemy,True) [12,16] 0 0 0 0 [IronKnife, SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [7,8] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [16,7] 0 0 0 0 [ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [11,0] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(5,Enemy,True) [12,16] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
 
 //turn 2
 UNIT Rebel Deserter 0 Level(10,Enemy,True) [17,5] 0 0 0 0 [SteelLance] AttackInTwoAI
@@ -263,7 +254,7 @@ UNIT Desiderio 0 0 Level(4,Ally,True) [9,13] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 IntroCutsceneErnieSwoopingIn:
-UNIT Ernest Gryphoknight 0 Level(10,NPC,True) [9,2] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
+UNIT Khazhak Gryphoknight 0 Level(10,NPC,True) [9,2] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
 UNIT
 
 IntroCutsceneFortNight:
@@ -283,7 +274,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [26,8] 0 0 0 0 [Cutlass, IronSword, Iron
 IntroCutsceneUnitsGathered:
 UNIT Pilar 0 0 Level(1,Ally,True) [4,4] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Razvan 0 0 Level(1,Ally,True) [5,2] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Ernest Gryphoknight 0 Level(10,NPC,True) [7,3] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
+UNIT Khazhak Gryphoknight 0 Level(11,NPC,True) [7,3] 0 0 0 0 [SilverLance, Pike, Javelin] NoAI
 UNIT
 
 IntroCutsceneLuaAndDesiderio:
@@ -344,10 +335,10 @@ Text(HubB3BeginningScene1_2)
 
 //Ernest appears, but isn't quite hostile!
 LoadCutsceneUnits(IntroCutsceneErnieSwoopingIn)
-MOVE 6 Ernest [9,7]
+MOVE 6 Khazhak [9,7]
 MUSC StillZephyrsID
 ENUN
-FlashCursor(Ernest, 60)
+FlashCursor(Khazhak, 60)
 Text(HubB3BeginningScene1_3A)
 
 //Others move up.
@@ -355,7 +346,7 @@ Text(HubB3BeginningScene1_3A)
 MOVE 6 Pilar [10,1]
 MOVE 6 Razvan [9,1]
 MOVE 6 Desiderio [9,0]
-MOVE 6 Ernest [10,0]
+MOVE 6 Khazhak [10,0]
 ENUN
 STAL 30
 FlashCursor(Lua, 60)
@@ -453,6 +444,7 @@ CAMERA_CENTERED [0,0]
 CLEN 0
 LoadCutsceneUnits(IntroCutsceneUnitsGathered)
 LoadEnemies(EnemyUnits)
+ENUN
 FADU 3
 STAL 50
 LoadCutsceneUnits(IntroCutsceneLuaAndDesiderio)
@@ -466,92 +458,144 @@ MUSC FinInTheCloudsID
 Text(HubB3BeginningScene3_2)
 EraseBackground
 STAL 10
-CUSA Ernest
+CUSA Khazhak
 STAL 40
 FADI 10
-CLEA 0
+REMOVEUNIT Khazhak
+STAL 5
+RemoveAll
 LoadPlayerUnits(NewUnits)
+LoadEnemies(EnemyUnits)
 GotoPrepScreen
 NoFade 
 ENDA
 
 EndingScene:
-FADI 10
+FADI 15
 RemoveAll //remove all the units
+RemoveTrapAtCoords(28,0)
+LoadCutsceneUnits(EndingCutsceneGuys)
+ENUN 
+CAMERA_CENTERED Azahar
+SVAL s1 1
+SET_HP Azahar
 STAL 30
-SetBackground(0xA) //inner castle area
+FADU 15
+FlashCursor(Azahar, 30)
 MUSC SwabbieTalkID
-Text(B3EndingScene1) //inital interrogation
 CHECK_ALIVE Ernest
 BEQ 776 s0 sC //if ernest is dead, skip the rest
     CHECK_EVENTID RebelThiefDeathQuoteFlag
     BNE 777 s0 sC
-        Text(B3EndingScene2ThievesSpared) //if the flag is not set, the thieves were spared
+        TEXTSTART
+        TEXTSHOW B3EndingScene2ThievesSpared
+        TEXTEND
+        MOVE 15 Azahar [28,0]
+        ENUN
+        REMOVEUNIT Azahar
+        TEXTCONT
+        TEXTEND
+        REMA
         GiveItem(Thorn, Desiderio)
         GOTO 778
     LABEL 777
-        Text(B3EndingScene2ThievesNotSpared)
+        TEXTSTART
+        TEXTSHOW B3EndingScene2ThievesNotSpared
+        TEXTEND
+        MOVE 15 Azahar [28,0]
+        ENUN
+        REMOVEUNIT Azahar
+        TEXTCONT
+        TEXTEND
+        REMA
         GOTO 778
 LABEL 776
 Text(B3EndingScene2ErnestDead_1)
-Text(B3EndingScene2ErnestDead_2)
+MOVE 15 Desiderio [30,2]
+ENUN
+StartBattle
+NormalDamage(0, 39)
+EndAttack
+SetBattleNumbers(90,30,0,80,10,0)
+FIGHT_MAP Desiderio Azahar 0x00 0x00
+STAL 30
+FlashCursor(Desiderio,30)
+TEXTSTART
+TEXTSHOW B3EndingScene2ErnestDead_2
+TEXTEND
+MOVE 15 Desiderio [28,0]
+ENUN
+HIDEUNIT Desiderio
+TEXTCONT
+TEXTEND
+REMA
 LABEL 778
 FADI 10
+SHOWUNIT Desiderio
 FadeoutMusic
 STAL 30
 SetBackground(0x8) //Boat
 CALL GiveSuppliesItemsCheck
 CHECK_ALIVE Ernest
 BEQ 781 s0 sC
-    MUSC(StillZephyrsID)
+    MUSC(CastawayHeartID)
     Text(B3EndingScene3_2_ErnestAlive)
+    FADI 15
+    STAL 60
+    SetBackground(0x8)
     Text(B3EndingScene4ErnestAlive)
     GOTO 782
 LABEL 781
-MUSC CastawayHeartID //sad music, putting this here for now
+MUSC CherishTheDeadID //sad music, putting this here for now
 Text(B3EndingScene3_2_ErnestDead)
 Text(B3EndingScene4ErnestDead)
 LABEL 782
+FADI 15
+STAL 60
 GoToHubChapter(HubB)
 NoFade
 ENDA
 
 GiveSuppliesItemsCheck:
 GetNumberOfSuppliesItemsOnHand
-SVAL s1 7
+SVAL s1 6
 BLT 1 sC s1 //if number of supplies items is less than 7, do not play all fuel thing
     Text(B3EndingScene3_1_AllFuel)
-    GiveItem(SilverAxe,Lua)
     GiveItemWithDurability(SkillScroll,KeenFighterID,Lua)
+    GiveItem(Tomahawk,Lua)
     GiveItem(Bloodletter,Lua)
     GiveItem(GlassShield,Lua)
     GOTO 5
 LABEL 1
 Text(B3EndingScene3_1_SomeFuel)
 GetNumberOfSuppliesItemsOnHand
-SVAL s1 5
+SVAL s1 4
 BLT 3 sC s1 //check sC's amount, give items accordingly
-    GiveItemWithDurability(SkillScroll,KeenFighterID,Lua)
+    GiveItem(Tomahawk,Lua)
     GiveItem(Bloodletter,Lua)
     GiveItem(GlassShield,Lua)
     GOTO 5
 LABEL 3
 GetNumberOfSuppliesItemsOnHand
-SVAL s1 3
+SVAL s1 2
 BLT 4 sC s1
     GiveItem(Bloodletter,Lua)
     GiveItem(GlassShield,Lua)
     GOTO 5
 LABEL 4
-GetNumberOfSuppliesItemsOnHand
-SVAL s1 1
-BLT 5 sC s1
-    GiveItem(GlassShield,Lua)
-    GOTO 5
+GiveItem(GlassShield,Lua) //the pity reward for 1 or 0 supplies
 LABEL 5
 RemoveAllItem(SuppliesItem)
 NoFade
 ENDA
+
+EndingCutsceneGuys:
+UNIT Lua Captain 0 Level(10,Ally,False) [27,2] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Desiderio 0 0 Level(4,Ally,True) [29,2] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Azahar Champion_F 0 Level(12, Enemy, True) [28,1] 0 0 0 0 [Spear, SilverSword] BossAI
+UNIT
+
+
 
 Dunno1: //down here because nothing here is really used
 END_MAIN

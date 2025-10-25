@@ -1644,7 +1644,7 @@ follow-up attack immediately after.[X]
 ## SD_LiquidCourage
 Liquid Courage: Once a turn, this unit[N]
 can consume an item without using[N]
-their action. +2 STR/SKL/SPD (decays).[X]
+their action. +2 Str/Dex/Spd (decays).[X]
 
 ## SD_ArmsMastery
 Arms Mastery: If this unit initiates[N]
@@ -1654,7 +1654,7 @@ the foe's, perform a followup attack.[X]
 ## SD_AstralBlessing
 Astral Blessing: At start of turn,[N]
 allies within 3 spaces randomly gain[N]
-SPD+2, SKL+3, or EVA+4 for that turn.[X]
++2 Spd, +3 Dex, or +4 Eva for 1 turn.[X]
 
 ## SD_CatchingUp
 Catching Up: If an enemy would follow[N]
@@ -1771,7 +1771,7 @@ max HP damage at the start of the turn.[X]
 ## SD_ArcaneArtifice
 Arcane Artifice: If this unit's weapon[N]
 uses MAG and the enemy's doesn't,[N]
-this unit's Avoid is doubled.[X]
+this unit's Avo is increased by 50%.[X]
 
 ## SD_Dismount
 Scouting Ahead: This unit can switch[N]
@@ -1805,7 +1805,7 @@ Potent Brew: Tonic effectiveness[N]
 is increased by +2 for this unit.[X]
 
 ## SD_Finesse
-Finesse: Unit gains Skill/2 crit.[X]
+Finesse: Unit gains Crit = Skill / 2.[X]
 
 ## SD_ReapingBlade
 Reaping Blade: On kill, unit moves[N]
@@ -1878,7 +1878,7 @@ damage equal to 25% of their max HP.[X]
 
 ## SD_Precision
 Killer's Precision: When attacking at[N]
-range, this unit's Skl is added to Crit.[X]
+range, this unit's Dex is added to Crit.[X]
 
 ## SD_Misfortune
 Lucky Misfortune: All units within 2[N]

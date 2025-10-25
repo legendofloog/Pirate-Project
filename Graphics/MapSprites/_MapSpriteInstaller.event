@@ -55,22 +55,6 @@ ORG MovingMapSpriteTable
 #incbin "VanillaMovingMapSpriteTable.dmp"
 POP
 
-StandingMapSprite(CaptainMapSprite,MapSprite16x16,CaptainSMS)
-MovingMapSprite(Captain, $1C3D7C, CaptainMMS)
-
-//StandingMapSprite(AdmiralMapSprite,MapSprite16x16,AdmiralSMS)
-//MovingMapSprite(Admiral, $1C3D7C, AdmiralMMS)
-MovingMapSprite(Admiral, $1C3D7C, CaptainMMS)
-
-
-ALIGN 4
-CaptainSMS:
-#incbin "Dmp/Trickster (M) Redone {StreetHero, blood}-stand.dmp"
-
-ALIGN 4
-CaptainMMS:
-#incbin "Dmp/Trickster (M) Redone {StreetHero, blood}-walk.dmp"
-
 StandingMapSprite(NinjaMapSprite,MapSprite16x16,NinjaSMS)
 MovingMapSprite(Ninja, $1C3D7C, NinjaMMS)
 
@@ -709,3 +693,26 @@ Rogue_FSMS:
 ALIGN 4
 Rogue_FMMS:
 #incbin "Dmp/Rogue (F) {Unknown}-walk.dmp"
+
+StandingMapSprite(BarbarianMapSprite,MapSprite16x16,BarbarianSMS)
+MovingMapSprite(Barbarian, $1C3D7C, BarbarianMMS)
+
+ALIGN 4
+BarbarianSMS:
+#incbin "Dmp/Brigand (M) Improved +Clothing {Flasuban}-stand.dmp"
+
+ALIGN 4
+BarbarianMMS:
+#incbin "Dmp/Brigand (M) Improved +Clothing {Flasuban}-walk.dmp"
+
+StandingMapSprite(CaptainMapSprite,MapSprite16x16,CaptainSMS)
+MovingMapSprite(Captain, $1C3D7C, CaptainMMS)
+MovingMapSprite(Admiral, $1C3D7C, CaptainMMS)
+
+ALIGN 4
+CaptainSMS:
+#incbin "Dmp/Rogue (F) Trickster-Valkyrie {Aruka, Kenpuhu}-stand.dmp"
+
+ALIGN 4
+CaptainMMS:
+#incbin "Dmp/Rogue (F) Trickster-Valkyrie {Aruka, Kenpuhu}-walk.dmp"

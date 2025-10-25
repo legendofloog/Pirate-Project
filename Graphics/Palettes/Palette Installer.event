@@ -288,3 +288,102 @@ IgnacioRuneshield:
 ElodiaWolfrider:
 	#incbin "./_palettes/ElodiaWolfrider.lzpal" 
 
+PonteBrigand:
+	#incbin "./_palettes/PonteBrigand.lzpal" 
+
+PonteBerserker:
+	#incbin "./_palettes/PonteBerserker.lzpal" 
+
+PonteWarMonk:
+	#incbin "./_palettes/PonteWarMonk.lzpal" 
+
+PassarolaAdventurer:
+	#incbin "./_palettes/PassarolaAdventurer.lzpal" 
+
+NeltumeCleric:
+	#incbin "./_palettes/NeltumeCleric.lzpal" 
+
+NeltumeWarMonk:
+	#incbin "./_palettes/NeltumeWarMonk.lzpal" 
+
+NeltumeAdventurer:
+	#incbin "./_palettes/NeltumeAdventurer.lzpal" 
+
+DmitrBrigand:
+	#incbin "./_palettes/DmitrBrigand.lzpal" 
+
+DmitrBerserker:
+	#incbin "./_palettes/DmitrBerserker.lzpal" 
+
+DmitrWarMonk:
+	#incbin "./_palettes/DmitrWarMonk.lzpal" 
+
+MagdalenaSage:
+	#incbin "./_palettes/MagdalenaSage.lzpal" 
+
+AvocadoDeserter:
+	#incbin "./_palettes/AvocadoDeserter.lzpal" 
+
+AvocadoChampion:
+	#incbin "./_palettes/AvocadoChampion.lzpal" 
+
+AvocadoWolfrider:
+	#incbin "./_palettes/AvocadoWolfrider.lzpal" 
+
+HusniyeThief:
+	#incbin "./_palettes/HusniyeThief.lzpal" 
+
+HusniyeRogue:
+	#incbin "./_palettes/HusniyeRogue.lzpal" 
+
+HusniyeWolfrider:
+	#incbin "./_palettes/HusniyeWolfrider.lzpal" 
+
+KaiNinja:
+	#incbin "./_palettes/KaiNinja.lzpal" 
+
+KaiMasterNinja:
+	#incbin "./_palettes/KaiMasterNinja.lzpal" 
+
+KaiTrickster:
+	#incbin "./_palettes/KaiTrickster.lzpal" 
+
+ErnestGryphoknight:
+	#incbin "./_palettes/ErnestGryphoknight.lzpal" 
+
+AdrianFighter:
+	#incbin "./_palettes/AdrianFighter.lzpal" 
+
+AdrianWarrior:
+	#incbin "./_palettes/AdrianWarrior.lzpal" 
+
+AdrianMarshall:
+	#incbin "./_palettes/AdrianMarshall.lzpal" 
+
+LexaMyrmidon:
+	#incbin "./_palettes/LexaMyrmidon.lzpal" 
+
+LexaSwordmaster:
+	#incbin "./_palettes/LexaSwordmaster.lzpal" 
+
+LexaSlayer:
+	#incbin "./_palettes/LexaSlayer.lzpal" 
+
+NoahWarden:
+	#incbin "./_palettes/NoahWarden.lzpal" 
+
+NoahGeneral:
+	#incbin "./_palettes/NoahGeneral.lzpal" 
+
+NoahBaron:
+	#incbin "./_palettes/NoahBaron.lzpal" 
+
+FataConjuror:
+	#incbin "./_palettes/FataConjuror.lzpal" 
+
+FataSlayer:
+	#incbin "./_palettes/FataSlayer.lzpal" 
+
+FataTrickster:
+	#incbin "./_palettes/FataTrickster.lzpal" 
+

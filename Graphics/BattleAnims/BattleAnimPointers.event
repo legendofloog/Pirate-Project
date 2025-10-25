@@ -459,3 +459,10 @@ Rogue_FAnims:
 KnifeAnim(RogueFKnifeAnim)
 UnarmedAnim(RogueFUnarmedAnim)
 EndAnim
+
+ALIGN 4
+BarbarianAnims:
+AxeAnim(BarbarianAxeAnim)
+HandAxeAnim(BarbarianHandaxeAnim)
+UnarmedAnim(BarbarianUnarmedAnim)
+EndAnim

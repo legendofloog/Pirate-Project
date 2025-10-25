@@ -99,7 +99,7 @@ Eff. vs. horses and fliers.[X]
 Sidepierce[X]
 
 ## SidepierceDesc
-User can move again with remaining Mov.[X]
+User can move 2 tiles after attack.[X]
 
 ## PitchforkName
 Pitchfork[X]
@@ -300,6 +300,9 @@ Bloodletter[X]
 ## StilettoName
 Stiletto[X]
 
+## StilettoDesc
+Effective vs. mages.[X]
+
 ## ArcaneKnifeName
 Arcane Knife[X]
 
@@ -387,12 +390,13 @@ for 1 turn. +1 WEXP.[X]
 Assist[X]
 
 ## AssistStaffDesc
-Heal an ally for (Mag+5) HP and grant[N]
+Heal an ally for (Mag+10) HP and grant[N]
 them +30 hit for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffUseDesc
-Heals for Mag+10 HP and[N]
-gives +30 Hit for 1 turn.[X]
+Heals for Mag+10 HP[N]
+and gives +30 Hit[N]
+for 1 turn.[X]
 
 ## AssistStaffBottomText
 Select an ally to heal and buff.[X]

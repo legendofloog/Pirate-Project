@@ -164,6 +164,7 @@
 
 //CLASS CARDS
 //Lua's classes (Captain, Admiral) don't matter
+#define BarbarianClassCard 0x8B
 #define WardenClassCard 0xBE
 #define Thief_FClassCard 0xBF
 #define Rogue_FClassCard 0xC0

@@ -42,8 +42,8 @@
 
 #define GotoHubChapterIfYes(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; FADI 15; CALL ShowAllPlayers; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
 #define GotoHubChapterIfYes(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; FADI 15; CALL ShowAllPlayers; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
-#define GotoHubChapterIfYesHubB(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
-#define GotoHubChapterIfYesHubB(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
+#define GotoHubChapterIfYesHubB(labelId, chapterId, dialogue) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; Text(dialogue); ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SendAll(Liberator); REMOVEUNIT Liberator; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
+#define GotoHubChapterIfYesHubB(labelId, chapterId) "SVAL s1 0x1; BNE labelId s1 sC; EVBIT_MODIFY 0; ENUF LuaInAHubFlag; ASMC EyeForAnEyeResetASMC; SendAll(Liberator); REMOVEUNIT Liberator; SHOWUNIT Lua; MNC2 chapterId; NoFade; ENDB; LABEL labelId"
 
 #define ShowUnitIfAlive(charId) "SHOWUNIT charId"
 

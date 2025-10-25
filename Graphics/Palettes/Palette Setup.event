@@ -383,3 +383,135 @@
 // ElodiaWolfrider
 	setPalette(95,ElodiaWolfrider)
 	setCBSP(95,Elodia, 1, Wolfrider)
+
+// PonteBrigand
+	setPalette(96,PonteBrigand)
+	setCBSP(96,Ponte, 1, Gunner)
+
+// PonteBerserker
+	setPalette(97,PonteBerserker)
+	setCBSP(97,Ponte, 2, Gunner)
+
+// PonteWarMonk
+	setPalette(98,PonteWarMonk)
+	setCBSP(98,Ponte, 3, Gunner)
+
+// PassarolaAdventurer
+	setPalette(99,PassarolaAdventurer)
+	setCBSP(99,Passarola, 1, Adventurer_F)
+
+// NeltumeCleric
+	setPalette(100,NeltumeCleric)
+	setCBSP(100,Neltume, 1, Gunner)
+
+// NeltumeWarMonk
+	setPalette(101,NeltumeWarMonk)
+	setCBSP(101,Neltume, 2, Gunner)
+
+// NeltumeAdventurer
+	setPalette(102,NeltumeAdventurer)
+	setCBSP(102,Neltume, 3, Gunner)
+
+// DmitrBrigand
+	setPalette(103,DmitrBrigand)
+	setCBSP(103,Dmitr, 1, Brigand)
+
+// DmitrBerserker
+	setPalette(104,DmitrBerserker)
+	setCBSP(104,Dmitr, 2, Berserker)
+
+// DmitrWarMonk
+	setPalette(105,DmitrWarMonk)
+	setCBSP(105,Dmitr, 3, WarMonk)
+
+// MagdalenaSage
+	setPalette(106,MagdalenaSage)
+	setCBSP(106,Magdalena, 1, Gunner)
+
+// AvocadoDeserter
+	setPalette(107,AvocadoDeserter)
+	setCBSP(107,Avocado, 1, Gunner)
+
+// AvocadoChampion
+	setPalette(108,AvocadoChampion)
+	setCBSP(108,Avocado, 2, Gunner)
+
+// AvocadoWolfrider
+	setPalette(109,AvocadoWolfrider)
+	setCBSP(109,Avocado, 3, Gunner)
+
+// HusniyeThief
+	setPalette(110,HusniyeThief)
+	setCBSP(110,Husniye, 1, Gunner)
+
+// HusniyeRogue
+	setPalette(111,HusniyeRogue)
+	setCBSP(111,Husniye, 2, Gunner)
+
+// HusniyeWolfrider
+	setPalette(112,HusniyeWolfrider)
+	setCBSP(112,Husniye, 3, Gunner)
+
+// KaiNinja
+	setPalette(113,KaiNinja)
+	setCBSP(113,Kai, 1, Gunner)
+
+// KaiMasterNinja
+	setPalette(114,KaiMasterNinja)
+	setCBSP(114,Kai, 2, Gunner)
+
+// KaiTrickster
+	setPalette(115,KaiTrickster)
+	setCBSP(115,Kai, 3, Gunner)
+
+// ErnestGryphoknight
+	setPalette(116,ErnestGryphoknight)
+	setCBSP(116,Ernest, 1, Gunner)
+
+// AdrianFighter
+	setPalette(117,AdrianFighter)
+	setCBSP(117,Adrian, 1, Fighter)
+
+// AdrianWarrior
+	setPalette(118,AdrianWarrior)
+	setCBSP(118,Adrian, 2, Warrior)
+
+// AdrianMarshall
+	setPalette(119,AdrianMarshall)
+	setCBSP(119,Adrian, 3, Marshall)
+
+// LexaMyrmidon
+	setPalette(120,LexaMyrmidon)
+	setCBSP(120,Lexa, 1, Myrmidon_F)
+
+// LexaSwordmaster
+	setPalette(121,LexaSwordmaster)
+	setCBSP(121,Lexa, 2, Swordmaster_F)
+
+// LexaSlayer
+	setPalette(122,LexaSlayer)
+	setCBSP(122,Lexa, 3, Slayer_F)
+
+// NoahWarden
+	setPalette(123,NoahWarden)
+	setCBSP(123,Noah, 1, Warden)
+
+// NoahGeneral
+	setPalette(124,NoahGeneral)
+	setCBSP(124,Noah, 2, General)
+
+// NoahBaron
+	setPalette(125,NoahBaron)
+	setCBSP(125,Noah, 3, Runeshield)
+
+// FataConjuror
+	setPalette(126,FataConjuror)
+	setCBSP(126,Fata, 1, Conjuror_F)
+
+// FataSlayer
+	setPalette(127,FataSlayer)
+	setCBSP(127,Fata, 2, Slayer_F)
+
+// FataTrickster
+	setPalette(128,FataTrickster)
+	setCBSP(128,Fata, 3, Trickster_F)

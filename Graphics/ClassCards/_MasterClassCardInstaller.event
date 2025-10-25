@@ -491,3 +491,11 @@ ALIGN 4
 Rogue_FClassCardPal:
 #incbin "Dmp/Rogue (F) {L95}.png_pal.dmp"
 setCardEntry(Rogue_FClassCard, Rogue_FClassCardData, Rogue_FClassCardPal)
+
+ALIGN 4
+BarbarianClassCardData:
+#incbin "Dmp/Brigand (M) Clothed {Flasuban}.dmp"
+ALIGN 4
+BarbarianClassCardPal:
+#incbin "Dmp/Brigand (M) Clothed {Flasuban}.png_pal.dmp"
+setCardEntry(BarbarianClassCard, BarbarianClassCardData, BarbarianClassCardPal)

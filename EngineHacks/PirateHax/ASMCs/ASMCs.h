@@ -128,3 +128,28 @@ struct PlaySt { // Chapter Data Struct
 } BITPACKED;
 
 extern struct PlaySt gPlaySt; //! FE8U = (0x202BCF0)
+
+extern void UnsetBit(u32* address, u8 bitOffset);
+extern u32* GetUnitDebuffEntry(struct Unit* unit);
+
+extern int BreakBitOffset_Link;
+extern int BreakInBattleBitOffset_Link;
+extern int AstralBlessingSklOffset_Link;
+extern int AstralBlessingSpdOffset_Link;
+extern int AstralBlessingLckOffset_Link;
+extern int LiquidCourageBitOffset_Link;
+extern int StudiousBlowBitOffset_Link;
+extern int HardworkingBitOffset_Link;
+extern int FortuneStaffBitOffset_Link;
+extern int MiraclemakerBitOffset_Link;
+extern int NailedDownBitOffset_Link;
+extern int DelegationBitOffset_Link;
+extern int SwiftBitOffset_Link;
+extern int PollenateBitOffset_Link;
+extern int NoMoveBitOffset_Link;
+extern int RushStaffBitOffset_Link;
+extern int DoubleFalconBitOffset_Link;
+extern int ProtectStaffBitOffset_Link;
+extern int ConcentrateStaffBitOffset_Link;
+
+extern void ClearAllChapterKillCounters();

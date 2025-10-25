@@ -408,7 +408,7 @@ Traits: None[X]
 Admiral[X]
 
 ## AdmiralDesc
-Weapons: Sword, Gun[N]
+Weapons: Sword, Gun, Staff[N]
 Traits: Steal, Locktouch[X]
 
 ## SpellswordName
@@ -417,3 +417,6 @@ Spellsword[X]
 ## SpellswordDesc
 Weapons: Swords, Tomes, Staves[N]
 Traits: Steal, Locktouch[X]
+
+## BarbarianName
+Brute[X]

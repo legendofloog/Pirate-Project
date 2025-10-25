@@ -66,11 +66,11 @@ UNIT
 // group 2: top hallway guards
 
 B2Yadney:
-UNIT Yadney GriffinRider Cruz Level(15,Enemy,True) [16,12] 0 0 0 0 [ShortSpear,KillerLance] GroupOneAI
+UNIT Yadney GriffinRider Cruz Level(15,Enemy,True) [16,12] 0 0 0 0 [Spear,KillerLance] GroupOneAI
 UNIT
 
 B2Baddies:
-UNIT Cruz Shaman CruzFake Level(11,Enemy,True) [5,9] 0 0 0 0 [Sagittae, Elfire, Vulnerary] NeverMoveAI
+UNIT Cruz Shaman CruzFake Level(13,Enemy,True) [5,9] 0 0 0 0 [Sagittae, Elfire, Vulnerary] NeverMoveAI
 UNIT Rebel Thief 0 Level(B2Level,Enemy,True) [9,17] 0 0 0 0 [SteelKnife, DoorKey, DoorKey, DoorKey] ThiefAI
 UNIT Rebel Thief 0 Level(B2Level,Enemy,True) [8,8] 0 0 0 0 [SteelDagger, DoorKey, DoorKey, DoorKey] ThiefAI
 
@@ -96,7 +96,7 @@ UNIT Rebel Fighter Cruz Level(B2Level, Enemy, True) [9,12] 0 0 0 0 [Hammer,Crush
 UNIT Rebel Curate Cruz Level(B2Level,Enemy,True) [9,11] 0 0 0 0 [Physic] [0xE,0x3,0x0,0x20]
 // BL room
 UNIT Rebel Deserter Cruz Level(B2Level, Enemy, True) [12,20] 0 0 0 0 [IronLance] ChargeAI
-UNIT Rebel Fighter Cruz Level(B2Level, Enemy, True) [13,21] 0 0 0 0 [IronAxe] ChargeAI
+//UNIT Rebel Fighter Cruz Level(B2Level, Enemy, True) [13,21] 0 0 0 0 [IronAxe] ChargeAI
 
 // turn 5
 // TL room
@@ -144,7 +144,7 @@ UNIT Avocado 0 0 Level(12,Ally,True) [23,12] 0 0 0 0 [SteelLance,Javelin] NoAI
 UNIT
 
 MagdalenaSquad:
-UNIT Magdalena 0 0 Level(15,Ally,True) [23,12] 0 0 0 0 [Thunder,Physic,TakeAim] NoAI
+UNIT Magdalena 0 0 Level(15,Ally,True) [23,12] 0 0 0 0 [Arcfire,Physic,Heal] NoAI
 UNIT
 
 // fadi: to black
@@ -153,7 +153,6 @@ UNIT
 BeginningScene:
 SetBackground(Ship)
 MUSC AvastMeHeartiesID
-FADU 16
 FlagIsSet(CruzAccused, 0xABD)
 	Text(B2_SuppliesAreGone)
 	GOTO 0xABE
@@ -222,7 +221,6 @@ NoFade
 ENDA
 
 NewUnitsBlue:
-FADU 16
 FlagIsSet(HusniyeAccused, 0x11)
 	CameraCursor(Avocado)
 	Text(B2_AvocadoAnim)
@@ -268,24 +266,24 @@ FADI 16
 // put the rest of the outro here! with conditionals and stuff
 
 FlagIsSet(CruzAccused, 0x1A1)
-	MUSC StillZephyrsID
+	//MUSC StillZephyrsID
 	SetBackground(Inn)
 	Text(B2_Outro_Romance)
 	FADI 10
 	STAL 30
 	FADU 10
-	MUSC WelcomeAboardMateyID
+	//xMUSC WelcomeAboardMateyID
 	Text(B2_Outro_MagdalenaPermanent)
 LABEL 0x1A1
 
 FlagIsSet(AvocadoAccused, 0x2B2)
-	Music(CastawayHeartID)
+	Music(CherishTheDeadID)
 	SetBackground(Inn)
 	Text(B2_Outro_Aftermath_Avocado)
 	FADI 15
 	STAL 30
 	SetBackground(Harbor)
-	Music(CherishTheDeadID)
+	//Music(CherishTheDeadID)
 	Text(B2_Outro_RazvanSad)
 	
 	FADI 15
@@ -297,13 +295,13 @@ FlagIsSet(AvocadoAccused, 0x2B2)
 LABEL 0x2B2
 
 FlagIsSet(HusniyeAccused, 0x3C3)
-	Music(CastawayHeartID)
+	Music(CherishTheDeadID)
 	SetBackground(Inn)
 	Text(B2_Outro_Aftermath_Husniye)
 	FADI 15
 	STAL 30
 	SetBackground(Harbor)
-	Music(CherishTheDeadID)
+	//Music(CherishTheDeadID)
 	Text(B2_Outro_RazvanSad)
 	FADI 15
 	STAL 30

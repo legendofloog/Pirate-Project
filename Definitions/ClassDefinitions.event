@@ -21,6 +21,7 @@
 //#define Fighter 0x3f
 #define Fighter_F 0x96
 //#define Brigand 0x41
+#define Barbarian 0x41
 
 //#define Archer 0x19
 //#define Archer_F 0x1a
@@ -114,7 +115,9 @@
 #define Warlock_F Shaman_F
 
 //#define Monk
+#define Conjuror Monk
 #define Monk_F 0x99
+#define Conjuror_F Monk_F
 
 //#define Priest 0x45
 //#define Cleric 0x4a
@@ -164,6 +167,7 @@
 
 
 //STANDING MAP SPRITES
+#define BarbarianMapSprite 0x33
 #define CataphractMapSprite 0x2b
 #define CaptainMapSprite 0x6b 
 #define NinjaMapSprite 0x6c

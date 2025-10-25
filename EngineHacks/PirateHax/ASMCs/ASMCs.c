@@ -243,3 +243,44 @@ void SetDifficultyASMC(){
             }
     }
 }
+
+void UnsetBattleUnitDebuffBits(struct Unit* unit)
+{
+    u32* unitDebuffs = GetUnitDebuffEntry(unit);
+    UnsetBit(unitDebuffs, BreakBitOffset_Link);
+    UnsetBit(unitDebuffs, BreakInBattleBitOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingSklOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingSpdOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingLckOffset_Link);
+    UnsetBit(unitDebuffs, LiquidCourageBitOffset_Link);
+    ClearAllChapterKillCounters(); //hardworking's thing
+    UnsetBit(unitDebuffs, FortuneStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, MiraclemakerBitOffset_Link);
+    UnsetBit(unitDebuffs, NailedDownBitOffset_Link);
+    UnsetBit(unitDebuffs, DelegationBitOffset_Link);
+    UnsetBit(unitDebuffs, SwiftBitOffset_Link);
+    UnsetBit(unitDebuffs, PollenateBitOffset_Link);
+    UnsetBit(unitDebuffs, NoMoveBitOffset_Link);
+    UnsetBit(unitDebuffs, RushStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, DoubleFalconBitOffset_Link);
+    UnsetBit(unitDebuffs, ProtectStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, ConcentrateStaffBitOffset_Link);
+}
+
+void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()
+{
+	int unitID = 0;
+	int maxCount = FACTION_PURPLE; //we want to loop through blue/red/green and clear all these bits on preps
+	
+	
+	while (unitID < maxCount) {
+		//get the unit unitID
+		struct Unit* curUnit = GetUnit(unitID);
+		
+		//clear Fortune bit
+		UnsetBattleUnitDebuffBits(curUnit);
+		
+		unitID++;
+	}	
+}
+

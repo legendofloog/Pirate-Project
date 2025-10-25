@@ -113,15 +113,15 @@ Vendor(HubBArmory2,27,23)
 END_MAIN
 
 ALIGN 4
-HubBVendor: //non basic tomes and staves, along with a couple items: 10 items
-SHLI Surge Elfire Luna Thunder Mend Barrier Unlock TakeAim GlassShield PureWater 
+HubBVendor: //5 of each non basic tomes and staves and a couple items: 12 items
+SHLI Surge Elfire Luna Thani Arcfire TakeAim Mend Barrier Silence Physic GlassShield PureWater
 
 ALIGN 4
-HubBArmory1: //steel and 1 range: 12 items
-SHLI SteelSword LightBrand SteelLance Javelin SteelAxe HandAxe SteelBow MiniBow SteelKnife SteelDagger SteelMusket Blunderbuss
+HubBArmory1: //1/1-2 range, steels, and silvers: 15 items
+SHLI LightBrand SteelSword SilverSword Javelin SteelLance SilverLance HandAxe SteelAxe SilverAxe MiniBow SteelBow SilverBow SteelKnife SteelDagger SilverKnife SteelMusket Blunderbuss SilverMusket 
 
 ALIGN 4
-HubBArmory2: //Effectives + quirked up weapons that are not common
+HubBArmory2: //Effectives + quirked up weapons that are not common: 12 items
 SHLI Estoc Wingclipper Harpoon Horseslayer Hammer Oversize Longbow Tomereaver Stiletto RuneDagger Culverin Pistol
 ALIGN 4
 
@@ -159,7 +159,7 @@ NoFade
 ENDA
 
 NeltumeGroup:
-UNIT Neltume Priest 0 Level(10,Ally,True) [0,0] 0 0 0 0 [Barrier, Heal] NoAI
+UNIT Neltume Priest 0 Level(10,Ally,True) [0,0] 0 0 0 0 [Sleep,Barrier, Heal] NoAI
 UNIT
 
 SwitchBackToArmada:

@@ -163,13 +163,13 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
         exp += 20;
     }
     else if (staffRank == C_WEXP){
-        exp += 24;
+        exp += 25;
     }
     else if (staffRank == B_WEXP){
-        exp += 32;
+        exp += 35;
     }
     else if (staffRank == A_WEXP){
-        exp += 44;
+        exp += 45;
     }
     else if(staffRank == S_WEXP){
         exp += 60;
@@ -181,9 +181,9 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
     //gives the base exp: then, we reduce it by their effective level? minimum of 4 exp
     exp -= GetUnitEffectiveLevel(&actor->unit);
 
-    if (exp < 4)
+    if (exp < 5)
     {
-        exp = 4;
+        exp = 5;
     }
 
 
@@ -900,10 +900,10 @@ void* GetChapterAllyUnitDefinitions(void) {
 
 int GetUnitLuckCap(Unit* unit){
     if (unit->pClassData->attributes & CA_PROMOTED){
-        return 40; //unpromo'd units get 25 cap
+        return 40; //unpromo'd units get 30 cap
     }
     else{
-        return 25;
+        return 30;
     }
 }
 

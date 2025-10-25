@@ -207,9 +207,9 @@ None,0,0
 0xCD Rausten Knight,0,0
 0xCE Rausten Knight,0,0
 0xCF -,0,0
-0xD0 - Yadney,2,0
-0xD1 - Cruz,3,0
-0xD2 - CruzFake,3,0
+0xD0 - Yadney,1,5
+0xD1 - Cruz,8,65
+0xD2 - CruzFake,8,65
 0xD3 - RecelosoPriest,0,0
 0xD4 - RecelosoCorpse,0,0
 0xD5 - RecelosoStudent,0,0
@@ -217,8 +217,8 @@ None,0,0
 0xD7 - RecelosoBarkeep,0,0
 0xD8 - B4Bandit,0,0
 0xD9 - Javier,2,20
-0xDA - Azahar,2,20
-0xDB - Nicodemus,6,15
+0xDA - Azahar,0,5
+0xDB - Nicodemus,0,5
 0xDC - Baltasar,1,5
 0xDD - Krezke,7,50
 0xDE - Salvador,0,0

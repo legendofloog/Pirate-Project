@@ -59,7 +59,7 @@ Str[X]
 Mag[X]
 
 # 0x4ec
-Skl[X]
+Dex[X]
 
 # 0x4ed
 Spd[X]
