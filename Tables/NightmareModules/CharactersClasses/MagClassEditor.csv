@@ -132,12 +132,12 @@ Ninja,2,15,30,0
 Vanguard,0,5,30,0
 Curate,10,55,30,0
 Deserter,0,5,30,0
-Hunter,4,25,30,0
+Hunter,6,35,30,0
 Gunner,0,5,30,0
 SwordCav,0,5,30,0
 AxeCav,0,5,30,0
 GriffinRider,0,5,30,0
-Hunter_F,4,35,30,0
+Hunter_F,6,35,30,0
 Champion,1,5,40,0
 Log,0,0,30,0
 Master Ninja,3,15,40,0
@@ -159,7 +159,7 @@ War Monk (F),7,30,40,0
 Halberdier,1,5,40,0
 Adventurer,10,40,40,0
 Adventurer (F),10,40,40,0
-Malig Knight,10,40,40,0
+Malig Knight,8,35,40,0
 Warrior (F),1,5,40,0
 Dragoon,1,5,40,0
 Gryphknight,1,5,40,0

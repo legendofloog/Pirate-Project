@@ -271,7 +271,7 @@ Noah2MugData:
 #incbin "Dmp/NoahCloak_frames.dmp"
 #incbin "Dmp/NoahCloak_palette.dmp"
 #incbin "Dmp/NoahCloak_minimug.dmp"
-setMugEntry(Noah2Mug, Noah2MugData, 2, 5, 3, 3)
+setMugEntry(Noah2Mug, Noah2MugData, 3, 5, 3, 3)
 
 ALIGN 16
 RedFSoldierMugData:

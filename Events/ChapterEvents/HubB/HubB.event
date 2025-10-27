@@ -376,6 +376,8 @@ AREA Flag_MidShip_ToFloor2 Travel_RightShipFloor1_ToFloor2 [29,9] [30,10]
 //Floor2 
 AREA Flag_Midship_ToFloor1 Travel_RightShipFloor2_ToFloor1 [29,9] [30,10]
 AREA Flag_Midship_ToDeck Travel_RightShipFloor2_ToDeck [33,12] [33,12]
+
+AREA DifficultyChangeFlag DifficultyChangeEvent [5,18] [5,18]
 AFEV 0 RefreshLua 0
 END_MAIN
 
@@ -488,6 +490,7 @@ RemoveTrapAtCoords(29,9)
 RemoveTrapAtCoords(29,10)
 RemoveTrapAtCoords(30,9)
 RemoveTrapAtCoords(30,10)
+RemoveTrapAtCoords(5,18)
 ENUT Flag_Midship_ToDeck
 ENUT Flag_MidShip_ToFloor2
 ENUT Flag_MidShip_ToFloor3 
@@ -498,6 +501,7 @@ ENDA
 Travel_LeftShipFloor1_ToDeck:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToFloor1
+ENUT DifficultyChangeFlag // can't set the difficulty anymore
 InitiateFloorRevertHubB_Leftship(Traps_Deck)
 NoFade
 ENDA
@@ -505,6 +509,7 @@ ENDA
 Travel_LeftShipDeck_ToFloor1:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToDeck
+ENUF DifficultyChangeFlag //we can set the difficulty here only
 InitiateFloorSwapHubB_Leftship(Traps_LeftshipFloor1, TC_LeftshipFloor1, EmptyEvent)
 NoFade
 ENDA
@@ -719,6 +724,7 @@ CHECK_EVENTID GoToNextHubFlagID
 BNE 776 s0 sC //if the flag is set, then skip over this part
     AddTrap(GreenSigilTrapID, 4, 18)
 LABEL 776
+AddTrap(PurpleSigilTrapID, 5, 18) //where we change difficulty
 // //These are unaccessible at first. 
 //AddTrap(BlueSigilTrapID, 5, 11) //These are unaccessible at first.
 //for some event, I guess? I'll comment it out for now - Loog
@@ -807,6 +813,7 @@ UNIT Ponte 0 0 Level(6,Ally,False) [5,22] 0 0 0 0 [Hammer, Hammer] NoAI
 UNIT 
 
 BeginningScene:
+ENUT DifficultyChangeFlag
 LoadPlayerUnits(NewUnits)
 WEATHER 7
 ENUT LuaInAHubFlag

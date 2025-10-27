@@ -1010,10 +1010,6 @@
 //By Sme
 #define SummonID 255
 
-//Supply: This unit has access to the convoy.
-//By Sme
-#define SupplyID 255
-
 //Shove: Allows unit to push other units one tile away.
 //By StanH
 //#define ShoveID 255

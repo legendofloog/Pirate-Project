@@ -43,8 +43,11 @@
 #include "mug_exceed/Installer.event"
 //MisakaMikoto, aera
 
-#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
+//#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
 //Aura Wolf
+
+#include "ForceDeploymentRework/Installer.event"
+//Loog
 
 #include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilbearers.event"
 //Zane

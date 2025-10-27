@@ -136,11 +136,11 @@ UNIT
 
 
 HusniyeSquad:
-UNIT Husniye 0 0 Level(10,Ally,True) [23,12] 0 0 0 0 [Bloodletter,Stiletto,TealGem] NoAI
+UNIT Husniye 0 0 Level(10,Ally,True) [23,12] 0 0 0 0 [SilverKnife,Stiletto,TealGem] NoAI
 UNIT
 
 AvocadoSquad:
-UNIT Avocado 0 0 Level(12,Ally,True) [23,12] 0 0 0 0 [SteelLance,Javelin] NoAI
+UNIT Avocado 0 0 Level(12,Ally,True) [23,12] 0 0 0 0 [SilverLance,Harpoon,IronLance] NoAI
 UNIT
 
 MagdalenaSquad:

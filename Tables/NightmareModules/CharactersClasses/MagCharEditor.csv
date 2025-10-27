@@ -14,7 +14,7 @@ None,0,0
 0x0C Leandra,3,14
 0x0D Jaime,2,30
 0x0E Leonor,6,60
-0x0F Ondeh,3,35
+0x0F Ondeh,1,35
 0x10 Biko,0,5
 0x11 Tangyuan,1,15
 0x12 Juan,0,5
@@ -121,9 +121,9 @@ None,0,0
 0x77 Docksman,1,5
 0x78 A4FunnyArcher,8,50
 0x79 Antlion,2,5
-0x7A Kiril,3,15
-0x7B Dalila,4,0
-0x7C AlonsoChapter3,9,50
+0x7A Kiril,(-2),5
+0x7B Dalila,(-7),5
+0x7C AlonsoChapter3,7,40
 0x7D BlackheartElite,0,0
 0x7E BlackheartPlus,2,5
 0x7F - Keeper,5,30
@@ -216,7 +216,7 @@ None,0,0
 0xD6 - RecelosoGuard,0,0
 0xD7 - RecelosoBarkeep,0,0
 0xD8 - B4Bandit,0,0
-0xD9 - Javier,2,20
+0xD9 - Javier,0,5
 0xDA - Azahar,0,5
 0xDB - Nicodemus,0,5
 0xDC - Baltasar,1,5

@@ -1,0 +1,45 @@
+#include "ForceDeploymentRework.lyn.event"
+
+#define ForcedDeployment(char,mode,chapter, xPos, yPos) "BYTE char mode chapter xPos yPos"
+#define ForcedDeploymentUnlockedNoMode(char,chapter) "BYTE char 0xFF chapter 0xFF 0xFF" // the most common
+#define ForcedDeploymentLockedNoMode(char,chapter, xPos, yPos) "BYTE char 0xFF chapter xPos yPos" // the other one i use a decent amount
+
+#define EndForcedDeploymentList "BYTE 0 0 0 0 0"
+
+ALIGN 4
+NewForceDeploymentList: //Vanilla list at 0x9ED64C
+ForcedDeploymentLockedNoMode(Lua,Chapter3, 21, 40) //block 1
+ForcedDeploymentLockedNoMode(Desiderio,Chapter3, 30, 1)
+ForcedDeploymentLockedNoMode(Pilar,Chapter3, 3, 2)
+ForcedDeploymentLockedNoMode(Razvan,Chapter3, 12, 42)
+
+ForcedDeploymentLockedNoMode(Lua,Chapter2, 15, 12) //block 2
+ForcedDeploymentLockedNoMode(Orlando,Chapter2, 28, 11)
+ForcedDeploymentLockedNoMode(Rahel,Chapter2, 15,10)
+
+ForcedDeployment(Lua, 0xFF, 0xFF, 0xFF, 0xFF) //forced in all chapters somewhere, needs to be above all these other guys so that she's force deployed first
+
+ForcedDeploymentUnlockedNoMode(Desiderio,HubD_1)
+ForcedDeploymentUnlockedNoMode(Pilar,HubD_2)
+ForcedDeploymentUnlockedNoMode(Razvan,HubD_3)
+
+ForcedDeploymentUnlockedNoMode(Indio,HubA_1)
+ForcedDeploymentUnlockedNoMode(Jaime,HubA_2)
+ForcedDeploymentUnlockedNoMode(Leonor,HubA_2)
+ForcedDeploymentUnlockedNoMode(Ondeh,HubA_3)
+ForcedDeploymentUnlockedNoMode(Biko,HubA_3)
+ForcedDeploymentUnlockedNoMode(Tangyuan,HubA_5)
+ForcedDeploymentUnlockedNoMode(Matteo,HubA_6)
+ForcedDeploymentUnlockedNoMode(Suzanne,HubA_6)
+
+ForcedDeploymentUnlockedNoMode(Dmitr,HubB_1)
+ForcedDeploymentUnlockedNoMode(Magdalena,HubB_2)
+ForcedDeploymentUnlockedNoMode(Avocado,HubB_2)
+ForcedDeploymentUnlockedNoMode(Husniye,HubB_2)
+ForcedDeploymentUnlockedNoMode(Ernest,HubB_3)
+
+ForcedDeploymentUnlockedNoMode(Ruby,HubC_1)
+ForcedDeploymentUnlockedNoMode(Valerie,HubC_2)
+ForcedDeploymentUnlockedNoMode(Bolton,HubC_3)
+ForcedDeploymentUnlockedNoMode(Remora,HubC_4)
+EndForcedDeploymentList

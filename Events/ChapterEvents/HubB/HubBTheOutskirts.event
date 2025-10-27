@@ -159,12 +159,13 @@ NoFade
 ENDA
 
 NeltumeGroup:
-UNIT Neltume Priest 0 Level(10,Ally,True) [0,0] 0 0 0 0 [Sleep,Barrier, Heal] NoAI
+UNIT Neltume Priest 0 Level(10,Ally,True) [0,0] 0 0 0 0 [Berserk,Barrier, Heal] NoAI
 UNIT
 
 SwitchBackToArmada:
 FADI 15
 SET_ACTIVE 0
+SendAll(Liberator)
 REMOVEUNIT Liberator
 STAL 30
 RemoveAll
