@@ -4,8 +4,6 @@ ORG FreeSpace
 //#include "_ItemArrayMacros.txt"
 //#include "_FEditorAutoPatches.event"
 
-#define SpellAssociationTable 0x8afbd8
-
 #include "Table Installer.event"
 MESSAGE CURRENTOFFSET
 #include "IERevamp_Installer.event"

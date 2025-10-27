@@ -36,9 +36,9 @@ TurnBasedEvents:
 TurnEventPlayer(0, ReinforcementWarning, 5)
 TurnEventPlayer(0, Reinforcements1, 6)
 TurnEventPlayer(0, Reinforcements2, 8)
-TurnEventPlayer(0, Reinforcements3, 10)
+TurnEventPlayer(0, Reinforcements3, 9)
 TurnEventPlayer(0, ReinforcementsAllTogetherNow, 12)
-TurnEventPlayer(0, TurnLimit, 15)
+TurnEventPlayer(0, TurnLimit, 13) //
 END_MAIN
 
 ReinforcementWarning:
@@ -142,6 +142,9 @@ UNIT Blackheart Brigand 0 Level(15,Enemy,True) [8,4] 0 0 0 0 [SteelAxe] GroupSix
 UNIT Blackheart Thief 0 Level(15,Enemy,True) [3,34] 0 0 0 0 [SteelKnife] GroupSevenAI
 UNIT TorchUnit Marksman 0 Level(16,Enemy,True) [5,35] 0 0 0 0 [SteelMusket, Pistol] GroupSevenAI
 
+UNIT Blackheart Brigand 0 Level(15,Enemy,True) [7,12] 0 0 0 0 [SteelAxe] GroupTenAI
+UNIT TorchUnit Marksman 0 Level(16,Enemy,True) [8,11] 0 0 0 0 [SilverMusket, Blunderbuss] GroupTenAI
+
 //turn 3
 UNIT Blackheart Gunner 0 Level(15,Enemy,True) [9,29] 0 0 0 0 [SteelMusket] GroupNineAI
 UNIT Blackheart Thief 0 Level(15,Enemy,True) [8,30] 0 0 0 0 [SteelKnife] GroupNineAI
@@ -172,7 +175,7 @@ UNIT TorchUnit General 0 Level(16,Enemy,True) [17,6] 0 0 0 0 [FlameSword, Pike] 
 UNIT TorchUnit Dreadnought 0 Level(16,Enemy,True) [19,14] 0 0 0 0 [SilverBow, Bloodaxe] BossAI
 UNIT TorchUnit General 0 Level(16,Enemy,True) [19,15] 0 0 0 0 [Spear, SilverSword] BossAI
 UNIT TorchUnit General 0 Level(16,Enemy,True) [14,14] 0 0 0 0 [Spear, SilverAxe] BossAI
-UNIT TorchUnit Dreadnought 0 Level(16,Enemy,True) [14,15] 0 0 0 0 [SilverAxe] BossAI
+UNIT TorchUnit Dreadnought 0 Level(16,Enemy,True) [14,15] 0 0 0 0 [SilverAxe, Pursuer] BossAI
 
 UNIT TorchUnit Baron 0 Level(16,Enemy,True) [16,22] 0 0 0 0 [Arcfire, Peacekeeper] BossAI
 UNIT TorchUnit Baron 0 Level(16,Enemy,True) [17,22] 0 0 0 0 [SilverSword, Thani] BossAI
@@ -191,8 +194,8 @@ UNIT Blackheart Shaman 0 Level(15,Enemy,True) [24,38] 0 0 0 0 [Elfire] PursueWit
 UNIT TorchUnit Halberdier 0 Level(16,Enemy,True) [28,8] 0 0 0 0 [SilverLance] GroupThreeAI
 UNIT Blackheart Shaman 0 Level(15,Enemy,True) [29,9] 0 0 0 0 [Elfire] GroupThreeAI
 
-UNIT Blackheart Deserter 0 Level(15,Enemy,True) [29,35] 0 0 0 0 [SteelLance, Javelin] GroupFiveAI
-UNIT TorchUnit Swordmaster 0 Level(16,Enemy,True) [30,36] 0 0 0 0 [SilverSword, Onigiri] GroupFiveAI
+UNIT Blackheart Deserter 0 Level(15,Enemy,True) [28,35] 0 0 0 0 [SteelLance, Javelin] GroupFiveAI
+UNIT TorchUnit Swordmaster 0 Level(16,Enemy,True) [29,36] 0 0 0 0 [SilverSword, Onigiri] GroupFiveAI
 
 //turn 3
 UNIT Blackheart Mercenary 0 Level(15,Enemy,True) [24,30] 0 0 0 0 [SteelBlade] AttackInRangeAI

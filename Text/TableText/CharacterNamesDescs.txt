@@ -690,7 +690,7 @@ Leader of a rebel raiding party.[N]
 A zealot dedicated to the cause.[X]
 
 ## TorchUnitName
-T.O.R.C.H.[X]
+TORCH[X]
 
 ## TorchUnitDesc
 Members of an elite group tasked[N]
@@ -1133,7 +1133,7 @@ Nicodemus[X]
 Maverick[X]
 
 ## NicodemusDesc
-A T.O.R.C.H. soldier with a daring plan[N]
+A TORCH soldier with a daring plan[N]
 to take down Lua and seize his glory.[X]
 
 ## DalilaName
@@ -1444,7 +1444,7 @@ Incendivis and his men above all.[X]
 
 ## D3TorchUnitDesc
 Enrique's forces who reign supreme[N]
-in T.O.R.C.H., second only to Elodia's.[X]
+in TORCH, second only to Elodia's.[X]
 
 ## D3BanditBossDesc
 A bandit hardened by the desolate[N]
@@ -1465,7 +1465,7 @@ Mage[X]
 Commander[X]
 
 ## D3TorchUnitOccupation
-T.O.R.C.H.[X]
+TORCH[X]
 
 ## D3BanditBossOccupation
 Raider Chief[X]
