@@ -33,6 +33,7 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+//TurnEventPlayer(0, EndingScene, 1)
 TurnEventPlayer(0, ReinforcementWarning, 5)
 TurnEventPlayer(0, Reinforcements1, 6)
 TurnEventPlayer(0, Reinforcements2, 8)
@@ -107,9 +108,29 @@ DurabilityChest(SkillScroll,LungeID,16,10)
 END_MAIN
 
 MiscBasedEvents:
+AFEV 25 AlonsoDefeat 2
+AFEV 26 DalilaDefeat 10
 DefeatBoss(EndingScene)
 CauseGameOverIfLordDies
 END_MAIN
+
+AlonsoDefeat:
+CHECK_EVENTID 10 //check if dalila was defeated
+BEQ 1 s0 sC
+    ENUT 3
+	CALL EndingScene
+LABEL 1
+NoFade
+ENDA
+
+DalilaDefeat:
+CHECK_EVENTID 2 //check if alonso was defeated
+BEQ 1 s0 sC
+    ENUT 3
+	CALL EndingScene
+LABEL 1
+NoFade
+ENDA
 
 Units1:
 UNIT Lua 0 0 Level(10,Ally,False) [21,40] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
@@ -218,28 +239,79 @@ Traps2:
 ENDTRAP
 ALIGN 4
 
+LuaC3Group:
+UNIT Lua 0 0 Level(10,Ally,False) [14,14] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+PilarC3Group:
+UNIT Pilar 0 0 Level(10,Ally,False) [16,23] 0 0 1 REDA14R15 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+RahelOrlandoC3Group:
+UNIT Rahel 0 0 Level(10,Ally,False) [16,23] 0 0 1 REDA15R14 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Orlando 0 0 Level(10,Ally,False) [16,23] 0 0 1 REDA15R15 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+AlonsoDalilaC3Group:
+UNIT Alonso 0 0 Level(10,Enemy,False) [17,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Dalila 0 0 Level(10,Enemy,False) [16,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+LuaSecondC3Group:
+UNIT Lua 0 0 Level(10,Ally,False) [17,37] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+RazvanPilarDesiderioC3Group:
+UNIT Razvan 0 0 Level(10,Ally,False) [12,42] 0 0 1 REDA16R37 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Desiderio 0 0 Level(10,Ally,False) [30,1] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(10,Ally,False) [3,2] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
 BeginningScene:
 UnsetAllHubChapterFlags
 ENUF LuaInAHubFlag
-SetBackground(Inn)
+LOMA HubB
+CAMERA_CENTERED [14,14]
+TILECHANGE 3 //load the below deck in the center
+LoadCutsceneUnits(LuaC3Group)
+FADU 15
+Text(Ch3BeginningScene1_1_Pre)
+LoadCutsceneUnits(PilarC3Group)
 MUSC MeetTheCrewID
 Text(Ch3BeginningScene1_1)
+FadeOutMusic
+LoadCutsceneUnits(RahelOrlandoC3Group)
 MUSC AvastMeHeartiesID
 Text(Ch3BeginningScene1_2)
+MOVE 15 Pilar [16,22]
+ENUN 
 Text(Ch3BeginningScene1_3)
 FADI 15
+FadeOutMusic
+RemoveAll
+LoadCutsceneUnits(AlonsoDalilaC3Group)
+LOMA Chapter3
+CAMERA_CENTERED [16,13]
 STAL 60
-SetBackground(Ship)
+FADU 15
+FlashCursor(Alonso,60)
+FlashCursor(Dalila,60)
 MUSC SwabbieTalkID
 Text(Ch3BeginningScene2)
-FADI 15
-STAL 60
-SetBackground(Ship)
-// scene change
-MUSC ABlackheartsPrideID
+LoadCutsceneUnits(LuaSecondC3Group)
+FadeOutMusic
+CamOn
+MOVE 15 Alonso [16,29]
+ENUN
+CAMERA_CENTERED [16,33]
+FlashCursor(Alonso,60)
+FlashCursor(Lua,60)
+MUSC ABlackheartsPrideID // scene change
 Text(Ch3BeginningScene3_1)
+CamOff
 FadeOutMusic
 FADI 15
+REMOVEALL_RED
 EARTHQUAKE 0 True
 STAL 30
 EARTHQUAKE 1 True
@@ -249,44 +321,113 @@ STAL 30
 EARTHQUAKE 1 True
 STAL 30
 EARTHQUAKE_END
-SetBackground(Ship)
-MUSC FoolsBoldID
-Text(Ch3BeginningScene3_2)
-// camera cursor razvan
-//Text(Ch3BeginningScene3_3Razvan)
-// camera cursor Pilar
-Text(Ch3BeginningScene3_3Pilar)
-// camera cursor Desiderio
-Text(Ch3BeginningScene3_3Desiderio)
-WEATHER 7
-STAL 5
-FADI 15
+TILECHANGE 3 //the one with all the bridges showing up
 LoadEnemies(LeftSideUnits)
 LoadEnemies(CenterBoatUnits)
 LoadEnemies(RightSideUnits)
+CAMERA_CENTERED Lua
+FADU 15
+LoadCutsceneUnits(RazvanPilarDesiderioC3Group)
+MUSC FoolsBoldID
+Text(Ch3BeginningScene3_2)
+CameraCursor(Pilar)
+Text(Ch3BeginningScene3_3Pilar)
+CameraCursor(Desiderio)
+Text(Ch3BeginningScene3_3Desiderio)
+
+STAL 5
+FADI 15
 GotoPrepScreen
 NoFade
 ENDA
 
+EndingScene1Group:
+UNIT Razvan 0 0 Level(10,Ally,False) [18,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Lua 0 0 Level(10,Ally,False) [17,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Pilar 0 0 Level(10,Ally,False) [15,16] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Desiderio 0 0 Level(10,Ally,False) [16,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+
+UNIT Alonso 0 0 Level(10,Enemy,False) [17,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT Dalila 0 0 Level(10,Enemy,False) [16,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+EnemyBoat:
+UNIT Alonso Fleet 0 Level(10,Enemy,False) [17,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
 
 EndingScene:
-MUSC 0x7FFF
-//prob load in dudes here
-SetBackground(Ship)
-MUSC WindAmbienceID
-Text(Ch3EndingScene1)
-// some eventing
-MUSC ABlackheartsPrideID
-Text(Ch3EndingScene2)
-// some eventing
-Text(Ch3EndingScene3)
-//some eventing
-MUSC FinInTheCloudsID
-Text(Ch3EndingScene4)
 FADI 15
 FadeOutMusic
+RemoveAll
+LoadCutsceneUnits(EndingScene1Group)
+CAMERA_CENTERED Lua
+SVAL s1 1
+SET_HP Alonso
+SET_HP Dalila
 STAL 60
+FADU 15
+MUSC WindAmbienceID
+Text(Ch3EndingScene1)
+MOVE 20 Pilar [14, 40]
+MOVE 20 Razvan [14, 41]
+ENUN
+// some eventing
+Text(Ch3EndingScene1_2)
+MUSC ABlackheartsPrideID
+TEXTSTART 
+TEXTSHOW Ch3EndingScene2
+TEXTEND
+MOVE 20 Lua [17, 14]
+MOVE 20 Desiderio [16, 14]
+ENUN
+TEXTCONT
+TEXTEND
+REMA
+
+FadeOutMusic
+TILECHANGE 4
+SOUN SnagDestructionSoundID //snag destruction sound
+REMOVEUNIT Alonso
+SOUN GuyFallingSoundID
+REMOVEUNIT Dalila
+SOUN GuyFallingSoundID
+ENUN
+FlashCursor(17,12,60)
+LoadCutsceneUnits(EnemyBoat)
+FlashCursor(Alonso,60)
+REMOVEUNIT Alonso
+SOUN PegasusFlyingSoundID
+Text(Ch3EndingScene3)
+MUSC FinInTheCloudsID
+CamOn
+MOVE 15 Lua [15, 40]
+STAL 15
+MOVE 15 Desiderio [15, 41]
+ENUN
+
+Text(Ch3EndingScene4_1)
+MOVE 10 Desiderio [18,43]
+ENUN
+HIDEUNIT Desiderio
+Text(Ch3EndingScene4_2)
+MOVE 15 Razvan [17,43]
+ENUN
+HIDEUNIT Razvan
+Text(Ch3EndingScene4_3)
+MOVE 15 Lua [17,43]
+ENUN
+HIDEUNIT Lua
+Text(Ch3EndingScene4_4)
+MOVE 15 Pilar [18,43]
+FADI 15
+FadeOutMusic
+ENUN
+SHOWUNIT Lua
+SHOWUNIT Desiderio
+SHOWUNIT Razvan
+STAL 120
 SetBackground(Inn)
+BROWNBOXTEXT C3BrownBoxStuff[8,8]
 MUSC OrlandoThemeID
 TEXTSTART
 TEXTSHOW Ch3EndingScene5
