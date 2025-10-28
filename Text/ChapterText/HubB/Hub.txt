@@ -1160,7 +1160,7 @@ Search[X]
 //an explorer by the ruins: talks about how they want to break into the temple, but are too scared with the [ENEMIES] that are infesting the place
 // if you beat B-1, then they're no longer scared, but they also curse you out for stealing the loot out from under them
 ## HubBExplorerTalkPreB1
-[MidLeft][LoadRecelosoGuard][3LB]
+[MidLeft][LoadB1Adventurer][3LB]
 Eep! Oh, you're just some pirates[Beat][N]
 I was keeping watch on the ruins, see.[AN]
 I heard that there was treasure[N]
@@ -1171,12 +1171,12 @@ You guys are just gonna steal my[N]
 score! Stay away from here, got it?![A][X]
 
 ## HubBExplorerTalkPostB1
-[MidLeft][LoadRecelosoGuard][3LB]
+[MidLeft][LoadB1Adventurer][3LB]
 Ah, hell[Beat] You got in there first?[N]
 Guess I don't have to act coy, then.[AN]
 Just a little longer, and I would've[N]
 caught those Antlions off guard.[N]
-I'd be the richest woman around![AN]
+I'd have been the richest woman around![AN]
 [Beat]Huh? There wasn't that much loot?[N]
 Ha[Beat] Ha ha ha! So I wasted my time[N]
 staking out here? Go figure, huh?[AN]
@@ -1223,7 +1223,7 @@ somewhere else. Watch for it, y'hear?[A][X]
 //a dude hanging out close to the trees, who is thrown off by Lua's crew showing up and tells them how he's on very important business, so leave him be
 //if you beat B-2, then the rebel admits that he was one of Cruz's boys, but he snuck off during the fight; promises he won't tangle with them
 ## HubBRebelTalkPreB2
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB2Rebel][3LB]
 Huh? Who the hell are you guys?[N]
 [Beat]Oh, just some pirates, then.[N]
 What am I up to out here, you ask?[AN]
@@ -1235,7 +1235,7 @@ And once I'm done with it,[N]
 everyone's gonna know my name![A][X]
 
 ## HubBRebelTalkPostB2
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB2Rebel][3LB]
 Y-Y-You guys! Hey, hold on a second,[N]
 don't shoot me! Yeah, I was one[N]
 of Cruz's boys, but not anymore.[AN]
@@ -1251,7 +1251,7 @@ pay you back! Definitely! Probably[Beat][A][X]
 
 //once you've beaten B-3, he mentions that the place's gotten barren, and then he's thinking about moving on himself
 ## HubBSkyfisherTalkPreB3
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB3Skyfisher][3LB]
 Hm[Beat] Ain't often this island gets[N]
 visitors, not anymore. I come by[N]
 on my skiff to remember the old days[Beat][AN]
@@ -1263,7 +1263,7 @@ The fish are bitin' even less[N]
 with us flappin' our gums.[A][X]
 
 ## HubBSkyfisherTalkPostB3
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB3Skyfisher][3LB]
 Hm[Beat] Thanks for takin' care of those[N]
 roughnecks. Real troublemakers, hm?[AN]
 Puttin' aside them disturbin' the peace[N]
@@ -1400,7 +1400,7 @@ trust me. You're gonna need it[Beat][A][X]
 //a brigand who used to be a member of a former gang, but he went straight and now advertises for the shopping district north of town
 //if you beat B-4, he congratulates you for beating Javier's ass and talks you up
 ## HubBPirateTalkPreB4
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB4Salesman][3LB]
 Hey, y'all look like yer on the wrong[N]
 side of the law. Need any weapons?[N]
 Why not take 'a look and buy some-[AN]
@@ -1422,7 +1422,7 @@ are tougher 'n you might think, pirates.[N]
 Don't count 'em out. You'll regret it.[AN][X]
 
 ## HubBPirateTalkPostB4
-[MidLeft][LoadPirate][3LB]
+[MidLeft][LoadB4Salesman][3LB]
 Oho! Y'all are heroes around here now,[N]
 I hear. Kicked Javier's ass, yeah?[N]
 Takes a load off my mind, gotta say.[AN]
@@ -1442,7 +1442,7 @@ fight? Never know when you'll need 'em![A][X]
 
 //a hunter who lives off the land in the south: he talks about the forest further, but mentions that it's a mystifying place, and to be careful
 ## HubBWoodsmanTalkPreB5
-[MidLeft][LoadRecelosoGuard][3LB]
+[MidLeft][LoadB5Hunter][3LB]
 Hm[Beat] Not often you see people out[N]
 in these parts. That's why I came[N]
 here. To get away from people[Beat][AN]
@@ -1451,7 +1451,7 @@ further south, you'd best be ready.[N]
 Things get strange down there[Beat][A][X]
 
 ## HubBWoodsmanTalkPostB5
-[MidLeft][LoadRecelosoGuard][3LB]
+[MidLeft][LoadB5Hunter][3LB]
 So you folks made it out alive, eh?[AN]
 That's a real shock, after seeing[N]
 you and those imperials crash down[N]

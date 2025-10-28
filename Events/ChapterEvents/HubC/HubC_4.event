@@ -80,7 +80,7 @@ LoadUnit(10,21)
 UNIT
 
 NewUnits:
-UNIT Remora Berserker 0 Level(16,Ally,True) [15,19] 0 0 0 0 [Oversize, Swordreaver, Swimwear, Swimwear] NoAI
+UNIT Remora Berserker_F 0 Level(16,Ally,True) [15,19] 0 0 0 0 [Oversize, Swordreaver, Swimwear, Swimwear] NoAI
 UNIT
 
 EnemyUnits1:

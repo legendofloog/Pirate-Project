@@ -272,6 +272,10 @@
 #define HeroHandaxeAnim 0xF
 #define HeroUnarmedAnim 0x10
 
+#define Berserker_FAxeAnim 0x166
+#define Berserker_FHandaxeAnim 0x167
+#define Berserker_FUnarmedAnim 0x168
+
 //replaces brigand pointer
 
 #define BarbarianAxeAnim 0x20

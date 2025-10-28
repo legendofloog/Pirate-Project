@@ -138,6 +138,9 @@
 #define SalmanMug 0xB0
 #define BoruMug 0xB1
 
+// C-4 Placeholder
+#define RemoraMug 0xFC
+
 // Hub D Stuff
 #define KaisaMug KhazhakMug
 #define AristidesMug KhazhakMug
@@ -226,6 +229,7 @@
 #define WarlockClassCard 0xF8
 #define ClericFClassCard 0xF9
 #define ChampionFClassCard 0xFA
+#define Berserker_FClassCard 0xFD
 
 
 //placeholders

@@ -55,6 +55,9 @@
 #define Warrior_F 0xa1
 #define Marksman 0xa4
 #define Rogue_F 0xB1
+//#define Berserker 0x43
+#define Berserker_F 0xB2
+
 
 //ARMOR
 
@@ -229,6 +232,7 @@
 #define Champion_FMapSprite 0xa2
 #define Thief_FMapSprite 0xa3
 #define Rogue_FMapSprite 0xa4
+#define Berserker_FMapSprite 0xa5
 
 #define DragoonMapSprite SwordKnightMapSprite //placeholders for now
 #define KiteMapSprite LogMapSprite // 0x9e

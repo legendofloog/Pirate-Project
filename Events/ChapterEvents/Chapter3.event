@@ -160,7 +160,7 @@ UNIT Blackheart Gunner 0 Level(15,Enemy,True) [1,18] 0 0 0 0 [Culverin] GroupOne
 UNIT
 
 CenterBoatUnits: //armored units, staffers, and bows
-UNIT Dalila Assassin 0 Level(18, Enemy, True) [16,12] 0 0 0 0 [Scorpio, SilverKnife, Pursuer] BossAI
+UNIT Dalila Assassin_F 0 Level(18, Enemy, True) [16,12] 0 0 0 0 [Scorpio, SilverKnife, Pursuer] BossAI
 UNIT AlonsoChapter3 Adventurer 0 Level(20, Enemy, True) [17,13] 0 0 0 0 [ShiningBow, BraveBow, Sleep] BossAI
 
 UNIT BlackheartElite Sniper 0 Level(15, Enemy, True) [15,17] 0 0 0 0 [SilverBow, Greatbow] BossAI

@@ -499,3 +499,11 @@ ALIGN 4
 BarbarianClassCardPal:
 #incbin "Dmp/Brigand (M) Clothed {Flasuban}.png_pal.dmp"
 setCardEntry(BarbarianClassCard, BarbarianClassCardData, BarbarianClassCardPal)
+
+ALIGN 4
+Berserker_FClassCardData:
+#incbin "Dmp/Berserker (F) Fixed Leg Axe {ZoramineFae, Der}.dmp"
+ALIGN 4
+Berserker_FClassCardPal:
+#incbin "Dmp/Berserker (F) Fixed Leg Axe {ZoramineFae, Der}.png_pal.dmp"
+setCardEntry(Berserker_FClassCard, Berserker_FClassCardData, Berserker_FClassCardPal)
