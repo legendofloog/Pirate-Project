@@ -387,3 +387,138 @@ FataSlayer:
 FataTrickster:
 	#incbin "./_palettes/FataTrickster.lzpal" 
 
+AlonsoAdventurer:
+	#incbin "./_palettes/AlonsoAdventurer.lzpal" 
+
+AlonsoAdventurer2:
+	#incbin "./_palettes/AlonsoAdventurer2.lzpal" 
+
+AlonsoAdventurer3:
+	#incbin "./_palettes/AlonsoAdventurer3.lzpal" 
+
+AzaharChampion:
+	#incbin "./_palettes/AzaharChampion.lzpal" 
+
+BoltonMageKnight:
+	#incbin "./_palettes/BoltonMageKnight.lzpal" 
+
+CruzWarlock:
+	#incbin "./_palettes/CruzWarlock.lzpal" 
+
+DalilaAssassin:
+	#incbin "./_palettes/DalilaAssassin.lzpal" 
+
+BoruRuneshield:
+	#incbin "./_palettes/BoruRuneshield.lzpal" 
+
+EnriqueGeneral:
+	#incbin "./_palettes/EnriqueGeneral.lzpal" 
+
+ErnestGryphoknightDismount:
+	#incbin "./_palettes/ErnestGryphoknightDismount.lzpal" 
+
+FidelSage:
+	#incbin "./_palettes/FidelSage.lzpal" 
+
+IdaCataphract:
+	#incbin "./_palettes/IdaCataphract.lzpal" 
+
+InkaDracoknight:
+	#incbin "./_palettes/InkaDracoknight.lzpal" 
+
+JasperAxeKnight:
+	#incbin "./_palettes/JasperAxeKnight.lzpal" 
+
+JavierHero:
+	#incbin "./_palettes/JavierHero.lzpal" 
+
+KirilMasterNinja:
+	#incbin "./_palettes/KirilMasterNinja.lzpal" 
+
+KrezkeSlayer:
+	#incbin "./_palettes/KrezkeSlayer.lzpal" 
+
+KurtWolfrider:
+	#incbin "./_palettes/KurtWolfrider.lzpal" 
+
+NicodemusCataphract:
+	#incbin "./_palettes/NicodemusCataphract.lzpal" 
+
+QuispeMaligKnight:
+	#incbin "./_palettes/QuispeMaligKnight.lzpal" 
+
+RimaAxeCav:
+	#incbin "./_palettes/RimaAxeCav.lzpal" 
+
+RimaAxeKnight:
+	#incbin "./_palettes/RimaAxeKnight.lzpal" 
+
+RimaCataphract:
+	#incbin "./_palettes/RimaCataphract.lzpal" 
+
+RogelioPirate:
+	#incbin "./_palettes/RogelioPirate.lzpal" 
+
+RubyHero:
+	#incbin "./_palettes/RubyHero.lzpal" 
+
+RunamelHero:
+	#incbin "./_palettes/RunamelHero.lzpal" 
+
+SalmanSwordmaster:
+	#incbin "./_palettes/SalmanSwordmaster.lzpal" 
+
+SalvadorChampion:
+	#incbin "./_palettes/SalvadorChampion.lzpal" 
+
+SanzSage:
+	#incbin "./_palettes/SanzSage.lzpal" 
+
+SolangeRanger:
+	#incbin "./_palettes/SolangeRanger.lzpal" 
+
+ValerieArcher:
+	#incbin "./_palettes/ValerieArcher.lzpal" 
+
+ValerieSniper:
+	#incbin "./_palettes/ValerieSniper.lzpal" 
+
+ValerieBombardier:
+	#incbin "./_palettes/ValerieBombardier.lzpal" 
+
+WindySwordCav:
+	#incbin "./_palettes/WindySwordCav.lzpal" 
+
+WindySwordKnight:
+	#incbin "./_palettes/WindySwordKnight.lzpal" 
+
+YadneyGriffinRider:
+	#incbin "./_palettes/YadneyGriffinRider.lzpal" 
+
+YurenaChampion:
+	#incbin "./_palettes/YurenaChampion.lzpal" 
+
+QuispeMaligKnightReal:
+	#incbin "./_palettes/QuispeMaligKnightReal.lzpal" 
+
+QuispeMaligKnightChapter4:
+	#incbin "./_palettes/QuispeMaligKnightChapter4.lzpal" 
+
+IdaCataphractReal:
+	#incbin "./_palettes/IdaCataphractReal.lzpal" 
+
+ElodiaWolfriderReal:
+	#incbin "./_palettes/ElodiaWolfriderReal.lzpal" 
+
+ElodiaWolfriderBoss:
+	#incbin "./_palettes/ElodiaWolfriderBoss.lzpal" 
+
+CruzWarlockFake:
+	#incbin "./_palettes/CruzWarlockFake.lzpal" 
+
+DalilaAssassinRematch:
+	#incbin "./_palettes/DalilaAssassinRematch.lzpal" 
+
+TheanaAssassin:
+	#incbin "./_palettes/TheanaAssassin.lzpal" 
+

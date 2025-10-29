@@ -923,7 +923,7 @@ Ch. B-4: Town Under Thumb[X]
 Objective: Rout[X]
 
 ## HubB4Units ^
-Units: Adrian (Fgtr.), Lexa (Myrm.), Noah (Ward.)[X]
+Units: Adrian (Fgtr.), Lexa (Myrm.), Noa (Ward.)[X]
 
 ## HubB4Loot
 Loot: Varied loot and wealth[X]
@@ -2662,7 +2662,7 @@ this merchant as soon as possible![A][X]
 ## HubBLuaNoahTalk
 [MidLeft][LoadNoah]
 [MidRight][LoadLua][3LB]
-Uh[Beat] Noah, wasn't it?[N]
+Uh[Beat] Noa, wasn't it?[N]
 How's the pirate life[N]
 treating you, so far?[AN]
 [MidLeft]

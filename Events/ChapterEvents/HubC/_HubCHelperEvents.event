@@ -176,11 +176,11 @@ UNIT Kai Ninja 0 Level(1,Ally,False) [13,1] 0 0 0 0 [0x0] NoAI
 UNIT
 
 TheanaAllyHubCGroup:
-UNIT Theana Assassin 0 Level(20,Ally,False) [13,2] 0 0 0 0 [0x0] NoAI
+UNIT Theana Assassin_F 0 Level(20,Ally,False) [13,2] 0 0 0 0 [0x0] NoAI
 UNIT
 
 TheanaNPCHubCGroup:
-UNIT Theana Assassin 0 Level(20,NPC,True) [21,3] 0 0 0 0 [DeadeyeBow, Bloodletter] NoAI
+UNIT Theana Assassin_F 0 Level(20,NPC,True) [21,3] 0 0 0 0 [DeadeyeBow, Bloodletter] NoAI
 UNIT
 
 DurghamHubCGroup:
