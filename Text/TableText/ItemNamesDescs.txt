@@ -467,13 +467,11 @@ Glass Shield[X]
 ## GlassShieldDesc
 Grants +7 Def/Res but breaks easily.[X]
 
-## HexlockShieldName
-
+## HexlockShieldName ^
 Hexlock Shield[X]
 
 ## HexlockShieldDesc
-
-Grants +1 Def, +3 Res.[X]
+Grants +1 Def, +4 Res.[X]
 
 ## HeavyShieldName ^
 Heavy Shield[X]

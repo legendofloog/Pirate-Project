@@ -22,7 +22,7 @@ StatBonus(0,0,0,0,0,7,7,0,0,0)
 
 ALIGN 4
 HexlockShieldStatBonuses:
-StatBonus(0,0,0,0,0,1,3,0,0,0)  
+StatBonus(0,0,0,0,0,1,4,0,0,0)  
 // StatBonus(HPB,StrB,MagB,SklB,SpdB,DefB,ResB,LckB,MovB,ConB)
 
 ALIGN 4

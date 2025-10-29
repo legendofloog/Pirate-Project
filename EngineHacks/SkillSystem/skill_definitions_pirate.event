@@ -313,3 +313,7 @@
 #define ConvictionID 111
 
 #define DaredevilID 112
+
+//Supply: This unit has access to the convoy.
+//By Sme
+#define SupplyID 113

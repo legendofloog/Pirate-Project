@@ -164,6 +164,11 @@
 [LoadRedFighter] = [LoadFace][0x6D][0x1]
 
 [LoadPirate] = [LoadFace][0x31][0x1]
+[LoadB4Salesman] = [LoadPirate]
+[LoadB5Hunter] = [LoadFace][0x6d][0x1]
+[LoadB3Skyfisher] = [LoadFace][0xAF][0x1]
+[LoadB2Rebel] = [LoadFace][0x6E][0x1]
+[LoadB1Adventurer] = [LoadFace][0x62][0x1]
 
 [LoadForestProtector] = [LoadFace][0x9B][0x1]
 [LoadA4ImperialCaptain] = [LoadFace][0x55][0x1]

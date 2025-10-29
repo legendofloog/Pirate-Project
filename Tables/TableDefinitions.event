@@ -8,6 +8,7 @@
 #endif
 #define ClassTable NewClassTable
 #define ItemTable NewItemTable
+#define SpellAssociationTable NewSpellAssociationTable
 #ifndef DebuffTableRam
   #define DebuffTableRam 0x203f100
 #endif

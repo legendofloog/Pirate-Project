@@ -198,7 +198,7 @@ UnitMenuTable:
   UM_Drop
 
   // Disarm
-  MenuCommand(UM_Disarm, UM_DisarmDesc, NormalText, DisarmUsability, DisarmEffect)
+  MenuCommand(UM_Disarm, UM_DisarmDesc, GreenText, DisarmUsability, DisarmEffect)
 
   #ifdef __DEBUG__
     MenuCommand(UM_EditSkill, UM_EditSkillDesc, OrangeText, $04F449, SkillDebugCommand_OnSelect)

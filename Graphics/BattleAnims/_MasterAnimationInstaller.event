@@ -397,3 +397,9 @@
     #include "Animations/Barbarian/Handaxe Installer.event"
     #include "Animations/Barbarian/Unarmed Installer.event"
 }
+
+{
+    #include "Animations/Berserker_F/Axe Installer.event"
+    #include "Animations/Berserker_F/Handaxe Installer.event"
+    #include "Animations/Berserker_F/Unarmed Installer.event"
+}

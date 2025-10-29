@@ -16,6 +16,6 @@ SOUN 0xCE
 STAL 0x16
 SOUN 0xCE
 STAL 0x16
-GiveExperience(0xFFFF, 10)
+//GiveExperience(0xFFFF, 10)
 NoFade
 ENDA

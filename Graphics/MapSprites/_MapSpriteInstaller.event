@@ -553,7 +553,7 @@ BowKnightSMS:
 
 ALIGN 4
 BowKnightMMS:
-#incbin "Dmp/Bow Knight (M) {Der, Pikmin}-stand.dmp"
+#incbin "Dmp/Bow Knight (M) {Der, Pikmin}-walk.dmp"
 
 StandingMapSprite(LanceKnightMapSprite,MapSprite16x32,LanceKnightSMS)
 MovingMapSprite(LanceKnight, $1C3D7C, LanceKnightMMS)
@@ -716,3 +716,14 @@ CaptainSMS:
 ALIGN 4
 CaptainMMS:
 #incbin "Dmp/Rogue (F) Trickster-Valkyrie {Aruka, Kenpuhu}-walk.dmp"
+
+StandingMapSprite(Berserker_FMapSprite,MapSprite16x32,Berserker_FSMS)
+MovingMapSprite(Berserker_F, $1C3D7C, Berserker_FMMS)
+
+ALIGN 4
+Berserker_FSMS:
+#incbin "Dmp/Berserker (F) Hawkzerker Axe {Pikmin, Der}-stand.dmp"
+
+ALIGN 4
+Berserker_FMMS:
+#incbin "Dmp/Berserker (F) Hawkzerker Axe {Pikmin, Der}-walk.dmp"

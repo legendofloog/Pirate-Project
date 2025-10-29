@@ -271,7 +271,7 @@ Noah2MugData:
 #incbin "Dmp/NoahCloak_frames.dmp"
 #incbin "Dmp/NoahCloak_palette.dmp"
 #incbin "Dmp/NoahCloak_minimug.dmp"
-setMugEntry(Noah2Mug, Noah2MugData, 2, 5, 3, 3)
+setMugEntry(Noah2Mug, Noah2MugData, 3, 5, 3, 3)
 
 ALIGN 16
 RedFSoldierMugData:
@@ -397,6 +397,8 @@ YadneyMugData:
 #incbin "Dmp/Yadney_minimug.dmp"
 setMugEntry(YadneyMug, YadneyMugData, 3, 5, 2, 3)
 
+// placeholder mugs for B-3 guys
+
 ALIGN 16
 ErnestMugData:
 #incbin "Dmp/Ernest_mug.dmp"
@@ -404,6 +406,14 @@ ErnestMugData:
 #incbin "Dmp/Ernest_palette.dmp"
 #incbin "Dmp/Ernest_minimug.dmp"
 setMugEntry(ErnestMug, ErnestMugData, 3, 5, 3, 3)
+
+ALIGN 16
+KaiMugData:
+#incbin "Dmp/Kai_mug.dmp"
+#incbin "Dmp/Kai_frames.dmp"
+#incbin "Dmp/Kai_palette.dmp"
+#incbin "Dmp/Kai_minimug.dmp"
+setMugEntry(KaiMug, KaiMugData, 2, 5, 3, 3)
 
 ALIGN 16
 FataMugData:
@@ -772,3 +782,11 @@ SleepyDockhandMugData:
 #incbin "Dmp/RedYadney_palette.dmp"
 #incbin "Dmp/RedYadney_minimug.dmp"
 setMugEntry(SleepyDockhandMug, SleepyDockhandMugData, 3, 5, 2, 3)
+
+ALIGN 16
+RemoraMugData:
+#incbin "Dmp/Remora_mug.dmp"
+#incbin "Dmp/Remora_frames.dmp"
+#incbin "Dmp/Remora_palette.dmp"
+#incbin "Dmp/Remora_minimug.dmp"
+setMugEntry(RemoraMug, RemoraMugData, 3, 5, 3, 3)

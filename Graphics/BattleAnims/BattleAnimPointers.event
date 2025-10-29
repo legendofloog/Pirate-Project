@@ -466,3 +466,10 @@ AxeAnim(BarbarianAxeAnim)
 HandAxeAnim(BarbarianHandaxeAnim)
 UnarmedAnim(BarbarianUnarmedAnim)
 EndAnim
+
+ALIGN 4
+Berserker_FAnims:
+AxeAnim(Berserker_FAxeAnim)
+HandAxeAnim(Berserker_FHandaxeAnim)
+UnarmedAnim(Berserker_FUnarmedAnim)
+EndAnim

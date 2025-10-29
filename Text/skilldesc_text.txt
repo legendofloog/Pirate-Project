@@ -1599,9 +1599,9 @@ Biding Blow: If the opponent[N]
 cannot counter, this unit doubles.[X]
 
 ## SD_SuppressiveFire
-Suppressive Fire: If an ally attacks[N]
+Suppressive Fire: If an ally battles[N]
 an enemy within range of this unit's[N]
-weapon, ally ignores enemy's AVO.[X]
+weapon, ally ignores half of enemy Avo.[X]
 
 ## SD_SurpriseAttack
 Surprise Attack: If foe cannot counter,[N]
@@ -1747,7 +1747,7 @@ Nailed Down: When this unit initiates[N]
 battle, target's Mov = 0 for a turn.[X]
 
 ## SD_Analyze
-Analyze: When an ally attacks an enemy[N]
+Analyze: When an ally battles an enemy[N]
 adjacent to this unit, ally gains WTA.[X]
 
 ## SD_Delegation
@@ -1792,8 +1792,9 @@ Breather: When this unit uses Wait,[N]
 they heal their HP back to 100%.[X]
 
 ## SD_Disarm
-Disarm: Command. This unit Breaks[N]
-an enemy and reduces their Def by 5.[X]
+Disarm: Command. This unit Breaks an[N]
+enemy, reduces their Def by 5, and then,[N]
+this unit can act again (but not move).[X]
 
 ## SD_Momentum
 Momentum: If this unit moves half or[N]
