@@ -922,7 +922,7 @@ Ch. B-4: Town Under Thumb[X]
 Objective: Rout[X]
 
 ## HubB4Units
-Units: Adrian (Fighter), Lexa (Myrmidon), Noah (Warden)[X]
+Units: Adrian (Fighter), Lexa (Myrmidon), Noa (Warden)[X]
 
 ## HubB4Loot
 Loot: Varied loot and wealth[X]
@@ -2640,7 +2640,7 @@ this merchant as soon as possible![A][X]
 ## HubBLuaNoahTalk
 [MidLeft][LoadNoah]
 [MidRight][LoadLua]
-Uh[Beat] Noah, wasn't it?[N]
+Uh[Beat] Noa, wasn't it?[N]
 How's the pirate life[N]
 treating you, so far?[AN]
 [MidLeft]

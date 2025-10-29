@@ -1037,7 +1037,7 @@ A skilled blade who fights using cheap[N]
 tricks. Her foes lay dead nontheless.[X]
 
 ## NoahName
-Noah[X]
+Noa[X]
 
 ## NoahOccupation
 Guardsman[X]
