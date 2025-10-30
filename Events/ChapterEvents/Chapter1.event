@@ -178,7 +178,7 @@ UNIT
 EnemyGroupTwo:
 UNIT Blackheart Deserter 0 Level(2, Enemy, True) [13,14] 0 0 1 REDA12R20 [IronLance] ChargeAI
 UNIT Blackheart Fighter 0 Level(2, Enemy, True) [13,14] 0 0 1 REDA12R19 [IronAxe] ChargeAI
-UNIT Blackheart Warden 0 Level(3, Enemy, True) [17,19] 0 0 1 REDA13R18 [SteelSword, Javelin] BossAI
+UNIT Blackheart Warden 0 Level(2, Enemy, True) [17,19] 0 0 1 REDA13R18 [SteelSword, Javelin] BossAI
 UNIT Blackheart Hunter 0 Level(2, Enemy, True) [17,19] 0 0 1 REDA18R21 [IronBow] ChargeAI
 UNIT
 

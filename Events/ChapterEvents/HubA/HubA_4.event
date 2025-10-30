@@ -291,7 +291,7 @@ CutsceneGreens:
 // We're being clever here and just reusing the Greagor NPCs as the non-dying units here. 
 // The imperials that die reuse Incendivis and IncendivisMage. 
 UNIT GreagorCaptain Gunner 0 Level(13, NPC, True) [10,16] 0 0 0 0 [SilverMusket] ChargeAI //imperial captain
-UNIT GreagorVillager Archer 0 Level(3, NPC, True) [10,17] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
+UNIT GreagorVillager Archer_F 0 Level(3, NPC, True) [10,17] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
 UNIT Incendivis Soldier 0 Level(3, NPC, True) [11,15] 0 0 0 0 [Javelin] ChargeAI //first imperial who gets owned
 UNIT IncendivisMageA2 Mage_F 0 Level(3, NPC, True) [7,16] 0 0 0 0 [Fire] ChargeAI //second dead imperial
 UNIT GreagorLibrarian Fighter 0 Level(3, NPC, True) [6,18] 0 0 0 0 [] ChargeAI
@@ -348,7 +348,7 @@ UNIT GreagorCaptain Gunner 0 Level(13, NPC, True) [8,19] 0 0 0 0 [SilverMusket] 
 UNIT
 
 EndingSceneImperialCrew:
-UNIT GreagorVillager Archer 0 Level(3, NPC, True) [7,19] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
+UNIT GreagorVillager Archer_F 0 Level(3, NPC, True) [7,19] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
 UNIT GreagorLibrarian Fighter 0 Level(3, NPC, True) [8,19] 0 0 0 0 [] ChargeAI
 UNIT GreagorGuard Soldier 0 Level(3, NPC, True) [8,19] 0 0 0 0 [] ChargeAI
 UNIT GreagorSmuggler Fighter 0 Level(3, NPC, True) [7,19] 0 0 0 0 [] ChargeAI

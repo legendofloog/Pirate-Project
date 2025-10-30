@@ -55,3 +55,7 @@
 #define GuyFallingSoundID 0xAC
 #define SnagDestructionSoundID 0xAF
 #define PegasusFlyingSoundID 0xA6
+
+#define AudienceCheerSoundID 0x8F
+
+#define AttackSnagSoundID 0xB0

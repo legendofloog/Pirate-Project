@@ -346,18 +346,18 @@ Vendor(HubCVendorOne,5,9)
 END_MAIN
 
 ALIGN 4
-HubCArmoryOne:
-SHLI SteelSword KillingEdge SilverSword Lancereaver FlameSword SteelLance KillerLance SilverLance Axereaver Spear SteelAxe KillerAxe SilverAxe Swordreaver Tomahawk
+HubCArmoryOne: //7 of each type of weapon here: 3 Cs, 3 Bs, 1 A
+SHLI SteelSword KillingEdge Wingclipper SilverSword FlameSword Rapier BraveSword SteelLance KillerLance Horseslayer SilverLance Spear Impaler BraveLance SteelAxe KillerAxe Hammer SilverAxe Tomahawk Crusher BraveAxe
 ALIGN 4
 
 ALIGN 4
-HubCArmoryTwo:
-SHLI SteelBow ShiningBow Tomereaver Longbow SilverBow Pursuer Slimshot Greatbow SteelKnife Bloodletter SilverKnife ArcaneKnife SteelDagger Stiletto SilverDagger Peshkatz
+HubCArmoryTwo: // same thing
+SHLI SteelBow KillerBow ShiningBow SilverBow Slimshot Greatbow BraveBow SteelKnife SteelDagger Bloodletter SilverKnife SilverDagger ArcaneKnife Baselard SteelMusket Culverin Pistol SilverMusket InfiltratorGun Mortar Quickdraw
 ALIGN 4
 
 ALIGN 4
-HubCVendorOne:
-SHLI Elfire Luna Elsurge Arcfire Nosferatu Sagittae Mend Silence Physic Sleep SteelMusket Blunderbuss SilverMusket Mortar
+HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip
+SHLI Elfire Thunder Elsurge Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir Mine GlassShield HideShield HexlockShield AshQuiver
 ALIGN 4
 
 MiscBasedEvents:

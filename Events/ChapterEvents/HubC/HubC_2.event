@@ -52,7 +52,7 @@ Units1:
 //Middle Units
 UNIT Lua Captain 0 Level(10,Ally,False) [9,26] 0 0 0 0 [IronSword] NoAI
 //Valerie
-UNIT Valerie Archer 0 Level(4,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
+UNIT Valerie Archer_F 0 Level(4,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
 LoadUnit(11,26)
 LoadUnit(8,27)
 LoadUnit(10,27)

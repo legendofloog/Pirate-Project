@@ -29,9 +29,20 @@ and words for 3 turns.[X]
 Makes target unable to[N]
 move or act for 3 turns.[X]
 
+# 0x0522
+5 + MP/3[X]
+
 # 0x479
 Spurs target to attack[N]
 all units for 3 turns.[X]
+
+# 0x474
+Restores Mag + 10 HP[N]
+to a distant ally.[X]
+
+# 0x475
+Restores Mag + 20 HP[N]
+to all distant allies.[X]
 
 # 0x494
 A medicinal solution that mends[NL]

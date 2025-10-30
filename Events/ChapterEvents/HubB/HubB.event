@@ -814,7 +814,6 @@ UNIT
 
 BeginningScene:
 ENUT DifficultyChangeFlag
-LoadPlayerUnits(NewUnits)
 WEATHER 7
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHuB)
@@ -848,14 +847,6 @@ CUSA Pilar
 NoFade
 ENDA
 
-HubBQuestGivers:
-UNIT Razvan Curate 0 Level(10,Ally,False) [28,18] 0 0 0 0 [0x0] NoAI
-UNIT Rahel BowCav 0 Level(10,Ally,False) [16,11] 0 0 0 0 [0x0] NoAI
-UNIT Desiderio Vanguard 0 Level(10,Ally,False) [18,21] 0 0 0 0 [0x0] NoAI
-UNIT Orlando Trickster 0 Level(10,Ally,False) [6,17] 0 0 0 0 [0x0] NoAI
-UNIT Pilar Ninja 0 Level(10,Ally,False) [26,21] 0 0 0 0 [0x0] NoAI
-UNIT
-
 RazvanUnitGroup:
 UNIT Razvan Curate 0 Level(10,Ally,False) [28,18] 0 0 0 0 [0x0] NoAI
 UNIT
@@ -876,63 +867,205 @@ PilarUnitGroup:
 UNIT Pilar Ninja 0 Level(10,Ally,False) [26,21] 0 0 0 0 [0x0] NoAI
 UNIT
 
-BeginningSceneFirstTimeInHuB:
+PortGreagorUnits: //copypasta of docks units in the actual hub
+UNIT Docksman 0 0 Level(3, NPC, True) [6,4] 0 0 0 0 [SteelLance] NoAI
+UNIT GreagorShirker Fighter 0 Level(3, NPC, True) [12,2] 0 0 0 0 [IronAxe] NoAI
+UNIT Docksman Mercenary 0 Level(4, NPC, True) [18,13] 0 0 0 0 [KillingEdge] NoAI
+UNIT Ida 0 0 Level(20, NPC, False) [8,26] 0 0 0 0 [SilverAxe] NoAI
+UNIT GreagorSailor Fighter 0 Level(3,NPC, True) [8,5] 0 0 0 0 [SlimAxe] NoAI
+//UNIT GreagorSmuggler Thief 0 Level(6,NPC, False) [2, 24] 0 0 0 0 [SteelKnife, Tonic, 0xB7, 0x9F] NoAI //JunaFruit and 3000 gold as hex values
+UNIT GreagorShipwright VillagerMAdult 0 Level(1,NPC,False) [11,14] 0 0 0 0 [] NoAI
+UNIT GreagorCaptain Berserker 0 Level(14,NPC,False) [13,14] 0 0 0 0 [SilverAxe, Tomahawk, Elixir] NoAI
+UNIT
+
+LuaDesiderioUnits:
+UNIT Lua 0 0 Level(10,Ally,False) [6,31] 0 0 1 REDA6R30 [0x0] NoAI
+UNIT Desiderio 0 0 Level(10,Ally,False) [7,31] 0 0 0 0 [0x0] NoAI
+UNIT
+
+RahelUnits:
+UNIT Rahel 0 0 Level(10,Ally,False) [7,31] 0 0 1 REDA7R26 [0x0] NoAI
+UNIT
+
+
+BeginningSceneFirstTimeInHuB: //this is what I need to event
 SetBackground(Ship)
 MUSC StillZephyrsID
 Text(HubB_BeginningScene_1_1)
-SetBackground(Harbor)
-Text(HubB_BeginningScene_1_2)
+FADI 15
+LOMA HubA
+CAMERA_CENTERED [4,31]
+TILECHANGE 0
+STAL 60
+LoadCutsceneUnits(PortGreagorUnits)
+EraseBackground
+STAL 30
+SOUN PegasusFlyingSoundID
+TILECHANGE 5
+STAL 30
+LoadCutsceneUnits(LuaDesiderioUnits)
+FADI 15
+STAL 30
+SOUN AttackSnagSoundID
+TILECHANGE 6
+FADU 15
+MOVE 15 Lua [9,27]
+MOVE 10 Desiderio [7,27]
+ENUN
+FlashCursor(Ida,60)
+Text(HubB_BeginningScene_1_2_1)
+MOVE 10 Desiderio [18,24]
+ENUN
+Text(HubB_BeginningScene_1_2_2)
+FadeOutMusic
+MOVE 15 Lua [6,31]
+ENUN
+Text(HubB_BeginningScene_1_2_3)
+STAL 30
+LoadCutsceneUnits(RahelUnits)
 FADI 15
 STAL 60
 FADU 15
 MUSC CastawayHeartID
 Text(HubB_BeginningScene_1_3)
-Text(HubB_BeginningScene_1_4)
-SetBackground(Ship)
-Text(HubB_BeginningScene_1_5)
-Text(HubB_BeginningScene_1_6)
+MOVE 15 Rahel [2,31]
+ENUN
+Text(HubB_BeginningScene_1_4_1)
+MOVE 15 Lua [7,26]
+ENUN
+Text(HubB_BeginningScene_1_4_2)
+MOVE 15 Lua [6,30]
+ENUN
 FADI 15
+STAL 30
+TILEREVERT 6
+TILEREVERT 5
+TILEREVERT 0 //have to redo the tilechanges since tilerevert straight up erases tiles
+TILECHANGE 0
+TILECHANGE 5
+SOUN AttackSnagSoundID
+FADU 15
+STAL 30
+MOVE 15 Lua [3,31]
+ENUN
+Text(HubB_BeginningScene_1_5_1)
+HIDEUNIT Lua
 STAL 60
+Text(HubB_BeginningScene_1_5_2)
+MOVE 15 Rahel [6,30]
+ENUN
+Text(HubB_BeginningScene_1_6)
+MOVE 5 Rahel [6,31]
+ENUN
+FlashCursor(Rahel,60)
+HIDEUNIT Rahel
+Text(HubB_BeginningScene_1_7)
+
+
+FADI 15 //Scene change to the crew getting together and deciding on their next moves
+FadeOutMusic
+RemoveAll
+SHOWUNIT Lua
+SHOWUNIT Rahel
+STAL 120
 SetBackground(Inn)
+BROWNBOXTEXT HubBDaysLaterText[8,8]
 MUSC StillZephyrsID
 Text(HubB_BeginningScene_2_1)
+
 TEXTSTART
 TEXTSHOW HubB_BeginningScene_2_2
 TEXTEND
 FadeOutMusic
-STAL 30
+STAL 60
 MUSC OrlandoThemeID
 TEXTCONT
 TEXTEND
 REMA
+
 FADI 15
+LOMA HubB
+ENUN
+TILECHANGE 4
+LoadCutsceneUnits(CutscenersArrive)
+LOAD1 0 PotentialMen //guys who should be here but might be dead
+ENUN
+LoadAllyUnitGroupIfAlive(Leandra, 236, LeandraBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Juan, 235, JuanBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Yodsen, 237, YodsenBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Durgham, 238, DurghamBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Triana, 239, TrianaBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Medwyn, 240, MedwynBeginningSceneGroup)
+LoadAllyUnitGroupIfAlive(Bartz, 241, BartzBeginningSceneGroup)
+CAMERA_CENTERED Lua
 STAL 60
-SetBackground(Castle_Hall)
-MUSC MeetTheCrewID
-Text(HubB_BeginningScene_3_1)
+EraseBackground
 
-//todo: add a reaction from every other crew member except the main 3?
-
-Text(HubB_BeginningScene_3_2_Rahel)
-Text(HubB_BeginningScene_3_2_Orlando)
-
-MUSC NewHandsOnDeckID
-Text(HubB_BeginningScene_3_3)
-Text(HubB_BeginningScene_3_4)
-Text(HubB_BeginningScene_3_5)
-
-SoloTextbox(HubB_BeginningScene_3_6, 24, 24)
-STAL 30
-SoloTextbox(HubB_BeginningScene_3_6, 104, 200)
-STAL 30
-SoloTextboxCenter(HubB_BeginningScene_3_7)
-STAL 30
-FADI 5
+FlashCursor(Lua,60)
+Text(HubB_BeginningScene_3_1_1)
+FlashCursor(Razvan,60)
+Text(HubB_BeginningScene_3_1_2)
+FlashCursor(Desiderio,60)
+Text(HubB_BeginningScene_3_1_3)
+FlashCursor(Pilar,60)
+Text(HubB_BeginningScene_3_1_4)
+FlashCursor(Lua,60)
+Text(HubB_BeginningScene_3_1_5)
 FadeOutMusic
+FlashCursor(Orlando,60)
+MUSC NewHandsOnDeckID
+Text(HubB_BeginningScene_3_2_Orlando)
+FlashCursor(Rahel,60)
+Text(HubB_BeginningScene_3_2_Rahel)
+IfAliveHighlightThenDialog(Ximo, HubBXimosDown, 560, 60)
+IfAliveHighlightThenDialog(Carmen, HubBCarmensDown, 561, 60)
+IfAliveHighlightThenDialog(Hermenegildo, HubBHermensDown, 562, 60)
+IfAliveHighlightThenDialog(Estelle, HubBEstellesDown, 563, 60)
+IfAliveHighlightThenDialog(Indio, HubBIndiosDown, 564, 60)
+IfAliveHighlightThenDialog(Leandra, HubBLeandrasDown, 565, 60)
+IfAliveHighlightThenDialog(Jaime, HubBJaimesDown, 566, 60)
+IfAliveHighlightThenDialog(Leonor, HubBLeonorsDown, 567, 60)
+IfAliveHighlightThenDialog(Ondeh, HubBOndehsDown, 568, 60)
+IfAliveHighlightThenDialog(Biko, HubBBikosDown, 569, 60)
+IfAliveHighlightThenDialog(Juan, HubBJuansDown, 570, 60)
+IfAliveHighlightThenDialog(Tangyuan, HubBTangyuansDown, 571, 60)
+IfAliveHighlightThenDialog(Suzanne, HubBSuzannesDown, 572, 60)
+IfAliveHighlightThenDialog(Matteo, HubBMatteosDown, 573, 60)
+IfAliveHighlightThenDialog(Yodsen, HubBYodsensDown, 574, 60)
+IfAliveHighlightThenDialog(Durgham, HubBDurghamsDown, 575, 60)
+IfAliveHighlightThenDialog(Triana, HubBTrianasDown, 576, 60)
+IfAliveHighlightThenDialog(Medwyn, HubBMedwynsDown, 577, 60)
+IfAliveHighlightThenDialog(Bartz, HubBBartzsDown, 578, 60)
+
+
+FlashCursor(Lua,60)
+Text(HubB_BeginningScene_3_3)
+FlashCursor(Pilar,60)
+Text(HubB_BeginningScene_3_4)
+FlashCursor(Razvan,60)
+Text(HubB_BeginningScene_3_5)
+FlashCursor(Desiderio,60)
+Text(HubB_BeginningScene_3_6)
 STAL 60
+SOUN AudienceCheerSoundID
+SoloTextbox(HubB_BeginningScene_3_7, 24, 24)
+STAL 60
+SOUN AudienceCheerSoundID
+SoloTextbox(HubB_BeginningScene_3_7, 104, 200)
+STAL 60
+SOUN AudienceCheerSoundID
+SoloTextboxCenter(HubB_BeginningScene_3_8)
+STAL 30
+FADI 15
+FadeOutMusic
+TILEREVERT 4
+RemoveAll
+LoadPlayerUnits(NewUnits)
+STAL 120
 SetBackground(Inn)
 LocationText(HubB_BeginningScene_4_1, 8, 8)
 Text(HubB_BeginningScene_4_2)
+FADI 15
 //here we unset all hub A flags that will be reused for hub B
 ENUF HubBDesiGlobalTalkFlag
 ENUF HubBOrlandoGlobalTalkFlag
@@ -957,6 +1090,58 @@ ENUF HubBEstelleIndioGlobalTalkFlag
 ENUF HubBYodsenDmitrGlobalTalkFlag
 NoFade
 ENDA
+
+CutscenersArrive:
+UNIT Lua 0 0 Level(10,Ally,False) [29,21] 0 0 0 0 [0x0] NoAI
+UNIT Desiderio 0 0 Level(10,Ally,False) [31,20] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [31,22] 0 0 0 0 [0x0] NoAI
+UNIT Razvan Curate 0 Level(1,Ally,False) [30,23] 0 0 0 0 [0x0] NoAI //these 2 will talk with Lua
+UNIT Rahel BowCav 0 Level(1,Ally,False) [30,18] 0 0 0 0 [0x0] NoAI
+UNIT Orlando Trickster 0 Level(10,Ally,False) [29,17] 0 0 0 0 [0x0] NoAI
+UNIT
+
+PotentialMen:
+UNIT Carmen 0 0 Level(10,Ally,False) [27,23] 0 0 0 0 [0x0] NoAI
+UNIT Ximo 0 0 Level(10,Ally,False) [28,23] 0 0 0 0 [0x0] NoAI
+UNIT Hermenegildo 0 0 Level(10,Ally,False) [26,19] 0 0 0 0 [0x0] NoAI
+UNIT Estelle 0 0 Level(10,Ally,False) [29,24] 0 0 0 0 [0x0] NoAI
+UNIT Indio 0 0 Level(10,Ally,False) [29,17] 0 0 0 0 [0x0] NoAI
+UNIT Jaime 0 0 Level(10,Ally,False) [33,21] 0 0 0 0 [0x0] NoAI
+UNIT Leonor 0 0 Level(10,Ally,False) [33,22] 0 0 0 0 [0x0] NoAI
+UNIT Ondeh 0 0 Level(10,Ally,False) [31,23] 0 0 0 0 [0x0] NoAI
+UNIT Biko 0 0 Level(10,Ally,False) [32,23] 0 0 0 0 [0x0] NoAI
+UNIT Tangyuan 0 0 Level(10,Ally,False) [27,17] 0 0 0 0 [0x0] NoAI
+UNIT Matteo 0 0 Level(10,Ally,False) [27,19] 0 0 0 0 [0x0] NoAI
+UNIT Suzanne 0 0 Level(10,Ally,False) [28,19] 0 0 0 0 [0x0] NoAI
+UNIT
+
+YodsenBeginningSceneGroup:
+UNIT Yodsen 0 0 Level(10,Ally,False) [30,20] 0 0 0 0 [0x0] NoAI
+UNIT
+
+DurghamBeginningSceneGroup:
+UNIT Durgham 0 0 Level(10,Ally,False) [32,17] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TrianaBeginningSceneGroup:
+UNIT Triana 0 0 Level(10,Ally,False) [27,20] 0 0 0 0 [0x0] NoAI
+UNIT
+
+BartzBeginningSceneGroup:
+UNIT Bartz 0 0 Level(10,Ally,False) [27,20] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MedwynBeginningSceneGroup:
+UNIT Medwyn 0 0 Level(10,Ally,False) [27,20] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LeandraBeginningSceneGroup:
+UNIT Leandra 0 0 Level(10,Ally,False) [26,21] 0 0 0 0 [0x0] NoAI
+UNIT
+
+JuanBeginningSceneGroup:
+UNIT Juan 0 0 Level(10,Ally,False) [26,22] 0 0 0 0 [0x0] NoAI
+UNIT
 
 EndingScene:
 NoFade
