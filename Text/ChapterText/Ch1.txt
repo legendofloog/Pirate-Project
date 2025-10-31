@@ -524,3 +524,14 @@ demons, huh? Sorry, boss[Beat][AN]
 I ain't[Beat] gonna make it[Beat][A][CloseEyes][X]
 
 
+## Chapter1Tutorial
+Welcome to All Hands on Deck![AN]
+One important note: Lua, Pilar,[N]
+Desiderio, and Razvan's deaths[N]
+will all result in a [ToggleRed]Game Over[ToggleRed].[AN]
+If you want to know any other details[N]
+about the gameplay, you can check the[N]
+Guide in the map menu for more info.[AN]
+Otherwise, we hope you enjoy, and please[N]
+feel free to share any feedback you have![N]
+- Team Pirate[A][X]
