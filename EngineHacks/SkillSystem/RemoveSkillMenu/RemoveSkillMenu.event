@@ -44,9 +44,6 @@
 		Will create the skill forgetting menu for given unit, and new skill id located at byte 0202BCDE.
 
 */
-
-#include "Extensions/6CDefinitions.txt"
-
 {
 
 // Battle proc Hook

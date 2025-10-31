@@ -139,6 +139,20 @@ FlashCursor(Razvan,60)
 Text(Ch1BeginningScene6)
 Text(Ch1BeginningScene7)
 //LOAD1 1 KhazhakTestGroup
+ENUT GuideUnlockHubChapters
+ENUT GuideUnlockWTAAndBreak
+ENUT GuideUnlockPersonalSkills
+ENUT GuideUnlockClassSkills
+ENUT GuideUnlockSkillScrolls
+ENUT GuideUnlockPromotion
+ENUT GuideUnlockEquippableItems
+ENUT GuideUnlockTonics
+ENUT GuideUnlockFormulaChanges
+ENUT GuideUnlockAhoyAvast
+ENUT GuideUnlockBossMusic
+ENUT GuideUnlockNewWeaponTypes
+ENUT GuideUnlockQoLChanges
+ENUT GuideUnlockPromotionOptions
 ENUN
 NoFade
 ENDA

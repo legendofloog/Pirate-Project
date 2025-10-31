@@ -1,0 +1,85 @@
+#define MainGuideEntry(sectionID, chapterID, entryName, entryContent, flagID, readFlagID) "BYTE sectionID chapterID; SHORT entryName entryContent flagID readFlagID 0"
+
+
+// Global Flags
+#define GuideUnlockHubChapters 0x100
+#define GuideReadHubChapters 0x101
+//#define GuideUnlockChapterSets 0x102
+//#define GuideReadChapterSets 0x103
+#define GuideUnlockWTAAndBreak 0x104
+#define GuideReadWTAAndBreak 0x105
+#define GuideUnlockPersonalSkills 0x106
+#define GuideReadPersonalSkills 0x107
+#define GuideUnlockClassSkills 0x108
+#define GuideReadClassSkills 0x109
+#define GuideUnlockSkillScrolls 0x110
+#define GuideReadSkillScrolls 0x111
+#define GuideUnlockPromotion 0x112
+#define GuideReadPromotion 0x113
+#define GuideUnlockEquippableItems 0x114
+#define GuideReadEquippableItems 0x115
+#define GuideUnlockTonics 0x116
+#define GuideReadTonics 0x117
+#define GuideUnlockFormulaChanges 0x118
+#define GuideReadFormulaChanges 0x119
+#define GuideUnlockAhoyAvast 0x11A
+#define GuideReadAhoyAvast 0x11B
+#define GuideUnlockBossMusic 0x11C
+#define GuideReadBossMusic 0x11D
+#define GuideUnlockNewWeaponTypes 0x11E
+#define GuideReadNewWeaponTypes 0x11F
+#define GuideUnlockQoLChanges 0x120
+#define GuideReadQoLChanges 0x121
+#define GuideUnlockPromotionOptions 0x122
+#define GuideReadPromotionOptions 0x123
+//tale of ternon guide stuff 
+//bonus: disable select button sort feature in guide menu (fixes most problems that come from editing the guide)
+
+PUSH
+ORG 0xCEF7C 
+SHORT 0xE001
+ORG 0xCEF74
+SHORT 0x2200 // Prevent Sorting
+POP
+
+// Guide
+PUSH
+ORG 0xB19E0C
+MainGuideEntry(1, 0, HubChaptersSubPageTitle, HubChaptersDesc, GuideUnlockHubChapters, GuideReadHubChapters)
+MainGuideEntry(1, 0, NewWeaponTypesSubPageTitle, NewWeaponTypesDesc, GuideUnlockNewWeaponTypes, GuideReadNewWeaponTypes)
+MainGuideEntry(1, 0, WTAAndBreakSubPageTitle, WTAAndBreakDesc, GuideUnlockWTAAndBreak, GuideReadWTAAndBreak)
+MainGuideEntry(1, 0, PersonalSkillsSubPageTitle, PersonalSkillsDesc, GuideUnlockPersonalSkills, GuideReadPersonalSkills)
+MainGuideEntry(1, 0, ClassSkillsSubPageTitle, ClassSkillsDesc, GuideUnlockClassSkills, GuideReadClassSkills)
+MainGuideEntry(1, 0, SkillScrollsSubPageTitle, SkillScrollsDesc, GuideUnlockSkillScrolls, GuideReadSkillScrolls)
+MainGuideEntry(1, 0, PromotionSubPageTitle, PromotionDesc, GuideUnlockPromotion, GuideReadPromotion)
+MainGuideEntry(1, 0, PromotionOptionsSubPageTitle, PromotionOptionsDesc, GuideUnlockPromotionOptions, GuideReadPromotionOptions)
+MainGuideEntry(1, 0, EquippableItemsSubPageTitle, EquippableItemsDesc, GuideUnlockEquippableItems, GuideReadEquippableItems)
+MainGuideEntry(1, 0, TonicsSubPageTitle, TonicsDesc, GuideUnlockTonics, GuideReadTonics)
+MainGuideEntry(1, 0, FormulaChangesSubPageTitle, FormulaChangesDesc, GuideUnlockFormulaChanges, GuideReadFormulaChanges)
+MainGuideEntry(2, 0, AhoyAvastSubPageTitle, AhoyAvastDesc, GuideUnlockAhoyAvast, GuideReadAhoyAvast)
+MainGuideEntry(2, 0, BossMusicSubPageTitle, BossMusicDesc, GuideUnlockBossMusic, GuideReadBossMusic)
+MainGuideEntry(3, 0, QoLChangesSubPageTitle, QoLChangesDesc, GuideUnlockQoLChanges, GuideReadQoLChanges)
+MainGuideEntry(0xC, 0, 0, 0, 0, 0) // the terminator
+WORD 0 0 0
+POP
+
+//What are all the things that I need to talk about in the Guide?
+
+// Gameplay Changes (Mechanics)
+/*
+Hub Chapters
+Chapter Sets
+WTA and Break
+Personal Skills
+Class Skills (Steal, Locktouch, Unbreakable, Canto, Flight, Aid+, Canto+, Flight+, Armsmaster)
+Skill Scrolls
+Promotion (Split Promos)
+Equippable Items
+Tonics
+Formula Changes
+*/
+
+// Music
+
+// Calm/Ablaze
+// Boss Music

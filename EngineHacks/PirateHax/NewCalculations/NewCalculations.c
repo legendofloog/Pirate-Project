@@ -240,13 +240,13 @@ int GetStealExpValue(int item){
     u8 durability = item >> 8;
     int totalCost = costPerUse * durability; 
     
-    int stealExp = totalCost / 50 + GetLevelDifference(&gBattleActor, &gBattleTarget) * 2;
+    int stealExp = totalCost / 50 + GetLevelDifference(&gBattleActor, &gBattleTarget) * 2; //example B rank: Silver costs 1000, so 20 base exp; Iron is 8 base exp
 
-    if (stealExp >= 15){
-        return 15;
+    if (stealExp >= 50){ //don't want it to get any higher than this: between a hit and a kill, leaning towards a hit
+        return 50;
     }
-    else if (stealExp <= 2){
-        return 2;
+    else if (stealExp <= 3){
+        return 3;
     }
     else{
         return stealExp;
@@ -303,9 +303,9 @@ void GetWeaponExpProgressState(int wrank, int* valOut, int* maxOut) {
 
 int CanUnitRescue(const struct Unit* actor, const struct Unit* target){
     
-    if (target->pClassData->attributes & CA_MOUNTEDAID){ //is this unit a mount
-        return false; //cannot be rescued
-    }
+    //if (target->pClassData->attributes & CA_MOUNTEDAID){ //is this unit a mount
+        //return false; //cannot be rescued 
+    //} // I have renounced my 1984 ways
 
     if (LuaIsInHub(gActiveUnit)){ //unit doesn't matter
         return false;

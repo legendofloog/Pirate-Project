@@ -44,6 +44,15 @@ to a distant ally.[X]
 Restores Mag + 20 HP[N]
 to all distant allies.[X]
 
+# 0x5C9 MechanicsPageTitle
+Mechanics[X]
+
+## MusicPageTitle
+Music[X]
+
+## QoLPageTitle
+QoL[X]
+
 # 0x494
 A medicinal solution that mends[NL]
 minor wounds. Heals unit for 15 HP.[X]

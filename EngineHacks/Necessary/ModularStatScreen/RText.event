@@ -143,22 +143,22 @@
     RMenu(ST_Aid,ST_Skill6,ST_Cond,0,0xA6,0x68,SS_TalkRText)
 
   ST_Skill1:
-    RMenu(ST_Cond,0,ST_HP,ST_Skill2,0x66,0x7F,0,RTextLoop,SkillDescGetter)
+    RMenu(ST_Cond,0,ST_HP,ST_Skill2,0x7E,0x7F,0,RTextLoop,SkillDescGetter)
 
   ST_Skill2:
-    RMenu(ST_Cond,0,ST_Skill1,ST_Skill3,0x7E,0x7F,1,RTextLoop,SkillDescGetter+4)
+    RMenu(ST_Cond,0,ST_Skill1,ST_Skill3,0x9E,0x7F,1,RTextLoop,SkillDescGetter+4)
 
   ST_Skill3:
-    RMenu(ST_Cond,0,ST_Skill2,ST_Skill4,0x96,0x7F,2,RTextLoop,SkillDescGetter+8)
+    RMenu(ST_Cond,0,ST_Skill2,ST_Skill4,0xBE,0x7F,2,RTextLoop,SkillDescGetter+8)
 
   ST_Skill4:
-    RMenu(ST_Talk,0,ST_Skill3,ST_Skill5,0xAE,0x7F,3,RTextLoop,SkillDescGetter+12)
+    RMenu(ST_Talk,0,ST_Skill3,ST_Skill5,0xDE,0x7F,3,RTextLoop,SkillDescGetter+12)
 
   ST_Skill5:
-    RMenu(ST_Talk,0,ST_Skill4,ST_Skill6,0xC6,0x7F,4,RTextLoop,SkillDescGetter+16)
+    RMenu(ST_Talk,0,ST_Skill4,ST_Skill6,0xE0,0x7F,4,RTextLoop,SkillDescGetter+16)
 
   ST_Skill6:
-    RMenu(ST_Talk,0,ST_Skill5,0,0xDE,0x7F,5,RTextLoop,SkillDescGetter+20)
+    RMenu(ST_Talk,0,ST_Skill5,0,0xDE,0xEE,5,RTextLoop,SkillDescGetter+20)
 
 
 /*  === PAGE 2 ===  */

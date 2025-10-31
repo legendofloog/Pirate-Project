@@ -1,5 +1,5 @@
 .thumb
-@adds a skill to the given unit's list of skills. Returns 0 if unit already has 4 skills
+@adds a skill to the given unit's list of skills. Returns 0 if unit already has 2 learned skills
 @r0 is unit in ram
 .set BWLTable, 0x203e884
 
@@ -17,6 +17,7 @@ lsl r1, r4, #4 @r1 = char*0x10
 add r0, r1
 add r0, #1 @start at byte 1, not 0
 mov r2, #0
+
 LoopStart:
 ldrb r1, [r0,r2] @get nth skill
 cmp r1, r5
@@ -28,7 +29,7 @@ strb r5, [r0, r2]
 b True
 
 NextLoop:
-cmp r2, #3
+cmp r2, #1	
 bge SetForForgetting
 add r2, #1
 b LoopStart

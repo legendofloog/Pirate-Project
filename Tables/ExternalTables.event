@@ -104,6 +104,8 @@ POP
 
 #include "ExternalTables/PromotionItemClassListPointers.event"
 
+#include "ExternalTables/Guide.event"
+
 ALIGN 4
 TestAnimationMapping:
 BYTE 0 1; SHORT 3

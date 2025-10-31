@@ -24,6 +24,7 @@ BYTE 0x00 //terminator
 // Defense equipment loses durability on each hit taken
 ALIGN 4
 DefenseEquipmentList:
+BYTE HideShield
 BYTE GlassShield
 BYTE HexlockShield
 BYTE HeavyShield
