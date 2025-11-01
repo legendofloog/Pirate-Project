@@ -5,107 +5,250 @@ Can barely see a thing[Beat][AN]
 Looks like this is the end[N]
 of me playing pirate.[AN]
 I just hope the others[N]
-don't[Beat] go down with me[Beat][AN][X]
-
+don't[Beat][CloseEyes] go down with me[Beat][A][X]
 
 ## PilarDQ
 [MidRight][LoadPilar]
-My knife hand is broken[Beat][AN]
-Lua, can you handle this[N]
-without my support here?[AN][CloseSpeechSlow][ClearFace]
-[MidLeft][LoadLua]
-It won't be easy without you,[N]
-but we'll figure it out.[AN]
-Better than we would without[N]
-your mastery of navigation.[AN][CloseSpeechSlow][ClearFace]
-[MidRight][LoadPilar]
-True enough. I will take my[N]
-leave, but a word of advice.[AN]
-Do not strain yourself trying[N]
-to make up for my absence.[AN]
-A leader must remain calm,[N]
-even in times of strife[Beat][AN]
-Do not forget that, Lua.[A][X]
+My age finally caught up[N]
+to me[Beat] Apologies, Lua.[AN]
+I won't be able to[Beat][CloseEyes][N]
+guide you any longer[Beat][A][X]
 
 ## DesiderioDQ
-[MidRight][LoadDesiderio]
-Damn it all[Beat] And I was just[N]
-getting into the fight, too.[AN]
-Sorry, boss, but I'm not[N]
-dying like this. Not here.[AN][CloseSpeechSlow][ClearFace]
-[MidLeft][LoadLua]
-Of course you're not.[AN]
-Who's going to do all the[N]
-busywork if you bite it?[AN][CloseSpeechSlow][ClearFace]
 [MidRight][LoadDesiderio][ToggleSmile]
-Heh[Beat] Always the boring jobs,[N]
-eh? Well, I'm not complaining.[AN]
-It'll give me some time to[N]
-heal up for when I'm needed.[AN][ToggleSmile]
-Keep a sharp eye out in battle,[N]
-boss. You won't have mine.[A][X]
+Hell[Beat] Here I am, bleedin'[N]
+out, when the boss needs me.[AN][ToggleSmile]
+Can barely[Beat] keep my[N]
+eye open[Beat][CloseEyes] anymore[Beat][A][X]
 
 ## RazvanDQ
 [MidRight][LoadRazvan]
-I can't let the captain down[N]
-after all she's done for me.[AN]
-I won't[Beat] run away[Beat][AN][CloseSpeechSlow][ClearFace]
-[MidLeft][LoadLua]
-Like hell you won't![N]
-This is an order, Razvan.[AN]
-Retreat to the backline[N]
-and recover for a time.[AN]
-Don't waste your life[N]
-in a place like this.[AN][CloseSpeechSlow][ClearFace]
-[MidRight][LoadRazvan]
-[Beat]An order? Then I guess[N]
-I can't refuse you, captain.[AN]
-I'll do whatever I can to be[N]
-of use, off the battlefield.[AN]
-I won't leave a debt unpaid![A][X]
+Ah[Beat] Why can't I move?[N]
+I have[Beat] I have to get up![AN]
+Captain Lua[Beat] Everyone[Beat][N]
+They're all[Beat][CloseEyes] counting on[Beat][A][X]
 
 ## XimoDQ
 [MidRight][LoadXimo]
 Guess they got too close, huh?[N]
-Sorry, Ma, you were right.[AN]
-I shoulda never left[Beat][N]
-Just got myself killed.[A][CloseEyes][X]
+Sorry, Ma, you were right.[AN][CloseEyes]
+I shoulda never left[Beat][A][X]
 
 ## CarmenDQ
 [MidRight][LoadCarmen]
 This is hardly a fitting stage,[N]
-but everyone, please listen.[AN]
-This is my final song for you.[N]
-Hold your applause[Beat][A][CloseEyes][X]
+but everyone please listen.[AN][ToggleSmile]
+This is[Beat] my final song.[N]
+Hold your[Beat][CloseEyes] applause[Beat][A][X]
 
 ## HermenegildoDQ
 [MidRight][LoadHermenegildo]
-Ah, to die a debtor with my[N]
-name forgotten to history[Beat][AN]
-A pox on Captain Lua![N]
-I hope she's next[Beat][AN][CloseEyes][X]
+Ah, what a horrible place[N]
+to die[Beat][CloseEyes] Captain Lua, I[Beat][A][X]
 
 ## EstelleDQ
 [MidRight][LoadEstelle]
 So this was the dark cloud[N]
 hanging over my divination?[AN]
 But I still have so much[N]
-to see[Beat] to learn[Beat][A][CloseEyes][X]
+to see[Beat][CloseEyes] to learn[Beat][A][X]
 
+## IndioDQ_BeforeRecruit
+[MidRight][LoadIndio][ToggleSmile]
+Oof[Beat] That one stung, haha[Beat][N]
+Sorry, but I can't keep at it.[AN]
+Don't have[Beat][CloseEyes] any energy left[Beat][A][X]
 
-## HusniyeDQ
-[MR][LoadHusniye]
-Everything I fled from[Beat][N]
-everything I sacrificed[Beat][AN]
-just to die here?[AN]
-I[Beat] [CloseEyes]I refuse[Beat][A][X]
+## IndioDQ
+[MidRight][LoadIndio][ToggleSmile]
+Oof[Beat] That one stung, haha[Beat][N]
+Seems like I'm a goner, cap'n.[AN]
+Take it[Beat] easy, alright?[N]
+Thanks[Beat][CloseEyes] for the fun times[Beat][A][X]
 
-## AvocadoDQ
-[MR][LoadAvocado]
-So this is the death I have[N]
-wrought so many times[Beat][AN]
-[HalfCloseEyes]So this is how it feels[Beat][AN]
-A deserved[Beat] [CloseEyes]fate[Beat][A][X]
+## LeandraDQ_BeforeRecruit
+[ML][LoadLeandra]
+Shit. I knew that I was[N]
+right, Geraldo[Beat][AN][CloseEyes]
+Thanks for nothing[Beat][A][X]
+
+## LeandraDQ
+[MidRight][LoadLeandra]
+Shit. Guess I chose[N]
+the wrong crew to back.[AN]
+But the pay was good[Beat][N]
+I've got[Beat][CloseEyes] no complaints[Beat][A][X]
+
+## JaimeDQChapterA2
+[MR][LoadJaime][ToggleSmile]
+Ha[Beat] Bit off more than[N]
+I could chew, looks like.[AN]
+Still, a death for the cause[N]
+is one[Beat][CloseEyes] I won't regret[Beat][A][X]
+
+## LeonorDQChapterA2
+[MR][LoadLeonor]
+I knew that rebelling would[N]
+only lead to an early grave[Beat][N]
+But still[Beat] I never thought[N]
+that it'd come so[Beat][CloseEyes] soon[Beat][A][X]
+
+## JaimeDQ
+[MR][LoadJaime][ToggleSmile]
+Ha[Beat] Bit off more than[N]
+I could chew, looks like.[AN]
+Still, a death for the crew[N]
+is one[Beat][CloseEyes] I won't regret[Beat][A][X]
+
+## LeonorDQ
+[MR][LoadLeonor]
+No matter where I run,[N]
+death comes, all the same.[AN]
+Still, a pirate's life[Beat][N][CloseEyes]
+wasn't so bad, captain[Beat][A][X]
+
+## OndehDQ_BeforeJoin
+[MR][LoadOndeh]
+Hngh[Beat] This was all my[N]
+fault[Beat] I'm sorry, Biko.[AN]
+I can't[Beat] keep going[Beat][N]
+I can't[Beat][CloseEyes] keep fighting[Beat][A][X]
+
+## BikoDQ_BeforeJoin
+[MR][LoadBiko]
+Oh, man[Beat] What's this red[N]
+stuff? Heck of a lot of it[Beat][AN]
+Ondeh, I think that[N]
+I'm gonna take[Beat][CloseEyes] a nap[Beat][A][X]
+
+## OndehDQ
+[MR][LoadOndeh]
+Hngh[Beat] I'm sorry, captain.[N]
+I can't[Beat] keep going[Beat][AN]
+But I hope that I repaid[N]
+you[Beat][CloseEyes] even a little[Beat][A][X]
+
+## BikoDQ
+[MR][LoadBiko]
+Oh, man[Beat] Kinda looks[N]
+like I'm done for, captain.[AN]
+I hope that I at least[N]
+made Ondeh[Beat][CloseEyes] proud[Beat][A][X]
+
+## JuanDQBeforeRecruit
+[ML][LoadJuan]
+Oh, no no no[Beat] Why attack[N]
+an innocent man unprovoked?[AN]
+I didn't[Beat][CloseEyes] deserve this[Beat][A][X]
+
+## JuanDQ
+[MR][LoadJuan]
+Ah[Beat] So ends the grand tale[N]
+of Juan, master thief[Beat][AN]
+Captain, please[Beat] Tell[N]
+them[Beat][CloseEyes] Tell them my story[Beat][AN][X]
+
+## TangyuanDQ
+[MR][LoadTangyuan][ToggleSmile]
+Heh[Beat] It was only a matter[N]
+of time til I bit the bullet.[AN]
+Doing it with your crew,[N]
+captain[Beat][CloseEyes] isn't so bad[Beat][A][X]
+
+## MatteoDQBeforeRecruit
+[MR][LoadMatteo][ToggleSmile]
+Ha[Beat] Hahaha! Rochefort,[N]
+this is one hell of a fight![AN]
+Looks like[Beat] my road to be[N]
+the best[Beat][CloseEyes] ends here[Beat][A][X]
+
+## MatteoDQ
+[MR][LoadMatteo][ToggleSmile]
+Ha[Beat] Hahaha! Captain,[N]
+this is one hell of a fight![AN]
+Joining up with your crew[Beat][N][CloseEyes]
+was the best choice I made[Beat][A][X]
+
+## SuzanneDQBeforeRecruit
+[MR][LoadSuzanne]
+Huh? I lost? But there's[N]
+no way[Beat] How could I[Beat][AN]
+Guess Rochefort's job was[Beat][N][CloseEyes]
+more than I could handle[Beat][AN][X]
+
+## SuzanneDQ
+[MR][LoadSuzanne]
+Huh? I lost? But there's[N]
+no way[Beat] How could I[Beat][AN]
+Captain[Beat] I'm sorry, really.[N]
+I couldn't[Beat][CloseEyes] live up to[Beat][A][X]
+
+## DurghamDQ
+[MR][LoadDurgham]
+O-Oh[Beat] What a blunder![AN]
+Perhaps I should've chosen[Beat][N][CloseEyes]
+another, less plump ship[Beat][A][X]
+
+## YodsenDQ
+[MR][LoadYodsen]
+Gah! I[Beat] I don't think that[N]
+I can make it out of here.[AN]
+I'll never[Beat][CloseEyes] redeem myself[Beat][A][X]
+
+## TrianaDQ
+[MR][LoadTriana]
+Lua[Beat] This adventure[N]
+was[Beat] everything, to me[Beat][N]
+Sorry that I can't see[N]
+it through[Beat][CloseEyes] to the end[Beat][A][X]
+
+## BartzDQ
+[MR][LoadBartz]
+Heh[Beat] Guess I overdid it.[AN]
+But between a death like this[N]
+and serving Incendivis, well[Beat][AN]
+This wasn't[Beat][CloseEyes] so bad[Beat][AN][X]
+
+## MedwynDQ
+[MR][LoadMedwyn]
+Bah[Beat] Joining up with this[N]
+crew was a bad call, eh?[AN]
+That damn merchant captain[Beat][N]
+Never[Beat][CloseEyes] got my money back[Beat][AN][X]
+
+## RahelDQ
+[MR][LoadRahel]
+Ah[Beat] Sorry, captain, but[N]
+I'm gonna have to retreat.[AN]
+It'll be a while before[N]
+I can fight again, but[Beat][AN]
+I made a promise to Master[N]
+Ida not to die out here.[AN]
+And I mean to keep it.[A][X]
+
+## OrlandoDQ
+[MR][LoadOrlando]
+Hm[Beat] Apologies, Lua.[N]
+But I intend to withdraw.[AN]
+If I fight any longer,[N]
+then I really will die.[AN][ToggleSmile]
+Worry not; I'll play pirate[N]
+for a little while longer.[AN]
+I want to see your story's[N]
+conclusion, after all![A][X]
+
+## DmitrDQBeforeRecruit
+[MR][LoadDmitr]
+Mm[Beat] I must apologize.[AN]
+I cannot serve as your[N]
+guide[Beat][CloseEyes] any longer[Beat][A][X]
+
+## DmitrDQ
+[MR][LoadDmitr]
+So ends my wanderer's path[Beat][N]
+Thank you, Captain Lua.[AN][ToggleSmile]
+My time with your crew[N]
+was truly[Beat][CloseEyes] pleasant[Beat][A][X]
 
 ## MagdalenaDQ
 [MR][LoadMagdalena]
@@ -113,14 +256,107 @@ Port Receloso[Beat][AN]
 I will never see[N]
 your streets again[Beat][A][X]
 
+## HusniyeDQ
+[MR][LoadHusniye]
+Everything I fled from[Beat][N]
+everything I sacrificed[Beat][AN]
+just to die here?[N]
+I[Beat] [CloseEyes]I refuse[Beat][A][X]
+
+## AvocadoDQ
+[MR][LoadAvocado]
+So this is the death I have[N]
+wrought so many times[Beat][AN]
+[HalfCloseEyes]So this is how it feels[Beat][N]
+A deserved[Beat] [CloseEyes]fate[Beat][A][X]
+
+## KaiDQBeforeRecruit
+[ML][LoadKai]
+Hell[Beat] The old man was[N]
+right. Leavin' home[Beat][AN]
+Brought me nothin' but[N]
+trouble[Beat][CloseEyes] Damn it all[Beat][AN][X]
+
+## KaiDQ
+[MR][LoadKai]
+Hell[Beat] Just when things[N]
+started goin' good, too[Beat][AN]
+I just[Beat] I just wish that[N]
+I'd had[Beat][CloseEyes] more time[Beat][A][X]
+
+## ErnestDQ
+[MR][LoadErnest]
+Ah[Beat] I failed again, huh?[N]
+I'm[Beat] sorry for this, Desi.[AN]
+That dream of ours[Beat][N]
+It'll never[Beat][CloseEyes] come true[Beat][A][X]
+
+## AdrianDQ
+[MR][LoadAdrian]
+Face in the dirt,[N]
+just like that[Beat][N]
+Sorry, chief[Beat] I'm gone.[N]
+Good luck[Beat][CloseEyes] goin' forward[Beat][A][X]
+
+## AdrianDQBeforeRecruit
+[ML][LoadAdrian]
+Damn[Beat] Not how this was[N]
+supposed to go[Beat][AN][CloseEyes]
+I'm sorry, Lexa[Beat][A][X]
+
+## LexaDQ
+[MR][LoadLexa]
+The hell[Beat] I lost?[N]
+But I've never[Beat] I always[Beat][AN]
+Sorry, cap'n. The rest of[N]
+the fight's[Beat][CloseEyes] up to you[Beat][A][X]
+
+## LexaDQBeforeRecruit
+[ML][LoadLexa]
+Wait, that wasn't what we[N]
+planned[Beat] Adrian, I'm[Beat][AN][CloseEyes]
+sorry[Beat] Don't die, please[Beat][A][X]
+
+## NoahDQ
+[MR][LoadNoah]
+H-Heck[Beat] They got me,[N]
+captain! Sorry[Beat][AN]
+I tried[Beat][CloseEyes] my best[Beat][A][X]
+
+
+## NoahDQBeforeRecruit
+[MR][LoadNoah]
+They got me[Beat] I[Beat] I[Beat][AN]
+I couldn't avenge my friends[Beat][N][CloseEyes]
+I'm sorry, everyone[Beat][A][X]
 
 ## FataDQ
 [MR][LoadFata]
 Damn it all, if this hasn't[N]
 been a long time coming[Beat][AN]
 [HalfCloseEyes]Ismar, Djona[Beat] Morgan[Beat][AN]
-here's hoping you saved[Beat]
+Here's hoping you saved[Beat]
 a seat for me, [CloseEyes]huh[Beat]?[A][X]
+
+## PonteDQ
+[MR][LoadPonte]
+Uh oh[Beat] That doesn't feel[N]
+good. No, not at all[Beat][AN]
+Captain, I'm[Beat][CloseEyes] I'm[N]
+not gonna make it[Beat][A][X]
+
+## PassarolaDQ
+[MR][LoadPassarola]
+Ah[Beat] Am I to die so soon?[AN]
+I haven't even created my[Beat][N][CloseEyes]
+magnum opus. My grand design[Beat][AN][X]
+
+## NeltumeDQ
+[MR][LoadNeltume]
+From the moment I became a[N]
+pirate, this[Beat] was fated.[AN]
+And yet, with death so close,[N]
+I feel[Beat][CloseEyes] fulfilled[Beat][A][X]
 
 ## RubyDQ
 [MR][LoadRuby]
@@ -129,3 +365,77 @@ with her crew at last[Beat][AN]
 So this is how the[N]
 Rioja Reapers end[Beat][AN]
 [CloseEyes]Yurena[Beat][A][X]
+
+## CalistaDQBeforeRecruit
+[MR][LoadCalista]
+An Imperial Marine, dying[N]
+in rebel-controlled lands[Beat][AN]
+What a damn[Beat][CloseEyes] disgrace[Beat][A][X]
+
+## ValerieDQBeforeRecruit
+[MR][LoadValerie]
+I-I[Beat] I'm really[Beat][N]
+gonna die here?[AN]
+Captain Calista, I[Beat][N]
+I'm sorry[Beat] I failed[Beat][A][X]
+
+## CalistaDQ
+[MR][LoadCalista]
+[Beat]I lived as a marine,[N]
+but died as a pirate[Beat][AN][ToggleSmile]
+Ha[Beat] hahahaha! What a[N]
+strange[Beat][CloseEyes] world[Beat][AN][X]
+
+## ValerieDQ
+[MR][LoadValerie]
+O-Oh[Beat] Guess I'm done for,[N]
+huh? Sorry, Captain Lua[Beat][AN]
+I never was[Beat][CloseEyes] good enough[Beat][A][X]
+
+## RimaDQ
+[MR][LoadRima]
+Guess I screwed up[Beat] Well,[N]
+it was a matter of time.[AN]
+At least I[Beat][CloseEyes] died free[Beat][A][X]
+
+## BoltonDQ
+[MR][LoadBolton]
+[Beat]Honestly, it's impressive[N]
+that I survived this long.[AN]
+Can't really[Beat][CloseEyes] complain[Beat][A][X]
+
+## RemoraDQ
+[MR][LoadRemora]
+Aaah[Beat] This is too soon![AN]
+I haven't found[Beat] nearly[N]
+enough treasure[Beat] Not yet[Beat][A][X]
+
+## WindyDQ
+[MR][LoadWindy]
+Ah, heck[Beat] Maybe all the[N]
+village elders had a point.[AN]
+Maybe I should've stayed.[N]
+But[Beat][CloseEyes] it was still[Beat] fun[Beat][A][X]
+
+## KurtDQ
+[MR][LoadKurt]
+A lifetime of bad luck[Beat][AN]
+And somehow, this is where[N]
+I die? What are[Beat][CloseEyes] the odds?[A][X]
+
+## TheanaDQ
+[MR][LoadTheana]
+The killer becomes the[N]
+killed[Beat] So be it, then.[AN]
+This was always[Beat] my fate[Beat][A][X]
+
+## FidelDQ
+[MidLeft][LoadFidel]
+Looks like this is it, huh[Beat][N]
+But hey, it was a good life.[AN]
+I don't have[Beat] any regrets[Beat][A][X]
+
+## D3_FidelDQ
+[MidLeft][LoadFidel]
+A-Ah[Beat] Sorry, Raz[Beat][N]
+I did[Beat] my best[Beat][A][CloseEyes][X]

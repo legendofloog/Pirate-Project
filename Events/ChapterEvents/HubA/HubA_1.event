@@ -18,6 +18,7 @@ EventPointerTable(HubA_1EventsID, PointerList)
 #define GeraldoXimoBattleQuoteSeen 0x13
 #define GeraldoEstelleBattleQuoteSeen 0x14
 #define GeraldoHermeneBattleQuoteSeen 0x15
+#define LeandraDeathQuoteAsEnemy 0x16
 
 #define GeraldoGenericBattleQuoteSeen 0x28
 */
@@ -302,6 +303,7 @@ Text(ChA1LeandraRecruitedDialogue)
 SVAL s3 1000
 TAKEMONEY
 CUSA Leandra
+ENUT 0x16 //set the enemy death flag since it won't be needed anymore
 MURE 2
 GOTO 3
 LABEL 2
@@ -328,6 +330,7 @@ Text(ChA1LeandraRecruitedDialogue)
 SVAL s3 1000
 TAKEMONEY 
 CUSA Leandra
+ENUT 0x16 //set the enemy death flag since it won't be needed anymore
 MURE 2
 GOTO 6
 LABEL 5

@@ -269,11 +269,15 @@ FlagIsSet(CruzAccused, 0x1A1)
 	//MUSC StillZephyrsID
 	SetBackground(Inn)
 	Text(B2_Outro_Romance)
-	FADI 10
+	FADI 15
 	STAL 30
-	FADU 10
-	//xMUSC WelcomeAboardMateyID
-	Text(B2_Outro_MagdalenaPermanent)
+	MUSC CastawayHeartID
+	CHECK_ALIVE Magdalena
+	BEQ 776 s0 sC //if not alive, skip over this; i don't think we actually need a second conditional for if they are dead
+		FADU 15
+		Text(B2_Outro_MagdalenaPermanent)
+	LABEL 776
+	GOTO 0x3C3
 LABEL 0x1A1
 
 FlagIsSet(AvocadoAccused, 0x2B2)
@@ -285,13 +289,15 @@ FlagIsSet(AvocadoAccused, 0x2B2)
 	SetBackground(Harbor)
 	//Music(CherishTheDeadID)
 	Text(B2_Outro_RazvanSad)
-	
 	FADI 15
 	STAL 30
-	SetBackground(Ship)
-	MUSC WindAmbienceID
-	Text(B2_Outro_HusniyePermanent)
-	FADI 16
+	CHECK_ALIVE Husniye
+	BEQ 777 s0 sC //if not alive, skip over this; i don't think we actually need a second conditional for if they are dead
+		SetBackground(Ship)
+		MUSC WindAmbienceID
+		Text(B2_Outro_HusniyePermanent)
+	LABEL 777
+	GOTO 0x3C3
 LABEL 0x2B2
 
 FlagIsSet(HusniyeAccused, 0x3C3)
@@ -305,10 +311,12 @@ FlagIsSet(HusniyeAccused, 0x3C3)
 	Text(B2_Outro_RazvanSad)
 	FADI 15
 	STAL 30
-	SetBackground(Ship)
-	MUSC WindAmbienceID
-	Text(B2_Outro_AvocadoPermanent)
-	FADI 16
+	CHECK_ALIVE Avocado
+	BEQ 777 s0 sC //if not alive, skip over this; i don't think we actually need a second conditional for if they are dead
+		SetBackground(Ship)
+		MUSC WindAmbienceID
+		Text(B2_Outro_AvocadoPermanent)
+	LABEL 777
 LABEL 0x3C3
 FADI 15
 GoToHubChapter(HubB)

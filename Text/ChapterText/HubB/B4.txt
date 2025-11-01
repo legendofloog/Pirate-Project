@@ -809,26 +809,6 @@ those chumps.[.4] Prepare to die.[A][X]
 Urk-[.4] What the[Beat][.4] hell.[.4][CloseEyes][N]
 How'd I[Beat][.4] lose?[Beat][A][X]
 
-## AdrianDQ
-[MR][LoadAdrian]
-Face in the dirt just like that[Beat][.4][N]
-What a sorry way to die.[Beat][CloseEyes][A][X]
-
-## AdrianDQB_4
-[ML][LoadAdrian]
-Ugh-[.4] Not how this was supposed[N]
-to go[Beat][.4] I'm sorry Lexa[CloseEyes][Beat][A][X]
-
-## LexaDQ
-[MR][LoadLexa]
-Are you kidding?[.4] Bested like that[Beat][.4][N]
-Sorry Adrian[Beat][.4][CloseEyes] It's up for me[Beat][A][X]
-
-## LexaDQB_4
-[ML][LoadLexa]
-Wait that wasn't what we[N]
-planned[Beat][.4] Adrian I'm[Beat][.4][CloseEyes] Sorry[Beat][A][X]
-
 ## HubB_4GameOverText
 [MR][LoadLua]
 Blast![.5] They caught up to us[.4][N]

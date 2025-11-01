@@ -308,7 +308,8 @@ Remora[X]
 Treasure Hunter[X]
 
 ## RemoraDesc
-Needs a description.[X]
+A savvy sleuth familiar with all things[N]
+loot. Lives for the thrill of the hunt.[X]
 
 ## RimaName
 Rima[X]

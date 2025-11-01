@@ -21,6 +21,7 @@
 [CSSCF] = [CSS][CF]
 [Clear] = [2NL]
 [TMM] = [ToggleMouthMove]
+[ACE] = [A][CloseEyes]
 
 [,] = ,[.4]
 [5.] = .[.5]

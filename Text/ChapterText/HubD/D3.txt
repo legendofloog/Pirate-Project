@@ -1965,12 +1965,6 @@ They at least deserve that much.[AN]
 
 // death quotes down here
 
-## FidelDQ
-[MidLeft][LoadFidel]
-Looks like this is it, huh[Beat][N]
-But hey, it was a good life.[AN]
-I don't have[Beat] any regrets[Beat][A][X]
-
 ## EnriqueDQ
 [MidLeft][LoadEnrique]
 I[Beat] I can't be stopped here![N]
@@ -1983,8 +1977,3 @@ So I can't[Beat] I can't die[Beat][AN][X]
 O-Oh, that hit struck deep[Beat][N]
 Guess it's time[Beat] to wake up.[AN]
 It was[Beat] a nice dream[Beat][AN][X]
-
-## D3_FidelDQ
-[MidLeft][LoadFidel]
-A-Ah[Beat] Sorry, Raz[Beat][N]
-I did[Beat] my best[Beat][A][CloseEyes][X]

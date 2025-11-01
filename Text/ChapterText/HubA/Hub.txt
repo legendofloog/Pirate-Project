@@ -1473,13 +1473,13 @@ I don't have the gold on-hand to hire[N]
 a beggar. I've got my own expenses.[AN]
 [ML]
 [Beat]You don't even have[N]
-500 gold to spare?[A]
+1000 gold to spare?[A]
 [MR]
 [Beat] [Beat][A]
 [ML]
 Never mind, then. You clearly need[N]
 the money more than I, good captain.[AN]
-I'll wait for a[Beat] mm, richer client.[A][X]
+I'll wait for a[Beat] richer client.[A][X]
 
 
 ## BarGangIntroText1

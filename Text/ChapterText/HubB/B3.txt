@@ -876,16 +876,6 @@ I'd have let you run free.[AN]
 But we need this fuel[Beat][N]
 I'm not lettin' you take it![A][X]
 
-## ErnestDQ
-[MR][LoadErnest]
-It's[Beat] about time, huh?[N]
-I'm going on ahead, Desi[Beat][A][CloseEyes][X]
-
-## KaiDQ
-[MR][LoadKai]
-Damn[Beat] I never shoulda joined[N]
-this crew. What a[Beat] waste[Beat][A][CloseEyes][X]
-
 ## AzaharDQ
 [ML][LoadAzahar]
 If you're killin' me,[N]

@@ -25,6 +25,8 @@ POIN BeginningScene EndingScene
 //18 - turned on by JuanReaction misc event
 //19 - rebel arrival event flag (can't share with other turn based events for whatever reason)
 
+//20 - Juan red death quote flag
+
 TurnBasedEvents:
 //TurnEventPlayer(0, SurvivorsTalk, 1)
 //TurnEventPlayer(0, EndingScene, 1)
@@ -157,6 +159,7 @@ MUSS WelcomeAboardMateyID
 SetAI(Juan,0,0,0,0)
 Text(ChA4JuanRecruitText)
 CUSA Juan
+ENUT 20
 MURE 2
 NoFade
 ENDA
