@@ -135,7 +135,7 @@ Sailing into the Horizon[X]
 Alusq[X]
 
 ## Musician_Eric
-Eric[X]
+A_Reliable_Chair[X]
 
 ## Musician_ArcherBias
 ArcherBias[X]

@@ -217,7 +217,7 @@ FlagIsSet(CruzAccused, 0x33)
 	ENUN
 LABEL 0x33
 GotoPrepScreen
-NoFade 
+NoFade
 ENDA
 
 NewUnitsBlue:

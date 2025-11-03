@@ -897,7 +897,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [8,20] 0 0 0 0 [Cutlass, IronSword, Iron
 UNIT
 
 NewUnits:
-UNIT Estelle Troubadour 0 Level(2,Ally,False) [0,5] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Estelle Troubadour 0 Level(2,Ally,False) [0,5] 0 0 0 0 [Heal, PureWater] NoAI
 UNIT Hermenegildo Myrmidon 0 Level(2,Ally,False) [14,5] 0 0 0 0 [LightBrand, IronSword, Vulnerary] NoAI
 UNIT
 

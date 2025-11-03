@@ -571,7 +571,7 @@ AlonsoMugData:
 #incbin "Dmp/Alonso_frames.dmp"
 #incbin "Dmp/Alonso_palette.dmp"
 #incbin "Dmp/Alonso_minimug.dmp"
-setMugEntry(AlonsoMug, AlonsoMugData, 2, 5, 3, 3)
+setMugEntryExtend(AlonsoMug, AlonsoMugData, 3, 5, 3, 3, 3, 254, 5, 254)
 
 // again, credit to shin19
 ALIGN 16
@@ -580,7 +580,7 @@ DalilaMugData:
 #incbin "Dmp/Dalila_frames.dmp"
 #incbin "Dmp/Dalila_palette.dmp"
 #incbin "Dmp/Dalila_minimug.dmp"
-setMugEntry(DalilaMug, DalilaMugData, 2, 5, 3, 3)
+setMugEntry(DalilaMug, DalilaMugData, 3, 5, 3, 3)
 
 ALIGN 16
 PonteMugData:

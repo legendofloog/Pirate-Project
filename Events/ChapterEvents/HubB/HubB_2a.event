@@ -350,12 +350,11 @@ ENDA
 EndingScene:
 FADI 16
 ENUF LuaInAHubFlag
-CLEA 0
-CLEN 0
-CLEE 0
+RemoveAll
 MUSC SwabbieTalkID
 LOAD1 1 OutroLua
 LOAD1 1 OutroMagdalena
+ENUN
 CAM1 Lua
 CAM1 Magdalena
 CAMERA_CENTERED [15,14]
@@ -418,9 +417,7 @@ GiveGold(2500)
 FADI 16
 MUSC 0x4A //night ambience
 ASMC MakeMusicAhoyASMC
-CLEA 0
-CLEN 0
-CLEE 0
+RemoveAll
 //This is to set the coordinates of the newly loaded night time map to 0,0
 SVAL sB 0 
 LOMA CutsceneHubB_2a
@@ -579,7 +576,7 @@ LABEL 0x666 // if cruz spared, will kill Magdalena
 	// more cruz conversation here
 LABEL 0x777
 ASMC MakeMusicAhoyASMC
-FADI 8
+FADI 15
 MNC2 HubB_2
 NoFade
 ENDA

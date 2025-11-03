@@ -357,7 +357,7 @@ ALIGN 4
 
 ALIGN 4
 HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip
-SHLI Elfire Thunder Elsurge Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir Mine GlassShield HideShield HexlockShield AshQuiver
+SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir Mine GlassShield HideShield HexlockShield AshQuiver
 ALIGN 4
 
 MiscBasedEvents:

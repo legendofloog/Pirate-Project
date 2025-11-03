@@ -155,7 +155,11 @@ void SortPlayerUnitsForPrepScreen() //this part seems like the real beastie, not
         unit = GetUnitByCharId(NewForceDeploymentList[i].unitId); //if we've got the right unit, and the right chapter/mode, then let's just grab the unit
 
         if (!UNIT_IS_VALID(unit)) //if the unit is valid?
+        {   
+            i++; // i forgot another one fml
             continue;
+        } 
+            
 
         unit->state &= 0xFDFFFFFF; // what's the point of this?
 
