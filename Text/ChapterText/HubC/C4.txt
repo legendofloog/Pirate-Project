@@ -9,7 +9,7 @@ Escape[X]
 [R][LoadRemora]
 The water level's still rising.[AN]
 If you can't swim or fly,[N]
-get to higher ground!.[A][X]
+get to higher ground![A][X]
 
 ## HubC4WaterWarning2
 [R][LoadLua]

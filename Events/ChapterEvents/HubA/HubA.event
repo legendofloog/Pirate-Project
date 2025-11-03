@@ -98,6 +98,8 @@ BNE 2 s1 sC
     GiveGold(1000)
     ENUF LuaInAHubFlag
     ASMC EyeForAnEyeResetASMC
+	CALL ShowAllPlayers
+	STAL 1
     MNC2 HubA_2
     NoFade
     ENDB

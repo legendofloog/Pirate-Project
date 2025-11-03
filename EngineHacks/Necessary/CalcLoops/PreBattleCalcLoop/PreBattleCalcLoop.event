@@ -62,6 +62,7 @@ POIN LethalitySkill NonGBALethalitySkill
 //add any new ones before here
 
 POIN KeenFighter SteadyBrawler // % Damage reduction if doubling goes near end 
+
 POIN Equalizer
 //tower shield plus needs to go after every other skill that may affect defender's attack
 POIN TowerShieldPlus

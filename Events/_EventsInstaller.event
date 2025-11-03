@@ -22,6 +22,9 @@ BYTE 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 
 ALIGN 4
 ShowAllPlayers:
+CheckHowManyHubChaptersCompleted
+SVAL s1 0 //if no chapters completed yet
+BNE 2 s1 sC 
 ShowUnitIfAlive(Pilar)
 ShowUnitIfAlive(Desiderio)
 ShowUnitIfAlive(Razvan)
@@ -29,6 +32,7 @@ ShowUnitIfAlive(Carmen)
 ShowUnitIfAlive(Ximo)
 ShowUnitIfAlive(Estelle)
 ShowUnitIfAlive(Hermenegildo)
+LABEL 2
 NoFade
 ENDA
 

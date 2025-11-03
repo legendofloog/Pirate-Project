@@ -69,20 +69,11 @@ bool LuaIsInHub(Unit* unit){
 int ReturnNumberOfHubChaptersVisited(){
     int hubChapters = (CheckEventId(0x83) + CheckEventId(0x8B) + CheckEventId(0x8c) + CheckEventId(0x8d) + CheckEventId(0x8e) + CheckEventId(0x8f) - 1);
     
-    if (gChapterData.chapterIndex == 1){ //in Hub A, add 1
-        hubChapters++;
-    }
-    else if (gChapterData.chapterIndex == 10){
-        hubChapters++;
-    }
-    else if (gChapterData.chapterIndex == 17){
-        hubChapters++;
-    }
-    else
+    if (LuaIsInHub(gActiveUnit)) //unit shouldn't matter
     {
-
+        hubChapters++;
     }
-
+    
     if (hubChapters <= 0){
         return 0;
     }

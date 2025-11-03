@@ -1,47 +1,37 @@
 #include "gbafe.h"
 
-extern bool NewAuraSkillCheck(Unit* unit, int skillID, int allyOption, int maxRange);
+extern bool AuraSkillCheck(Unit* unit, int skillID, int allyOption, int maxRange);
 
 extern u8 EqualizerID_Link;
 extern u8 EqualizerRange_Link;
 
 void Equalizer(BattleUnit* bunitA, BattleUnit* bunitB) {
 
-	if (gBattleStats.config & (BATTLE_CONFIG_REAL | BATTLE_CONFIG_SIMULATE))
-	{
-
-	}
-	else
-	{
-		return; //return if not a real battle
-	}
-
-
-	int atkA = bunitA->battleAttack;
-	int atkB = bunitB->battleAttack;
-
+	if (gBattleStats.config & BATTLE_CONFIG_BIT2)
+    {
+        return;
+    }
 
 	int meanAtk;
-	if (atkA == atkB)
+	if (bunitA->battleAttack == bunitB->battleAttack)
 	{
-		meanAtk = atkA;
+		return; //don't do anything, we're already equalized
 	}
-	else
-	{
-		meanAtk = (atkA + atkB) / 2;
-	}
-	if(NewAuraSkillCheck(&bunitA->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
-		if(atkA < atkB && (bunitB->canCounter == true))
+
+	if(AuraSkillCheck(&bunitA->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
+		if(bunitA->battleAttack < bunitB->battleAttack && (bunitB->canCounter == true))
 		{	//if equalizer unit's damage is less than enemy's damage
+			meanAtk = (bunitA->battleAttack + bunitB->battleAttack) / 2;
 			bunitA->battleAttack = meanAtk;
 			bunitB->battleAttack = meanAtk;
-		}	//add the difference between meanDamage and opponent battle Def to attack
+		}
 	}
-	if(NewAuraSkillCheck(&bunitB->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
-		if(atkB < atkA && (bunitA->canCounter == true))
+	else if (AuraSkillCheck(&bunitB->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
+		if(bunitB->battleAttack < bunitA->battleAttack && (bunitA->canCounter == true))
 		{	//if equalizer unit's damage is less than enemy's damage
+			meanAtk = (bunitA->battleAttack + bunitB->battleAttack) / 2;
 			bunitA->battleAttack = meanAtk;
 			bunitB->battleAttack = meanAtk;
-		}	//add the difference between meanDamage to attack
+		}
 	}
 }

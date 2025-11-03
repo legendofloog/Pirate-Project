@@ -6,7 +6,7 @@ Escape[X]
 
 ## Ch4StatusObjective
  Flee the temple and[N]
-elude Wayra's pursuit.[X]
+elude Quispe's pursuit.[X]
 
 ## Ch4BeginningScene1
 [MidLeft][LoadPilar]

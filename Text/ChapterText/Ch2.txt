@@ -481,10 +481,7 @@ And although I cheer their opponents,[N]
 destruction without creation means nil.[AN]
 A new world order must replace it.[N]
 Anyone who does not understand that[N]
-will never deserve the Fire Emblem.[AN]
-I can only hope my ally makes the[N]
-captain comprehend this simple truth,[N]
-so we never need cross blades[Beat][A][X]
+will never deserve the Fire Emblem[Beat][AN][X]
 
 ## Ch2Title
 Ch 2: Flight of the Hunted[X]
@@ -558,14 +555,6 @@ I wanted to make this easy,[N]
 but yet, you all still resist.[AN]
 Your crimes end here and now![AN][X]
 
-## ElodiaDefeatQuoteCh2
-[ML][LoadElodia]
-Hngh![.4] Unbelievable[Beat][AN]
-That I would be reduced to[N]
-this by no-name pirates[Beat][AN]
-Still, I have no intent to fall[N]
-here. Rejoice[Beat] for now.[A][X]
-
 ## IgnacioBossQuote
 [ML][LoadIgnacio]
 Y-You got through the[N]
@@ -581,11 +570,6 @@ At the end of the day,[N]
 the empire always wins![AN]
 So just give up and roll[N]
 over. You're already dead![A][X]
-
-## IgnacioDeathQuote
-[ML][LoadIgnacio]
-I[Beat] I'm bleeding? But I was[N]
-supposed to be[Beat] a winner[Beat][A][CloseEyes][X]
 
 ## HugoWarning
 [ML][LoadHugo][3LB]
@@ -610,12 +594,6 @@ dead or alive. You chose dead.[AN]
 So I don't need to think;[N]
 I just need to beat you down![A][X]
 
-## HugoDeathQuote
-[ML][LoadHugo]
-H-Haha[Beat] You really[Beat][N]
-got me? One hell of a fight[Beat][AN]
-You've got my[Beat] respect[Beat][A][CloseEyes][X]
-
 ## JulianaWarning
 [ML][LoadJuliana][3LB]
 Aaah[Beat] Do we really have to fight?[N]
@@ -636,8 +614,3 @@ Otherwise, you'd just kill[N]
 me, like everyone else[Beat][AN][ToggleSmile]
 And that would be way too[N]
 long of a nap for my tastes![AN][X]
-
-## JulianaDeathQuote
-[ML][LoadJuliana]
-Mnnh[Beat] Sorry, Elodia.[N]
-But I really[Beat] did my best[Beat][CloseEyes][AN][X]

@@ -323,48 +323,6 @@ Hmph[Beat] Underestimating us, aren't you?[N]
 We haven't survived this long by luck.[N]
 You'll get what you paid for, Jaime![A][X]
 
-## FelipeBossQuote
-[ML][LoadFelipe]
-Aha! The rebels deign[N]
-to face me, at last![AN]
-My immense skill may cause you[N]
-to curse that we ever met.[AN]
-Fear not; you will be remembered,[N]
-as a footnote in my exploits![A][X]
-
-## FelipeDeathQuote
-[ML][LoadFelipe]
-Wait, wait! Don't kill me![AN]
-I can grant you great wealth,[N]
-or fame, or whatever you wish![AN]
-I can't[Beat] I can't die here![A][X]
-
-## SierraBossQuote
-[ML][LoadSierra]
-[Beat]You're no rebels, are you?[AN]
-I don't know why you're here,[N]
-but I've got a job to do.[AN]
-Get out of my way, will you?[A][X]
-
-## SierraDeathQuote
-[ML][LoadSierra]
-Ah[Beat] Is this how it ends?[AN]
-What a terrible way to go[Beat][N]
-I should've[Beat] left him[Beat][A][X]
-
-## ManfredBossQuote
-[ML][LoadManfred]
-Hahahaha! I was just getting[N]
-bored of chopping up halfwits.[AN]
-You look like you'll put up[N]
-a fight[Beat] Don't bore me![A][X]
-
-## ManfredDeathQuote
-[ML][LoadManfred]
-Is this[Beat] blood? But you were[N]
-supposed to be the one to die![AN]
-This wasn't[Beat] fun at all[Beat][A][X]
-
 ## Ch2SierraChargeText
 [ML][LoadSierra]
 And Felipe's strategies went as poorly[N]

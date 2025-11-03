@@ -64,8 +64,8 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
 		if (target->unit.curHP == 0){		
             int initialKillExp = 30 + 6 * levelDiff;
 
-			if(initialKillExp < 6){
-				return 6;
+			if(initialKillExp < 3){
+				return 3;
 			}
             else if (initialKillExp > 100){
                 return 100;
@@ -78,8 +78,8 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
 		// hit
 		int initialHitExp = 10 + 2 * levelDiff;
 
-			if(initialHitExp < 2){
-				return 2;
+			if(initialHitExp < 1){
+				return 1;
 			}
 			else if(initialHitExp > 33){
 				return 33;

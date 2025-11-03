@@ -439,3 +439,247 @@ I don't have[Beat] any regrets[Beat][A][X]
 [MidLeft][LoadFidel]
 A-Ah[Beat] Sorry, Raz[Beat][N]
 I did[Beat] my best[Beat][A][CloseEyes][X]
+
+
+// Boss Death Quotes
+
+// HUB A
+
+## Ch1KhazhakDQ
+[MidLeft][LoadKhazhak]
+Damn[Beat] We ran into some real[N]
+demons, huh? Sorry, boss[Beat][AN]
+I ain't[Beat] gonna make it[Beat][A][CloseEyes][X]
+
+## GeraldoDeathQuote
+[ML][LoadGeraldo]
+[ML]
+All the good deeds I've done[Beat][N]
+And this is how it all ends?[AN]
+That's[Beat] not[Beat] fair[Beat][AN][CloseEyes][X]
+
+## BuzuDeathQuote
+[ML][LoadBozo]
+[ML]Zobo! Carry on[Beat][N]
+the Bruising Brothers[Beat][A][CloseEyes][X]
+
+## BozoDeathQuote
+[ML][LoadBuzu]
+[ML]Buzu! Carry on[Beat][N]
+the Bruising Brothers[Beat][A][CloseEyes][X]
+
+## YurenaDeathQuote
+[ML][LoadYurena]
+[ML]Ha[Beat] Not bad. But I[N]
+won't risk my life for Sanz.[AN]
+Best of luck with your[N]
+little heist, pirates.[A][X]
+
+## FelipeDeathQuote
+[ML][LoadFelipe]
+Wait, wait! Don't kill me![AN]
+I can grant you great wealth,[N]
+or fame, or whatever you wish![AN]
+I can't[Beat] I can't die here![A][X]
+
+## SierraDeathQuote
+[ML][LoadSierra]
+Ah[Beat] Is this how it ends?[AN]
+What a terrible way to go[Beat][N]
+I should've[Beat] left him[Beat][A][X]
+
+## ManfredDeathQuote
+[ML][LoadManfred]
+Is this[Beat] blood? But you were[N]
+supposed to be the one to die![AN]
+This wasn't[Beat] fun at all[Beat][A][X]
+
+## A3SagargalaDeathQuote
+[MidLeft][LoadSagargala]
+Losing to women and babes[Beat][N]
+What a humiliating defeat.[AN]
+But this isn't the end[N]
+for the Rioja Reapers.[AN]
+The captain will find you,[N]
+hear me? You'll all[Beat] pay[Beat][A][X]
+
+## A4_StingrayDefeated
+[ML][LoadStingray]
+Damn you all[Beat]![AN]
+Can't believe[Beat][N][CloseEyes]
+We got outmatched[Beat][AN][X]
+
+## A4_RamiroDefeated
+[ML][LoadRamiro]
+Hngh[Beat] To fall like this?[AN]
+But I[Beat] I've done nothing[Beat][N]
+for the cause[Beat][CloseEyes] I can't[Beat]![AN][X]
+
+## IgnacioDeathQuote
+[ML][LoadIgnacio]
+I[Beat] I'm bleeding? But I was[N]
+supposed to be[Beat] a winner[Beat][A][CloseEyes][X]
+
+## ElodiaDefeatQuoteCh2
+[ML][LoadElodia]
+Hngh![.4] Unbelievable[Beat][AN]
+That I would be reduced to[N]
+this by no-name pirates[Beat][AN]
+Still, I have no intent to fall[N]
+here. Rejoice[Beat] for now.[A][X]
+
+## HugoDeathQuote
+[ML][LoadHugo]
+H-Haha[Beat] You really[Beat][N]
+got me? One hell of a fight[Beat][AN]
+You've got my[Beat] respect[Beat][A][CloseEyes][X]
+
+## JulianaDeathQuote
+[ML][LoadJuliana]
+Mnnh[Beat] Sorry, Elodia.[N]
+But I really[Beat] did my best[Beat][CloseEyes][AN][X]
+
+// HUB B
+
+## KirilDeathQuote
+[MidLeft][LoadKiril]
+[Beat][.5][CloseEyes][A][X]
+
+## YadneyDeathQuote
+[ML][LoadYadney]
+[ML]And here I'd hoped to die[Beat][HalfCloseEyes][AN]
+under the open[Beat] [CloseEyes]sky[Beat][A][X]
+
+## CruzDeathQuote
+[ML][LoadCruz]
+[ML]No! I'm[Beat] not done[Beat]![AN]
+[HalfCloseEyes]As long as[Beat] as I just[N]
+keep my eyes[Beat] open[Beat][AN]
+[CloseEyes]I can still[Beat][A][X]
+
+## AzaharDQ
+[ML][LoadAzahar]
+If you're killin' me,[N]
+get it over with already.[AN]
+[Beat]You're not?[N]
+Suit yourself, morons.[A][X]
+
+## JavierDQ
+[ML][LoadJavier]
+Urk-[.4] What the[Beat][.4] hell.[.4][CloseEyes][N]
+How'd I[Beat][.4] lose?[Beat][A][X]
+
+## NicodemusDeathQuote
+[ML][LoadNicodemus]
+[HalfCloseEyes]
+What? I-I'm[Beat] dying?[AN]
+But what about[Beat][N]
+about my [CloseEyes]glory[Beat]?[A][X]
+
+## Ch3AlonsoDQ
+[MidLeft][LoadAlonso]
+Tch[Beat] Looks like TORCH[N]
+did nothin' for me, after all.[AN]
+Shouldn't 'a counted on 'em,[N]
+just like Dalila said[Beat][AN]
+But I ain't dead yet.[N]
+Well? Do your worst, dogs![A][X]
+
+## Ch3DalilaDQ
+[ML][LoadDalila]
+That one[Beat] stung a little,[N]
+huh? Listen up, Alonso[Beat][AN]
+I've done my part here.[N]
+The rest is up to you![A][X]
+
+// HUB C
+
+## BaltasarDQ
+[MidLeft][LoadBaltasar]
+Count Sanz[Beat][N]
+[HalfCloseEyes]Pray forgive me[Beat][AN]
+These miscreants are[N]
+stronger than I feared[Beat][CloseEyes][A][X]
+
+## TheCloserDQ
+[MidLeft][LoadTheCloser]
+To fell even me? You've come[N]
+far since the Blessed Isle[Beat][AN]
+Impressive.[AN]
+[HalfCloseEyes]Hear me, Captain Lua[Beat][AN]
+whatever it is you seek[N]
+here, I hope you find it.[AN]
+[CloseEyes]Don't have killed me[Beat][N]
+just for nothing[Beat][A][X]
+
+## KrezkeDQ
+[MidLeft][LoadKrezke]
+[CloseEyes]Nowhere left to turn[Beat][N]
+nowhere left to run[Beat][AN]
+where did I go wrong[Beat]?[A][X]
+
+## SanzDQ
+[MidLeft][LoadSanz]
+Is this[Beat] blood?[AN]
+No! NO! I refuse![AN]
+Not at the hands of these[N]
+plebeians[Beat] these thieves![AN]
+[HalfCloseEyes]I am[Beat][N]
+I am Count Sanz![AN]
+And you're[Beat] just[Beat][N]
+[CloseEyes]GRAAAAGGHHHH!!![A][X]
+
+## SalvadorDQ
+[X]
+
+## JasperDQ
+[X]
+
+## RunamelDQ
+[X]
+
+## BoroDQChapterC3
+[X]
+
+## SalmanDQChapterC3
+[X]
+
+## QuispeDQChapter4
+[X]
+
+// HUB D
+
+## DalilaRematchDQ
+[ML][LoadDalila]
+Pushed my luck[N]
+for the final time[Beat][AN]
+[HalfCloseEyes]Alonso, it's up to you[Beat][AN]
+[ToggleSmile]Lead the Blackhearts[Beat][N]
+to [CloseEyes]glory[Beat]![A][X]
+
+## SolangeDQ
+[ML][LoadSolange]
+[HalfCloseEyes]We had[Beat] [Smile]good times[Beat][N][Smile]
+Rogelio[Beat] Francisca[Beat][AN]
+I don't regret[Beat][N]
+it for[Beat] a [CloseEyes]second[Beat][A][X]
+
+## RogelioDQ
+[ML][LoadRogelio]
+[CloseEyes]Francisca? Is that you[Beat]?[AN]
+I hope[Beat] hope you[N]
+can forgive me, someday[Beat][AN]
+I[Beat][A][X]
+
+## EnriqueDQ
+[MidLeft][LoadEnrique]
+I[Beat] I can't be stopped here![N]
+I need[Beat] the Fire Emblem![AN]
+Captain Elodia[Beat] needs it![N]
+So I can't[Beat] I can't die[Beat][AN][X]
+
+## InkaDQ
+[MidLeft][LoadInka]
+O-Oh, that hit struck deep[Beat][N]
+Guess it's time[Beat] to wake up.[AN]
+It was[Beat] a nice dream[Beat][AN][X]

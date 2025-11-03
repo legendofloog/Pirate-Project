@@ -1153,28 +1153,4 @@ You can't back down now, Desiderio![AN]
 You want my doubloons?[N]
 Come and get 'em, harpies![A][X]
 
-## A4_StingrayBattleQuote
-[ML][LoadStingray]
-Grrr[Beat] You think you can[N]
-just board the Razorbloods?![AN]
-Think again! You'll be sleepin'[N]
-with the skyfishes real soon![A][X]
 
-## A4_StingrayDefeated
-[ML][LoadStingray]
-Damn you all[Beat]![AN][CloseEyes]
-Can't believe[Beat] We[N]
-got outmatched[Beat][AN][X]
-
-## A4_RamiroBattleQuote
-[ML][LoadRamiro]
-Prepare yourselves,[N]
-imperial dastards![AN]
-I will not let[N]
-my comrades down![AN][X]
-
-## A4_RamiroDefeated
-[ML][LoadRamiro]
-Hngh[Beat] To fall like this?[AN][CloseEyes]
-But I[Beat] I've done nothing[Beat][N]
-for the cause[Beat] I can't[Beat]![AN][X]

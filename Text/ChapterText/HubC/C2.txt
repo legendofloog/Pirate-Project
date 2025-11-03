@@ -868,25 +868,7 @@ But, I can lament more later;[....][N]
 the Blackhearts still threat.[AN]
 I've got the firearm just for him.[AN][X]
 
-## C2_CalistaBattleQuote
-[MR][LoadFace][0x6D][0x1]
-Y-You wench[Beat]![AN]
-What the hells[N]
-was that thing[Beat]?![AN]
-[ClearFace]
-[ML][LoadA4ImperialCaptain]
-A special landmine that[N]
-I managed to procure.[AN]
-[ToggleSmile][CloseEyes]Glad even a 'mighty' pirate[N]
-like you gets tripped up.[AN]
-[ToggleSmile](Though...I only was able[N]
-plant so many of these.[AN]
-Hopefully it's enough.)[AN]
-[OpenEyes]Anyway[Beat]time to go where[N]
-you Blackhearts belong.[AN][X]
-
 ## C2BridgeLowered_T4
-
 [MR][LoadAlonso]
 Lower that bridge down![AN]
 Start pushing through that route![AN][X]

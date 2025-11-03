@@ -509,21 +509,6 @@ and take whatever's in that chest[Beat][AN]
 Well, big mistake. That's our loot, now![N]
 Hunt him down before he gets away![A][X]
 
-## Ch1KhazhakBQ
-[MidLeft][LoadKhazhak]
-Hmph, this ain't how it was[N]
-supposed to go[Beat] Fine.[AN]
-I picked this fight,[N]
-so I ain't gonna run now![AN][X]
-
-
-## Ch1KhazhakDQ
-[MidLeft][LoadKhazhak]
-Damn[Beat] We ran into some real[N]
-demons, huh? Sorry, boss[Beat][AN]
-I ain't[Beat] gonna make it[Beat][A][CloseEyes][X]
-
-
 ## Chapter1Tutorial
 Welcome to All Hands on Deck![AN]
 One important note: Lua, Pilar,[N]
