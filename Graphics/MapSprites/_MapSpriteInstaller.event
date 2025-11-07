@@ -616,18 +616,6 @@ ALIGN 4
 AirshipMMS:
 #incbin "Dmp/Ship (U) {daemoth, Zarg}-walk.dmp"
 
-//yoinking the tactician map sprites 
-StandingMapSprite(SupplierMapSprite,MapSprite16x16, TacticianSMS)
-MovingMapSprite(Supplier, $1C3D7C, TacticianMMS)
-
-ALIGN 4
-TacticianSMS:
-#incbin "Dmp/Tactician (M) (FE7) {IS}-stand.dmp"
-
-ALIGN 4
-TacticianMMS:
-#incbin "Dmp/Tactician (M) (FE7) {IS}-walk.dmp"
-
 MovingMapSprite(Sage_Hermen, $1D9B58, $1D91E4)
 
 StandingMapSprite(CataphractMapSprite,MapSprite16x32, CataphractSMS)
