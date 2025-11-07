@@ -106,3 +106,31 @@ void GetTextFromMemorySlot1ASMC(){
     int text = gEventSlot[0x1];
     SetTalkNumber(text); //sets the talk number to be the value in s1
 }
+
+// also threw in redrawing Chapter Status for Hub A purposes
+const char * GetChapterTitleName(unsigned chIndex)
+{
+    if (chIndex != 0x7F)
+    {
+        if (LuaIsInHub(gActiveUnit)) //unit doesn't matter, this is checking if we're in hub mode but in the chapter 2 section
+        {
+            return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextIdInHectorStory)); //if we're in a hub, then we use a separate title
+        }
+        return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextId));
+    }     
+
+    return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextId)); //no skirmishes so i think i'm fine
+}
+
+int GetChapterTitleWM(struct ChapterState* chapterData)
+{
+    if (chapterData == 0) {
+        return 0x54; // No Data
+    }
+
+    if (LuaIsInHub(gActiveUnit) && chapterData->chapterIndex == 8) //unit doesn't matter, this is checking if we're in hub mode but in the chapter 2 section
+    {
+        return 1; //have to hard code in this case for some reason, returning a different chaptertitleid slot just results in a hang
+    }
+    return GetChapterDefinition(chapterData->chapterIndex)->chapTitleId;
+}

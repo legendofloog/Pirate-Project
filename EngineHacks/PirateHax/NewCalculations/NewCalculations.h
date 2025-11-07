@@ -249,3 +249,18 @@ void FloorStats(struct Unit* unit);
 
 int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target);
 extern s8 prMagGetter(Unit* unit);
+
+extern u8 WildAxeIDLink;
+extern u8 SnapshotIDLink;
+
+enum
+{
+    // Menu availability identifiers
+
+    MENU_ENABLED  = 1,
+    MENU_DISABLED = 2,
+    MENU_NOTSHOWN = 3,
+};
+
+void MakeTargetListForSteal(struct Unit* unit);
+int AddItemToConvoy(int item);

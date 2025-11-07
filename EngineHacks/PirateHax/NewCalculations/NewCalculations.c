@@ -190,6 +190,33 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
     return exp;
 }
 
+// a couple steal rework related things
+
+int StealCommandUsability(){
+	if (UNIT_CATTRIBUTES(gActiveUnit) & CA_MOUNTEDAID) //if you have mounted aid, then you cannot steal
+    {
+        return MENU_NOTSHOWN;
+    }
+
+    if (gActiveUnit->state & US_HAS_MOVED) {
+        return MENU_NOTSHOWN;
+    }
+
+    MakeTargetListForSteal(gActiveUnit);
+    if (GetTargetListSize() == 0) {
+        return MENU_NOTSHOWN;
+    }
+
+    // removing the check for how many items you have
+    /*
+    if (GetUnitItemCount(gActiveUnit) == UNIT_ITEM_COUNT) {
+        return MENU_DISABLED;
+    }
+    */
+
+    return MENU_ENABLED;
+}
+
 s8 ActionSteal(Proc* proc) {
     int item;
 
@@ -209,6 +236,29 @@ s8 ActionSteal(Proc* proc) {
     BeginMapAnimForSteal();
 
     return 0;
+}
+
+s8 UnitAddStolenItemHelper(struct Unit* unit, int item) {
+    int i;
+
+    bool result = false; //doesn't matter 
+
+    for (i = 0; i < UNIT_ITEM_COUNT; ++i) {
+        if (unit->items[i] == 0) {
+            unit->items[i] = item;
+            result = true;
+            break;
+        }
+    }
+
+    if (result)
+    {
+        return result; //we already added the item: end here
+    }
+
+    AddItemToConvoy(item); //if not, then we just dump it into the convoy instead and still return true
+
+    return TRUE;
 }
 
 void BattleApplyStealAction(struct Proc* proc, int item) {
@@ -514,18 +564,27 @@ int GetBattleUnitUpdatedWeaponExp(BattleUnit* battleUnit) {
     
 	result = battleUnit->unit.ranks[battleUnit->weaponType];
 
-    if (battleUnit->wexpMultiplier <= 0)
+    if (battleUnit->weaponType != ITYPE_STAFF)
     {
-        // we don't do anything because you missed or didn't hit anything
-    }
-    else if (gBattleTarget.unit.curHP <= 0)
-    {
-        result += 2; //you killed a guy, here's your reward
+        if (battleUnit->wexpMultiplier <= 0) // we don't do anything because you missed or didn't hit anything
+        {
+            
+        }
+        else if (gBattleTarget.unit.curHP <= 0) //you killed a guy, double up the wexp
+        {
+            result += 2; 
+        }
+        else                                //otherwise, here's 1 wexp
+        {
+            result++; 
+        }
     }
     else
     {
-        result++; //otherwise, here's some wexp
+        result += GetItemData(GetItemIndex(battleUnit->weapon))->weaponExp; //Add the weapon exp for the item to the Result: Buff Staves are +1
     }
+
+    
 
     for (i = 0; i < 8; ++i) {
         if (i == battleUnit->weaponType){
@@ -973,4 +1032,11 @@ int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target){
 
 int GetUnitMagBy2Range(struct Unit* unit) {
     return 5 + prMagGetter(unit) / 3;
+}
+
+void PlusThreeAS(BattleUnit* bunitA, BattleUnit* bunitB) { //for snapshot and wild axe
+    if (GetItemIndex(bunitA->weapon) == WildAxeIDLink || GetItemIndex(bunitA->weapon) == SnapshotIDLink)
+    {
+        bunitA->battleSpeed += 3; //give 3 AS when this is the case
+    }
 }

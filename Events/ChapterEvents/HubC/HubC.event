@@ -428,11 +428,9 @@ UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
-WEATHER 7
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)
 STAL 1
-FADI 15
 ENUT GoToNextHubFlagID
 CheckHowManyHubChaptersCompleted
 SVAL s1 4
@@ -496,6 +494,7 @@ ENUF HubC_Windy_Recruited_Flag
 ENUF HubC_Kurt_Recruited_Flag
 ENUF HubC_Theana_Recruited_Flag
 ENUF HubC_Have_Encountered_The_Darkness_Flag
+FADI 15
 NoFade
 ENDA
 

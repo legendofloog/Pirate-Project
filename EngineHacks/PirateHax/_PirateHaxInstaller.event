@@ -61,9 +61,6 @@
 #include "FE8-Set Condition/FE8-Set Condition.event"
 //Tequila
 
-#include "ReworkForPrepScreenRightTopImage/Installer.event"
-//7743
-
 #include "HubFlagChecks/Installer.event"
 //Loog
 
@@ -187,6 +184,10 @@ ALIGN 4
 #include "ScriptedBattleNumbers/ScriptedBattles.event"
 
 #include "LordSplitMenuPlus/LordSplitMenuPlus.event"
+
+#include "ShopListExpansion/Installer.txt" //Scraiza, AuraWolf
+
+#include "PrepsChapterDisplayRework/Installer.event"
 
 PUSH
 ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743

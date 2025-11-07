@@ -34,6 +34,7 @@
 #define Ninja 0x81
 
 #define Gunner 0x86
+#define Gunner_F 0xB3
 
 //T2
 #define Champion 0x8B
@@ -54,6 +55,7 @@
 #define Adventurer_F 0x9f
 #define Warrior_F 0xa1
 #define Marksman 0xa4
+#define Marksman_F 0xB4
 #define Rogue_F 0xB1
 //#define Berserker 0x43
 #define Berserker_F 0xB2
@@ -234,7 +236,10 @@
 #define Rogue_FMapSprite 0xa4
 #define Berserker_FMapSprite 0xa5
 
-#define DragoonMapSprite SwordKnightMapSprite //placeholders for now
+//placeholders for now
+#define DragoonMapSprite SwordKnightMapSprite 
 #define KiteMapSprite LogMapSprite // 0x9e
 #define AdmiralMapSprite CaptainMapSprite
 
+#define Gunner_FMapSprite GunnerMapSprite
+#define Marksman_FMapSprite MarksmanMapSprite

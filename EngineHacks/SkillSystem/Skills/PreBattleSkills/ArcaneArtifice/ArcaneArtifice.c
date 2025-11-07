@@ -9,6 +9,11 @@ void ArcaneArtificePreBattle(BattleUnit* bunitA, BattleUnit* bunitB) {
     {
         return;
     }
+
+    if (bunitB->unit.pClassData->number == 0)
+    {
+        return; //shouldn't do it if the second unit doesn't exist yet
+    }
     
     if (gSkillTester(&bunitA->unit, ArcaneArtificeIDLink)){
         if (GetItemData(GetItemIndex(bunitA->weapon))->attributes & (IA_MAGIC | IA_MAGICDAMAGE)){
@@ -17,16 +22,6 @@ void ArcaneArtificePreBattle(BattleUnit* bunitA, BattleUnit* bunitB) {
             }
             else{
                 bunitA->battleAvoidRate += (bunitA->battleAvoidRate / 2);
-            }
-        }
-    }
-    if (gSkillTester(&bunitB->unit, ArcaneArtificeIDLink)){
-        if (GetItemData(GetItemIndex(bunitB->weapon))->attributes & (IA_MAGIC | IA_MAGICDAMAGE)){
-            if (GetItemData(GetItemIndex(bunitA->weapon))->attributes & (IA_MAGIC | IA_MAGICDAMAGE)){
-            
-            }
-            else{
-                bunitB->battleAvoidRate += (bunitB->battleAvoidRate / 2);
             }
         }
     }

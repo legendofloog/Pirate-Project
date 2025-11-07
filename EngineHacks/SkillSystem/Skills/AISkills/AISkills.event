@@ -1,3 +1,6 @@
+//we're not gonna have these really exist: they'll exist in the targeting AI hack instead if relevant
+
+/*
 PUSH
 
 //Provoke
@@ -19,6 +22,9 @@ ORG $3C824
 SHORT 0x0E00
 
 POP
+*/
+
+/*
 
 ALIGN 4
 Provoke:
@@ -44,3 +50,4 @@ ShadePlus:
 POIN SkillTester
 WORD ShadePlusID
 WORD RebelRebelID
+*/

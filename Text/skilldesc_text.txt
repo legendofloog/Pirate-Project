@@ -1152,8 +1152,9 @@ Lull Spectrum: Negates the[N]
 effects of rallies on opponent.[X]
 
 ## SD_Shade
-Shade: Enemies are less[N]
-likely to target this unit.[X]
+Shade: This unit will only be[N]
+targeted by enemies if they[N]
+have no other targets to attack.[X]
 
 ## SD_ShadePlus
 Shade+: Enemies won't[N]
@@ -1806,7 +1807,7 @@ Potent Brew: Tonic effectiveness[N]
 is increased by +2 for this unit.[X]
 
 ## SD_Finesse
-Finesse: Unit gains Crit = Skill / 2.[X]
+Finesse: Unit gains Crit = Dex / 2.[X]
 
 ## SD_ReapingBlade
 Reaping Blade: On kill, unit moves[N]
@@ -1834,7 +1835,7 @@ Kites lose 2 Mov each turn.[X]
 ## SD_LikeDominoes
 Like Dominoes: If this unit initiates,[N]
 they can't miss and will kill foes below[N]
-(5 + Skill) HP, granting another action.[X]
+(5 + Dex) HP, granting another action.[X]
 
 ## SD_Bash
 Bash: If this unit attacks and Breaks[N]

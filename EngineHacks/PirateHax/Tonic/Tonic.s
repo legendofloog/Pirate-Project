@@ -334,9 +334,6 @@ AddTonicBonus:
 
 	cmp r5, #0x5	@ res
 	beq addTonicHPBonus
-
-	cmp r5, #0x3	@ spd
-	beq addBadStatBonus
 	
 	cmp r5, #0x4 	@ def
 	beq addBadStatBonus	

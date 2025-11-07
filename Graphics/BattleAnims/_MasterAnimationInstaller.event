@@ -403,3 +403,13 @@
     #include "Animations/Berserker_F/Handaxe Installer.event"
     #include "Animations/Berserker_F/Unarmed Installer.event"
 }
+
+{
+    #include "Animations/Gunner/Gun Installer.event"
+    #include "Animations/Gunner/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Gunner_F/Gun Installer.event"
+    #include "Animations/Gunner_F/Unarmed Installer.event"
+}

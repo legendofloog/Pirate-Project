@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="2021.01.13" orientation="orthogonal" renderorder="right-down" width="29" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="29" height="25" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="1">
  <tileset firstgid="1" name="Updated Frontier (Flasuban, WAve, Zoramine)" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
-  <image source="../../../../Desktop/FE Hacking/FEMapCreator/Tilesets/Updated Frontier (Flasuban, WAve, Zoramine).png" width="512" height="512"/>
+  <image source="Tilesets/FlasubanFrontier.png" width="512" height="512"/>
  </tileset>
  <layer id="1" name="Tile Layer 1" width="29" height="25">
   <properties>

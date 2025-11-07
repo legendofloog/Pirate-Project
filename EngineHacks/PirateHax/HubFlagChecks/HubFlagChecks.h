@@ -15,3 +15,6 @@ enum
     CHAPTER_FLAG_7          = (1 << 7)
 };
 
+const char * GetChapterTitleName(unsigned chIndex);
+
+const struct ROMChapterData* GetChapterDefinition(unsigned chIndex);

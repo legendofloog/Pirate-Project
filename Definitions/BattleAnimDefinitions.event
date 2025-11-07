@@ -235,6 +235,13 @@
 #define RogueFKnifeAnim 0x164
 #define RogueFUnarmedAnim 0x165
 
+#define GunnerGunAnim 0x166
+#define GunnerUnarmedAnim 0x167
+
+#define GunnerFGunAnim 0x168
+#define GunnerFUnarmedAnim 0x169
+
+
 //vanilla repal type stuff, just put it in same slot
 
 #define ArcherBowAnim 0x26

@@ -156,7 +156,7 @@ Cannot double or be doubled.[X]
 Wild Axe[X]
 
 ## WildAxeDesc
-+3 Spd. Follow-ups are consecutive.[X]
++3 AS. Follow-ups are consecutive.[X]
 
 ## RecoilAxeName
 Recoil Axe[X]
@@ -206,7 +206,7 @@ Uses Mag. Can attack at melee.[X]
 Snapshot[X]
 
 ## SnapshotDesc
-+3 speed. Cannot miss.[X]
++3 AS. Cannot miss.[X]
 
 ## ScorpioName
 Scorpio[X]
@@ -477,7 +477,7 @@ Grants +1 Def, +4 Res.[X]
 Heavy Shield[X]
 
 ## HeavyShieldDesc
-Grants +8 Def but -8 Spd.[X]
+Grants +8 Def but -5 Spd.[X]
 
 ## ShoveGloveName
 Shove Glove[X]
@@ -627,7 +627,7 @@ Hoarder's Charm[X]
 
 ## HoardersCharmDesc
 Prevents this unit's inventory[N]
-from being captured or stolen.[X]
+from being stolen.[X]
 
 ## BoltName
 Bolt[X]

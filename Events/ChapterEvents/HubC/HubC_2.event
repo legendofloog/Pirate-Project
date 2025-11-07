@@ -31,15 +31,15 @@ CharacterEventBothWays(9, CalistaRecruitment, 0x0, Calista) //anyone can talk wi
 END_MAIN
 
 LocationBasedEvents:
-Chest(BraveBow, 21, 9)
-Village(20,QuickdrawVillage,13,24)
+Chest(DeadeyeBow, 21, 9)
+Village(20,HuntersMarkVillage,13,24)
 END_MAIN
 
-QuickdrawVillage:
+HuntersMarkVillage:
 //SetBackground(HouseBG)
 //Text(A2Village)
 //EraseBackground
-GiveItem(Quickdraw,0xFFFF)
+GiveItem(HuntersMark,0xFFFF)
 NoFade
 ENDA
 

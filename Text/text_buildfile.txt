@@ -96,6 +96,9 @@ Res[X]
 # 0x4f6
 Mov[X]
 
+# 0x855
+Item is too heavy to be stolen.[X]
+
 # 0x0149 ^
 A laid-back voyage.[N]
 Weakened enemies[N]

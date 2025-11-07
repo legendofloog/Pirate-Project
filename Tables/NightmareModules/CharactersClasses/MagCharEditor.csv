@@ -75,7 +75,7 @@ None,0,0
 0x49 Bozo,1,35
 0x4A Geraldo,0,5
 0x4B Yurena,8,50
-0x4C Sanz,10,100
+0x4C Sanz,9,50
 0x4D Contractor,3,15
 0x4E Sentinel,2,10
 0x4F,8,50
@@ -134,8 +134,8 @@ None,0,0
 0x84 -,10,45
 0x85 -,0,0
 0x86 -,0,0
-0x87 Runamel,2,5
-0x88 Jasper,6,10
+0x87 Runamel,0,5
+0x88 Jasper,5,15
 0x89 C3 Generic Pirate,2,5
 0x8A Phantom,2,5
 0x8B Phantom Elite,3,5
@@ -176,8 +176,8 @@ None,0,0
 0xAE - GreagorVillager3,0,0
 0xAF RebelThief,0,0
 0xB0 C3 Traitor Rebel,0,0
-0xB1 Salman,0,0
-0xB2 Boru,0,0
+0xB1 Salman,4,25
+0xB2 Boru,9,55
 0xB3 Monster,0,0
 0xB4 Monster,0,0
 0xB5 Monster,0,0
@@ -219,8 +219,8 @@ None,0,0
 0xD9 - Javier,0,5
 0xDA - Azahar,0,5
 0xDB - Nicodemus,0,5
-0xDC - Baltasar,1,5
-0xDD - Krezke,7,50
+0xDC - Baltasar,0,5
+0xDD - Krezke,9,40
 0xDE - Salvador,0,0
 0xDF - Wayra,12,0
 0xE0 - Keeper,0,0

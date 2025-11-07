@@ -31,6 +31,10 @@ Rogue_Robbery:
 #include "NewIsItemStealable.lyn.event"
 ALIGN 4
 
+WatchfulIDLink:
+BYTE WatchfulID
+ALIGN 4
+
 //#incbin "FE8-Rogue_Robbery.dmp"
 //POIN prConGetter
 
@@ -64,11 +68,11 @@ ALIGN 4
 	
 	PUSH
 	
-	//Steal menu option usability
-	ORG $24190
-	SHORT 0x6820 0 //ldr r0,[r4]; nop
-	callHack_r3(Can_Unit_Steal)
-	SHORT 0x2800 0xD00B 0x6822 0x68D0 0x2140 0x4208 //cmp r0,#0; beq RetFalse; ldr r2,[r4]; ldr r0,[r2,#0xC]; mov r1,#0x40; tst r0,r1
+	//Steal menu option usability: we're going to do this in C
+	//ORG $24190
+	//SHORT 0x6820 0 //ldr r0,[r4]; nop
+	//callHack_r3(Can_Unit_Steal)
+	//SHORT 0x2800 0xD00B 0x6822 0x68D0 0x2140 0x4208 //cmp r0,#0; beq RetFalse; ldr r2,[r4]; ldr r0,[r2,#0xC]; mov r1,#0x40; tst r0,r1
 	
 	//Some AI (NOTE: MUST DO CMP R0,#0 BEFORE RETURNING)
 	ORG $3D4C4

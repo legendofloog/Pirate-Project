@@ -8,3 +8,54 @@ POP
 ALIGN 4
 ItemIconSheet:
 #incbin "Dmp/Pirate_Project_Sheet.dmp"
+
+PUSH
+ORG 0x91178
+POIN IndividualRankIconsPalette
+ORG 0x9DC5C
+POIN IndividualRankIcons
+ORG 0x9DC64
+POIN IndividualRankIconsPalette
+ORG 0x9F0E0
+POIN IndividualRankIcons
+ORG 0x9F0E8
+POIN IndividualRankIconsPalette
+ORG 0xB53F4
+POIN IndividualRankIconsPalette
+POP 
+
+PUSH
+ORG $9d2f0
+POIN ConvoyWRankIconsPalette
+ORG $9d2f4
+POIN ConvoyWRankIconsTop
+ORG $9d2f8
+POIN ConvoyWRankIconsBot
+POP
+
+ALIGN 4
+IndividualRankIcons:
+#incbin "RankIcons/ConvoyWRankIconsIndividual.png.dmp"
+
+ALIGN 4
+IndividualRankIconsPalette:
+#incbin "RankIcons/ConvoyWRankIconsIndividual.png.pal.dmp"
+
+ALIGN 4
+ConvoyWRankIconsTop:
+#incbin "RankIcons/ConvoyWRankIconsTop.dmp"
+ALIGN 4
+ConvoyWRankIconsBot:
+#incbin "RankIcons/ConvoyWRankIconsBottom.dmp"
+ALIGN 4
+ConvoyWRankIconsPalette:
+#incbin "RankIcons/ConvoyWRankIconsBottom_pal.dmp"
+
+/*
+ORG $A1A0A4
+
+ORG $A1A23C
+
+ORG $A1A3FC
+
+*/

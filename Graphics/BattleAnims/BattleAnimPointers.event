@@ -473,3 +473,15 @@ AxeAnim(Berserker_FAxeAnim)
 HandAxeAnim(Berserker_FHandaxeAnim)
 UnarmedAnim(Berserker_FUnarmedAnim)
 EndAnim
+
+ALIGN 4
+GunnerAnims:
+GunAnim(GunnerGunAnim)
+UnarmedAnim(GunnerUnarmedAnim)
+EndAnim
+
+ALIGN 4
+Gunner_FAnims:
+GunAnim(GunnerFGunAnim)
+UnarmedAnim(GunnerFUnarmedAnim)
+EndAnim
