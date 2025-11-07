@@ -277,6 +277,8 @@
 
 [LoadSalvador] = [LoadFace][0xB8][0x1]
 
+[LoadBlueSoldier] = [LoadFace][0x6A][0x1]
+[LoadRebelSupplier] = [LoadFace][0x6C][0x1]
 [LoadD3SoldierBro1] = [LoadFace][0x70][0x1]
 [LoadD3SoldierBro2] = [LoadFace][0x71][0x1]
 [LoadEnrique] = [LoadFace][0xBB][0x1]

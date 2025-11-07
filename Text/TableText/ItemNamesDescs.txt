@@ -371,9 +371,6 @@ Does exactly as advertised.[X]
 ## InfiltratorName
 Infiltrator[X]
 
-## QuickdrawName
-Quickdraw[X]
-
 // STAVES
 
 ## BuffStaffBottomText
@@ -655,12 +652,11 @@ Ignore Spd or Wt when[N]
 stealing, but reduce[N]
 uses by 25%.[X]
 
-## QuickdrawTwoName
+## QuickdrawName
 Quickdraw[X]
 
 ## QuickdrawDesc
-Designed with a hair trigger.[N]
-User may move two spaces after combat.[X]
+Brave, follow-ups consecutive.[X]
 
 ## ToradarName
 Toradar[X]
@@ -672,7 +668,7 @@ Effective against infantry.[X]
 Hand Cannon[X]
 
 ## HandCannonDesc
-Breaks, but cannot follow-up.[X]
+Inflicts Break, but no follow-ups.[X]
 
 ## IgnisTriggerName
 Ignisignia[X]
@@ -729,3 +725,11 @@ Allows the target to act again.[X]
 Short for [OpenQuote]Teleport Shorts".[N]
 Allows the holder to swap with[N]
 an ally within Mag/2 range.[X]
+
+## MarchRingName
+March Ring[X]
+
+## MarchRingDesc
+A light ring that makes the wearer[N]
+more fleet-foot/hoof/wing-ed.[N]
+Grants +1 Movement while worn.[X]

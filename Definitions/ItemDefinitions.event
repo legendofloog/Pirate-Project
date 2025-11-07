@@ -164,6 +164,7 @@
 #define MagesRing $68
 #define RidersBadge $97
 #define RiderBadge $97
+#define MarchRing 0x99
 #define Tonic 0xCB // a durability based item 
 #define MetisTome $89
 #define TealGem $e0

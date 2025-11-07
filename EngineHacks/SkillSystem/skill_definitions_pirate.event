@@ -317,3 +317,7 @@
 //By Sme
 #define SupplyID 113
 
+//Charge: Gain +1 damage for every two squares moved.
+//By Datagne
+#define ChargeID 114
+
