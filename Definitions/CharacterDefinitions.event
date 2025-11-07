@@ -243,7 +243,6 @@
 #define Krezke 0xDD
 
 // Hub C2 
-#define Pavel 0x97
 #define BlackheartPlus 0x7E
 #define KeeperAlly 0x7F
 #define BerserkerThatDiesC2 0x82
