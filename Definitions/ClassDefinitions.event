@@ -149,8 +149,6 @@
 
 #define Kite 0xab
 
-#define Supplier 0xAF
-
 //HORSE/ARMOR
 #define Cataphract 0x35
 #define Cataphract_F 0x36
