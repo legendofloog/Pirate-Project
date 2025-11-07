@@ -21,6 +21,7 @@
 //#define Fighter 0x3f
 #define Fighter_F 0x96
 //#define Brigand 0x41
+#define Barbarian 0x41
 
 //#define Archer 0x19
 //#define Archer_F 0x1a
@@ -28,12 +29,16 @@
 #define Hunter_F 0x8A
 
 //#define Thief 0xd
+#define Thief_F 0xB0
+
 #define Ninja 0x81
 
 #define Gunner 0x86
+#define Gunner_F 0xB3
 
 //T2
 #define Champion 0x8B
+#define Champion_F 0xAF
 #define MasterNinja 0x8D
 //#define Assassin 0x17
 //#define Assassin_F 0x18
@@ -50,6 +55,11 @@
 #define Adventurer_F 0x9f
 #define Warrior_F 0xa1
 #define Marksman 0xa4
+#define Marksman_F 0xB4
+#define Rogue_F 0xB1
+//#define Berserker 0x43
+#define Berserker_F 0xB2
+
 
 //ARMOR
 
@@ -106,12 +116,21 @@
 
 //#define Shaman 0x2d
 //#define Shaman_F 0x2e
+#define Warlock Shaman
+#define Warlock_F Shaman_F
 
 //#define Monk
+#define Conjuror Monk
 #define Monk_F 0x99
+#define Conjuror_F Monk_F
 
 //#define Priest 0x45
 //#define Cleric 0x4a
+#undef Cleric
+#define Cleric 0x45
+#define Cleric_M Cleric
+#define Cleric_F 0x4a
+
 
 #define Curate 0x83
 
@@ -149,10 +168,14 @@
 #define HorseClass 0xA9
 
 #define Sage_Hermen 0xAC
+#define Spellsword Sage_Hermen
 #define Airship 0xAD
 
 
+
 //STANDING MAP SPRITES
+#define BarbarianMapSprite 0x33
+#define CataphractMapSprite 0x2b
 #define CaptainMapSprite 0x6b 
 #define NinjaMapSprite 0x6c
 #define VanguardMapSprite 0x6d
@@ -194,11 +217,10 @@
 #define HalberdierMapSprite 0x8F
 #define AdventurerMapSprite 0x90
 #define Adventurer_FMapSprite 0x91
-#define DarkKnightMapSprite 0x92
+#define MonkMapSprite 0x92
 #define MaligKnightMapSprite 0x93
 #define Warrior_FMapSprite 0x94
 #define SwordKnightMapSprite 0x95
-#define DragoonMapSprite SwordKnightMapSprite
 #define GryphknightMapSprite 0x96
 #define DracoknightMapSprite 0x97
 #define MarksmanMapSprite 0x98
@@ -208,7 +230,18 @@
 #define HorseMapSprite 0x9c
 #define Gryphknight_DMapSprite 0x9d
 #define AirshipMapSprite 0x9e
-#define SupplierMapSprite 0x9f
+#define WarlockMapSprite 0x9f
+#define ClericMapSprite 0xa0
+#define Cleric_FMapSprite 0xa1
+#define Champion_FMapSprite 0xa2
+#define Thief_FMapSprite 0xa3
+#define Rogue_FMapSprite 0xa4
+#define Berserker_FMapSprite 0xa5
+
+//placeholders for now
+#define DragoonMapSprite SwordKnightMapSprite 
 #define KiteMapSprite LogMapSprite // 0x9e
 #define AdmiralMapSprite CaptainMapSprite
 
+#define Gunner_FMapSprite GunnerMapSprite
+#define Marksman_FMapSprite MarksmanMapSprite

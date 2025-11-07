@@ -1152,8 +1152,9 @@ Lull Spectrum: Negates the[N]
 effects of rallies on opponent.[X]
 
 ## SD_Shade
-Shade: Enemies are less[N]
-likely to target this unit.[X]
+Shade: This unit will only be[N]
+targeted by enemies if they[N]
+have no other targets to attack.[X]
 
 ## SD_ShadePlus
 Shade+: Enemies won't[N]
@@ -1599,13 +1600,13 @@ Biding Blow: If the opponent[N]
 cannot counter, this unit doubles.[X]
 
 ## SD_SuppressiveFire
-Suppressive Fire: If an ally attacks[N]
+Suppressive Fire: If an ally battles[N]
 an enemy within range of this unit's[N]
-weapon, ally ignores enemy's AVO.[X]
+weapon, ally ignores half of enemy Avo.[X]
 
 ## SD_SurpriseAttack
-Surprise Attack: If foe is unable[N]
-to counter, ignore foe's defense.[X]
+Surprise Attack: If foe cannot counter,[N]
+this unit ignores the foe's defenses.[X]
 
 ## SD_ResoluteSacrifice
 Resolute Sacrifice: Healing staff[N]
@@ -1642,9 +1643,9 @@ Breaks an enemy, they gain an additional[N]
 follow-up attack immediately after.[X]
 
 ## SD_LiquidCourage
-Liquid Courage: Once per turn, unit[N]
+Liquid Courage: Once a turn, this unit[N]
 can consume an item without using[N]
-their action. +2 STR/SKL/SPD (decays).[X]
+their action. +2 Str/Dex/Spd (decays).[X]
 
 ## SD_ArmsMastery
 Arms Mastery: If this unit initiates[N]
@@ -1653,8 +1654,8 @@ the foe's, perform a followup attack.[X]
 
 ## SD_AstralBlessing
 Astral Blessing: At start of turn,[N]
-units within 3 spaces randomly gain[N]
-SPD+2, SKL+3, or EVA+4 for that turn.[X]
+allies within 3 spaces randomly gain[N]
++2 Spd, +3 Dex, or +4 Eva for 1 turn.[X]
 
 ## SD_CatchingUp
 Catching Up: If an enemy would follow[N]
@@ -1668,8 +1669,7 @@ in combat, using the Reverse command.[X]
 
 ## SD_Panache
 Panache: Unit can initiate combat[N]
-with guns in melee, gaining WTA[N]
-and +5 AS.[X]
+with guns at 1 RNG, giving WTA + 5 AS.[X]
 
 ## SD_Canter
 Canter: Unit can move 2[N]
@@ -1703,7 +1703,7 @@ and kills an enemy, +1 Str and +1 Mag[N]
 (Max +5). Lasts until end of chapter.[X]
 
 ## SD_WellRested
-Well-rested: When unit isn't deployed for[N]
+Well-Rested: When unit isn't deployed for[N]
 a chapter, +2 MOV. If deployed two maps[N]
 in a row, -1 MOV (Min: Base, Max: 15).[X]
 
@@ -1726,9 +1726,8 @@ Game over at zero HP! Attack at melee[N]
 to disarm (sword/lance/axe/knife only).[X]
 
 ## SD_Critthrift
-Critthrift: +30 crit. Unit's crits[N]
-no longer deal extra damage, but[N]
-durability isn't used up during crits.[X]
+Critthrift: This unit's critical[N]
+attacks do not use durability.[X]
 
 ## SD_DeftHands
 Deft Hands: Unit can act again,[N]
@@ -1736,8 +1735,8 @@ but not move, after stealing.[X]
 
 ## SD_FaithsAegis
 Miraclemaker: If this unit uses a staff[N]
-on an ally, ally can survive fatal damage[N]
-once (lasts until end of turn).[X]
+on an ally, the ally will survive fatal[N]
+damage once (lasts until end of turn).[X]
 
 ## SD_Shuffle
 Shuffle: Command. Equips target with a[N]
@@ -1749,7 +1748,7 @@ Nailed Down: When this unit initiates[N]
 battle, target's Mov = 0 for a turn.[X]
 
 ## SD_Analyze
-Analyze: When an ally attacks an enemy[N]
+Analyze: When an ally battles an enemy[N]
 adjacent to this unit, ally gains WTA.[X]
 
 ## SD_Delegation
@@ -1772,8 +1771,8 @@ max HP damage at the start of the turn.[X]
 
 ## SD_ArcaneArtifice
 Arcane Artifice: If this unit's weapon[N]
-uses MAG and the enemy's uses STR,[N]
-this unit's Avoid is doubled.[X]
+uses MAG and the enemy's doesn't,[N]
+this unit's Avo is increased by 50%.[X]
 
 ## SD_Dismount
 Scouting Ahead: This unit can switch[N]
@@ -1794,20 +1793,21 @@ Breather: When this unit uses Wait,[N]
 they heal their HP back to 100%.[X]
 
 ## SD_Disarm
-Disarm: Command. This unit Breaks[N]
-an enemy and reduces their Def by 5.[X]
+Disarm: Command. This unit Breaks an[N]
+enemy, reduces their Def by 5, and then,[N]
+this unit can act again (but not move).[X]
 
 ## SD_Momentum
 Momentum: If this unit moves half or[N]
-more of their Mov, they gain WTA.[N]
-If they use all Mov, WTA is doubled.[X]
+more of their Mov, they gain WTA. If[N]
+all Mov is used, they ignore defenses.[X]
 
 ## SD_PotentBrew
 Potent Brew: Tonic effectiveness[N]
 is increased by +2 for this unit.[X]
 
 ## SD_Finesse
-Finesse: Unit gains Skill/2 crit.[X]
+Finesse: Unit gains Crit = Dex / 2.[X]
 
 ## SD_ReapingBlade
 Reaping Blade: On kill, unit moves[N]
@@ -1825,7 +1825,7 @@ an ally using the Pollinate command.[X]
 ## SD_BoardingParty
 Boarding Party: This unit can place[N]
 bridges on adjacent unoccupied tiles.[N]
-Costs X gold to use.[X]
+Costs 250 gold to use.[X]
 
 ## SD_ContraryWinds
 Contrary Winds: This unit can Summon[N]
@@ -1835,7 +1835,7 @@ Kites lose 2 Mov each turn.[X]
 ## SD_LikeDominoes
 Like Dominoes: If this unit initiates,[N]
 they can't miss and will kill foes below[N]
-(5 + Skill) HP, granting another action.[X]
+(5 + Dex) HP, granting another action.[X]
 
 ## SD_Bash
 Bash: If this unit attacks and Breaks[N]
@@ -1866,7 +1866,7 @@ Double Falcon: On a kill, unit's[N]
 attacks are brave next combat.[X]
 
 ## SD_Thorn
-If unit's Str > enemy's Str,[N]
+Thorn: If unit's Str > enemy's Str,[N]
 unit always Breaks on hit.[X]
 
 ## SD_Incantation
@@ -1875,13 +1875,39 @@ and +30% Crit on unit's next attack.[X]
 
 ## SD_ThunderingHooves
 Thundering Hooves: Each turn, enemies[N]
-within 2 tiles of this unit take damage[N]
-equal to 25% of their max HP.[X]
+within 2 tiles of this unit take[N]
+damage equal to 25% of their max HP.[X]
 
 ## SD_Precision
 Killer's Precision: When attacking at[N]
-range, this unit's Skl is added to Crit.[X]
+range, this unit's Dex is added to Crit.[X]
 
 ## SD_Misfortune
 Lucky Misfortune: All units within 2[N]
 tiles of this unit have halved Avoid.[X]
+
+## SD_HomeTurf
+Home Turf: Spaces occupied by allies[N]
+cost this unit 0 Move to pass through.[X]
+
+## SD_SiegeTower
+Siege Tower: When initiating combat with[N]
+a bow without moving, +4 max range.[X]
+
+## SD_SpecialOrdinance
+Special Ordinance: Unit can plant a single[N]
+mine without ending their turn. These[N]
+mines also Break the triggering unit.[X]
+
+## SD_HolyHaymaker
+Holy Haymaker: If this unit uses a staff[N]
+on an ally, the ally gains +10 Atk[N]
+(lasts until end of turn).[X]
+
+## SD_Conviction
+Conviction: When this unit Rescues[N]
+or Drops an ally, they can act again.[X]
+
+## SD_Daredevil
+Daredevil: If this unit would die[N]
+in combat, their Crit doubles.[X]

@@ -8,58 +8,690 @@
 	setPalette(1,DesiderioVanguard)
 	setCBSP(1,Desiderio, 1, Vanguard)
 
-// JuanThief
-	setPalette(2,JuanThief)
-	setCBSP(2,Juan, 1, Thief)
+// DesiderioMarshall
+	setPalette(2,DesiderioMarshall)
+	setCBSP(2,Desiderio, 2, Marshall)
 
-// JuanRogue
-	setPalette(3,JuanRogue)
-	setCBSP(3,Juan, 2, Rogue)
-
-// CarmenMage
-	setPalette(4,CarmenMage)
-	setCBSP(4,Carmen, 1, Mage_F)
-
-// CarmenSage
-	setPalette(5,CarmenSage)
-	setCBSP(5,Carmen, 2, Sage_F)
-
-// MatteoMercenary
-	setPalette(6,MatteoMercenary)
-	setCBSP(6,Matteo, 1, Mercenary)
-
-// MatteoHero
-	setPalette(7,MatteoHero)
-	setCBSP(7,Matteo, 2, Hero)
-
-// MatteoRanger
-	setPalette(8,MatteoRanger)
-	setCBSP(8,Matteo, 3, Ranger)
-
-// TrianaShaman
-	setPalette(9,TrianaShaman)
-	setCBSP(9,Triana, 1, Shaman_F)
-
-// KhazhakFighter
-	setPalette(10,KhazhakFighter)
-	setCBSP(10,Khazhak, 1, Fighter)
-
-// BuzuVanguard
-	setPalette(11,BuzuVanguard)
-	setCBSP(11,Buzu, 1, Vanguard)
-
-// BozoWarden
-	setPalette(12,BozoWarden)
-	setCBSP(12,Bozo, 1, Warden)
+// DesiderioGreatKnight
+	setPalette(3,DesiderioGreatKnight)
+	setCBSP(3,Desiderio, 3, Cataphract)
 
 // PilarNinja
-	setPalette(13,PilarNinja)
-	setCBSP(13,Pilar, 1, Ninja)
+	setPalette(4,PilarNinja)
+	setCBSP(4,Pilar, 1, Ninja)
+
+// PilarMasterNinja
+	setPalette(5,PilarMasterNinja)
+	setCBSP(5,Pilar, 2, MasterNinja)
+
+// PilarTrickster
+	setPalette(6,PilarTrickster)
+	setCBSP(6,Pilar, 3, Trickster)
 
 // RazvanCurate
-	setPalette(14,RazvanCurate)
-	setCBSP(14,Razvan, 1, Curate)
+	setPalette(7,RazvanCurate)
+	setCBSP(7,Razvan, 1, Curate)
+
+// RazvanSage
+	setPalette(8,RazvanSage)
+	setCBSP(8,Razvan, 2, Sage)
+
+// RazvanSeraph
+	setPalette(9,RazvanSeraph)
+	setCBSP(9,Razvan, 3, Seraph)
 
 // XimoArcher
-	setPalette(15,XimoArcher)
-	setCBSP(15,Ximo, 1, Archer)
+	setPalette(10,XimoArcher)
+	setCBSP(10,Ximo, 1, Archer)
+
+// XimoSniper
+	setPalette(11,XimoSniper)
+	setCBSP(11,Ximo, 2, Sniper)
+
+// XimoBombardier
+	setPalette(12,XimoBombardier)
+	setCBSP(12,Ximo, 3, Bombardier)
+
+// CarmenMage
+	setPalette(13,CarmenMage)
+	setCBSP(13,Carmen, 1, Mage_F)
+
+// CarmenSage
+	setPalette(14,CarmenSage)
+	setCBSP(14,Carmen, 2, Sage_F)
+
+// CarmenMageKnight
+	setPalette(15,CarmenMageKnight)
+	setCBSP(15,Carmen, 3, MageKnight_F)
+
+// KhazhakFighter
+	setPalette(16,KhazhakFighter)
+	setCBSP(16,Khazhak, 1, Fighter)
+
+// HermenMyrmidon
+	setPalette(17,HermenMyrmidon)
+	setCBSP(17,Hermenegildo, 1, Myrmidon)
+
+// HermenSwordmaster
+	setPalette(18,HermenSwordmaster)
+	setCBSP(18,Hermenegildo, 2, Swordmaster)
+
+// HermenSlayer
+	setPalette(19,HermenSlayer)
+	setCBSP(19,Hermenegildo, 3, Slayer)
+
+// HermenSpellsword
+	setPalette(20,HermenSpellsword)
+	setCBSP(20,Hermenegildo, 4, Spellsword)
+
+// EstelleTroubadour
+	setPalette(21,EstelleTroubadour)
+	setCBSP(21,Estelle, 1, Troubadour)
+
+// EstelleSavior
+	setPalette(22,EstelleSavior)
+	setCBSP(22,Estelle, 2, Savior)
+
+// EstelleSeraph
+	setPalette(23,EstelleSeraph)
+	setCBSP(23,Estelle, 3, Seraph)
+
+// DurghamLanceCav
+	setPalette(24,DurghamLanceCav)
+	setCBSP(24,Durgham, 1, LanceCav)
+
+// DurghamLanceKnight
+	setPalette(25,DurghamLanceKnight)
+	setCBSP(25,Durgham, 2, LanceKnight)
+
+// DurghamMageKnight
+	setPalette(26,DurghamMageKnight)
+	setCBSP(26,Durgham, 3, MageKnight)
+
+// BartzDeserter
+	setPalette(27,BartzDeserter)
+	setCBSP(27,Bartz, 1, Deserter)
+
+// BartzChampion
+	setPalette(28,BartzChampion)
+	setCBSP(28,Bartz, 2, Champion)
+
+// BartzWolfrider
+	setPalette(29,BartzWolfrider)
+	setCBSP(29,Bartz, 3, Wolfrider)
+
+// MedwynWarden
+	setPalette(30,MedwynWarden)
+	setCBSP(30,Medwyn, 1, Warden)
+
+// MedwynGeneral
+	setPalette(31,MedwynGeneral)
+	setCBSP(31,Medwyn, 2, General)
+
+// MedwynBaron
+	setPalette(32,MedwynBaron)
+	setCBSP(32,Medwyn, 3, Runeshield)
+
+// TrianaWarlock
+	setPalette(33,TrianaWarlock)
+	setCBSP(33,Triana, 1, Warlock_F)
+
+// TrianaBaron
+	setPalette(34,TrianaBaron)
+	setCBSP(34,Triana, 2, Runeshield)
+
+// TrianaMaligKnight
+	setPalette(35,TrianaMaligKnight)
+	setCBSP(35,Triana, 3, MaligKnight)
+
+// YodsenGunner
+	setPalette(36,YodsenGunner)
+	setCBSP(36,Yodsen, 1, Shaman)
+
+// YodsenMarksman
+	setPalette(37,YodsenMarksman)
+	setCBSP(37,Yodsen, 2, Runeshield)
+
+// YodsenDragoon
+	setPalette(38,YodsenDragoon)
+	setCBSP(38,Yodsen, 3, MaligKnight)
+
+// IndioWarlock
+	setPalette(39,IndioWarlock)
+	setCBSP(39,Indio, 1, Warlock)
+
+// IndioRuneshield
+	setPalette(40,IndioRuneshield)
+	setCBSP(40,Indio, 2, Runeshield)
+
+// IndioMaligKnight
+	setPalette(41,IndioMaligKnight)
+	setCBSP(41,Indio, 3, MaligKnight)
+
+// LeandraFighter
+	setPalette(42,LeandraFighter)
+	setCBSP(42,Leandra, 1, Fighter_F)
+
+// LeandraWarrior
+	setPalette(43,LeandraWarrior)
+	setCBSP(43,Leandra, 2, Warrior_F)
+
+// LeandraMarshall
+	setPalette(44,LeandraMarshall)
+	setCBSP(44,Leandra, 3, Marshall)
+
+// JaimePegRider
+	setPalette(45,JaimePegRider)
+	setCBSP(45,Jaime, 1, PegasusRider)
+
+// JaimeFalcoknight
+	setPalette(46,JaimeFalcoknight)
+	setCBSP(46,Jaime, 2, Falcoknight)
+
+// JaimeSeraph
+	setPalette(47,JaimeSeraph)
+	setCBSP(47,Jaime, 3, Seraph)
+
+// LeonorCleric
+	setPalette(48,LeonorCleric)
+	setCBSP(48,Leonor, 1, Cleric_F)
+
+// LeonorWarMonk
+	setPalette(49,LeonorWarMonk)
+	setCBSP(49,Leonor, 2, WarMonk_F)
+
+// LeonorAdventurer
+	setPalette(50,LeonorAdventurer)
+	setCBSP(50,Leonor, 3, Adventurer_F)
+
+// BikoSoldier
+	setPalette(51,BikoSoldier)
+	setCBSP(51,Biko, 1, Soldier)
+
+// BikoHalberdier
+	setPalette(52,BikoHalberdier)
+	setCBSP(52,Biko, 2, Halberdier)
+
+// BikoGeneral
+	setPalette(53,BikoGeneral)
+	setCBSP(53,Biko, 3, General)
+
+// OndehHunter
+	setPalette(54,OndehHunter)
+	setCBSP(54,Ondeh, 1, Hunter_F)
+
+// OndehAssassin
+	setPalette(55,OndehAssassin)
+	setCBSP(55,Ondeh, 2, Assassin_F)
+
+// OndehAdventurer
+	setPalette(56,OndehAdventurer)
+	setCBSP(56,Ondeh, 3, Adventurer_F)
+
+// JuanThief
+	setPalette(57,JuanThief)
+	setCBSP(57,Juan, 1, Thief)
+
+// JuanRogue
+	setPalette(58,JuanRogue)
+	setCBSP(58,Juan, 2, Rogue)
+
+// JuanWolfrider
+	setPalette(59,JuanWolfrider)
+	setCBSP(59,Juan, 3, Wolfrider)
+
+// TangyuanDragonRider
+	setPalette(60,TangyuanDragonRider)
+	setCBSP(60,Tangyuan, 1, DragonRider)
+
+// TangyuanDracoknight
+	setPalette(61,TangyuanDracoknight)
+	setCBSP(61,Tangyuan, 2, Dracoknight)
+
+// TangyuanMaligKnight
+	setPalette(62,TangyuanMaligKnight)
+	setCBSP(62,Tangyuan, 3, MaligKnight)
+
+// MatteoMercenary
+	setPalette(63,MatteoMercenary)
+	setCBSP(63,Matteo, 1, Mercenary)
+
+// MatteoHero
+	setPalette(64,MatteoHero)
+	setCBSP(64,Matteo, 2, Hero)
+
+// MatteoRanger
+	setPalette(65,MatteoRanger)
+	setCBSP(65,Matteo, 3, Ranger)
+
+// SuzanneGunner
+	setPalette(66,SuzanneGunner)
+	setCBSP(66,Suzanne, 1, Mercenary)
+
+// SuzanneMarksman
+	setPalette(67,SuzanneMarksman)
+	setCBSP(67,Suzanne, 2, Hero)
+
+// SuzanneDragoon
+	setPalette(68,SuzanneDragoon)
+	setCBSP(68,Suzanne, 3, Ranger)
+
+// OrlandoTrickster
+	setPalette(69,OrlandoTrickster)
+	setCBSP(69,Orlando, 1, Trickster)
+
+// RahelBowCav
+	setPalette(70,RahelBowCav)
+	setCBSP(70,Rahel, 1, BowCav)
+
+// RahelBowKnight
+	setPalette(71,RahelBowKnight)
+	setCBSP(71,Rahel, 2, BowKnight)
+
+// RahelRanger
+	setPalette(72,RahelRanger)
+	setCBSP(72,Rahel, 3, Ranger_F)
+
+// BuzuVanguard
+	setPalette(73,BuzuVanguard)
+	setCBSP(73,Buzu, 1, Vanguard)
+
+// BozoWarden
+	setPalette(74,BozoWarden)
+	setCBSP(74,Bozo, 1, Warden)
+
+// GeraldoMercenary
+	setPalette(75,GeraldoMercenary)
+	setCBSP(75,Geraldo, 1, Mercenary)
+
+// FelipeSoldier
+	setPalette(76,FelipeSoldier)
+	setCBSP(76,Felipe, 1, Soldier)
+
+// SierraVanguard
+	setPalette(77,SierraVanguard)
+	setCBSP(77,Sierra, 1, Vanguard)
+
+// ManfredMercenary
+	setPalette(78,ManfredMercenary)
+	setCBSP(78,Manfred, 1, Mercenary)
+
+// SagargalaWarden
+	setPalette(79,SagargalaWarden)
+	setCBSP(79,Sagargala, 1, Warden)
+
+// StingrayDeserter
+	setPalette(80,StingrayDeserter)
+	setCBSP(80,Stingray, 1, Deserter)
+
+// RamiroSwordCav
+	setPalette(81,RamiroSwordCav)
+	setCBSP(81,Ramiro, 1, SwordCav)
+
+// TheCloserWarrior
+	setPalette(82,TheCloserWarrior)
+	setCBSP(82,TheCloser, 1, Warrior)
+
+// JozefGunner
+	setPalette(83,JozefGunner)
+	setCBSP(83,Jozef, 1, SwordCav)
+
+// BigBrickFighter
+	setPalette(84,BigBrickFighter)
+	setCBSP(84,BigBrick, 1, SwordCav)
+
+// HakmanMyrmidon
+	setPalette(85,HakmanMyrmidon)
+	setCBSP(85,Hakman, 1, SwordCav)
+
+// MrMistMage
+	setPalette(86,MrMistMage)
+	setCBSP(86,MrMist, 1, SwordCav)
+
+// YaoguaiNinja
+	setPalette(87,YaoguaiNinja)
+	setCBSP(87,Yaoguai, 1, SwordCav)
+
+// TheDukeArcher
+	setPalette(88,TheDukeArcher)
+	setCBSP(88,TheDuke, 1, SwordCav)
+
+// SantiagoGunner
+	setPalette(89,SantiagoGunner)
+	setCBSP(89,Santiago, 1, SwordCav)
+
+// SlicerThief
+	setPalette(90,SlicerThief)
+	setCBSP(90,Slicer, 1, Thief)
+
+// DicerMercenary
+	setPalette(91,DicerMercenary)
+	setCBSP(91,Dicer, 1, Mercenary)
+
+// HugoHero
+	setPalette(92,HugoHero)
+	setCBSP(92,Hugo, 1, Hero)
+
+// JulianaSage
+	setPalette(93,JulianaSage)
+	setCBSP(93,Juliana, 1, Sage_F)
+
+// IgnacioRuneshield
+	setPalette(94,IgnacioRuneshield)
+	setCBSP(94,Ignacio, 1, Runeshield)
+
+// ElodiaWolfrider
+	setPalette(95,ElodiaWolfrider)
+	setCBSP(95,Elodia, 1, Wolfrider)
+
+// PonteBrigand
+	setPalette(96,PonteBrigand)
+	setCBSP(96,Ponte, 1, Brigand)
+
+// PonteBerserker
+	setPalette(97,PonteBerserker)
+	setCBSP(97,Ponte, 2, Berserker)
+
+// PonteWarMonk
+	setPalette(98,PonteWarMonk)
+	setCBSP(98,Ponte, 3, WarMonk)
+
+// PassarolaAdventurer
+	setPalette(99,PassarolaAdventurer)
+	setCBSP(99,Passarola, 1, Adventurer_F)
+
+// NeltumeCleric
+	setPalette(100,NeltumeCleric)
+	setCBSP(100,Neltume, 1, Cleric)
+
+// NeltumeWarMonk
+	setPalette(101,NeltumeWarMonk)
+	setCBSP(101,Neltume, 2, WarMonk)
+
+// NeltumeAdventurer
+	setPalette(102,NeltumeAdventurer)
+	setCBSP(102,Neltume, 3, Adventurer)
+
+// DmitrBrigand
+	setPalette(103,DmitrBrigand)
+	setCBSP(103,Dmitr, 1, Brigand)
+
+// DmitrBerserker
+	setPalette(104,DmitrBerserker)
+	setCBSP(104,Dmitr, 2, Berserker)
+
+// DmitrWarMonk
+	setPalette(105,DmitrWarMonk)
+	setCBSP(105,Dmitr, 3, WarMonk)
+
+// MagdalenaSage
+	setPalette(106,MagdalenaSage)
+	setCBSP(106,Magdalena, 1, Sage_F)
+
+// AvocadoDeserter
+	setPalette(107,AvocadoDeserter)
+	setCBSP(107,Avocado, 1, Deserter)
+
+// AvocadoChampion
+	setPalette(108,AvocadoChampion)
+	setCBSP(108,Avocado, 2, Champion)
+
+// AvocadoWolfrider
+	setPalette(109,AvocadoWolfrider)
+	setCBSP(109,Avocado, 3, Wolfrider)
+
+// HusniyeThief
+	setPalette(110,HusniyeThief)
+	setCBSP(110,Husniye, 1, Thief_F)
+
+// HusniyeRogue
+	setPalette(111,HusniyeRogue)
+	setCBSP(111,Husniye, 2, Rogue_F)
+
+// HusniyeWolfrider
+	setPalette(112,HusniyeWolfrider)
+	setCBSP(112,Husniye, 3, Wolfrider)
+
+// KaiNinja
+	setPalette(113,KaiNinja)
+	setCBSP(113,Kai, 1, Ninja)
+
+// KaiMasterNinja
+	setPalette(114,KaiMasterNinja)
+	setCBSP(114,Kai, 2, MasterNinja)
+
+// KaiTrickster
+	setPalette(115,KaiTrickster)
+	setCBSP(115,Kai, 3, Trickster)
+
+// ErnestGryphoknight
+	setPalette(116,ErnestGryphoknight)
+	setCBSP(116,Ernest, 1, Gryphoknight)
+
+// AdrianFighter
+	setPalette(117,AdrianFighter)
+	setCBSP(117,Adrian, 1, Fighter)
+
+// AdrianWarrior
+	setPalette(118,AdrianWarrior)
+	setCBSP(118,Adrian, 2, Warrior)
+
+// AdrianMarshall
+	setPalette(119,AdrianMarshall)
+	setCBSP(119,Adrian, 3, Marshall)
+
+// LexaMyrmidon
+	setPalette(120,LexaMyrmidon)
+	setCBSP(120,Lexa, 1, Myrmidon_F)
+
+// LexaSwordmaster
+	setPalette(121,LexaSwordmaster)
+	setCBSP(121,Lexa, 2, Swordmaster_F)
+
+// LexaSlayer
+	setPalette(122,LexaSlayer)
+	setCBSP(122,Lexa, 3, Slayer_F)
+
+// NoahWarden
+	setPalette(123,NoahWarden)
+	setCBSP(123,Noah, 1, Warden)
+
+// NoahGeneral
+	setPalette(124,NoahGeneral)
+	setCBSP(124,Noah, 2, General)
+
+// NoahBaron
+	setPalette(125,NoahBaron)
+	setCBSP(125,Noah, 3, Runeshield)
+
+// FataConjuror
+	setPalette(126,FataConjuror)
+	setCBSP(126,Fata, 1, Conjuror_F)
+
+// FataSlayer
+	setPalette(127,FataSlayer)
+	setCBSP(127,Fata, 2, Slayer_F)
+
+// FataTrickster
+	setPalette(128,FataTrickster)
+	setCBSP(128,Fata, 3, Trickster_F)
+
+// AlonsoAdventurer
+	setPalette(129,AlonsoAdventurer)
+	setCBSP(129,Alonso, 3, Adventurer)
+
+// AlonsoAdventurer2
+	setPalette(129,AlonsoAdventurer2)
+	setCBSP(129,AlonsoReal, 3, Adventurer)
+
+// AlonsoAdventurer3
+	setPalette(129,AlonsoAdventurer3)
+	setCBSP(129,AlonsoChapter3, 3, Adventurer)
+
+// AzaharChampion
+	setPalette(130,AzaharChampion)
+	setCBSP(130,Azahar, 3, Champion_F)
+
+// BoltonMageKnight
+	setPalette(131,BoltonMageKnight)
+	setCBSP(131,Bolton, 3, MageKnight)
+
+// CruzWarlock
+	setPalette(132,CruzWarlock)
+	setCBSP(132,Cruz, 1, Warlock)
+
+// DalilaAssassin
+	setPalette(133,DalilaAssassin)
+	setCBSP(133,Dalila, 3, Assassin_F)
+
+// BoruRuneshield
+	setPalette(134,BoruRuneshield)
+	setCBSP(134,Boru, 3, Runeshield)
+
+// EnriqueGeneral
+	setPalette(135,EnriqueGeneral)
+	setCBSP(135,Enrique, 3, General)
+
+// ErnestGryphoknightDismount
+	setPalette(136,ErnestGryphoknightDismount)
+	setCBSP(136,Ernest, 2, Gryphoknight_D)
+
+// FidelSage
+	setPalette(137,FidelSage)
+	setCBSP(137,Fidel, 3, Sage)
+
+// IdaCataphract
+	setPalette(138,IdaCataphract)
+	setCBSP(138,Ida, 3, Cataphract)
+
+// InkaDracoknight
+	setPalette(139,InkaDracoknight)
+	setCBSP(139,Inka, 3, Dracoknight)
+
+// JasperAxeKnight
+	setPalette(140,JasperAxeKnight)
+	setCBSP(140,Jasper, 3, AxeKnight)
+
+// JavierHero
+	setPalette(141,JavierHero)
+	setCBSP(141,Javier, 3, Hero)
+
+// KirilMasterNinja
+	setPalette(142,KirilMasterNinja)
+	setCBSP(142,Kiril, 3, MasterNinja)
+
+// KrezkeSlayer
+	setPalette(143,KrezkeSlayer)
+	setCBSP(143,Krezke, 3, Slayer_F)
+
+// KurtWolfrider
+	setPalette(144,KurtWolfrider)
+	setCBSP(144,Kurt, 3, Wolfrider)
+
+// NicodemusCataphract
+	setPalette(145,NicodemusCataphract)
+	setCBSP(145,Nicodemus, 3, Cataphract)
+
+// QuispeMaligKnight
+	setPalette(146,QuispeMaligKnight)
+	setCBSP(146,Quispe, 3, MaligKnight)
+
+// RimaAxeCav
+	setPalette(147,RimaAxeCav)
+	setCBSP(147,Rima, 1, AxeCav)
+
+// RimaAxeKnight
+	setPalette(148,RimaAxeKnight)
+	setCBSP(148,Rima, 2, AxeKnight)
+
+// RimaCataphract
+	setPalette(149,RimaCataphract)
+	setCBSP(149,Rima, 3, Cataphract)
+
+// RogelioPirate
+	setPalette(150,RogelioPirate)
+	setCBSP(150,Rogelio, 1, Pirate)
+
+// RubyHero
+	setPalette(151,RubyHero)
+	setCBSP(151,Ruby, 3, Hero_F)
+
+// RunamelHero
+	setPalette(152,RunamelHero)
+	setCBSP(152,Runamel, 3, Hero)
+
+// SalmanSwordmaster
+	setPalette(153,SalmanSwordmaster)
+	setCBSP(153,Salman, 3, Swordmaster)
+
+// SalvadorChampion
+	setPalette(154,SalvadorChampion)
+	setCBSP(154,Salvador, 3, Champion)
+
+// SanzSage
+	setPalette(155,SanzSage)
+	setCBSP(155,Sanz, 3, Sage)
+
+// SolangeRanger
+	setPalette(156,SolangeRanger)
+	setCBSP(156,Solange, 3, Ranger_F)
+
+// ValerieArcher
+	setPalette(157,ValerieArcher)
+	setCBSP(157,Valerie, 1, Archer_F)
+
+// ValerieSniper
+	setPalette(158,ValerieSniper)
+	setCBSP(158,Valerie, 2, Sniper_F)
+
+// ValerieBombardier
+	setPalette(159,ValerieBombardier)
+	setCBSP(159,Valerie, 3, Bombardier)
+
+// WindySwordCav
+	setPalette(160,WindySwordCav)
+	setCBSP(160,Windy, 1, SwordCav)
+
+// WindySwordKnight
+	setPalette(161,WindySwordKnight)
+	setCBSP(161,Windy, 2, SwordKnight)
+
+// YadneyGriffinRider
+	setPalette(162,YadneyGriffinRider)
+	setCBSP(162,Yadney, 3, GriffinRider)
+
+// YurenaChampion
+	setPalette(163,YurenaChampion)
+	setCBSP(163,Yurena, 3, Champion_F)
+
+// QuispeMaligKnightReal
+	setPalette(164,QuispeMaligKnightReal)
+	setCBSP(164,QuispeReal, 3, MaligKnight)
+
+// QuispeMaligKnightChapter4
+	setPalette(165,QuispeMaligKnightChapter4)
+	setCBSP(165,QuispeChapter4, 3, MaligKnight)
+
+// IdaCataphractReal
+	setPalette(166,IdaCataphractReal)
+	setCBSP(166,IdaReal, 3, Cataphract)
+
+// ElodiaWolfriderReal
+	setPalette(167,ElodiaWolfriderReal)
+	setCBSP(167,ElodiaReal, 1, Wolfrider)
+
+// ElodiaWolfriderBoss
+	setPalette(168,ElodiaWolfriderBoss)
+	setCBSP(168,ElodiaBoss, 1, Wolfrider)
+
+// CruzWarlockFake
+	setPalette(169,CruzWarlockFake)
+	setCBSP(169,CruzFake, 1, Warlock)
+
+// DalilaAssassinRematch
+	setPalette(170,DalilaAssassinRematch)
+	setCBSP(170,DalilaRematch, 3, Assassin_F)
+
+// TheanaAssassin
+	setPalette(171,TheanaAssassin)
+	setCBSP(171,Theana, 3, Assassin_F)

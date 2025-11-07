@@ -137,6 +137,10 @@
 #define AssistStaff $b8
 #define RushStaff $b9
 
+#define Rewarp $ad
+#define Protect $ae
+#define Concentrate $af
+
 // EQUIPS
 #define HideShield $ca
 #define GlassShield $d2

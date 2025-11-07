@@ -13,10 +13,12 @@ POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
-TurnEventPlayer(0, IgnacioBoatReinforcements, 3)
-TurnEventPlayer(0, HugoReinforcements, 5)
 TurnEventPlayer(0, JulianaDialogue, 2)
-TurnEventPlayer(ElodiaChargeFlag, ElodiaDecidesToCharge, 1, 255)
+TurnEventPlayer(0, IgnacioBoatReinforcements, 3)
+//TurnEventPlayer(0, HugoReinforcements, 4)
+TurnEventPlayer(0, IgnacioBoatReinforcements2, 5)
+TurnEventPlayer(0, ElodiaDecidesToCharge, 6) //settled on this
+
 TurnEventPlayer(LuaInAHubFlag, ObjectiveExplanation, 1)
 TurnEventPlayer(Ch2ReinforcementFlags, BoatPursuerReinforcements, 1, 255)
 TurnEventPlayer(ReadyForTakeoffFlag, TheGangTakesOff, 1, 255)
@@ -24,6 +26,11 @@ TurnEventPlayer(WindUpFlag3, WindUpThirdTurn, 1, 255)
 TurnEventPlayer(WindUpFlag2, WindUpSecondTurn, 1, 255)
 TurnEventPlayer(WindUpFlag1, WindUpFirstTurn, 1, 255)
 END_MAIN
+
+IgnacioBoatReinforcements2:
+SpawnReinforcements(IgnacioBoatReinforcementsGroup1)
+NoFade
+ENDA
 
 BoatPursuerReinforcements:
 CHECK_TURNS //checks the turn and returns it
@@ -70,9 +77,10 @@ BEQ 776 s0 sC
     CameraCursor(ElodiaBoss)
     Text(Ch2ElodiasCharge)
     SetAI(ElodiaBoss,0,0,4,0)
+    SetAI(TorchUnit,0,0,4,0) // all torch units set to charge
     SpawnReinforcements(ElodiaWolfSquad)
     SpawnReinforcements(GriffinSquad)
-    Text(Ch2GriffinsShowUp)
+    SpawnReinforcements(TopLeftSquad)
     ENUT Ch2ReinforcementFlags
     NoFade
     ENDB
@@ -80,6 +88,12 @@ LABEL 776
 CALL TheGangTakesOff
 NoFade
 ENDA
+
+TopLeftSquad:
+UNIT TorchUnit Mercenary Ignacio Level(10,Enemy,True) [1,0] 0 0 1 REDA1R0 [SteelSword] PursueWithoutHeedAI
+UNIT TorchUnit Warrior Ignacio Level(10,Enemy,True) [2,0] 0 0 1 REDA2R0 [SilverAxe] PursueWithoutHeedAI
+UNIT TorchUnit Soldier Ignacio Level(10,Enemy,True) [3,0] 0 0 1 REDA3R0 [SteelLance] PursueWithoutHeedAI
+UNIT
 
 LuaRahelBeginningCutscene:
 UNIT Lua Captain 0 Level(1, Ally, False) [19,18] 0 0 0 0 [0, 0, 0, 0] NoAI 
@@ -100,7 +114,7 @@ UNIT
 
 CutsceneUnitsPt2:
 UNIT Lua Captain 0 Level(1, Ally, False) [11,10] 0 0 0 0 [0, 0, 0, 0] NoAI
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [13, 22] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(30, Enemy, False) [13, 22] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
 UNIT
 
 CutsceneUnitsPt2Razvan:
@@ -129,7 +143,7 @@ UNIT TorchUnit Wolfrider Ignacio Level(10,Enemy,True) [39,24] 0 0 1 REDA39R24 [S
 UNIT
 
 GriffinSquad:
-UNIT TorchUnit Bombardier Ignacio Level(12,Enemy,True) [36,24] 0 0 1 REDA36R24 [SilverLance, SteelBow] PursueWithoutHeedAI
+UNIT TorchUnit Bombardier Ignacio Level(10,Enemy,True) [36,24] 0 0 1 REDA36R24 [SilverLance, SteelBow] PursueWithoutHeedAI
 UNIT TorchUnit GriffinRider Ignacio Level(9,Enemy,True) [37,25] 0 0 1 REDA37R25 [SteelLance] PursueWithoutHeedAI
 UNIT TorchUnit GriffinRider Ignacio Level(9,Enemy,True) [35,25] 0 0 1 REDA35R25 [SteelLance] PursueWithoutHeedAI
 UNIT 
@@ -155,30 +169,14 @@ NoFade
 ENDA
 
 IgnacioBoatReinforcementsGroup1:
-UNIT Igniswords Vanguard Ignacio Level(8,Enemy,True) [32,16] 0 0 1 REDA33R15 [SteelLance, HandAxe] GroupThreeAI
-UNIT Igniswords Archer Ignacio Level(8,Enemy,True) [32,16] 0 0 1 REDA30R15 [SteelBow] GroupThreeAI
+UNIT Igniswords Vanguard Ignacio Level(8,Enemy,True) [32,16] 0 0 1 REDA33R15 [SteelAxe] GroupThreeAI
+UNIT Igniswords Archer Ignacio Level(8,Enemy,True) [32,16] 0 0 1 REDA30R15 [IronBow] GroupThreeAI
 UNIT
 
 IgnacioBoatReinforcementsGroup2:
 UNIT Igniswords Warden Ignacio Level(8,Enemy,True) [34,5] 0 0 1 REDA34R5 [IronBlade, Javelin] ChargeAI
 UNIT Igniswords Mage Ignacio Level(8,Enemy,True) [30,5] 0 0 1 REDA30R6 [Fire] ChargeAI
 UNIT
-
-HugoReinforcements:
-CHECK_EXISTS Hugo
-BEQ 776 s0 sC
-CameraCursor(Hugo)
-STAL 30
-Text(HugoWarning)
-SpawnReinforcements(HugoReinforcementsGroup)
-LABEL 776
-NoFade
-ENDA
-
-HugoReinforcementsGroup:
-UNIT TorchUnit Soldier Ignacio Level(12,Enemy,True) [3,0] 0 0 1 REDA3R0 [SteelLance] PursueWithoutHeedAI
-UNIT TorchUnit Fighter Ignacio Level(12,Enemy,True) [1,0] 0 0 1 REDA1R0 [SteelAxe] PursueWithoutHeedAI
-UNIT 
 
 CharacterBasedEvents:
 CharacterEvent(OrlandoHubATalk, GotoChapter1, Lua, Orlando)
@@ -189,8 +187,9 @@ CharacterEvent(CarmenXimoHubATalkFlag, CarmenXimoTalk, Lua, Ximo)
 END_MAIN
 
 JulianaDialogue:
+CameraCursor(Hugo)
+Text(HugoWarning)
 CameraCursor(Juliana)
-STAL 30
 Text(JulianaWarning)
 NoFade
 ENDA
@@ -199,7 +198,8 @@ GotoChapter1:
 HubChapterFirstTimeEvent(1, SeenHubA1Pitch, HubA1Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubA_1, Castle_Hall_Night, Chapter2, LuaBaseCallbackA1)
-GotoHubChapterIfYes(2, HubA_1, HubA1Accepted)
+GotoHubChapterIfYes(2, HubA_1, HubA1Selection_Yes)
+Text(HubA1Selection_No)
 ENUF OrlandoHubATalk
 NoFade
 ENDA
@@ -221,6 +221,7 @@ ENDA
 
 LocationBasedEvents:
 DurabilityChest(SkillScroll,ImbueID,31,15)
+CHES HubALuaBaseChestOpenedFlag SilverAxe [32,13] 0x14 //chest, only accessible on layer 1
 END_MAIN
 
 MiscBasedEvents:
@@ -241,14 +242,28 @@ AREA MainRoomToPort GotoPortGreagor [1,0] [3,0]
 
 AREA GotoChapter2Flag AllDoneWithHubA [24,21] [24,21]
 
+AREA HubALuaBaseChestReactionFlag LuaReactsToLootingTreasureChest [32,13] [32,13]
+
+AREA DifficultyChangeFlag DifficultyChangeEvent [19,18] [19,18]
+
 AFEV Ch2ThisIsAChapter RefreshLua 0
 CauseGameOverIfLordDies
 END_MAIN
 
+LuaReactsToLootingTreasureChest:
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC
+	Text(HubASilverAxeText) //if the chest flag's set, then this will play the first time that it's looted
+LABEL 776
+ENUF HubALuaBaseChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
+LABEL 777
+NoFade
+ENDA
+
 AllDoneWithHubA:
 FADI 10
-SetBackground(Inn)
-Text(HubAFinalText)
+//SetBackground(Inn)
+//Text(HubAFinalText)
 MNC2 Chapter2 
 NoFade
 ENDA
@@ -283,6 +298,7 @@ GotoLuasQuarters:
 InitiateTileChangeInHub(ClearChapter2Traps, AddLuaQuartersTraps, 2, LuaInHerQuarters)
 ENUT MainRoomToPort
 ENUF LuaQuartersToMainRoom
+ENUF DifficultyChangeFlag //we can set the difficulty here
 NoFade
 ENDA
 
@@ -292,6 +308,7 @@ BNE 776 s0 sC
     AddTrap(GreenSigilTrapID,24, 21)
 LABEL 776
 AddTrap(BlueSigilTrapID, 19, 25)
+AddTrap(PurpleSigilTrapID, 19, 18)
 NoFade
 ENDA
 
@@ -312,6 +329,7 @@ GoBackToMainRoomFromLuaQuarters:
 InitiateTileRevertInHub(ClearLuaQuartersTraps, AddChapter2Traps, 2, LuaBackFromQuarters, MainRoomSpawnEvent)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
+ENUT DifficultyChangeFlag //no longer can set the difficulty
 NoFade
 ENDA
 
@@ -328,9 +346,6 @@ UNIT
 LibrarySpawnEvent:
 LoadCutsceneUnits(HubALibraryRazvanGroup)
 LoadPlayerUnits(HubALibraryHermenegildoGroup)
-TurnUnitGreenIfAlive(Razvan, 1)
-TurnUnitGreenIfAlive(Hermenegildo, 2)
-
 LoadCutsceneUnits(NPCLibrarianBGroup)
 CheckHowManyHubChaptersCompleted
 SVAL s1 2 //if 2 or more chapters completed
@@ -360,13 +375,15 @@ GotoBarracksAndTreasureRoom:
 InitiateTileChangeInHub(ClearChapter2Traps, AddTreasureRoomTraps, 1, LuaInDaTreasureRoom, TreasureRoomSpawnEvent)
 ENUF TreasureRoomToMainRoom
 ENUT MainRoomToPort
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 9
+LABEL 776
 NoFade
 ENDA
 
 TreasureRoomSpawnEvent:
 LoadPlayerUnits(CarmenXimoBaseGroup)
-TurnUnitGreenIfAlive(Carmen, 1)
-TurnUnitGreenIfAlive(Ximo, 2)
 NoFade
 ENDA
 
@@ -376,15 +393,13 @@ UNIT Ximo Archer 0 Level(1,Ally,False) [29,22] 0 0 0 0 [IronBow, Vulnerary] NoAI
 UNIT 
 
 GoBackToMainRoomFromTreasureRoom:
-InitiateTileRevertInHub(CUSAScrubDuo, ClearTreasureRoomTraps, AddChapter2Traps, 1, LuaOnDaStairs, MainRoomSpawnEvent)
+CHECK_EVENTID HubALuaBaseChestOpenedFlag
+BEQ 776 s0 sC 
+	TILEREVERT 9
+LABEL 776
+InitiateTileRevertInHub(ClearTreasureRoomTraps, AddChapter2Traps, 1, LuaOnDaStairs, MainRoomSpawnEvent)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
-NoFade
-ENDA
-
-CUSAScrubDuo:
-TurnUnitBlueIfAlive(Carmen, 1)
-TurnUnitBlueIfAlive(Ximo, 2)
 NoFade
 ENDA
 
@@ -400,7 +415,6 @@ UNIT Rahel Civilian_F_2 0 Level(1,NPC,False) [19,10] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 GotoPortGreagorFirstTime:
-SHOWUNIT Razvan
 InitiateLoadMapHub(HubA, LuaInDaHubFirstTime, PortGreagorSpawnEventFirstTime)
 Text(HubABeginningScene3_1)
 CamOn
@@ -448,6 +462,10 @@ ENDA
 GotoPortGreagor:
 InitiateLoadMapHub(HubA, LuaInDaHub, PortGreagorSpawnEvent)
 ENUF PortToBase
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
@@ -496,7 +514,7 @@ UNIT Rochefort 0 0 Level(1,NPC,False) [20,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(2,NPC,False) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
+UNIT Jaime PegasusRider 0 Level(2,NPC,True) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
 UNIT
 
 LuaInDaHub:
@@ -526,7 +544,7 @@ Units1:
 UNIT Lua 0 0 Level(10,Ally,False) [15,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Orlando 0 0 Level(15,Ally,False) [28,11] 0 0 0 0 [SilverDagger, Thani, Vulnerary] NoAI
 //Lua's Group - 7
-UNIT Rahel 0 0 Level(1,Ally,False) [15,10] 0 0 0 0 [IronBow, Vulnerary] NoAI
+UNIT Rahel 0 0 Level(1,Ally,False) [15,10] 0 0 0 0 [IronBow, MiniBow, Vulnerary] NoAI
 LoadUnit(16,10)
 LoadUnit(16,11)
 LoadUnit(16,12)
@@ -610,6 +628,8 @@ ENUT LuaQuartersToMainRoom
 ENUT LibraryToMainRoom
 ENUT MainRoomToPort
 ENUT GotoChapter2Flag
+ENUT HubALuaBaseChestReactionFlag
+ENUT DifficultyChangeFlag
 //these are all set for the objective to work
 ENUT WindUpFlag1
 ENUT WindUpFlag2
@@ -679,11 +699,10 @@ STAL 10
 MOVE 5 Pilar [19,25]
 MOVE 5 Lua [20,25]
 ENUN
+FADI 15
 REMOVEALL_BLUE
 REMOVEALL_GREEN
-FADI 15
-STAL 40
-
+STAL 30
 CAMERA_CENTERED [14, 22]
 TILEREVERT 2
 TILECHANGE 4
@@ -692,9 +711,9 @@ DISA ElodiaBoss
 LoadCutsceneUnits(CutsceneUnitsPt2)
 LoadCutsceneUnits(CutsceneUnitsOnShip)
 FADU 15
-MUSC AvastMeHeartiesID
 MOVE 10 Lua [13, 19]
-ENUN 
+ENUN
+MUSC ASoldiersDutyID
 STAL 10
 FlashCursor(ElodiaBoss, 60)
 Text(Ch2BeginningScene5)
@@ -706,7 +725,6 @@ FlashCursor(Razvan, 60)
 Text(Ch2BeginningScene6)
 
 MOVE 15 ElodiaBoss [29,23]
-ENUN
 MOVE 10 Razvan [9,13]
 MOVE 10 Lua [9,12]
 ENUN
@@ -787,12 +805,12 @@ ENDA
 
 NewPlayerGroup:
 UNIT Orlando 0 0 Level(15,Ally,False) [15,11] 0 0 0 0 [SilverDagger, Thani, Vulnerary] NoAI
-UNIT Rahel 0 0 Level(1,Ally,False) [16,11] 0 0 0 0 [IronBow, Vulnerary] NoAI
+UNIT Rahel 0 0 Level(1,Ally,False) [16,11] 0 0 0 0 [IronBow, MiniBow, Vulnerary] NoAI
 UNIT
 
 IgniswordsGroup:
 UNIT Ignacio 0 0 Level(10,Enemy,False) [36,2] 0 0 0 0 [Elfire, KillingEdge, KnightsPlate] GroupFiveAI
-UNIT Igniswords Monk Ignacio Level(8,Enemy,True) [33,0] 0 0 0 0 [Fire, Luna] GroupFiveAI
+UNIT Igniswords Monk Ignacio Level(8,Enemy,True) [33,0] 0 0 0 0 [Luna] GroupFiveAI
 UNIT Igniswords Archer Ignacio Level(8,Enemy,True) [33,2] 0 0 0 0 [Longbow] GroupFiveAI
 
 UNIT Igniswords Monk Ignacio Level(8,Enemy,True) [32,10] 0 0 0 0 [Fire] PursueWithoutHeedAI
@@ -802,30 +820,30 @@ UNIT Igniswords Monk Ignacio Level(8,Enemy,True) [32,12] 0 0 0 0 [Fire] PursueWi
 UNIT Igniswords Shaman Ignacio Level(8,Enemy,True) [36,13] 0 0 0 0 [Elfire] BossAI
 UNIT Igniswords Mage Ignacio Level(8,Enemy,True) [37,13] 0 0 0 0 [Thunder] BossAI
 
-UNIT Igniswords Shaman Ignacio Level(8,Enemy,True) [36,8] 0 0 0 0 [Nosferatu] BossAI
+UNIT Igniswords Shaman Ignacio Level(8,Enemy,True) [36,8] 0 0 0 0 [Thani] BossAI
 UNIT Igniswords Shaman Ignacio Level(8,Enemy,True) [37,8] 0 0 0 0 [Elfire] BossAI
 UNIT
 
 TORCHGroupLeft:
-UNIT Hugo 0 Hugo Level(12, Enemy, True) [2,1] 0 0 0 0 [SilverSword, BravesCrest] AttackWhenInRangeAI
+UNIT Hugo 0 Hugo Level(12, Enemy, False) [2,0] 0 0 0 0 [SilverSword, BravesCrest] GroupTenAI
+UNIT TorchUnit Soldier Ignacio Level(12,Enemy,True) [3,2] 0 0 0 0 [SteelLance] GroupTenAI
+UNIT TorchUnit Fighter Ignacio Level(12,Enemy,True) [1,2] 0 0 0 0 [SteelAxe] GroupTenAI //hugo's boys
 
 UNIT TorchUnit2 WyvernRider Hugo Level(9, Enemy, True) [11,4] 0 0 0 0 [IronAxe] GoForThroneAI
 
 UNIT TorchUnit Soldier Hugo Level(9,Enemy,True) [11,9] 0 0 0 0 [IronLance] PursueWithoutHeedAI
 UNIT TorchUnit Mercenary Hugo Level(9,Enemy,True) [12,14] 0 0 0 0 [IronSword] PursueWithoutHeedAI
 UNIT TorchUnit Soldier Hugo Level(9,Enemy,True) [10,12] 0 0 0 0 [IronLance] PursueWithoutHeedAI
-
-UNIT TorchUnit Fighter Hugo Level(9,Enemy,True) [6,14] 0 0 0 0 [SteelAxe] GroupTenAI
-UNIT TorchUnit Mercenary Hugo Level(9,Enemy,True) [2,12] 0 0 0 0 [SteelSword] GroupTenAI
+UNIT TorchUnit Fighter Hugo Level(9,Enemy,True) [6,14] 0 0 0 0 [SteelAxe] PursueWithoutHeedAI
 
 UNIT TorchUnit Mercenary Hugo Level(9,Enemy,True) [1,0] 0 0 0 0 [SteelSword] GroupElevenAI
 UNIT TorchUnit Archer Hugo Level(9,Enemy,True) [4,5] 0 0 0 0 [IronBow] GroupElevenAI
 
-UNIT TorchUnit Archer Hugo Level(9,Enemy,True) [0,5] 0 0 0 0 [IronBow] GroupTwoAI
+//UNIT TorchUnit Archer Hugo Level(9,Enemy,True) [0,5] 0 0 0 0 [IronBow] GroupTwoAI
 UNIT
 
 TORCHGroupBottom:
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [38, 23] 0 0 0 0 [Baselard, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(25, Enemy, False) [38, 23] 0 0 0 0 [Baselard, KnightRing] GroupSixAI
 UNIT TorchUnit AxeCav ElodiaBoss Level(10,Enemy,True) [33,22] 0 0 0 0 [SteelAxe] GroupSixAI
 UNIT TorchUnit LanceCav ElodiaBoss Level(10,Enemy,True) [33,23] 0 0 0 0 [IronLance] GroupSixAI
 
@@ -835,6 +853,10 @@ UNIT TorchUnit BowCav ElodiaBoss Level(10,Enemy,True) [28,24] 0 0 0 0 [SteelBow]
 
 UNIT TorchUnit AxeCav ElodiaBoss Level(10,Enemy,True) [18,22] 0 0 0 0 [SteelAxe] GroupEightAI
 UNIT TorchUnit SwordCav ElodiaBoss Level(10,Enemy,True) [15,25] 0 0 0 0 [SteelSword] GroupEightAI
+UNIT TorchUnit Mage ElodiaBoss Level(10,Enemy,True) [17,23] 0 0 0 0 [Elfire] GroupEightAI
+UNIT TorchUnit Monk ElodiaBoss Level(10,Enemy,True) [16,24] 0 0 0 0 [Thani] GroupEightAI
+
+UNIT TorchUnit Warlock ElodiaBoss Level(10,Enemy,True) [7,23] 0 0 0 0 [Luna] GroupTwelveAI
 
 UNIT TorchUnit2 SwordCav ElodiaBoss Level(10,Enemy,True) [39,22] 0 0 0 0 [IronSword] GoForThroneAI
 UNIT TorchUnit2 AxeCav ElodiaBoss Level(10,Enemy,True) [39,24] 0 0 0 0 [IronAxe] GoForThroneAI
@@ -843,8 +865,7 @@ UNIT
 
 TORCHMagiDivisionGroup:
 UNIT Juliana 0 ElodiaBoss Level(12,Enemy,False) [0,24] 0 0 0 0 [Arcfire, MagesRing] GroupTwelveAI
-UNIT TorchUnit Shaman ElodiaBoss Level(9,Enemy,True) [3,23] 0 0 0 0 [Nosferatu] GroupTwelveAI
-UNIT TorchUnit Mage ElodiaBoss Level(9,Enemy,True) [3,24] 0 0 0 0 [Luna] GroupTwelveAI
+UNIT TorchUnit Mage ElodiaBoss Level(9,Enemy,True) [3,23] 0 0 0 0 [Elsurge] GroupTwelveAI
 UNIT
 
 EndingSceneCutsceneUnits:
@@ -857,7 +878,7 @@ UNIT Orlando 0 0 Level(15,Ally,False) [30,12] 0x0 0x0 0 0 [SilverDagger, Thani] 
 UNIT
 
 EndingSceneElodiaCutscene:
-UNIT ElodiaBoss 0 0 Level(15, Enemy, False) [12, 20] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
+UNIT ElodiaBoss 0 0 Level(30, Enemy, False) [12, 20] 0 0 0 0 [Baselard, SilverLance, KnightRing] GroupSixAI
 UNIT
 
 EndingSceneAlonsoCutscene:
@@ -936,16 +957,16 @@ ENUN
 STAL 30
 FlashCursor(GreagorSailor, 60)
 Text(Ch2EndingScene6)
-
 CAMERA_CENTERED [37, 2]
 STAL 30
 LOAD1 1 EndingSceneMysteriousFigureCutscene
 ENUN
+FadeoutMusic
 MOVE 4 GreagorVillager [33,7]
 ENUN
 STAL 30
+MUSC AKeepersOathID
 Text(Ch2EndingScene7)
-
 GoToHubChapter(HubB)
 NoFade
 ENDA

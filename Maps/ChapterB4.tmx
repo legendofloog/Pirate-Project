@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="29" height="28" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="29" height="28" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="1">
  <tileset firstgid="1" name="Desert Bastion" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/Desert_Bastion_Tileset.png" width="512" height="512"/>
  </tileset>
@@ -46,7 +46,7 @@
 449,529,628,193,402,897,771,930,868,868,868,868,934,659,659,529,657,934,868,868,868,803,338,385,386,402,354,803,498
 </data>
  </layer>
- <layer id="7" name="Cutscene1" width="29" height="28">
+ <layer id="7" name="Cutscene1" width="29" height="28" visible="0">
   <data encoding="csv">
 692,436,339,434,115,194,205,402,881,846,847,625,200,269,263,371,0,0,0,0,0,0,0,0,0,0,0,0,0,
 434,434,338,403,340,264,178,915,916,985,916,917,338,436,339,402,0,0,0,0,0,0,0,0,0,0,0,0,0,

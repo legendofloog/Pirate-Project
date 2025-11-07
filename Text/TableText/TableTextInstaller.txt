@@ -3,3 +3,6 @@
 #include "CharacterNamesDescs.txt"
 #include "EscapeQuotes.txt"
 #include "DeathQuotes.txt"
+#include "BattleQuotes.txt"
+#include "DifficultyNamesDescs.txt"
+#include "GuideText.txt"

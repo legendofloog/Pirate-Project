@@ -8,6 +8,7 @@
 #endif
 #define ClassTable NewClassTable
 #define ItemTable NewItemTable
+#define SpellAssociationTable NewSpellAssociationTable
 #ifndef DebuffTableRam
   #define DebuffTableRam 0x203f100
 #endif
@@ -20,21 +21,15 @@
 #define NoRank 0
 #define DRank 1
 #define ERank DRank
-#define CRank 26 // D to C -> 25 hits (this feels fine)
-#define BRank 76 // C to B -> 50 hits (feels fine)
-#define ARank 151 // B to A -> 75 hits (definitely too low, could bump to 75)
-#define SRank 251 // A to S -> 75 hits (probably too low, could bump to 100)
+#define CRank 26 // D to C -> 25 hits
+#define BRank 76 // C to B -> 50 hits 
+#define ARank 151 // B to A -> 75 hits
+#define SRank 251 // A to S -> 100 hits
 
 //planned weapon rank progression (at some point)
 
 //25 -> 50 -> 75 -> 100 progression
 //250 WEXP needed
-
-//D - 21
-//C - 51 (30 WEXP)
-//B - 96 (45 WEXP)
-//A - 161 (65 WEXP)
-//S - 251 (90 WEXP)
 
 //Weapon Ability
 #define IsWeapon 0x00000001

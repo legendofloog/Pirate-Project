@@ -26,8 +26,8 @@
 #endif
 
 #ifdef _FE8_
-#define GotoPrepScreen "CALL $591FD8; ASMC PostPrep_WellRestedBonus; ENDA"
-#define GotoPrepScreenHub "CALL $591FD8; ENDA"
+#define GotoPrepScreen "SVAL s1 Ernest; ASMC MountSingleUnitASMC; ASMC UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC; CALL $591FD8; ASMC PostPrep_WellRestedBonus; ENDA"
+#define GotoPrepScreenHub "SVAL s1 Ernest; ASMC MountSingleUnitASMC; CALL $591FD8; ENDA"
 #endif
 
 

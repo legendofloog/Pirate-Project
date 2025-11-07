@@ -29,7 +29,9 @@
 #define HubD_3 26
 #define Endgame 27
 #define HubBTheOutskirts 28
-
+#define HubC_Maze 29
+#define HubDTheOutskirts 30
+#define HubETheDecision 31
 
 #define CutsceneHubB_5 0x3C
 #define HubB_2a 0x3D
@@ -165,6 +167,18 @@
 #define HubBTheOutskirtsMapChangesID 0x72
 #define HubBTheOutskirtsEventsID 0x73
 
+#define HubC_MazeMapID 0x74
+#define HubC_MazeMapChangesID 0x75
+#define HubC_MazeEventsID 0x76
+
+#define HubDTheOutskirtsMapID 0x77
+#define HubDTheOutskirtsMapChangesID 0x78
+#define HubDTheOutskirtsEventsID 0x79
+
+#define HubETheDecisionMapID 0x7A
+#define HubETheDecisionMapChangesID 0x7B
+#define HubETheDecisionEventsID 0x7C
+
 //5A - 5C currently used by b_2a cutscene
 
 
@@ -208,6 +222,7 @@
 #define DesertBastionVillagePaletteID 0xA2
 // note that 0xA3 is vanilla mountainous lagdou palette, used in B-2
 #define DesertBastionVillageConfigID 0xA4
+#define DesertBastionTileAnimationsID 0x05
 
 #define DesertBastionObjectID 0xA5
 #define DesertBastionPaletteID 0xA6
@@ -229,3 +244,5 @@
 
 #define SnowyBernObjectCloudyID 0xB5
 #define SnowyBernConfigCloudyID 0xB6
+
+#define FlasubanFrontierFogPaletteID 0xB7

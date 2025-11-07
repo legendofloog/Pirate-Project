@@ -17,10 +17,10 @@ TurnBasedEvents:
 TurnEventPlayer(0,C3FirstTurnEvent,1)
 TurnEventPlayer(0,Turn4Reinforcements,4)
 TurnEventPlayer(0,RimaJoins,5)
-TurnEventNPC(0,Turn7SalmanWakesUp,7)
-TurnEventPlayer(0,Turn8Reinforcements,8)
-TurnEventPlayer(0,Turn9ReinforcementWarning,9)
-TurnEventPlayer(0,Turn10Reinforcements,10)
+TurnEventNPC(0,Turn7SalmanWakesUp,6) //this can play if he's rescued which is a little awkward
+TurnEventPlayer(0,Turn8Reinforcements,7)
+TurnEventPlayer(0,Turn9ReinforcementWarning,8)
+TurnEventPlayer(0,Turn10Reinforcements,9)
 END_MAIN
 
 CharacterBasedEvents:
@@ -91,31 +91,31 @@ UNIT Pilar Ninja 0 Level(10,Ally,False) [5,2] 0 0 0 0 [Cutlass, IronSword, IronM
 UNIT
 
 NewUnit_Bolton:
-UNIT Bolton DarkKnight 0 Level(18,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,Sidepierce,RustyHook] NoAI
+UNIT Bolton DarkKnight 0 Level(16,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,Sidepierce,RustyHook] NoAI
 UNIT
 
 NewUnit_RimaOffscreen:
-UNIT Rima AxeCav 0 Level(15,Ally,True) [255,1] 0 0 0 0 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
+UNIT Rima AxeCav 0 Level(16,Ally,True) [255,1] 0 0 0 0 [BattleAxe,RecoilAxe,SlimAxe] NoAI
 UNIT
 
 NewUnit_Rima:
-UNIT Rima AxeCav 0 Level(15,Ally,True) [0,20] 0 0 1 REDA4R21 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
+UNIT Rima AxeCav 0 Level(16,Ally,True) [0,20] 0 0 1 REDA4R21 [BattleAxe,RecoilAxe,SlimAxe] NoAI
 UNIT
 
 EnemyUnits:
 
 //Middle/Traitor escape point
-UNIT Jasper AxeKnight 0 Level(20,Enemy,True) [22,13] 0 0 0 0 [SilverAxe,Crusher] AttackInRangeAI
+UNIT Jasper AxeKnight 0 Level(20,Enemy,True) [21,14] 0 0 0 0 [SilverAxe,Crusher] AttackInRangeAI
 UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [17,14] 0 0 0 0 [SilverLance] AttackInTwoAI
 UNIT C3Pirate Ninja 0 Level(16,Enemy,True) [20,15] 0 0 0 0 [SteelKnife] AttackInRangeAI
 UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [13,16] 0 0 0 0 [Hammer] AttackInRangeAI
 UNIT C3Pirate GriffinRider 0 Level(16,Enemy,True) [11,19] 0 0 0 0 [SteelLance] AttackInRangeAI
-UNIT C3Pirate Mage 0 Level(16,Enemy,True) [17,19] 0 0 0 0 [Elfire,TealGem] AttackInRangeAI
+UNIT C3Pirate Mage 0 Level(16,Enemy,True) [17,19] 0 0 0 0 [Elfire,RedGem] AttackInRangeAI
 UNIT C3Pirate Bombardier 0 Level(18,Enemy,True) [21,20] 0 0 0 0 [SilverLance,Knifekiller] AttackInRangeAI
 
 //North Wave 1
 UNIT C3Pirate Vanguard 0 Level(16,Enemy,True) [1,9] 0 0 0 0 [SteelAxe] NoAI
-UNIT C3Pirate Archer 0 Level(15,Enemy,True) [0,10] 0 0 0 0 [SteelBow] NoAI
+UNIT C3Pirate Archer 0 Level(16,Enemy,True) [0,10] 0 0 0 0 [SteelBow] NoAI
 UNIT C3Pirate Hero 0 Level(18,Enemy,True) [2,10] 0 0 0 0 [SilverSword] NoAI
 UNIT C3Pirate Ninja 0 Level(16,Enemy,True) [4,11] 0 0 0 0 [SteelKnife] NoAI
 
@@ -125,19 +125,19 @@ UNIT C3Pirate Mercenary 0 Level(16,Enemy,True) [16,2] 0 0 0 0 [IronBlade] NoAI
 UNIT C3Pirate Ninja 0 Level(16,Enemy,True) [17,1] 0 0 0 0 [SteelKnife] NoAI
 UNIT C3Pirate Shaman 0 Level(16,Enemy,True) [8,1] 0 0 0 0 [Elfire] NoAI
 UNIT C3Pirate Vanguard 0 Level(16,Enemy,True) [8,3] 0 0 0 0 [SteelLance] NoAI
-UNIT C3Pirate Archer 0 Level(15,Enemy,True) [11,3] 0 0 0 0 [SteelBow] NoAI
+UNIT C3Pirate Archer 0 Level(16,Enemy,True) [11,3] 0 0 0 0 [SteelBow] NoAI
 UNIT C3Pirate Fighter 0 Level(16,Enemy,True) [7,5] 0 0 0 0 [Hammer] NoAI
 
 //Northeast
 UNIT C3Pirate Adventurer 0 Level(18,Enemy,True) [21,9] 0 0 0 0 [SteelBow,RushStaff] AttackInRangeAI
-UNIT C3Pirate Archer 0 Level(15,Enemy,True) [16,9] 0 0 0 0 [SteelBow] AttackInRangeAI
+UNIT C3Pirate Archer 0 Level(16,Enemy,True) [16,9] 0 0 0 0 [SteelBow] AttackInRangeAI
 UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [21,7] 0 0 0 0 [ShortSpear] BossAI
 UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [20,6] 0 0 0 0 [HandAxe,Oversize] BossAI
 UNIT C3Pirate Fighter 0 Level(16,Enemy,True) [19,6] 0 0 0 0 [SteelAxe] AttackInTwoAI
 UNIT C3Pirate GriffinRider 0 Level(16,Enemy,True) [17,5] 0 0 0 0 [SteelLance] AttackInRangeAI
 UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [14,7] 0 0 0 0 [SteelAxe] NoAI
 
-UNIT C3Pirate Hero 0 Level(18,Enemy,True) [23,1] 0 0 0 0 [IronBlade,WildAxe] AttackInRangeAI
+UNIT C3Pirate Hero 0 Level(18,Enemy,True) [23,1] 0 0 0 0 [IronBlade, WildAxe] AttackInRangeAI
 UNIT C3Pirate Fighter 0 Level(16,Enemy,True) [22,3] 0 0 0 0 [SteelAxe] NoAI
 UNIT C3Pirate Mercenary 0 Level(16,Enemy,True) [24,4] 0 0 0 0 [IronBlade] AttackInRangeAI
 
@@ -160,7 +160,7 @@ UNIT C3Pirate Deserter 0 Level(16,Enemy,True) [13,24] 0 0 0 0 [SteelLance] Attac
 //South Grave
 UNIT C3Pirate Ninja 0 Level(16,Enemy,True) [14,30] 0 0 0 0 [SteelKnife] AttackInTwoAI
 UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [20,30] 0 0 0 0 [Hammer] AttackInTwoAI
-UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [3,29] 0 0 0 0 [Spear,RiderBadge] AttackInRangeAI
+UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [3,29] 0 0 0 0 [Spear,SilverAxe,KnightsPlate] AttackInRangeAI
 UNIT C3Pirate Ninja 0 Level(16,Enemy,True) [1,30] 0 0 0 0 [Stiletto] NoAI
 UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [7,30] 0 0 0 0 [Hammer] NoAI
 
@@ -168,7 +168,7 @@ UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [7,30] 0 0 0 0 [Hammer] NoAI
 UNIT
 
 NPCUnits:
-UNIT Boru Runeshield 0 Level(13,NPC,True) [4,7] 0 0 0 0 [Arcfire] EscapeOnlyAI
+UNIT Boru Runeshield 0 Level(16,NPC,True) [4,7] 0 0 0 0 [Arcfire] EscapeOnlyAI
 UNIT 0x55 Marshall 0 Level(12,NPC,True) [4,2] 0 0 0 0 [HandAxe] EscapeOnlyAI
 UNIT 0x55 Warden 0 Level(10,NPC,True) [3,5] 0 0 0 0 [Peacekeeper] EscapeOnlyAI
 UNIT 0x55 Vanguard 0 Level(10,NPC,True) [5,5] 0 0 0 0 [Javelin] EscapeOnlyAI
@@ -178,7 +178,7 @@ UNIT C3Traitor Deserter 0 Level(8,NPC,True) [4,1] 0 0 0 0 [0] EscapeOnlyAI
 UNIT C3Traitor Hunter 0 Level(8,NPC,True) [3,4] 0 0 0 0 [0] EscapeOnlyAI
 UNIT C3Traitor Mage 0 Level(8,NPC,True) [5,4] 0 0 0 0 [0] EscapeOnlyAI
 
-UNIT Salman Swordmaster 0 Level(15,NPC,True) [24,8] 0 0 0 0 [SteelSword] EscapeOnlyAI
+UNIT Salman Swordmaster 0 Level(18,NPC,True) [24,8] 0 0 0 0 [SteelSword] EscapeOnlyAI
 
 UNIT
 
@@ -197,7 +197,7 @@ UNIT C3Pirate Bombardier 0 Level(18,Enemy,True) [25,25] 0 0 1 REDA22R25 [SteelLa
 UNIT
 
 Turn10ReinforcementsSEGroup:
-UNIT Runamel Hero 0 Level(25,Enemy,True) [25,21] 0 0 1 REDA25R21 [Tomahawk] NoAI
+UNIT Runamel 0 0 Level(22,Enemy,True) [25,21] 0 0 1 REDA25R21 [Tomahawk, BraveSword] NoAI
 UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [25,21] 0 0 1 REDA23R21 [Spear] NoAI
 UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [25,22] 0 0 1 REDA24R22 [Spear] NoAI
 UNIT
@@ -245,7 +245,7 @@ IntroGroup5:
 UNIT Lua Captain 0 Level(10,Ally,False) [5,0] 0 0 1 REDA4R3 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Boru Runeshield 0 Level(13,NPC,True) [5,0] 0 0 1 REDA5R3 [Arcfire] EscapeOnlyAI
 UNIT C3Pirate DarkKnight 0 Level(18,NPC,False) [5,0] 0 0 1 REDA5R2 [HeroFlare,Elfire,Sidepierce] NoAI
-UNIT Rima AxeCav 0 Level(15,NPC,False) [5,0] 0 0 1 REDA6R2 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
+UNIT Rima AxeCav 0 Level(16,NPC,False) [5,0] 0 0 1 REDA6R2 [RecoilAxe,SlimAxe,HandAxe,Vulnerary] NoAI
 UNIT
 
 EndingGroup1:
@@ -287,7 +287,7 @@ STAL 15
 FlashCursor(Lua, 40)
 FlashCursor(Boru, 40)
 STAL 15
-MUSC ToTheSkiesID
+MUSC MeetTheCrewID
 Text(HubC_3Intro1)
 STAL 20
 
@@ -319,7 +319,7 @@ IFNE 2 sC s0
 	REVEAL Bolton
 LABEL 2
 SetBackground(0x28) //inside of ruined fort
-MUSC SwabbieTalkID
+MUSC AKeepersOathID
 TEXTSTART
 TEXTSHOW(HubC_3Flashback1)
 TEXTEND
@@ -415,16 +415,8 @@ NoFade
 ENDA
 
 Turn4Reinforcements:
-CAM1 [18,5]
-STAL 20
-LoadEnemies(Turn4ReinforcementsNEGroup)
-STAL 10
-
-CAM1 [7,26]
-STAL 20
-LoadEnemies(Turn4ReinforcementsSWGroup)
-STAL 10
-
+SpawnReinforcements(Turn4ReinforcementsNEGroup)
+SpawnReinforcements(Turn4ReinforcementsSWGroup)
 NoFade
 ENDA
 
@@ -531,10 +523,10 @@ MUSC StillZephyrsID
 TEXTSTART
 TEXTSHOW HubC_3Ending3
 TEXTEND
-FADI 10
 REMA
+GiveItem(BlueGem,Lua)
+FADI 10
 STAL 20
-
 CHECK_ALIVE Bolton
 IFNE 1 sC s0
 	CHECK_ALIVE Rima
@@ -577,6 +569,7 @@ LABEL 2
 MUSCSLOW 0x7FFF
 SetBackground(0x17) //prison cell
 STAL 10
+MUSC AKeepersOathID
 TEXTSTART
 TEXTSHOW HubC_3Ending4
 TEXTEND

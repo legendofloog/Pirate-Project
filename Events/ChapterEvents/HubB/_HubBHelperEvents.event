@@ -1,0 +1,86 @@
+ALIGN 4
+SpawnDeckUnits:
+LoadPlayerUnits(DeckGuaranteedUnitGroup)
+LoadAllyUnitGroupIfEIDSetAndCharAlive(WentToHub3, Ernest, 1, ErnestGroup)
+LoadAllyUnitGroupIfAlive(Leandra, 2, LeandraGroup)
+LoadAllyUnitGroupIfAlive(Neltume, 3, NeltumeGroup)
+LoadAllyUnitGroupIfAlive(Triana, 4, TrianaGroup)
+LoadAllyUnitGroupIfAlive(Durgham, 5, DurghamGroup)
+LoadAllyUnitGroupIfEIDSetAndCharAlive(WentToHub2, Magdalena, 6, MagdalenaGroup)
+LoadAllyUnitGroupIfAlive(Fata, 7, FataGroup)
+LoadAllyUnitGroupIfAlive(Bartz, 8, BartzGroup)
+LoadAllyUnitGroupIfAlive(Avocado, 9, AvocadoGroup)
+NoFade
+ENDA
+
+DeckGuaranteedUnitGroup:
+UNIT Desiderio Vanguard 0 Level(1,Ally,False) [7,13] 0 0 0 0 [0x0] NoAI
+UNIT Orlando Trickster 0 Level(1,Ally,False) [33,23] 0 0 0 0 [0x0] NoAI
+UNIT Jaime PegasusRider 0 Level(1,Ally,False) [21,5] 0 0 0 0 [0x0] NoAI
+UNIT Leonor Cleric 0 Level(1,Ally,False) [19,6] 0 0 0 0 [0x0] NoAI
+UNIT Carmen Mage 0 Level(1,Ally,False) [4,23] 0 0 0 0 [0x0] NoAI
+UNIT
+
+FataGroup:
+UNIT Fata Monk 0 Level(1,Ally,False) [5,23] 0 0 0 0 [0x0] NoAI
+UNIT
+
+ErnestGroup:
+UNIT Ernest Gryphoknight 0 Level(1,Ally,False) [8,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LeandraGroup:
+UNIT Leandra Fighter_F 0 Level(1,Ally,False) [6,12] 0 0 0 0 [0x0] NoAI
+UNIT
+
+NeltumeGroup:
+UNIT Neltume Priest 0 Level(1,Ally,False) [13,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TrianaGroup:
+UNIT Triana Shaman 0 Level(1,Ally,False) [15,16] 0 0 0 0 [0x0] NoAI
+UNIT
+
+DurghamGroup:
+UNIT Durgham LanceCav 0 Level(1,Ally,False) [32,24] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MagdalenaGroup:
+UNIT Magdalena Sage_F 0 Level(1,Ally,False) [28,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+BartzGroup:
+UNIT Bartz Deserter 0 Level(1,Ally,False) [2,18] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AvocadoGroup:
+UNIT Avocado Deserter 0 Level(1,Ally,False) [30,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+Traps_Deck:
+//left
+CHECK_EVENTID GoToNextHubFlagID
+BNE 777 s0 sC //if the flag is set, then go to the normal traps
+    AddTrap(GreenSigilTrapID, 4, 16)
+    AddTrap(GreenSigilTrapID, 5, 16)
+    AddTrap(GreenSigilTrapID, 2, 23)
+    AddTrap(GreenSigilTrapID, 7, 23)
+    GOTO 778
+LABEL 777
+AddTrap(BlueSigilTrapID, 4, 16)
+AddTrap(BlueSigilTrapID, 5, 16)
+AddTrap(BlueSigilTrapID, 2, 23)
+AddTrap(BlueSigilTrapID, 7, 23)
+LABEL 778
+//middle
+AddTrap(GreenSigilTrapID, 17, 5)
+AddTrap(BlueSigilTrapID, 17, 10)
+AddTrap(BlueSigilTrapID, 18, 10)
+AddTrap(BlueSigilTrapID, 20, 8)
+AddTrap(BlueSigilTrapID, 13, 12)
+//right
+AddTrap(BlueSigilTrapID, 27, 17)
+AddTrap(BlueSigilTrapID, 32, 17)
+AddTrap(BlueSigilTrapID, 33, 12)
+NoFade
+ENDA

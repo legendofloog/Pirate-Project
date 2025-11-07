@@ -142,29 +142,19 @@ mov r6, r0
 ldrb r0, [r6] 
 cmp r0, #0
 beq SkillEnd
-draw_skill_icon_at 13, 16
+draw_skill_icon_at 16, 16
 
 ldrb r0, [r6,#1]
 cmp r0, #0
 beq SkillEnd
-draw_skill_icon_at 16, 16
+draw_skill_icon_at 20, 16
 
 ldrb r0, [r6, #2]
 cmp r0, #0
 beq SkillEnd
-draw_skill_icon_at 19, 16
+draw_skill_icon_at 24, 16
 
 ldrb r0, [r6, #3]
-cmp r0, #0
-beq SkillEnd
-draw_skill_icon_at 22, 16
-
-ldrb r0, [r6, #4]
-cmp r0, #0
-beq SkillEnd
-draw_skill_icon_at 25, 16
-
-ldrb r0, [r6, #5]
 cmp r0, #0
 beq SkillEnd
 draw_skill_icon_at 28, 16

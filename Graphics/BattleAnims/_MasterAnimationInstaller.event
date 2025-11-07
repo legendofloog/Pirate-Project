@@ -1,11 +1,16 @@
 #include "BattleAnimPointers.event"
 
 {
-    #include "Animations/Armors/Sword Installer.event"
-    #include "Animations/Armors/Axe Installer.event"
-    #include "Animations/Armors/Lance Installer.event"
-    #include "Animations/Armors/Handaxe Installer.event"
-    #include "Animations/Armors/Unarmed Installer.event"
+    #include "Animations/Vanguard/Axe Installer.event"
+    #include "Animations/Vanguard/Lance Installer.event"
+    #include "Animations/Vanguard/Handaxe Installer.event"
+    #include "Animations/Vanguard/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Warden/Sword Installer.event"
+    #include "Animations/Warden/Lance Installer.event"
+    #include "Animations/Warden/Unarmed Installer.event"
 }
 
 {
@@ -28,7 +33,7 @@
 
 {
     #include "Animations/Curate/Staff Installer.event"
-    #include "Animations/Curate/Unarmed Installer.event"
+    #include "Animations/Curate/Magic Installer.event"
 }
 
 {
@@ -74,14 +79,6 @@
 }
 
 {
-    #include "Animations/Monk/Magic Installer.event"
-}
-
-{
-    #include "Animations/Monk_F/Magic Installer.event"
-}
-
-{
     #include "Animations/Trickster/Magic Installer.event"
     #include "Animations/Trickster/Sword Installer.event"
 }
@@ -89,6 +86,13 @@
 {
     #include "Animations/Mercenary_F/Sword Installer.event"
     #include "Animations/Mercenary_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Hero/Axe Installer.event"
+    #include "Animations/Hero/Handaxe Installer.event"
+    #include "Animations/Hero/Sword Installer.event"
+    #include "Animations/Hero/Unarmed Installer.event"
 }
 
 {
@@ -150,7 +154,13 @@
 }
 
 {
-    #include "Animations/DarkKnight/Magic Installer.event"
+    #include "Animations/MageKnight/Magic Installer.event"
+    #include "Animations/MageKnight/Lance Installer.event"
+}
+
+{
+    #include "Animations/MageKnight_F/Magic Installer.event"
+    #include "Animations/MageKnight_F/Lance Installer.event"
 }
 
 {
@@ -170,8 +180,8 @@
 }
 
 {
-    #include "Animations/Cavalier_F/Bow Installer.event"
-    #include "Animations/Cavalier_F/Unarmed Installer.event"
+    #include "Animations/BowCav/Bow Installer.event"
+    #include "Animations/BowCav/Unarmed Installer.event"
 }
 
 {
@@ -219,7 +229,7 @@
 
 {
     #include "Animations/Assassin_F/Bow Installer.event"
-    #include "Animations/Assassin_F/Sword Installer.event"
+    #include "Animations/Assassin_F/Knife Installer.event"
 }
 
 {
@@ -234,8 +244,14 @@
 }
 
 {
+    #include "Animations/SwordKnight/Sword Installer.event"
+    #include "Animations/SwordKnight/Unarmed Installer.event"
+}
+
+{
     #include "Animations/AxeKnight/Axe Installer.event"
     #include "Animations/AxeKnight/Handaxe Installer.event"
+    #include "Animations/AxeKnight/Unarmed Installer.event"
 }
 
 {
@@ -246,4 +262,154 @@
 {
     #include "Animations/BowKnight/Bow Installer.event"
     #include "Animations/BowKnight/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Champion/Sword Installer.event"
+    #include "Animations/Champion/Lance Installer.event"
+    #include "Animations/Champion/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Sage_Hermen/Sword Installer.event"
+    #include "Animations/Sage_Hermen/Magic Installer.event"
+    #include "Animations/Sage_Hermen/Staff Installer.event"
+}
+
+{
+    #include "Animations/Cataphract/Lance Installer.event"
+    #include "Animations/Cataphract/Axe Installer.event"
+    #include "Animations/Cataphract/Handaxe Installer.event"
+    #include "Animations/Cataphract/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Sage/Magic Installer.event"
+    #include "Animations/Sage/Staff Installer.event"
+}
+
+{
+    #include "Animations/Sage_F/Magic Installer.event"
+    #include "Animations/Sage_F/Staff Installer.event"
+}
+
+{
+    #include "Animations/Sniper/Bow Installer.event"
+    #include "Animations/Sniper/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Sniper_F/Bow Installer.event"
+    #include "Animations/Sniper_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Myrmidon/Sword Installer.event"
+    #include "Animations/Myrmidon/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Myrmidon_F/Sword Installer.event"
+    #include "Animations/Myrmidon_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Swordmaster/Sword Installer.event"
+    #include "Animations/Swordmaster/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Troubadour/Staff Installer.event"
+    #include "Animations/Troubadour/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Savior/Staff Installer.event"
+    #include "Animations/Savior/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Warlock/Magic Installer.event"
+}
+
+{
+    #include "Animations/Conjurer/Magic Installer.event"
+}
+
+{
+    #include "Animations/Conjurer_F/Magic Installer.event"
+}
+
+{
+    #include "Animations/Falcoknight/Sword Installer.event"
+    #include "Animations/Falcoknight/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Gryphoknight/Lance Installer.event"
+    #include "Animations/Gryphoknight/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Cleric/Staff Installer.event"
+    #include "Animations/Cleric/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Cleric_F/Staff Installer.event"
+    #include "Animations/Cleric_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Ranger/Sword Installer.event"
+    #include "Animations/Ranger/Bow Installer.event"
+    #include "Animations/Ranger/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Ranger_F/Sword Installer.event"
+    #include "Animations/Ranger_F/Bow Installer.event"
+    #include "Animations/Ranger_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Champion_F/Sword Installer.event"
+    #include "Animations/Champion_F/Lance Installer.event"
+    #include "Animations/Champion_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Mercenary/Sword Installer.event"
+    #include "Animations/Mercenary/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Thief_F/Knife Installer.event"
+}
+
+{
+    #include "Animations/Rogue_F/Knife Installer.event"
+    #include "Animations/Rogue_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Barbarian/Axe Installer.event"
+    #include "Animations/Barbarian/Handaxe Installer.event"
+    #include "Animations/Barbarian/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Berserker_F/Axe Installer.event"
+    #include "Animations/Berserker_F/Handaxe Installer.event"
+    #include "Animations/Berserker_F/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Gunner/Gun Installer.event"
+    #include "Animations/Gunner/Unarmed Installer.event"
+}
+
+{
+    #include "Animations/Gunner_F/Gun Installer.event"
+    #include "Animations/Gunner_F/Unarmed Installer.event"
 }

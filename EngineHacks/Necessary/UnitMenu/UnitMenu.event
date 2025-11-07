@@ -118,6 +118,8 @@ UnitMenuTable:
   
   MenuCommand(UM_Pollenate, UM_PollenateDesc, NormalText, PollenateUsability, PollenateEffect)
   
+  MenuCommand(UM_SpecialOrdinance, UM_SpecialOrdinanceDesc, NormalText, SpecialOrdinanceUsability, SpecialOrdinanceEffect)
+  
   UM_Staff
   UM_Ride
   UM_Exit
@@ -132,8 +134,8 @@ UnitMenuTable:
 #endif 
 
 
-
-  UM_Steal
+  //new UM_Steal with vanilla steal name/desc
+  MenuCommand($67f,$6c4,NormalText,StealCommandUsability, 0x80241DD)
   
   //UM_Summon
   MenuCommand(UM_Kite,UM_KiteDesc,NormalText,NewSummonUsability,0x244B8)
@@ -196,7 +198,7 @@ UnitMenuTable:
   UM_Drop
 
   // Disarm
-  MenuCommand(UM_Disarm, UM_DisarmDesc, NormalText, DisarmUsability, DisarmEffect)
+  MenuCommand(UM_Disarm, UM_DisarmDesc, GreenText, DisarmUsability, DisarmEffect)
 
   #ifdef __DEBUG__
     MenuCommand(UM_EditSkill, UM_EditSkillDesc, OrangeText, $04F449, SkillDebugCommand_OnSelect)

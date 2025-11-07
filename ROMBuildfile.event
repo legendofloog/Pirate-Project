@@ -30,7 +30,9 @@
     //Maps
     #include "Maps/MasterMapInstaller.event"
 
-    
+    // CRC Correction
+    ALIGN 16
+    WORD 0 0 0 0
 	
 	//ASSERT (FreeSpaceEnd - currentOffset) // So that you don't overwrite vanilla tables if using default freespace
 	

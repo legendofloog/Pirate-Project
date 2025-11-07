@@ -88,6 +88,9 @@ Traits: Flight, Canto, Aid+[X]
 Weapons: Tome[N]
 Traits: Steal, Locktouch[X]
 
+## WarlockName
+Warlock[X]
+
 ## ShamanDesc
 Weapons: Tome[N]
 Traits: Steal, Locktouch[X]
@@ -179,10 +182,6 @@ Traits: Unbreakable, Steal, Locktouch[X]
 Weapons: Tome, Staff[N]
 Traits: Steal, Locktouch[X]
 
-## SageHermenDesc
-Weapons: Tome, Staff, Sword[N]
-Traits: Steal, Locktouch[X]
-
 ## SeraphName
 Seraph[X]
 
@@ -195,7 +194,7 @@ Weapons: Bow[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## DarkKnightName
-Dark Knight[X]
+Mage Knight[X]
 
 ## MageKnightDesc
 Weapons: Tome, Lance[N]
@@ -207,6 +206,9 @@ Bombardier[X]
 ## BombardierDesc
 Weapons: Bow, Lance[N]
 Traits: Flight, Canto, Aid+[X]
+
+## ConjurerName
+Conjurer[X]
 
 ## MonkDesc
 Weapons: Tome[N]
@@ -406,13 +408,15 @@ Traits: None[X]
 Admiral[X]
 
 ## AdmiralDesc
-Weapons: Sword, Gun[N]
+Weapons: Sword, Gun, Staff[N]
 Traits: Steal, Locktouch[X]
 
-## SupplierName
-Supplier[X]
+## SpellswordName
+Spellsword[X]
 
-## SupplierDesc
-Weapons: Knives[N]
-Traits: Logistics[X]
+## SpellswordDesc
+Weapons: Swords, Tomes, Staves[N]
+Traits: Steal, Locktouch[X]
 
+## BarbarianName
+Brute[X]

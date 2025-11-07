@@ -18,6 +18,7 @@ EventPointerTable(HubA_1EventsID, PointerList)
 #define GeraldoXimoBattleQuoteSeen 0x13
 #define GeraldoEstelleBattleQuoteSeen 0x14
 #define GeraldoHermeneBattleQuoteSeen 0x15
+#define LeandraDeathQuoteAsEnemy 0x16
 
 #define GeraldoGenericBattleQuoteSeen 0x28
 */
@@ -40,9 +41,9 @@ TurnEventPlayer(0, LuaNoticesChests, 2)
 TurnEventEnemy(0, SuperbossCameo, 3)
 TurnEventPlayer(0, FirstTimerWarning, 5)
 TurnEventPlayer(0, SecondTimerWarning, 7)
-TurnEventPlayer(0, AlarmRaised, 9)
-TurnEventEnemy(0, SuperbossesAppear, 11)
-TurnEventPlayer(0, YurenaDropping, 13)
+TurnEventPlayer(0, AlarmRaised, 8)
+TurnEventEnemy(0, SuperbossesAppear, 10)
+TurnEventPlayer(0, YurenaDropping, 12)
 END_MAIN
 
 CharacterBasedEvents:
@@ -106,27 +107,24 @@ UNIT
 
 ContractorInitialEnemies:
 UNIT Leandra Fighter_F Geraldo Level(5, Enemy, True) [11, 5] 0 0 0 0 [SteelAxe, HandAxe, Vulnerary] AttackInTwoAI
-UNIT Geraldo Mercenary Geraldo Level(5, Enemy, False) [12, 5] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
+UNIT Geraldo Mercenary Geraldo Level(7, Enemy, True) [12, 5] 0 0 0 0 [SteelSword, IronBlade] AttackWhenInRangeAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [10, 4] 0 0 0 0 [IronSword] AttackInTwoAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [12, 4] 0 0 0 0 [IronSword] AttackInTwoAI
 
-//UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [24, 10] 0 0 0 0 [IronSword] AttackInTwoAI
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [24, 12] 0 0 0 0 [IronSword] AttackInTwoAI
 UNIT Contractor Hunter Geraldo Level(3, Enemy, True) [23, 11] 0 0 0 0 [IronBow] AttackInTwoAI
 
 UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [5, 8] 0 0 0 0 [IronSword] AttackInTwoAI
-//UNIT Contractor Myrmidon Geraldo Level(3, Enemy, True) [7, 8] 0 0 0 0 [IronSword] AttackInTwoAI
 UNIT Contractor Hunter Geraldo Level(3, Enemy, True) [6, 9] 0 0 0 0 [IronBow] AttackInTwoAI
 
-UNIT Contractor Shaman Geraldo Level(3, Enemy, True) [14, 16] 0 0 0 0 [Fire] GroupOneAI
-//UNIT Contractor Shaman Geraldo Level(3, Enemy, True) [14, 16] 0 0 0 0 [Fire] GroupOneAI
+UNIT Contractor Shaman Geraldo Level(3, Enemy, True) [14, 16] 0 0 0 0 [Elfire, Thunder] GroupOneAI
 UNIT Contractor AxeCav Geraldo Level(3, Enemy, True) [13, 17] 0 0 0 0 [IronAxe] GroupOneAI
 UNIT Contractor LanceCav Geraldo Level(3, Enemy, True) [15, 17] 0 0 0 0 [IronLance] GroupOneAI
 UNIT
 
 SentinelInitialEnemies:
 UNIT Buzu Vanguard Sanz Level(5, Enemy, True) [17, 7] 0 0 0 0 [HandAxe, Pike] BossAI
-UNIT Bozo Warden Sanz Level(5, Enemy, True) [19, 7] 0 0 0 0 [FlameSword, Onigiri] BossAI
+UNIT Bozo Warden Sanz Level(5, Enemy, True) [19, 7] 0 0 0 0 [LightBrand, Onigiri] BossAI
 
 UNIT Sentinel Warden Sanz Level(4, Enemy, True) [6, 15] 0 0 0 0 [Javelin] BossAI
 UNIT Sentinel Warden Sanz Level(4, Enemy, True) [22, 15] 0 0 0 0 [Javelin] BossAI
@@ -135,8 +133,8 @@ UNIT Sentinel Warden Sanz Level(4, Enemy, True) [17, 4] 0 0 0 0 [Javelin] BossAI
 UNIT Sentinel Mercenary Sanz Level(4, Enemy, True) [14, 7] 0 0 0 0 [IronSword] AttackWhenInRangeAI
 UNIT Sentinel Mercenary Sanz Level(4, Enemy, True) [14, 13] 0 0 0 0 [IronSword] AttackWhenInRangeAI
 UNIT Sentinel Mercenary Sanz Level(4, Enemy, True) [16, 10] 0 0 0 0 [IronSword] AttackWhenInRangeAI
-UNIT Sentinel Mage Sanz Level(4, Enemy, True) [17, 9] 0 0 0 0 [Elfire] AttackInTwoAI
-UNIT Sentinel Mage Sanz Level(4, Enemy, True) [19, 9] 0 0 0 0 [Elfire] AttackInTwoAI
+UNIT Sentinel Mage Sanz Level(4, Enemy, True) [17, 9] 0 0 0 0 [Elfire] GroupTwoAI
+UNIT Sentinel Mage Sanz Level(4, Enemy, True) [19, 9] 0 0 0 0 [Elfire] GroupTwoAI
 
 // these aren't sentinels but i ran out of space in the first unit group
 UNIT Contractor Brigand Geraldo Level(3, Enemy, True) [7, 16] 0 0 0 0 [IronAxe] AttackInTwoAI
@@ -144,12 +142,11 @@ UNIT Contractor Brigand Geraldo Level(3, Enemy, True) [8, 15] 0 0 0 0 [IronAxe] 
 UNIT Contractor Mage Geraldo Level(3, Enemy, True) [3, 14] 0 0 0 0 [Fire] AttackInTwoAI
 
 UNIT Contractor Deserter Geraldo Level(3, Enemy, True) [21, 5] 0 0 0 0 [IronLance] AttackInTwoAI
-//UNIT Contractor Deserter Geraldo Level(3, Enemy, True) [22, 4] 0 0 0 0 [IronLance] AttackInTwoAI
-UNIT Contractor Mage Geraldo Level(3, Enemy, True) [20, 4] 0 0 0 0 [Fire] AttackInTwoAI
+UNIT Contractor Mage Geraldo Level(3, Enemy, True) [20, 4] 0 0 0 0 [Fire, Luna] AttackInTwoAI
 UNIT
 
 UndergroundReinforcements:
-UNIT Geraldo Mercenary Geraldo Level(5, Enemy, True) [4, 4] 0 0 0 0 [SteelSword] ChargeAI
+UNIT Geraldo Mercenary Geraldo Level(7, Enemy, True) [4, 4] 0 0 0 0 [SteelSword, IronBlade] ChargeAI
 UNIT Sentinel Archer Sanz Level(4, Enemy, True) [3, 10] 0 0 0 0 [IronBow] ChargeAI
 UNIT Sentinel Archer Sanz Level(4, Enemy, True) [21, 12] 0 0 0 0 [IronBow] ChargeAI
 UNIT Contractor Brigand Sanz Level(3, Enemy, True) [5, 16] 0 0 0 0 [IronAxe] ChargeAI
@@ -160,19 +157,19 @@ UNIT Contractor Brigand Sanz Level(3, Enemy, True) [23, 17] 0 0 0 0 [Bloodaxe] C
 UNIT
 
 SuperbossGang:
-UNIT Yurena Champion Sanz Level(20, Enemy, False) [12, 21] 0 0 1 REDA12R20 [BraveLance, Saunion] BossAI
+UNIT Yurena Champion_F Sanz Level(20, Enemy, False) [12, 21] 0 0 1 REDA12R20 [BraveLance, Saunion] BossAI
 UNIT Sanz Sage Sanz Level(22, Enemy, False) [13, 21] 0 0 1 REDA13R20 [Tornado, Sagittae, Warp, HoardersCharm] BossAI
 UNIT Orlando 0 Orlando Level(13, Enemy, False) [14, 21] 0 0 1 REDA14R20 [0] BossAI
 UNIT
 
 YurenaGaming:
-UNIT Yurena Champion Sanz Level(20, Enemy, False) [14, 8] 0 0 0 0 [BraveLance, Saunion] ChargeAI
+UNIT Yurena Champion_F Sanz Level(20, Enemy, False) [14, 8] 0 0 0 0 [BraveLance, Saunion] ChargeAI
 UNIT
 
 SanzUndertaleEndCutscene:
 UNIT Sanz Sage Sanz Level(20, Enemy, False) [18, 9] 0 0 0 0 [0] NoAI
 UNIT Orlando 0 Orlando Level(13, Enemy, False) [18, 10] 0 0 0 0 [0] BossAI
-UNIT Yurena Champion Sanz Level(20, Enemy, False) [19, 17] 0 0 0 0 [BraveLance, Saunion] BossAI
+UNIT Yurena Champion_F Sanz Level(20, Enemy, False) [19, 17] 0 0 0 0 [BraveLance, Saunion] BossAI
 
 //generics that are running around at the beginning of this cutscene
 
@@ -241,9 +238,9 @@ CURSOR_FLASHING [18, 7]
 STAL 60
 REMOVE_CURSORS
 Text(ChA1InformObjectiveDialogue)
-CAMERA_CENTERED [5, 3]
+CAMERA_CENTERED [5, 2]
 CURSOR_FLASHING [5, 2]
-CURSOR_FLASHING [6, 3]
+CURSOR_FLASHING [6, 2]
 STAL 60
 REMOVE_CURSORS
 CAMERA_CENTERED [26, 8]
@@ -306,6 +303,7 @@ Text(ChA1LeandraRecruitedDialogue)
 SVAL s3 1000
 TAKEMONEY
 CUSA Leandra
+ENUT 0x16 //set the enemy death flag since it won't be needed anymore
 MURE 2
 GOTO 3
 LABEL 2
@@ -332,6 +330,7 @@ Text(ChA1LeandraRecruitedDialogue)
 SVAL s3 1000
 TAKEMONEY 
 CUSA Leandra
+ENUT 0x16 //set the enemy death flag since it won't be needed anymore
 MURE 2
 GOTO 6
 LABEL 5

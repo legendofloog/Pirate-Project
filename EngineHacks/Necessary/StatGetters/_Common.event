@@ -13,6 +13,16 @@ prProtectorRescuing:
 		rIfUnitHasSkill(ProtectorID)
 			rAddConst(2)
 
+
+ALIGN 4
+prProtectStaffBonus:
+	rIf(prCheckIfProtectBitActive)
+			rAddConst(10)
+
+ALIGN 4
+prCheckIfProtectBitActive:
+	rCallExternal(IsProtectBitSet)
+
 ALIGN 4
 prHalveIfCapturing:
 	#incbin "_asm/HalveIfCapturing.bin"

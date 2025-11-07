@@ -7,6 +7,8 @@
 
 #include "BoardingParty/BoardingParty.event"
 
+#include "SpecialOrdinance/SpecialOrdinance.event"
+
 ALIGN 4
 NewDanceUsability:
 #incbin "Dance/NewDanceUsability.dmp"

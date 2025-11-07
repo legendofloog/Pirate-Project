@@ -1,11 +1,13 @@
 EscapeEvent:
+/*
 CHECK_ACTIVE 
 SADD 0xC2
 ASMC RefEscapeTable|1		//Returns active unit's escape quote text ID in slot 2
 TEXTSTART
 TEXTSHOW 0xFFFF		//display text ID in slot 2
 TEXTEND
-REMA
+REMA                         // for now, removing text from escape entirely
+*/
 
 //Unit flees map
 //ENUT 0x23

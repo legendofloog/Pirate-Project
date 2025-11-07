@@ -313,8 +313,8 @@ UNIT
 
 
 NewUnits:
-UNIT Matteo Mercenary 0 Level(4,Ally,True) [6,23] 0 0 0 0 [SteelSword, IronBlade, ShoveGlove, Vulnerary] NoAI
-UNIT Suzanne Gunner 0 Level(4,Ally,True) [9,23] 0 0 0 0 [Pistol, IronMusket, Blunderbuss, Vulnerary] NoAI
+UNIT Matteo Mercenary 0 Level(4,Ally,True) [6,23] 0 0 0 0 [SteelBlade, IronSword, ShoveGlove, Vulnerary] NoAI
+UNIT Suzanne Gunner_F 0 Level(4,Ally,True) [9,23] 0 0 0 0 [Pistol, IronMusket, Blunderbuss, Vulnerary] NoAI
 UNIT
 
 EnemyUnitsBosses:
@@ -359,7 +359,7 @@ EnemyUnits3:
 UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [14,22] 0 0 0 0 [IronLance] AttackInRangeAI
 
 UNIT Rebel Mage 0 Level(A6RebelLevel, Enemy, True) [19,19] 0 0 0 0 [Fire] AttackInRangeAI
-UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [14,15] 0 0 0 0 [IronAxe] AttackInRangeAI
+UNIT Rebel Brigand 0 Level(A6RebelLevel, Enemy, True) [14,15] 0 0 0 0 [IronAxe] AttackInRangeAI
 UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [20,14] 0 0 0 0 [IronMusket] AttackInRangeAI
 
 UNIT Rebel Soldier 0 Level(A6RebelLevel, Enemy, True) [18,9] 0 0 0 0 [IronLance] AttackInRangeAI
@@ -369,7 +369,7 @@ UNIT Rebel Myrmidon 0 Level(A6RebelLevel, Enemy, True) [17,8] 0 0 0 0 [Estoc] At
 UNIT Rebel Ninja 0 Level(A6RebelLevel, Enemy, True) [19,7] 0 0 0 0 [IronKnife] AttackInRangeAI
 
 UNIT Rebel Gunner 0 Level(A6RebelLevel, Enemy, True) [9,6] 0 0 0 0 [Pistol] AttackInRangeAI
-UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [11,9] 0 0 0 0 [IronAxe] AttackInRangeAI
+//UNIT Rebel Fighter 0 Level(A6RebelLevel, Enemy, True) [11,9] 0 0 0 0 [IronAxe] AttackInRangeAI
 
 UNIT Rebel Archer 0 Level(A6RebelLevel, Enemy, True) [13,6] 0 0 0 0 [SteelBow] AttackInRangeAI
 UNIT Rebel Vanguard 0 Level(A6RebelLevel, Enemy, True) [11,4] 0 0 0 0 [HandAxe, IronLance] AttackInRangeAI
@@ -409,7 +409,7 @@ BeginningScene:
 CAMERA_CENTERED [17,13]
 LoadCutsceneUnits(CutsceneNPCS_1)
 FADU 13
-MUSC SwabbieTalkID
+MUSC AKeepersOathID
 STAL 30
 FlashCursor(Santiago, 60)
 SetBackground(0x28)
@@ -475,6 +475,7 @@ SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer,AnyDeployed,AnyArmy,AnyClass,Area(3,1
 SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
 SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
 SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+ENUN
 GotoPrepScreen
 NoFade
 ENDA

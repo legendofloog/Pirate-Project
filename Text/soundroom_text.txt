@@ -109,3 +109,45 @@ Dead Winds, Still Tides[X]
 
 ## SongName_FallingFallout
 Falling Fallout[X]
+
+## SongName_AllHandsOnDeck
+All Hands on Deck[X]
+
+## SongName_SkysEnd
+Heaven's Horizon[X]
+
+## SongName_BeforeTheGallows
+Before The Gallows[X]
+
+## SongName_AtSkysEnd
+At Sky's End[X]
+
+## SongName_AKeepersOath
+A Keeper's Oath[X]
+
+## SongName_ASoldiersDuty
+A Soldier's Duty[X]
+
+## SongName_SailingIntoTheHorizon
+Sailing into the Horizon[X]
+
+## Musician_Alusq
+Alusq[X]
+
+## Musician_Eric
+A_Reliable_Chair[X]
+
+## Musician_ArcherBias
+ArcherBias[X]
+
+## Musician_catball
+catball[X]
+
+## Musician_RandomWizard
+RandomWizard[X]
+
+## Musician_PentV
+PentV[X]
+
+## Musician_TheColorRed
+TheColorRed[X]

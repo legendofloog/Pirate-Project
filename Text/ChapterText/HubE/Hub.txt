@@ -1,0 +1,9 @@
+## HubETitle
+Hub D - Fractured Skies[X]
+
+## HubEStatusObjective
+Choose[X]
+
+## HubEGoalWindow
+ Confer with the Skysabers[N]
+  and come to a decision.[X]

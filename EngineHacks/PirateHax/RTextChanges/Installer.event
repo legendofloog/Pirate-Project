@@ -134,6 +134,21 @@ SetOccupation(ArmorerDesc, ArmorerOccupation)
 SetOccupation(SkyfisherDesc, SkyfisherOccupation)
 SetOccupation(WoodsmanDesc, WoodsmanOccupation)
 SetOccupation(KeeperC2Desc, KeeperC2Occupation)
+// hub D
+SetOccupation(D3IncendivisDesc, D3IncendivisOccupation)
+SetOccupation(D3TorchBossDesc, D3TorchBossOccupation)
+SetOccupation(D3TorchUnitDesc, D3TorchUnitOccupation)
+SetOccupation(D3BanditBossDesc, D3BanditBossOccupation)
+SetOccupation(D3BanditDesc, D3BanditOccupation)
+SetOccupation(FidelDesc, FidelOccupation)
+SetOccupation(D3BanditPrisonerDesc, D3BanditPrisonerOccupation)
+SetOccupation(D3ThiefDesc, D3ThiefOccupation)
+SetOccupation(ArbitratorDesc, ArbitratorOccupation)
+SetOccupation(KaisaDesc, KaisaOccupation)
+SetOccupation(FlorenciaDesc, FlorenciaOccupation)
+SetOccupation(AristidesDesc, AristidesOccupation)
+SetOccupation(GreagorShirkerDesc, GreagorShirkerOccupation)
+
 SHORT 0 0 // terminator
 
 #include "RTextChanges.lyn.event"

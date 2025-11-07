@@ -1,0 +1,17 @@
+## EasyName
+ Easy: -5 autolevels.[X]
+
+## NormalName
+ Normal: No changes.[X]
+
+## HardName
+ Hard: +5 autolevels.[X]
+
+## EasyDesc
+A laid-back voyage.[X]
+
+## NormalDesc
+The intended adventure.[X]
+
+## HardDesc
+A journey for the bold..[X]

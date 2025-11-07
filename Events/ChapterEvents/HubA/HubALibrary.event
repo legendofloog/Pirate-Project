@@ -42,16 +42,10 @@ NoFade
 ENDA
 
 GoBackToMainRoomFromLibrary:
-InitiateLoadMapHub(Chapter2, CUSALibraryGreens, LuaFromDaLibrary, MainRoomSpawnEvent)
+InitiateLoadMapHub(Chapter2, LuaFromDaLibrary, MainRoomSpawnEvent)
 SetChapterObjectiveText(HubAGoalWindow, HubAStatusObjective)
 ENUF MainRoomToOtherRooms
 ENUF MainRoomToPort
-NoFade
-ENDA
-
-CUSALibraryGreens:
-TurnUnitBlueIfAlive(Hermenegildo, 1)
-TurnUnitBlueIfAlive(Razvan, 2)
 NoFade
 ENDA
 

@@ -1,0 +1,984 @@
+//Event file generated from Sappy .s format.
+        #include "MPlayDef.event"
+
+        #define    SailingIntoTheHorizon_grp  voicegroup000
+        #define    SailingIntoTheHorizon_pri  0
+        #define    SailingIntoTheHorizon_rev  0
+        #define    SailingIntoTheHorizon_key  0
+
+        // .rodata
+        // SailingIntoTheHorizon
+        ALIGN 4
+
+//****************** Track 0 (Midi-Chn.0) ******************//
+
+SailingIntoTheHorizon_0:
+        BYTE   KEYSH   SailingIntoTheHorizon_key+0
+// 000   ----------------------------------------
+        BYTE   TEMPO   80/2
+        BYTE           VOICE   11
+        BYTE           VOL     127
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+SailingIntoTheHorizon_0_LOOP:
+        BYTE           N24     Ds4   v070
+        BYTE   W24
+        BYTE           N08     En4   v060
+        BYTE   W08
+        BYTE                   Ds4   v050
+        BYTE   W07
+        BYTE           N09     Cs4
+        BYTE   W09
+        BYTE           N24     Cs4   v065
+        BYTE   W36
+        BYTE   W03
+        BYTE           N09     As3   v050
+        BYTE   W09
+// 005   ----------------------------------------
+SailingIntoTheHorizon_0_5:
+        BYTE           N24     Bn3   v070
+        BYTE   W24
+        BYTE           N08     Ds4   v060
+        BYTE   W08
+        BYTE                   Bn3   v050
+        BYTE   W07
+        BYTE           N09     Gs3
+        BYTE   W09
+        BYTE           N24     Fs3   v065
+        BYTE   W36
+        BYTE   W03
+        BYTE           N09     En3   v050
+        BYTE   W09
+        BYTE   PEND
+// 006   ----------------------------------------
+        BYTE           N24     Fs3   v070
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE   W36
+        BYTE   W03
+        BYTE           N09     Bn2   v050
+        BYTE   W09
+// 007   ----------------------------------------
+SailingIntoTheHorizon_0_7:
+        BYTE           N12     En3   v060
+        BYTE   W12
+        BYTE                   Ds3   v050
+        BYTE   W12
+        BYTE                   En3   v060
+        BYTE   W12
+        BYTE                   Gs3   v050
+        BYTE   W12
+        BYTE           N48     As3
+        BYTE   W01
+        BYTE           N44     Cs4   v050   gtp3
+        BYTE   W44
+        BYTE   W03
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE           N24     Ds4   v070
+        BYTE   W24
+        BYTE           N08     En4   v060
+        BYTE   W08
+        BYTE                   Ds4   v050
+        BYTE   W07
+        BYTE           N09     Cs4
+        BYTE   W09
+        BYTE           N24     Cs4   v065
+        BYTE   W36
+        BYTE   W03
+        BYTE           N09     As3   v050
+        BYTE   W09
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_0_5
+// 010   ----------------------------------------
+        BYTE           N24     Fs3   v070
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE   W48
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_0_7
+// 012   ----------------------------------------
+        BYTE           N36     Bn3   v060
+        BYTE   W03
+        BYTE           N32     Ds4   v060   gtp1
+        BYTE   W32
+        BYTE   W01
+        BYTE           N36     Cs4
+        BYTE   W36
+        BYTE           N24     Fs4   v050
+        BYTE   W24
+// 013   ----------------------------------------
+        BYTE           N72     Bn3   v060
+        BYTE   W03
+        BYTE           N68     Ds4   v060   gtp1
+        BYTE   W68
+        BYTE   W01
+        BYTE           N12     As4   v050
+        BYTE   W12
+        BYTE                   Gs4
+        BYTE   W12
+// 014   ----------------------------------------
+SailingIntoTheHorizon_0_14:
+        BYTE           N24     Fs4   v070
+        BYTE   W36
+        BYTE           N36     Ds4   v060
+        BYTE   W36
+        BYTE           N24     Bn3
+        BYTE   W24
+        BYTE   PEND
+// 015   ----------------------------------------
+        BYTE           N72     Gs3   v070
+        BYTE   W03
+        BYTE           N68     Cs4   v070   gtp1
+        BYTE   W92
+        BYTE   W01
+// 016   ----------------------------------------
+        BYTE           N36     Bn3
+        BYTE   W03
+        BYTE           N32     Ds4   v060   gtp1
+        BYTE   W32
+        BYTE   W01
+        BYTE           N36     Cs4
+        BYTE   W36
+        BYTE           N24     Fs4   v050
+        BYTE   W24
+// 017   ----------------------------------------
+        BYTE                   Gs4   v070
+        BYTE   W24
+        BYTE                   Gs4   v050
+        BYTE   W24
+        BYTE                   Fs4   v060
+        BYTE   W24
+        BYTE                   Ds4   v050
+        BYTE   W24
+// 018   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_0_14
+// 019   ----------------------------------------
+        BYTE           N24     Cs4   v070
+        BYTE   W24
+        BYTE                   Gs4   v060
+        BYTE   W24
+        BYTE           N48     Cs4
+        BYTE   W03
+        BYTE           N44     Fs4   v060   gtp1
+        BYTE   W44
+        BYTE   W01
+// 020   ----------------------------------------
+        BYTE   GoTo
+         POIN2  SailingIntoTheHorizon_0_LOOP
+        BYTE   FINE
+
+//****************** Track 1 (Midi-Chn.1) ******************//
+
+SailingIntoTheHorizon_1:
+        BYTE   KEYSH   SailingIntoTheHorizon_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   40
+        BYTE           VOL     127
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+SailingIntoTheHorizon_1_LOOP:
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W96
+// 008   ----------------------------------------
+SailingIntoTheHorizon_1_8:
+        BYTE           N48     Bn4   v030
+        BYTE   W48
+        BYTE                   Fs5
+        BYTE   W48
+        BYTE   PEND
+// 009   ----------------------------------------
+SailingIntoTheHorizon_1_9:
+        BYTE           N48     Ds5   v030
+        BYTE   W48
+        BYTE                   Fs5
+        BYTE   W48
+        BYTE   PEND
+// 010   ----------------------------------------
+SailingIntoTheHorizon_1_10:
+        BYTE           N48     En5   v030
+        BYTE   W48
+        BYTE                   Ds5
+        BYTE   W48
+        BYTE   PEND
+// 011   ----------------------------------------
+        BYTE                   Cs5
+        BYTE   W48
+        BYTE           N12     Fs4
+        BYTE   W12
+        BYTE                   En4
+        BYTE   W12
+        BYTE                   Fs4
+        BYTE   W12
+        BYTE                   As4
+        BYTE   W12
+// 012   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_1_8
+// 013   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_1_9
+// 014   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_1_10
+// 015   ----------------------------------------
+        BYTE           N48     Cs5   v030
+        BYTE   W48
+        BYTE           N24     Cs5   v020
+        BYTE   W24
+        BYTE                   Cs5   v010
+        BYTE   W24
+// 016   ----------------------------------------
+        BYTE   W96
+// 017   ----------------------------------------
+        BYTE   W96
+// 018   ----------------------------------------
+        BYTE   W96
+// 019   ----------------------------------------
+        BYTE   W96
+// 020   ----------------------------------------
+        BYTE   GoTo
+         POIN2  SailingIntoTheHorizon_1_LOOP
+        BYTE   FINE
+
+//****************** Track 2 (Midi-Chn.2) ******************//
+
+SailingIntoTheHorizon_2:
+        BYTE   KEYSH   SailingIntoTheHorizon_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   21
+        BYTE           N48     Ds3   v030
+        BYTE           N48     Bn2
+        BYTE           N48     Fs3
+        BYTE           VOL     127
+        BYTE   W48
+        BYTE           N48     As2
+        BYTE           N48     Fs3
+        BYTE           N48     Cs3
+        BYTE   W48
+// 001   ----------------------------------------
+        BYTE                   Bn2
+        BYTE           N48     Gs3
+        BYTE           N48     Ds3
+        BYTE   W48
+        BYTE                   Fs3
+        BYTE           N48     Ds3
+        BYTE           N48     As2
+        BYTE   W48
+// 002   ----------------------------------------
+        BYTE                   Gs2
+        BYTE           N48     Bn2
+        BYTE           N48     En3
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+// 003   ----------------------------------------
+SailingIntoTheHorizon_2_3:
+        BYTE           N48     En3   v030
+        BYTE           N48     Cs3
+        BYTE           N48     Gs2
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N48     As2
+        BYTE           N48     Cs3
+        BYTE   W48
+        BYTE   PEND
+// 004   ----------------------------------------
+SailingIntoTheHorizon_2_LOOP:
+        BYTE           N48     Fs3   v030
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE           N48     As2
+        BYTE           N48     Fs3
+        BYTE   W48
+// 005   ----------------------------------------
+SailingIntoTheHorizon_2_5:
+        BYTE           N48     Bn2   v030
+        BYTE           N48     Ds3
+        BYTE           N48     Gs3
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE           N48     Fs3
+        BYTE           N48     As2
+        BYTE   W48
+        BYTE   PEND
+// 006   ----------------------------------------
+SailingIntoTheHorizon_2_6:
+        BYTE           N48     Gs2   v030
+        BYTE           N48     Bn2
+        BYTE           N48     En3
+        BYTE   W48
+        BYTE                   Ds3
+        BYTE           N48     Fs2
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE   PEND
+// 007   ----------------------------------------
+SailingIntoTheHorizon_2_7:
+        BYTE           N48     Gs2   v030
+        BYTE           N48     Cs3
+        BYTE           N48     En3
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE           N48     As2
+        BYTE           N48     Fs2
+        BYTE   W48
+        BYTE   PEND
+// 008   ----------------------------------------
+        BYTE                   Fs3
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE                   Cs3
+        BYTE           N48     As2
+        BYTE           N48     Fs3
+        BYTE   W48
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_5
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_6
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_7
+// 012   ----------------------------------------
+SailingIntoTheHorizon_2_12:
+        BYTE           N48     Fs3   v030
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE                   As2
+        BYTE           N48     Fs3
+        BYTE           N48     Cs3
+        BYTE   W48
+        BYTE   PEND
+// 013   ----------------------------------------
+SailingIntoTheHorizon_2_13:
+        BYTE           N48     Gs3   v030
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE                   Fs3
+        BYTE           N48     As2
+        BYTE           N48     Ds3
+        BYTE   W48
+        BYTE   PEND
+// 014   ----------------------------------------
+SailingIntoTheHorizon_2_14:
+        BYTE           N48     Bn2   v030
+        BYTE           N48     Gs2
+        BYTE           N48     En3
+        BYTE   W48
+        BYTE                   Fs2
+        BYTE           N48     Ds3
+        BYTE           N48     Bn2
+        BYTE   W48
+        BYTE   PEND
+// 015   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_3
+// 016   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_12
+// 017   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_13
+// 018   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_14
+// 019   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_2_3
+// 020   ----------------------------------------
+        BYTE   GoTo
+         POIN2  SailingIntoTheHorizon_2_LOOP
+        BYTE   FINE
+
+//****************** Track 3 (Midi-Chn.3) ******************//
+
+SailingIntoTheHorizon_3:
+        BYTE   KEYSH   SailingIntoTheHorizon_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   0
+        BYTE           N48     Bn2   v050
+        BYTE           VOL     127
+        BYTE   W12
+        BYTE           N12     Fs3   v040
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE           N48     As2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+// 001   ----------------------------------------
+SailingIntoTheHorizon_3_1:
+        BYTE           N48     Gs2   v050
+        BYTE   W12
+        BYTE           N12     Ds3   v040
+        BYTE   W12
+        BYTE                   Gs3
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE           N48     Fs2
+        BYTE   W12
+        BYTE           N12     As2
+        BYTE   W12
+        BYTE                   Ds3
+        BYTE   W12
+        BYTE                   As2
+        BYTE   W12
+        BYTE   PEND
+// 002   ----------------------------------------
+SailingIntoTheHorizon_3_2:
+        BYTE           N48     En2   v050
+        BYTE   W12
+        BYTE           N12     Bn2   v040
+        BYTE   W12
+        BYTE                   En3
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE           N48     Ds2
+        BYTE   W12
+        BYTE           N12     Fs2
+        BYTE   W12
+        BYTE                   Bn2
+        BYTE   W12
+        BYTE                   Fs2
+        BYTE   W12
+        BYTE   PEND
+// 003   ----------------------------------------
+SailingIntoTheHorizon_3_3:
+        BYTE           N48     Cs2   v050
+        BYTE   W12
+        BYTE           N12     Gs2   v040
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE                   Gs2
+        BYTE   W12
+        BYTE           N48     Fs2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+        BYTE   PEND
+// 004   ----------------------------------------
+SailingIntoTheHorizon_3_LOOP:
+        BYTE           N48     Bn2   v050
+        BYTE   W12
+        BYTE           N12     Fs3   v040
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE           N48     As2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+// 005   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_1
+// 006   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_2
+// 007   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_3
+// 008   ----------------------------------------
+        BYTE           N48     Bn2   v050
+        BYTE   W12
+        BYTE           N12     Fs3   v040
+        BYTE   W12
+        BYTE                   Bn3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE           N48     As2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE                   Fs3
+        BYTE   W12
+        BYTE                   Cs3
+        BYTE   W12
+// 009   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_1
+// 010   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_2
+// 011   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_3_3
+// 012   ----------------------------------------
+        BYTE           N24     Bn2   v050
+        BYTE   W12
+        BYTE           N12     Fs3   v040
+        BYTE           N12     Ds3
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     Fs3
+        BYTE           N12     Ds3
+        BYTE   W12
+        BYTE           N24     As2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE           N12     Fs3
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     Cs3
+        BYTE           N12     Fs3
+        BYTE   W12
+// 013   ----------------------------------------
+        BYTE           N24     Gs2   v050
+        BYTE   W12
+        BYTE           N12     Ds3   v040
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     Ds3
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     As2
+        BYTE           N12     Ds3
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     As2
+        BYTE           N12     Ds3
+        BYTE   W12
+// 014   ----------------------------------------
+        BYTE           N24     En2   v050
+        BYTE   W12
+        BYTE           N12     Bn2   v040
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE           N24     Bn1
+        BYTE   W12
+        BYTE           N12     Bn2
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     Fs2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Bn1
+        BYTE   W12
+        BYTE           N12     Fs2
+        BYTE           N12     Bn2
+        BYTE   W12
+// 015   ----------------------------------------
+        BYTE           N24     Cs2   v050
+        BYTE   W12
+        BYTE           N12     En2   v040
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE           N24     Gs1
+        BYTE   W12
+        BYTE           N12     Gs2
+        BYTE           N12     En2
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     As2
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE           N24     Cs2   v050
+        BYTE   W12
+        BYTE           N12     Cs3   v040
+        BYTE           N12     As2
+        BYTE   W12
+// 016   ----------------------------------------
+        BYTE           N24     Bn2   v050
+        BYTE   W12
+        BYTE           N12     Fs3   v040
+        BYTE           N12     Ds3
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     Ds3
+        BYTE           N12     Fs3
+        BYTE   W12
+        BYTE           N24     As2
+        BYTE   W12
+        BYTE           N12     Fs3
+        BYTE           N12     Cs3
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     Fs3
+        BYTE           N12     Cs3
+        BYTE   W12
+// 017   ----------------------------------------
+        BYTE           N24     Gs2   v050
+        BYTE   W12
+        BYTE           N12     Ds3   v040
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     Ds3
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Fs2
+        BYTE   W12
+        BYTE           N12     As2
+        BYTE           N12     Ds3
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     Ds3
+        BYTE           N12     As2
+        BYTE   W12
+// 018   ----------------------------------------
+        BYTE           N24     En2   v050
+        BYTE   W12
+        BYTE           N12     Gs2   v040
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Bn1
+        BYTE   W12
+        BYTE           N12     Bn2
+        BYTE           N12     Gs2
+        BYTE   W12
+        BYTE           N24     Ds2
+        BYTE   W12
+        BYTE           N12     Fs2
+        BYTE           N12     Bn2
+        BYTE   W12
+        BYTE           N24     Bn1
+        BYTE   W12
+        BYTE           N12     Fs2
+        BYTE           N12     Bn2
+        BYTE   W12
+// 019   ----------------------------------------
+        BYTE           N24     Cs2   v050
+        BYTE   W12
+        BYTE           N12     Gs2   v040
+        BYTE           N12     En2
+        BYTE   W12
+        BYTE           N24     Gs1
+        BYTE   W12
+        BYTE           N12     Gs2
+        BYTE           N12     En2
+        BYTE   W12
+        BYTE           N48     Fs1
+        BYTE   W48
+// 020   ----------------------------------------
+        BYTE   GoTo
+         POIN2  SailingIntoTheHorizon_3_LOOP
+        BYTE   FINE
+
+//****************** Track 4 (Midi-Chn.4) ******************//
+
+SailingIntoTheHorizon_4:
+        BYTE   KEYSH   SailingIntoTheHorizon_key+0
+// 000   ----------------------------------------
+        BYTE           VOICE   127
+        BYTE           VOL     127
+        BYTE   W96
+// 001   ----------------------------------------
+        BYTE   W96
+// 002   ----------------------------------------
+        BYTE   W96
+// 003   ----------------------------------------
+        BYTE   W96
+// 004   ----------------------------------------
+SailingIntoTheHorizon_4_LOOP:
+        BYTE   W96
+// 005   ----------------------------------------
+        BYTE   W96
+// 006   ----------------------------------------
+        BYTE   W96
+// 007   ----------------------------------------
+        BYTE   W72
+        BYTE           N24     Ds1   v040
+        BYTE   W24
+// 008   ----------------------------------------
+        BYTE                   Fs1   v060
+        BYTE           N24     Dn1
+        BYTE   W24
+        BYTE           N12     Fs1   v040
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Dn1   v030
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE           N24     Fs1   v050
+        BYTE           N24     Dn1
+        BYTE   W24
+        BYTE           N12     Fs1   v040
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE           N12     Dn1
+        BYTE   W12
+// 009   ----------------------------------------
+        BYTE           N24     Fs1   v060
+        BYTE           N24     Dn1
+        BYTE   W24
+        BYTE           N12     Dn1   v040
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE           N24     Fs1   v050
+        BYTE           N24     Dn1
+        BYTE   W24
+        BYTE           N12     Fs1   v040
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Dn1   v030
+        BYTE           N12     Fs1
+        BYTE   W12
+// 010   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE           N24     Fs1
+        BYTE   W24
+        BYTE           N06     Dn1   v040
+        BYTE   W06
+        BYTE                   Dn1   v030
+        BYTE   W06
+        BYTE                   Dn1   v040
+        BYTE   W06
+        BYTE                   Dn1   v030
+        BYTE   W06
+        BYTE           N24     Dn1   v060
+        BYTE           N24     Fs1
+        BYTE   W42
+        BYTE           N06     Dn1   v040
+        BYTE   W06
+// 011   ----------------------------------------
+        BYTE           N12     Fs1
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Dn1   v030
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Dn1   v040
+        BYTE           N12     Fs1
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Fs1   v040
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE           N12     Dn1
+        BYTE   W12
+        BYTE           N06     Dn1   v040
+        BYTE           N06     Fs1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE           N06     Fs1
+        BYTE   W06
+        BYTE                   Fs1   v030
+        BYTE           N06     Dn1
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE           N06     Fs1
+        BYTE   W06
+// 012   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE           N12     Fs1   v050
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE   W12
+        BYTE           N24     Dn1   v040
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE           N24     Dn1   v050
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Dn1   v040
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Dn1   v040
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+// 013   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE           N12     Fs1   v050
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE   W12
+        BYTE           N24     Dn1   v040
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE           N24     Dn1   v050
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Dn1   v040
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE           N06     Dn1   v040
+        BYTE           N06     Fs1   v030
+        BYTE   W06
+        BYTE                   Dn1
+        BYTE           N06     Fs1
+        BYTE   W06
+// 014   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE           N12     Fs1   v050
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N24     Dn1   v040
+        BYTE   W12
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE           N24     Dn1   v050
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N12     Dn1   v040
+        BYTE   W12
+        BYTE                   Fs1   v030
+        BYTE           N12     Dn1   v040
+        BYTE   W12
+// 015   ----------------------------------------
+        BYTE                   Fs1   v050
+        BYTE           N24     Dn1   v060
+        BYTE   W12
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N24     Dn1   v040
+        BYTE   W12
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N24     Dn1   v050
+        BYTE   W12
+        BYTE           N12     Fs1   v030
+        BYTE   W12
+        BYTE                   Fs1
+        BYTE           N12     Dn1   v040
+        BYTE   W12
+        BYTE           N06     Fs1   v030
+        BYTE           N06     Dn1   v040
+        BYTE   W06
+        BYTE                   Fs1   v030
+        BYTE           N06     Dn1
+        BYTE   W06
+// 016   ----------------------------------------
+SailingIntoTheHorizon_4_16:
+        BYTE           N24     Dn1   v060
+        BYTE   W24
+        BYTE                   Dn1   v040
+        BYTE   W24
+        BYTE                   Dn1   v050
+        BYTE   W24
+        BYTE           N12     Dn1   v040
+        BYTE   W12
+        BYTE                   Dn1
+        BYTE   W12
+        BYTE   PEND
+// 017   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE   W24
+        BYTE                   Dn1   v040
+        BYTE   W24
+        BYTE                   Dn1   v050
+        BYTE   W24
+        BYTE           N12     Dn1   v040
+        BYTE   W12
+        BYTE           N06
+        BYTE   W06
+        BYTE                   Dn1   v030
+        BYTE   W06
+// 018   ----------------------------------------
+        BYTE   PATT
+         POIN2  SailingIntoTheHorizon_4_16
+// 019   ----------------------------------------
+        BYTE           N24     Dn1   v060
+        BYTE   W24
+        BYTE                   Dn1   v040
+        BYTE   W24
+        BYTE                   Dn1   v050
+        BYTE   W48
+// 020   ----------------------------------------
+        BYTE   GoTo
+         POIN2  SailingIntoTheHorizon_4_LOOP
+        BYTE   FINE
+
+
+//********************** End of Song ***********************//
+
+        ALIGN 4
+SailingIntoTheHorizon:
+        BYTE   5                       // Num Tracks
+        BYTE   0                       // Unknown
+        BYTE   SailingIntoTheHorizon_pri // Priority
+        BYTE   SailingIntoTheHorizon_rev // Reverb
+
+        POIN2   SailingIntoTheHorizon_grp
+
+        POIN2   SailingIntoTheHorizon_0
+        POIN2   SailingIntoTheHorizon_1
+        POIN2   SailingIntoTheHorizon_2
+        POIN2   SailingIntoTheHorizon_3
+        POIN2   SailingIntoTheHorizon_4
+
+        

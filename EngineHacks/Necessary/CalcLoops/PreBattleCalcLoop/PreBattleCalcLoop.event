@@ -35,18 +35,18 @@ POIN DefendingCheck
 POIN SpurStr SpurMag SpurSpd SpurDef SpurRes
 POIN DriveStr DriveMag DriveSpd DriveDef DriveRes
 POIN LuckySeven OddRhythm EvenRhythm QuickBurn SlowBurn
-POIN IraEffect
+POIN IraEffect PlusThreeAS
 POIN Demoiselle Gentilhomme MaleficAura Intimidate Tantivy Focus Inspiration DivinelyInspiring Charm Solidarity VoiceOfPeace Anathema LilysPoise Charisma Hex Loyalty Infiltrator Misfortune
 POIN ElbowRoom NaturalCover Gamble FieryBlood LifeAndDeath WindDisciple Perfectionist Puissance Hawkeye LightWeight Trample Opportunist BattleVeteran SilentPride Thunderstorm Outrider HeavyStrikes Charge Vanity KnightAspirant AssassinateDamageBonus ArcaneBlade CatchingUp EyeForAnEyeApply EyepatchPreBattle
 POIN Daunt BloodTide WhitePool NightTide Insight Prescience Vigilance DefiantAvo DefiantCrit TowerShield ShortShield IndoorFighter OutdoorFighter Deadeye Fortune ChaosStyle StunningSmile HeavyBlade SurpriseAttack SuppressiveFire
-POIN BlueFlame BlueFlameAura DoubleLion Cultured Thighdeology Thotslayer KeepUp Armorboost Horseguard Skyguard ForeignPrincess ChargePlus Critthrift PulverizePreBattle DoubleFalconPrebattle Precision
+POIN BlueFlame BlueFlameAura DoubleLion Cultured Thighdeology Thotslayer KeepUp Armorboost Horseguard Skyguard ForeignPrincess ChargePlus PulverizePreBattle DoubleFalconPrebattle Precision MomentumPreBattle //Critthrift
 POIN Frenzy // This was moved here because Str/Mag Split conflict, and... I'm not sure why it wouldn't be here in the first place.
 POIN UpWithArch
 POIN Finesse
 POIN AxefaithHit
 POIN StancesASM
 POIN AirRaidSkillCheck
-POIN StudiousBlowAtkBonus FortuneHitBoost
+POIN StudiousBlowAtkBonus FortuneHitBoost ConcentrateCritBoost // ProtectDefBoost - This gets moved into Statgetters
 POIN RerunAndHit //Lowers Atk and AS
 POIN ArcaneArtificePreBattle 
 POIN FusePreBattle // This needs to happen after any hit modifiers
@@ -62,6 +62,7 @@ POIN LethalitySkill NonGBALethalitySkill
 //add any new ones before here
 
 POIN KeenFighter SteadyBrawler // % Damage reduction if doubling goes near end 
+
 POIN Equalizer
 //tower shield plus needs to go after every other skill that may affect defender's attack
 POIN TowerShieldPlus

@@ -17,6 +17,21 @@ PrepShopPointer(PrepShop1|IsPointer) // hub b_2
 PrepShopPointer(PrepShop1|IsPointer) // hub b_3
 PrepShopPointer(PrepShop1|IsPointer) // hub b_4
 PrepShopPointer(PrepShop1|IsPointer) // hub b_5
-PrepShopPointer(PrepShop2|IsPointer) // chapter 3
+PrepShopPointer(PrepShop1|IsPointer) // hub b_5
+PrepShopPointer(PrepShop1|IsPointer) // ch 3
+PrepShopPointer(PrepShop1|IsPointer) // hub c
+PrepShopPointer(PrepShop1|IsPointer) // hub c_1
+PrepShopPointer(PrepShop1|IsPointer) // hub c_2
+PrepShopPointer(PrepShop1|IsPointer) // hub c_3
+PrepShopPointer(PrepShop1|IsPointer) // hub c_4
+PrepShopPointer(PrepShop1|IsPointer) // ch 4
+PrepShopPointer(PrepShop1|IsPointer) // hub d
+PrepShopPointer(PrepShop1|IsPointer) // hub d_1
+PrepShopPointer(PrepShop1|IsPointer) // hub d_2
+PrepShopPointer(PrepShop1|IsPointer) // hub d_3
+PrepShopPointer(PrepShop1|IsPointer)
+PrepShopPointer(PrepShop1|IsPointer)
+PrepShopPointer(PrepShop1|IsPointer) // ch 5
+
 PrepShopPointer(0)
 

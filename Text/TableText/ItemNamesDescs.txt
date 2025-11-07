@@ -99,7 +99,7 @@ Eff. vs. horses and fliers.[X]
 Sidepierce[X]
 
 ## SidepierceDesc
-User can move again with remaining Mov.[X]
+User can move 2 tiles after attack.[X]
 
 ## PitchforkName
 Pitchfork[X]
@@ -156,7 +156,7 @@ Cannot double or be doubled.[X]
 Wild Axe[X]
 
 ## WildAxeDesc
-+3 Spd. Follow-ups are consecutive.[X]
++3 AS. Follow-ups are consecutive.[X]
 
 ## RecoilAxeName
 Recoil Axe[X]
@@ -206,7 +206,7 @@ Uses Mag. Can attack at melee.[X]
 Snapshot[X]
 
 ## SnapshotDesc
-+2 speed. Cannot miss.[X]
++3 AS. Cannot miss.[X]
 
 ## ScorpioName
 Scorpio[X]
@@ -300,6 +300,9 @@ Bloodletter[X]
 ## StilettoName
 Stiletto[X]
 
+## StilettoDesc
+Effective vs. mages.[X]
+
 ## ArcaneKnifeName
 Arcane Knife[X]
 
@@ -325,7 +328,7 @@ Heartpiercer[X]
 Compass[X]
 
 ## CompassDesc
-Brave/Magic/IgnoreRes/x2first.[X]
+Brave. Ignores Def. Follows up first.[X]
 
 // GUNS
 
@@ -370,25 +373,27 @@ Infiltrator[X]
 
 // STAVES
 
+## BuffStaffBottomText
+Select an ally to buff.[X]
+
 ## TakeAimName
 Take Aim![X]
 
 ## TakeAimDesc
-+30 hit to an ally for 1 turn.[X]
-
-## FortuneStaffSubtitleText
-Select ally to instruct aim.[X]
++30 Hit to an ally[N]
+for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffName
 Assist[X]
 
 ## AssistStaffDesc
-Heal an ally for (Mag+10) HP and[N]
-grant them +30 hit for 1 turn.[X]
+Heal an ally for (Mag+10) HP and grant[N]
+them +30 hit for 1 turn. +1 WEXP.[X]
 
 ## AssistStaffUseDesc
-Mag+10 healing and[N]
-+30 hit for 1 turn.[X]
+Heals for Mag+10 HP[N]
+and gives +30 Hit[N]
+for 1 turn.[X]
 
 ## AssistStaffBottomText
 Select an ally to heal and buff.[X]
@@ -397,15 +402,47 @@ Select an ally to heal and buff.[X]
 Rush[X]
 
 ## RushStaffDesc
-Grant an ally +2 Mov and Canto+[N]
-for 1 turn. Mov cannot exceed 15.[X]
+Grant an ally +2 Mov and Canto+ [N]
+for 1 turn. Max Mov is 15. +1 WEXP.[X]
 
 ## RushStaffUseDesc
-+2 Mov and Canto+[N]
-for 1 turn.[X]
+Gives +2 Mov and[N]
+Canto+ for 1 turn.[X]
 
-## RushStaffBottomText
-Select an ally to buff.[X]
+## RewarpName
+Rewarp[X]
+
+## RewarpDesc
+Warps the user to a targeted tile.[X]
+
+## RewarpUseDesc
+Warps the user to[N]
+a targeted tile.[X]
+
+## RewarpBottomText
+Select a tile to warp to.[X]
+
+## ProtectName
+Protect[X]
+
+## ProtectDesc
++10 Def/Res to an ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ProtectUseDesc
++10 Def/Res to ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ConcentrateName
+Concentrate[X]
+
+## ConcentrateDesc
++50 Crit to an ally[N]
+for 1 turn. +1 WEXP.[X]
+
+## ConcentrateUseDesc
++50 Crit to ally[N]
+for 1 turn. +1 WEXP.[X]
 
 // EQUIPS
 
@@ -427,19 +464,17 @@ Glass Shield[X]
 ## GlassShieldDesc
 Grants +7 Def/Res but breaks easily.[X]
 
-## HexlockShieldName
-
+## HexlockShieldName ^
 Hexlock Shield[X]
 
 ## HexlockShieldDesc
-
-Grants +1 Def, +3 Res.[X]
+Grants +1 Def, +4 Res.[X]
 
 ## HeavyShieldName ^
 Heavy Shield[X]
 
 ## HeavyShieldDesc
-Grants +8 Def but -8 Spd.[X]
+Grants +8 Def but -5 Spd.[X]
 
 ## ShoveGloveName
 Shove Glove[X]
@@ -490,8 +525,7 @@ blow.[X]
 Knight Ring[X]
 
 ## KnightRingDesc
-Allows this unit to move again after[N]
-an action with remaining movement.[X]
+Allows this unit to not be broken.[X]
 
 ## LightRuneName
 Light Rune[X]
@@ -551,7 +585,7 @@ If Lv. 10 or greater, use to access[N]
 or master the bow, knife, or gun.[X]
 
 ## FlierPermitName
-Flier Permit[X]
+Flier Whip[X]
 
 ## FlierPermitDesc
 If Lv. 10 or greater, use to procure[N]
@@ -590,7 +624,7 @@ Hoarder's Charm[X]
 
 ## HoardersCharmDesc
 Prevents this unit's inventory[N]
-from being captured or stolen.[X]
+from being stolen.[X]
 
 ## BoltName
 Bolt[X]
@@ -603,7 +637,7 @@ Swimwear[X]
 
 ## SwimwearDesc
 Allows the wearer to traverse water[N]
-at 2 cost per tile. -2 Def, +2 Luck.[X]
+at 2 cost per tile. -2 Def, +2 Eva.[X]
 
 ## RustyHookName
 Rusty Hook[X]
@@ -637,7 +671,7 @@ Hand Cannon[X]
 Inflicts Break, but no follow-ups.[X]
 
 ## IgnisTriggerName
-Ignis Trigger[X]
+Ignisignia[X]
 
 ## IgnisTriggerDesc
 [LockIcon]Lua. Sword at 1 RNG. Hits Res at RNG.[X]

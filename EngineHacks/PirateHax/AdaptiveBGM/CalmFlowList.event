@@ -20,4 +20,5 @@ CalmFlowSong(StormsBrewingID,7)
 // 7, 8, and 9 are avast-only
 CalmFlowSong(TheStormUponUsID,6)
 CalmFlowSong(FallingFalloutID,7)
+CalmFlowSong(SkysEndID, 5) //6/7/8 avast
 CalmFlowSongListEnd

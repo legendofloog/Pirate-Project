@@ -112,6 +112,10 @@
     FlasubanFrontierConfig:
     #incbin "Dmp/Config/frontier_comp.dmp"
 
+    ALIGN 4
+    FlasubanFrontierVillageFogPalette:
+    #incbin "Dmp/Palette/frontier_thraciafog_pal.dmp"
+
     // Mapchip changes
     ALIGN 4
     MountainousConfig:
@@ -182,3 +186,6 @@
 
     // Fix mapchip for this tileset
     EventPointerTable(0x6e, MountainousConfig)
+
+    // thracia fog muhahahaha
+    EventPointerTable(FlasubanFrontierFogPaletteID, FlasubanFrontierVillageFogPalette)

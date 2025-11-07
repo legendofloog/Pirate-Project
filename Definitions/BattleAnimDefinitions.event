@@ -17,7 +17,10 @@
 #define EndAnim "WORD 0x0"
 
 //0xC9 is last vanilla anim: just in case
-#define ArmorSwordAnim 0xCA
+#define WardenLanceAnim 0xA0
+#define WardenUnarmedAnim 0xA1 //like this because i'm lazy
+
+#define WardenSwordAnim 0xCA
 #define ArmorLanceAnim 0xCB
 #define ArmorAxeAnim 0xCC
 #define ArmorHandAxeAnim 0xCD
@@ -66,8 +69,8 @@
 #define TricksterKnifeAnim 0xEB
 #define TricksterTomeAnim 0xEC
 
-#define MonkTomeAnim 0xED
-#define Monk_FTomeAnim 0xEE
+#define ConjurerTomeAnim 0xed
+#define Conjurer_FTomeAnim 0xee
 
 #define Mercenary_FSwordAnim 0xEF
 #define Mercenary_FUnarmedAnim 0xF0
@@ -112,8 +115,8 @@
 #define MarshallBowAnim 0x10e
 #define MarshallUnarmedAnim 0x10f
 
-#define DarkKnightLanceAnim 0x110 //put this in later
-#define DarkKnightMagicAnim 0x110
+#define RogueKnifeAnim 0x110
+#define RogueUnarmedAnim 0x111
 
 #define SwordCavSwordAnim 0x112
 #define SwordCavUnarmedAnim 0x113
@@ -156,21 +159,132 @@
 #define Assassin_FKnifeAnim 0x12f
 #define Assassin_FBowAnim 0x130
 
-#define RogueKnifeAnim 0x131
-#define RogueUnarmedAnim 0x111
+#define WolfKnightLanceAnim 0x131
+#define WolfKnightKnifeAnim 0x132
+#define WolfKnightUnarmedAnim 0x133
 
-#define WolfKnightLanceAnim 0x132
-#define WolfKnightKnifeAnim 0x133
-#define WolfKnightUnarmedAnim 0x134
+#define LanceCavLanceAnim 0x134
+#define LanceCavUnarmedAnim 0x135
 
-#define LanceCavLanceAnim 0x135
-#define LanceCavUnarmedAnim 0x136
-
-#define AxeKnightAxeAnim 0x137
-#define AxeKnightHandaxeAnim 0x138
+#define AxeKnightAxeAnim 0x136
+#define AxeKnightHandaxeAnim 0x137
+#define AxeKnightUnarmedAnim 0x138
 
 #define BowKnightBowAnim 0x139
 #define BowKnightUnarmedAnim 0x13a
 
 #define LanceKnightLanceAnim 0x13b
 #define LanceKnightUnarmedAnim 0x13c
+
+#define SwordKnightSwordAnim 0x13d
+#define SwordKnightUnarmedAnim 0x13e
+
+#define ChampionSwordAnim 0x13f
+#define ChampionLanceAnim 0x140
+#define ChampionUnarmedAnim 0x141
+
+#define SageHermenSwordAnim 0x142
+#define SageHermenTomeAnim 0x143
+#define SageHermenStaffAnim 0x144
+
+#define CataphractLanceAnim 0x145
+#define CataphractAxeAnim 0x146
+#define CataphractHandAxeAnim 0x147
+#define CataphractUnarmedAnim 0x148
+
+#define SageTomeAnim 0x149
+#define SageStaffAnim 0x14a
+
+#define SageFTomeAnim 0x14b
+#define SageFStaffAnim 0x14c
+
+#define MageKnightLanceAnim 0x14d
+#define MageKnightTomeAnim 0x14e
+ 
+#define MageKnightFLanceAnim 0x14f 
+#define MageKnightFTomeAnim 0x150
+
+#define WarlockTomeAnim 0x151
+
+#define FalcoknightSwordAnim 0x152
+#define FalcoknightUnarmedAnim 0x153
+
+#define GryphoknightLanceAnim 0x154
+#define GryphoknightUnarmedAnim 0x155
+
+#define ClericStaffAnim 0x156
+#define ClericUnarmedAnim 0x157
+
+#define Cleric_FStaffAnim 0x158
+#define Cleric_FUnarmedAnim 0x159
+
+#define RangerSwordAnim 0x15A
+#define RangerBowAnim 0x15B
+#define RangerUnarmedAnim 0x15C
+
+#define Ranger_FSwordAnim 0x15D
+#define Ranger_FBowAnim 0x15E
+#define Ranger_FUnarmedAnim 0x15F
+
+#define Champion_FSwordAnim 0x160
+#define Champion_FLanceAnim 0x161
+#define Champion_FUnarmedAnim 0x162
+
+#define ThiefFKnifeAnim 0x163
+
+#define RogueFKnifeAnim 0x164
+#define RogueFUnarmedAnim 0x165
+
+#define GunnerGunAnim 0x166
+#define GunnerUnarmedAnim 0x167
+
+#define GunnerFGunAnim 0x168
+#define GunnerFUnarmedAnim 0x169
+
+
+//vanilla repal type stuff, just put it in same slot
+
+#define ArcherBowAnim 0x26
+#define ArcherUnarmedAnim 0x27
+
+#define ArcherFBowAnim 0x28
+#define ArcherFUnarmedAnim 0x29
+
+#define SniperBowAnim 0x2A
+#define SniperUnarmedAnim 0x2B
+
+#define SniperFBowAnim 0x2C
+#define SniperFUnarmedAnim 0x2D
+
+#define MyrmidonSwordAnim 0x11
+#define MyrmidonUnarmedAnim 0x12
+
+#define Myrmidon_FSwordAnim 0x13
+#define Myrmidon_FUnarmedAnim 0x14
+
+#define SwordmasterSwordAnim 0x15
+#define SwordmasterUnarmedAnim 0x16
+
+#define TroubadourStaffAnim 0x86
+#define TroubadourUnarmedAnim 0x85
+
+#define SaviorStaffAnim 0x88
+#define SaviorUnarmedAnim 0x87
+
+#define MercenarySwordAnim 0xb
+#define MercenaryUnarmedAnim 0xc
+
+#define HeroSwordAnim 0xD
+#define HeroAxeAnim 0xE
+#define HeroHandaxeAnim 0xF
+#define HeroUnarmedAnim 0x10
+
+#define Berserker_FAxeAnim 0x166
+#define Berserker_FHandaxeAnim 0x167
+#define Berserker_FUnarmedAnim 0x168
+
+//replaces brigand pointer
+
+#define BarbarianAxeAnim 0x20
+#define BarbarianHandaxeAnim 0x21
+#define BarbarianUnarmedAnim 0x22

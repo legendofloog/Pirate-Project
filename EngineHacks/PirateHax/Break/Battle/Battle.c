@@ -1,5 +1,6 @@
 #include "Battle.h"
 
+extern int BattleRoll1RN_SS(int, struct Unit* unit); 
 extern int* gRoundCount;
 
 s8 BattleGenerateRoundHits(struct BattleUnit* attacker, struct BattleUnit* defender) {
@@ -67,7 +68,7 @@ void BattleGenerateHitEffects(struct BattleUnit* attacker, struct BattleUnit* de
 
         } // switch (GetItemWeaponEffect(attacker->weapon))
 
-    	if ((GetItemWeaponEffect(attacker->weapon) == WPN_EFFECT_DEVIL) && (BattleRoll1RN(31 - attacker->unit.lck, FALSE))) {
+    	if ((GetItemWeaponEffect(attacker->weapon) == WPN_EFFECT_DEVIL) && (BattleRoll1RN_SS(31 - attacker->unit.lck, &attacker->unit))) {
         	gBattleHitIterator->attributes |= BATTLE_HIT_ATTR_DEVIL;
 
         	attacker->unit.curHP -= gBattleStats.damage;

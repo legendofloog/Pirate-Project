@@ -8,9 +8,9 @@
 
 .equ gActionData, 0x0203A958
 .equ GetUnit, 0x08019430
-.equ UnitAddItem, 0x08017948
 .equ GetItemWType, 0x08017548
 .equ GetItemWeight, 0x0801760C
+.equ GetUnitSpeed, 0x08019211
 
 .global UnitAddStolenItem
 .type UnitAddStolenItem, %function
@@ -47,14 +47,29 @@
 		
 		@Determine if unit needed rusty hook to steal
 		
-		@Speed check
+		@Speed check				@ Need to have this use the speed getter instead, so making an edit - Loog
 		ldr		r0, =gActionData
-		ldrb	r0, [r0,#0x0D]
-		blh		GetUnit, r1
-		mov		r2, #0x16
-		ldsb	r0, [r0,r2]
-		ldsb	r1, [r4,r2]
-		cmp		r1, r0
+		ldrb	r0, [r0,#0x0D] 
+		blh		GetUnit, r1	@ target unit is in r0
+		mov r1, r4			@ the actor unit is in r1
+				
+		push {r4-r7}		@ need to clear this for a bit
+		
+		mov r4, r0
+		mov r5, r1
+		
+		blh		GetUnitSpeed, r3
+		
+		mov r4, r0	@ r0 should now be the target's speed, so storing it in r4
+		mov r0, r5	@ putting the actor here now
+		blh		GetUnitSpeed, r3
+		
+		mov r1, r4 @ r0 now has actor's speed, r1 has the target's speed
+		pop {r4-r7} @ restore these registers to what they had before
+
+		
+
+		cmp		r0, r1 @ if actor's speed is greater or equal, then didn't need rustyhook (right?): so put blt
 		blt		RustyHookLowerDurability
 		
 		@Wt check
@@ -95,7 +110,7 @@
 		End:
 		mov		r0, r4
 		mov		r1, r5
-		blh		UnitAddItem, r2
+		blh		UnitAddStolenItemHelper, r2
 		pop		{r4-r7}
 		pop		{r0}
 		bx		r0

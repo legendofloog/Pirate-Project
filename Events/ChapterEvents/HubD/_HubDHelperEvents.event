@@ -1,0 +1,227 @@
+HubD_Traps_Deck:
+AddTrap(BlueSigilTrapID, 7, 14)
+AddTrap(BlueSigilTrapID, 8, 14)
+AddTrap(GreenSigilTrapID, 7, 8)
+AddTrap(GreenSigilTrapID, 8, 8)
+AddTrap(BlueSigilTrapID, 5, 20)
+AddTrap(BlueSigilTrapID, 10, 20)
+AddTrap(BlueSigilTrapID, 11, 23)
+AddTrap(BlueSigilTrapID, 11, 24)
+NoFade
+ENDA
+
+SpawnHubD_DeckUnits:
+LoadPlayerUnits(HubD_DeckCrew_Guaranteed)
+LoadAllyUnitGroupIfAlive(Windy, 1, WindyHubDGroup)
+NoFade
+ENDA
+
+HubD_DeckCrew_Guaranteed:
+UNIT Carmen Mage_F 0 Level(1,Ally,False) [7,23] 0 0 0 0 [0x0] NoAI
+UNIT Ximo Archer 0 Level(1,Ally,False) [8,23] 0 0 0 0 [0x0] NoAI
+UNIT Hermenegildo Myrmidon 0 Level(1,Ally,False) [6,24] 0 0 0 0 [0x0] NoAI
+UNIT Jaime PegasusRider 0 Level(1,Ally,False) [13,9] 0 0 0 0 [0x0] NoAI
+UNIT Leonor Cleric 0 Level(1,Ally,False) [11,10] 0 0 0 0 [0x0] NoAI
+UNIT Estelle Troubadour 0 Level(1,Ally,False) [4,16] 0 0 0 0 [0x0] NoAI
+UNIT Indio Shaman 0 Level(1,Ally,False) [4,18] 0 0 0 0 [0x0] NoAI
+UNIT Remora Berserker 0 Level(16,Ally,True) [5,17] 0 0 0 0 [0x0] NoAI
+UNIT Biko Soldier 0 Level(1,Ally,False) [10,18] 0 0 0 0 [0x0] NoAI
+UNIT Ondeh Hunter_F 0 Level(1,Ally,False) [9,18] 0 0 0 0 [0x0] NoAI
+UNIT Ernest Gryphoknight 0 Level(1,Ally,False) [11,19] 0 0 0 0 [0x0] NoAI
+UNIT
+
+WindyHubDGroup:
+UNIT Windy SwordCav 0 Level(6,Ally,False) [10,9] 0 0 0 0 [0x0] NoAI
+UNIT
+
+SpawnHubD_CaptainsQuartersUnits:
+LoadPlayerUnits(HubD_CaptainsQuartersCrew_Guaranteed)
+NoFade
+ENDA
+
+HubD_CaptainsQuartersCrew_Guaranteed:
+UNIT Pilar Ninja 0 Level(1,Ally,False) [6,10] 0 0 0 0 [0x0] NoAI
+UNIT Desiderio Vanguard 0 Level(1,Ally,False) [9,10] 0 0 0 0 [0x0] NoAI
+UNIT Razvan Curate 0 Level(1,Ally,False) [6,13] 0 0 0 0 [0x0] NoAI
+UNIT
+
+SpawnHubD_DiningQuartersUnits:
+LoadPlayerUnits(HubD_DiningQuartersCrew_Guaranteed)
+LoadAllyUnitGroupIfAlive(Calista, 1, CalistaHubDGroup)
+LoadAllyUnitGroupIfAlive(Fidel, 2, FidelHubDGroup)
+LoadAllyUnitGroupIfAlive(Adrian, 3, AdrianHubDGroup)
+LoadAllyUnitGroupIfAlive(Lexa, 4, LexaHubDGroup)
+LoadAllyUnitGroupIfAlive(Passarola, 5, PassarolaHubDGroup)
+LoadAllyUnitGroupIfAlive(Triana, 6, TrianaHubDGroup)
+LoadAllyUnitGroupIfAlive(Medwyn, 7, MedwynHubDGroup)
+LoadAllyUnitGroupIfAlive(Bartz, 8, BartzHubDGroup)
+LoadAllyUnitGroupIfAlive(Yodsen, 9, YodsenHubDGroup)
+LoadAllyUnitGroupIfAlive(Durgham, 10, DurghamHubDGroup)
+LoadAllyUnitGroupIfAlive(Leandra, 13, LeandraHubDGroup)
+LoadAllyUnitGroupIfAlive(Juan, 14, JuanHubDGroup)
+LoadAllyUnitGroupIfAlive(IdaReal, 14, IdaHubDGroup)
+NoFade
+ENDA
+
+HubD_DiningQuartersCrew_Guaranteed:
+UNIT Valerie Archer 0 Level(1,Ally,False) [4,11] 0 0 0 0 [0x0] NoAI
+UNIT Orlando Trickster 0 Level(1,Ally,False) [11,13] 0 0 0 0 [0x0] NoAI
+UNIT Rahel BowCav 0 Level(1,Ally,False) [9,13] 0 0 0 0 [0x0] NoAI
+UNIT Ponte Brigand 0 Level(1,Ally,False) [9,15] 0 0 0 0 [0x0] NoAI
+UNIT Bolton DarkKnight 0 Level(1,Ally,False) [4,17] 0 0 0 0 [0x0] NoAI
+UNIT Rima AxeCav 0 Level(1,Ally,False) [5,17] 0 0 0 0 [0x0] NoAI
+UNIT Tangyuan DragonRider 0 Level(1,Ally,False) [11,15] 0 0 0 0 [0x0] NoAI
+UNIT
+
+PassarolaHubDGroup:
+UNIT Passarola Adventurer 0 Level(1,Ally,False) [4,15] 0 0 0 0 [0x0] NoAI
+UNIT
+
+CalistaHubDGroup:
+UNIT Calista Dragoon 0 Level(1,Ally,False) [5,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+FidelHubDGroup:
+UNIT Fidel Sage 0 Level(1,Ally,False) [5,13] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AdrianHubDGroup:
+UNIT Adrian Fighter 0 Level(1,Ally,False) [10,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LexaHubDGroup:
+UNIT Lexa Myrmidon_F 0 Level(1,Ally,False) [11,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TrianaHubDGroup:
+UNIT Triana Shaman 0 Level(1,Ally,False) [7,16] 0 0 0 0 [0x0] NoAI
+UNIT
+
+BartzHubDGroup:
+UNIT Bartz Deserter 0 Level(1,Ally,False) [7,12] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MedwynHubDGroup:
+UNIT Medwyn Warden 0 Level(1,Ally,False) [6,13] 0 0 0 0 [0x0] NoAI
+UNIT
+
+YodsenHubDGroup:
+UNIT Yodsen Gunner 0 Level(1,Ally,False) [6,14] 0 0 0 0 [0x0] NoAI
+UNIT
+
+DurghamHubDGroup:
+UNIT Durgham LanceCav 0 Level(1,Ally,False) [6,15] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LeandraHubDGroup:
+UNIT Leandra Fighter_F 0 Level(1,Ally,False) [10,17] 0 0 0 0 [0x0] NoAI
+UNIT
+
+JuanHubDGroup:
+UNIT Juan Thief 0 Level(1,Ally,False) [11,17] 0 0 0 0 [0x0] NoAI
+UNIT
+
+//implement these when boru/ida are real
+
+IdaHubDGroup:
+UNIT IdaReal Cataphract 0 Level(1,Ally,False) [9,14] 0 0 0 0 [0x0] NoAI
+UNIT
+
+SpawnHubD_LivingQuartersUnits:
+LoadPlayerUnits(HubD_LivingQuartersCrew_Guaranteed)
+LoadAllyUnitGroupIfAlive(Fata, 1, FataHubDGroup)
+LoadAllyUnitGroupIfAlive(Neltume, 2, NeltumeHubDGroup)
+LoadAllyUnitGroupIfAlive(Kaisa, 3, KaisaHubDGroup)
+LoadAllyUnitGroupIfAlive(Magdalena, 4, MagdalenaHubDGroup)
+LoadAllyUnitGroupIfAlive(Avocado, 5, AvocadoHubDGroup)
+LoadAllyUnitGroupIfAlive(Husniye, 6, HusniyeHubDGroup)
+LoadAllyUnitGroupIfAlive(Noah, 7, NoahHubDGroup)
+LoadAllyUnitGroupIfAlive(Kai, 8, KaiHubDGroup)
+LoadAllyUnitGroupIfAlive(Theana, 9, TheanaHubDGroup)
+LoadAllyUnitGroupIfAlive(Florencia, 10, FlorenciaHubDGroup)
+LoadAllyUnitGroupIfAlive(Aristides, 11, AristidesHubDGroup)
+NoFade
+ENDA
+
+HubD_LivingQuartersCrew_Guaranteed:
+UNIT Dmitr Brigand 0 Level(1,Ally,False) [4,23] 0 0 0 0 [0x0] NoAI
+UNIT Ruby Hero_F 0 Level(1,Ally,False) [9,23] 0 0 0 0 [0x0] NoAI
+UNIT
+
+FataHubDGroup:
+UNIT Fata Monk 0 Level(1,Ally,False) [5,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+NeltumeHubDGroup:
+UNIT Neltume Priest 0 Level(1,Ally,False) [5,24] 0 0 0 0 [0x0] NoAI
+UNIT
+
+KaisaHubDGroup:
+UNIT Kaisa GriffinRider 0 Level(1,Ally,False) [9,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+FlorenciaHubDGroup:
+UNIT Florencia Halberdier 0 Level(1,Ally,False) [8,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AristidesHubDGroup:
+UNIT Aristides Swordmaster 0 Level(1,Ally,False) [8,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MagdalenaHubDGroup:
+UNIT Magdalena Sage_F 0 Level(1,Ally,False) [6,8] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AvocadoHubDGroup:
+UNIT Avocado Deserter 0 Level(1,Ally,False) [6,8] 0 0 0 0 [0x0] NoAI
+UNIT
+
+HusniyeHubDGroup:
+UNIT Husniye Thief 0 Level(1,Ally,False) [6,8] 0 0 0 0 [0x0] NoAI
+UNIT
+
+NoahHubDGroup:
+UNIT Noah Warden 0 Level(1,Ally,False) [6,9] 0 0 0 0 [0x0] NoAI
+UNIT
+
+KaiHubDGroup:
+UNIT Kai Ninja 0 Level(1,Ally,False) [10,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TheanaHubDGroup:
+UNIT Theana Assassin 0 Level(20,Ally,False) [11,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+
+SpawnInHubDQuests:
+CHECK_EVENTID GoToNextHubFlagID
+BNE 777 s0 sC //if the flag is set, then don't do this
+    AddTrap(GreenSigilTrapID, 13, 10)
+    AddTrap(GreenSigilTrapID, 14, 10)
+    AddTrap(GreenSigilTrapID, 15, 10)
+    ENUF Flag_HubD_Ending_Allowed
+LABEL 777
+SpawnQuestSigils(WentToHub1, 1, SpawnD1Traps)
+SpawnQuestSigils(WentToHub2, 2, SpawnD2Traps)
+SpawnQuestSigils(WentToHub3, 3, SpawnD3Traps)
+NoFade
+ENDA
+
+SpawnD1Traps:
+AddTrap(RedSigilTrapID, 35, 8)
+AddTrap(RedSigilTrapID, 36, 8)
+NoFade
+ENDA
+
+SpawnD2Traps:
+AddTrap(RedSigilTrapID, 14, 15)
+AddTrap(RedSigilTrapID, 14, 16)
+AddTrap(RedSigilTrapID, 14, 17)
+NoFade
+ENDa
+
+SpawnD3Traps:
+AddTrap(RedSigilTrapID, 34, 27)
+AddTrap(RedSigilTrapID, 35, 27)
+NoFade
+ENDA

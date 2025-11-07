@@ -1,5 +1,34 @@
 EventPointerTable(HubD_3EventsID, PointerList)
 
+#define IncendivisMookLevel 22
+#define IncendivisEliteLevel 24
+#define RedwingPrisonerLevel 17
+#define RedwingMookLevel 20
+#define RedwingEliteLevel 22
+
+#define D3House1Flag 8
+#define D3House2Flag 9
+#define D3House3Flag 10
+#define D3House4Flag 11
+#define D3House5Flag 12
+#define D3House6Flag 13
+#define D3VillageFlag 14
+/*
+#define D3EnriqueDQFlag 15
+#define D3InkaDQFlag 16
+*/
+#define D3ThiefTalk1Flag 17
+#define D3ThiefTalk2Flag 18
+#define D3TopLeftTreasureFlag 19
+#define D3TopRightTreasureFlag 20
+#define D3EnriqueAFEVFlag 21
+#define D3InkaAFEVFlag 22
+//#define D3FidelDQFlag 23
+//#define D3WallBrokenAFEVFlag 24
+#define D3FidelDiedFlag 25
+//26-36: battle quotes
+#define D3MainVillageFallsFlag 37
+
 PointerList:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
@@ -12,20 +41,345 @@ POIN $0 $0 $0
 POIN $0 $0 $0
 POIN BeginningScene EndingScene
 
-
 TurnBasedEvents:
+TurnEventPlayer(0, PostPrepsEvent, 1)
+TurnEventPlayer(0, MoreDragonsSpawnAndAiChanges, 2)
+TurnEventPlayer(0, RazvanOrLuaNoticesEvacuation, 3) //just text
+TurnEventPlayer(0, MoreDragonsOnTheSide, 4)
+TurnEventPlayer(0, MoreMaligsOnTheSide, 5)
+TurnEventPlayer(0, InkaCharges, 6)
+TurnEventPlayer(0, SpookyEnemiesIncoming, 7)
 END_MAIN
 
-CharacterBasedEvents:
+PostPrepsEvent: //Fidel and crew call out, bandits as well
+CameraCursor(Inka)
+MUSC SwabbieTalkID
+Text(HubD3PostPrepsScene1)
+FadeOutMusic
+CameraCursor(Fidel)
+MUSC EmergencyCrewmateID
+Text(HubD3PostPrepsScene2)
+NoFade
+ENDA
+
+MoreDragonsSpawnAndAiChanges:
+IfAlivePanToThenDialog(Fidel, HubD3MidBattle_Fidel_FirstSetOfWallsBrokenText, 776)
+IfAlivePanToThenDialog(Enrique, HubD3MidBattle_Enrique_FirstSetOfWallsBrokenText, 777)
+IfAlivePanToThenDialog(Inka, HubD3MidBattle_Inka_FirstSetOfWallsBrokenText, 778)
+LoadEnemies(DragonReinforcementsTop)
+IfAliveDialog(Inka, HubD3MidBattle_Inka_ReinforcementResponse, 779)
+
+//now let's make the prisoners stationary so that they can be fodder and let the raiders do their job
+CheckForCharAtCoordsThenCHAI(0,12,D3Bandit_Raider,1,0,4,4,0) //left raiders: always do something and prioritize looting, then attacking
+CheckForCharAtCoordsThenCHAI(0,13,D3Bandit_Raider,2,0,4,4,0)
+CheckForCharAtCoordsThenCHAI(0,14,D3Bandit_Raider,3,0,4,4,0)
+
+CheckForCharAtCoordsThenCHAI(26,12,D3Bandit_Raider,4,0,4,4,0) //right raiders
+CheckForCharAtCoordsThenCHAI(26,13,D3Bandit_Raider,5,0,4,4,0)
+CheckForCharAtCoordsThenCHAI(26,14,D3Bandit_Raider,6,0,4,4,0)
+
+CheckForCharAtCoordsThenCHAI(12,2,D3Bandit_Raider,7,0,3,4,0) //top raiders ready to go to war but won't fight unless an enemy is in their range, not yet raiding
+CheckForCharAtCoordsThenCHAI(13,2,D3Bandit_Raider,8,0,3,4,0)
+CheckForCharAtCoordsThenCHAI(14,2,D3Bandit_Raider,9,0,3,4,0)
+
+CheckForCharAtCoordsThenCHAI(2,12,D3Bandit,10,3,3,4,20) //left wallbreakers: do not move, sit in place
+CheckForCharAtCoordsThenCHAI(2,13,D3Bandit,11,3,3,4,20)
+CheckForCharAtCoordsThenCHAI(2,14,D3Bandit,12,3,3,4,20)
+
+CheckForCharAtCoordsThenCHAI(24,12,D3Bandit,13,3,3,4,20) //right wallbreakers
+CheckForCharAtCoordsThenCHAI(24,13,D3Bandit,14,3,3,4,20)
+CheckForCharAtCoordsThenCHAI(24,14,D3Bandit,15,3,3,4,20)
+
+CheckForCharAtCoordsThenCHAI(12,4,D3Bandit,16,3,3,4,20) //top wallbreakers
+CheckForCharAtCoordsThenCHAI(13,4,D3Bandit,17,3,3,4,20)
+CheckForCharAtCoordsThenCHAI(14,4,D3Bandit,18,3,3,4,20)
+NoFade
+ENDA
+
+DragonReinforcementsTop:
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [12,0] 0 0 1 REDA12R3 [IronAxe] WallAttackerAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [13,0] 0 0 1 REDA13R3 [IronAxe] WallAttackerAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [14,0] 0 0 1 REDA14R3 [IronAxe] WallAttackerAI
+UNIT
+
+RazvanOrLuaNoticesEvacuation:
+CHECK_DEPLOYED Razvan
+BEQ 776 s0 sC
+    CameraCursor(Razvan)
+    Text(D3RazvanNoticesEvacuationText) //if razvan deployed, he notices; otherwise, lua says it
+    GOTO 777
+LABEL 776
+CameraCursor(Lua)
+Text(D3LuaNoticesEvacuationText)
+LABEL 777
+NoFade
+ENDA
+
+MoreDragonsOnTheSide: // a bit of filler on the sides? some shittier guys who are easier to deal with: a new set of raiders
+CamOn
+LoadEnemies(DragonRaiderReinforcementsLeft)
+LoadEnemies(DragonRaiderReinforcementsRight)
+NoFade
+ENDA
+
+DragonRaiderReinforcementsLeft:
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,12] 0 0 1 REDA0R12 [SilverAxe] RaiderAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,14] 0 0 1 REDA0R14 [SilverAxe] RaiderAI
+UNIT
+
+DragonRaiderReinforcementsRight:
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [26,12] 0 0 1 REDA26R12 [SilverAxe] RaiderAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [26,14] 0 0 1 REDA26R14 [SilverAxe] RaiderAI
+UNIT
+
+MoreMaligsOnTheSide: //Filler to the sides
+CamOn
+LoadEnemies(MaligRaiderReinforcementsLeft)
+LoadEnemies(MaligRaiderReinforcementsRight)
+NoFade
+ENDA
+
+MaligRaiderReinforcementsLeft:
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [0,13] 0 0 1 REDA0R13 [Nosferatu, Arcfire] RaiderAI
+UNIT
+
+MaligRaiderReinforcementsRight:
+UNIT D3Bandit_Raider Dracoknight 0 Level(RedwingEliteLevel,Enemy,True) [26,13] 0 0 1 REDA26R13 [SilverAxe, Crusher] RaiderAI
+UNIT
+
+InkaCharges: //Inka finally decides to go in
+CamOn
+LoadEnemies(InkaChargeLeftGroup)
+LoadEnemies(InkaChargeRightGroup)
+LoadEnemies(InkaChargeTopGroup)
+CHECK_ALIVE Inka
+BEQ 776 s0 sC
+    Text(D3InkaChargeText)
+    SetAI(Inka,0,0,4,0) //Charge AI
+    GOTO 777
+LABEL 776
+IfAliveDialog(D3Bandit_Raider, D3InkaDeadChargeText, 780) //no way they'd all be wiped out but just in case, check
+LABEL 777
+CheckIfAliveThenAIChange(D3Bandit_Raider, 778, 0, 4, 4, 0)
+CheckIfAliveThenAIChange(D3Bandit, 779, 0, 4, 4, 0) //changes any of the remaining bandits to attack you/raid villages
+NoFade
+ENDA
+
+InkaChargeRightGroup:
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [26,13] 0 0 1 REDA26R13 [Nosferatu, Arcfire] RaiderAI
+UNIT
+
+InkaChargeLeftGroup:
+UNIT D3Bandit_Raider Dracoknight 0 Level(RedwingEliteLevel,Enemy,True) [0,13] 0 0 1 REDA0R13 [SilverAxe, Crusher] RaiderAI
+UNIT
+
+InkaChargeTopGroup:
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [12,0] 0 0 1 REDA12R0 [HerosFlare, SilverAxe] RaiderAI
+UNIT D3Bandit_Raider Dracoknight 0 Level(RedwingEliteLevel,Enemy,True) [13,0] 0 0 1 REDA13R0 [SilverAxe, Tomahawk] RaiderAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [14,0] 0 0 1 REDA14R0 [BattleAxe, Arcfire] RaiderAI
+UNIT
+
+SpookyEnemiesIncoming:
+CamOn
+LoadEnemies(FinalEnemiesLeft)
+LoadEnemies(FinalEnemiesRight)
+NoFade
+ENDA
+
+FinalEnemiesLeft:
+UNIT D3Bandit_Raider Dracoknight 0 Level(RedwingEliteLevel,Enemy,True) [0,12] 0 0 1 REDA0R12 [SilverAxe, Crusher] RaiderAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [0,14] 0 0 1 REDA0R14 [Nosferatu, Arcfire] RaiderAI
+UNIT
+
+FinalEnemiesRight:
+UNIT D3Bandit_Raider Dracoknight 0 Level(RedwingEliteLevel,Enemy,True) [26,12] 0 0 1 REDA26R12 [SilverAxe, Crusher] RaiderAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [26,14] 0 0 1 REDA26R14 [Nosferatu, Arcfire] RaiderAI
+UNIT
+
+CharacterBasedEvents: //anyone can talk to these guys
+CharacterEvent(D3ThiefTalk1Flag, D3Thief1Convo, 0, D3Thief1) 
+CharacterEvent(D3ThiefTalk2Flag, D3Thief2Convo, 0, D3Thief2) 
 END_MAIN
+
+D3Thief1Convo:
+CenterTextbox(D3Thief1ShowsYouTreasureText)
+CAMERA_CENTERED [4,3]
+STAL 10
+ENUF D3TopLeftTreasureFlag
+FlashCursor(4,3,60)
+FADI 15
+    TILECHANGE 20
+FADU 15
+STAL 30
+CameraCursor(D3Thief1)
+FADI 15
+    REMOVEUNIT D3Thief1 //after they give you the location, they leave
+FADU 15
+NoFade
+ENDA
+
+D3Thief2Convo:
+CenterTextbox(D3Thief2ShowsYouTreasureText)
+CAMERA_CENTERED [25,5]
+STAL 10
+ENUF D3TopRightTreasureFlag
+FlashCursor(24,1,60)
+FADI 15
+    TILECHANGE 21
+FADU 15
+STAL 30
+CameraCursor(D3Thief2)
+FADI 15
+    REMOVEUNIT D3Thief2 //after they give you the location, they leave
+FADU 15
+NoFade
+ENDA
 
 LocationBasedEvents:
+Armory(D3Armory,21,25)
+Vendor(D3Vendor,5,25)
+//generic: these are the 6 villages thrown around the map that the dragons will try to destroy; i don't want them to be visitable, so like so
+LOCA D3House1Flag [5,9] 0x20
+LOCA D3House2Flag [21,10] 0x20
+LOCA D3House3Flag [6,14] 0x20
+LOCA D3House4Flag [20,14] 0x20
+LOCA D3House5Flag [18,18] 0x20
+LOCA D3House6Flag [7,19] 0x20
+// actually gives something
+Village(D3VillageFlag, D3RedHouse, 19, 32)
 END_MAIN
+
+D3RedHouse:
+MUSI
+SetBackground(Salehs_House)
+CHECK_ACTIVEID Razvan
+BEQ 1 s0 sC //if it is not razvan, then branch
+    Text(HubD3MidBattle_VillageText_RazvanEvent)
+    GOTO 2
+LABEL 1
+    Text(HubD3MidBattle_VillageText)
+LABEL 2
+MUNO
+EraseBackground
+GiveItem(Sleep, 0xFFFF) //whoever the visitor is
+NoFade
+ENDA
+
+//tbd, depends on what i put in Hub D generally
+
+ALIGN 4
+D3Armory:
+SHLI FlameSword Lancereaver WoDao Crusher Swordreaver BattleAxe Impaler Axereaver Saunion Slimshot Greatbow DeadeyeBow ArcaneKnife Peshkatz Heartpiercer
+ALIGN 4
+
+ALIGN 4
+D3Vendor:
+SHLI Nosferatu Tornado Bolting Rescue Sleep Fortify HandCannon Toradar Quickdraw
+ALIGN 4
 
 MiscBasedEvents:
+AREA D3TopLeftTreasureFlag TopLeftTreasure [4, 3] [4, 3]
+AREA D3TopRightTreasureFlag TopRightTreasure [25, 5] [25, 5]
+AFEV D3EnriqueAFEVFlag CheckIfBothBossesDead D3EnriqueDQFlag //check on death of either of them
+AFEV D3InkaAFEVFlag CheckIfBothBossesDead D3InkaDQFlag
+AFEV 0 CheckIfInnerWallBroken D3WallBrokenAFEVFlag
+AFEV D3FidelDiedFlag FidelDeathResponse D3FidelDQFlag
+AFEV D3MainVillageFallsFlag MainVillageFallsResponse 0 //have to check on every action probably
 END_MAIN
 
+TopLeftTreasure:
+GiveItem(TealGem, 0xFFFF)
+NoFade
+ENDA
+
+TopRightTreasure:
+GiveItem(Mine, 0xFFFF)
+NoFade
+ENDA
+
+CheckIfBothBossesDead:
+CHECK_EVENTID D3EnriqueDQFlag
+BEQ 1 s0 sC //if not set, go to end
+    CHECK_EVENTID D3InkaDQFlag
+    BEQ 1 s0 sC
+        ENUT 3
+        CALL EndingScene //if both of them are dead, wrap it up
+LABEL 1
+NoFade
+ENDA
+
+CheckIfInnerWallBroken:
+CheckTileChangeTriggered(19) //checking if our wall was actually broken; should be tilechange 19
+BEQ 1 s0 sC //if it is not set, then we skip ahead
+    CHECK_EVENTID D3FidelDQFlag
+    BNE 2 s0 sC //if he is dead, then skip past
+        CameraCursor(Fidel)
+        Text(HubD3MidBattle_Fidel_InnerWallBrokenText)
+    LABEL 2
+    CHECK_EVENTID D3EnriqueDQFlag
+    BNE 3 s0 sC //if he is dead, then skip past
+        CameraCursor(Enrique)
+        Text(HubD3MidBattle_Enrique_InnerWallBrokenText)
+    LABEL 3
+    CHECK_EVENTID D3InkaDQFlag
+    BNE 1 s0 sC //if he is dead, then skip past to end
+        CameraCursor(Inka)
+        Text(HubD3MidBattle_Inka_InnerWallBrokenText)
+LABEL 1
+ENUF D3WallBrokenAFEVFlag //should set this off so it doesn't play again, always; don't need to store this happening
+NoFade
+ENDA
+
+FidelDeathResponse:
+CHECK_EVENTID D3EnriqueDQFlag
+BNE 1 s0 sC //if he is dead, then skip past
+    CameraCursor(Enrique)
+    Text(HubD3MidBattle_Enrique_OnFidelKilledText)
+LABEL 1
+CHECK_EVENTID D3InkaDQFlag
+BNE 2 s0 sC //if he is dead, then skip past
+    CameraCursor(Inka)
+    Text(HubD3MidBattle_Inka_OnFidelKilledText)
+    SetAI(Inka,6,4,4,0) //Raid but also willing to fight
+    SetAI(D3Bandit_Raider, 6, 4, 4, 0) //raid only AI
+LABEL 2
+CHECK_DEPLOYED Razvan
+BEQ 3 s0 sC //if razvan was not deployed, then we skip to Lua's version
+    CameraCursor(Razvan)
+    Text(HubD3MidBattle_RazvanHere_OnFidelKilledText)
+    GOTO 4
+LABEL 3
+CameraCursor(Lua)
+Text(HubD3MidBattle_RazvanNotHere_OnFidelKilledText)
+LABEL 4
+NoFade
+ENDA
+
+MainVillageFallsResponse:
+CheckTileChangeTriggered(4) //the ruined big house
+BEQ 1 s0 sC //if it is not set, then we skip ahead and reset this flag
+    CHECK_DEPLOYED Razvan
+    BEQ 3 s0 sC //if not deployed, then branch to lua's response; either way, the event plays where someone reacts to the outcome
+        CameraCursor(Razvan)
+        Text(HubD3MidBattle_MainVillageDestroyed_RazvanResponse) //if razvan deployed, he notices; otherwise, lua says it
+        GOTO 2
+    LABEL 3
+        CameraCursor(Lua)
+        Text(HubD3MidBattle_MainVillageDestroyed_LuaResponse)
+        GOTO 2
+LABEL 1
+ENUF D3MainVillageFallsFlag
+LABEL 2
+NoFade
+ENDA
+
 Traps1:
+RedSigil(2,0)
+RedSigil(3,0)
+RedSigil(4,0)
+RedSigil(21,0)
+RedSigil(22,0)
+RedSigil(23,0)
 ENDTRAP
 ALIGN 4
 
@@ -34,15 +388,293 @@ ENDTRAP
 ALIGN 4
 
 Units1:
-UNIT Lua Captain 0 Level(10,Ally,False) [7,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+//middle group - 8
+UNIT Lua Captain 0 Level(10,Ally,False) [13,33] 0 0 0 0 [0x0] NoAI
+UNIT Razvan Ninja 0 Level(10,Ally,False) [13,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [12,34] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [14,34] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [11,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [15,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [12,36] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [14,36] 0 0 0 0 [0x0] NoAI
+
+//left group - 4
+UNIT Pilar Ninja 0 Level(10,Ally,False) [1,34] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [0,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [2,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [1,36] 0 0 0 0 [0x0] NoAI
+
+// right group - 4
+UNIT Pilar Ninja 0 Level(10,Ally,False) [25,34] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [24,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [26,35] 0 0 0 0 [0x0] NoAI
+UNIT Pilar Ninja 0 Level(10,Ally,False) [25,36] 0 0 0 0 [0x0] NoAI
 UNIT
 
+FidelGroup: //just folks defending the top part of the village
+UNIT Fidel Sage 0 Level(25,NPC,True) [13,14] 0 0 0 0 [Nosferatu, Fortify, AssistStaff, Elixir] BossHealAI
+//top block
+UNIT D3Incendivis Mage 0 Level(IncendivisMookLevel,NPC,True) [12,12] 0 0 0 0 [Arcfire] BossAI
+UNIT D3Incendivis Baron 0 Level(IncendivisEliteLevel,NPC,True) [13,12] 0 0 0 0 [HerosFlare, SilverSword] BossAI
+UNIT D3Incendivis Monk 0 Level(IncendivisMookLevel,NPC,True) [14,12] 0 0 0 0 [Luna] BossAI
+
+//left block
+UNIT D3Incendivis Monk 0 Level(IncendivisMookLevel,NPC,True) [4,12] 0 0 0 0 [Thani] BossAI
+UNIT D3Incendivis DarkKnight 0 Level(IncendivisEliteLevel,NPC,True) [4,13] 0 0 0 0 [Arcfire, SteelLance] BossAI
+UNIT D3Incendivis Shaman 0 Level(IncendivisMookLevel,NPC,True) [4,14] 0 0 0 0 [Elfire] BossAI
+
+//right block
+UNIT D3Incendivis Mage 0 Level(IncendivisMookLevel,NPC,True) [22,12] 0 0 0 0 [Arcfire] BossAI
+UNIT D3Incendivis Slayer 0 Level(IncendivisEliteLevel,NPC,True) [22,13] 0 0 0 0 [Luna, Peacekeeper] BossAI
+UNIT D3Incendivis Shaman 0 Level(IncendivisMookLevel,NPC,True) [22,14] 0 0 0 0 [Tornado] BossAI
+
+UNIT D3Incendivis Shaman 0 Level(IncendivisMookLevel,NPC,True) [12,7] 0 0 0 0 [Sagittae] BossAI
+UNIT D3Incendivis Shaman 0 Level(IncendivisMookLevel,NPC,True) [13,7] 0 0 0 0 [Sagittae] BossAI
+UNIT D3Incendivis Shaman 0 Level(IncendivisMookLevel,NPC,True) [14,7] 0 0 0 0 [Sagittae] BossAI
+UNIT
+
+TORCHUnits:
+//center boss group
+UNIT Enrique General 0 Level(25,Enemy,True) [13,22] 0 0 0 0 [Saunion, SilverAxe, BraveLance, KnightRing] GroupSevenAI
+UNIT D3TorchUnit Baron 0 Level(IncendivisEliteLevel,Enemy,True) [12,22] 0 0 0 0 [Arcfire, SilverLance] GroupSevenAI
+UNIT D3TorchUnit Marshall 0 Level(IncendivisEliteLevel,Enemy,True) [14,22] 0 0 0 0 [SilverAxe, SilverBow] GroupSevenAI
+
+// ~Turn 1 or Turn 5
+UNIT D3TorchUnit Sniper 0 Level(IncendivisEliteLevel,Enemy,True) [14,29] 0 0 0 0 [DeadeyeBow, GlassShield] BossHealAI
+UNIT D3TorchUnit WarMonk 0 Level(IncendivisEliteLevel,Enemy,True) [13,29] 0 0 0 0 [Tomahawk] HealerStationaryAI
+
+UNIT D3TorchUnit Halberdier 0 Level(IncendivisEliteLevel,Enemy,True) [8,34] 0 0 0 0 [BraveLance, Spear] GroupFiveAI
+UNIT D3TorchUnit Soldier 0 Level(IncendivisMookLevel,Enemy,True) [7,33] 0 0 0 0 [SilverLance] GroupFiveAI
+
+UNIT D3TorchUnit Champion 0 Level(IncendivisEliteLevel,Enemy,True) [18,34] 0 0 0 0 [SilverSword, Spear] GroupTwoAI
+UNIT D3TorchUnit Soldier 0 Level(IncendivisMookLevel,Enemy,True) [19,33] 0 0 0 0 [SilverLance] GroupTwoAI
+
+
+//turn 2
+UNIT D3TorchUnit Hero 0 Level(IncendivisEliteLevel,Enemy,True) [5,30] 0 0 0 0 [BraveSword, Tomahawk] GroupSixAI
+UNIT D3TorchUnit Fighter 0 Level(IncendivisMookLevel,Enemy,True) [6,29] 0 0 0 0 [SilverAxe] GroupSixAI
+
+UNIT D3TorchUnit Sniper 0 Level(IncendivisEliteLevel,Enemy,True) [21,30] 0 0 0 0 [Tomereaver, Knifekiller] GroupOneAI
+UNIT D3TorchUnit Archer 0 Level(IncendivisMookLevel,Enemy,True) [20,29] 0 0 0 0 [SilverBow] GroupOneAI
+
+// Turn 4
+UNIT D3TorchUnit Marksman 0 Level(IncendivisEliteLevel,Enemy,True) [10,27] 0 0 0 0 [Toradar, HandCannon] GroupThreeAI
+UNIT D3TorchUnit Gunner 0 Level(IncendivisMookLevel,Enemy,True) [11,26] 0 0 0 0 [SilverMusket] GroupThreeAI
+UNIT D3TorchUnit Gunner 0 Level(IncendivisMookLevel,Enemy,True) [9,26] 0 0 0 0 [Pistol] GroupThreeAI
+
+UNIT D3TorchUnit Slayer 0 Level(IncendivisEliteLevel,Enemy,True) [16,26] 0 0 0 0 [WoDao, Elfire] GroupFourAI
+UNIT D3TorchUnit Myrmidon 0 Level(IncendivisMookLevel,Enemy,True) [17,25] 0 0 0 0 [Rapier] GroupFourAI
+UNIT D3TorchUnit Monk 0 Level(IncendivisMookLevel,Enemy,True) [15,25] 0 0 0 0 [Luna] GroupFourAI
+UNIT
+
+//21 of the imperials
+
+RedwingUnits: // the boss ~ maybe around Turn 10
+UNIT Inka Dracoknight 0 Level(23,Enemy,True) [13,1] 0 0 0 0 [BraveAxe, Tomahawk, Swordreaver] BossAI
+
+// ~Turn 1
+UNIT D3Bandit Deserter 0 Level(RedwingMookLevel,Enemy,True) [24,30] 0 0 0 0 [SteelLance] BossAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [26,27] 0 0 0 0 [Bloodaxe] AttackInRangeAI
+UNIT D3Bandit Mercenary 0 Level(RedwingMookLevel,Enemy,True) [1,30] 0 0 0 0 [SteelSword] BossAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,24] 0 0 0 0 [Oversize] AttackInRangeAI
+
+
+// ~Turn 3
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [24,19] 0 0 0 0 [SilverAxe] AttackInRangeAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,19] 0 0 0 0 [Swordreaver] AttackInRangeAI
+UNIT D3Bandit Brigand 0 Level(RedwingMookLevel,Enemy,True) [2,23] 0 0 0 0 [SteelAxe] BossAI
+UNIT D3Bandit Brigand 0 Level(RedwingMookLevel,Enemy,True) [24,22] 0 0 0 0 [SteelAxe] BossAI
+UNIT
+
+//9
+
+WallbreakerUnits:
+//wall destroyer groups: 3 wall breakers and 3 dragon riders behind them
+//left group ~ Turn 4?
+UNIT D3Bandit Fighter 0 Level(RedwingPrisonerLevel,Enemy,True) [2,12] 0 0 0 0 [IronAxe] WallAttackerAI
+UNIT D3Bandit Mercenary 0 Level(RedwingPrisonerLevel,Enemy,True) [2,13] 0 0 0 0 [IronSword] WallAttackerAI
+UNIT D3Bandit Deserter 0 Level(RedwingPrisonerLevel,Enemy,True) [2,14] 0 0 0 0 [IronLance] WallAttackerAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,12] 0 0 0 0 [SilverAxe] BossAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [0,13] 0 0 0 0 [Sagittae, SilverAxe] BossAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [0,14] 0 0 0 0 [SilverAxe] BossAI
+
+//right group ~ Turn 4?
+UNIT D3Bandit Mercenary 0 Level(RedwingPrisonerLevel,Enemy,True) [24,12] 0 0 0 0 [IronSword] WallAttackerAI
+UNIT D3Bandit Deserter 0 Level(RedwingPrisonerLevel,Enemy,True) [24,13] 0 0 0 0 [IronLance] WallAttackerAI
+UNIT D3Bandit Fighter 0 Level(RedwingPrisonerLevel,Enemy,True) [24,14] 0 0 0 0 [IronAxe] WallAttackerAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [26,12] 0 0 0 0 [SilverAxe] BossAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [26,13] 0 0 0 0 [Sagittae, SilverAxe] BossAI
+UNIT D3Bandit_Raider DragonRider 0 Level(RedwingMookLevel,Enemy,True) [26,14] 0 0 0 0 [SilverAxe] BossAI
+
+//top group ~ should die to Fidel and his bros
+UNIT D3Bandit Deserter 0 Level(RedwingPrisonerLevel,Enemy,True) [12,4] 0 0 0 0 [IronLance] WallAttackerAI
+UNIT D3Bandit Mercenary 0 Level(RedwingPrisonerLevel,Enemy,True) [13,4] 0 0 0 0 [IronSword] WallAttackerAI
+UNIT D3Bandit Fighter 0 Level(RedwingPrisonerLevel,Enemy,True) [14,4] 0 0 0 0 [IronAxe] WallAttackerAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [12,2] 0 0 0 0 [Elsurge, BattleAxe] BossAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [13,2] 0 0 0 0 [Elsurge, Hammer] BossAI
+UNIT D3Bandit_Raider MaligKnight 0 Level(RedwingEliteLevel,Enemy,True) [14,2] 0 0 0 0 [Elsurge, BattleAxe] BossAI
+UNIT
+
+GreenThieves:
+UNIT D3Thief1 Thief 0 Level(RedwingPrisonerLevel,NPC,True) [1,21] 0 0 0 0 [IronKnife] EscapeOnlyAI
+UNIT D3Thief2 Thief 0 Level(RedwingPrisonerLevel,NPC,True) [25,21] 0 0 0 0 [IronKnife] EscapeOnlyAI
+UNIT
+
+//18
+
+// 46 total
+
+// Now, two thieves on each side on top of this: have to talk to them to stop them (so I can safely make them show up later, on Turn 3)
+
 BeginningScene:
+COUNTER_SET 0 0 //initializes 0th counter, which I'll use later
+LoadEnemies(TORCHUnits)
+LoadEnemies(RedwingUnits)
+LoadEnemies(WallbreakerUnits)
+LoadEnemies(FidelGroup)
+LoadEnemies(GreenThieves)
+SetBackground(Outside_Village_Day)
+MUSC CastawayHeartID
+Text(HubD3BeginningScene1)
+FADI 15
+STAL 60
+SetBackground(Town_Day)
+Text(HubD3BeginningScene2)
+FadeOutMusic
+STAL 30
+MUSC SwabbieTalkID
+Text(HubD3BeginningScene3)
+Text(HubD3BeginningScene4)
+Text(HubD3BeginningScene5)
+FADI 15
+FadeOutMusic
+STAL 60
+SetBackground(Outside_Village_Day)
+MUSC AvastMeHeartiesID
+Text(HubDBeginningScene6)
+ENUT D3TopLeftTreasureFlag
+ENUT D3TopRightTreasureFlag //set these ahead of time so they can't be triggered without talking to the shitters
 GotoPrepScreen
 NoFade
 ENDA
 
 EndingScene:
+FADI 15
+RemoveAll
+CHECK_EVENTID D3MainVillageFallsFlag
+BNE 1 s0 sC //if it is not set, branch past
+    CALL D3_GoodEndingEvent
+    GOTO 2
+LABEL 1
+CALL D3_BadEndingEvent
+LABEL 2
+FADI 15
+CHECK_EVENTID D3FidelDQFlag
+BNE 230 s0 sC
+    LOAD1 1 FidelAllyGroup //if he is dead, then don't load him in
+    ENUN
+LABEL 230
+MNC2 HubD
+NoFade
+ENDA
+
+D3_GoodEndingEvent:
+ENUT D3_Razvan_Mother_Alive_Flag
+SetBackground(0x2)
+MUSC CastawayHeartID
+Text(HubD3EndingScene1_MainHouseSaved)
+FADI 15
+STAL 60
+SetBackground(0x5)
+Text(HubD3EndingScene2_MainHouseSaved)
+FADI 15
+FadeOutMusic
+STAL 60
+MUSC StillZephyrsID
+SetBackground(0x5)
+CHECK_EVENTID D3FidelDQFlag
+BNE 776 s0 sC  
+    Text(HubD3EndingScene3_FidelAlive)
+    GOTO 777
+LABEL 776
+Text(HubD3EndingScene_FidelDead)
+LABEL 777
+CALL CheckD3HomesStatusAndIncrementCounter
+COUNTER_CHECK 0 //check counter 0 now
+SVAL s1 6
+BLT 778 sC s1 //if our counter's results are less than 6, branch past
+    Text(HubD3EndingScene4_AllSideVillagesSavedText)
+    GiveGold(5000)
+    GOTO 780
+LABEL 778
+SVAL s1 3
+BLT 779 sC s1 //if we saved less than 3 houses, then you don't get much
+    Text(HubD3EndingScene4_SomeSideVillagesSavedText)
+    GiveGold(2500)
+    GOTO 780
+LABEL 779
+    Text(HubD3EndingScene4_FewtoNoSideVillagesSavedText)
+    GiveGold(1000)
+LABEL 780
+FADI 15
+FadeOutMusic
+STAL 60
+SetBackground(0x1)
+MUSC CastawayHeartID
+SoloTextboxCenter(HubD3EndingScene5_ManyHoursLater)
+Text(HubD3EndingScene5_MainHouseSaved)
+NoFade
+ENDA
+
+FidelAllyGroup:
+UNIT Fidel Sage 0 Level(25,Ally,True) [13,14] 0 0 0 0 [Nosferatu, Fortify, AssistStaff, Elixir] NoAI
+UNIT
+
+CheckD3HomesStatusAndIncrementCounter: //checks all the yellow houses and increments Counter 0 if not ruined (if X tilechange is not triggered)
+CheckTileChangeTriggered(0)
+BNE 1000 s0 sC //if triggered, then skip past
+    COUNTER_INC 0
+LABEL 1000
+CheckTileChangeTriggered(2)
+BNE 1001 s0 sC 
+    COUNTER_INC 0
+LABEL 1001
+CheckTileChangeTriggered(6)
+BNE 1002 s0 sC 
+    COUNTER_INC 0
+LABEL 1002
+CheckTileChangeTriggered(8)
+BNE 1003 s0 sC 
+    COUNTER_INC 0
+LABEL 1003
+CheckTileChangeTriggered(10)
+BNE 1004 s0 sC 
+    COUNTER_INC 0
+LABEL 1004
+CheckTileChangeTriggered(12)
+BNE 1005 s0 sC 
+    COUNTER_INC 0
+LABEL 1005
+NoFade
+ENDA
+
+
+D3_BadEndingEvent:
+SetBackground(Town_Day)
+MUSC CherishTheDeadID
+Text(HubD3EndingScene1_MainHouseDestroyed)
+FADI 15
+STAL 60
+SetBackground(Village)
+Text(HubD3EndingScene2_MainHouseDestroyed)
+FADI 15
+STAL 120
+FADU 15
+Text(HubD3EndingScene3_MainHouseDestroyed)
+FADI 15
+STAL 60
+SetBackground(Outside_Village_Evening)
+Text(HubD3EndingScene4_MainHouseDestroyed)
 NoFade
 ENDA
 
@@ -57,3 +689,7 @@ END_MAIN
 
 Tutorial:
 END_MAIN
+
+
+
+// turn 6: more enemies on the side, and a reinforcement with Inka

@@ -122,17 +122,4 @@ WRankIcons:
 // #incext Png2Dmp "bin/WRankIcons.png"
 #incbin "bin/image.dmp"
 
-PUSH
-ORG $A1A0A4
-#incbin "bin/ConvoyWRankIconsTop.dmp"
-ORG $A1A23C
-#incbin "bin/ConvoyWRankIconsBottom.dmp"
-ORG $A1A3FC
-#incbin "bin/ConvoyWRankIcons_pal.dmp"
-//ORG $A19CCC
-//#incbin "bin/ConvoyWRankIconsIndividual.dmp"
-//ORG $A1A084
-//#incbin "bin/ConvoyWRankIconsIndividual_pal.dmp"
-POP
-
 #endif // HAX_ICON_REWORK_INTERNAL

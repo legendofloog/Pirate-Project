@@ -102,19 +102,19 @@
 	//breakables things
 	PUSH
 
-		ORG $2E3A8
-		jumpToHack(TrapRework_NewAddBreakables)
+		//ORG $2E3A8
+		//jumpToHack(TrapRework_NewAddBreakables)
 
-		ORG $250BC
-		jumpToHack(TrapRework_NewTryAddTrapsToTargetList)
+		//ORG $250BC
+		//jumpToHack(TrapRework_NewTryAddTrapsToTargetList) we're doing our own thing with targetable traps
 
-		ORG $2C910
+		ORG $2C910 //leave this stuff
 		jumpToHack(TrapRework_MakeSnagTargetAdder)
 
-		ORG $81784
+		ORG $81784 //leave 
 		jumpToHack(TrapRework_DoNewBreakAnim)
 
-		ORG $7B374
+		ORG $7B374 //leave
 		jumpToHack(TrapRework_DoNewHideMapSprite)
 
 		ORG $57C20
@@ -123,7 +123,7 @@
 		POIN TrapRework_NewForceMapAnimsForTrap
 
 		ORG $8CA3C
-		jumpToHack(TrapRework_NewTerrainHPDisplay) 
+		jumpToHack(TrapRework_NewTerrainHPDisplay)
 	POP
 
 

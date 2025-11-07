@@ -41,20 +41,20 @@ TurnEventPlayer(0xB, RaiseIsland2, 1, 255)
 TurnEventPlayer(0xD, RaiseIsland3, 1, 255)
 TurnEventPlayer(0xF, RaiseIsland4, 1, 255)
 TurnEventPlayer(0, SinkChest1, 8)
-TurnEventPlayer(0, SinkChest2, 12)
-TurnEventPlayer(0, SinkChest3, 16)
+TurnEventPlayer(0, SinkChest2, 11)
+TurnEventPlayer(0, SinkChest3, 14)
 // turn 6: warn about chest 1
 TurnEventPlayer(0, WarnChest1, 6)
 // turn 10: warn about chest 2
-TurnEventPlayer(0, WarnChest2, 10)
+TurnEventPlayer(0, WarnChest2, 9)
 // turn 14: warn about chest 3
-TurnEventPlayer(0, WarnChest3, 14)
+TurnEventPlayer(0, WarnChest3, 12)
 // turn 15: change music to time's ticking
 TurnEventPlayer(0x4,MusicChangeWarning,15)
-// game over on turn 20
-TurnEventPlayer(0,TurnLimit,20)
+// game over on turn 17
+TurnEventPlayer(0,TurnLimit,17)
 TurnEventPlayer(0, T7_SanzHermScene, 7)
-TurnEventPlayer(0, T9_HermYurScene, 9)
+TurnEventPlayer(0, T9_HermYurScene, 10)
 END_MAIN
 
 
@@ -114,7 +114,7 @@ UNIT
 
 
 Enemies_Initial:
-UNIT Baltasar Dragoon 0 Level(20, Enemy, False) [6,10] 0 0 0 0 [SilverSword,SilverMusket] BossAI
+UNIT Baltasar Dragoon 0 Level(20, Enemy, True) [6,10] 0 0 0 0 [SilverSword,SilverMusket] BossAI
 // turn 1
 UNIT Sentinel LanceCav Baltasar Level(C1LevelT1, Enemy, True) [0,6] 0 0 0 0 [SteelLance] ChargeAI
 UNIT Sentinel LanceCav Baltasar Level(C1LevelT1, Enemy, True) [3,6] 0 0 0 0 [SteelLance] ChargeAI
@@ -135,11 +135,11 @@ UNIT Guard PegasusRider Baltasar Level(C1LevelT1, Enemy, True) [6,15] 0 0 0 0 [L
 UNIT
 
 Enemies_Island2:
-UNIT TheCloser Warrior 0 Level(20, Enemy, False) [10,20] 0 0 0x1 REDA10R20 [Tomahawk, Battleaxe, SilverBow] GroupOneAI
+UNIT TheCloser Warrior 0 Level(20, Enemy, True) [10,20] 0 0 0x1 REDA10R20 [Tomahawk, Battleaxe, SilverBow] GroupOneAI
 // turn 3
 UNIT Sentinel Vanguard TheCloser Level(C1LevelT1, Enemy, True) [4,14] 0 0 0 0 [Tomahawk] BossAI
 UNIT Sentinel Warden TheCloser Level(C1LevelT1, Enemy, True) [6,14] 0 0 0 0 [FlameSword] BossAI
-UNIT Sentinel Runeshield TheCloser Level(C1LevelT2, Enemy, True) [5,13] 0 0 0 0 [FlameSword,Bolting] BossAI
+UNIT Sentinel Runeshield TheCloser Level(C1LevelT2, Enemy, True) [5,13] 0 0 0 0 [FlameSword,Bolt] BossAI
 UNIT Guard Sage TheCloser Level(C1LevelT2, Enemy, True) [5,15] 0 0 0 0 [Elfire,GaleStrike,Mend] [0xE,0x3,0x8,0x0]
 //UNIT Sentinel LanceKnight TheCloser Level(C1LevelT2, Enemy, True) [3,16] 0 0 0 0 [SilverLance] ChargeAI
 // turn 4
@@ -157,7 +157,7 @@ UNIT Guard Falcoknight TheCloser Level(C1LevelT2, Enemy, True) [11,23] 0 0 0 0 [
 UNIT
 
 Enemies_Island3:
-UNIT Krezke Slayer_F 0 Level(20, Enemy, False) [19,14] 0 0 0x1 REDA19R14 [Runesword, Arcfire, Statuette] BossAI
+UNIT Krezke Slayer_F 0 Level(20, Enemy, True) [19,14] 0 0 0x1 REDA19R14 [Runesword, Arcfire, Statuette] BossAI
 // turn 6
 //  UNIT Guard Shaman Krezke Level(C1LevelT1, Enemy, True) [10,19] 0 0 0 0 [Elfire] AttackInRangeAI
 UNIT Guard Archer Krezke Level(C1LevelT1, Enemy, True) [11,20] 0 0 0 0 [ShiningBow,SteelBow] AttackInRangeAI
@@ -169,7 +169,7 @@ UNIT Guard Assassin Krezke Level(C1LevelT2, Enemy, True) [13,18] 0 0 0 0 [SteelD
 UNIT Guard Shaman Krezke Level(C1LevelT1, Enemy, True) [16,15] 0 0 0 0 [Elsurge] ChargeAI
 UNIT Guard Hero Krezke Level(C1LevelT2, Enemy, True) [19,17] 0 0 0 0 [SilverAxe,SilverSword] ChargeAI
 // turn 8 and 9? maybe?
-UNIT Sentinel Runeshield Krezke Level(C1LevelT2, Enemy, True) [22,17] 0 0 0 0 [SteelLance,Purge] BossAI
+UNIT Sentinel Runeshield Krezke Level(C1LevelT2, Enemy, True) [22,17] 0 0 0 0 [SteelLance,Bolting] BossAI
 UNIT Guard Warrior Krezke Level(C1LevelT2, Enemy, True) [19,16] 0 0 0 0 [SteelAxe] AttackInRangeAI
 UNIT Guard Sage Krezke Level(C1LevelT2, Enemy, True) [20,17] 0 0 0 0 [Elfire] AttackInRangeAI
 UNIT Guard Cleric Krezke Level(C1LevelT1, Enemy, True) [15,16] 0 0 0 0 [Physic] [0xE,0x3,0x8,0x20]
@@ -179,7 +179,7 @@ UNIT
 
 Enemies_Island4:
 // UNIT Sanz Sage 0 Level(22, Enemy, False) [15,2] 0 0 0x1 REDA15R2 [Tornado, HerosFlare, Warp, Physic] BossAI
-UNIT Sanz Sage 0 Level(22, Enemy, False) [15,2] 0 0 0x1 REDA15R2 [Tornado, Sagittae, Warp, Physic] BossAI
+UNIT Sanz Sage 0 Level(22, Enemy, True) [15,2] 0 0 0x1 REDA15R2 [Tornado, Sagittae, Warp, Physic] BossAI
 // turn 10 initial dudes
 UNIT Sentinel Fighter Sanz Level(C1LevelT1, Enemy, True) [18,11] 0 0 0 0 [SteelAxe] AttackInRangeAI
 UNIT Sentinel Soldier Sanz Level(C1LevelT1, Enemy, True) [20,9] 0 0 0 0 [SteelLance] AttackInRangeAI
@@ -195,8 +195,8 @@ UNIT Guard Marksman Sanz Level(C1LevelT2, Enemy, True) [17,9] 0 0 0 0 [Culverin,
 UNIT Guard WarMonk Sanz Level(C1LevelT2, Enemy, True) [16,6] 0 0 0 0 [SteelAxe,Physic] [0xE,0x3,0x8,0x20]
 UNIT Sentinel Ranger Sanz Level(C1LevelT2, Enemy, True) [14,6] 0 0 0 0 [Greatbow] BossAI
 // change this guy back to a runeshield, but with a Bolt tome instead of Bolting? once I have access to that
-// UNIT Sentinel Runeshield Sanz Level(C1LevelT2, Enemy, True) [12,1] 0 0 0 0 [Nosferatu,Bolting] BossAI
-UNIT Guard WarMonk Sanz Level(C1LevelT2, Enemy, True) [12,1] 0 0 0 0 [SteelAxe,Silence] BossAI
+UNIT Sentinel Runeshield Sanz Level(C1LevelT2, Enemy, True) [12,1] 0 0 0 0 [Nosferatu,Bolt] BossAI
+//UNIT Guard WarMonk Sanz Level(C1LevelT2, Enemy, True) [12,1] 0 0 0 0 [SteelAxe,Silence] BossAI
 UNIT Sentinel Runeshield Krezke Level(C1LevelT2, Enemy, True) [16,3] 0 0 0 0 [Bolt] BossAI
 UNIT
 
@@ -206,27 +206,27 @@ UNIT Guard Gunner TheCloser Level(C1LevelT1, Enemy, True) [12,14] 0 0 0 0 [Steel
 UNIT Sentinel Vanguard Krezke Level(C1LevelT1, Enemy, True) [18,20] 0 0 0 0 [Spear] BossAI
 UNIT Sentinel Vanguard Krezke Level(C1LevelT1, Enemy, True) [19,20] 0 0 0 0 [Tomahawk] BossAI
 UNIT Guard Hero Krezke Level(C1LevelT2, Enemy, True) [18,23] 0 0 0 0 [Wingclipper] GroupTwoAI
-UNIT Guard WarMonk Krezke Level(C1LevelT2, Enemy, True) [20,22] 0 0 0 0 [SteelAxe,Restore] GroupTwoAI
+UNIT Guard WarMonk Krezke Level(C1LevelT2, Enemy, True) [20,22] 0 0 0 0 [SteelAxe] GroupTwoAI
 UNIT Sentinel Soldier Sanz Level(C1LevelT1, Enemy, True) [25,6] 0 0 0 0 [SteelLance] GroupThreeAI
 UNIT Guard Warrior Sanz Level(C1LevelT2, Enemy, True) [26,9] 0 0 0 0 [Hammer] GroupThreeAI
-UNIT Sentinel DarkKnight Sanz Level(C1LevelT2, Enemy, True) [22,7] 0 0 0 0 [Elfire,AngelicRobe] GroupThreeAI
+UNIT Sentinel DarkKnight Sanz Level(C1LevelT2, Enemy, True) [22,7] 0 0 0 0 [Elfire,HideShield] GroupThreeAI
 UNIT Guard Archer Sanz Level(C1LevelT1, Enemy, True) [24,5] 0 0 0 0 [SteelBow] GroupThreeAI
 UNIT
 
 
 
 Intro_Cutscene_Trio:
-UNIT Yurena Champion 0 Level(20, Enemy, False) [6,9] 0 0 1 REDA6R6 [BraveLance, Saunion] NoAI
+UNIT Yurena Champion_F 0 Level(20, Enemy, False) [6,9] 0 0 1 REDA6R6 [BraveLance, Saunion] NoAI
 UNIT Sanz Sage 0 Level(22, Enemy, False) [7,9] 0 0 0x1 REDA7R7 [Tornado, Sagittae, Warp, Physic] NoAI
-UNIT Baltasar Dragoon 0 Level(20, Enemy, False) [8,9] 0 0 0x1 REDA8R6 [SilverSword,SilverMusket] NoAI
+UNIT Baltasar Dragoon 0 Level(20, Enemy, True) [8,9] 0 0 0x1 REDA8R6 [SilverSword,SilverMusket] NoAI
 UNIT
 
 Intro_Krezke:
-UNIT Krezke Slayer_F 0 Level(20, Enemy, False) [4,10] 0 0 0x1 REDA4R6 [Runesword, Arcfire, Statuette] NoAI
+UNIT Krezke Slayer_F 0 Level(20, Enemy, True) [4,10] 0 0 0x1 REDA4R6 [Runesword, Arcfire, Statuette] NoAI
 UNIT
 
 Outro_Yurena:
-UNIT Yurena Champion 0 Level(20, NPC, False) [7,1] 0 0 0 0 [BraveLance, Saunion] NoAI
+UNIT Yurena Champion_F 0 Level(20, NPC, False) [7,1] 0 0 0 0 [BraveLance, Saunion] NoAI
 UNIT
 
 Outro_Players:
@@ -271,7 +271,8 @@ BeginningScene:
 	CHECK_ALIVE Biko
 	BEQ 0xBEEF 0x0 0xC
 	Text(C1_Intro_OndehBikoScene)
-	STAL 30
+	FADI 15
+	STAL 60
 	LABEL 0xBEEF
 
 	// lua scene?
@@ -388,19 +389,16 @@ EndingScene:
 	RemoveAll
 	EARTHQUAKE_END
 	SetBackground(Ship)
-	FadeBackFromBlack
 	Text(C1_Outro_OutsideScene)
 	FadeOutMusic
 	FadeToBlack
-	STAL 60
+	STAL 120
 
 	// broken wall sound! not sure which one that is
 	SOUN 0xAF
 	// get a rocky island background
 	SetBackground(Forest_Dense)
-
 	STAL 60
-	FadeBackFromBlack
 	Music(CherishTheDeadID)
 	Text(C1_Outro_Crash_RazvanRuby)
 

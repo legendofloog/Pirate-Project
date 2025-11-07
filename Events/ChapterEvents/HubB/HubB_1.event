@@ -17,9 +17,9 @@ POIN BeginningScene EndingScene
 
 TurnBasedEvents:
 TurnEventPlayer(0, WyvernWarning, 4)
-TurnEventPlayer(0, WyvernSpawn, 6)
-TurnEventPlayer(0, ThiefSpawnB, 6)
-TurnEventPlayer(0, ThiefSpawnC, 7)
+TurnEventPlayer(0, WyvernSpawn, 5)
+TurnEventPlayer(0, ThiefSpawnB, 5)
+TurnEventPlayer(0, ThiefSpawnC, 6)
 TurnEventPlayer(0, KirilGoesAggressive, 7)
 END_MAIN
 
@@ -37,7 +37,7 @@ LocationBasedEvents:
 Chest(HexlockShield, 2, 2)
 Chest(Elsurge, 5, 2)
 Chest(FliersPermit, 13, 9)
-Chest(SilverBow, 16, 12)
+Chest(Greatbow, 16, 12)
 Chest(FlameSword, 0, 15)
 Chest(InfiltratorGun, 2, 15)
 Door(3,4)
@@ -79,7 +79,7 @@ AntlionsInitial:
 //Temp
 //UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [9,20] 0 0 0 0 [SteelDagger, Wingclipper] BossAI
 //boss squad
-UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [9,20] 0 0 0 0 [SteelDagger, Wingclipper] AttackInRangeAI
+UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [9,20] 0 0 0 0 [SilverDagger, Wingclipper] AttackInRangeAI
 UNIT Antlion Brigand 0 Level(10, Enemy, True) [7,21] 0 0 0 0 [Crusher] GroupOneAI
 UNIT Antlion Deserter 0 Level(10, Enemy, True) [11,21] 0 0 0 0 [Pike] GroupOneAI
 //turn 1
@@ -108,17 +108,17 @@ UNIT Antlion SwordCav 0 Level(9, Enemy, True) [12,16] 0 0 0 0 [SteelSword] Attac
 UNIT Antlion Mercenary 0 Level(9, Enemy, True) [6,18] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
 UNIT Antlion Myrmidon 0 Level(9, Enemy, True) [11,17] 0 0 0 0 [Lancereaver] AttackWhenInRangeAI
 UNIT Antlion Shaman 0 Level(10, Enemy, True) [14,20] 0 0 0 0 [Elfire] AttackWhenInRangeAI
-UNIT Antlion Gunner 0 Level(10, Enemy, True) [16,17] 0 0 0 0 [SteelMusket,Pistol] AttackWhenInRangeAI
+UNIT Antlion Gunner 0 Level(10, Enemy, True) [16,18] 0 0 0 0 [SteelMusket,Pistol] AttackWhenInRangeAI
 UNIT Antlion Mercenary 0 Level(10, Enemy, True) [17,19] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
 //nw chest room
 UNIT Antlion Soldier 0 Level(9, Enemy, True) [2,1] 0 0 0 0 [SteelLance] ChargeAI
 UNIT Antlion Mercenary 0 Level(9, Enemy, True) [5,1] 0 0 0 0 [SteelSword] ChargeAI
 //sw chest room
-UNIT Antlion Soldier 0 Level(9, Enemy, True) [0,15] 0 0 0 0 [SteelLance] ChargeAI
+UNIT Antlion Soldier 0 Level(9, Enemy, True) [0,14] 0 0 0 0 [SteelLance] ChargeAI
 UNIT Antlion Brigand 0 Level(9, Enemy, True) [1,15] 0 0 0 0 [Swordreaver] ChargeAI
 //se chest room
-UNIT Antlion Warden 0 Level(10, Enemy, True) [16,11] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
-UNIT Antlion Vanguard 0 Level(10, Enemy, True) [14,9] 0 0 0 0 [Oversize] AttackWhenInRangeAI
+UNIT Antlion Warden 0 Level(9, Enemy, True) [16,11] 0 0 0 0 [SteelSword] AttackWhenInRangeAI
+UNIT Antlion Vanguard 0 Level(9, Enemy, True) [14,9] 0 0 0 0 [Oversize] AttackWhenInRangeAI
 UNIT
 
 WyvernReinforcements:
@@ -141,7 +141,7 @@ UNIT Antlion Thief 0 Level(9, Enemy, True) [0,8] 0 0 0 0 [IronKnife,ChestKey,Doo
 UNIT
 
 DmitrSpawn:
-UNIT Dmitr Brigand 0 Level(7,Ally,True) [1,1] 0 0 0 0 [Bloodaxe, RecoilAxe, Vulnerary] NoAI
+UNIT Dmitr Brigand 0 Level(6,Ally,True) [1,1] 0 0 0 0 [KillerAxe, IronAxe, Vulnerary] NoAI
 UNIT
 
 IntroCutsceneNPCs:
@@ -193,7 +193,7 @@ UNIT
 
 UNIT:
 IntroCutsceneKiril:
-UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [13,4] 0 0 0 0 [SteelDagger, Wingclipper] BossAI
+UNIT Kiril MasterNinja 0 Level(13,Enemy,True) [13,4] 0 0 0 0 [SilverDagger, Wingclipper] BossAI
 UNIT Antlion Ninja 0 Level(13,Enemy,True) [12,5] 0 0 0 0 [SteelDagger, Wingclipper] BossAI
 UNIT
 
@@ -399,7 +399,7 @@ BeginningScene:
 	LOAD1 1 AntlionsInitial
 	ENUN
 	REMOVEALL_BLUE
-	GoToPrepScreen2
+	GotoPrepScreen
 	CAMERA_CENTERED[14,4]
 	FADU 10
 	NoFade

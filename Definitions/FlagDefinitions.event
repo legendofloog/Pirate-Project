@@ -18,10 +18,32 @@
 #define A1_YurenaGenericBattleQuoteSeen 0x27
 #define A1_GeraldoGenericBattleQuoteSeen 0x28
 
+// D-3 stuff
+#define D3_Enrique_BQ_Flag  1
+#define D3_Inka_BQ_Flag  2 //not using these for other purposes so should be fine
+#define D3EnriqueDQFlag 15
+#define D3InkaDQFlag 16
+#define D3FidelDQFlag 23
+#define D3WallBrokenAFEVFlag 24
+#define D3_Enrique_Razvan_BQ_Flag 26
+#define D3_Enrique_Pilar_BQ_Flag 27
+#define D3_Enrique_Desiderio_BQ_Flag 28
+#define D3_Enrique_Calista_BQ_Flag 29
+#define D3_Enrique_Avocado_BQ_Flag 30
+#define D3_Enrique_Jaime_BQ_Flag 31
+#define D3_Inka_Razvan_BQ_Flag 32
+#define D3_Inka_Lua_BQ_Flag 33
+#define D3_Fidel_Inka_BQ_Flag 34
+#define D3_Inka_Tangyuan_BQ_Flag 35
+#define D3_Inka_Dmitr_BQ_Flag 36
+
+
+
 // used everywhere, do not touch - Loog
 #define LuaInAHubFlag 0xA0
 #define InAHubFlag 0xA0
 #define GoToNextHubFlagID 0xA8 //for going to the next hub
+#define DifficultyChangeFlag 0xEC //for switching difficulties mid-hub
 
 // Hub A globals
 #define WentToHubA1 0x83
@@ -56,6 +78,13 @@
 #define PeddlerHubAEncounterFlag 0xB0
 #define ShipwrightCaptainHubATalkFlag 0xB1
 #define TwoPatronsHubATalkFlag 0xB2
+#define HubAGreagorDocksChestOpenedFlag 0xB3
+#define HubAGreagorVillageVisitedFlag 0xB4
+#define HubALuaBaseChestOpenedFlag 0xB5
+#define HubAGreagorDocksChestReactionFlag 0xB6
+#define HubALuaBaseChestReactionFlag 0xB7
+
+
 // The peddler will be on the map as long as this flag is triggered. 1st hub event that occurs after two maps.
 
 
@@ -87,13 +116,14 @@
 #define HubBCarmenFataGlobalTalkFlag 0xA5
 #define HubBBartzGlobalTalkFlag 0xA6
 #define HubBAvocadoGlobalTalkFlag 0xA7
-
 #define HubBPassarolaXimoGlobalTalkFlag 0xA9
 #define HubBHusniyeGlobalTalkFlag 0xAA
 #define HubBRazvanRahelGlobalTalkFlag 0xAB
 #define HubBSuzanneMatteoTangyuanGlobalTalkFlag 0xAC
 #define HubBEstelleIndioGlobalTalkFlag 0xAD
 #define HubBYodsenDmitrGlobalTalkFlag 0xAE
+#define HubBJaimeLeonorGlobalTalkFlag 0xAF
+
 
 
 //and again for Hub C - Loog
@@ -117,3 +147,25 @@
 #define HubC_Windy_Recruited_Flag 0xAB
 #define HubC_Kurt_Recruited_Flag 0xAC
 #define HubC_Theana_Recruited_Flag 0xAD
+#define HubC_Have_Encountered_The_Darkness_Flag 0xAE
+
+// Hub D flags - Decide whether the character will stay no matter what, or not
+#define D3_Rogelio_Alive_Flag 0xB7
+#define D3_Razvan_Mother_Alive_Flag 0xB8
+
+#define HubD_Desiderio_Razvan_Pilar_Global_Talk_Flag 0x92
+#define HubD_Ximo_Carmen_Hermen_Global_Talk_Flag 0x93
+#define HubD_Matteo_Suzanne_Kurt_Global_Talk_Flag 0x94
+#define HubD_Kai_Theana_Global_Talk_Flag 0x95
+#define HubD_Jaime_Leonor_Windy_Global_Talk_Flag 0x96
+#define HubD_Estelle_Indio_Remora_Global_Talk_Flag 0x97
+#define HubD_Leandra_Juan_Tanyuan_Global_Talk_Flag 0x98
+#define HubD_Calista_Fidel_Valerie_Global_Talk_Flag 0x99
+#define HubD_Ernest_Biko_Ondeh_Global_Talk_Flag 0xA1
+#define HubD_Orlando_Lexa_Adrian_Global_Talk_Flag 0xA2
+#define HubD_Fata_Neltume_Dmitr_Global_Talk_Flag 0xA3
+#define HubD_Ruby_Kaisa_Global_Talk_Flag 0xA4
+#define HubD_Bolton_Rima_Global_Talk_Flag 0xA5
+#define HubD_Noah_Global_Talk_Flag 0xA6
+#define HubD_Durgham_Yodsen_Global_Talk_Flag 0xA7
+#define HubD_Rahel_Ida_Ponte_Global_Talk_Flag 0xA9

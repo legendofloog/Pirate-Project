@@ -8,6 +8,55 @@ HP Bars[.][X]
 # 0x00B2
 Set health bar display[X]
 
+# 0x047F
+Increases an ally's Res by 7,[NL]
+reducing by 1 each turn. +1 WEXP.[X]
+
+# 0x471
+Restores Mag + 5 HP.[X]
+
+# 0x472
+Restores Mag + 15 HP.[X]
+
+# 0x473
+Restores Mag + 30 HP.[X]
+
+# 0x477
+Halts target's magic[N]
+and words for 3 turns.[X]
+
+# 0x478
+Makes target unable to[N]
+move or act for 3 turns.[X]
+
+# 0x0522
+5 + MP/3[X]
+
+# 0x479
+Spurs target to attack[N]
+all units for 3 turns.[X]
+
+# 0x474
+Restores Mag + 10 HP[N]
+to a distant ally.[X]
+
+# 0x475
+Restores Mag + 20 HP[N]
+to all distant allies.[X]
+
+# 0x5C9 MechanicsPageTitle
+Mechanics[X]
+
+## MusicPageTitle
+Music[X]
+
+## QoLPageTitle
+QoL[X]
+
+# 0x494
+A medicinal solution that mends[NL]
+minor wounds. Heals unit for 15 HP.[X]
+
 # 0x50A
 Tome[X]
 
@@ -30,7 +79,7 @@ Str[X]
 Mag[X]
 
 # 0x4ec
-Skl[X]
+Dex[X]
 
 # 0x4ed
 Spd[X]
@@ -47,13 +96,31 @@ Res[X]
 # 0x4f6
 Mov[X]
 
+# 0x855
+Item is too heavy to be stolen.[X]
+
+# 0x0149 ^
+A laid-back voyage.[N]
+Weakened enemies[N]
+(-5 autolevels).[X]
+
+# 0x014A ^
+The intended adventure.[N]
+Players are on par[N]
+with enemies.[X]
+
+# 0x014B ^
+A journey for the bold.[N]
+Bolstered enemies[N]
+(+5 autolevels).[X]
+
 # 0x055D
 Chance that the attack will hit.[NL]
-Skl x 5 + Weapon Hit + Triangle Adv.[X]
+Skl x 4 + Weapon Hit + Triangle Adv.[X]
 
 # 0x0560
 Ability to dodge enemy attacks.[NL]
-Lck x 5 + Terrain Avoid[X]
+Eva x 3 + AS + Terrain Avoid[X]
 
 # 0x055C
 Amount of damage this weapon causes.[NL]
@@ -65,7 +132,7 @@ and damage dealt by firearms.[X]
 
 # 0x0549
 Speed. Determines whether a unit can[N]
-perform a follow-up attack on an enemy.[X]
+perform a follow-up attack and evasion.[X]
 
 # 0x054A
 Evasion. Increases the chance[N]

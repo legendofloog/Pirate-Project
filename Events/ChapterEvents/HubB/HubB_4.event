@@ -59,8 +59,9 @@ PointerList:
 
 
 TurnBasedEvents:
+	TurnEventPlayer(0, Turn1Event, 1)
 	TurnEventPlayer(0, TurnLimit, 11)
-	TurnEventPlayer(17, AdrianLexaWarning, 3)
+	TurnEventPlayer(17, AdrianLexaWarning, 2)
 	TurnEventPlayer(0, HurryWarning, 9)
 	END_MAIN
 
@@ -110,12 +111,13 @@ Dunno:
 
 MainEvents:
 	BeginningScene:
-		FADI 99
+		//FADI 99		eventing comments by Loog: just set this to be faded in on start
 		TILECHANGE 0x0
 		CAMERA_CENTERED [0,13]
 		FADU 12
 		BROWNBOX HubB_4TownName [0,0]
 		LOAD1 1 CutsceneUnits0
+		ENUN
 		MOVE 4 Lua [7,15]
 		MOVE 4 Orlando [8,15]
 		MOVE 3 Desiderio [6,16]
@@ -124,7 +126,7 @@ MainEvents:
 		STAL 60
 		SetBackground(Desert)
 		MUSC 0x47
-		CHECK_EVENTID WentToHub2
+		CHECK_EVENTID WentToHub1	//wrong chapter, switched to 1
 		BNE 777 s0 sC
 			Text(HubB_4BeginningScene1_B2Cleared) //if the flag is not set, the party has seen a desert already
 			GOTO 778
@@ -135,19 +137,19 @@ MainEvents:
 		//FlagIsSet(10,1)
 		EraseBackground
 		FADI 12
-		CUSA 0
+		//CUSA 0		//what is this line supposed to do?
 		TILEREVERT 0x0
 		CAMERA_CENTERED [14,26]
-		FADI 12
+		//FADI 12	no reason to fadi twice
 		STAL 60
-		CALL $9EE2C4
+		EraseBackground		// this was a direct call instead of using the macro
 		CamOn
 		LOAD1 1 CutsceneUnits1
 		ENUN
-		MOVE 25 Lua [14,22]
-		MOVE 25 Orlando [15,22]
-		MOVE 30 Desiderio [13,23]
-		MOVE 20 Pilar [16,23]
+		MOVE 15 Lua [14,22]
+		MOVE 15 Orlando [15,22]
+		MOVE 10 Desiderio [13,23]
+		MOVE 15 Pilar [16,23]
 		ENUN
 		CamOff
 		CAMERA_CENTERED Lua
@@ -155,12 +157,12 @@ MainEvents:
 		Text(HubB_4BeginningScene2)
 		EraseBackground
 		LOAD1 1 CutsceneUnits2
-		STAL 20
+		ENUN //use enun after load instead of stal 
 		MUSC AvastMeHeartiesID
 		SetBackground(Desert)
 		Text(HubB_4BeginningScene3)
-		EraseBackground
-		FADI 10
+		//GiveItem(Nosferatu, Lua)
+		FADI 15 //just fade in, no erase background needed
 		STAL 20
 		REMOVEALL_BLUE
 		REMOVEALL_RED
@@ -170,14 +172,10 @@ MainEvents:
 		LOAD1 1 EnemyUnits2
 		LOAD1 1 EnemyUnits3
 		LOAD1 1 JavierUnits
-		//LOAD1 1 TestUnit
+		ENUN //missing enun
 		SetUnitItemDurability(6, 14, 1, MagTonic) //Give enemy a magic tonic
-		SetUnitItemDurability(15, 6, 1, StrTonic) //Give enemy a strength tonic
-		GoToPrepScreen2
-		CAMERA_CENTERED[14,23]
-		FADU 10
-		//CAMERA_CENTERED Lua
-		Text(HubB_4BeginningScene4)
+		SetUnitItemDurability(15, 6, 1, PotentBrewID) //Give enemy a skill scroll
+		GotoPrepScreen //used a different prep screen call for some reason, moved the rest to a turn 1 event
 		NoFade
 		ENDA
 
@@ -189,7 +187,7 @@ MainEvents:
 		CAMERA_CENTERED (Gunsmith)
 		SetBackground(Village)
 		Text(HubB_4EndingScene1)
-		GiveItem(BlueGem,Lua)
+		GiveItem(RedGem,Lua)
 		//CALL $9EE2C4
 		FADI 3
 		CHECK_ALIVE Noah
@@ -362,13 +360,16 @@ AdrianLexaRecruitment:
 			BNE 3 0xC 0x0 //If Orlando active jump to 3
 				GOTO 4 //Failsafe
 	LABEL 1//Lua Recruitment Text
-		TextWithMusicChange2(AdrianLexaLuaText,WelcomeAboardMateyID)
+		MUSC WelcomeAboardMateyID
+		Text(AdrianLexaLuaText)
 		GOTO 4
 	LABEL 2//Desi Recruitment Text
-		TextWithMusicChange2(AdrianLexaDesiderioText,WelcomeAboardMateyID)
+		MUSC WelcomeAboardMateyID
+		Text(AdrianLexaDesiderioText)
 		GOTO 4
 	LABEL 3//Orlando Recruitment Text
-		TextWithMusicChange2(AdrianLexaOrlandoText,WelcomeAboardMateyID)
+		MUSC WelcomeAboardMateyID
+		Text(AdrianLexaOrlandoText)
 	LABEL 4//Continue / Failsafe
 		SetAI(Adrian,0,0,0,0)
 		SetAI(Lexa,0,0,0,0)
@@ -410,6 +411,12 @@ LexaRevengeQuote:
 	LABEL 1
 	NoFade
 	ENDA
+
+Turn1Event:
+CAMERA_CENTERED Lua
+Text(HubB_4BeginningScene4)
+NoFade
+ENDA
 
 UnitPlacement:
 
@@ -466,12 +473,12 @@ UnitPlacement:
 		UNIT
 
 	EnemyUnits3:
-		UNIT B4Bandit Deserter		Javier Level(9,Enemy,True) [17,9] 0 0 0 0 [SteelLance] AttackInRangeAI
+		//UNIT B4Bandit Deserter		Javier Level(9,Enemy,True) [17,9] 0 0 0 0 [SteelLance] AttackInRangeAI
 		UNIT B4Bandit AxeCav		Javier Level(9,Enemy,True) [12,7] 0 0 0 0 [IronAxe] AttackInRangeAI
 		UNIT B4Bandit Mage			Javier Level(9,Enemy,True) [17,7] 0 0 0 0 [Elsurge, Vulnerary] GroupThreeAI
 		UNIT B4Bandit Mercenary		Javier Level(9,Enemy,True) [13,5] 0 0 0 0 [Onigiri] GroupThreeAI
 		UNIT B4Bandit Vanguard		Javier Level(10,Enemy,True) [8,7] 0 0 0 0 [Oversize] AttackInRangeAI
-		UNIT B4Bandit Warrior		Javier Level(10,Enemy,True) [15,6] 0 0 0 0 [SteelAxe, TealGem] GroupThreeAI
+		UNIT B4Bandit Warrior		Javier Level(10,Enemy,True) [15,6] 0 0 0 0 [SteelAxe, SkillScroll] GroupThreeAI
 		UNIT B4Bandit Myrmidon		Javier Level(9,Enemy,True) [5,10] 0 0 0 0 [SteelSword] AttackInRangeAI
 		UNIT B4Bandit Brigand		Javier Level(9,Enemy,True) [2,10] 0 0 0 0 [Bloodaxe] AttackInRangeAI
 		UNIT B4Bandit PegasusRider	Javier Level(9,Enemy,True) [7,1] 0 0 0 0 [SteelSword] GroupFourAI
@@ -488,8 +495,8 @@ UnitPlacement:
 		UNIT B4Bandit Mercenary		Javier Level(10,Enemy,True) [21,4] 0 0 0 0 [SteelBlade, Vulnerary] TwoRangeAI
 		UNIT B4Bandit Deserter		Javier Level(10,Enemy,True) [23,5] 0 0 0 0 [Pike] AttackInRangeAI
 		UNIT B4Bandit Hunter		Javier Level(10,Enemy,True) [24,2] 0 0 0 0 [Greatbow] AttackInRangeAI
-		UNIT B4Bandit Ninja			Javier Level(10,Enemy,True) [28,3] 0 0 0 0 [SteelDagger,Stiletto] AttackInRangeAI
-		UNIT Javier Hero 			Javier Level(13,Enemy,True) [26,3] 0 0 0 0 [SilverSword,HideShield,TealGem] AttackInRangeAI
+		//UNIT B4Bandit Ninja			Javier Level(10,Enemy,True) [28,3] 0 0 0 0 [SteelDagger,Stiletto] AttackInRangeAI
+		UNIT Javier Hero 			Javier Level(13,Enemy,True) [26,3] 0 0 0 0 [SilverAxe,SteelSword,RedGem] AttackInRangeAI
 		UNIT
 
 
@@ -552,12 +559,12 @@ UnitPlacement:
 	//#define AttackInTwoGroup1AI		[0x00,0x06,0x09,0x01] //Doesn't actually work (at least not the intended way)
 
 	RecruitableUnits:
-		UNIT Adrian Fighter 0 Level(11,Enemy,True) [12,9] 0 0 0 0 [Swordreaver, KillerAxe, Vulnerary] [0x6,0x3,0x4,0x0]
+		UNIT Adrian Fighter 0 Level(11,Enemy,True) [12,9] 0 0 0 0 [Swordreaver, SlimAxe, Vulnerary] [0x6,0x3,0x4,0x0]
 		UNIT Lexa Myrmidon_F 0 Level(11,Enemy,True) [13,10] 0 0 0 0 [SilverSword, KillingEdge, Vulnerary] [0x6,0x3,0x4,0x0]
 		UNIT
 
 	NoahUnit:
-		UNIT Noah Warden 0 Level(8,Ally,True) [25,16] 0 0 1 REDA25R17 [SteelLance,IronBlade] NoAI
+		UNIT Noah Warden 0 Level(6,Ally,True) [25,16] 0 0 1 REDA25R17 [SteelLance,IronBlade] NoAI
 		UNIT
 
 //End

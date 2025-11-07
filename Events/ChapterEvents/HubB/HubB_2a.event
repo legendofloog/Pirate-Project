@@ -161,9 +161,8 @@ SOUN 0x02D7
 STAL 40
 LoadCutsceneUnits(IntroUnits)
 EraseBackground
-FADU 16
 CAMERA_CENTERED [5,8]
-Music(CastawayHeartID)
+Music(SwabbieTalkID)
 STAL 40
 MOVE 5 Lua [2,8]
 MOVE 5 Pilar [1,9]
@@ -174,23 +173,26 @@ ENUN
 STAL 30
 SetBackground(Harbor)
 Text(B2a_OnDocks_1)
+FadeOutMusic
 EraseBackground
+Music(CastawayHeartID)
 LoadCutsceneUnits(IntroRazvan)
 MOVE 5 Razvan [1,8]
 ENUN
 CameraCursor(Razvan)
 SetBackground(Harbor)
 Text(B2a_OnDocks_2)
-
+FADI 16
 //Cut to Lua and Magdalena walking
 CLEA 0
 CLEN 0
 CLEE 0
-FADI 16
 LoadCutsceneUnits(MainCastTrio)
+/*
 CUSN Desiderio
-CUSN Pilar
+CUSN Pilar 			//fine if they're blue
 CUSN Razvan
+*/
 LOAD1 1 VillagerGroup
 LOAD1 1 Units1
 ENUN
@@ -200,7 +202,7 @@ SetUnitItemDurability(9, 23, 2, LuckTonic)
 ENUT LuaInAHubFlag
 CAMERA_CENTERED [9,20]
 EraseBackground
-FADU 16
+//FADU 16
 MUSC LetterOpenerID
 ASMC MakeMusicAhoyASMC
 //Lua and Magdalena walk down
@@ -229,7 +231,7 @@ ENDA
 B2a_Magdalena:
 EVBIT_MODIFY 3 //scene skipping causing a softlock, disable that. 
 Text(B2a_TalkToMag)
-ASMC (prCallSecondChoiceMenu+1) // hus, cruz, avo, none
+CallMenu(HubB2ChoiceMenu)
 SVAL s1 0
 BNE 11 s1 sC // only continue if Husniye, otherwise jump to 11
 	ENUT HusniyeAccused
@@ -275,15 +277,15 @@ ENDA
 B2a_Hedge:
 CenterTextbox(B2a_TalkToHedge)
 RemoveTrapAtCoords(10,10)
-GiveItem(Peshkatz,0xFFFF)
+GiveItem(Heartpiercer,0xFFFF)
 NoFade
 ENDA
 
 TalismanVillage:
 SetBackground(HouseBG)
-Text(B2a_TalismanVillage)
+Text(B2a_ScrollVillage)
 EraseBackground
-GiveItem(Talisman,0xFFFF)
+GiveItemWithDurability(SkillScroll,FinesseID,0xFFFF)
 TILECHANGE 0x0
 NoFade
 ENDA
@@ -346,17 +348,13 @@ ENDA
 
 
 EndingScene:
-CUSA Desiderio
-CUSA Pilar
-CUSA Razvan
 FADI 16
 ENUF LuaInAHubFlag
-CLEA 0
-CLEN 0
-CLEE 0
+RemoveAll
 MUSC SwabbieTalkID
 LOAD1 1 OutroLua
 LOAD1 1 OutroMagdalena
+ENUN
 CAM1 Lua
 CAM1 Magdalena
 CAMERA_CENTERED [15,14]
@@ -419,9 +417,7 @@ GiveGold(2500)
 FADI 16
 MUSC 0x4A //night ambience
 ASMC MakeMusicAhoyASMC
-CLEA 0
-CLEN 0
-CLEE 0
+RemoveAll
 //This is to set the coordinates of the newly loaded night time map to 0,0
 SVAL sB 0 
 LOMA CutsceneHubB_2a
@@ -580,7 +576,7 @@ LABEL 0x666 // if cruz spared, will kill Magdalena
 	// more cruz conversation here
 LABEL 0x777
 ASMC MakeMusicAhoyASMC
-FADI 8
+FADI 15
 MNC2 HubB_2
 NoFade
 ENDA

@@ -305,7 +305,7 @@ EndingScene:
 // turn flag on if rogelio's alive
 CHECK_ALIVE Rogelio
 BEQ 0xD3ADDAD 0x0 0xC
-ENUT 0xB7
+ENUT D3_Rogelio_Alive_Flag
 LABEL 0xD3ADDAD
 // finish this later
 
@@ -313,7 +313,7 @@ FadeToBlack
 SetBackground(Ship)
 // FadeBackFromBlack
 
-FlagIsSet(0xB7, 0xA)
+FlagIsSet(D3_Rogelio_Alive_Flag, 0xA)
 
 // rogelio alive event
 Music(CherishTheDeadID)

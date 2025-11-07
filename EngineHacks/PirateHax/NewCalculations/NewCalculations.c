@@ -8,11 +8,11 @@ int GetCurrentPromotedLevelBonus(){
 }
 
 void ComputeBattleUnitHitRate(BattleUnit* bu) {
-    bu->battleHitRate = (bu->unit.skl * 5) + GetItemHit(bu->weapon) + bu->wTriangleHitBonus;
+    bu->battleHitRate = (bu->unit.skl * 4) + GetItemHit(bu->weapon) + bu->wTriangleHitBonus;
 }
 
 void ComputeBattleUnitAvoidRate(BattleUnit* bu) {
-    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 5);
+    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 3) + bu->battleSpeed;
 
     if (bu->battleAvoidRate < 0){
         bu->battleAvoidRate = 0;
@@ -62,13 +62,13 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
         int levelDiff = GetLevelDifference(actor, target);
 		// killed
 		if (target->unit.curHP == 0){		
-            int initialKillExp = 25 + 5 * levelDiff;
+            int initialKillExp = 30 + 6 * levelDiff;
 
-			if(initialKillExp <= 5){
-				return 5;
+			if(initialKillExp < 3){
+				return 3;
 			}
-            else if (initialKillExp >= 50){
-                return 50;
+            else if (initialKillExp > 100){
+                return 100;
             }
 			else{
 				return initialKillExp; //50 kill exp cap
@@ -76,13 +76,13 @@ int GetBattleUnitExpGain(BattleUnit* actor, BattleUnit* target){
 		}
 
 		// hit
-		int initialHitExp = 5 + 1 * levelDiff;
+		int initialHitExp = 10 + 2 * levelDiff;
 
-			if(initialHitExp <= 1){
+			if(initialHitExp < 1){
 				return 1;
 			}
-			else if(initialHitExp >= 10){
-				return 10;
+			else if(initialHitExp > 33){
+				return 33;
 			}
 			else{
 				return initialHitExp;
@@ -160,33 +160,61 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
 
     int exp = 0;
     if (staffRank == D_WEXP){
-        exp += 18;
+        exp += 20;
     }
     else if (staffRank == C_WEXP){
-        exp += 21;
+        exp += 25;
     }
     else if (staffRank == B_WEXP){
-        exp += 24;
+        exp += 35;
     }
-    else if (staffRank == S_RANK){
-        exp += 27;
+    else if (staffRank == A_WEXP){
+        exp += 45;
     }
-    else{
-        exp += 33;
-    }
-
-    int levelDiff = GetLevelDifference(actor, &gBattleTarget);
-
-    if (levelDiff < 0){ //if the target is lower level than actor, reduce exp by 2 * level diff
-        exp += levelDiff * 3;
-    }
-   
-    if (exp <= 3){
-        return 3;
+    else if(staffRank == S_WEXP){
+        exp += 60;
     }
     else{
-        return exp;
+
     }
+
+    //gives the base exp: then, we reduce it by their effective level? minimum of 4 exp
+    exp -= GetUnitEffectiveLevel(&actor->unit);
+
+    if (exp < 5)
+    {
+        exp = 5;
+    }
+
+
+    return exp;
+}
+
+// a couple steal rework related things
+
+int StealCommandUsability(){
+	if (UNIT_CATTRIBUTES(gActiveUnit) & CA_MOUNTEDAID) //if you have mounted aid, then you cannot steal
+    {
+        return MENU_NOTSHOWN;
+    }
+
+    if (gActiveUnit->state & US_HAS_MOVED) {
+        return MENU_NOTSHOWN;
+    }
+
+    MakeTargetListForSteal(gActiveUnit);
+    if (GetTargetListSize() == 0) {
+        return MENU_NOTSHOWN;
+    }
+
+    // removing the check for how many items you have
+    /*
+    if (GetUnitItemCount(gActiveUnit) == UNIT_ITEM_COUNT) {
+        return MENU_DISABLED;
+    }
+    */
+
+    return MENU_ENABLED;
 }
 
 s8 ActionSteal(Proc* proc) {
@@ -208,6 +236,29 @@ s8 ActionSteal(Proc* proc) {
     BeginMapAnimForSteal();
 
     return 0;
+}
+
+s8 UnitAddStolenItemHelper(struct Unit* unit, int item) {
+    int i;
+
+    bool result = false; //doesn't matter 
+
+    for (i = 0; i < UNIT_ITEM_COUNT; ++i) {
+        if (unit->items[i] == 0) {
+            unit->items[i] = item;
+            result = true;
+            break;
+        }
+    }
+
+    if (result)
+    {
+        return result; //we already added the item: end here
+    }
+
+    AddItemToConvoy(item); //if not, then we just dump it into the convoy instead and still return true
+
+    return TRUE;
 }
 
 void BattleApplyStealAction(struct Proc* proc, int item) {
@@ -239,13 +290,13 @@ int GetStealExpValue(int item){
     u8 durability = item >> 8;
     int totalCost = costPerUse * durability; 
     
-    int stealExp = totalCost / 50 + GetLevelDifference(&gBattleActor, &gBattleTarget) * 2;
+    int stealExp = totalCost / 50 + GetLevelDifference(&gBattleActor, &gBattleTarget) * 2; //example B rank: Silver costs 1000, so 20 base exp; Iron is 8 base exp
 
-    if (stealExp >= 15){
-        return 15;
+    if (stealExp >= 50){ //don't want it to get any higher than this: between a hit and a kill, leaning towards a hit
+        return 50;
     }
-    else if (stealExp <= 2){
-        return 2;
+    else if (stealExp <= 3){
+        return 3;
     }
     else{
         return stealExp;
@@ -302,9 +353,9 @@ void GetWeaponExpProgressState(int wrank, int* valOut, int* maxOut) {
 
 int CanUnitRescue(const struct Unit* actor, const struct Unit* target){
     
-    if (target->pClassData->attributes & CA_MOUNTEDAID){ //is this unit a mount
-        return false; //cannot be rescued
-    }
+    //if (target->pClassData->attributes & CA_MOUNTEDAID){ //is this unit a mount
+        //return false; //cannot be rescued 
+    //} // I have renounced my 1984 ways
 
     if (LuaIsInHub(gActiveUnit)){ //unit doesn't matter
         return false;
@@ -513,18 +564,27 @@ int GetBattleUnitUpdatedWeaponExp(BattleUnit* battleUnit) {
     
 	result = battleUnit->unit.ranks[battleUnit->weaponType];
 
-    if (battleUnit->wexpMultiplier <= 0)
+    if (battleUnit->weaponType != ITYPE_STAFF)
     {
-        // we don't do anything because you missed or didn't hit anything
-    }
-    else if (gBattleTarget.unit.curHP <= 0)
-    {
-        result += 2; //you killed a guy, here's your reward
+        if (battleUnit->wexpMultiplier <= 0) // we don't do anything because you missed or didn't hit anything
+        {
+            
+        }
+        else if (gBattleTarget.unit.curHP <= 0) //you killed a guy, double up the wexp
+        {
+            result += 2; 
+        }
+        else                                //otherwise, here's 1 wexp
+        {
+            result++; 
+        }
     }
     else
     {
-        result++; //otherwise, here's some wexp
+        result += GetItemData(GetItemIndex(battleUnit->weapon))->weaponExp; //Add the weapon exp for the item to the Result: Buff Staves are +1
     }
+
+    
 
     for (i = 0; i < 8; ++i) {
         if (i == battleUnit->weaponType){
@@ -580,18 +640,30 @@ int CanUnitUseWeapon(struct Unit* unit, int item) {
 }
 
 // makes autolevels fixed
-int GetAutoleveledStatIncrease(int growth, int levelCount) {
+int GetAutoleveledStatIncrease(int growth, int levelCount)
+{
     return GetNPCStatIncrease(growth * (levelCount + 1));
 }
 
 int GetNPCStatIncrease(int growth){
 	int result = 0;
 	
-	while (growth >= 100) {
-        result++;
-        growth -= 100;
+    if (growth < 0)
+    {
+        while (growth <= 0) //if there's any negative left over, need to subtract still
+        {
+            result--;
+            growth += 100;
+        }
     }
-
+    else
+    {
+        while (growth >= 100) //if there's not enough for a full level, don't give more
+        {
+            result++;
+            growth -= 100;
+        }
+    }
 	return result;
 }
 
@@ -629,6 +701,36 @@ struct Unit* LoadUnit(const struct UnitDefinition* uDef) {
         }
         UnitAutolevel(unit);
         UnitAutolevelWExp(unit, uDef);
+
+    }
+    else{
+        int autolevelCount = 0; //autoleveling, but only for enemies, and only based off of the difficulty; catches edge cases like bosses outside of hubs
+        if (IsDifficultMode()){
+            autolevelCount = 5;
+        }
+        else if (TUTORIAL_MODE())
+        {
+            autolevelCount = -5;
+        }
+
+        if (autolevelCount != 0)
+        {
+            bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
+            bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
+            
+            if (isUnitPlayer){ //players get nothing, so skip them
+                
+            }
+            else if (IsUnitBoss) //boss or enemies could get negative stats, so need to floor them just in case
+            {
+                AutolevelUnit(unit, autolevelCount);
+                FloorStats(unit);
+            }
+            else{
+                AutolevelClass(unit, autolevelCount);
+                FloorStats(unit);           
+            }
+        }
 
     }
 
@@ -704,28 +806,95 @@ void UnitAutolevel(struct Unit* unit) {
 void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
     bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
     bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
+
+    int autolevelCount = levelCount;
+    int difficultyLevelChange = 0; //for normal mode       
+    if (IsDifficultMode())
+    {
+        difficultyLevelChange = 5;
+    }
+    else if (TUTORIAL_MODE())
+    {
+        difficultyLevelChange = -5;
+    }
+
+    autolevelCount += difficultyLevelChange; //add the levels from difficulty: example: level 6 fighter on easy gets +5, -5, same as a normal fighter at level 1
+
     if (levelCount) {
-        if (isUnitPlayer || IsUnitBoss){
-            unit->maxHP += GetAutoleveledStatIncrease(unit->pCharacterData->growthHP,  levelCount);
-            unit->pow   += GetAutoleveledStatIncrease(unit->pCharacterData->growthPow, levelCount);
-            unit->mag   += GetAutoleveledStatIncrease(MagCharTable[unit->pCharacterData->number].growthMag, levelCount);
-            unit->skl   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSkl, levelCount);
-            unit->spd   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSpd, levelCount);
-            unit->def   += GetAutoleveledStatIncrease(unit->pCharacterData->growthDef, levelCount);
-            unit->res   += GetAutoleveledStatIncrease(unit->pCharacterData->growthRes, levelCount);
-            unit->lck   += GetAutoleveledStatIncrease(unit->pCharacterData->growthLck, levelCount);
+        if (isUnitPlayer){ //players do not get the easy/hard mode difficulty changes, so just use initial level count
+            AutolevelUnit(unit, levelCount);
+            
+        }
+        else if (IsUnitBoss) //boss or enemies could get negative stats, so need to floor them just in case
+        {
+            AutolevelUnit(unit, autolevelCount);
+            FloorStats(unit);
         }
         else{
-            unit->maxHP += GetAutoleveledStatIncrease(unit->pClassData->growthHP,  levelCount);
-            unit->pow   += GetAutoleveledStatIncrease(unit->pClassData->growthPow, levelCount);
-            unit->mag   += GetAutoleveledStatIncrease(MagClassTable[unit->pClassData->number].growthMag, levelCount);
-            unit->skl   += GetAutoleveledStatIncrease(unit->pClassData->growthSkl, levelCount);
-            unit->spd   += GetAutoleveledStatIncrease(unit->pClassData->growthSpd, levelCount);
-            unit->def   += GetAutoleveledStatIncrease(unit->pClassData->growthDef, levelCount);
-            unit->res   += GetAutoleveledStatIncrease(unit->pClassData->growthRes, levelCount);
-            unit->lck   += GetAutoleveledStatIncrease(unit->pClassData->growthLck, levelCount);
+            AutolevelClass(unit, autolevelCount);
+            FloorStats(unit);           
         }
         
+    }
+
+}
+
+void AutolevelUnit(struct Unit* unit, int levelCount){
+    unit->maxHP += GetAutoleveledStatIncrease(unit->pCharacterData->growthHP,  levelCount);
+    unit->pow   += GetAutoleveledStatIncrease(unit->pCharacterData->growthPow, levelCount);
+    unit->mag   += GetAutoleveledStatIncrease(MagCharTable[unit->pCharacterData->number].growthMag, levelCount);
+    unit->skl   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSkl, levelCount);
+    unit->spd   += GetAutoleveledStatIncrease(unit->pCharacterData->growthSpd, levelCount);
+    unit->def   += GetAutoleveledStatIncrease(unit->pCharacterData->growthDef, levelCount);
+    unit->res   += GetAutoleveledStatIncrease(unit->pCharacterData->growthRes, levelCount);
+    unit->lck   += GetAutoleveledStatIncrease(unit->pCharacterData->growthLck, levelCount);
+}
+
+void AutolevelClass(struct Unit* unit, int levelCount)
+{
+    unit->maxHP += GetAutoleveledStatIncrease(unit->pClassData->growthHP,  levelCount);
+    unit->pow   += GetAutoleveledStatIncrease(unit->pClassData->growthPow, levelCount);
+    unit->mag   += GetAutoleveledStatIncrease(MagClassTable[unit->pClassData->number].growthMag, levelCount);
+    unit->skl   += GetAutoleveledStatIncrease(unit->pClassData->growthSkl, levelCount);
+    unit->spd   += GetAutoleveledStatIncrease(unit->pClassData->growthSpd, levelCount);
+    unit->def   += GetAutoleveledStatIncrease(unit->pClassData->growthDef, levelCount);
+    unit->res   += GetAutoleveledStatIncrease(unit->pClassData->growthRes, levelCount);
+    unit->lck   += GetAutoleveledStatIncrease(unit->pClassData->growthLck, levelCount);
+}
+
+void FloorStats(struct Unit* unit)
+{
+    if (unit->maxHP < 0 || unit->maxHP >= 200) //to prevent underflow, check the high point
+    {
+        unit->maxHP = 0;
+    }
+    if (unit->pow < 0 || unit->pow >= 100)
+    {
+        unit->pow = 0;
+    }
+    if (unit->mag < 0 || unit->mag >= 100)
+    {
+        unit->mag = 0;
+    }
+    if (unit->skl < 0 || unit->skl >= 100)
+    {
+        unit->skl = 0;
+    }
+    if (unit->spd < 0 || unit->spd >= 100)
+    {
+        unit->spd = 0;
+    }
+    if (unit->def < 0 || unit->def >= 100)
+    {
+        unit->def = 0;
+    }
+    if (unit->res < 0 || unit->res >= 100)
+    {
+        unit->res = 0;
+    }
+    if (unit->lck < 0 || unit->lck >= 100)
+    {
+        unit->lck = 0;
     }
 }
 
@@ -788,32 +957,12 @@ void* GetChapterAllyUnitDefinitions(void) {
     return evGroup->playerUnitsInNormal;
 }
 
-s8 AreUnitsAllied(int left, int right) {
-    int a = left & 0x80;
-    int b = right & 0x80;
-    return (a == b);
-}
-
-s8 IsUnitEnemyWithActiveUnit(struct Unit* unit) {
-
-    if (AreUnitsAllied(gActiveUnit->index, unit->index)) {
-        return 0;
-    }
-
-    if (unit->pCharacterData->number == A3LogIDLink){
-        return 0; //do not attack the a3 logs, as they aren't enemies
-    }
-
-    return 1;
-}
-
-
 int GetUnitLuckCap(Unit* unit){
     if (unit->pClassData->attributes & CA_PROMOTED){
-        return 40; //unpromo'd units get 25 cap
+        return 40; //unpromo'd units get 30 cap
     }
     else{
-        return 25;
+        return 30;
     }
 }
 
@@ -868,5 +1017,26 @@ void UnitCheckStatCaps(struct Unit* unit) {
     }
     if (unit->lck > GetUnitLuckCap(unit)){
         unit->lck = GetUnitLuckCap(unit);
+    }
+}
+
+int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target){
+    int result = 50 + 2 * (prMagGetter(actor) + GetUnitSkill(actor) - GetUnitResistance(target) - GetUnitLuck(target));
+
+    if (result < 0) result = 0;
+
+    if (result > 100) result = 100;
+
+    return result;
+}
+
+int GetUnitMagBy2Range(struct Unit* unit) {
+    return 5 + prMagGetter(unit) / 3;
+}
+
+void PlusThreeAS(BattleUnit* bunitA, BattleUnit* bunitB) { //for snapshot and wild axe
+    if (GetItemIndex(bunitA->weapon) == WildAxeIDLink || GetItemIndex(bunitA->weapon) == SnapshotIDLink)
+    {
+        bunitA->battleSpeed += 3; //give 3 AS when this is the case
     }
 }

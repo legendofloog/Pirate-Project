@@ -1,0 +1,26 @@
+
+#include "asm/RushStaff.lyn.event"
+ALIGN 4
+
+RushStaffMovAmountLink:
+BYTE 2
+ALIGN 4
+
+RushStaffTargetWindowTextLink:
+SHORT 0x04F6 //Mov
+SHORT HealArrowText //->
+ALIGN 4
+
+RushStaffTargetBottomTextLink:
+SHORT BuffStaffBottomText
+ALIGN 4
+
+gMenu_RushStaffTargetMenu:
+POIN 0x29CDC|1
+POIN 0x4E884|1 //ClearBG0BG1
+WORD 0
+POIN RushStaffTargetChange|1
+WORD 0
+POIN 0x29550|1 //GenericStaffSelection_OnSelect
+POIN 0x2282C|1 //GenericSelection_BackToUM_CamWait
+WORD 0

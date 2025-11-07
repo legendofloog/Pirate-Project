@@ -1,0 +1,152 @@
+EventPointerTable(HubDTheOutskirtsEventsID, PointerList)
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno1 Dunno2 Dunno3 Tutorial
+POIN Traps1 Traps2
+POIN Units1 Units1
+POIN $0 $0 $0 
+POIN $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+AREA Flag_HubD_Ending_Allowed EndingScene [7,8] [8,8]
+AREA WentToHub1 GotoHubD1 [35,8] [36,8]
+AREA WentToHub2 GotoHubD2 [14,15] [14,17]
+AREA WentToHub3 GotoHubD3 [34,27] [35,27]
+AREA 0 SwitchBackToArmada [13,30] [13,30]
+AFEV 0 RefreshLiberator 0
+END_MAIN
+
+SwitchBackToArmada:
+FADI 15
+SET_ACTIVE 0
+REMOVEUNIT Arbitrator
+STAL 30
+RemoveAll
+CALL RemoveOutskirtsTraps
+ENUN
+LOMA HubB
+SHOWUNIT Lua
+LOAD1 1 LuaShipGroup
+ENUN
+CALL SpawnHubD_DeckUnits
+CAMERA_CENTERED Lua
+SET_ACTIVE Lua
+CALL HubD_Traps_Deck
+ENUN
+FADU 15
+NoFade
+ENDA
+
+RemoveOutskirtsTraps:
+RemoveTrapAtCoords(35, 8)
+RemoveTrapAtCoords(36, 8)
+RemoveTrapAtCoords(14, 15)
+RemoveTrapAtCoords(14, 16)
+RemoveTrapAtCoords(14, 17)
+RemoveTrapAtCoords(34, 27)
+RemoveTrapAtCoords(35, 27)
+NoFade
+ENDA
+
+LuaShipGroup:
+UNIT Lua Captain 0 Level(10,Ally,False) [7,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+///
+/// HUB TRAVEL
+///
+
+
+GotoHubD1:
+HubChapterFirstTimeEvent(1, SeenHubD1Pitch, HubD1Pitch)
+FancyChapterMapOffset(-1,-1)
+FancyChapterPreview(HubD_1, Fort_Ruins_Outside, HubDTheOutskirts, HubDCallback)
+GotoHubChapterIfYes(3, HubD_1, HubD1Selection_Yes)
+Text(HubD1Selection_No)
+ENUF LuaInAHubFlag
+NoFade
+ENDA
+
+HubDCallback:
+WEATHER 7
+CAMERA_CENTERED Arbitrator //refocus on the airship
+//restores all the quest sigils 
+CALL SpawnInHubDQuests
+NoFade
+ENDA
+
+GotoHubD2:
+HubChapterFirstTimeEvent(1, SeenHubD2Pitch, HubD2Pitch)
+FancyChapterMapOffset(-1,-1)
+FancyChapterPreview(HubD_2, Village, HubDTheOutskirts, HubDCallback)
+GotoHubChapterIfYes(3, HubD_2, HubD2Selection_Yes)
+Text(HubD2Selection_No)
+ENUF LuaInAHubFlag
+NoFade
+ENDA
+
+GotoHubD3:
+HubChapterFirstTimeEvent(1, SeenHubD3Pitch, HubD3Pitch)
+FancyChapterMapOffset(-1,-1)
+FancyChapterPreview(HubD_3, Outside_Village_Evening, HubDTheOutskirts, HubDCallback)
+GotoHubChapterIfYes(3, HubD_3, HubD3Selection_Yes)
+Text(HubD3Selection_No)
+ENUF LuaInAHubFlag
+NoFade
+ENDA
+
+RefreshLiberator:
+CHECK_EXISTS Arbitrator
+BEQ 776 s0 sC //if it does not, then branch past this
+    SVAL s1 0x42
+    UNSET_CONDITION Arbitrator
+LABEL 776
+NoFade
+ENDA
+
+Traps1:
+GreenSigil(13,30)
+ENDTRAP
+ALIGN 4
+
+Traps2:
+ENDTRAP
+ALIGN 4
+
+Units1:
+UNIT Lua Captain 0 Level(10,Ally,False) [5,22] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
+UNIT
+
+BeginningScene:
+NoFade
+ENDA
+
+EndingScene:
+NoFade
+ENDA
+
+Dunno1: //down here because nothing here is really used
+END_MAIN
+
+Dunno2:
+END_MAIN
+
+Dunno3:
+END_MAIN
+
+Tutorial:
+END_MAIN

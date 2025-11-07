@@ -51,39 +51,16 @@ u8 DisarmSelection_OnChange(ProcPtr proc, struct SelectTarget* target) {
 }
 
 void DoDisarmEffect(int targetUid) { //left off here, keep it going
-    gActionData.unitActionType = UNIT_ACTION_WAIT; //should spend her turn?
+    gActionData.unitActionType = UNIT_ACTION_TAKE; //should do nothing
 	struct Unit* targetUnit = GetUnit(targetUid);
 	u32* entry = GetUnitDebuffEntry(targetUnit);
 	SetBit(entry, BreakBitOffset_Link);
     ApplyDebuff(targetUnit, 5, 3);
     ApplyDebuff(targetUnit, 5, 2);
     CallMapEventEngine(DisarmMapEvent, EV_EXEC_CUTSCENE);
-    gBattleActor.expGain = GetDisarmExpValue();
-    gBattleActor.unit.exp += GetDisarmExpValue();
-    CheckBattleUnitLevelUp(&gBattleActor);
-
     //BeginMapAnimForSteal();
 }
 
-//void BattleApplyDisarmAction(struct Proc* proc) {
-    //BattleApplyMiscActionExpGains();
-    //Proc_StartBlocking(sProcScr_BattleAnimSimpleLock, proc);
-//}
-
-int GetDisarmExpValue()
-{
-    int disarmExp = 10 + GetLevelDifference(&gBattleActor, &gBattleTarget) * 2;
-
-    if (disarmExp >= 15){
-        return 15;
-    }
-    else if (disarmExp <= 2){
-        return 2;
-    }
-    else{
-        return disarmExp;
-    }
-}
 
 void MakeDisarmTargetList(struct Unit* unit) {
     int x = unit->xPos;

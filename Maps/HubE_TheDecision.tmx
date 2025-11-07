@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="1">
+ <tileset firstgid="1" name="FlasubanVillage" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="Tilesets/FlasubanVillage.png" width="512" height="512"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="20" height="16">
+  <properties>
+   <property name="Anims1" value="0"/>
+   <property name="Anims2" value="0"/>
+   <property name="ChapterID" value="HubETheDecision"/>
+   <property name="Main" value=""/>
+   <property name="MapChangesID" value="HubETheDecisionMapChangesID"/>
+   <property name="MapID" value="HubETheDecisionMapID"/>
+   <property name="ObjectType" value="FlasubanVillageSkyObjectID"/>
+   <property name="PaletteID" value="FlasubanVillageOurplePaletteID"/>
+   <property name="TileConfig" value="FlasubanVillageSkyConfigID"/>
+  </properties>
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,827,1,1,1,1,1,1,1,1,1,725,728,
+1,1,1,1,1,1,1,795,161,730,827,827,727,730,1,1,1,729,324,161,
+1,1,725,728,1,725,728,727,322,132,225,321,450,323,726,827,827,757,388,129,
+1,1,757,762,795,420,161,385,514,419,35,385,514,514,419,162,420,796,757,760,
+1,1,1,1,795,130,590,590,591,592,592,592,592,592,590,590,225,726,1,1,
+1,1,1,1,729,324,622,622,623,625,624,625,624,624,622,622,324,35,796,1,
+1,1,1,727,321,483,779,275,846,345,673,674,345,845,276,779,482,419,730,1,
+1,1,1,761,481,355,307,339,785,345,769,770,345,877,340,308,386,387,760,1,
+1,1,1,725,481,387,339,339,817,846,846,846,846,786,340,340,130,35,728,1,
+1,827,891,759,388,132,590,591,592,590,877,878,590,591,592,590,321,323,760,1,
+725,129,420,728,761,760,622,623,624,622,277,279,622,623,624,622,513,762,1,1,
+757,420,130,760,1,727,622,623,624,622,277,279,622,623,624,622,760,1,727,730,
+1,759,762,1,1,759,321,450,323,163,131,68,226,321,450,323,730,1,759,762,
+1,1,1,1,1,795,385,386,67,420,35,162,67,385,482,387,760,1,1,1,
+1,1,1,1,1,1,759,161,248,249,249,249,249,250,386,760,1,1,1,1,
+1,1,1,1,1,1,1,859,280,1,1,1,1,282,762,1,1,1,1,1
+</data>
+ </layer>
+</map>

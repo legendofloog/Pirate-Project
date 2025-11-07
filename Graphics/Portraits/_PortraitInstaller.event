@@ -259,19 +259,19 @@ setMugEntry(LexaMug, LexaMugData, 2, 5, 2, 3)
 
 ALIGN 16
 NoahMugData:
-#incbin "Dmp/Noah_mug.dmp"
-#incbin "Dmp/Noah_frames.dmp"
-#incbin "Dmp/Noah_palette.dmp"
-#incbin "Dmp/Noah_minimug.dmp"
+#incbin "Dmp/NoahArmor_mug.dmp"
+#incbin "Dmp/NoahArmor_frames.dmp"
+#incbin "Dmp/NoahArmor_palette.dmp"
+#incbin "Dmp/NoahArmor_minimug.dmp"
 setMugEntry(NoahMug, NoahMugData, 3, 5, 3, 3)
 
 ALIGN 16
 Noah2MugData:
-#incbin "Dmp/Noah2_mug.dmp"
-#incbin "Dmp/Noah2_frames.dmp"
-#incbin "Dmp/Noah2_palette.dmp"
-#incbin "Dmp/Noah2_minimug.dmp"
-setMugEntry(Noah2Mug, Noah2MugData, 2, 5, 3, 3)
+#incbin "Dmp/NoahCloak_mug.dmp"
+#incbin "Dmp/NoahCloak_frames.dmp"
+#incbin "Dmp/NoahCloak_palette.dmp"
+#incbin "Dmp/NoahCloak_minimug.dmp"
+setMugEntry(Noah2Mug, Noah2MugData, 3, 5, 3, 3)
 
 ALIGN 16
 RedFSoldierMugData:
@@ -397,6 +397,8 @@ YadneyMugData:
 #incbin "Dmp/Yadney_minimug.dmp"
 setMugEntry(YadneyMug, YadneyMugData, 3, 5, 2, 3)
 
+// placeholder mugs for B-3 guys
+
 ALIGN 16
 ErnestMugData:
 #incbin "Dmp/Ernest_mug.dmp"
@@ -404,6 +406,14 @@ ErnestMugData:
 #incbin "Dmp/Ernest_palette.dmp"
 #incbin "Dmp/Ernest_minimug.dmp"
 setMugEntry(ErnestMug, ErnestMugData, 3, 5, 3, 3)
+
+ALIGN 16
+KaiMugData:
+#incbin "Dmp/Kai_mug.dmp"
+#incbin "Dmp/Kai_frames.dmp"
+#incbin "Dmp/Kai_palette.dmp"
+#incbin "Dmp/Kai_minimug.dmp"
+setMugEntry(KaiMug, KaiMugData, 2, 5, 3, 3)
 
 ALIGN 16
 FataMugData:
@@ -561,7 +571,7 @@ AlonsoMugData:
 #incbin "Dmp/Alonso_frames.dmp"
 #incbin "Dmp/Alonso_palette.dmp"
 #incbin "Dmp/Alonso_minimug.dmp"
-setMugEntry(AlonsoMug, AlonsoMugData, 2, 5, 3, 3)
+setMugEntryExtend(AlonsoMug, AlonsoMugData, 3, 5, 3, 3, 3, 254, 5, 254)
 
 // again, credit to shin19
 ALIGN 16
@@ -570,7 +580,7 @@ DalilaMugData:
 #incbin "Dmp/Dalila_frames.dmp"
 #incbin "Dmp/Dalila_palette.dmp"
 #incbin "Dmp/Dalila_minimug.dmp"
-setMugEntry(DalilaMug, DalilaMugData, 2, 5, 3, 3)
+setMugEntry(DalilaMug, DalilaMugData, 3, 5, 3, 3)
 
 ALIGN 16
 PonteMugData:
@@ -704,7 +714,7 @@ WindyMugData:
 #incbin "Dmp/Windy_frames.dmp"
 #incbin "Dmp/Windy_palette.dmp"
 #incbin "Dmp/Windy_minimug.dmp"
-setMugEntry(WindyMug, WindyMugData, 2, 5, 3, 3)
+setMugEntry(WindyMug, WindyMugData, 2, 5, 2, 3)
 
 ALIGN 16
 TheanaMugData:
@@ -720,7 +730,7 @@ ElodiaMugData:
 #incbin "Dmp/Elodia_frames.dmp"
 #incbin "Dmp/Elodia_palette.dmp"
 #incbin "Dmp/Elodia_minimug.dmp"
-setMugEntry(ElodiaMug, ElodiaMugData, 2, 5, 3, 3)
+setMugEntry(ElodiaMug, ElodiaMugData, 2, 5, 2, 3)
 
 // credit to, uh, obsidian daddy? i think?
 ALIGN 16
@@ -730,3 +740,53 @@ QuispeMugData:
 #incbin "Dmp/Quispe_palette.dmp"
 #incbin "Dmp/Quispe_minimug.dmp"
 setMugEntry(QuispeMug, QuispeMugData, 2, 5, 3, 3)
+
+// placeholder mug D-3! (it's pent)
+ALIGN 16
+FidelMugData:
+#incbin "Dmp/Fidel_mug.dmp"
+#incbin "Dmp/Fidel_frames.dmp"
+#incbin "Dmp/Fidel_palette.dmp"
+#incbin "Dmp/Fidel_minimug.dmp"
+setMugEntry(FidelMug, FidelMugData, 3, 5, 4, 3)
+
+// recolors of already used mugs
+ALIGN 16
+D3TorchBossMugData:
+#incbin "Dmp/RedIgnacio_mug.dmp"
+#incbin "Dmp/RedIgnacio_frames.dmp"
+#incbin "Dmp/RedIgnacio_palette.dmp"
+#incbin "Dmp/RedIgnacio_minimug.dmp"
+setMugEntry(D3TorchBossMug, D3TorchBossMugData, 2, 5, 2, 3)
+
+ALIGN 16
+D3BanditBossMugData:
+#incbin "Dmp/GreenAzahar_mug.dmp"
+#incbin "Dmp/GreenAzahar_frames.dmp"
+#incbin "Dmp/GreenAzahar_palette.dmp"
+#incbin "Dmp/GreenAzahar_minimug.dmp"
+setMugEntry(D3BanditBossMug, D3BanditBossMugData, 3, 5, 3, 3)
+
+ALIGN 16
+ForestProtectorMugData:
+#incbin "Dmp/ForestProtector_mug.dmp"
+#incbin "Dmp/ForestProtector_frames.dmp"
+#incbin "Dmp/ForestProtector_palette.dmp"
+#incbin "Dmp/ForestProtector_minimug.dmp"
+setMugEntry(ForestProtectorMug, ForestProtectorMugData, 3, 5, 3, 3)
+
+ALIGN 16
+SleepyDockhandMugData:
+#incbin "Dmp/RedYadney_mug.dmp"
+#incbin "Dmp/RedYadney_frames.dmp"
+#incbin "Dmp/RedYadney_palette.dmp"
+#incbin "Dmp/RedYadney_minimug.dmp"
+setMugEntry(SleepyDockhandMug, SleepyDockhandMugData, 3, 5, 2, 3)
+
+ALIGN 16
+RemoraMugData:
+#incbin "Dmp/Remora_mug.dmp"
+#incbin "Dmp/Remora_frames.dmp"
+#incbin "Dmp/Remora_palette.dmp"
+#incbin "Dmp/Remora_minimug.dmp"
+setMugEntry(RemoraMug, RemoraMugData, 3, 5, 3, 3)

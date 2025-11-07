@@ -10,6 +10,7 @@
 .equ GetItemWType, 0x08017548
 .equ GetUnitEquippedItemSlot, 0x08016B58
 .equ GetItemWeight, 0x0801760C
+.equ GetUnitSpeed, 0x08019211
 
 .global IsItemStealable
 .type IsItemStealable, %function
@@ -26,6 +27,17 @@
 		blh		GetUnitEquippedItemSlot, r1
 		cmp		r0, r5
 		beq		RetFalse
+
+		@Cannot steal if target has Watchful
+		mov		r0,r4
+		ldr		r1, =WatchfulIDLink
+		ldrb		r1,[r1]
+		ldr		r3, =SkillTester
+		mov		r14,r3
+		.short	0xF800
+		cmp		r0,#1
+		beq		RetFalse		@can't steal if they have watchful
+		
 		
 		@Rusty hook check
 		ldr		r0, [r6]
@@ -40,12 +52,25 @@
 			add		r7, #1
 		
 		SpeedCheck:
-		mov		r2, #0x16
-		ldr		r0, [r6]
-		ldsb	r0, [r0,r2]
-		ldsb	r1, [r4,r2]
-		cmp		r0, r1
-		bge		IsItemInvalidFromSpeed
+		mov r0, r4 @ the target		
+		ldr r1, [r6] @ the actor			
+		push {r4-r7}		@ need to clear this for a bit
+		
+		mov r4, r0
+		mov r5, r1
+		
+		blh		GetUnitSpeed, r3
+		
+		mov r4, r0	@ r0 should now be the target's speed, so storing it in r4
+		mov r0, r5	@ putting the actor here now
+		blh		GetUnitSpeed, r3
+		
+		mov r1, r4 @ r0 now has actor's speed, r1 has the target's speed
+		pop {r4-r7} @ restore these registers to what they had before
+		
+		
+		cmp		r0, r1 @ if the actor is faster than the enemy, skip over the subtraction?
+		bge		IsItemInvalidFromSpeed 
 		
 			sub		r7, #1
 			

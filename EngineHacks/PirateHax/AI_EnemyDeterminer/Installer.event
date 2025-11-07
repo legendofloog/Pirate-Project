@@ -1,0 +1,21 @@
+#include "AI_EnemyDeterminer.lyn.event"
+
+ALIGN 4
+D3TorchUnitCharIDLink:
+BYTE D3TorchUnit
+
+ALIGN 4
+EnriqueCharIDLink:
+BYTE Enrique
+
+ALIGN 4
+A3LogIDLink:
+BYTE A3Log
+
+ALIGN 4
+D3Thief1CharIDLink:
+BYTE D3Thief1
+
+ALIGN 4
+D3Thief2CharIDLink:
+BYTE D3Thief2

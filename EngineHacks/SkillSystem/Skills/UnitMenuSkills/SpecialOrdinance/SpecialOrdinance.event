@@ -1,0 +1,10 @@
+
+#include "SpecialOrdinance.lyn.event"
+
+#define ACTION_SPECIALORDINANCE 0x2B 
+
+SpecialOrdinanceID_Link:
+BYTE SpecialOrdinanceID
+
+BreakMineActionID_Link:
+BYTE ACTION_SPECIALORDINANCE

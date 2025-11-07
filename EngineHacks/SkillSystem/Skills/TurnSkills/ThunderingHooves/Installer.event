@@ -1,0 +1,13 @@
+#include "ThunderingHooves.lyn.event"
+
+ALIGN 4
+ThunderingHoovesID_Link:
+BYTE ThunderingHoovesID
+
+ALIGN 4
+ThunderingHoovesDamage_Link:
+BYTE 25
+
+ALIGN 4
+ThunderingHoovesRange_Link:
+BYTE 2

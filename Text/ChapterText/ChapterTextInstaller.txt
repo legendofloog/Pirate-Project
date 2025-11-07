@@ -25,3 +25,4 @@
 #include "HubD/D1.txt"
 #include "HubD/D2.txt"
 #include "HubD/D3.txt"
+#include "HubE/Hub.txt"

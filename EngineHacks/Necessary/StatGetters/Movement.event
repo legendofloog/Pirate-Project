@@ -55,7 +55,8 @@ prNullifyIfFreeze:
 prHubMovement:
 	rIf(prCheckIfLuaInHub)
 		rIfUnitHasAllegience(UA_BLUE)
-			rConstant(0)
+			rIfUnitIsNotClass(Airship)
+				rConstant(0)
 
 prLuaHubMovement:
 	rIf(prCheckIfLuaInHub)

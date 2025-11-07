@@ -6,6 +6,9 @@
 #define PlayBombMusicIfBombReady(xCoord,yCoord) "SVAL s1 xCoord; SVAL s2 yCoord; ASMC PlayBombMusicIfBombReadyASMC"
 #define PlayBombMusicIfEitherBombReady(xCoord1,yCoord1, xCoord2, yCoord2) "SVAL s1 xCoord1; SVAL s2 yCoord1; SVAL s3 xCoord2; SVAL s4 yCoord2"
 #define DoesAnyUnitHaveForestFriend "ASMC DoesAnyUnitHaveForestFriendASMC"
+#define CheckTileChangeTriggered(tileChangeId) "SVAL s1 tileChangeId; ASMC CheckIfTileChangeTriggered"
+#define SetDifficulty(difficultyId) "SVAL s1 difficultyId; ASMC SetDifficultyASMC"
+#define ClearAllDebuffsBeforePreps "ASMC UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC"
 
 ALIGN 4
 SuppliesItemIDLink:

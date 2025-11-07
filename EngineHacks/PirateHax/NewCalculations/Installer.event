@@ -7,5 +7,10 @@ BYTE 0x0F
 POP
 
 ALIGN 4
-A3LogIDLink:
-BYTE A3Log
+WildAxeIDLink:
+BYTE WildAxe
+
+ALIGN 4
+SnapshotIDLink:
+BYTE Snapshot
+

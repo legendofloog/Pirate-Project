@@ -57,10 +57,10 @@ pop {r3} @put range back here for max aura radius
 cmp r0, #0
 beq End
 
-@set attacker's avoid to 0
+@set attacker's avoid to half of what it was
 mov r0, #0x62
 ldrh r1, [r4,r0]
-sub r1, r1
+lsr r1, #0x1	@ divides avoid by 2
 strh r1, [r4,r0]
 
 End:

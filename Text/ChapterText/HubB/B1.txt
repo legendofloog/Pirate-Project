@@ -166,7 +166,7 @@ the world that you and I live on.[AN]
 Through the mountains, the desert,[N]
 the rain, the snow[Beat][.4]it was[N]
 tough, but I endured it all![AN]
-Even if we fell into The Lands Below,[N]
+Even if we fell into the Lands Below,[N]
 my faith in what is beyond would[N]
 keep me comforted in my last moments[Beat][AN]
 
@@ -903,7 +903,6 @@ I'll give you out of my own cut, Pilar.[AN]
 Let's get a move on before some other[N]
 idiots think they can try and jump us.[A][X]
 
-
 ## ThiefTextB_1
 [MidLeft][LoadPirate][1LB]
 Now's my chance to make my break.[A][CSS]
@@ -912,116 +911,6 @@ I'll pick what I can and be gone[N]
 before anyone can notice me.[AN]
 By the time Kiril finds out,[N]
 they'll have no chance of finding me.[A][X]
-
-
-## B1_BossQuote_Noah
-[FR][LoadNoah]
-[FR][CloseEyes]*Huff, huff...*[A][OpenEyes] Whew![AN]
-Fighting through here isn't easy![AN]
-It might be the evening, but[N]
-I'm working up a real sweat![AN]
-[CSS][CF]
-
-[FL][LoadKiril]
-[FL]Fool...[AN]
-You and your crew hunt us,[N]
-yet you speak so casually?[AN]
-[CSS][CF]
-
-[FR][LoadNoah]
-Hunt?[A] Ah[Beat]I'm not much[N]
-of a hunter, actually.[AN]
-Just trying to do my job, which[N]
-means hitting bad guys like you![AN]
-[CSS][CF]
-
-[FL][LoadKiril]
-Silence![A] Once I slice you open,[N]
-I'll feed you to the wyverns![AN]
-[CSS][CF]
-
-[FR][LoadNoah]
-[FR][ToggleSmile]
-H-Hah, I'd like to see you try[N]
-getting through my armor![AN]
-Those dinky knives of yours[N]
-are better for cutting onions![A][X]
-
-
-## B1_BossQuote_Dmitr
-[FR][LoadDmitr]
-No[Beat]you're the leader of[N]
-these damned brigands?[AN]
-[CSS][CF]
-
-[FL][LoadKiril]
-Cousin[Beat]after your betrayal,[N]
-I never expected to see you again.[AN]
-[CSS][CF]
-
-[FR][LoadDmitr]
-[OQ]Betrayal?[CQ][AN]
-Turning your back on a[N]
-murderer is betrayal?[AN]
-You went too far, Kiril;[.6][N]
-I couldn't let that go on![AN]
-[CSS][CF]
-
-[FL][LoadKiril]
-So you still have yet[N]
-to learn anything[Beat][AN]
-Fool[Beat]I will enjoy[N]
-beating you down personally.[AN]
-[CSS][CF]
-
-[FR][LoadDmitr]
-[CloseEyes]
-You really are a vengeful spirit[Beat][AN]
-[OpenEyes]
-Then it will be my axe that judges[N]
-you, and brings you to rest.[AN][X]
-
-
-## B1_BossQuote_Juan
-[FR][LoadJuan]
-[FR]Ah, looks like you play[N]
-around with knives too![AN]
-[ToggleSmile]Got anything fancy in those[N]
-pockets of yours?[AN]
-[AN][CSS][CF]
-
-[FL][LoadKiril]
-I'd like to see you try[N]
-and see, you common thief!
-[AN][CSS][CF]
-
-[FR][LoadJuan]
-Oh, well, I suppose I am [N]
-just a common thief, sure![AN]
-But, at least I don't go around [N]
-shanking the wrong people![AN]
-And us motley crew, are[N]
-pretty much the wrong people![AN]
-[Beat]In this specific[N]
-context, of course![AN]
-[AN][CSS][CF]
-
-[FL][LoadKiril]
-[Beat][AN]
-(The nerve of this man[Beat])[AN]
-(Not even the vultures would[N]
-to peck away at him[Beat])[A][X]
-
-## B1_BossQuote_Generic
-[FarLeft][LoadKiril]
-[Beat]The Antlions have stalked[N]
-these sands for years.[AN]
-We will not be your prey![AN]
-[A][X]
-
-## KirilDeathQuote
-[MidLeft][LoadKiril]
-[Beat][.5][CloseEyes][A][X]
 
 ## KirilChargesText
 [MidLeft][LoadKiril]

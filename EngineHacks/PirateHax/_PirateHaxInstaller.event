@@ -24,12 +24,6 @@
 #include "Equip/Installer.event"
 //Pikmin1211
 
-#include "FE8-New_CHAI/FE8-New_CHAI_EA.event"
-// Tequila/Gamma
-
-#include "FixedDifficulty.event"
-//StanH
-
 #include "Break/Installer.event"
 //Loog
 
@@ -49,8 +43,11 @@
 #include "mug_exceed/Installer.event"
 //MisakaMikoto, aera
 
-#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
+//#include "ToggleDeploymentSwapping/ToggleDeploymentSwappingInstaller.event"
 //Aura Wolf
+
+#include "ForceDeploymentRework/Installer.event"
+//Loog
 
 #include "ModularMinimugBox-master/Installers/MMBInstallerSagaOfTheSigilbearers.event"
 //Zane
@@ -63,9 +60,6 @@
 
 #include "FE8-Set Condition/FE8-Set Condition.event"
 //Tequila
-
-#include "ReworkForPrepScreenRightTopImage/Installer.event"
-//7743
 
 #include "HubFlagChecks/Installer.event"
 //Loog
@@ -88,8 +82,8 @@
 #include "ChangeChapterObjective/Installer.event"
 //Zeta/Gilgamesh
 
-#include "FortuneStaff/FortuneStaff.event"
-//Sme
+#include "BuffAndDebuffStaves/BuffAndDebuffStaves.event"
+// Fortune Staff by Sme, Protect and Concentrate copied from this and modified by Loog
 
 #include "Kirito/Extern.event"
 //Pikmin1211
@@ -110,15 +104,6 @@
 // literally no idea who to credit for this stuff, sorry
 // RW copied it over from bells of byelen, so maybe check that?
 
-
-// use EventMenuCommand instead!
-// there are two versions becaue RW is bad at organizing things
-// #include "EventMenu/EventMenuDef.event"
-// StanH
-
-#include "EventMenuCommand/EventMenuCommand.event"
-// stan? i think?
-
 #include "DoesUnitHaveItemASMC/DoesUnitHaveItem.event"
 //Sme
 
@@ -133,8 +118,6 @@
 #include "EVENTSCRIPT_COND_ITEM/Installer.event"
 
 #include "ASMCCheckSuite/ASMCGetterSetterInstaller.event"
-
-#include "FE8U-Fancy-Items-main/_MasterHackInstaller.event"
 
 ALIGN 4
 ReusableTempRAMPointer:
@@ -178,16 +161,33 @@ ALIGN 4
 #include "RecoilAxe/RecoilAxe.event" //Aura Wolf
 
 ALIGN 4
-#include "GetItemHealAmount/GetItemHealAmount.event"
+#include "BuffAndDebuffStaves/AssistStaff/AssistStaff.event" //Aura Wolf
 
 ALIGN 4
-#include "AssistStaff/AssistStaff.event" //Aura Wolf
-
-ALIGN 4
-#include "RushStaff/RushStaff.event" //Aura Wolf
+#include "BuffAndDebuffStaves/RushStaff/RushStaff.event" //Aura Wolf
 
 ALIGN 4
 #include "NarrowFontExtension/SerifExtension.event"
+
+ALIGN 4
+#include "AI_EnemyDeterminer/Installer.event" // decides who is an enemy for AI purposes
+
+#include "FE8U-Fancy-Items-main/_MasterHackInstaller.event"
+#include "TrapReworkPirate/Installer.event" // Loog
+
+#include "CHAI_Pirate/Installer.event" // Loog
+
+#include "SoundRoomText/Installer.event" //Pikmin1211
+
+#include "UltimateModularItemHealing/UltimateModularItemHealing.event" // Dragz
+
+#include "ScriptedBattleNumbers/ScriptedBattles.event"
+
+#include "LordSplitMenuPlus/LordSplitMenuPlus.event"
+
+#include "ShopListExpansion/Installer.txt" //Scraiza, AuraWolf
+
+#include "PrepsChapterDisplayRework/Installer.event"
 
 PUSH
 ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743
@@ -271,7 +271,12 @@ ORG 0x80C498
 BYTE 20
 ORG 0x80C49C
 BYTE 20
+ORG $80C487 //sand avo removed
+BYTE 0
+ORG $80C488 //desert avo increased to 10
+BYTE 10
 POP
+
 
 PUSH //fixes level reset in prep screen - Pikmin1211
 	//ORG 0x736D0
@@ -328,13 +333,40 @@ POP
 
 PUSH
 ORG $87132
-BYTE 40
+BYTE 45
 ORG $87142
-BYTE 40
+BYTE 45
 ORG $870fe
-BYTE 40
+BYTE 45
 ORG $87102
-BYTE 40
+BYTE 45
 ORG $87154
-BYTE 40
+BYTE 45
+POP
+
+// getting rid of weird gold hardcoded stuff by isolating it to two item only
+
+PUSH
+ORG $115AA
+BYTE 0x9F
+ORG $115AE
+BYTE 0xA0
+ORG $115B6
+BYTE 0x9F
+ORG $115B2
+BYTE 0xA0
+ORG $324DA
+BYTE 0x9F
+ORG $324D2
+BYTE 0xA0
+ORG $324CE
+BYTE 0x9F
+ORG $324D6
+BYTE 0xA0
+POP
+
+// hopefully getting rid of got a, an, some
+PUSH
+ORG $1619C
+BYTE 0x04 0xE1
 POP

@@ -80,6 +80,7 @@ CharacterEvent(0, NPCGuardTalk, Lua, GreagorGuard)
 CharacterEvent(0, NPCSmugglerTalk, Lua, GreagorSmuggler)
 CharacterEvent(0, NPCPeddlerTalk, Lua, GreagorPeddler)
 CharacterEvent(0, NPCVillagerCTalk, Lua, GreagorVillagerC)
+CharacterEvent(0, NPCSleepyGuardTalk, Lua, GreagorShirker)
 CharacterEvent(ShipwrightCaptainHubATalkFlag, NPCShipwrightCaptainArgumentTalk, Lua, GreagorCaptain)
 CharacterEvent(ShipwrightCaptainHubATalkFlag, NPCShipwrightCaptainArgumentTalk, Lua, GreagorShipwright)
 CharacterEvent(TwoPatronsHubATalkFlag, NPCPatronsDrinkingTalk, Lua, GreagorPatron)
@@ -93,14 +94,17 @@ FancyChapterPreview(HubA_2, Town_Day, HubA, PortGreagorCallbackA2)
 SVAL s1 0x1
 BNE 2 s1 sC
     EVBIT_MODIFY 0
-    Text(HubA2Accepted)
+    Text(HubA2Selection_Yes)
     GiveGold(1000)
     ENUF LuaInAHubFlag
     ASMC EyeForAnEyeResetASMC
+	CALL ShowAllPlayers
+	STAL 1
     MNC2 HubA_2
     NoFade
     ENDB
 LABEL 2
+Text(HubA2Selection_No)
 ENUF WentToHubA2
 NoFade
 ENDA
@@ -136,25 +140,9 @@ HubChapterFirstTimeEvent(1, SeenHubA4Pitch, HubA4Pitch)
 //TutorialYesNoText(HubA4Prompt) 
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubA_4, Ship, HubA, PortGreagorCallbackA4)
-SVAL s1 0x1
-BNE 2 s1 sC
-    EVBIT_MODIFY 0
-    Text(HubA4Selection_Yes)
-    ENUF LuaInAHubFlag
-    FADI 10
-    CUSA Desiderio
-    CUSA Pilar
-    CHECK_ALIVE Estelle
-    BEQ 776 s0 sC
-        CUSA Estelle
-    LABEL 776
-    ENUN
-    MNC2 HubA_4
-    NoFade
-    ENDB
-LABEL 2
-Text(HubA4Selection_No)
+GotoHubChapterIfYes(2, HubA_4, HubA4Selection_Yes)
 ENUF WentToHubA4
+Text(HubA4Selection_No)
 NoFade
 ENDA
 
@@ -162,23 +150,8 @@ GotoChapter5:
 HubChapterFirstTimeEvent(1, SeenHubA5Pitch, HubA5Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubA_5, Fort_Ruins_Outside, HubA, PortGreagorCallbackA5)
-SVAL s1 0x1
-BNE 2 s1 sC
-    EVBIT_MODIFY 0
-    Text(HubA5Accepted)
-    ENUF LuaInAHubFlag
-    FADI 10
-    CUSA Desiderio
-    CUSA Pilar
-    CHECK_ALIVE Estelle
-    BEQ 776 s0 sC
-        CUSA Estelle
-    LABEL 776
-    ENUN
-    MNC2 HubA_5
-    NoFade
-    ENDB
-LABEL 2
+GotoHubChapterIfYes(2, HubA_5, HubA5Selection_Yes)
+Text(HubA5Selection_No)
 ENUF WentToHubA5
 NoFade
 ENDA
@@ -203,6 +176,11 @@ BNE 776 s1 sC
 LABEL 776
 	Text(NPCVillagerDialogueC_1)
 LABEL 777
+NoFade
+ENDA
+
+NPCSleepyGuardTalk:
+Text(HubASleepyGuardText)
 NoFade
 ENDA
 
@@ -243,11 +221,12 @@ ENDA
 
 NPCPatronsDrinkingTalk:
 Text(NPCPatronDrinkingText)
+NoFade
 ENDA
 
 NPCPeddlerTalk:
 // sorry mufflebuns. hopefully this doesn't break anything. -RW
-ASMC (prCallFirstChoiceMenu+1)
+CallMenu(PeddlerPurchaseMenu)
 SVAL s1 0 //if tonic chosen
 BNE 900 s1 sC 
 	CALL NPCPeddlerTonicSelected
@@ -265,6 +244,7 @@ BNE 1000 s1 sC
 	CALL NPCPeddlerMetisSelected
 
 LABEL 1000
+NoFade
 ENDA
 
 NPCPeddlerTonicSelected:
@@ -289,6 +269,7 @@ LABEL 776 //No
 LABEL 777 //Broke
 	Text(PeddlerTellsLuaShesBroke)
 LABEL 1000
+NoFade
 ENDA
 
 NPCPeddlerShieldSelected:
@@ -309,6 +290,7 @@ LABEL 776 //No
 LABEL 777 //Broke
 	Text(PeddlerTellsLuaShesBroke)
 LABEL 1000
+NoFade
 ENDA
 
 NPCPeddlerMetisSelected:
@@ -329,6 +311,7 @@ LABEL 776 //No
 LABEL 777 //Broke
 	Text(PeddlerTellsLuaShesBroke)
 LABEL 1000
+NoFade
 ENDA
 
 PeddlerLeaves:
@@ -338,6 +321,7 @@ ENUF PeddlerHubAEncounterFlag
 STAL 45
 ENDWARP
 STAL 30
+NoFade
 ENDA 
 
 PilarEstelleHubATalk:
@@ -384,7 +368,8 @@ HubChapterFirstTimeEvent(1, SeenHubA6Pitch, HubA6Pitch)
 //Text(HubA6Prompt) 
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubA_6, Fort_Ruins, HubA, PortGreagorCallbackA6)
-GotoHubChapterIfYes(2, HubA_6, HubA6Accepted)
+GotoHubChapterIfYes(2, HubA_6, HubA6Selection_Yes)
+Text(HubA6Selection_No)
 ENUF WentToHubA6
 NoFade
 ENDA
@@ -392,7 +377,15 @@ ENDA
 LocationBasedEvents:
 Armory(HubAArmory,16,13)
 Vendor(HubAVendor,24,13)
+Village(HubAGreagorVillageVisitedFlag, SilenceVillage,4,6) //only accessible on layer 0
+CHES HubAGreagorDocksChestOpenedFlag KillerBow [13,4] 0x14 //chest, AFEV triggers giving the actual item and the event
 END_MAIN
+
+SilenceVillage:
+Text(HubASilenceVillageText)
+GiveItem(Silence, Lua)
+NoFade
+ENDA
 
 ALIGN 4
 HubAArmory:
@@ -413,11 +406,24 @@ AREA WentToBaseAgain BackToLuaBaseFirstTime [20,4] [21,4]
 AREA PortToBase BackToLuaBase [20,4] [21,4]
 
 AREA PortToTavern FromPortToTavern [8,20] [8,20]
-AREA TavernToPort ToPortFromTavern [8,20] [8,20] 
+AREA TavernToPort ToPortFromTavern [8,20] [8,20]
+AREA HubAGreagorDocksChestReactionFlag LuaReactsToLootingDockChest [13,4] [13,4]
 
 AFEV 0 RefreshLua 0
+
 CauseGameOverIfLordDies
 END_MAIN
+
+LuaReactsToLootingDockChest:
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC
+	Text(HubAKillerBowText) //if the chest flag's set, then this will play the first time that it's looted
+LABEL 776
+ENUF HubAGreagorDocksChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
+LABEL 777
+NoFade
+ENDA
+
 
 Traps1:
 BlueSigil(20, 4)
@@ -437,7 +443,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [13,11] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
-// only here for chapter A1 testing
+ENUT DifficultyChangeFlag
 ASMC EyeForAnEyeResetASMC
 ENUT LuaInAHubFlag
 ENUT PortToOtherAreas
@@ -446,6 +452,10 @@ BranchIfHubNotVisited(1, BeginningSceneFirstTimeCave)
 ENUT DocksToPort
 ENUT TavernToPort
 ENUT GotoChapter2Flag
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 ENUT 4 //port music only
 CALL PortSpawnEvent
 CheckHowManyHubChaptersCompleted
@@ -520,7 +530,7 @@ ENDA
 TalkToDurgham:
 HubFirstTimeTalkToUnit(DurghamSpokeToOnce, 1, DurghamFirstTimeText)
 LABEL 1
-SVAL s1 500
+SVAL s1 1000
 CHECK_MONEY
 BLE 4 s1 sC //if you have more money than the cost, branch to 4
     Text(DurghamTellsLuaShesBrokeText)
@@ -573,6 +583,10 @@ ENDA
 // AREA EVENTS HERE
 
 FromPortToTavern:
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 InitiateTileChangeInHub(ClearHubATraps, AddTavernTraps, 1, LuaInDaTavern, TavernGreensSpawnEvent)
 ENUF TavernToPort
 CallEventIfEIDNotSet(TavernFirstTime, 1, BarGangIntro)
@@ -597,6 +611,10 @@ ENDA
 ToPortFromTavern:
 InitiateTileRevertInHub(ClearTavernTraps, AddHubATraps, 1, LuaInFrontOfDaTavern, PortSpawnEvent)
 ENUF PortToTavern
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
@@ -616,6 +634,7 @@ MOVE 15 Estelle [4,14]
 ENUN
 CAMERA_CENTERED Lua
 Text(HubABeginningScene4_4)
+CUSA Estelle
 MOVE 15 Lua [3,16]
 ENUN
 Text(HubABeginningScene5_1)
@@ -629,10 +648,18 @@ NoFade
 ENDA
 
 PortGreagorDocks:
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 InitiateTileChangeInHub(ClearHubATraps, AddDockTraps, 0, LuaAtDaDocks, DocksSpawnEvent)
 ENUF DocksToPort
 ENUT PortToBase
 ENUT PortToTavern
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 2
+LABEL 776
 NoFade
 ENDA
 
@@ -640,17 +667,25 @@ CameBackFromDocksFirstTime:
 ENUF WentToHubA4
 ENUF WentToHubA5
 ENUF PeddlerHubAEncounterFlag
-
-InitiateTileRevertInHub(CUSADockBlues, ClearDockTraps, AddHubABackToBaseTraps, 0, LuaBackFromDaDocks, PortSpawnEventFirstTime)
+HIDEUNIT Desiderio
+HIDEUNIT Pilar
+REMOVEUNIT Estelle
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
+InitiateTileRevertInHub(ClearDockTraps, AddHubABackToBaseTraps, 0, LuaBackFromDaDocks, PortSpawnEventFirstTime)
 SetAllHubChapterFlags
 ENUT PortToBase
 ENUF WentToBaseAgain
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILECHANGE 2
+LABEL 776
 NoFade
 ENDA
 
 CUSADockBlues:
-CUSA Desiderio
-CUSA Pilar
 NoFade
 ENDA
 
@@ -661,20 +696,22 @@ NoFade
 ENDA
 
 GotoPortFromDocks:
-InitiateTileRevertInHub(CUSADockBluesTwo, ClearDockTraps, AddHubATraps, 0, LuaBackFromDaDocks, PortSpawnEvent)
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILEREVERT 2
+LABEL 776
+InitiateTileRevertInHub(ClearDockTraps, AddHubATraps, 0, LuaBackFromDaDocks, PortSpawnEvent)
 ENUF PortToDocks
 ENUF PortToBase
 ENUF PortToTavern
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILECHANGE 4
+LABEL 777
 NoFade
 ENDA
 
 CUSADockBluesTwo:
-CUSA Desiderio
-CUSA Pilar
-CHECK_ALIVE Estelle
-BEQ 1 s0 sC //if she's dead, skip
-    CUSA Estelle
-LABEL 1
 NoFade
 ENDA
 
@@ -688,6 +725,7 @@ ENUT WindUpFlag3
 ENUT ReadyForTakeoffFlag
 ENUT IgniswordsDead
 ENUT ElodiaChargeFlag
+ENUT 4 //for keeping music consistent
 CHECK_EVENTID GotoChapter2Flag
 BNE 776 s0 sC
     RemoveTrapAtCoords(7,4)
@@ -740,6 +778,9 @@ MUSC OrlandoThemeID
 Text(HubABeginningScene6_2)
 EraseBackground
 MUSC PortGreagorID
+HIDEUNIT Estelle
+HIDEUNIT Hermenegildo
+CenterTextbox(HubTutorial2)
 NoFade
 ENDA
 
@@ -795,9 +836,12 @@ FlashCursor(Hermenegildo,60)
 Text(HubABeginningScene2_2)
 MOVE 15 Razvan [0,17]
 MOVE 15 Hermenegildo [0,18]
-STAL 30
-Text(HubABeginningScene2_3)
 ENUN
+Text(HubABeginningScene2_3)
+HIDEUNIT Desiderio
+HIDEUNIT Pilar
+HIDEUNIT Carmen
+HIDEUNIT Ximo
 HIDEUNIT Razvan
 REMOVEUNIT Hermenegildo
 ENUT 4
@@ -818,11 +862,12 @@ ENUT PilarEstelleHubATalkFlag
 ENUT DesiderioIdaHubATalkFlag
 ENUT GotoChapter2Flag
 ENUT ElodiaChargeFlag
-ENUT 4
 CAMERA_CENTERED [2,0]
+STAL 5
 CenterTextbox(HubTutorial)
 SetChapterObjectiveText(HubAGoalWindow, HubAStatusObjective)
 CAMERA_CENTERED Lua
+SET_ACTIVE Lua
 STAL 5
 NoFade
 ENDB
@@ -852,12 +897,12 @@ UNIT Lua Captain 0 Level(10,Ally,False) [8,20] 0 0 0 0 [Cutlass, IronSword, Iron
 UNIT
 
 NewUnits:
-UNIT Estelle Troubadour 0 Level(2,Ally,False) [0,5] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Estelle Troubadour 0 Level(2,Ally,False) [0,5] 0 0 0 0 [Heal, PureWater] NoAI
 UNIT Hermenegildo Myrmidon 0 Level(2,Ally,False) [14,5] 0 0 0 0 [LightBrand, IronSword, Vulnerary] NoAI
 UNIT
 
 DurghamUnitGroup:
-UNIT Durgham LanceCav 0 Level(4,NPC,True) [1,20] 0 0 0 0 [IronLance, SteelLance, Vulnerary] NoAI
+UNIT Durgham LanceCav 0 Level(4,NPC,True) [1,20] 0 0 0 0 [Horseslayer, IronLance, Vulnerary] NoAI
 UNIT
 
 SamsonArranUnitGroup:
@@ -867,11 +912,11 @@ UNIT Bartz Deserter 0 Level(6,NPC,True) [7,14] 0 0 0 0 [SteelLance, Vulnerary] N
 UNIT
 
 MrYodsenUnitGroup:
-UNIT MrYodsen Gunner 0 Level(7,NPC,False) [12,16] 0 0 0 0 [SteelMusket, Mortar, Vulnerary, PureWater] NoAI
+UNIT MrYodsen Gunner 0 Level(9,NPC,False) [12,16] 0 0 0 0 [SteelMusket, Mortar, Vulnerary, PureWater] NoAI
 UNIT
 
 JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(3,NPC,True) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
+UNIT Jaime PegasusRider 0 Level(4,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand] NoAI
 UNIT
 
 OndehBikoUnitGroup:
@@ -887,7 +932,7 @@ DesiderioPilarGroup:
 UNIT Desiderio 0 0 Level(4,Ally,True) [8,22] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [4,12] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Docksman 0 0 Level(3, NPC, True) [6,4] 0 0 0 0 [SteelLance] NoAI
-UNIT Docksman Fighter 0 Level(3, NPC, True) [12,2] 0 0 0 0 [IronAxe] NoAI
+UNIT GreagorShirker Fighter 0 Level(3, NPC, True) [12,2] 0 0 0 0 [IronAxe] NoAI
 UNIT Docksman Mercenary 0 Level(4, NPC, True) [18,13] 0 0 0 0 [KillingEdge] NoAI
 UNIT
 
@@ -897,7 +942,7 @@ UNIT Orlando 0 0 Level(15,NPC,False) [8,20] 0x0 0x0 0 0 [SilverDagger, Thani] No
 UNIT
 
 DocksGroup:
-UNIT Estelle Troubadour 0 Level(2,NPC,False) [4,14] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Estelle Troubadour 0 Level(2,Ally,False) [4,14] 0 0 0 0 [Heal, Torch] NoAI
 UNIT Ida 0 0 Level(20, NPC, False) [8,21] 0 0 0 0 [SilverAxe] NoAI
 UNIT
 
@@ -1017,24 +1062,19 @@ NoFade
 ENDA
 
 DocksSpawnEventFirstTime:
+SHOWUNIT Desiderio
+SHOWUNIT Pilar
 LoadCutsceneUnits(DesiderioPilarGroup)
-CUSN Desiderio
-CUSN Pilar
 LoadPlayerUnits(EstelleOrlandoDocksGroup)
 NoFade
 ENDA
 
 DocksSpawners:
 LoadCutsceneUnits(DesiderioPilarGroup)
-CUSN Desiderio
-CUSN Pilar
+SetUnitStatusAll(GreagorShirker,BadStatus,0x72,AnyDeployed,AnyArmy,AnyClass,Area(24,8,24,8),AnyItem) //7 turns of Sleep on Ryker
 SpawnQuestSigil(WentToHubA5, 1, RedSigilTrapID, 8, 22)
 SpawnQuestSigil(WentToHubA4, 2, RedSigilTrapID, 4, 12)
 LoadPlayerUnits(DocksGroup)
-CHECK_ALIVE Estelle
-BEQ 776 s0 sC
-    CUSN Estelle
-LABEL 776
 CALL DocksSpawnEventNPCs
 NoFade
 ENDA

@@ -12,10 +12,6 @@
 //By Sme
 // #define ShadeID 255
 
-//Shade+: Enemies will not target this unit.
-//By Sme
-#define ShadePlusID 255
-
 
 //Aura Skills
 
@@ -366,10 +362,6 @@
 //Grisly Wound: Deals damage equal to 20% of the enemy's max HP after every battle.
 //By Snakey1
 #define GrislyWoundID 255
-
-//Powerstaff: Get another action after using a staff.
-//By Sme
-#define PowerstaffID 255
 
 //Re-Move: Luck% chance to get another action at end of turn.
 //By Sme
@@ -1017,10 +1009,6 @@
 //Summon: Can conjure a phantom soldier to fight alongside you.
 //By Sme
 #define SummonID 255
-
-//Supply: This unit has access to the convoy.
-//By Sme
-#define SupplyID 255
 
 //Shove: Allows unit to push other units one tile away.
 //By StanH

@@ -6,7 +6,7 @@ BYTE BoardingPartyID
 
 ALIGN 4
 BoardingPartyGoldCost_Link:
-WORD 1000
+WORD 250
 
 ALIGN 4
 BoardingPartySubtitleHelpTextID_Link:

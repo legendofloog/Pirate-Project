@@ -59,3 +59,7 @@ ChapterPreviewEntry(HubC_1, HubC1Title, HubC1Objective, HubC1Units, HubC1Loot, H
 ChapterPreviewEntry(HubC_2, HubC2Title, HubC2Objective, HubC2Units, HubC2Loot, HubC2Confirm)
 ChapterPreviewEntry(HubC_3, HubC3Title, HubC3Objective, HubC3Units, HubC3Loot, HubC3Confirm)
 ChapterPreviewEntry(HubC_4, HubC4Title, HubC4Objective, HubC4Units, HubC4Loot, HubC4Confirm)
+
+ChapterPreviewEntry(HubD_1, HubD1Title, HubD1Objective, HubD1Units, HubD1Loot, HubD1Confirm)
+ChapterPreviewEntry(HubD_2, HubD2Title, HubD2Objective, HubD2Units, HubD2Loot, HubD2Confirm)
+ChapterPreviewEntry(HubD_3, HubD3Title, HubD3Objective, HubD3Units, HubD3Loot, HubD3Confirm)

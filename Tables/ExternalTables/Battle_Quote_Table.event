@@ -3,25 +3,6 @@
 #define UnspecifiedAttackerConvo(Character,Chapter,EventID,TextID) "SHORT Character 0x0 Chapter EventID TextID 0x0 0x0 0x0"
 #define UnspecifiedAttackedConvo(Character,Chapter,EventID,TextID) "SHORT 0x0 Character Chapter EventID TextID 0x0 0x0 0x0"
 
-// Chapter C-2
-UnspecifiedAttackerConvo(Calista, HubC_2, 20, C2_CalistaBattleQuote)
-
-// Chapter 3
-SpecifiedBattleConvo(AlonsoChapter3, Lua, Chapter3, 11, Ch3AlonsoLuaBQ)
-SpecifiedBattleConvo(AlonsoChapter3, Desiderio, Chapter3, 12, Ch3AlonsoDesiderioBQ)
-SpecifiedBattleConvo(AlonsoChapter3, Orlando, Chapter3, 13, Ch3AlonsoOrlandoBQ)
-SpecifiedBattleConvo(AlonsoChapter3, Carmen, Chapter3, 14, Ch3AlonsoCarmenBQ)
-SpecifiedBattleConvo(AlonsoChapter3, Ximo, Chapter3, 15, Ch3AlonsoXimoBQ)
-SpecifiedBattleConvo(AlonsoChapter3, Ernest, Chapter3, 16, Ch3AlonsoErnestBQ)
-SpecifiedBattleConvo(Dalila, Pilar, Chapter3, 17, Ch3DalilaPilarBQ)
-SpecifiedBattleConvo(Dalila, Razvan, Chapter3, 18, Ch3DalilaRazvanBQ)
-SpecifiedBattleConvo(Dalila, Rahel, Chapter3, 19, Ch3DalilaRahelBQ)
-SpecifiedBattleConvo(Dalila, Fata, Chapter3, 20, Ch3DalilaFataBQ)
-UnspecifiedAttackerConvo(AlonsoChapter3, Chapter3, 1, Ch3AlonsoAttackerBQ)
-UnspecifiedAttackedConvo(AlonsoChapter3, Chapter3, 7, Ch3AlonsoAttackedBQ)
-UnspecifiedAttackerConvo(Dalila, Chapter3, 8, Ch3DalilaAttackerBQ)
-UnspecifiedAttackedConvo(Dalila, Chapter3, 9, Ch3DalilaAttackedBQ)
-
 // Chapter 1
 UnspecifiedBattleConvo(Khazhak, Chapter1, 1, Ch1KhazhakBQ)
 
@@ -120,6 +101,22 @@ SpecifiedBattleConvo(Nicodemus,Avocado,HubB_5,0x15,B5_BQ_NicodemusAvocado)
 SpecifiedBattleConvo(Nicodemus,MrYodsen,HubB_5,0x16,B5_BQ_NicodemusYodsen)
 UnspecifiedBattleConvo(Nicodemus,HubB_5,0x17,B5_BQ_NicodemusGeneric)
 
+// Chapter 3
+SpecifiedBattleConvo(AlonsoChapter3, Lua, Chapter3, 11, Ch3AlonsoLuaBQ)
+SpecifiedBattleConvo(AlonsoChapter3, Desiderio, Chapter3, 12, Ch3AlonsoDesiderioBQ)
+SpecifiedBattleConvo(AlonsoChapter3, Orlando, Chapter3, 13, Ch3AlonsoOrlandoBQ)
+SpecifiedBattleConvo(AlonsoChapter3, Carmen, Chapter3, 14, Ch3AlonsoCarmenBQ)
+SpecifiedBattleConvo(AlonsoChapter3, Ximo, Chapter3, 15, Ch3AlonsoXimoBQ)
+SpecifiedBattleConvo(AlonsoChapter3, Ernest, Chapter3, 16, Ch3AlonsoErnestBQ)
+SpecifiedBattleConvo(Dalila, Pilar, Chapter3, 17, Ch3DalilaPilarBQ)
+SpecifiedBattleConvo(Dalila, Razvan, Chapter3, 18, Ch3DalilaRazvanBQ)
+SpecifiedBattleConvo(Dalila, Rahel, Chapter3, 19, Ch3DalilaRahelBQ)
+SpecifiedBattleConvo(Dalila, Fata, Chapter3, 20, Ch3DalilaFataBQ)
+UnspecifiedAttackerConvo(AlonsoChapter3, Chapter3, 1, Ch3AlonsoAttackerBQ)
+UnspecifiedAttackedConvo(AlonsoChapter3, Chapter3, 7, Ch3AlonsoAttackedBQ)
+UnspecifiedAttackerConvo(Dalila, Chapter3, 8, Ch3DalilaAttackerBQ)
+UnspecifiedAttackedConvo(Dalila, Chapter3, 9, Ch3DalilaAttackedBQ)
+
 // Chapter C-1
 SpecifiedBattleConvo(Baltasar,Lua,HubC_1,0x13,C1_BQ_BaltasarLua)
 SpecifiedBattleConvo(Baltasar,Hermenegildo,HubC_1,0x14,C1_BQ_BaltasarHermenegildo)
@@ -143,6 +140,9 @@ SpecifiedBattleConvo(Sanz,Indio,HubC_1,0x1F,C1_BQ_SanzIndio)
 SpecifiedBattleConvo(Sanz,Orlando,HubC_1,0x20,C1_BQ_SanzOrlando)
 UnspecifiedBattleConvo(Sanz,HubC_1,0x1,C1_BQ_SanzGeneric)
 
+// Chapter C-2
+UnspecifiedAttackerConvo(Calista, HubC_2, 20, C2_CalistaBattleQuote)
+
 // Chapter D-1
 // DalilaRematch
 SpecifiedBattleConvo(DalilaRematch,Lua,HubD_1, 0xA, D1_BQ_DalilaLua)
@@ -158,5 +158,25 @@ SpecifiedBattleConvo(Solange,Leandra,HubD_1, 0x14, D1_BQ_SolangeLeandra)
 UnspecifiedBattleConvo(Solange,HubD_1, 0x13, D1_BQ_SolangeGeneric)
 // Rogelio
 UnspecifiedBattleConvo(Rogelio,HubD_1, 0x1, D1_BQ_Rogelio)
+
+// Chapter D-3
+// Enrique
+SpecifiedBattleConvo(Enrique,Razvan,HubD_3, D3_Enrique_Razvan_BQ_Flag, D3_Enrique_Razvan_BQ)
+SpecifiedBattleConvo(Enrique,Pilar,HubD_3, D3_Enrique_Pilar_BQ_Flag, D3_Enrique_Pilar_BQ)
+SpecifiedBattleConvo(Enrique,Desiderio,HubD_3, D3_Enrique_Desiderio_BQ_Flag, D3_Enrique_Desiderio_BQ)
+SpecifiedBattleConvo(Enrique,Calista,HubD_3, D3_Enrique_Calista_BQ_Flag, D3_Enrique_Calista_BQ)
+SpecifiedBattleConvo(Enrique,Avocado,HubD_3, D3_Enrique_Avocado_BQ_Flag, D3_Enrique_Avocado_BQ)
+SpecifiedBattleConvo(Enrique,Jaime,HubD_3, D3_Enrique_Jaime_BQ_Flag, D3_Enrique_Jaime_BQ)
+UnspecifiedBattleConvo(Enrique,HubD_3, D3_Enrique_BQ_Flag, D3_Enrique_BQ)
+
+// Inka
+
+SpecifiedBattleConvo(Inka,Razvan,HubD_3, D3_Inka_Razvan_BQ_Flag, D3_Inka_Razvan_BQ)
+SpecifiedBattleConvo(Inka,Lua,HubD_3, D3_Inka_Lua_BQ_Flag, D3_Inka_Lua_BQ)
+SpecifiedBattleConvo(Inka,Fidel,HubD_3, D3_Fidel_Inka_BQ_Flag, D3_Fidel_Inka_BQ)
+SpecifiedBattleConvo(Inka,Tangyuan,HubD_3, D3_Inka_Tangyuan_BQ_Flag, D3_Inka_Tangyuan_BQ)
+SpecifiedBattleConvo(Inka,Dmitr,HubD_3, D3_Inka_Dmitr_BQ_Flag, D3_Inka_Dmitr_BQ)
+UnspecifiedBattleConvo(Inka,HubD_3, D3_Inka_BQ_Flag, D3_Inka_BQ)
+
 
 BYTE 0xFF 0xFF 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 // Terminator

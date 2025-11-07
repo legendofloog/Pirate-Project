@@ -1,37 +1,17 @@
-// Jaime:
-// Age: late 20s
-// Appearence: same hair color as Carmen, long hair that covers one of his eyes,
-// square chin, stubble, aggressive but worried expression, some sort of hat.
-// A young rebel. Aggressive and quick to anger, with strong convictions. However,
-// he's actually a runaway noble and a relative of Carmen. He's trying to hide this, because
-// he doesn't think the rebels will accept him if they knew the truth. Probably have
-// him interact with her a few times if she's alive. His real name is Hector del Rian.
+// Beginning Scene: Leonor and her crew have been withstanding a siege for some time. Felipe, who was held back by Sierra's urgings from the siege, notices a pirate ship soaring
+// in from the distance. All excited and worried that the pirates are in league with the rebels to help them escape, Felipe marches in on his own and commands Sierra to take the
+// northern position despite her job being to guard him (and despite this risking civilian lives,). Exasperated, she accepts it and calls in Manfred, saying that it's time to raid
+// the village if Felipe is charging in. Manfred relishes over the chance to commit violence, to Sierra's disgust, and then he leaves. Sierra then sends a messenger to the center
+// of town, warning the mayor that if he harbors rebels any longer, then he and everyone inside will pay the price. Then, she sends a message to headquarters, calling on all available TORCH.
 
-// Leonor:
-// Age: mid 30s
-// Appearence: Muscular, reddish hair, 
-// battered clerical garb, some sort of facial scar.
-// Originally a laborer for hire, she was attacked by a drunk Imperial soldier
-// and became bitter when the Empire wouldn't take action against him. This,
-// combined with universally low pay for difficult manual labor, convinced her
-// to join the rebellion. Despite lacking magical talent, she was trained as a
-// healer, and after a paricularly fatal battle with the Empire in which most of
-// the highest-ranking rebel healers were killed, she rose to a leadership position.
-// Secretly, she's a bit tired of being a prominent rebel, and is looking for new
-// side opportunities so she can disappear for a while.
+// We pan to Leonor's crew, who's been suddenly cast out by the mayor and left on her own. Her rebels have scattered, some are killed holding off the enemy, and Leonor is pressed on
+// her recent failures, as if her heart isn't in it anymore. Leonor seems near ready to give up entirely, tired of how pointless everything that she's done feels.
+// Then, Jaime arrives with Lua in tow, and he bolsters everyone's spirit and says that they finally have aid. Lua sees the situation and surmises that by the time everyone's loaded
+// onto the ship, the enemy will be able to catch up and blow a hole in it with their siege magi. That means that they have no choice but to fight.
 
-// Felipe
-// Age: early 30s
-// Appearence: Dark skin, messy hair, tiny moustache, fancy armor
-// An imperial noble who used his social status to become a lieutenant in
-// the imperial army. His confidence in his abilities is greater than
-// his actual abilities, but he does have somewhat absurd luck.
+// Exhausted, Leonor agrees but cedes all command to Lua, tired of 
 
-// Sierra
-// appearence: armor knight girl
 
-// Manfred
-// appearence: bandit manfred von karma
 
 ## ChA2Title
 Ch. A-2: The Rebels' Incendiv[X]
@@ -185,38 +165,16 @@ We need every blade we can get![AN][X]
 ## A2Village
 [MidLeft][LoadVillager][MidRight][LoadCurrent]
 [MidLeft][3LB]
-What? The Empire's here?[N]
-Damn! I hate those scoundrels![N]
-I was going to give this staff[AN]
-to the rebel Leonor, so could[N]
-you get it to her? I hadn't even[N]
-seen her yet[Beat][AN][X]
-
-## A2ReinforcementWarning
-[MidLeft][LoadFelipe]
-[MidLeft][3LB]
-It appears our enemies are doing[N]
-better than expected[Beat] No matter![N]
-We shall charge, and crush them all![AN]
-[X]
-
-## A2ReinforcementWarning2
-[MidRight][LoadRedSoldier]
-[MidRight][3LB]
-That's the signal taken care of.[N]
-Now, even if we're all killed,[N]
-they'll still be wiped out by the[AN]
-reinforcements. If they have any[N]
-sense, they'll retreat[Beat][AN]
-[X]
-
-## A2FelipeTurn1
-[MidLeft][LoadFelipe]
-[MidLeft][3LB]
-What? The rebels have gotten[N]
-reinforcements? Well, it doesn't matter![N]
-We'll just crush them too![AN]
-[X]
+So the mayor's given up the fight[Beat][AN]
+Bah! Commander Leonor's tried so[N]
+hard to liberate us, and now,[N]
+the bastard wants to give up?[AN]
+Well, he can throw in the towel,[N]
+but I won't! You're with the commander,[N]
+right? Here, take this staff with you.[AN]
+Might save a life or two, if you've[N]
+got someone skilled enough to use it.[N]
+Now, you'd best be off. Give 'em hell![AN][X]
 
 ## A2Ending1
 [MidLeft][LoadLua]
@@ -293,37 +251,47 @@ lives, so at least we got something.[AN][X]
 
 ## CarmenJaimeConvo
 [MidLeft][LoadJaime][MidRight][LoadCarmen]
-[MidRight][1LB]
-You look familiar. Have I seen you before?[AN]
-[MidLeft][2LB]
-I don't know what you're talking about. I[N]
-don't recognize you at all.[AN]
-[MidRight][1LB]
-[Beat]Wait, aren't you my cou-[AN]
-[MidLeft][MoveFarRight][MidRight][MoveFarFarRight]
-[FarRight][2LB]
-Stop talking! You'll blow my cover![N]
-I'm Jaime the normal commoner![AN]
-[FarRight][MoveFarFarLeft]
-[FarFarRight][MoveMidRight]
-[MidRight][1LB]
-This is very strange.[AN]
-[X]
-
-## A2AltObjective1
-Escape[X]
-
-## A2AltObjective2
-Escape before[N]
-reinforcements[X]
+[MidRight][3LB]
+Hm[Beat] Hold a moment, you.[N]
+Your name is Jaime, yes?[N]
+And yet, you look familiar[Beat][AN]
+[MidLeft]
+Well, you don't look familiar to me.[N]
+Maybe you're just seeing things in[N]
+the heat of battle. Speaking of which-[AN]
+[MR]
+Aha! Now I remember! You're not Jaime;[N]
+you're Hector! Hector del Rias, yes?[N]
+It's been quite some time, cous-[AN]
+[ML]
+Keep it the hell down, will you?![N]
+Obviously, no one here knows,[N]
+so I'd appreciate it if you shut up.[AN]
+[MR]
+I could be convinced, with the proper[N]
+incentive[Beat] But why leave home, Hector?[N]
+You had everything that you could want.[AN]
+You could have inherited the del Rias[N]
+fortune[Beat] Why leave to play rebel?[AN]
+[ML]
+I'm not playing at anything, Carmen.[AN]
+Look, we don't have time to talk about[N]
+this, right now. Just know that I'm[N]
+where I wanna be, doing what I wanna do.[AN]
+Now, get back to the fight and keep your[N]
+head on straight. I don't wanna spend[N]
+all my time making sure you're safe.[AN]
+[MR]
+[Beat]Ha! Protecting me won't be necessary,[N]
+Jaime. I've become quite an excellent[N]
+pirate. Allow me to show you my mettle![A][X]
 
 ## A2GameOver
 [MidLeft][LoadLua]
 [MidLeft][3LB]
 Damn it! Just by looking at them,[N]
 I can tell we'll never beat those[N]
-troops. Is this really how it ends[Beat]?[AN]
-[X]
+troops. Is this really how it ends[Beat]?[AN][X]
 
 ## Ch2JaimeTip
 [ML][LoadJaime]
@@ -350,55 +318,34 @@ a pure draught of holy water[Beat][AN]
 Well, whatever. Use my skills however[N]
 you see fit, but don't waste them.[N]
 Otherwise, we might die here after all.[A]
-[MR][2LB]
-Hmph. You're too young to worry like[N]
-a veteran merc on their last job.[AN]
-Your talents won't go to waste,[N]
-so follow my lead if you want to live![A][X]
-
-## FelipeBossQuote
-[ML][LoadFelipe]
-Aha, the rebels show themselves![AN]
-My immense skill may cause you[N]
-to curse that we ever met.[AN]
-Fear not; you will be remembered,[N]
-as a footnote in my exploits![A][X]
-
-## FelipeDeathQuote
-[ML][LoadFelipe]
-Wait, wait! Don't kill me![AN]
-I can grant you great wealth,[N]
-or fame, or whatever you wish![AN]
-I can't[Beat] I can't die here![A][X]
-
-## SierraBossQuote
-[ML][LoadSierra]
-[Beat]You're no rebels, are you?[AN]
-I don't know why you're here,[N]
-but I've got a job to do.[AN]
-Get out of my way, will you?[A][X]
-
-## SierraDeathQuote
-[ML][LoadSierra]
-Ah[Beat] Is this how it ends?[AN]
-What a terrible way to go[Beat][N]
-I should've[Beat] left him[Beat][A][X]
-
-## ManfredBossQuote
-[ML][LoadManfred]
-Hahahaha! I was just getting[N]
-bored of chopping up rebels.[AN]
-You look like you'll put up[N]
-a fight[Beat] Don't bore me![A][X]
-
-## ManfredDeathQuote
-[ML][LoadManfred]
-Is this[Beat] blood? But you were[N]
-supposed to be the one to die![AN]
-This wasn't[Beat] fun at all[Beat][A][X]
+[MR][ToggleSmile]
+Hmph[Beat] Underestimating us, aren't you?[N]
+We haven't survived this long by luck.[N]
+You'll get what you paid for, Jaime![A][X]
 
 ## Ch2SierraChargeText
 [ML][LoadSierra]
-And Felipe's strategies went as poor[N]
+And Felipe's strategies went as poorly[N]
 as expected[Beat] I've seen enough.[AN]
 Forget his orders. I'm going in![A][X]
+
+## A2GameOverHugo
+[MidLeft][LoadHugo][3LB][ToggleSmile]
+This is the place with all the ruckus,[N]
+eh? The marines stationed here must[N]
+not be worth much[Beat] Well, whatever.[AN]
+I've been waiting for a chance to scrap[N]
+since I got my promotion, so I should[N]
+be thankin' those losers, really.[AN]
+Listen up, boys! It's TORCHin' time![N]
+Pirates, rebels, whoever these folks[N]
+are[Beat] Take 'em in, or wipe 'em out![AN][X]
+
+## A2GameOverLua
+[MidRight][LoadLua][3LB]
+TORCH is here? This quickly? Shit![AN]
+There's no way that we can escape[N]
+before they catch up to us[Beat][N]
+I never should've taken this damn job.[AN][CloseEyes]
+I'm sorry, everyone. This is the end[N]
+of our journey[Beat] and it's my fault[Beat][AN][X]

@@ -2,52 +2,106 @@
 #define DeathQuote(Character,Chapter,EventID,TextID,Pointer) "SHORT Character; BYTE 0xFF Chapter; SHORT EventID TextID ; POIN Pointer"
 #define DeathQuote(Character,Chapter,EventID,TextID) "SHORT Character; BYTE 0xFF Chapter; SHORT EventID TextID 0 0"
 
-// Players
+// Players - Initial //Rewrite Pilar/Desi/Razvan ones
 DeathQuote(Lua, AllChapters, 0x65, LuaDQ)
-DeathQuote(Pilar, AllChapters, 0, PilarDQ)
-DeathQuote(Desiderio, AllChapters, 0, DesiderioDQ)
-DeathQuote(Razvan, AllChapters, 0, RazvanDQ)
+DeathQuote(Pilar, AllChapters, 0x65, PilarDQ)
+DeathQuote(Desiderio, AllChapters, 0x65, DesiderioDQ)
+DeathQuote(Razvan, AllChapters, 0x65, RazvanDQ)
 DeathQuote(Carmen, AllChapters, 0, CarmenDQ)
 DeathQuote(Ximo, AllChapters, 0, XimoDQ)
+
+// Players - Hub A
 DeathQuote(Hermenegildo, AllChapters, 0, HermenegildoDQ)
 DeathQuote(Estelle, AllChapters, 0, EstelleDQ)
-//B-2a unique death for Magdalena in cutscene.
-DeathQuote(Magdalena, CutsceneHubB_2a, 0, B2a_DQ_Magdalena)
 
-// the B-2 trio have game over death quotes inside B-2 to save on conditionals
-DeathQuote(Husniye, HubB_2, 0x65, HusniyeDQ)
+//needs a before joining for good version in A-1
+DeathQuote(Indio, HubA_1, 0, IndioDQ_BeforeRecruit)
+DeathQuote(Indio, AllChapters, 0, IndioDQ)
+DeathQuote(Leandra, HubA_1, 0x16, LeandraDQ_BeforeRecruit)
+DeathQuote(Leandra, AllChapters, 0, LeandraDQ)
+
+DeathQuote(Jaime, HubA_2, 0, JaimeDQChapterA2)
+DeathQuote(Jaime, AllChapters, 0, JaimeDQ)
+DeathQuote(Leonor, HubA_2, 0, LeonorDQChapterA2)
+DeathQuote(Leonor, AllChapters, 0, LeonorDQ)
+
+DeathQuote(Biko, HubA_3, 0, BikoDQ_BeforeJoin)
+DeathQuote(Ondeh, HubA_3, 0, OndehDQ_BeforeJoin)
+DeathQuote(Biko, AllChapters, 0, BikoDQ)
+DeathQuote(Ondeh, AllChapters, 0, OndehDQ)
+
+//needs an enemy version in A-4
+DeathQuote(Juan, HubA_4, 20, JuanDQBeforeRecruit)
+DeathQuote(Juan, AllChapters, 0, JuanDQ)
+
+DeathQuote(Tangyuan, AllChapters, 0,TangyuanDQ)
+
+//need A-6 versions before they officially join
+DeathQuote(Matteo, HubA_6, 0, MatteoDQBeforeRecruit)
+DeathQuote(Suzanne, HubA_6, 0, SuzanneDQBeforeRecruit)
+DeathQuote(Matteo, AllChapters, 0, MatteoDQ)
+DeathQuote(Suzanne, AllChapters, 0, SuzanneDQ)
+
+DeathQuote(Durgham, AllChapters, 0, DurghamDQ)
+DeathQuote(Yodsen, AllChapters, 0, YodsenDQ)
+DeathQuote(Triana, AllChapters, 0, TrianaDQ)
+DeathQuote(Bartz, AllChapters, 0, BartzDQ)
+DeathQuote(Medwyn, AllChapters, 0, MedwynDQ)
+
+DeathQuote(Rahel, AllChapters, 0, RahelDQ)
+DeathQuote(Orlando, AllChapters, 0, OrlandoDQ)
+
+// Players - Hub B
+DeathQuote(Dmitr, HubB_1, 0, DmitrDQBeforeRecruit)
+DeathQuote(Dmitr, AllChapters, 0, DmitrDQ)
+
+DeathQuote(Magdalena, CutsceneHubB_2a, 0, B2a_DQ_Magdalena) // the B-2 trio have game over death quotes inside B-2 to save on conditionals
+DeathQuote(Magdalena, AllChapters, 0, MagdalenaDQ) // doesn't really seem like they need conditionals, but we can add some later if needed - Loog
 DeathQuote(Husniye, AllChapters, 0, HusniyeDQ)
-DeathQuote(Avocado, HubB_2, 0x65, AvocadoDQ)
 DeathQuote(Avocado, AllChapters, 0, AvocadoDQ)
-DeathQuote(Magdalena, HubB_2, 0x65, MagdalenaDQ)
-DeathQuote(Magdalena, AllChapters, 0, MagdalenaDQ)
-// B-3
+
 DeathQuote(Ernest, AllChapters, 0, ErnestDQ)
+DeathQuote(Kai, HubB_3, 0x11, KaiDQBeforeRecruit)
 DeathQuote(Kai, AllChapters, 0, KaiDQ)
 
-//Adrian and Lexa can die as enemies and have seperate quotes for event purposes
-DeathQuote(Adrian, HubB_4, 0xC, AdrianDQB_4)
+DeathQuote(Adrian, HubB_4, 0xC, AdrianDQBeforeRecruit)
+DeathQuote(Lexa, HubB_4, 0xD, LexaDQBeforeRecruit)
+DeathQuote(Noah, HubB_4, 0, NoahDQBeforeRecruit)
 DeathQuote(Adrian, AllChapters, 0, AdrianDQ)
-DeathQuote(Lexa, HubB_4, 0xD, LexaDQB_4)
 DeathQuote(Lexa, AllChapters, 0, LexaDQ)
+DeathQuote(Noah, AllChapters, 0, NoahDQ)
 
-// B-5
 DeathQuote(Fata, AllChapters, 0, FataDQ)
 
-// C-1
+DeathQuote(Passarola, AllChapters, 0, PassarolaDQ)
+DeathQuote(Neltume, AllChapters, 0, NeltumeDQ)
+DeathQuote(Ponte, AllChapters, 0, PonteDQ)
+
+// Players - Hub C
 DeathQuote(Ruby, HubC_1, 0x65, RubyDQ)
 DeathQuote(Ruby, AllChapters, 0, RubyDQ)
 
-//C-2
-DeathQuote(Salvador, HubC_2, 0x2, 0)
+DeathQuote(Calista, HubC_2, 0, CalistaDQBeforeRecruit)
+DeathQuote(Valerie, HubC_2, 0, ValerieDQBeforeRecruit)
+DeathQuote(Calista, AllChapters, 0, CalistaDQ)
+DeathQuote(Valerie, AllChapters, 0, ValerieDQ)
 
+DeathQuote(Rima, AllChapters, 0, RimaDQ)
+DeathQuote(Bolton, AllChapters, 0, BoltonDQ)
 
-//DeathQuote()
+DeathQuote(Remora, AllChapters, 0, RemoraDQ)
+
+DeathQuote(Windy, AllChapters, 0, WindyDQ)
+DeathQuote(Kurt, AllChapters, 0, KurtDQ)
+DeathQuote(Theana, AllChapters, 0, TheanaDQ)
+
+//More new Hub D units soon tm
+
+//D-3 while fidel is green
+DeathQuote(Fidel, HubD_3, D3FidelDQFlag, D3_FidelDQ)
+DeathQuote(Fidel, HubD_3, 0, FidelDQ)
 
 // Bosses
-
-DeathQuote(AlonsoChapter3, Chapter3, 2, Ch3AlonsoDQ)
-DeathQuote(Dalila, Chapter3, 10, Ch3DalilaDQ)
 
 DeathQuote(Khazhak,Chapter1, 2, Ch1KhazhakDQ)
 
@@ -67,7 +121,6 @@ DeathQuote(Ramiro, HubA_4, 11, A4_RamiroDefeated)
 
 DeathQuote(Gunsmith, HubA_5, 0x9, 0)
 
-
 DeathQuote(Juliana, Chapter2, 0, JulianaDeathQuote)
 DeathQuote(Hugo, Chapter2, 0, HugoDeathQuote)
 DeathQuote(Ignacio, Chapter2, 0, IgnacioDeathQuote)
@@ -85,13 +138,25 @@ DeathQuote(Javier, HubB_4, 0x2, JavierDQ)
 
 DeathQuote(Nicodemus, HubB_5, 0, NicodemusDeathQuote)
 
+DeathQuote(AlonsoChapter3, Chapter3, 2, Ch3AlonsoDQ)
+DeathQuote(Dalila, Chapter3, 10, Ch3DalilaDQ)
+
 DeathQuote(Baltasar, HubC_1, 0xA, BaltasarDQ)
 DeathQuote(TheCloser, HubC_1, 0xC, TheCloserDQ)
 DeathQuote(Krezke, HubC_1, 0xE, KrezkeDQ)
 DeathQuote(Sanz, HubC_1, 0x2, SanzDQ)
 
+//C-2
+DeathQuote(Salvador, HubC_2, 0x2, 0)
+
+
+
 DeathQuote(DalilaRematch, HubD_1, 0, DalilaRematchDQ)
 DeathQuote(Solange, HubD_1, 0, SolangeDQ)
 DeathQuote(Rogelio, HubD_1, 0x2, RogelioDQ)
+
+DeathQuote(Enrique, HubD_3, D3EnriqueDQFlag, EnriqueDQ)
+DeathQuote(Inka, HubD_3, D3InkaDQFlag, InkaDQ)
+DeathQuote(Wall, HubD_3, D3WallBrokenAFEVFlag, 0) //it's a wall.
 
 DeathQuote(0xFFFF,0,0,0) // terminator

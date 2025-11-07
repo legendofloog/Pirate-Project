@@ -1,3 +1,4 @@
+#define AllHandsOnDeckID 0x43 //title bgm slot
 #define PortGreagorID 0x6
 #define BeatToQuartersID 0x7
 #define DistantSkiesID 0x8
@@ -38,10 +39,23 @@
 #define MaroonedAliveID 0x28
 #define DeadWindsStillTidesID 0x29
 #define FallingFalloutID 0x2A
-
+#define SkysEndID 0x2B
+#define HeavensHorizonID SkysEndID
+#define BeforeTheGallowsID 0x2C
+#define AtSkysEndID 0x2D
+#define AKeepersOathID 0x2E
+#define ASoldiersDutyID 0x2F
+#define SailingIntoTheHorizonID 0x30
 
 #define WindAmbienceID 0x47
 #define WindAmbianceID 0x47
 #define WindGustSoundID 0x4E
 #define NighttimeSoundID 0x4A 
 #define BlizzardSoundID 0x50
+#define GuyFallingSoundID 0xAC
+#define SnagDestructionSoundID 0xAF
+#define PegasusFlyingSoundID 0xA6
+
+#define AudienceCheerSoundID 0x8F
+
+#define AttackSnagSoundID 0xB0

@@ -32,23 +32,23 @@ Str +2 for[N]
 one chapter.[X]
 
 ## SklTonicName
-Skl Tonic[X]
+Dex Tonic[X]
 
 ## SklTonicDescription
-Skl +2 for one chapter.[X]
+Dex +2 for one chapter.[X]
 
 ## SklTonicUseText
-Skl +2 for[N]
+Dex +2 for[N]
 one chapter.[X]
 
 ## SpdTonicName
 Spd Tonic[X]
 
 ## SpdTonicDescription
-Spd +3 for one chapter.[X]
+Spd +2 for one chapter.[X]
 
 ## SpdTonicUseText
-Spd +3 for[N]
+Spd +2 for[N]
 one chapter.[X]
 
 ## DefTonicName
@@ -72,13 +72,13 @@ Res +5 for[N]
 one chapter.[X]
 
 ## LuckTonicName
-Luck Tonic[X]
+Eva Tonic[X]
 
 ## LuckTonicDescription
-Luck +3 for one chapter.[X]
+Eva +3 for one chapter.[X]
 
 ## LuckTonicUseText
-Luck +3 for[N]
+Eva +3 for[N]
 one chapter.[X]
 
 ## MagTonicName
@@ -95,12 +95,12 @@ one chapter.[X]
 Rnbw Tonic[X]
 
 ## RainbowTonicDescription
-HP/Res +5, Def/Lck +3, and all other[N]
-stats +2 for one chapter.[X]
+HP/Res +5, Def/Eva +3, and all[N]
+other stats +2 for one chapter.[X]
 
 ## RainbowTonicUseText
-Def/Lck/Res +3, others[N]
-+2, and HP +5 for[N]
+HP/Res +5, Def/Eva +3,[N]
+and others +2 for[N]
 one chapter.[X]
 
 ## DebugText

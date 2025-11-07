@@ -1,0 +1,46 @@
+
+Symbol table '.symtab' contains 43 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000000     0 SECTION LOCAL  DEFAULT    3 
+     3: 00000000     0 SECTION LOCAL  DEFAULT    4 
+     4: 0202bcb0     0 NOTYPE  LOCAL  DEFAULT  ABS GameDataStruct
+     5: 0202bcf0     0 NOTYPE  LOCAL  DEFAULT  ABS ChapterDataStruct
+     6: 0203a958     0 NOTYPE  LOCAL  DEFAULT  ABS ActionStruct
+     7: 02033f3c     0 NOTYPE  LOCAL  DEFAULT  ABS SelectedUnit
+     8: 03004e50     0 NOTYPE  LOCAL  DEFAULT  ABS ActiveUnit
+     9: 0203a4ec     0 NOTYPE  LOCAL  DEFAULT  ABS BattleActingUnit
+    10: 0203a56c     0 NOTYPE  LOCAL  DEFAULT  ABS BattleTargetUnit
+    11: 0203a5ec     0 NOTYPE  LOCAL  DEFAULT  ABS pBattleRoundArray
+    12: 0203a608     0 NOTYPE  LOCAL  DEFAULT  ABS ppBattleCurrentRound
+    13: 0203dde8     0 NOTYPE  LOCAL  DEFAULT  ABS TargeterXY
+    14: 0203ddec     0 NOTYPE  LOCAL  DEFAULT  ABS TargetList
+    15: 0203e0ec     0 NOTYPE  LOCAL  DEFAULT  ABS TargetNum
+    16: 0202e4d4     0 NOTYPE  LOCAL  DEFAULT  ABS CurrentMapSize
+    17: 0202e4d8     0 NOTYPE  LOCAL  DEFAULT  ABS rsUnitMapRows
+    18: 0202e4dc     0 NOTYPE  LOCAL  DEFAULT  ABS rsTerrainMapRows
+    19: 0202e4e0     0 NOTYPE  LOCAL  DEFAULT  ABS rsMoveMapRows
+    20: 0202e4e4     0 NOTYPE  LOCAL  DEFAULT  ABS rsRangeMapRows
+    21: 0202e4e8     0 NOTYPE  LOCAL  DEFAULT  ABS rsFogMapRows
+    22: 0202e4f0     0 NOTYPE  LOCAL  DEFAULT  ABS rsOtherMoveMapRows
+    23: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 IE_StatusStaffEffect
+    24: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    25: 0000005c     0 NOTYPE  LOCAL  DEFAULT    1 StatusStaffHit
+    26: 00000044     0 NOTYPE  LOCAL  DEFAULT    1 StatusStaffMiss
+    27: 0000006c     0 NOTYPE  LOCAL  DEFAULT    1 Skip
+    28: 0000007c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    29: 00000000     0 SECTION LOCAL  DEFAULT    8 
+    30: 0000000c     0 NOTYPE  LOCAL  DEFAULT   11 $d
+    31: 00000000     0 SECTION LOCAL  DEFAULT   10 
+    32: 00000000     0 SECTION LOCAL  DEFAULT    6 
+    33: 00000000     0 SECTION LOCAL  DEFAULT   11 
+    34: 00000000     0 SECTION LOCAL  DEFAULT    5 
+    35: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND RamUnitByID
+    36: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND BActingUnitUpdate
+    37: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND BTargetUnitUpdate
+    38: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND GetStatusStaffHitRate
+    39: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND Roll2RN
+    40: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND Item_GetStat_EPV_Jump
+    41: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND FinishItemBattleRound
+    42: 00000000     0 NOTYPE  GLOBAL DEFAULT  UND StartItemGraphics

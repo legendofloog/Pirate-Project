@@ -1,0 +1,208 @@
+
+SpawnHubCUnits:
+LoadPlayerUnits(HubC_StartingCrewGuaranteed)
+LoadAllyUnitGroupIfAlive(Ruby, 1, RubyHubCGroup)
+LoadAllyUnitGroupIfAlive(Leandra, 2, LeandraHubCGroup)
+LoadAllyUnitGroupIfAlive(Adrian, 3, AdrianHubCGroup)
+LoadAllyUnitGroupIfAlive(Valerie, 4, ValerieHubCGroup)
+LoadAllyUnitGroupIfAlive(Calista, 5, CalistaHubCGroup)
+LoadAllyUnitGroupIfAlive(Noah, 6, NoahHubCGroup)
+LoadAllyUnitGroupIfAlive(Medwyn, 7, MedwynHubCGroup)
+LoadAllyUnitGroupIfAlive(Windy, 8, WindyAllyHubCGroup) //removing her being a npc that's recruited like the other guys, so ally only
+LoadAllyUnitGroupIfAlive(Rima, 10, RimaHubCGroup)
+LoadAllyOrNPCUnitGroupIfEIDSet(HubC_Kurt_Recruited_Flag, Kurt, 11, 12, KurtAllyHubCGroup, KurtNPCHubCGroup)
+LoadAllyUnitGroupIfAlive(Remora, 13, RemoraAllyHubCGroup)
+LoadAllyUnitGroupIfAlive(Triana, 14, TrianaHubCGroup)
+LoadAllyUnitGroupIfAlive(Fata, 15, FataHubCGroup)
+LoadAllyUnitGroupIfAlive(Neltume, 16, NeltumeHubCGroup)
+LoadAllyUnitGroupIfAlive(Husniye, 17, HusniyeHubCGroup)
+LoadAllyUnitGroupIfAlive(Magdalena, 18, MagdalenaHubCGroup)
+LoadAllyUnitGroupIfAlive(Lexa, 19, LexaHubCGroup)
+LoadAllyUnitGroupIfAlive(Bartz, 20, BartzHubCGroup)
+LoadAllyUnitGroupIfAlive(Kai, 21, KaiHubCGroup)
+LoadAllyOrNPCUnitGroupIfEIDSet(HubC_Theana_Recruited_Flag, Theana, 22, 23, TheanaAllyHubCGroup, TheanaNPCHubCGroup)
+LoadAllyUnitGroupIfAlive(Durgham, 24, DurghamHubCGroup)
+LoadAllyUnitGroupIfAlive(Yodsen, 25, YodsenHubCGroup)
+LoadAllyUnitGroupIfAlive(Juan, 26, JuanHubCGroup)
+LoadAllyUnitGroupIfAlive(Passarola, 27, PassarolaHubCGroup)
+LoadAllyUnitGroupIfAlive(Bolton, 28, BoltonHubCGroup)
+//hub guys need to come after
+LoadNPCUnitGroupIfEIDNotSet(WentToHub1, 776, RubyNPCUnitHubCGroup, C1Indicator)
+LoadNPCUnitGroupIfEIDNotSet(WentToHub2, 777, Keeper1UnitHubCGroup, C2Indicator)
+LoadNPCUnitGroupIfEIDNotSet(WentToHub3, 778, BoruUnitHubCGroup, C3Indicator)
+LoadNPCUnitGroupIfEIDNotSet(WentToHub4, 779, RemoraNPCUnitHubCGroup, C4Indicator)
+NoFade
+ENDA
+
+C1Indicator:
+AddTrap(RedSigilTrapID, 2, 21)
+NoFade
+ENDA
+
+C2Indicator:
+AddTrap(RedSigilTrapID, 0, 8)
+NoFade
+ENDA
+
+C3Indicator:
+AddTrap(RedSigilTrapID, 23, 5)
+NoFade
+ENDA
+
+C4Indicator:
+AddTrap(RedSigilTrapID, 22, 15)
+NoFade
+ENDA
+
+RubyNPCUnitHubCGroup:
+UNIT Ruby Hero_F 0 Level(18,NPC,True) [2,21] 0 0 0 0 [WoDao,SteelAxe,HandAxe,Vulnerary] BossAI
+UNIT
+
+Keeper1UnitHubCGroup:
+UNIT KeeperC2 Soldier 0 Level(15,NPC,True) [0,8] 0 0 0 0 [SteelLance] BossAI
+UNIT
+
+BoruUnitHubCGroup:
+UNIT Boru Runeshield 0 Level(13,NPC,True) [23,5] 0 0 0 0 [Arcfire] BossAI
+UNIT
+
+RemoraNPCUnitHubCGroup:
+UNIT Remora Berserker 0 Level(16,NPC,True) [22,15] 0 0 0 0 [Oversize, Swordreaver, Swimwear, Swimwear] BossAI
+UNIT
+
+HubC_StartingCrewGuaranteed:
+//placed
+UNIT Pilar Ninja 0 Level(1,Ally,False) [3,20] 0 0 0 0 [0x0] NoAI
+UNIT Desiderio Vanguard 0 Level(1,Ally,False) [20,8] 0 0 0 0 [0x0] NoAI
+UNIT Razvan Curate 0 Level(1,Ally,False) [1,13] 0 0 0 0 [0x0] NoAI
+UNIT Carmen Mage_F 0 Level(1,Ally,False) [20,22] 0 0 0 0 [0x0] NoAI
+UNIT Jaime PegasusRider 0 Level(1,Ally,False) [21,21] 0 0 0 0 [0x0] NoAI
+UNIT Tangyuan DragonRider 0 Level(1,Ally,False) [3,4] 0 0 0 0 [0x0] NoAI
+UNIT Indio Shaman 0 Level(1,Ally,False) [8,23] 0 0 0 0 [0x0] NoAI
+UNIT Dmitr Brigand 0 Level(1,Ally,False) [9,22] 0 0 0 0 [0x0] NoAI
+UNIT Ondeh Hunter_F 0 Level(1,Ally,False) [8,17] 0 0 0 0 [0x0] NoAI
+UNIT Hermenegildo Myrmidon 0 Level(1,Ally,False) [7,16] 0 0 0 0 [0x0] NoAI
+UNIT Rahel BowCav 0 Level(1,Ally,False) [10,14] 0 0 0 0 [0x0] NoAI
+UNIT Ximo Archer 0 Level(1,Ally,False) [10,15] 0 0 0 0 [0x0] NoAI
+UNIT Matteo Mercenary 0 Level(1,Ally,False) [14,10] 0 0 0 0 [0x0] NoAI
+UNIT Orlando Trickster 0 Level(1,Ally,False) [22,17] 0 0 0 0 [0x0] NoAI
+UNIT Leonor Cleric 0 Level(1,Ally,False) [4,10] 0 0 0 0 [0x0] NoAI
+UNIT Estelle Troubadour 0 Level(1,Ally,False) [6,10] 0 0 0 0 [0x0] NoAI
+UNIT Suzanne Gunner 0 Level(1,Ally,False) [17,18] 0 0 0 0 [0x0] NoAI
+UNIT Biko Soldier 0 Level(1,Ally,False) [10,6] 0 0 0 0 [0x0] NoAI
+UNIT Ernest Gryphoknight 0 Level(1,Ally,False) [11,5] 0 0 0 0 [0x0] NoAI
+UNIT Ponte Brigand 0 Level(1,Ally,False) [15,21] 0 0 0 0 [0x0] NoAI
+//not placed
+UNIT
+
+RubyHubCGroup:
+UNIT Ruby Hero_F 0 Level(1,Ally,False) [8,15] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LeandraHubCGroup:
+UNIT Leandra Fighter_F 0 Level(1,Ally,False) [10,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AdrianHubCGroup:
+UNIT Adrian Fighter 0 Level(1,Ally,False) [4,5] 0 0 0 0 [0x0] NoAI
+UNIT
+
+ValerieHubCGroup:
+UNIT Valerie Archer 0 Level(1,Ally,False) [0,13] 0 0 0 0 [0x0] NoAI
+UNIT
+
+CalistaHubCGroup:
+UNIT Calista Dragoon 0 Level(1,Ally,False) [0,14] 0 0 0 0 [0x0] NoAI
+UNIT
+
+NoahHubCGroup:
+UNIT Noah Warden 0 Level(1,Ally,False) [21,7] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MedwynHubCGroup:
+UNIT Medwyn Warden 0 Level(1,Ally,False) [21,9] 0 0 0 0 [0x0] NoAI
+UNIT
+
+WindyAllyHubCGroup:
+UNIT Windy SwordCav 0 Level(6,Ally,False) [3,19] 0 0 0 0 [0x0] NoAI
+UNIT
+
+RimaHubCGroup:
+UNIT Rima AxeCav 0 Level(1,Ally,False) [4,6] 0 0 0 0 [0x0] NoAI
+UNIT
+
+KurtNPCHubCGroup:
+UNIT Kurt Wolfrider 0 Level(15,NPC,True) [19,6] 0 0 0 0 [SilverLance, SteelKnife] BossAI
+UNIT
+
+KurtAllyHubCGroup:
+UNIT Kurt Wolfrider 0 Level(15,Ally,False) [15,11] 0 0 0 0 [0x0] NoAI
+UNIT
+
+RemoraAllyHubCGroup:
+UNIT Remora Berserker 0 Level(15,Ally,False) [22,15] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TrianaHubCGroup:
+UNIT Triana Shaman 0 Level(1,Ally,False) [21,16] 0 0 0 0 [0x0] NoAI
+UNIT
+
+FataHubCGroup:
+UNIT Fata Monk 0 Level(1,Ally,False) [0,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+NeltumeHubCGroup:
+UNIT Neltume Priest 0 Level(1,Ally,False) [1,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+HusniyeHubCGroup:
+UNIT Husniye Thief 0 Level(1,Ally,False) [2,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+MagdalenaHubCGroup:
+UNIT Magdalena Sage_F 0 Level(1,Ally,False) [7,10] 0 0 0 0 [0x0] NoAI
+UNIT
+
+LexaHubCGroup:
+UNIT Lexa Myrmidon_F 0 Level(1,Ally,False) [18,17] 0 0 0 0 [0x0] NoAI
+UNIT
+
+BartzHubCGroup:
+UNIT Bartz Deserter 0 Level(1,Ally,False) [19,18] 0 0 0 0 [0x0] NoAI
+UNIT
+
+KaiHubCGroup:
+UNIT Kai Ninja 0 Level(1,Ally,False) [13,1] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TheanaAllyHubCGroup:
+UNIT Theana Assassin_F 0 Level(20,Ally,False) [13,2] 0 0 0 0 [0x0] NoAI
+UNIT
+
+TheanaNPCHubCGroup:
+UNIT Theana Assassin_F 0 Level(20,NPC,True) [21,3] 0 0 0 0 [DeadeyeBow, Bloodletter] NoAI
+UNIT
+
+DurghamHubCGroup:
+UNIT Durgham LanceCav 0 Level(1,Ally,False) [4,14] 0 0 0 0 [0x0] NoAI
+UNIT
+
+YodsenHubCGroup:
+UNIT Yodsen Gunner 0 Level(1,Ally,False) [5,13] 0 0 0 0 [0x0] NoAI
+UNIT
+
+JuanHubCGroup:
+UNIT Juan Thief 0 Level(1,Ally,False) [5,12] 0 0 0 0 [0x0] NoAI
+UNIT
+
+AvocadoHubCGroup:
+UNIT Avocado Deserter 0 Level(1,Ally,False) [12,5] 0 0 0 0 [0x0] NoAI
+UNIT
+
+PassarolaHubCGroup:
+UNIT Passarola Adventurer 0 Level(1,Ally,False) [14,22] 0 0 0 0 [0x0] NoAI
+UNIT
+
+BoltonHubCGroup:
+UNIT Bolton DarkKnight 0 Level(1,Ally,False) [16,21] 0 0 0 0 [0x0] NoAI
+UNIT

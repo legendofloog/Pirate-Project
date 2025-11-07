@@ -1,4 +1,4 @@
-#include "gbafe.h"
+#include "ASMCS.h"
 
 #define DesiderioCharId 3
 extern u8 SuppliesItemIDLink;
@@ -187,3 +187,105 @@ void DoesAnyUnitHaveForestFriendASMC(){ //here, we will loop through our entire 
         }
     }
 }
+
+void CheckIfTileChangeTriggered(){
+    if (AreMapChangeTriggered(gEventSlot[0x1])){
+        gEventSlot[0xC] = 1;
+        return;
+    }
+    gEventSlot[0xC] = 0;
+}
+
+void SetDifficultyASMC(){
+    int result = gEventSlot[0x1];
+    if (result == 1) // normal mode
+    {
+        if (IsDifficultMode()) //if we're on hard, unset flag
+        {
+            gPlaySt.chapterStateBits ^= PLAY_FLAG_HARD; 
+        }
+        else if (TUTORIAL_MODE()) //if we're on easy mode, do some stuff
+        {   
+            gPlaySt.config.controller = 1; //unsets easy mode
+        }
+        else // normal mode, so do nothing
+        {
+
+        }
+    }
+    else if (result == 2) // hard mode
+    {
+        if (IsDifficultMode()) //if we're already on hard, don't do anything
+        {
+
+        }
+        else if (TUTORIAL_MODE()) //if we're on easy mode, do some stuff
+        {
+            gPlaySt.config.controller = 1;
+            gPlaySt.chapterStateBits |= PLAY_FLAG_HARD; //makes sure hard flag's set
+        }
+        else //all we have to do for normal
+        {
+            gPlaySt.chapterStateBits |= PLAY_FLAG_HARD; 
+        }
+    }
+    else //can only be 0, so easy mode
+    {
+        if (IsDifficultMode()) //if we're on hard, unset flag
+        {
+            gPlaySt.chapterStateBits ^= PLAY_FLAG_HARD; //this unsets the hard flag, i think.
+            gPlaySt.config.controller = 0; //this sets easy mode
+            //gPlaySt.chapterStateBits |= PLAY_FLAG_TUTORIAL;
+        }
+        else if (TUTORIAL_MODE()) //if we're on easy mode, do nothing
+        {   
+
+        }
+        else // normal mode, so do nothing
+        {
+            gPlaySt.config.controller = 0;
+            //gPlaySt.chapterStateBits |= PLAY_FLAG_TUTORIAL;
+        }
+    }
+}
+
+void UnsetBattleUnitDebuffBits(struct Unit* unit)
+{
+    u32* unitDebuffs = GetUnitDebuffEntry(unit);
+    UnsetBit(unitDebuffs, BreakBitOffset_Link);
+    UnsetBit(unitDebuffs, BreakInBattleBitOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingSklOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingSpdOffset_Link);
+    UnsetBit(unitDebuffs, AstralBlessingLckOffset_Link);
+    UnsetBit(unitDebuffs, LiquidCourageBitOffset_Link);
+    ClearAllChapterKillCounters(); //hardworking's thing
+    UnsetBit(unitDebuffs, FortuneStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, MiraclemakerBitOffset_Link);
+    UnsetBit(unitDebuffs, NailedDownBitOffset_Link);
+    UnsetBit(unitDebuffs, DelegationBitOffset_Link);
+    UnsetBit(unitDebuffs, SwiftBitOffset_Link);
+    UnsetBit(unitDebuffs, PollenateBitOffset_Link);
+    UnsetBit(unitDebuffs, NoMoveBitOffset_Link);
+    UnsetBit(unitDebuffs, RushStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, DoubleFalconBitOffset_Link);
+    UnsetBit(unitDebuffs, ProtectStaffBitOffset_Link);
+    UnsetBit(unitDebuffs, ConcentrateStaffBitOffset_Link);
+}
+
+void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()
+{
+	int unitID = 0;
+	int maxCount = FACTION_PURPLE; //we want to loop through blue/red/green and clear all these bits on preps
+	
+	
+	while (unitID < maxCount) {
+		//get the unit unitID
+		struct Unit* curUnit = GetUnit(unitID);
+		
+		//clear Fortune bit
+		UnsetBattleUnitDebuffBits(curUnit);
+		
+		unitID++;
+	}	
+}
+

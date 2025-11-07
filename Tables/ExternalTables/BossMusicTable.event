@@ -32,6 +32,8 @@ BossBGMEntry(Sanz, TheStormUponUsID)
 BossBGMEntry(Quispe, TheStormUponUsID)
 BossBGMEntry(DalilaRematch, TheStormUponUsID)
 BossBGMEntry(Solange, TheStormUponUsID)
+BossBGMEntry(Enrique, TheStormUponUsID)
+BossBGMEntry(Inka, TheStormUponUsID)
 // rogelio specifically gets a milder boss theme, since he's not exactly a threat
 BossBGMEntry(Rogelio, TheWavesApprenticeID)
 

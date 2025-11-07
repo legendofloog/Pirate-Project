@@ -75,7 +75,7 @@ pActionRoutineTable:
 	NoActionRoutine				  // 0x28 Shop Unit
 	ActionRoutine(BoardingPartyAction)           // 0x29 ACTION_BOARDINGPARTY
 	ActionRoutine(PollenateAction)               // 0x2A ACTION_POLLENATE 
-	NoActionRoutine               // 0x2B FREE
+	ActionRoutine(ExecBreakMine)                 // 0x2B ACTION_SPECIALORDINANCE
 	NoActionRoutine               // 0x2C FREE
 	NoActionRoutine               // 0x2D FREE
 	NoActionRoutine               // 0x2E FREE

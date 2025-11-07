@@ -21,6 +21,7 @@
 [CSSCF] = [CSS][CF]
 [Clear] = [2NL]
 [TMM] = [ToggleMouthMove]
+[ACE] = [A][CloseEyes]
 
 [,] = ,[.4]
 [5.] = .[.5]
@@ -149,7 +150,10 @@
 
 [LoadRemora] = [LoadFace][0x4f][0x1]
 
-
+[LoadFidel] = [LoadFace][0xBD][0x1]
+[LoadKaisa] = [LoadFace][0x51][0x1]
+[LoadAristides] = [LoadFace][0x51][0x1]
+[LoadFlorencia] = [LoadFace][0x51][0x1]
 
 
 [LoadElodia] = [LoadFace][0x47][0x1]
@@ -161,9 +165,15 @@
 [LoadRedFighter] = [LoadFace][0x6D][0x1]
 
 [LoadPirate] = [LoadFace][0x31][0x1]
+[LoadB4Salesman] = [LoadPirate]
+[LoadB5Hunter] = [LoadFace][0x6d][0x1]
+[LoadB3Skyfisher] = [LoadFace][0xAF][0x1]
+[LoadB2Rebel] = [LoadFace][0x6E][0x1]
+[LoadB1Adventurer] = [LoadFace][0x62][0x1]
 
+[LoadForestProtector] = [LoadFace][0x9B][0x1]
 [LoadA4ImperialCaptain] = [LoadFace][0x55][0x1]
-[LoadCalista] = [LoadFace][0x55][0x1]
+[LoadCalista] = [LoadA4ImperialCaptain]
 [LoadValerie] = [LoadFace][0x54][0x1]
 [LoadStingray] = [LoadFace][0x99][0x1]
 [LoadRamiro] = [LoadFace][0x9A][0x1]
@@ -174,7 +184,7 @@
 [LoadSagargala] = [LoadFace][0x52][0x1]
 
 [LoadRochefort] = [LoadFace][0x58][0x1]
-[LoadSantiago] = [LoadFace][0x59][0x1]
+[LoadSantiago] = [LoadFace][0xB2][0x1]
 [LoadSlicer] = [LoadFace][0x40][0x1]
 [LoadDicer] = [LoadFace][0x41][0x1]
 
@@ -209,11 +219,14 @@
 [LoadRecelosoPriest] = [LoadFace][0x5B][0x1]
 [LoadRecelosoStudent] = [LoadFace][0x62][0x1]
 [LoadRecelosoGuard] = [LoadFace][0x6A][0x1]
+[LoadSoldier] = [LoadRecelosoGuard]
 [LoadRecelosoBarkeep] = [LoadFace][0x60][0x1]
 [LoadAzahar] = [LoadFace][0x56][0x1]
 [LoadJavier] = [LoadFace][0x2F][0x1]
 [LoadKiril] = [LoadFace][0x4A][0x1]
 [LoadNicodemus] = [LoadFace][0x20][0x1]
+
+[LoadSalvador] = [LoadFace][0xB8][0x1]
 
 [LoadKrezke] = [LoadFace][0x23][0x1]
 [LoadBaltasar] = [LoadFace][0x28][0x1]
@@ -238,6 +251,8 @@
 [LoadGreagorPatron] = [LoadFace][0x6D][0x1]
 [LoadGreagorPeddler] = [LoadFace][0x31][0x1]
 [LoadGreagorLibrarianB] = [LoadFace][0x59][0x1]
+[LoadOldMan] = [LoadGreagorLibrarianB]
+[LoadOldWoman] = [LoadFace][0x5f][0x1]
 [LoadGreagorVillagerB] = [LoadFace][0x61][0x1]
 [LoadGreagorPatronB] = [LoadFace][0x5A][0x1]
 [LoadGreagorVillagerC] = [LoadFace][0x58][0x1]
@@ -264,6 +279,14 @@
 
 [LoadBlueSoldier] = [LoadFace][0x6A][0x1]
 [LoadRebelSupplier] = [LoadFace][0x6C][0x1]
+[LoadD3SoldierBro1] = [LoadFace][0x70][0x1]
+[LoadD3SoldierBro2] = [LoadFace][0x71][0x1]
+[LoadEnrique] = [LoadFace][0xBB][0x1]
+[LoadInka] = [LoadFace][0xBC][0x1]
+[LoadCorina] = [LoadFace][0x60][0x1]
+
+[LoadRedYadney] = [LoadFace][0xFB][0x1]
+
 
 // 0x49 portrait id is open now
 

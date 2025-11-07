@@ -26,7 +26,7 @@ ldr 		r1, [r1, #0x28]			@ gets unit's class attributes
 mov 		r0, #0x1 			@ mounted aid attribute
 and		r1, r0
 cmp		r1, #0x1
-beq		RetFalse			@ if the unit has it, they cannot steal
+beq		RetFalse			@ if the unit has it, they cannot stealE
 
 mov		r0,#1				@ passes in true if they do not have this and are a player
 

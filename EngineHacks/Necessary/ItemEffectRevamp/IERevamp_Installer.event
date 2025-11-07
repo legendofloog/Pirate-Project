@@ -1,11 +1,5 @@
 //Currently FE8 only
 
-#ifndef FreeSpace	//write hack at this offset if assebmling from this file
-	#ifdef _FE8_
-		#define FreeSpace 0xB40000
-	#endif
-	ORG FreeSpace
-#endif
 
 #include "Extensions/Hack Installation.txt"
 #include "_ItemStatMacros.event"

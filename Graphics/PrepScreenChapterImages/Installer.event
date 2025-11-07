@@ -1,0 +1,22 @@
+
+//prep chapter numbers except it also has letters
+
+//notes: fix palette, hardcode in the standard chapters (1, 2, 3, 4, 5) and have hubs say "Hub"
+
+
+PUSH
+ORG 0x95C78
+POIN PrepChapterDisplaySheet
+ORG 0x95c80
+POIN PrepChapterDisplaySheetPal     //also used for support screen
+ORG 0xA14ec
+POIN PrepChapterDisplaySheetPal
+POP
+
+ALIGN 4
+PrepChapterDisplaySheet:
+#incbin "PrepChapterDisplaySheet.png.dmp"
+
+ALIGN 4
+PrepChapterDisplaySheetPal:
+#incbin "PrepChapterDisplaySheet.png.pal.dmp"

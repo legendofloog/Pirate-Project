@@ -33,17 +33,6 @@ void ApplyHelpBoxContentSize(struct HelpBoxProc* proc, int width, int height){
         height += 0x10;
 
         break;
-    /*
-    case 4: //equip
-    case 5: //offensive equip
-    case 6: //defensive equip
-    if (width < 0x60)
-        width = 0x60;
-
-    height += 0x10;
-
-    break;
-    */
     } // switch (GetHelpBoxItemInfoKind(proc->item))
 	int textID = proc->mid;
 	if(DoesHelpTextHaveOccupation(textID)) {
@@ -116,6 +105,7 @@ int DrawHelpBoxOccupationLabels(u16 textID) {
 		}
 		i++;
 	}
+    return 1;
 }
 
 bool DoesHelpTextHaveOccupation(u16 textID) {
