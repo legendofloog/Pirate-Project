@@ -235,7 +235,7 @@ UNIT 0x36 WyvernRider 0 Level(16,Enemy,True) 	[0,8] 	0 0 0 0 [Longbow] GroupOneA
 UNIT
 
 IntroCutsceneVillage_FirstArrival:
-UNIT Pavel Supplier 0 Level(4,NPC,True) [14,21] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Khazhak Fighter 0 Level(4,NPC,True) [14,21] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Orlando 0 0 Level(4,Ally,True) [15,22] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [14,22] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [13,22] 0x0 0x0 0 0 [0x0] NoAI
@@ -263,7 +263,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [10,15] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT Pilar 0 0 Level(1,Ally,True) [13,15] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Razvan 0 0 Level(1,Ally,True) [8,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Orlando 0 0 Level(4,Ally,True) [12,15] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Pavel Supplier 0 Level(4,NPC,True) [11,14] 0x0 0x0 0 0 [0x0] NoAI
+UNIT Khazhak Fighter 0 Level(4,NPC,True) [11,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x91 VillagerMAdult 0 Level(4,NPC,True) [9,16] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x51 VillagerMChild 0 Level(4,NPC,True) [20,16] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x52 VillagerFAdult 0 Level(4,NPC,True) [16,13] 0x0 0x0 0 0 [0x0] NoAI
@@ -458,7 +458,7 @@ FADU 5
 
 //Village time. 
 STAL 60
-MOVE 5 Pavel 	[14,14]
+MOVE 5 Khazhak 	[14,14]
 STAL 20
 MOVE 5 Lua 		[13,15]
 STAL 15
@@ -466,7 +466,7 @@ MOVE 5 Pilar 	[15,15]
 STAL 15
 MOVE 5 Razvan 	[14,16]
 ENUN
-FlashCursor(Pavel, 60)
+FlashCursor(Khazhak, 60)
 Text(Hub_C2_Intro_7)
 
 //negotiations begin, fade to black
@@ -524,12 +524,12 @@ MOVE 30 0xAA [14,16] //mage
 MOVE 30 0xAB [14,14] //merc
 MOVE 30 0xAD [15,15] //cura
 CAMERA_CENTERED [8,12]
-MOVE 5 Pavel [9,12]
+MOVE 5 Khazhak [9,12]
 MOVE 5 Pilar [11,11]
 MOVE 5 Orlando [8,13]
 ENUN 
 STAL 15
-FlashCursor(Pavel,60)
+FlashCursor(Khazhak,60)
 Text(Hub_C2_Intro_12)
 ENUF 0x84 //need to disable this in order to see HP bars
 
@@ -545,9 +545,9 @@ FlashCursor(0x90, 60)
 Text(Hub_C2_Intro_13)
 
 //cavalier finds more reinforcements,
-//Pavel moves out with remaining troops
+//Khazhak moves out with remaining troops
 MOVE 9 0x90 [13,21]
-MOVE 6 Pavel [18,14]
+MOVE 6 Khazhak [18,14]
 ENUN
 MOVE 6 0xAC [20,15] //halb
 STAL 30
