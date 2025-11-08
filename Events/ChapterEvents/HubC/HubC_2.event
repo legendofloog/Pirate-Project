@@ -73,7 +73,7 @@ Units1:
 //Middle Units
 UNIT Lua Captain 0 Level(10,Ally,False) [9,26] 0 0 0 0 [IronSword] NoAI
 //Valerie
-UNIT Valerie Archer 0 Level(5,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
+UNIT Valerie Archer_F 0 Level(5,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
 LoadUnit(11,26)
 LoadUnit(8,27)
 LoadUnit(10,27)
@@ -86,6 +86,9 @@ LoadUnit(3,26)
 LoadUnit(1,27)
 LoadUnit(2,27)
 LoadUnit(2,28)
+//adding a couple more units so we have one map with more units to play around with - Loog
+LoadUnit(13,26)
+LoadUnit(3,27)
 UNIT
 
 EnemiesAttackingCalista:
@@ -221,8 +224,8 @@ UNIT 0x5A 			Hero_F 1 Level(18,Enemy,True) 	[16,5] 0 0 0 0 [SilverSword] WaitOne
 UNIT
 
 IntroCutsceneImperials_Forest:
-UNIT Valerie Archer 0 Level(5,Enemy,True) 	[5,2] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
-UNIT Calista Dragoon 0 Level(20,Enemy,True) [5,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
+UNIT Valerie Archer_F 0 Level(5,Enemy,True) 	[5,2] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
+UNIT Calista Dragoon 0 Level(18,Enemy,True) [5,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
 //use 0x32 - 0x35 for allegience changes
 UNIT 0x32 Gunner 0 Level(3, Enemy, True) 	[3,5] 0 0 0 0 [SteelLance] ChargeAI //imperial recruit
 UNIT 0x33 SwordCav 0 Level(3, Enemy, True) 	[4,3] 0 0 0 0 [] ChargeAI
@@ -255,7 +258,8 @@ UNIT Rebel Fighter 0 Level(4,NPC,True) [7,10] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 IntroCutsceneImperialDuoFleeing:
-UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
+UNIT Calista Dragoon 0 Level(18,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, Elixir, Mine] BossAI
+UNIT
 
 
 IntroCutsceneVillage_AttackIncoming:
@@ -275,7 +279,7 @@ UNIT 0xAA Mage 0 Level(4,NPC,True) [12,17] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0xAB Mercenary 0 Level(4,NPC,True) [3,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0xAC Halberdier 0 Level(4,NPC,True) [15,17] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0xAD Curate 0 Level(4,NPC,True) [17,14] 0x0 0x0 0 0 [0x0] NoAI
-UNIT Valerie Archer 0 Level(5,NPC,True) [9,4] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
+UNIT Valerie Archer_F 0 Level(5,NPC,True) [9,4] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
 //these guys actively move once pirates spotted
 UNIT 0x60 Knight 0 Level(4,NPC,True) [11,5] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x61 Soldier 0 Level(4,NPC,True) [8,5] 0x0 0x0 0 0 [0x0] NoAI
@@ -300,6 +304,7 @@ UNIT 0x76 Fighter 0 Level(16,Enemy,True) [10,1] 0 0 0 0 [SteelAxe] ChargeAI
 UNIT
 
 BeginningScene:
+/*
 //ASMC ClearAllDebuffs // now clears tonics, too. If you add a prep screen to this chapter, then restarting the chapter after saving will remove any tonic boosts because this ASMC is being called each time. 
 WEATHER 7
 
@@ -589,7 +594,8 @@ REMOVEALL_RED
 
 //CenterTextbox(C2_Synopsis_A)
 //REMOVEALL_BLUE
-
+*/
+// TBD: Add Eventing to this
 LoadEnemies(CalistaTrapped)
 LoadEnemies(SmallRebelGarrison)
 LoadEnemies(MainAssault)
@@ -597,8 +603,7 @@ LoadEnemies(MiddleUnits)
 LoadEnemies(RearUnits)
 LoadEnemies(EnemiesAttackingCalista)
 
-// TBD: Add Eventing to this
-
+SetBackground(Woodland) // the forest
 MUSC SwabbieTalkID
 Text(HubC_2_BeginningScene1)
 MUSC ASoldiersDutyID
@@ -611,23 +616,30 @@ Text(HubC_2_BeginningScene5)
 Text(HubC_2_BeginningScene6)
 MUSC StillZephyrsID
 
+SetBackground(Village)
 Text(HubC_2_BeginningScene7)
 MUSC FinInTheCloudsID
 Text(HubC_2_BeginningScene8)
 Text(HubC_2_BeginningScene8_2)
 Text(HubC_2_BeginningScene8_3)
 
+FADI 15
 TILECHANGE TC_C2Snag //callista is now exposed...
 AddTrap(MineTrapID,1,5) //...but she's got explosives, baby. 
 AddTrap(MineTrapID,1,6)
 AddTrap(MineTrapID,0,6)
-SetUnitItemDurability(7, 16, 2, StrTonic) //Give valerie a str tonic
+LoadEnemies(ValerieInDaSquad)
+SetUnitItemDurability(Valerie, 2, StrTonic) //Give valerie a str tonic
 SetUnitItemDurability(14, 5, 1, RainbowTonic) //Give a fighter a droppable rainbow tonic
 SetUnitItemDurability(0, 5, 3, 7) //Callista used 3 mines as preperation! 
 
 GotoPrepScreen
 NoFade
 ENDA
+
+ValerieInDaSquad:
+UNIT Valerie Archer_F 0 Level(5,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
+UNIT
 
 QuickdrawVillage:
 //SetBackground(HouseBG)
@@ -702,6 +714,11 @@ NoFade
 ENDA
 
 EndingScene:
+FADI 15
+FadeOutMusic
+STAL 60
+MUSC StillZephyrsID
+SetBackground(Village)
 Text(C2_EndingScene1)
 Text(C2_EndingScene1_2)
 Text(C2_EndingScene1_3)
@@ -725,14 +742,16 @@ LABEL 778
 MUSC CherishTheDeadID
 Text(C2_EndingScene2_NoneAlive) //if you somehow got both killed
 LABEL 780
-
-MUSC ABlackheartsPrideID
+FADI 15
+STAL 60
+SetBackground(Woodland)
+MUSC ASoldiersDutyID
 Text(C2_EndingScene_Elodia)
 FADI 15
 STAL 60
 FADU 15
+MUSC ABlackheartsPrideID
 Text(C2_EndingScene_Alonso)
-
 GoToHubChapter(HubC)
 NoFade
 ENDA

@@ -6,7 +6,6 @@ extern u8 EqualizerID_Link;
 extern u8 EqualizerRange_Link;
 
 void Equalizer(BattleUnit* bunitA, BattleUnit* bunitB) {
-
 	if (bunitA == &gBattleActor){
 		return;
 	}

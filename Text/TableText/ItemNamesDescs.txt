@@ -704,13 +704,13 @@ Drains HP.[X]
 Avaritia[X]
 
 ## AvaritiaDesc
-Grants 1000 Gold on kill.[X]
+User steals 50% of enemy's Atk.[X]
 
 ## LuxuriaName
 Invidia[X]
 
 ## LuxuriaDesc
-If enemy would follow up, user does.[X]
+If enemy follows up, user does instead.[X]
 
 ## AcediaName
 Acedia[X]

@@ -459,3 +459,9 @@ WORD AvengerID
 #include "Precision/Precision.event"
 
 #include "Momentum/Momentum.lyn.event"
+
+#include "AvaritiaEffect/AvaritiaEffect.lyn.event"
+
+ALIGN 4
+AvaritiaEffectIDLink:
+BYTE AvaritiaEffectID

@@ -148,7 +148,9 @@
 [LoadRima] = [LoadFace][0x2D][0x1]
 [LoadBolton] = [LoadFace][0x2E][0x1]
 
-[LoadRemora] = [LoadFace][0x4f][0x1]
+[LoadRemora] = [LoadFace][0xFC][0x1]
+[LoadHubCWindyFriend] = [LoadFace][0x5d][0x1]
+
 
 [LoadFidel] = [LoadFace][0xBD][0x1]
 [LoadKaisa] = [LoadFace][0x51][0x1]

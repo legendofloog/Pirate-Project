@@ -184,7 +184,7 @@ ENDA
 Theana_Recruitment_Convo:
 HubFirstTimeTalkToUnit(HubC_TheanaSpokenToOnceFlag, 1, HubCTheanaRecruitmentFirstTime)
 LABEL 1
-SVAL s1 2000
+SVAL s1 3000
 CHECK_MONEY
 BLE 4 s1 sC //if you have more money than the cost, branch to 4
     Text(HubCTheanaTellsLuaShesBroke)
@@ -192,7 +192,7 @@ BLE 4 s1 sC //if you have more money than the cost, branch to 4
 LABEL 4
 Text(HubCTheanaRecruitmentChoice)
 EVBIT_MODIFY 0
-SVAL s3 2000
+SVAL s3 3000
 HubRecruitMoney(Theana, 2, HubCTheanaRecruitmentYes, 3, WelcomeAboardMateyID)
 LABEL 2
 HubRejectUnit(HubCTheanaRecruitmentNo, HubC_Theana_Recruited_Flag) //unsets this flag if you decided not to recruit
@@ -386,7 +386,8 @@ FADU 15
 CHECK_EVENTID HubC_Have_Encountered_The_Darkness_Flag
 BNE 776 s0 sC
     CameraCursor(Lua) //an initial response from Lua if this is the first time that she's going into the "darkness"
-    Text(HubCLuaReactionToWindyMaze) 
+    Text(HubCLuaReactionToWindyMaze)
+    ENUT HubC_Have_Encountered_The_Darkness_Flag
 LABEL 776
 NoFade
 ENDA
@@ -511,5 +512,5 @@ Tutorial:
 END_MAIN
 
 WindyNPCGroup:
-UNIT Windy SwordCav 0 Level(4,NPC,True) [9,3] 0 0 0 0 [KillingEdge, LightBrand] BossAI
+UNIT Windy SwordCav 0 Level(5,NPC,True) [9,3] 0 0 0 0 [KillingEdge, LightBrand] BossAI
 UNIT

@@ -1,5 +1,7 @@
 EventPointerTable(HubC_MazeEventsID, PointerList)
 
+#define HubC_Windy_Friend_Talk_Flag 35
+
 PointerList:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
@@ -17,34 +19,37 @@ END_MAIN
 
 CharacterBasedEvents:
 CharacterEvent(HubC_Windy_Recruited_Flag, Windy_Recruitment_Convo, Lua, Windy)
-CharacterEvent(0, Windy_Friend_Convo, Lua, KeeperC2)
+CharacterEvent(HubC_Windy_Friend_Talk_Flag, Windy_Friend_Convo, Lua, KeeperC2)
 END_MAIN
 
 Windy_Friend_Convo:
 CHECK_EVENTID HubC_Windy_Recruited_Flag
 BEQ 1 s0 sC //if not recruited, then we go to the second text entry which is basically important info
-    Text(HubCWindyFriendPostRecruitmentText)
+    Text(HubCWindyFriendPostRecruitmentText) //no second talk once you see this one
+    GOTO 2
 LABEL 1
 Text(HubCWindyFriendPreRecruitmentText)
+ENUF HubC_Windy_Friend_Talk_Flag
 LABEL 2
 NoFade
 ENDA
 
 Windy_Recruitment_Convo: //here, let's just have windy force herself into your party, somehow catching Lua by storm
+SET_ACTIVE 0
 MUSS WelcomeAboardMateyID
 Text(HubCWindyFoundInTheMazeText)
 FlashCursor(Windy, 60)
 CUSA Windy
 CamOn
-MOVE 20 Windy [0,12]
+MOVE 25 Windy [0,12]
 ENUN
-FADI 10
+FADI 15
 MOVE 15 Lua [7,2]
 SVAL s1 0x9
 SET_CONDITION Windy
-FADU 10
-MURE 2
+FADU 15
 CameraCursor(Lua)
+MURE 2
 Text(HubCLuaTakesShortcutText)
 FlashCursor(6,2,30)
 TILECHANGE 5
@@ -65,7 +70,7 @@ SET_ACTIVE 0
 STAL 30
 RemoveAll
 LOMA HubC
-ENUN
+ENUT InAHubFlag
 CALL SpawnHubCUnits
 LOAD1 1 LuaBackFromMazeGroup
 ENUN
@@ -73,7 +78,6 @@ SET_ACTIVE Lua
 CAMERA_CENTERED Lua
 ENUN
 FOGVISION 0
-ENUT InAHubFlag
 FADU 15
 NoFade
 ENDA

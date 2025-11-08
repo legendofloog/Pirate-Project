@@ -73,9 +73,6 @@
 #include "ASMCs/Installer.event"
 //Loog
 
-#include "ShopUnit/ShopUnit.event"
-//Sme
-
 #include "FE8-Walking_Sounds_Fix/FE8-Walking_Sounds_EA.event"
 //Tequila
 
@@ -90,12 +87,6 @@
 
 #include "FancyChapterPreview/FancyChapterPreview.event"
 //Sme
-
-#include "prep_shop_each_chapter2/Installer.event"
-//7743
-
-//#include "StealWithFullInv/Installer.event"
-//Vesly
 
 #include "PortraitHeight/PortraitShiftTable(installthisone).event"
 //2WB
@@ -185,9 +176,12 @@ ALIGN 4
 
 #include "LordSplitMenuPlus/LordSplitMenuPlus.event"
 
-#include "ShopListExpansion/Installer.txt" //Scraiza, AuraWolf
+#include "ShoppingEdits/ShoppingEdits.event" //Scraiza, AuraWolf
 
 #include "PrepsChapterDisplayRework/Installer.event"
+
+#include "SendInventoryOnDeath/Installer.event"
+
 
 PUSH
 ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743
