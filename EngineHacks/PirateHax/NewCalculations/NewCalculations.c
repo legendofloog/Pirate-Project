@@ -377,8 +377,8 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
 
     unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > 60){
-        unit->maxHP = 60;
+    if (unit->maxHP > promotedClass->maxHP){
+        unit->maxHP = promotedClass->maxHP;
     }
         
     unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
@@ -389,46 +389,46 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
 
     unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    if (unit->pow > 30){
-        unit->pow = 30;
+    if (unit->pow > promotedClass->maxPow){
+        unit->pow = promotedClass->maxPow;
     }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
-	if (unit->mag > 30){
-        unit->mag = 30;
+	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
+        unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->skl > 30){
-        unit->skl = 30;
+    if (unit->skl > promotedClass->maxSkl){
+        unit->skl = promotedClass->maxSkl;
     }
         
 
     unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->spd > 30){
-        unit->spd = 30;
+    if (unit->spd > promotedClass->maxSpd){
+        unit->spd = promotedClass->maxSpd;
     }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->def > 30){
-        unit->def = 30;
+    if (unit->def > promotedClass->maxDef){
+        unit->def = promotedClass->maxDef;
     }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
-    if (unit->res > 30){
-		unit->res = 30;
+    if (unit->res > promotedClass->maxRes){
+		unit->res = promotedClass->maxRes;
 	}
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
-	if (unit->lck > 30){
-        unit->lck = 30;
+	if (unit->lck > 40){ //ok it's always 40 on promo so
+        unit->lck = 40;
     }
 
     // Remove base class' base wexp from unit wexp
@@ -461,8 +461,8 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
 
     unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > 60){
-        unit->maxHP = 60;
+    if (unit->maxHP > promotedClass->maxHP){
+        unit->maxHP = promotedClass->maxHP;
     }
         
     unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
@@ -473,46 +473,46 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
 
     unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    if (unit->pow > 30){
-        unit->pow = 30;
+    if (unit->pow > promotedClass->maxPow){
+        unit->pow = promotedClass->maxPow;
     }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
-	if (unit->mag > 30){
-        unit->mag = 30;
+	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
+        unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->skl > 30){
-        unit->skl = 30;
+    if (unit->skl > promotedClass->maxSkl){
+        unit->skl = promotedClass->maxSkl;
     }
         
 
     unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->spd > 30){
-        unit->spd = 30;
+    if (unit->spd > promotedClass->maxSpd){
+        unit->spd = promotedClass->maxSpd;
     }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->def > 30){
-        unit->def = 30;
+    if (unit->def > promotedClass->maxDef){
+        unit->def = promotedClass->maxDef;
     }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
-    if (unit->res > 30){
-		unit->res = 30;
+    if (unit->res > promotedClass->maxRes){
+		unit->res = promotedClass->maxRes;
 	}
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
-	if (unit->lck > 30){
-        unit->lck = 30;
+	if (unit->lck > 40){ //ok it's always 40 on promo so
+        unit->lck = 40;
     }
 		
 
@@ -967,8 +967,8 @@ int GetUnitLuckCap(Unit* unit){
 }
 
 void CheckBattleUnitStatCaps(struct Unit* unit, struct BattleUnit* bu) {
-    if ((unit->maxHP + bu->changeHP) > UNIT_MHP_MAX(unit)){
-        bu->changeHP = UNIT_MHP_MAX(unit) - unit->maxHP;
+    if ((unit->maxHP + bu->changeHP) > PIRATE_UNIT_MHP_MAX(unit)){
+        bu->changeHP = PIRATE_UNIT_MHP_MAX(unit) - unit->maxHP;
     }
     if ((unit->pow + bu->changePow) > UNIT_POW_MAX(unit)){
         bu->changePow = UNIT_POW_MAX(unit) - unit->pow;
@@ -994,8 +994,8 @@ void CheckBattleUnitStatCaps(struct Unit* unit, struct BattleUnit* bu) {
 }
 
 void UnitCheckStatCaps(struct Unit* unit) {
-    if (unit->maxHP > UNIT_MHP_MAX(unit)){
-        unit->maxHP = UNIT_MHP_MAX(unit);
+    if (unit->maxHP > PIRATE_UNIT_MHP_MAX(unit)){
+        unit->maxHP = PIRATE_UNIT_MHP_MAX(unit);
     }      
     if (unit->pow > UNIT_POW_MAX(unit)){
         unit->pow = UNIT_POW_MAX(unit);
@@ -1038,5 +1038,38 @@ void PlusThreeAS(BattleUnit* bunitA, BattleUnit* bunitB) { //for snapshot and wi
     if (GetItemIndex(bunitA->weapon) == WildAxeIDLink || GetItemIndex(bunitA->weapon) == SnapshotIDLink)
     {
         bunitA->battleSpeed += 3; //give 3 AS when this is the case
+    }
+}
+
+//fixing cusa to not check for unit_level_max
+
+void UnitChangeFaction(struct Unit* unit, int faction) {
+    struct Unit* newUnit = GetFreeUnit(faction);
+
+    if (gActiveUnit == unit)
+    {
+        gActiveUnit = newUnit;
+    }
+    
+    CopyUnit(unit, newUnit);
+    ClearUnit(unit);
+
+    if (newUnit->exp == UNIT_EXP_DISABLED)
+    {
+        if ((faction == FACTION_BLUE) && (newUnit->level != UNIT_LEVEL_MAX_PIRATE))
+        {
+            newUnit->exp = 0;
+        }
+        else
+        {
+            newUnit->exp = UNIT_EXP_DISABLED;
+        }
+    }
+
+    //newUnit->state = newUnit->state &~ US_DROP_ITEM; //unnecessary as there are no drops in ba sing se
+
+    if (newUnit->rescueOtherUnit)
+    {
+        GetUnit(newUnit->rescueOtherUnit)->rescueOtherUnit = newUnit->index;
     }
 }

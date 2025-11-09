@@ -33,7 +33,7 @@ Escape(7,0)
 Escape(15,0)
 Escape(16,0)
 //added these in since there's a need for 2nd round of promo items, more A ranks, and money
-Chest(BravesCrest,15,21)
+Chest(FliersPermit,15,21)
 Chest(Crusher,1,19)
 Chest(RidersBadge,11,14)
 Chest(Saunion,9,11)
@@ -80,7 +80,7 @@ LoadUnit(10,21)
 UNIT
 
 NewUnits:
-UNIT Remora Berserker_F 0 Level(16,Ally,True) [15,19] 0 0 0 0 [Oversize, Swordreaver, Swimwear, Swimwear] NoAI
+UNIT Remora Berserker_F 0 Level(16,Ally,True) [15,19] 0 0 0 0 [BraveAxe, Swordreaver, Swimwear, Swimwear] NoAI
 UNIT
 
 EnemyUnits1:

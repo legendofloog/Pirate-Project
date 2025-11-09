@@ -1,3 +1,6 @@
+## HubC_4Title
+Ch C-4: Submerged Spirits[X]
+
 ## HubC4StatusObjective
 Escape with as much[N]
 loot as you can[X]
@@ -6,7 +9,7 @@ loot as you can[X]
 Escape[X]
 
 ## HubC4WaterWarning1
-[R][LoadRemora]
+[R][LoadLua]
 The water level's still rising.[AN]
 If you can't swim or fly,[N]
 get to higher ground![A][X]
@@ -20,4 +23,4 @@ while we still can![A][X]
 ## HubC4WaterWarning3
 [R][LoadLua]
 We're out of time. Forget fighting[N]
-and looting, just get to the exit![AN][X]
+and looting. Just get to the exit![AN][X]

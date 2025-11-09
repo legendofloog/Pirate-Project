@@ -1234,7 +1234,7 @@
 
 
 @-------------------------------------------
-@EarlyLeaveEffect_UnitConfirm
+@EarlyLeaveEffect_UnitConfirm			@ adding a special case with regards to biko: reduce his move by 2 if he doesn't get his full rest.
 @-------------------------------------------
 
 
@@ -1242,7 +1242,20 @@
 		push	{r4-r7,r14}
 		add		sp, #-0x08
 		ldr		r0, =EarlyLeaveCharIDLink
-		ldrb	r0, [r0]
+		ldrb		r0, [r0]
+		mov		r4, r0 @ storing this here so I can do a Biko check
+		ldr		r1, =BikoCharIdLink
+		ldrb		r1, [r1]
+		cmp 		r0, r1
+		bne		EarlyLeaveEffect_UnitConfirm_Continue
+
+			@ apply a well-rested decrement twice? should be all I need to do
+			blh		WellRested_DecrementBonus, r1
+			blh		WellRested_DecrementBonus, r1
+			
+
+		EarlyLeaveEffect_UnitConfirm_Continue:
+		mov 		r0, r4 @ putting it back where it belongs
 		blh		GetUnitByCharId, r1
 		mov		r5, r0
 		

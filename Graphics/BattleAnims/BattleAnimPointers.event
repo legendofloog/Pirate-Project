@@ -485,3 +485,19 @@ Gunner_FAnims:
 GunAnim(GunnerFGunAnim)
 UnarmedAnim(GunnerFUnarmedAnim)
 EndAnim
+
+ALIGN 4
+GeneralAnims:
+SwordAnim(GeneralSwordAnim)
+AxeAnim(GeneralAxeAnim)
+HandAxeAnim(GeneralHandaxeAnim)
+LanceAnim(GeneralLanceAnim)
+UnarmedAnim(GeneralUnarmedAnim)
+EndAnim
+
+ALIGN 4
+BerserkerAnims:
+AxeAnim(BerserkerAxeAnim)
+HandAxeAnim(BerserkerHandaxeAnim)
+UnarmedAnim(BerserkerUnarmedAnim)
+EndAnim

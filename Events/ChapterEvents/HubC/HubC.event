@@ -196,6 +196,7 @@ SVAL s3 3000
 HubRecruitMoney(Theana, 2, HubCTheanaRecruitmentYes, 3, WelcomeAboardMateyID)
 LABEL 2
 HubRejectUnit(HubCTheanaRecruitmentNo, HubC_Theana_Recruited_Flag) //unsets this flag if you decided not to recruit
+LABEL 3
 NoFade
 ENDA
 
@@ -434,7 +435,7 @@ BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)
 STAL 1
 ENUT GoToNextHubFlagID
 CheckHowManyHubChaptersCompleted
-SVAL s1 4
+SVAL s1 3
 BNE 2 sC s1 //if chapters completed != 4, skip
     AddTrap(GreenSigilTrapID, 11, 3)
     ENUF GoToNextHubFlagID

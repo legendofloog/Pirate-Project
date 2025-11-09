@@ -1772,7 +1772,7 @@ max HP damage at the start of the turn.[X]
 ## SD_ArcaneArtifice
 Arcane Artifice: If this unit's weapon[N]
 uses MAG and the enemy's doesn't,[N]
-this unit's Avo is increased by 50%.[X]
+Avo+50% (unit must be able to counter).[X]
 
 ## SD_Dismount
 Scouting Ahead: This unit can switch[N]

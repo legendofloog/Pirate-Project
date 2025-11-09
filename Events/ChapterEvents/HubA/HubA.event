@@ -459,7 +459,7 @@ LABEL 777
 ENUT 4 //port music only
 CALL PortSpawnEvent
 CheckHowManyHubChaptersCompleted
-SVAL s1 6 //if 6 chapters completed
+SVAL s1 5 //if 6 chapters completed
 BNE 2 s1 sC 
     SetBackground(Ship)
     MUSC MeetTheCrewID

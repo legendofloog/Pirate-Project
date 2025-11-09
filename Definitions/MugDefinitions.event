@@ -130,6 +130,10 @@
 #define CloserMug 0x27
 #define BaltasarMug 0x28
 
+// C-2 placeholder
+#define SalvadorMug 0xB8
+#define C2SupplyCaptainMug 0xFE
+
 // C-3 Placeholders
 #define RimaMug 0x2D
 #define BoltonMug 0x2E
@@ -161,7 +165,7 @@
 #define TheanaMug 0xB7
 
 // C-2 placeholder
-#define SalvadorMug 0xB8
+
 
 // note: wayra is 0xB9
 

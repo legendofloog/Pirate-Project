@@ -97,8 +97,8 @@ EnemiesAttackingCalista:
 //This dude gets popped lmao, but his stats need to be nerfed because he's too good! 
 UNIT BerserkerThatDiesC2 Berserker 0 Level(18,Enemy,True) [5,5] 0 0 0 0 [BraveAxe, BattleAxe, Swordreaver, Eyepatch] ChargeAI
 UNIT BlackheartPlus Archer 0 Level(16,Enemy,True) [10,6] 0 0 0 0 [SteelBow] ChargeAI
-UNIT BlackheartPlus Vanguard 0 Level(15,Enemy,True) [7,4] 0 0 0 0 [SteelAxe] ChargeAI
-UNIT BlackheartPlus WyvernRider 0 Level(16,Enemy,True) [7,2] 0 0 0 0 [SteelAxe, HandAxe] WaitOneTurnAI
+UNIT BlackheartPlus Archer 0 Level(15,Enemy,True) [7,4] 0 0 0 0 [SteelBow] ChargeAI
+UNIT BlackheartPlus WyvernRider 0 Level(16,Enemy,True) [7,2] 0 0 0 0 [SteelAxe] WaitOneTurnAI
 UNIT
 
 MainAssault:
@@ -135,7 +135,6 @@ UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [12,10] 0 0 0 0 [SilverDagger] 
 
 //Right middle, protecting the chests
 UNIT BlackheartPlus Gunner 1 Level(17,Enemy,True) [21,9] 0 0 0 0 [Culverin, InfiltratorGun] GroupTwoAI
-UNIT BlackheartPlus Hunter 1 Level(15,Enemy,True) [20,7] 0 0 0 0 [Longbow, Vulnerary] GroupTwoAI
 UNIT BlackheartPlus Hero_F 1 Level(18,Enemy,True) [21,12] 0 0 0 0 [SilverSword] WaitOneTurnAI
 
 //First left stair formation
@@ -157,7 +156,7 @@ UNIT BlackheartPlus Warrior 0 Level(18, Enemy, True) [8,1] 0 0 0 0 [SilverAxe, I
 
 //Boss group
 
-UNIT Salvador 0 0 Level(20,Enemy,True) [18,1] 0 0 0 0 [KillingEdge, KillerLance, FliersPermit] AttackInRangeAI
+UNIT Salvador 0 0 Level(20,Enemy,True) [18,1] 0 0 0 0 [KillingEdge, KillerLance, BravesCrest] AttackInRangeAI
 UNIT BlackheartPlus Assassin 1 Level(19,Enemy,True) [17,0] 0 0 0 0 [SteelKnife, Stiletto] AttackInRangeAI
 UNIT BlackheartPlus Marksman 0 Level(19,Enemy,True) [19,2] 0 0 0 0 [InfiltratorGun] AttackInRangeAI
 
@@ -186,7 +185,7 @@ UNIT BlackheartPlus WyvernKnight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [Swordreav
 UNIT
 
 CalistaTrapped:
-UNIT Calista Dragoon 0 Level(18,NPC,True) [0,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
+UNIT Calista Dragoon 0 Level(18,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, HandCannon, Elixir] BossHealAI
 UNIT
 
 // The keeper units have slightly improved stats that'll let them handle their own early in Hub C,
@@ -631,7 +630,6 @@ AddTrap(MineTrapID,0,6)
 LoadEnemies(ValerieInDaSquad)
 SetUnitItemDurability(Valerie, 2, StrTonic) //Give valerie a str tonic
 SetUnitItemDurability(14, 5, 1, RainbowTonic) //Give a fighter a droppable rainbow tonic
-SetUnitItemDurability(0, 5, 3, 7) //Callista used 3 mines as preperation! 
 
 GotoPrepScreen
 NoFade

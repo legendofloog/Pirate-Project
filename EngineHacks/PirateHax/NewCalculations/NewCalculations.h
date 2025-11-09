@@ -7,6 +7,8 @@ int GetNPCStatIncrease(int growth);
 
 #define CA_NO_EXP CA_NEGATE_LETHALITY
 
+#define UNIT_LEVEL_MAX_PIRATE 30
+
 #define NO_WEXP 0
 #define D_WEXP 1
 #define C_WEXP 26
@@ -264,3 +266,5 @@ enum
 
 void MakeTargetListForSteal(struct Unit* unit);
 int AddItemToConvoy(int item);
+
+#define PIRATE_UNIT_MHP_MAX(aUnit) (UNIT_FACTION(unit) == FACTION_RED ? 120 : 80)

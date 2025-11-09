@@ -668,7 +668,7 @@ Effective against infantry.[X]
 Hand Cannon[X]
 
 ## HandCannonDesc
-Inflicts Break, but no follow-ups.[X]
+Inflicts Break on attack.[X]
 
 ## IgnisTriggerName
 Ignisignia[X]

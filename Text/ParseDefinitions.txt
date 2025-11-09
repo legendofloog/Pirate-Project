@@ -289,6 +289,7 @@
 
 [LoadRedYadney] = [LoadFace][0xFB][0x1]
 
+[LoadC2SupplyCaptain] = [LoadFace][0xFE][0x1]
 
 // 0x49 portrait id is open now
 
