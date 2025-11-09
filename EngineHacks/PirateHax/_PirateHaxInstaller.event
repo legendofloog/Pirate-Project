@@ -184,11 +184,6 @@ ALIGN 4
 
 
 PUSH
-ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743
-BYTE 0x0 0x0 0x0 0x0
-ORG 0x897C4
-BYTE 0x0E 0x20 0x20 0x56
-
 ORG $22F50 // installs thracia trade
 BYTE 0xC0 0x46
 

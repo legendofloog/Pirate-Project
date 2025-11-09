@@ -18,3 +18,8 @@ enum
 const char * GetChapterTitleName(unsigned chIndex);
 
 const struct ROMChapterData* GetChapterDefinition(unsigned chIndex);
+void sub_80896FC(u16 * tm, int pal, int c);
+void sub_80895B4(int config, int palId);
+
+void LoadChapterTitleGfx(int chr, u32 titleId);
+void ChapterIntro_DrawChapterTitleMaybe(void);

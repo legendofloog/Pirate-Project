@@ -130,7 +130,7 @@ int GetChapterTitleWM(struct ChapterState* chapterData)
 
     if (LuaIsInHub(gActiveUnit) && chapterData->chapterIndex == 8) //unit doesn't matter, this is checking if we're in hub mode but in the chapter 2 section
     {
-        return 1; //have to hard code in this case for some reason, returning a different chaptertitleid slot just results in a hang
+       return GetChapterDefinition(1)->chapTitleId; //have to hard code in this case for some reason, returning a different chaptertitleid slot just results in a hang
     }
     return GetChapterDefinition(chapterData->chapterIndex)->chapTitleId;
 }
