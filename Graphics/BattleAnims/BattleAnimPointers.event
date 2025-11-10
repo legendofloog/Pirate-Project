@@ -74,7 +74,7 @@ EndAnim
 ALIGN 4
 ThiefAnims:
 KnifeAnim(ThiefKnifeAnim)
-UnarmedAnim(ThiefUnarmedAnim)
+UnarmedAnim(ThiefKnifeAnim)
 EndAnim
 
 ALIGN 4
@@ -462,9 +462,9 @@ EndAnim
 
 ALIGN 4
 BarbarianAnims:
-AxeAnim(BarbarianAxeAnim)
-HandAxeAnim(BarbarianHandaxeAnim)
-UnarmedAnim(BarbarianUnarmedAnim)
+AxeAnim(BruteAxeAnim)
+HandAxeAnim(BruteHandaxeAnim)
+UnarmedAnim(BruteUnarmedAnim)
 EndAnim
 
 ALIGN 4
@@ -500,4 +500,11 @@ BerserkerAnims:
 AxeAnim(BerserkerAxeAnim)
 HandAxeAnim(BerserkerHandaxeAnim)
 UnarmedAnim(BerserkerUnarmedAnim)
+EndAnim
+
+ALIGN 4
+FighterAnims:
+AxeAnim(FighterAxeAnim) 
+HandAxeAnim(FighterHandaxeAnim)
+UnarmedAnim(FighterUnarmedAnim)
 EndAnim

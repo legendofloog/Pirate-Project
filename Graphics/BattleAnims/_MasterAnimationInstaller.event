@@ -38,7 +38,6 @@
 
 {
     #include "Animations/Thief_M/Knife Installer.event"
-    #include "Animations/Thief_M/Unarmed Installer.event"
 }
 
 {
@@ -142,7 +141,7 @@
 {
     #include "Animations/Runeshield/Sword Installer.event"
     #include "Animations/Runeshield/Lance Installer.event"
-    #include "Animations/Runeshield/Magic Installer.event"
+    #include "Animations/Runeshield/Tome Installer.event"
 }
 
 {
@@ -233,7 +232,7 @@
 }
 
 {
-    #include "Animations/Rogue/Sword Installer.event"
+    #include "Animations/Rogue/Knife Installer.event"
     #include "Animations/Rogue/Unarmed Installer.event"
 }
 
