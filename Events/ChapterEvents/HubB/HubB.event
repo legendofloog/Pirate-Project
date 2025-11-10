@@ -820,7 +820,7 @@ BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHuB)
 STAL 1
 ENUT GoToNextHubFlagID
 CheckHowManyHubChaptersCompleted
-SVAL s1 4
+SVAL s1 5
 BNE 2 sC s1 //if chapters completed != 5, skip
     ENUF GoToNextHubFlagID
 LABEL 2
