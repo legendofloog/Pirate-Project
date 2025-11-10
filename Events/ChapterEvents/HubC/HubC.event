@@ -36,9 +36,10 @@ POIN BeginningScene EndingScene
 #define HubC_KurtSpokenToOnceFlag 28
 #define HubC_TheanaSpokenToOnceFlag 29
 #define HubC_WindySpokenToOnceFlag 30
+#define Turn1EventFlag_HubC 35
 
 TurnBasedEvents:
-TurnEventPlayer(Turn1EventFlag, Turn1Event, 1)
+TurnEventPlayer(Turn1EventFlag_HubC, Turn1Event, 1)
 END_MAIN
 
 Turn1Event:
@@ -52,8 +53,8 @@ BNE 2 s0 sC //if it's not 0, don't give initial tutorial
     Text(HubCGiveInitialTutorial)
     GOTO 3
 LABEL 2
-SVAL s1 5
-BNE 3 sC s1
+SVAL s1 4
+BNE 3 s1 sC
     Text(HubCSayWhereToGo) //note that you can move on
 LABEL 3
 NoFade
@@ -335,8 +336,9 @@ NoFade
 ENDA
 
 GotoChapter4:
+ENUF HubAGreagorDocksChestReactionFlag
+ENUF LuaPromotedFlag
 MNC2 Chapter4
-ENUF LuaInAHubFlag
 NoFade
 ENDA
 

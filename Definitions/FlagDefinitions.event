@@ -148,6 +148,7 @@
 #define HubC_Kurt_Recruited_Flag 0xAC
 #define HubC_Theana_Recruited_Flag 0xAD
 #define HubC_Have_Encountered_The_Darkness_Flag 0xAE
+#define LuaPromotedFlag 0xB6
 
 // Hub D flags - Decide whether the character will stay no matter what, or not
 #define D3_Rogelio_Alive_Flag 0xB7

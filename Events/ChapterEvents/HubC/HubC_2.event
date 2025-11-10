@@ -156,9 +156,9 @@ UNIT BlackheartPlus Warrior 0 Level(18, Enemy, True) [8,1] 0 0 0 0 [SilverAxe, I
 
 //Boss group
 
-UNIT Salvador 0 0 Level(20,Enemy,True) [18,1] 0 0 0 0 [KillingEdge, KillerLance, BravesCrest] AttackInRangeAI
-UNIT BlackheartPlus Assassin 1 Level(19,Enemy,True) [17,0] 0 0 0 0 [SteelKnife, Stiletto] AttackInRangeAI
-UNIT BlackheartPlus Marksman 0 Level(19,Enemy,True) [19,2] 0 0 0 0 [InfiltratorGun] AttackInRangeAI
+UNIT Salvador 0 0 Level(20,Enemy,True) [18,1] 0 0 0 0 [SilverLance, KillingEdge, BravesCrest] AttackInRangeAI
+UNIT BlackheartPlus Assassin 1 Level(18,Enemy,True) [17,0] 0 0 0 0 [SteelKnife, Stiletto] AttackInRangeAI
+UNIT BlackheartPlus Marksman 0 Level(18,Enemy,True) [19,2] 0 0 0 0 [InfiltratorGun] AttackInRangeAI
 
 //These guys are going to go charge on Turn 4, when the bridge gets dropped
 UNIT BlackheartPlus Fighter 0 Level(16, Enemy, True) [14,5] 0 0 0 0 [HandAxe, Tonic] AttackInRangeAI
@@ -169,7 +169,7 @@ UNIT
 Reinforcements_T3:
 //Small trickle of weak units to attack Calista
 UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) [14,0] 0 0 1 REDA12R0 [IronAxe, HandAxe] ChargeAI
-UNIT BlackheartPlus Mercenary_F 0 Level(15,Enemy,True) [15,0] 0 0 1 REDA13R0 [SteelSword] ChargeAI
+UNIT BlackheartPlus Mercenary_F 0 Level(16,Enemy,True) [15,0] 0 0 1 REDA13R0 [SteelSword] ChargeAI
 UNIT
 
 Reinforcements_T5:
@@ -180,8 +180,8 @@ UNIT
 
 //Meant to kill the imperial captain if you aren't quick enough! 
 GriffonReinforcements:
-UNIT BlackheartPlus WyvernRider 0 Level(17,Enemy,True) [3,0] 0 0 0 0 [Halberd] ChargeAI
-UNIT BlackheartPlus WyvernKnight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [Swordreaver] ChargeAI
+UNIT BlackheartPlus DragonRider 0 Level(16,Enemy,True) [3,0] 0 0 0 0 [Halberd] ChargeAI
+UNIT BlackheartPlus Dracoknight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [Swordreaver] ChargeAI
 UNIT
 
 CalistaTrapped:
