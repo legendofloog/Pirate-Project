@@ -63,7 +63,7 @@ Again Staff,AgainStaff_Usability|IsPointer,0x802a100,AgainStaff_Targeting|IsPoin
 Rewarp Staff,RewarpStaff_Usability|IsPointer,0x802a100,RewarpStaff_Targeting|IsPointer,RewarpStaff_UseEffect|IsPointer,0x0
 Protect Staff,ProtectUsabilityWrapper|IsPointer,0x802a100,ProtectStaffTargetingWrapper|IsPointer,ProtectStaffEffectWrapper|IsPointer,0x0
 Concentrate Staff,ConcentrateUsabilityWrapper|IsPointer,0x802a100,ConcentrateStaffTargetingWrapper|IsPointer,ConcentrateStaffEffectWrapper|IsPointer,0x0
-0x40,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
+Arms Scroll,ArmsScrollUsabilityWrapper|IsPointer,ArmsScrollPrepUsabilityWrapper|IsPointer,0x802905c,ArmsScrollEffectWrapper|IsPointer,0x0
 0x41,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
 0x42,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0
 0x43,0x8028c04,0x802a100,0x802905c,0x802ff76,0x0

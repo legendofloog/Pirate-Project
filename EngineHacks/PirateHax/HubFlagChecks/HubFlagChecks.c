@@ -59,7 +59,7 @@ void UnsetAllHubChapterFlagsASMC(){
 
 
 bool LuaIsInHub(Unit* unit){
-    if (CheckEventId(0xA0) && !(gChapterData.chapterStateBits & CHAPTER_FLAG_PREPSCREEN)) //if we're in a hub and not in the prep screen
+    if (CheckEventId(0xA0)) //if we're in a hub and not in the prep screen
     {
         return true; //give 15 move
     }
@@ -69,7 +69,7 @@ bool LuaIsInHub(Unit* unit){
 int ReturnNumberOfHubChaptersVisited(){
     int hubChapters = (CheckEventId(0x83) + CheckEventId(0x8B) + CheckEventId(0x8c) + CheckEventId(0x8d) + CheckEventId(0x8e) + CheckEventId(0x8f) - 1);
     
-    if (LuaIsInHub(gActiveUnit)) //unit shouldn't matter
+    if (LuaIsInHub(gActiveUnit)) //unit shouldn't matter: point here is to show what units (if they do show up in your hub) WOULD look like if you used them in the next chapter
     {
         hubChapters++;
     }

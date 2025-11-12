@@ -2,15 +2,15 @@
 
 ALIGN 4
 AstralBlessing_Spd:
-BYTE 2
-
-ALIGN 4
-AstralBlessing_Skl:
 BYTE 3
 
 ALIGN 4
-AstralBlessing_Luk:
+AstralBlessing_Skl:
 BYTE 4
+
+ALIGN 4
+AstralBlessing_Luk:
+BYTE 5
 
 ALIGN 4
 AstralBlessing_Range:

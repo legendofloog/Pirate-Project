@@ -52,18 +52,18 @@ Lunar Brace,0x802F90C
 Solar Brace,0x802F90C
 Vulnerary (Might Vulnerary will replace this),0x802F90C
 Other Vulnerary (Custom promotion items will replace this),0x802F90C
-Another Vulnerary (can be replaced with custom item effect),0x802F90C
+Nightmare,0x802F90C
 Juna Fruit,0x802F90C
 Latona,0x802F90C
 Multi-Skill Scroll,MultiScrollPrepEffect|IsPointer
-0x39,0x802F90C
-0x3A,0x802F90C
-0x3B,0x802F90C
-0x3C,0x802F90C
-0x3D,0x802F90C
-0x3E,0x802F90C
-0x3F,0x802F90C
-0x40,0x802F90C
+Take Aim,0x802F90C
+Assist Staff,0x802F90C
+Rush Staff,0x802F90C
+Again Staff,0x802F90C
+Rewarp Staff,0x802F90C
+Protect Staff,0x802F90C
+Concentrate Staff,0x802F90C
+Arms Scroll,ArmsScrollPrepEffectWrapper|IsPointer
 0x41,0x802F90C
 0x42,0x802F90C
 0x43,0x802F90C

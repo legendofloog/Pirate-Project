@@ -179,6 +179,7 @@
 #define PortShorts 0xA7
 #define TeleportShorts 0xA7
 #define SwarpShorts 0xA7
+#define ArmsScroll 0xBA
 
 // Gunblade
 #define IgnisTrigger 0xF7

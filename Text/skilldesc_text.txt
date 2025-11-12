@@ -1655,7 +1655,7 @@ the foe's, perform a followup attack.[X]
 ## SD_AstralBlessing
 Astral Blessing: At start of turn,[N]
 allies within 3 spaces randomly gain[N]
-+2 Spd, +3 Dex, or +4 Eva for 1 turn.[X]
++3 Spd, +4 Dex, or +5 Eva for 1 turn.[X]
 
 ## SD_CatchingUp
 Catching Up: If an enemy would follow[N]

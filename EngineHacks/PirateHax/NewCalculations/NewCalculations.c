@@ -706,11 +706,11 @@ struct Unit* LoadUnit(const struct UnitDefinition* uDef) {
     else{
         int autolevelCount = 0; //autoleveling, but only for enemies, and only based off of the difficulty; catches edge cases like bosses outside of hubs
         if (IsDifficultMode()){
-            autolevelCount = 5;
+            autolevelCount = GetChapterDefinition(gChapterData.chapterIndex)->hardModeLevelBonus;
         }
         else if (TUTORIAL_MODE())
         {
-            autolevelCount = -5;
+            autolevelCount = (-1) * GetChapterDefinition(gChapterData.chapterIndex)->easyModeLevelMalus;
         }
 
         if (autolevelCount != 0)
@@ -792,7 +792,7 @@ void UnitLoadStatsFromChracter(struct Unit* unit, const struct CharacterData* ch
             unit->ranks[i] = unit->pCharacterData->baseRanks[i];
     }
 
-    if (UNIT_FACTION(unit) == FACTION_BLUE && (unit->level != UNIT_LEVEL_MAX))
+    if (UNIT_FACTION(unit) == FACTION_BLUE && (unit->level != UNIT_LEVEL_MAX_PIRATE))
         unit->exp = 0;
     else
         unit->exp = UNIT_EXP_DISABLED;
@@ -807,16 +807,17 @@ void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
     bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
     bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
 
-    int autolevelCount = levelCount;
-    int difficultyLevelChange = 0; //for normal mode       
+    s8 autolevelCount = levelCount;
+    s8 difficultyLevelChange = 0; //for normal mode       
     if (IsDifficultMode())
     {
-        difficultyLevelChange = 5;
+        difficultyLevelChange = GetChapterDefinition(gChapterData.chapterIndex)->hardModeLevelBonus;
     }
     else if (TUTORIAL_MODE())
     {
-        difficultyLevelChange = -5;
+        difficultyLevelChange = (-1) * (GetChapterDefinition(gChapterData.chapterIndex)->easyModeLevelMalus);
     }
+
 
     autolevelCount += difficultyLevelChange; //add the levels from difficulty: example: level 6 fighter on easy gets +5, -5, same as a normal fighter at level 1
 
@@ -837,6 +838,79 @@ void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
         
     }
 
+}
+
+void LoadUnit_800F704(const struct UnitDefinition * def, u16 b, s8 quiet, s8 d) // apparently there's another autolevel function??
+{
+    struct Unit * unit;
+
+    const u8 allegianceLookup[3] = {
+        [FACTION_ID_BLUE] = FACTION_BLUE,
+        [FACTION_ID_GREEN] = FACTION_GREEN,
+        [FACTION_ID_RED] = FACTION_RED,
+    };
+
+    if (def->allegiance == 0)
+    {
+        unit = GetUnitFromCharIdAndFaction(def->charIndex, FACTION_BLUE);
+    }
+    else
+    {
+        unit = GetUnitFromCharIdAndFaction(def->charIndex, FACTION_BLUE);
+
+        if (unit)
+        {
+            UnitChangeFaction(unit, allegianceLookup[def->allegiance]);
+            unit = GetUnitByCharId(def->charIndex);
+        }
+    }
+
+    if (!unit)
+    {
+        unit = LoadUnit(def);
+
+        if ((d == 1) && (def->allegiance == FACTION_ID_BLUE))
+            unit->state |= US_BIT22;
+    }
+    else if (def->allegiance == FACTION_ID_BLUE)
+    {
+        s8 x, y;
+
+        unit->state &= ~US_UNSELECTABLE;
+
+        if (d == 1)
+        {
+            if (unit->state & US_DEAD)
+                unit->state |= US_BIT22;
+        }
+        else
+        {
+            if (unit->state & US_BIT22)
+                unit->state &= ~US_BIT22;
+        }
+
+        GenUnitDefinitionFinalPosition(def, &x, &y, 0);
+
+        if (unit->xPos == x && unit->yPos == y)
+            b &= ~0x0001;
+    }
+
+    unit->xPos = def->xPosition;
+    unit->yPos = def->yPosition;
+
+    //all the other autoleveling stuff should be handled already in LoadUnit
+
+    sub_800F8A8(unit, def, b, quiet);
+}
+
+void UnitApplyBonusLevels(struct Unit* unit, int levelCount)
+{
+    if (!UNIT_IS_GORGON_EGG(unit))
+    {
+        UnitAutolevelCore(unit, unit->pClassData->number, levelCount);
+        UnitCheckStatCaps(unit);
+        unit->curHP = GetUnitMaxHp(unit);
+    }
 }
 
 void AutolevelUnit(struct Unit* unit, int levelCount){

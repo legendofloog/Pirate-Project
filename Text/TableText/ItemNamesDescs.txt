@@ -444,7 +444,7 @@ for 1 turn. +1 WEXP.[X]
 +50 Crit to ally[N]
 for 1 turn. +1 WEXP.[X]
 
-// EQUIPS
+// EQUIPS/ITEMS
 
 ## HideShieldName
 Hide Shield[X]
@@ -733,3 +733,19 @@ March Ring[X]
 A light ring that makes the wearer[N]
 more fleet-foot/hoof/wing-ed.[N]
 Grants +1 Movement while worn.[X]
+
+## ArmsScrollName
+Arms Scroll[X]
+
+## ArmsScrollDesc
+Increases user's weapon rank (if they[N]
+have one) for top weapon in inventory[N]
+by 25 WEXP.[X]
+
+## ArmsScrollUseDesc
+Increases weapon[N]
+rank for top weapon[N]
+by 25 WEXP.[X]
+
+## PrepScreenUseArmsScroll
+WEXP increased.[X]

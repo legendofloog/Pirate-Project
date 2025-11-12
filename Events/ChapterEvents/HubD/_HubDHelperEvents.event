@@ -208,20 +208,22 @@ NoFade
 ENDA
 
 SpawnD1Traps:
-AddTrap(RedSigilTrapID, 35, 8)
-AddTrap(RedSigilTrapID, 36, 8)
+AddTrap(RedSigilTrapID, 28, 8)
+AddTrap(RedSigilTrapID, 29, 8)
 NoFade
 ENDA
 
 SpawnD2Traps:
-AddTrap(RedSigilTrapID, 14, 15)
-AddTrap(RedSigilTrapID, 14, 16)
-AddTrap(RedSigilTrapID, 14, 17)
+/*
+AddTrap(RedSigilTrapID, 7, 15)
+AddTrap(RedSigilTrapID, 7, 16)
+AddTrap(RedSigilTrapID, 7, 17)
+*/
 NoFade
 ENDa
 
 SpawnD3Traps:
-AddTrap(RedSigilTrapID, 34, 27)
-AddTrap(RedSigilTrapID, 35, 27)
+AddTrap(RedSigilTrapID, 27, 27)
+AddTrap(RedSigilTrapID, 28, 27)
 NoFade
 ENDA

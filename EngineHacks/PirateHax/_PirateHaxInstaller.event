@@ -182,6 +182,7 @@ ALIGN 4
 
 #include "SendInventoryOnDeath/Installer.event"
 
+#include "ArmsScroll/Installer.event"
 
 PUSH
 ORG $22F50 // installs thracia trade

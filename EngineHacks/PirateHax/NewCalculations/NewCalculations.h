@@ -268,3 +268,15 @@ void MakeTargetListForSteal(struct Unit* unit);
 int AddItemToConvoy(int item);
 
 #define PIRATE_UNIT_MHP_MAX(aUnit) (UNIT_FACTION(unit) == FACTION_RED ? 120 : 80)
+
+const struct ROMChapterData* GetChapterDefinition(unsigned chIndex);
+
+void sub_800F8A8(struct Unit * unit, const struct UnitDefinition * unitDefition, u16 flags, s8 unk);
+
+enum
+{
+    FACTION_ID_BLUE   = 0,
+    FACTION_ID_GREEN  = 1,
+    FACTION_ID_RED    = 2,
+    FACTION_ID_PURPLE = 3,
+};

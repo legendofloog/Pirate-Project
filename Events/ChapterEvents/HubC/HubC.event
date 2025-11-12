@@ -360,7 +360,7 @@ ALIGN 4
 
 ALIGN 4
 HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip
-SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir Mine GlassShield HideShield HexlockShield AshQuiver
+SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir ArmsScroll GlassShield HideShield HexlockShield AshQuiver
 ALIGN 4
 
 MiscBasedEvents:
@@ -437,7 +437,7 @@ BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)
 STAL 1
 ENUT GoToNextHubFlagID
 CheckHowManyHubChaptersCompleted
-SVAL s1 3
+SVAL s1 4
 BNE 2 sC s1 //if chapters completed != 4, skip
     AddTrap(GreenSigilTrapID, 11, 3)
     ENUF GoToNextHubFlagID

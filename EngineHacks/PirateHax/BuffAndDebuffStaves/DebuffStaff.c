@@ -21,6 +21,7 @@ void PrepareTargetSelectionForOffensiveStaff(struct Unit* unit, void(*func)(stru
 int AttackStaffMapSelect_Init(struct Proc*proc)
 {
     StartUnitStaffOffenseInfoWindow(proc);
+    return 1;
 }
 
 void StartUnitStaffOffenseInfoWindow(struct Proc* parent) {
@@ -37,6 +38,7 @@ u8 AttackStaffMapSelect_SwitchIn(struct Proc* proc, struct TargetEntry* target)
     RefreshUnitStaffOffenseInfoWindow(
         GetUnit(target->unitIndex),
         GetOffensiveStaffAccuracy(gActiveUnit, GetUnit(target->unitIndex)));
+        return 1;
 }
 
 void RefreshUnitStaffOffenseInfoWindow(struct Unit* unit, int hit) {

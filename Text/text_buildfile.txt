@@ -102,7 +102,8 @@ Item is too heavy to be stolen.[X]
 # 0x0149 ^
 A laid-back voyage.[N]
 Weakened enemies[N]
-(-5 autolevels).[X]
+(-5/4/3/2/1 [N]
+autolevels based on Hub).[X]
 
 # 0x014A ^
 The intended adventure.[N]
@@ -112,7 +113,8 @@ with enemies.[X]
 # 0x014B ^
 A journey for the bold.[N]
 Bolstered enemies[N]
-(+5 autolevels).[X]
+(+3/5/7/9/10[N]
+autolevels based on Hub).[X]
 
 # 0x055D
 Chance that the attack will hit.[NL]

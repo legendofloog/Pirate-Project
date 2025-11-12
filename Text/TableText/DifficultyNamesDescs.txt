@@ -1,11 +1,11 @@
 ## EasyName
- Easy: -5 autolevels.[X]
+ Easy: -5/4/3/2/1 autolevels.[X]
 
 ## NormalName
  Normal: No changes.[X]
 
 ## HardName
- Hard: +5 autolevels.[X]
+ Hard: +3/5/7/9/10 autolevels.[X]
 
 ## EasyDesc
 A laid-back voyage.[X]

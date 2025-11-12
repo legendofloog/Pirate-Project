@@ -102,9 +102,15 @@ BattleBG
 NEHU
 NULL
 
-DifficultyBonus
+EasyReduction
 20
-2
+1
+NEHU
+NULL
+
+DifficultyBonus
+21
+1
 NEHU
 NULL
 

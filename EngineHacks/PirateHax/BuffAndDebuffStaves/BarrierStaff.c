@@ -1,15 +1,5 @@
 #include "BarrierStaff.h"
 
-void BarrierStaffTargetingWrapper() {
-	asm("	mov r0, r5; \
-			mov r2, r4; \
-			bl BarrierStaffTargeting; \
-			pop {r4-r5}; \
-			pop {r0}; \
-			bx r0; \
-	");
-}
-
 void BarrierStaffTargeting(struct Unit* unit) {
 
 	MakeTargetListForBarrier(unit);
@@ -28,6 +18,7 @@ void StartUnitResChangeInfoWindow(struct Proc* parent) {
 
 int BarrierStaffInitSelect(struct Proc* proc) {
     StartUnitResChangeInfoWindow(proc);
+	return 1;
 }
 
 void RefreshUnitResChangeInfoWindow(struct Unit* unit) {
@@ -43,5 +34,6 @@ void RefreshUnitResChangeInfoWindow(struct Unit* unit) {
 u8 BarrierStaffTargetChange(struct Proc* proc, struct TargetEntry* target) {
     ChangeActiveUnitFacing(target->x, target->y);
     RefreshUnitResChangeInfoWindow(GetUnit(target->unitIndex));
+	return 1;
 }
 

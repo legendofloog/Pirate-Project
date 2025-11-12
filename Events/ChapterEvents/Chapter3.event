@@ -137,9 +137,9 @@ UNIT Lua 0 0 Level(10,Ally,False) [21,40] 0 0 0 0 [Cutlass, IronSword, IronMuske
 UNIT Desiderio 0 0 Level(10,Ally,False) [30,1] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [3,2] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Razvan 0 0 Level(10,Ally,False) [12,42] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-LoadUnit(21,41)
-LoadUnit(20,40)
-LoadUnit(13,42)
+LoadUnit(3,17)
+LoadUnit(32,16)
+LoadUnit(17,10)
 LoadUnit(12,41)
 
 LoadUnit(31,1)
@@ -321,7 +321,7 @@ STAL 30
 EARTHQUAKE 1 True
 STAL 30
 EARTHQUAKE_END
-TILECHANGE 3 //the one with all the bridges showing up
+TILECHANGE 0 //the one with all the bridges showing up
 LoadEnemies(LeftSideUnits)
 LoadEnemies(CenterBoatUnits)
 LoadEnemies(RightSideUnits)
@@ -385,7 +385,7 @@ TEXTEND
 REMA
 
 FadeOutMusic
-TILECHANGE 4
+TILECHANGE 1
 SOUN SnagDestructionSoundID //snag destruction sound
 REMOVEUNIT Alonso
 SOUN GuyFallingSoundID

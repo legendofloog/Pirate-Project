@@ -299,5 +299,5 @@
 #define GeneralUnarmedAnim 0x48
 
 #define FighterAxeAnim 0x19
-#define FighterHandaxeAnim 0x19
-#define FighterUnarmedAnim 0x19
+#define FighterHandaxeAnim 0x1a
+#define FighterUnarmedAnim 0x1b

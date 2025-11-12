@@ -81,16 +81,6 @@ void MakeTargetListForFortune(Unit* unit) {
 	Item_TURange(unit, AddUnitToTargetListIfUnfortunate, FortuneStaffID_Link);
 }
 
-void FortuneUsabilityWrapper() {
-	asm("mov r0,r4;	\
-		 mov r1,r5; \
-		 bl FortuneUsability; \
-		 pop {r4,r5}; \
-		 pop {r1}; \
-         bx r1; \
-	");	
-}
-
 bool FortuneUsability(Unit* unit) {
 	MakeTargetListForFortune(unit);
 	return GetTargetListSize() != 0;
@@ -105,16 +95,6 @@ void FortuneStaffTargeting(struct Unit* unit) {
 	StartBottomHelpText(
 		StartTargetSelection(&FortuneStaffSelectInfo),
 		GetStringFromIndex(FortuneStaffSubtitleText_Link));
-}
-
-void FortuneStaffTargetingWrapper() {
-	asm("	mov r0, r5; \
-			mov r2, r4; \
-			bl FortuneStaffTargeting; \
-			pop {r4-r5}; \
-			pop {r0}; \
-			bx r0; \
-	");
 }
 
 void StartUnitHitChangeInfoWindow(struct Proc* parent) {
@@ -147,9 +127,11 @@ void RefreshUnitHitChangeInfoWindow(struct Unit* unit) {
 
 int FortuneStaffInitSelect(struct Proc* proc) {
     StartUnitHitChangeInfoWindow(proc);
+	return 1;
 }
 
 u8 FortuneStaffTargetChange(struct Proc* proc, struct TargetEntry* target) {
     ChangeActiveUnitFacing(target->x, target->y);
     RefreshUnitHitChangeInfoWindow(GetUnit(target->unitIndex));
+	return 1;
 }
