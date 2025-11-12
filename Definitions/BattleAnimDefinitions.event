@@ -6,7 +6,7 @@
 #define SwordAnim(Animation) "BYTE Swords 0x01 ; SHORT Animation"
 #define LanceAnim(Animation) "BYTE Lances 0x01 ; SHORT Animation"
 #define AxeAnim(Animation) "BYTE Axes 0x01 ; SHORT Animation"
-#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00; SHORT Animation"
+#define HandAxeAnim(Animation) "BYTE HandAxe 0x00 ; SHORT Animation ; BYTE Tomahawk 0x00; SHORT Animation; BYTE Ira 0x00; SHORT Animation"
 #define BowAnim(Animation) "BYTE Bows 0x01 ; SHORT Animation"
 #define StaffAnim(Animation) "BYTE Staff 0x01 ; SHORT Animation"
 #define TomeAnim(Animation) "BYTE Tome 0x01 ; SHORT Animation"
@@ -41,7 +41,6 @@
 #define CurateUnarmedAnim 0xD8
 
 #define ThiefKnifeAnim 0xD9
-#define ThiefUnarmedAnim 0xDA
 
 #define PegasusRiderSwordAnim 0xDB
 #define PegasusRiderUnarmedAnim 0xDC
@@ -235,6 +234,13 @@
 #define RogueFKnifeAnim 0x164
 #define RogueFUnarmedAnim 0x165
 
+#define GunnerGunAnim 0x169
+#define GunnerUnarmedAnim 0x16A
+
+#define GunnerFGunAnim 0x16B
+#define GunnerFUnarmedAnim 0x16C
+
+
 //vanilla repal type stuff, just put it in same slot
 
 #define ArcherBowAnim 0x26
@@ -265,7 +271,7 @@
 #define SaviorUnarmedAnim 0x87
 
 #define MercenarySwordAnim 0xb
-#define MercenaryUnarmedAnim 0xc
+#define MercenaryUnarmedAnim 0xDA
 
 #define HeroSwordAnim 0xD
 #define HeroAxeAnim 0xE
@@ -278,6 +284,20 @@
 
 //replaces brigand pointer
 
-#define BarbarianAxeAnim 0x20
-#define BarbarianHandaxeAnim 0x21
-#define BarbarianUnarmedAnim 0x22
+#define BruteAxeAnim 0x20
+#define BruteHandaxeAnim 0x21
+#define BruteUnarmedAnim 0x22
+
+#define BerserkerAxeAnim 0x23
+#define BerserkerHandaxeAnim 0x24
+#define BerserkerUnarmedAnim 0x25
+
+#define GeneralSwordAnim 0x44
+#define GeneralLanceAnim 0x45
+#define GeneralAxeAnim 0x46
+#define GeneralHandaxeAnim 0x47
+#define GeneralUnarmedAnim 0x48
+
+#define FighterAxeAnim 0x19
+#define FighterHandaxeAnim 0x1a
+#define FighterUnarmedAnim 0x1b

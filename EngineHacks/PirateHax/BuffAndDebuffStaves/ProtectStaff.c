@@ -77,16 +77,6 @@ void MakeTargetListForProtect(Unit* unit) {
 	Item_TURange(unit, AddUnitToTargetListIfUnprotected, ProtectStaffID_Link);
 }
 
-void ProtectUsabilityWrapper() {
-	asm("mov r0,r4;	\
-		 mov r1,r5; \
-		 bl ProtectUsability; \
-		 pop {r4,r5}; \
-		 pop {r1}; \
-         bx r1; \
-	");	
-}
-
 bool ProtectUsability(Unit* unit) {
 	MakeTargetListForProtect(unit);
 	return GetTargetListSize() != 0;
@@ -101,16 +91,6 @@ void ProtectStaffTargeting(struct Unit* unit) {
 	StartBottomHelpText(
 		StartTargetSelection(&ProtectStaffSelectInfo),
 		GetStringFromIndex(ProtectStaffSubtitleText_Link));
-}
-
-void ProtectStaffTargetingWrapper() {
-	asm("	mov r0, r5; \
-			mov r2, r4; \
-			bl ProtectStaffTargeting; \
-			pop {r4-r5}; \
-			pop {r0}; \
-			bx r0; \
-	");
 }
 
 void StartUnitDefChangeInfoWindow(struct Proc* parent) {
@@ -145,9 +125,11 @@ void RefreshUnitDefChangeInfoWindow(struct Unit* unit) {
 
 int ProtectStaffInitSelect(struct Proc* proc) {
     StartUnitDefChangeInfoWindow(proc);
+	return 1;
 }
 
 u8 ProtectStaffTargetChange(struct Proc* proc, struct TargetEntry* target) {
     ChangeActiveUnitFacing(target->x, target->y);
     RefreshUnitDefChangeInfoWindow(GetUnit(target->unitIndex));
+	return 1;
 }

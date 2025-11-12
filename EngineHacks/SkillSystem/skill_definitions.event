@@ -412,7 +412,7 @@
 
 //Charge: Gain +1 damage for every two squares moved.
 //By Datagne
-#define ChargeID 255
+//#define ChargeID 255
 
 //Charge+: Charge+: If unit has used up all movement, gain brave effect.
 //By Sme

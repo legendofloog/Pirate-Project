@@ -156,7 +156,7 @@ Cannot double or be doubled.[X]
 Wild Axe[X]
 
 ## WildAxeDesc
-+3 Spd. Follow-ups are consecutive.[X]
++3 AS. Follow-ups are consecutive.[X]
 
 ## RecoilAxeName
 Recoil Axe[X]
@@ -206,7 +206,7 @@ Uses Mag. Can attack at melee.[X]
 Snapshot[X]
 
 ## SnapshotDesc
-+3 speed. Cannot miss.[X]
++3 AS. Cannot miss.[X]
 
 ## ScorpioName
 Scorpio[X]
@@ -371,9 +371,6 @@ Does exactly as advertised.[X]
 ## InfiltratorName
 Infiltrator[X]
 
-## QuickdrawName
-Quickdraw[X]
-
 // STAVES
 
 ## BuffStaffBottomText
@@ -447,7 +444,7 @@ for 1 turn. +1 WEXP.[X]
 +50 Crit to ally[N]
 for 1 turn. +1 WEXP.[X]
 
-// EQUIPS
+// EQUIPS/ITEMS
 
 ## HideShieldName
 Hide Shield[X]
@@ -477,7 +474,7 @@ Grants +1 Def, +4 Res.[X]
 Heavy Shield[X]
 
 ## HeavyShieldDesc
-Grants +8 Def but -8 Spd.[X]
+Grants +8 Def but -5 Spd.[X]
 
 ## ShoveGloveName
 Shove Glove[X]
@@ -627,7 +624,7 @@ Hoarder's Charm[X]
 
 ## HoardersCharmDesc
 Prevents this unit's inventory[N]
-from being captured or stolen.[X]
+from being stolen.[X]
 
 ## BoltName
 Bolt[X]
@@ -655,12 +652,11 @@ Ignore Spd or Wt when[N]
 stealing, but reduce[N]
 uses by 25%.[X]
 
-## QuickdrawTwoName
+## QuickdrawName
 Quickdraw[X]
 
 ## QuickdrawDesc
-Designed with a hair trigger.[N]
-User may move two spaces after combat.[X]
+Brave, follow-ups consecutive.[X]
 
 ## ToradarName
 Toradar[X]
@@ -672,7 +668,7 @@ Effective against infantry.[X]
 Hand Cannon[X]
 
 ## HandCannonDesc
-Breaks, but cannot follow-up.[X]
+Inflicts Break on attack.[X]
 
 ## IgnisTriggerName
 Ignisignia[X]
@@ -708,13 +704,13 @@ Drains HP.[X]
 Avaritia[X]
 
 ## AvaritiaDesc
-Grants 1000 Gold on kill.[X]
+User steals 50% of enemy's Atk.[X]
 
 ## LuxuriaName
 Invidia[X]
 
 ## LuxuriaDesc
-If enemy would follow up, user does.[X]
+If enemy follows up, user does instead.[X]
 
 ## AcediaName
 Acedia[X]
@@ -729,3 +725,27 @@ Allows the target to act again.[X]
 Short for [OpenQuote]Teleport Shorts".[N]
 Allows the holder to swap with[N]
 an ally within Mag/2 range.[X]
+
+## MarchRingName
+March Ring[X]
+
+## MarchRingDesc
+A light ring that makes the wearer[N]
+more fleet-foot/hoof/wing-ed.[N]
+Grants +1 Movement while worn.[X]
+
+## ArmsScrollName
+Arms Scroll[X]
+
+## ArmsScrollDesc
+Increases user's weapon rank (if they[N]
+have one) for top weapon in inventory[N]
+by 25 WEXP.[X]
+
+## ArmsScrollUseDesc
+Increases weapon[N]
+rank for top weapon[N]
+by 25 WEXP.[X]
+
+## PrepScreenUseArmsScroll
+WEXP increased.[X]

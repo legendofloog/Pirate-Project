@@ -1,31 +1,32 @@
 #include "TargetingAI.h"
 
+extern bool(*gSkillTester)(struct Unit* unit, int skillID);
+extern u8 ShadeIDLink;
+
 void ComputeAiAttackWeight(struct AiCombatSimulationSt* st) {
     int score;
-    int backup;
 
     score = AiBattleGetDamageDealtWeight(); //max score: 110
-    backup = score;
 
     score -= AiBattleGetDamageTakenWeight(); //minimum score: -110
 
     if (score < 0) {
         score = 0;
     }
+
     if (DidUnitBreak() && gBattleActor.battleEffectiveHitRate > 0){
-        score += (40 * gBattleActor.battleEffectiveHitRate) / 100; 
+        score += (50 * gBattleActor.battleEffectiveHitRate) / 100; 
     }
-    else if (gBattleTarget.weapon == 0 && (gBattleActor.battleAttack - gBattleTarget.battleDefense) > 0) {
+    else if ((gBattleTarget.weapon == 0 || gBattleTarget.canCounter == false) && (gBattleActor.battleAttack - gBattleTarget.battleDefense) > 0) {
         score += (50 * gBattleActor.battleEffectiveHitRate) / 100; 
     }
     else{
 
     }
 
-    if (score != 0) {
-        score = score * 10;
-    } else {
-        score = backup;
+    if (gSkillTester(&gBattleTarget.unit, ShadeIDLink))
+    {
+        score = 0; // if you have shade, then they're gonna ignore you unless they have no other option
     }
 
     st->score = score;
@@ -51,17 +52,6 @@ int AiBattleGetDamageDealtWeight(void) {
     score = (gBattleActor.battleAttack - gBattleTarget.battleDefense) * (gBattleActor.battleEffectiveHitRate);
     score /= 100; //the score for a single attack = damage * hit rate (as a percent)
 
-    if (gBattleActor.unit.curHP > 0 || gBattleTarget.battleEffectiveHitRate == 0){ //applies if unit doesn't die on counter
-        if (gBattleActor.battleSpeed - gBattleTarget.battleSpeed >= BATTLE_FOLLOWUP_SPEED_THRESHOLD){
-            score *= 2; //if actor follows up, score doubled
-        }
-        if (gBattleActor.weaponAttributes & IA_BRAVE){
-            score *= 2; //if actor braves, score doubled
-        }
-    }
-
-    score *= 2; //double score once more
-
     if (score < 0) {
         score = 0;
     }
@@ -80,42 +70,27 @@ int AiBattleGetDamageTakenWeight(void) {
         return 0; //if they would kill, consider no damage taken to prioritize it
     }
 
-    if (gBattleTarget.weapon == 0) {
+    if ((gBattleTarget.weapon == 0 || gBattleTarget.canCounter == false)) {
         return 0; //they have no weapon, so no counter
     }
 
-    if ((gBattleTarget.battleAttack - gBattleActor.battleDefense) <= 0){
+    if ((gBattleTarget.battleAttack - gBattleActor.battleDefense) <= 0 || gBattleActor.battleEffectiveHitRate == 0){
         return 0; //no damage, no fear
     }
 
     if (DidUnitBreak() && gBattleActor.battleEffectiveHitRate > 0 ){
         return 0; //if unit would break in this combat, they believe they face no counter
     }
-
-    //if (gBattleActor.unit.curHP == 0){ removed self-preservation instincts
-        //return 60; 
-    //} 
     
     score = (gBattleTarget.battleAttack - gBattleActor.battleDefense) * (gBattleTarget.battleEffectiveHitRate);
     score /= 100; //score for one attack from the enemy
-
-    if (gBattleTarget.unit.curHP > 0 || gBattleActor.battleEffectiveHitRate == 0){ //applies if target doesn't die on counter
-        if (gBattleTarget.battleSpeed - gBattleActor.battleSpeed >= BATTLE_FOLLOWUP_SPEED_THRESHOLD){
-            score *= 2; //if target follows up, score doubled
-        }
-        if (gBattleTarget.weaponAttributes & IA_BRAVE){
-            score *= 2; //if target braves, score doubled
-        }
-    }
 
     if (score < 0) {
         score = 0;
     }
 
-    score /= 2;
-
-    if (score > 40) {
-        score = 40;
+    if (score > 50) {
+        score = 50;
     }
 
     return score;

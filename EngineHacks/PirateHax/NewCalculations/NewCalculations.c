@@ -190,6 +190,33 @@ int GetBattleUnitStaffExp(BattleUnit* actor){
     return exp;
 }
 
+// a couple steal rework related things
+
+int StealCommandUsability(){
+	if (UNIT_CATTRIBUTES(gActiveUnit) & CA_MOUNTEDAID) //if you have mounted aid, then you cannot steal
+    {
+        return MENU_NOTSHOWN;
+    }
+
+    if (gActiveUnit->state & US_HAS_MOVED) {
+        return MENU_NOTSHOWN;
+    }
+
+    MakeTargetListForSteal(gActiveUnit);
+    if (GetTargetListSize() == 0) {
+        return MENU_NOTSHOWN;
+    }
+
+    // removing the check for how many items you have
+    /*
+    if (GetUnitItemCount(gActiveUnit) == UNIT_ITEM_COUNT) {
+        return MENU_DISABLED;
+    }
+    */
+
+    return MENU_ENABLED;
+}
+
 s8 ActionSteal(Proc* proc) {
     int item;
 
@@ -209,6 +236,29 @@ s8 ActionSteal(Proc* proc) {
     BeginMapAnimForSteal();
 
     return 0;
+}
+
+s8 UnitAddStolenItemHelper(struct Unit* unit, int item) {
+    int i;
+
+    bool result = false; //doesn't matter 
+
+    for (i = 0; i < UNIT_ITEM_COUNT; ++i) {
+        if (unit->items[i] == 0) {
+            unit->items[i] = item;
+            result = true;
+            break;
+        }
+    }
+
+    if (result)
+    {
+        return result; //we already added the item: end here
+    }
+
+    AddItemToConvoy(item); //if not, then we just dump it into the convoy instead and still return true
+
+    return TRUE;
 }
 
 void BattleApplyStealAction(struct Proc* proc, int item) {
@@ -327,8 +377,8 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
 
     unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > 60){
-        unit->maxHP = 60;
+    if (unit->maxHP > promotedClass->maxHP){
+        unit->maxHP = promotedClass->maxHP;
     }
         
     unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
@@ -339,46 +389,46 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
 
     unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    if (unit->pow > 30){
-        unit->pow = 30;
+    if (unit->pow > promotedClass->maxPow){
+        unit->pow = promotedClass->maxPow;
     }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
-	if (unit->mag > 30){
-        unit->mag = 30;
+	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
+        unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->skl > 30){
-        unit->skl = 30;
+    if (unit->skl > promotedClass->maxSkl){
+        unit->skl = promotedClass->maxSkl;
     }
         
 
     unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->spd > 30){
-        unit->spd = 30;
+    if (unit->spd > promotedClass->maxSpd){
+        unit->spd = promotedClass->maxSpd;
     }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->def > 30){
-        unit->def = 30;
+    if (unit->def > promotedClass->maxDef){
+        unit->def = promotedClass->maxDef;
     }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
-    if (unit->res > 30){
-		unit->res = 30;
+    if (unit->res > promotedClass->maxRes){
+		unit->res = promotedClass->maxRes;
 	}
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
-	if (unit->lck > 30){
-        unit->lck = 30;
+	if (unit->lck > 40){ //ok it's always 40 on promo so
+        unit->lck = 40;
     }
 
     // Remove base class' base wexp from unit wexp
@@ -411,8 +461,8 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
 
     unit->maxHP += (promotedClass->baseHP - currentClass->baseHP);
 
-    if (unit->maxHP > 60){
-        unit->maxHP = 60;
+    if (unit->maxHP > promotedClass->maxHP){
+        unit->maxHP = promotedClass->maxHP;
     }
         
     unit->curHP += (promotedClass->baseHP - currentClass->baseHP);
@@ -423,46 +473,46 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
 
     unit->pow += (promotedClass->basePow - currentClass->basePow);
 
-    if (unit->pow > 30){
-        unit->pow = 30;
+    if (unit->pow > promotedClass->maxPow){
+        unit->pow = promotedClass->maxPow;
     }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
-	if (unit->mag > 30){
-        unit->mag = 30;
+	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
+        unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
-    if (unit->skl > 30){
-        unit->skl = 30;
+    if (unit->skl > promotedClass->maxSkl){
+        unit->skl = promotedClass->maxSkl;
     }
         
 
     unit->spd += (promotedClass->baseSpd - currentClass->baseSpd);
 
-    if (unit->spd > 30){
-        unit->spd = 30;
+    if (unit->spd > promotedClass->maxSpd){
+        unit->spd = promotedClass->maxSpd;
     }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
 
-    if (unit->def > 30){
-        unit->def = 30;
+    if (unit->def > promotedClass->maxDef){
+        unit->def = promotedClass->maxDef;
     }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
-    if (unit->res > 30){
-		unit->res = 30;
+    if (unit->res > promotedClass->maxRes){
+		unit->res = promotedClass->maxRes;
 	}
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
-	if (unit->lck > 30){
-        unit->lck = 30;
+	if (unit->lck > 40){ //ok it's always 40 on promo so
+        unit->lck = 40;
     }
 		
 
@@ -514,18 +564,27 @@ int GetBattleUnitUpdatedWeaponExp(BattleUnit* battleUnit) {
     
 	result = battleUnit->unit.ranks[battleUnit->weaponType];
 
-    if (battleUnit->wexpMultiplier <= 0)
+    if (battleUnit->weaponType != ITYPE_STAFF)
     {
-        // we don't do anything because you missed or didn't hit anything
-    }
-    else if (gBattleTarget.unit.curHP <= 0)
-    {
-        result += 2; //you killed a guy, here's your reward
+        if (battleUnit->wexpMultiplier <= 0) // we don't do anything because you missed or didn't hit anything
+        {
+            
+        }
+        else if (gBattleTarget.unit.curHP <= 0) //you killed a guy, double up the wexp
+        {
+            result += 2; 
+        }
+        else                                //otherwise, here's 1 wexp
+        {
+            result++; 
+        }
     }
     else
     {
-        result++; //otherwise, here's some wexp
+        result += GetItemData(GetItemIndex(battleUnit->weapon))->weaponExp; //Add the weapon exp for the item to the Result: Buff Staves are +1
     }
+
+    
 
     for (i = 0; i < 8; ++i) {
         if (i == battleUnit->weaponType){
@@ -647,11 +706,11 @@ struct Unit* LoadUnit(const struct UnitDefinition* uDef) {
     else{
         int autolevelCount = 0; //autoleveling, but only for enemies, and only based off of the difficulty; catches edge cases like bosses outside of hubs
         if (IsDifficultMode()){
-            autolevelCount = 5;
+            autolevelCount = GetChapterDefinition(gChapterData.chapterIndex)->hardModeLevelBonus;
         }
         else if (TUTORIAL_MODE())
         {
-            autolevelCount = -5;
+            autolevelCount = (-1) * GetChapterDefinition(gChapterData.chapterIndex)->easyModeLevelMalus;
         }
 
         if (autolevelCount != 0)
@@ -733,7 +792,7 @@ void UnitLoadStatsFromChracter(struct Unit* unit, const struct CharacterData* ch
             unit->ranks[i] = unit->pCharacterData->baseRanks[i];
     }
 
-    if (UNIT_FACTION(unit) == FACTION_BLUE && (unit->level != UNIT_LEVEL_MAX))
+    if (UNIT_FACTION(unit) == FACTION_BLUE && (unit->level != UNIT_LEVEL_MAX_PIRATE))
         unit->exp = 0;
     else
         unit->exp = UNIT_EXP_DISABLED;
@@ -748,16 +807,17 @@ void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
     bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
     bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
 
-    int autolevelCount = levelCount;
-    int difficultyLevelChange = 0; //for normal mode       
+    s8 autolevelCount = levelCount;
+    s8 difficultyLevelChange = 0; //for normal mode       
     if (IsDifficultMode())
     {
-        difficultyLevelChange = 5;
+        difficultyLevelChange = GetChapterDefinition(gChapterData.chapterIndex)->hardModeLevelBonus;
     }
     else if (TUTORIAL_MODE())
     {
-        difficultyLevelChange = -5;
+        difficultyLevelChange = (-1) * (GetChapterDefinition(gChapterData.chapterIndex)->easyModeLevelMalus);
     }
+
 
     autolevelCount += difficultyLevelChange; //add the levels from difficulty: example: level 6 fighter on easy gets +5, -5, same as a normal fighter at level 1
 
@@ -778,6 +838,79 @@ void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
         
     }
 
+}
+
+void LoadUnit_800F704(const struct UnitDefinition * def, u16 b, s8 quiet, s8 d) // apparently there's another autolevel function??
+{
+    struct Unit * unit;
+
+    const u8 allegianceLookup[3] = {
+        [FACTION_ID_BLUE] = FACTION_BLUE,
+        [FACTION_ID_GREEN] = FACTION_GREEN,
+        [FACTION_ID_RED] = FACTION_RED,
+    };
+
+    if (def->allegiance == 0)
+    {
+        unit = GetUnitFromCharIdAndFaction(def->charIndex, FACTION_BLUE);
+    }
+    else
+    {
+        unit = GetUnitFromCharIdAndFaction(def->charIndex, FACTION_BLUE);
+
+        if (unit)
+        {
+            UnitChangeFaction(unit, allegianceLookup[def->allegiance]);
+            unit = GetUnitByCharId(def->charIndex);
+        }
+    }
+
+    if (!unit)
+    {
+        unit = LoadUnit(def);
+
+        if ((d == 1) && (def->allegiance == FACTION_ID_BLUE))
+            unit->state |= US_BIT22;
+    }
+    else if (def->allegiance == FACTION_ID_BLUE)
+    {
+        s8 x, y;
+
+        unit->state &= ~US_UNSELECTABLE;
+
+        if (d == 1)
+        {
+            if (unit->state & US_DEAD)
+                unit->state |= US_BIT22;
+        }
+        else
+        {
+            if (unit->state & US_BIT22)
+                unit->state &= ~US_BIT22;
+        }
+
+        GenUnitDefinitionFinalPosition(def, &x, &y, 0);
+
+        if (unit->xPos == x && unit->yPos == y)
+            b &= ~0x0001;
+    }
+
+    unit->xPos = def->xPosition;
+    unit->yPos = def->yPosition;
+
+    //all the other autoleveling stuff should be handled already in LoadUnit
+
+    sub_800F8A8(unit, def, b, quiet);
+}
+
+void UnitApplyBonusLevels(struct Unit* unit, int levelCount)
+{
+    if (!UNIT_IS_GORGON_EGG(unit))
+    {
+        UnitAutolevelCore(unit, unit->pClassData->number, levelCount);
+        UnitCheckStatCaps(unit);
+        unit->curHP = GetUnitMaxHp(unit);
+    }
 }
 
 void AutolevelUnit(struct Unit* unit, int levelCount){
@@ -908,8 +1041,8 @@ int GetUnitLuckCap(Unit* unit){
 }
 
 void CheckBattleUnitStatCaps(struct Unit* unit, struct BattleUnit* bu) {
-    if ((unit->maxHP + bu->changeHP) > UNIT_MHP_MAX(unit)){
-        bu->changeHP = UNIT_MHP_MAX(unit) - unit->maxHP;
+    if ((unit->maxHP + bu->changeHP) > PIRATE_UNIT_MHP_MAX(unit)){
+        bu->changeHP = PIRATE_UNIT_MHP_MAX(unit) - unit->maxHP;
     }
     if ((unit->pow + bu->changePow) > UNIT_POW_MAX(unit)){
         bu->changePow = UNIT_POW_MAX(unit) - unit->pow;
@@ -935,8 +1068,8 @@ void CheckBattleUnitStatCaps(struct Unit* unit, struct BattleUnit* bu) {
 }
 
 void UnitCheckStatCaps(struct Unit* unit) {
-    if (unit->maxHP > UNIT_MHP_MAX(unit)){
-        unit->maxHP = UNIT_MHP_MAX(unit);
+    if (unit->maxHP > PIRATE_UNIT_MHP_MAX(unit)){
+        unit->maxHP = PIRATE_UNIT_MHP_MAX(unit);
     }      
     if (unit->pow > UNIT_POW_MAX(unit)){
         unit->pow = UNIT_POW_MAX(unit);
@@ -973,4 +1106,44 @@ int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target){
 
 int GetUnitMagBy2Range(struct Unit* unit) {
     return 5 + prMagGetter(unit) / 3;
+}
+
+void PlusThreeAS(BattleUnit* bunitA, BattleUnit* bunitB) { //for snapshot and wild axe
+    if (GetItemIndex(bunitA->weapon) == WildAxeIDLink || GetItemIndex(bunitA->weapon) == SnapshotIDLink)
+    {
+        bunitA->battleSpeed += 3; //give 3 AS when this is the case
+    }
+}
+
+//fixing cusa to not check for unit_level_max
+
+void UnitChangeFaction(struct Unit* unit, int faction) {
+    struct Unit* newUnit = GetFreeUnit(faction);
+
+    if (gActiveUnit == unit)
+    {
+        gActiveUnit = newUnit;
+    }
+    
+    CopyUnit(unit, newUnit);
+    ClearUnit(unit);
+
+    if (newUnit->exp == UNIT_EXP_DISABLED)
+    {
+        if ((faction == FACTION_BLUE) && (newUnit->level != UNIT_LEVEL_MAX_PIRATE))
+        {
+            newUnit->exp = 0;
+        }
+        else
+        {
+            newUnit->exp = UNIT_EXP_DISABLED;
+        }
+    }
+
+    //newUnit->state = newUnit->state &~ US_DROP_ITEM; //unnecessary as there are no drops in ba sing se
+
+    if (newUnit->rescueOtherUnit)
+    {
+        GetUnit(newUnit->rescueOtherUnit)->rescueOtherUnit = newUnit->index;
+    }
 }

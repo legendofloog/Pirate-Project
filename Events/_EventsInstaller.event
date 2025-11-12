@@ -64,3 +64,8 @@ LABEL 778
 ENUF DifficultyChangeFlag //not really meant to be set to begin with, except such that it can't be used until we get to the main room
 NoFade
 ENDA
+
+ALIGN 4
+PrepShop1:
+SHLI IronSword IronLance IronAxe IronBow IronKnife IronDagger IronMusket Fire Heal Vulnerary (HPTonic << 8)|Tonic (StrTonic << 8)|Tonic (MagTonic << 8)|Tonic (SklTonic << 8)|Tonic (SpdTonic << 8)|Tonic (LuckTonic << 8)|Tonic  (DefTonic << 8)|Tonic (ResTonic << 8)|Tonic
+ALIGN 4

@@ -19,13 +19,31 @@ CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
+Armory(HubDArmory1,5,15)
+Armory(HubDArmory2,2,30)
+Vendor(HubDVendor,1,15)
 END_MAIN
+
+ALIGN 4
+HubDArmory1: //8 of each type of weapon here: 2 Cs, 4 Bs, 2 A
+SHLI SteelSword KillingEdge SilverSword Lancereaver Rapier Runesword WoDao BraveSword SteelLance KillerLance SilverLance Axereaver Spear Impaler Saunion BraveLance SteelAxe KillerAxe SilverAxe Tomahawk WildAxe Bloodaxe BattleAxe BraveAxe
+ALIGN 4
+
+ALIGN 4
+HubDArmory2: //8 of each type of weapon here: 2 Cs, 4 Bs, 2 A
+SHLI SteelBow KillerBow SilverBow Knifekiller Pursuer Scorpio DeadeyeBow BraveBow SteelKnife Bloodletter SilverKnife Peshkatz ArcaneKnife Compass Heartpiercer Baselard SteelMusket Culverin SilverMusket InfiltratorGun HandCannon Mortar Toradar Quickdraw
+ALIGN 4
+
+ALIGN 4
+HubDVendor: // same thing and then 4 shields, 4 items, 1 awesome equip
+SHLI Elfire Thunder Arcfire Sagittae Nosferatu Bolt Bolting HerosFlare Mend Rewarp Physic AssistStaff RushStaff Rescue Protect Concentrate PureWater ArmsScroll Elixir Mine GlassShield HideShield HexlockShield HeavyShield Eyepatch Statuette  
+ALIGN 4
 
 MiscBasedEvents:
 AREA Flag_HubD_Ending_Allowed EndingScene [7,8] [8,8]
-AREA WentToHub1 GotoHubD1 [35,8] [36,8]
-AREA WentToHub2 GotoHubD2 [14,15] [14,17]
-AREA WentToHub3 GotoHubD3 [34,27] [35,27]
+AREA WentToHub1 GotoHubD1 [28,8] [29,8]
+//AREA WentToHub2 GotoHubD2 [14,15] [14,17]
+AREA WentToHub3 GotoHubD3 [27,27] [28,27]
 AREA 0 SwitchBackToArmada [13,30] [13,30]
 AFEV 0 RefreshLiberator 0
 END_MAIN
@@ -75,9 +93,9 @@ GotoHubD1:
 HubChapterFirstTimeEvent(1, SeenHubD1Pitch, HubD1Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubD_1, Fort_Ruins_Outside, HubDTheOutskirts, HubDCallback)
-GotoHubChapterIfYes(3, HubD_1, HubD1Selection_Yes)
+GotoHubChapterIfYesHubD(3, HubD_1, HubD1Selection_Yes)
 Text(HubD1Selection_No)
-ENUF LuaInAHubFlag
+ENUF WentToHub1
 NoFade
 ENDA
 
@@ -93,9 +111,9 @@ GotoHubD2:
 HubChapterFirstTimeEvent(1, SeenHubD2Pitch, HubD2Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubD_2, Village, HubDTheOutskirts, HubDCallback)
-GotoHubChapterIfYes(3, HubD_2, HubD2Selection_Yes)
+GotoHubChapterIfYesHubD(3, HubD_2, HubD2Selection_Yes)
 Text(HubD2Selection_No)
-ENUF LuaInAHubFlag
+ENUF WentToHub2
 NoFade
 ENDA
 
@@ -103,9 +121,9 @@ GotoHubD3:
 HubChapterFirstTimeEvent(1, SeenHubD3Pitch, HubD3Pitch)
 FancyChapterMapOffset(-1,-1)
 FancyChapterPreview(HubD_3, Outside_Village_Evening, HubDTheOutskirts, HubDCallback)
-GotoHubChapterIfYes(3, HubD_3, HubD3Selection_Yes)
+GotoHubChapterIfYesHubD(3, HubD_3, HubD3Selection_Yes)
 Text(HubD3Selection_No)
-ENUF LuaInAHubFlag
+ENUF WentToHub3
 NoFade
 ENDA
 

@@ -5,3 +5,12 @@ PUSH
 ORG 0x2FEC6
 BYTE 0x0F
 POP
+
+ALIGN 4
+WildAxeIDLink:
+BYTE WildAxe
+
+ALIGN 4
+SnapshotIDLink:
+BYTE Snapshot
+

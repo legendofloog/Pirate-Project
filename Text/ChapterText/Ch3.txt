@@ -619,7 +619,7 @@ so don't make us wait, Pilar![A][X]
 [Left][LoadPilar][3LB]
 [Beat]Now, time to get to work.[N]
 Let's just hope my old friends[N]
-haven't turned on me[Beat][AN][X]
+won't shoot us out of the sky[Beat][AN][X]
 
 //They reach the island, but the engine shuts down just as they're going down to land.
 //Lua orders everyone to get below deck and prepare for the crash, praying that they'll all survive!

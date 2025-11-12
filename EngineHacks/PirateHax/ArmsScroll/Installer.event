@@ -1,0 +1,32 @@
+#include "ArmsScroll.lyn.event"
+
+#include "ArmsScrollWrappers.lyn.event"
+
+ALIGN 4
+ArmsScrollMessageReturnLink:
+SHORT PrepScreenUseArmsScroll //this is a text ID
+
+ALIGN 4
+ArmsScrollBoostLink:
+BYTE 25 //the current bonus for WEXP
+
+ALIGN 4
+ArmsScrollIDLink:
+BYTE ArmsScroll
+
+ALIGN 4
+ArmsScrollPopup: //thank you Pikmin1211
+Popup_SetSound(0x5A)
+Popup_Space(1)
+Popup_SetColor(0)
+Popup_StringId(PrepScreenUseArmsScroll)
+Popup_Space(1)
+Popup_End
+
+ALIGN 4
+ArmsScrollPopupPointer:
+POIN ArmsScrollPopup
+
+ALIGN 4
+ArmsScrollPopupTextWordLink:
+WORD PrepScreenUseArmsScroll

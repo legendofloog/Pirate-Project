@@ -7,6 +7,8 @@ int GetNPCStatIncrease(int growth);
 
 #define CA_NO_EXP CA_NEGATE_LETHALITY
 
+#define UNIT_LEVEL_MAX_PIRATE 30
+
 #define NO_WEXP 0
 #define D_WEXP 1
 #define C_WEXP 26
@@ -249,3 +251,32 @@ void FloorStats(struct Unit* unit);
 
 int GetOffensiveStaffAccuracy(struct Unit* actor, struct Unit* target);
 extern s8 prMagGetter(Unit* unit);
+
+extern u8 WildAxeIDLink;
+extern u8 SnapshotIDLink;
+
+enum
+{
+    // Menu availability identifiers
+
+    MENU_ENABLED  = 1,
+    MENU_DISABLED = 2,
+    MENU_NOTSHOWN = 3,
+};
+
+void MakeTargetListForSteal(struct Unit* unit);
+int AddItemToConvoy(int item);
+
+#define PIRATE_UNIT_MHP_MAX(aUnit) (UNIT_FACTION(unit) == FACTION_RED ? 120 : 80)
+
+const struct ROMChapterData* GetChapterDefinition(unsigned chIndex);
+
+void sub_800F8A8(struct Unit * unit, const struct UnitDefinition * unitDefition, u16 flags, s8 unk);
+
+enum
+{
+    FACTION_ID_BLUE   = 0,
+    FACTION_ID_GREEN  = 1,
+    FACTION_ID_RED    = 2,
+    FACTION_ID_PURPLE = 3,
+};

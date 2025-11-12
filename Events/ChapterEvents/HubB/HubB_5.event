@@ -123,7 +123,7 @@ SOUN 0x2F0
 STAL 120
 // should be Dire Tides instead
 Music(NighttimeSoundID)
-ENUF 0x84
+ENUF 0x84 //need to disable this in order to see HP bars
 STAL 60
 //This is to set the coordinates of the newly loaded night time map to 0,0
 SVAL sB 0

@@ -1,0 +1,11 @@
+#include "Extensions/Hack Installation.txt"
+
+PUSH
+ORG 0x18418
+jumpToHack(SendInventoryOnDeath)
+PROTECT 0x18418 currentOffset
+POP
+
+ALIGN 4
+SendInventoryOnDeath:
+#incbin "SendInventoryOnDeath.dmp"

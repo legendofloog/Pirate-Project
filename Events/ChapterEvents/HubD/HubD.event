@@ -359,7 +359,6 @@ RemoveAll
 LOMA HubDTheOutskirts
 LOAD1 1 LiberatorShipGroup
 ENUN
-//LoadNPCUnitGroupIfEIDNotSet(PassarolaRecruitedFlag, 1337, PassarolaUnitGroup)
 SET_ACTIVE Arbitrator
 CAMERA_CENTERED Arbitrator
 HIDEUNIT Lua

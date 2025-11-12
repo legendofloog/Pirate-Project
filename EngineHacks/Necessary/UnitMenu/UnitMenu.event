@@ -134,8 +134,8 @@ UnitMenuTable:
 #endif 
 
 
-
-  UM_Steal
+  //new UM_Steal with vanilla steal name/desc
+  MenuCommand($67f,$6c4,NormalText,StealCommandUsability, 0x80241DD)
   
   //UM_Summon
   MenuCommand(UM_Kite,UM_KiteDesc,NormalText,NewSummonUsability,0x244B8)

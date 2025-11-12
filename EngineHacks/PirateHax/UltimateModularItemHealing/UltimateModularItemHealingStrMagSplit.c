@@ -64,10 +64,13 @@ void ExecVulneraryItem(ProcPtr proc, int amount) {
 }
 
 void ExecElixirItem(ProcPtr proc) {
+	
+	struct Unit* unit = GetUnit(gActionData.subjectIndex);
+	
     BattleInitItemEffect(GetUnit(gActionData.subjectIndex),
         gActionData.itemSlotIndex);
 
-	int heal = GetUnitItemHealAmount(GetUnit(gActionData.subjectIndex), gActionData.item);
+	int heal = GetUnitItemHealAmount(unit, unit->items[gActionData.itemSlotIndex]);
     AddUnitHp(GetUnit(gActionData.subjectIndex), heal);
 
     gBattleHitIterator->hpChange = gBattleActor.unit.curHP - GetUnitCurrentHp(GetUnit(gActionData.subjectIndex));

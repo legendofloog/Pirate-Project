@@ -112,6 +112,8 @@ HunterMMS:
 
 StandingMapSprite(GunnerMapSprite,MapSprite16x32,GunnerSMS)
 MovingMapSprite(Gunner, $1C3D7C, GunnerMMS)
+StandingMapSprite(Gunner_FMapSprite,MapSprite16x32,GunnerSMS)
+MovingMapSprite(Gunner_F, $1C3D7C, GunnerMMS)
 
 ALIGN 4
 GunnerSMS:
@@ -535,6 +537,9 @@ DracoknightMMS:
 
 StandingMapSprite(MarksmanMapSprite,MapSprite16x32,MarksmanSMS)
 MovingMapSprite(Marksman, $1C3D7C, MarksmanMMS)
+StandingMapSprite(Marksman_FMapSprite,MapSprite16x32,MarksmanSMS)
+MovingMapSprite(Marksman_F, $1C3D7C, MarksmanMMS)
+
 
 ALIGN 4
 MarksmanSMS:

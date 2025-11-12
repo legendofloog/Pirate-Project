@@ -81,16 +81,6 @@ void MakeTargetListForConcentrate(Unit* unit) {
 	Item_TURange(unit, AddUnitToTargetListIfUnconcentrated, ConcentrateStaffID_Link);
 }
 
-void ConcentrateUsabilityWrapper() {
-	asm("mov r0,r4;	\
-		 mov r1,r5; \
-		 bl ConcentrateUsability; \
-		 pop {r4,r5}; \
-		 pop {r1}; \
-         bx r1; \
-	");	
-}
-
 bool ConcentrateUsability(Unit* unit) {
 	MakeTargetListForConcentrate(unit);
 	return GetTargetListSize() != 0;
@@ -105,16 +95,6 @@ void ConcentrateStaffTargeting(struct Unit* unit) {
 	StartBottomHelpText(
 		StartTargetSelection(&ConcentrateStaffSelectInfo),
 		GetStringFromIndex(ConcentrateStaffSubtitleText_Link));
-}
-
-void ConcentrateStaffTargetingWrapper() {
-	asm("	mov r0, r5; \
-			mov r2, r4; \
-			bl ConcentrateStaffTargeting; \
-			pop {r4-r5}; \
-			pop {r0}; \
-			bx r0; \
-	");
 }
 
 void StartUnitCritChangeInfoWindow(struct Proc* parent) {
@@ -147,9 +127,11 @@ void RefreshUnitCritChangeInfoWindow(struct Unit* unit) {
 
 int ConcentrateStaffInitSelect(struct Proc* proc) {
     StartUnitCritChangeInfoWindow(proc);
+	return 1;
 }
 
 u8 ConcentrateStaffTargetChange(struct Proc* proc, struct TargetEntry* target) {
     ChangeActiveUnitFacing(target->x, target->y);
     RefreshUnitCritChangeInfoWindow(GetUnit(target->unitIndex));
+	return 1;
 }

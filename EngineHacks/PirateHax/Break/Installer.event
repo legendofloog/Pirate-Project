@@ -59,3 +59,7 @@ WORD RoundCountRAM
 ALIGN 4
 KnightRingIDLink:
 BYTE KnightRing
+
+ALIGN 4
+ShadeIDLink:
+BYTE ShadeID

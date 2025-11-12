@@ -1,5 +1,7 @@
 #include "ThunderingHooves.h"
 
+u8* GetUnitsInRange(struct Unit* unit, int allyOption, int range);
+
 void ThunderingHooves() {
 	int faction = gChapterData.currentPhase;
 	int unitID = faction+1;
@@ -33,7 +35,7 @@ void ThunderingHooves() {
 }
 
 void DoThunderingHoovesEvent(Unit* unit) {
-	if (IsUnitOnField(unit)) //nothing yet
+	if (IsUnitOnField(unit) && (GetUnitsInRange(unit, 0x2, ThunderingHoovesRange_Link) > 0)) //is this unti here and are there enemies in range
 	{
 		CallMapEventEngine(SavageBlowEvent, EV_RUN_CUTSCENE);
 	}	

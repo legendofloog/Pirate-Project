@@ -198,7 +198,7 @@ I'll never[Beat][CloseEyes] redeem myself[Beat][A][X]
 ## TrianaDQ
 [MR][LoadTriana]
 Lua[Beat] This adventure[N]
-was[Beat] everything, to me[Beat][N]
+was[Beat] everything, to me[Beat][AN]
 Sorry that I can't see[N]
 it through[Beat][CloseEyes] to the end[Beat][A][X]
 

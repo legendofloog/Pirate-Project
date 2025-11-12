@@ -11,3 +11,4 @@
 #include "MusicDefinitions.event"
 #include "BattleAnimDefinitions.event"
 #include "FlagDefinitions.event"
+#include "BattleBackgroundDefinitions.event"

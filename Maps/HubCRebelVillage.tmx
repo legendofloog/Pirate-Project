@@ -409,9 +409,9 @@
    <tile gid="343"/>
    <tile gid="165"/>
    <tile gid="68"/>
-   <tile gid="286"/>
-   <tile gid="287"/>
-   <tile gid="288"/>
+   <tile gid="132"/>
+   <tile gid="135"/>
+   <tile gid="132"/>
    <tile gid="67"/>
    <tile gid="317"/>
    <tile gid="285"/>
@@ -433,9 +433,9 @@
    <tile gid="343"/>
    <tile gid="680"/>
    <tile gid="100"/>
-   <tile gid="318"/>
-   <tile gid="254"/>
-   <tile gid="320"/>
+   <tile gid="136"/>
+   <tile gid="132"/>
+   <tile gid="136"/>
    <tile gid="135"/>
    <tile gid="318"/>
    <tile gid="254"/>

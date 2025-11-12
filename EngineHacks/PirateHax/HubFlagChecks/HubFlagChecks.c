@@ -59,7 +59,7 @@ void UnsetAllHubChapterFlagsASMC(){
 
 
 bool LuaIsInHub(Unit* unit){
-    if (CheckEventId(0xA0) && !(gChapterData.chapterStateBits & CHAPTER_FLAG_PREPSCREEN)) //if we're in a hub and not in the prep screen
+    if (CheckEventId(0xA0)) //if we're in a hub and not in the prep screen
     {
         return true; //give 15 move
     }
@@ -69,7 +69,7 @@ bool LuaIsInHub(Unit* unit){
 int ReturnNumberOfHubChaptersVisited(){
     int hubChapters = (CheckEventId(0x83) + CheckEventId(0x8B) + CheckEventId(0x8c) + CheckEventId(0x8d) + CheckEventId(0x8e) + CheckEventId(0x8f) - 1);
     
-    if (LuaIsInHub(gActiveUnit)) //unit shouldn't matter
+    if (LuaIsInHub(gActiveUnit)) //unit shouldn't matter: point here is to show what units (if they do show up in your hub) WOULD look like if you used them in the next chapter
     {
         hubChapters++;
     }
@@ -105,4 +105,32 @@ void CalculateYodsenPriceASMC(){
 void GetTextFromMemorySlot1ASMC(){
     int text = gEventSlot[0x1];
     SetTalkNumber(text); //sets the talk number to be the value in s1
+}
+
+// also threw in redrawing Chapter Status for Hub A purposes
+const char * GetChapterTitleName(unsigned chIndex)
+{
+    if (chIndex != 0x7F)
+    {
+        if (LuaIsInHub(gActiveUnit)) //unit doesn't matter, this is checking if we're in hub mode but in the chapter 2 section
+        {
+            return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextIdInHectorStory)); //if we're in a hub, then we use a separate title
+        }
+        return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextId));
+    }     
+
+    return GetStringFromIndex((int)(&GetChapterDefinition(chIndex)->chapTitleTextId)); //no skirmishes so i think i'm fine
+}
+
+int GetChapterTitleWM(struct ChapterState* chapterData)
+{
+    if (chapterData == 0) {
+        return 0x54; // No Data
+    }
+
+    if (LuaIsInHub(gActiveUnit) && chapterData->chapterIndex == 8) //unit doesn't matter, this is checking if we're in hub mode but in the chapter 2 section
+    {
+       return GetChapterDefinition(1)->chapTitleId; //have to hard code in this case for some reason, returning a different chaptertitleid slot just results in a hang
+    }
+    return GetChapterDefinition(chapterData->chapterIndex)->chapTitleId;
 }

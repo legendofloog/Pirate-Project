@@ -570,8 +570,8 @@ have signed their death sentences.[X]
 Brick Boys[X]
 
 ## BrickBoysDesc
-A gang turned construction crew. Rivals[N]
-were permanently removed from the market.[X]
+Gang turned construction crew. Remove[N]
+rivals from the market, permanently.[X]
 
 ## BigBrickName
 Big Brick[X]

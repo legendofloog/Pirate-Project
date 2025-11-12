@@ -45,10 +45,10 @@ one chapter.[X]
 Spd Tonic[X]
 
 ## SpdTonicDescription
-Spd +3 for one chapter.[X]
+Spd +2 for one chapter.[X]
 
 ## SpdTonicUseText
-Spd +3 for[N]
+Spd +2 for[N]
 one chapter.[X]
 
 ## DefTonicName
@@ -95,12 +95,12 @@ one chapter.[X]
 Rnbw Tonic[X]
 
 ## RainbowTonicDescription
-HP/Res +5, Def/Eva +3, and all other[N]
-stats +2 for one chapter.[X]
+HP/Res +5, Def/Eva +3, and all[N]
+other stats +2 for one chapter.[X]
 
 ## RainbowTonicUseText
-Def/Eva/Res +3, others[N]
-+2, and HP +5 for[N]
+HP/Res +5, Def/Eva +3,[N]
+and others +2 for[N]
 one chapter.[X]
 
 ## DebugText

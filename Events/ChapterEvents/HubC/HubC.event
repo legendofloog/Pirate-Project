@@ -36,9 +36,10 @@ POIN BeginningScene EndingScene
 #define HubC_KurtSpokenToOnceFlag 28
 #define HubC_TheanaSpokenToOnceFlag 29
 #define HubC_WindySpokenToOnceFlag 30
+#define Turn1EventFlag_HubC 35
 
 TurnBasedEvents:
-TurnEventPlayer(Turn1EventFlag, Turn1Event, 1)
+TurnEventPlayer(Turn1EventFlag_HubC, Turn1Event, 1)
 END_MAIN
 
 Turn1Event:
@@ -52,8 +53,8 @@ BNE 2 s0 sC //if it's not 0, don't give initial tutorial
     Text(HubCGiveInitialTutorial)
     GOTO 3
 LABEL 2
-SVAL s1 5
-BNE 3 sC s1
+SVAL s1 4
+BNE 3 s1 sC
     Text(HubCSayWhereToGo) //note that you can move on
 LABEL 3
 NoFade
@@ -184,7 +185,7 @@ ENDA
 Theana_Recruitment_Convo:
 HubFirstTimeTalkToUnit(HubC_TheanaSpokenToOnceFlag, 1, HubCTheanaRecruitmentFirstTime)
 LABEL 1
-SVAL s1 2000
+SVAL s1 3000
 CHECK_MONEY
 BLE 4 s1 sC //if you have more money than the cost, branch to 4
     Text(HubCTheanaTellsLuaShesBroke)
@@ -192,10 +193,11 @@ BLE 4 s1 sC //if you have more money than the cost, branch to 4
 LABEL 4
 Text(HubCTheanaRecruitmentChoice)
 EVBIT_MODIFY 0
-SVAL s3 2000
+SVAL s3 3000
 HubRecruitMoney(Theana, 2, HubCTheanaRecruitmentYes, 3, WelcomeAboardMateyID)
 LABEL 2
 HubRejectUnit(HubCTheanaRecruitmentNo, HubC_Theana_Recruited_Flag) //unsets this flag if you decided not to recruit
+LABEL 3
 NoFade
 ENDA
 
@@ -334,8 +336,9 @@ NoFade
 ENDA
 
 GotoChapter4:
+ENUF HubAGreagorDocksChestReactionFlag
+ENUF LuaPromotedFlag
 MNC2 Chapter4
-ENUF LuaInAHubFlag
 NoFade
 ENDA
 
@@ -357,7 +360,7 @@ ALIGN 4
 
 ALIGN 4
 HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip
-SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir Mine GlassShield HideShield HexlockShield AshQuiver
+SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir ArmsScroll GlassShield HideShield HexlockShield AshQuiver
 ALIGN 4
 
 MiscBasedEvents:
@@ -386,7 +389,8 @@ FADU 15
 CHECK_EVENTID HubC_Have_Encountered_The_Darkness_Flag
 BNE 776 s0 sC
     CameraCursor(Lua) //an initial response from Lua if this is the first time that she's going into the "darkness"
-    Text(HubCLuaReactionToWindyMaze) 
+    Text(HubCLuaReactionToWindyMaze)
+    ENUT HubC_Have_Encountered_The_Darkness_Flag
 LABEL 776
 NoFade
 ENDA
@@ -428,11 +432,9 @@ UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
-WEATHER 7
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)
 STAL 1
-FADI 15
 ENUT GoToNextHubFlagID
 CheckHowManyHubChaptersCompleted
 SVAL s1 4
@@ -496,6 +498,7 @@ ENUF HubC_Windy_Recruited_Flag
 ENUF HubC_Kurt_Recruited_Flag
 ENUF HubC_Theana_Recruited_Flag
 ENUF HubC_Have_Encountered_The_Darkness_Flag
+FADI 15
 NoFade
 ENDA
 
@@ -512,5 +515,5 @@ Tutorial:
 END_MAIN
 
 WindyNPCGroup:
-UNIT Windy SwordCav 0 Level(4,NPC,True) [9,3] 0 0 0 0 [KillingEdge, LightBrand] BossAI
+UNIT Windy SwordCav 0 Level(5,NPC,True) [9,3] 0 0 0 0 [KillingEdge, LightBrand] BossAI
 UNIT

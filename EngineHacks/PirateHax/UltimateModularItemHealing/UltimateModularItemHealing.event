@@ -16,9 +16,4 @@ HealFunctionEntry(AssistStaff,		HealItemMtPlusMag)
 
 //HealFunctionEntry(Latona, 		HealFixedItemMt) mot using this
 
-
-#ifdef USE_STRMAG_SPLIT
-	#include "UltimateModularItemHealingStrMagSplit.lyn.event"
-#else
-	#include "UltimateModularItemHealingNoSplit.lyn.event"
-#endif
+#include "UltimateModularItemHealingStrMagSplit.lyn.event"

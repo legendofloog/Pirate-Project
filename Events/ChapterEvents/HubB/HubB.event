@@ -141,7 +141,7 @@ CheckIfHubBTalkLegalTwoChar(Passarola, Ximo, 31, 32, HubBPassarolaXimoGlobalTalk
 CheckIfHubBTalkLegalOneChar(Husniye, 33, 34, HubBHusniyeGlobalTalkFlag, HubBHusniyeTempTalkFlag)
 
 //Midship Floor 2
-CheckIfHubBTalkLegalThreeChar(Suzanne, Matteo, Tangyuan, 35, 36, HubBDesiGlobalTalkFlag, HubBDesiTempTalkFlag)
+CheckIfHubBTalkLegalThreeChar(Suzanne, Matteo, Tangyuan, 35, 36, HubBSuzanneMatteoTangyuanGlobalTalkFlag, HubBSuzanneMatteoTangyuanTempTalkFlag)
 CheckIfHubBTalkLegalTwoChar(Razvan, Rahel, 37, 38, HubBRazvanRahelGlobalTalkFlag, HubBRazvanRahelTempTalkFlag)
 
 //Midship Floor 3

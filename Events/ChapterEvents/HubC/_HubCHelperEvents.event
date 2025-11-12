@@ -55,7 +55,7 @@ NoFade
 ENDA
 
 RubyNPCUnitHubCGroup:
-UNIT Ruby Hero 0 Level(18,NPC,True) [2,21] 0 0 0 0 [WoDao,SteelAxe,HandAxe,Vulnerary] BossAI
+UNIT Ruby Hero_F 0 Level(18,NPC,True) [2,21] 0 0 0 0 [WoDao,SteelAxe,HandAxe,Vulnerary] BossAI
 UNIT
 
 Keeper1UnitHubCGroup:

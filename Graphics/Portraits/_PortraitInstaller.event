@@ -789,4 +789,12 @@ RemoraMugData:
 #incbin "Dmp/Remora_frames.dmp"
 #incbin "Dmp/Remora_palette.dmp"
 #incbin "Dmp/Remora_minimug.dmp"
-setMugEntry(RemoraMug, RemoraMugData, 3, 5, 3, 3)
+setMugEntry(RemoraMug, RemoraMugData, 3, 6, 3, 4)
+
+ALIGN 16
+C2SupplyCaptainMugData:
+#incbin "Dmp/C2SupplyCaptain_mug.dmp"
+#incbin "Dmp/C2SupplyCaptain_frames.dmp"
+#incbin "Dmp/C2SupplyCaptain_palette.dmp"
+#incbin "Dmp/C2SupplyCaptain_minimug.dmp"
+setMugEntry(C2SupplyCaptainMug, C2SupplyCaptainMugData, 3, 5, 3, 3)

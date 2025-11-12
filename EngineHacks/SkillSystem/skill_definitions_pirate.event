@@ -243,7 +243,6 @@
 
 #define BashID 80
 
-
 #define RerunAndHitID 88
 
 #define EarlyLeaveID 89
@@ -317,3 +316,9 @@
 //Supply: This unit has access to the convoy.
 //By Sme
 #define SupplyID 113
+
+//Charge: Gain +1 damage for every two squares moved.
+//By Datagne
+#define ChargeID 114
+
+#define AvaritiaEffectID 115

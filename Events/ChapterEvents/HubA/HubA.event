@@ -1071,6 +1071,7 @@ ENDA
 
 DocksSpawners:
 LoadCutsceneUnits(DesiderioPilarGroup)
+SetUnitStatusAll(GreagorShirker,BadStatus,0x72,AnyDeployed,AnyArmy,AnyClass,Area(24,8,24,8),AnyItem) //7 turns of Sleep on Ryker
 SpawnQuestSigil(WentToHubA5, 1, RedSigilTrapID, 8, 22)
 SpawnQuestSigil(WentToHubA4, 2, RedSigilTrapID, 4, 12)
 LoadPlayerUnits(DocksGroup)

@@ -5,8 +5,6 @@
 // Hack by circleseverywhere
 // Extended Latin charset support by hypergammaspaces
 
-#ifdef _FE8_
-
   {
 
   #include "EAstdlib.event"
@@ -14,7 +12,7 @@
 
   PUSH
     ORG $89624
-      jumpToHack(Chname)
+      jumpToHack(Chname|1)
   POP
 
   Chname:
@@ -30,9 +28,5 @@
     #incbin "bin/chartable-extended.dmp"
 
   }
-
-#else // _FE8_
-  ERROR Chapter Names as Text hack is for FE8
-#endif // _FE8_
 
 #endif // TEXT_CHAPTER_NAMES

@@ -149,8 +149,8 @@ b       end_80822a4               @@ 080822E2 E00E
 .ltorg
 
 chapter_text:
-cmp		r1,#1
-beq		LoadAltTitle    
+@				cmp		r1,#1		 don't care, this is garbage
+@ 				beq		LoadAltTitle    different r2 value equals owned
 mov     r0,#0x7F                @@ 080822E8 207F     
 and     r0,r4               @@ 080822EA 4020     
 blh     0x8034618 @0x8031574                @@ 080822EC F7AFF942  @get data for chapter r0

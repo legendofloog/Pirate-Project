@@ -61,9 +61,6 @@
 #include "FE8-Set Condition/FE8-Set Condition.event"
 //Tequila
 
-#include "ReworkForPrepScreenRightTopImage/Installer.event"
-//7743
-
 #include "HubFlagChecks/Installer.event"
 //Loog
 
@@ -75,9 +72,6 @@
 
 #include "ASMCs/Installer.event"
 //Loog
-
-#include "ShopUnit/ShopUnit.event"
-//Sme
 
 #include "FE8-Walking_Sounds_Fix/FE8-Walking_Sounds_EA.event"
 //Tequila
@@ -93,12 +87,6 @@
 
 #include "FancyChapterPreview/FancyChapterPreview.event"
 //Sme
-
-#include "prep_shop_each_chapter2/Installer.event"
-//7743
-
-//#include "StealWithFullInv/Installer.event"
-//Vesly
 
 #include "PortraitHeight/PortraitShiftTable(installthisone).event"
 //2WB
@@ -188,12 +176,15 @@ ALIGN 4
 
 #include "LordSplitMenuPlus/LordSplitMenuPlus.event"
 
-PUSH
-ORG 0x897B2 //Further MNC2 fixes that fix the chapter title being wonky on skirmish maps: 7743
-BYTE 0x0 0x0 0x0 0x0
-ORG 0x897C4
-BYTE 0x0E 0x20 0x20 0x56
+#include "ShoppingEdits/ShoppingEdits.event" //Scraiza, AuraWolf
 
+#include "PrepsChapterDisplayRework/Installer.event"
+
+#include "SendInventoryOnDeath/Installer.event"
+
+#include "ArmsScroll/Installer.event"
+
+PUSH
 ORG $22F50 // installs thracia trade
 BYTE 0xC0 0x46
 

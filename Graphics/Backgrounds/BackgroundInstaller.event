@@ -1,0 +1,66 @@
+//reinstalling black background bc it got borked for some reason; got from jp hack
+
+ALIGN 4
+BlackBackgroundImage:
+#incbin "Dmp/BlackBackgroundImage.dmp"
+
+ALIGN 4
+BlackBackgroundTSA:
+#incbin "Dmp/BlackBackgroundTSA.dmp"
+
+ALIGN 4
+BlackBackgroundPal:
+#incbin "Dmp/BlackBackgroundPalette.dmp"
+
+
+//battle backgrounds
+
+#define BattleBackgroundTable $75A794
+#define SetBattleBackground(Index, ImagePointer, TSAPointer, PalettePointer) "PUSH; ORG BattleBackgroundTable + ((Index - 1) * 0xC); POIN ImagePointer TSAPointer PalettePointer; POP"
+
+#define FF5CaveBattleBackground 0x42
+SetBattleBackground(FF5CaveBattleBackground, FF5CaveBattleBackgroundImage, FF5CaveBattleBackgroundTSA, FF5CaveBattleBackgroundPal)
+
+ALIGN 4
+FF5CaveBattleBackgroundImage:
+#incbin "Dmp/Cave 02 - Day - Reduced.dmp"
+
+ALIGN 4
+FF5CaveBattleBackgroundTSA:
+#incbin "Dmp/Cave 02 - Day - Reduced_tsa.dmp"
+
+ALIGN 4
+FF5CaveBattleBackgroundPal:
+#incbin "Dmp/Cave 02 - Day - Reduced_pal.dmp"
+
+//setting the cave background to specific tiles
+#define TerrainBGTable $80CD1B
+#define CaveBGTable 3 //unused BGTable
+#define SetTerrainBGTable(BGTable, Index, BattleBackground) "PUSH; ORG TerrainBGTable + (BGTable * 0x41) + Index; BYTE BattleBackground; POP"
+
+SetTerrainBGTable(CaveBGTable, 0x01, FF5CaveBattleBackground) //plain
+SetTerrainBGTable(CaveBGTable, 0x0B, FF5CaveBattleBackground) //gate
+SetTerrainBGTable(CaveBGTable, 0x13, FF5CaveBattleBackground) //bridge
+SetTerrainBGTable(CaveBGTable, 0x14, FF5CaveBattleBackground) //bridge
+SetTerrainBGTable(CaveBGTable, 0x15, FF5CaveBattleBackground) //sea
+SetTerrainBGTable(CaveBGTable, 0x16, FF5CaveBattleBackground) //lake
+SetTerrainBGTable(CaveBGTable, 0x17, FF5CaveBattleBackground) //floor
+SetTerrainBGTable(CaveBGTable, 0x18, FF5CaveBattleBackground) //floor
+SetTerrainBGTable(CaveBGTable, 0x1D, FF5CaveBattleBackground) //pillar
+SetTerrainBGTable(CaveBGTable, 0x20, FF5CaveBattleBackground) //chest
+SetTerrainBGTable(CaveBGTable, 0x21, FF5CaveBattleBackground) //chest
+SetTerrainBGTable(CaveBGTable, 0x23, FF5CaveBattleBackground) //gate
+SetTerrainBGTable(CaveBGTable, 0x2D, FF5CaveBattleBackground) //stairs
+SetTerrainBGTable(CaveBGTable, 0x39, FF5CaveBattleBackground) //barrel
+SetTerrainBGTable(CaveBGTable, 0x3C, FF5CaveBattleBackground) //water
+SetTerrainBGTable(CaveBGTable, 0x3E, FF5CaveBattleBackground) //deck
+
+//setting terrain floor since this is related
+PUSH
+ORG $80C88A
+BYTE 0x72
+ORG $80C8A0
+BYTE 0x72 //new platform for floor
+ORG $80C8A1
+BYTE 0x72
+POP
