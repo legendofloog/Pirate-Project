@@ -233,7 +233,7 @@ UNIT Lua Captain 0x0 Level(1, Ally, False) [8,0] 0 0 0 0 [Vulnerary] NoAI
 UNIT
 
 NPCGroup:
-UNIT Juan Thief 0 Level(2, NPC, True) [13,4] 0 0 0 0 [IronKnife, Vulnerary] BossAI
+UNIT Juan Thief 0 Level(4, NPC, True) [13,4] 0 0 0 0 [SteelKnife, Stiletto, Vulnerary] BossAI
 UNIT
 
 EnemyGroup:
@@ -260,7 +260,7 @@ UNIT Razorblood Vanguard 0 Level(3, Enemy, True) [10,13] 0 0 0 0 [IronAxe] Group
 //turn 5
 //UNIT Razorblood Brigand 0 Level(3, Enemy, True) [11,17] 0 0 0 0 [IronAxe] AttackInRangeAI
 UNIT Razorblood Deserter 0 Level(3, Enemy, True) [8,17] 0 0 0 0 [IronLance] GroupTwoAI
-UNIT Razorblood Hunter 0 Level(3, Enemy, True) [13,19] 0 0 0 0 [IronBow, PureWater] GroupTwoAI
+UNIT Razorblood Archer 0 Level(3, Enemy, True) [13,19] 0 0 0 0 [IronBow, PureWater] GroupTwoAI
 //turn 6
 UNIT Razorblood Myrmidon 0 Level(3, Enemy, True) [7,20] 0 0 0 0 [IronSword] GroupThreeAI
 UNIT Razorblood Shaman 0 Level(3, Enemy, True) [6,22] 0 0 0 0 [Elfire, Tonic] GroupThreeAI //def tonic
@@ -287,7 +287,7 @@ UNIT Rebel GriffinRider 0 Level(3, NPC, True) [20,0] 0 0 0 0 [IronSword] AttackI
 UNIT
 
 ThiefSpawn:
-UNIT Razorblood Thief 0 Level(3, Enemy, True) [0,22] 0 0 0 0 [IronKnife, ChestKey] ThiefAI
+UNIT A6Pirate Thief 0 Level(3, Enemy, True) [0,22] 0 0 0 0 [IronKnife, ChestKey] ThiefAI
 UNIT
 
 CutsceneGreens:

@@ -1,6 +1,6 @@
 EventPointerTable(HubC_MazeEventsID, PointerList)
 
-#define HubC_Windy_Friend_Talk_Flag 35
+#define HubC_Windy_Friend_Talk_Flag 34
 
 PointerList:
 POIN TurnBasedEvents
@@ -41,18 +41,35 @@ Text(HubCWindyFoundInTheMazeText)
 FlashCursor(Windy, 60)
 CUSA Windy
 CamOn
+MOVE 25 Windy [24,12]
+ENUN
+MOVE 25 Windy [15,10]
+ENUN
+MOVE 25 Windy [18,22]
+ENUN
+MOVE 25 Windy [8,18]
+ENUN
 MOVE 25 Windy [0,12]
 ENUN
-FADI 15
-MOVE 15 Lua [7,2]
+CamOff
+FlashCursor(Windy,60)
+Text(HubCWindyTalksToHerBuddyAndBooksItText)
 SVAL s1 0x9
 SET_CONDITION Windy
+FADI 15
+MOVE 15 Lua [7,2]
+ENUN
+CAMERA_CENTERED Lua
 FADU 15
-CameraCursor(Lua)
+FlashCursor(Lua,60)
 MURE 2
 Text(HubCLuaTakesShortcutText)
 FlashCursor(6,2,30)
 TILECHANGE 5
+CHECK_ALIVE Pilar //her partner
+BEQ 20 s0 sC
+    ENUF HubC_Pilar_Windy_Temp_Talk_Flag //if he's alive, turn off this flag
+LABEL 20
 NoFade
 ENDA
 

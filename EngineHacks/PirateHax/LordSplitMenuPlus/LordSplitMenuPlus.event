@@ -11,7 +11,7 @@
 
 ALIGN 4
 DifficultySelectMenu:
-MenuDefinition(9, 6, 13, 0, 1, DifficultySelectOptions)
+MenuDefinition(5, 6, 20, 0, 1, DifficultySelectOptions)
 
 ALIGN 4
 DifficultySelectOptions:

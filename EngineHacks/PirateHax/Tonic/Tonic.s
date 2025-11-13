@@ -174,10 +174,14 @@ CheckIfAnyTonic:
 
 	mov r4, r0	@ store unit here
 	bl GetTonicByte @ this gets their tonic byte and stores it in r0
+	cmp r0, #0	@ seems like the logic doesn't account for being 0: in that case, should ret false
+	beq checkTonicBitRetFalseTwo
+	
+	
 	mov r5, r0	@ stores their tonic byte here
 	mov r6, #1	@ (HP tonic bit starts at 1); looping variable
 	
-	LoopPoint:
+	LoopPoint:	
 	mov r0, r5	@ moves tonic byte back into r0 then ands it with specific bit we're looking for
 	and r0, r6
 	cmp r0, r5

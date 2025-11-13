@@ -75,6 +75,9 @@
 #define HubRecruitUnit(charID, rejectedlabelID, recruitedTextID, finalLabelID, songID) "SVAL s1 0x1; BNE rejectedlabelID s1 sC; RecruitThenHideCharacter(charID, recruitedTextID, songID); GOTO finalLabelID"
 #define HubRecruitMoney(charID, rejectedlabelID, recruitedTextID, finalLabelID) "SVAL s1 0x1; BNE rejectedlabelID s1 sC; RecruitThenHideCharacter(charID, recruitedTextID); TAKEMONEY; GOTO finalLabelID"
 #define HubRecruitMoney(charID, rejectedlabelID, recruitedTextID, finalLabelID, songID) "SVAL s1 0x1; BNE rejectedlabelID s1 sC; RecruitThenHideCharacter(charID, recruitedTextID, songID); TAKEMONEY; GOTO finalLabelID"
+#define HubRecruitMoneyEvent(event, rejectedlabelID, finalLabelID) "SVAL s1 0x1; BNE rejectedlabelID s1 sC; CALL event; GOTO finalLabelID"
+
+
 #define HubRejectUnit(rejectedTextID, convoEID) "Text(rejectedTextID); ENUF convoEID"
 #define UnsetAllHubChapterFlags "ASMC UnsetAllHubChapterFlagsASMC"
 

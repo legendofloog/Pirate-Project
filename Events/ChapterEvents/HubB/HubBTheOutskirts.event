@@ -100,6 +100,10 @@ FADI 15
 SetAI(Passarola,0,0,0,0)
 SVAL s1 0x9 //should hide and undeploy
 SET_CONDITION Passarola
+CHECK_ALIVE Ximo //her partner
+BEQ 20 s0 sC
+    ENUF HubBPassarolaXimoTempTalkFlag //if he's alive, turn off this flag
+LABEL 20
 FADU 15
 MURE 2
 NoFade
@@ -149,6 +153,7 @@ BEQ 776 s0 sC //if the answer is No, then skip ahead
     LoadPlayerUnits(NeltumeGroup)
     SVAL s1 0x9 //should hide him and undeploy?
     SET_CONDITION Neltume
+    ENUF HubBNeltumeTempTalkFlag
     MURE 2
     GOTO 777
 LABEL 776

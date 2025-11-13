@@ -206,3 +206,31 @@ UNIT
 BoltonHubCGroup:
 UNIT Bolton DarkKnight 0 Level(1,Ally,False) [16,21] 0 0 0 0 [0x0] NoAI
 UNIT
+
+
+SetAllHubCTalkFlags:
+//need to add conditional checks here for the convos where it could be 2 or 3 guys
+CheckIfHubBTalkLegalThreeChar(Adrian, Tangyuan, Rima, 1, 2, HubC_Adrian_Tangyuan_Rima_Global_Talk_Flag, HubC_Adrian_Tangyuan_Rima_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Jaime, Carmen, 3, 4, HubC_Jaime_Carmen_Global_Talk_Flag, HubC_Jaime_Carmen_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Razvan, Valerie, Calista, 5, 6, HubC_Razvan_Valerie_Calista_Global_Talk_Flag, HubC_Razvan_Valerie_Calista_Temp_Talk_Flag)
+
+CheckIfHubBTalkLegalThreeChar(Indio, Dmitr, Leandra, 9, 10, HubC_Indio_Dmitr_Leandra_Global_Talk_Flag, HubC_Indio_Dmitr_Leandra_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Rahel, Ximo, 13, 14, HubC_Rahel_Ximo_Global_Talk_Flag, HubC_Rahel_Ximo_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Durgham, Yodsen, Juan, 17, 18, HubC_Durgham_Yodsen_Juan_Global_Talk_Flag, HubC_Durgham_Yodsen_Juan_Temp_Talk_Flag)
+CheckIfHubBTalkLegalThreeChar(Ponte, Passarola, Bolton, 19, 20, HubC_Ponte_Passarola_Bolton_Global_Talk_Flag, HubC_Ponte_Passarola_Bolton_Temp_Talk_Flag)
+
+//hub c diff is it checks for allegiance as well
+CheckIfHubCTalkLegalTwoChar(Pilar, Windy, 7, 8, HubC_Pilar_Windy_Global_Talk_Flag, HubC_Pilar_Windy_Temp_Talk_Flag)
+CheckIfHubCTalkLegalTwoChar(Kai, Theana, 15, 16, HubC_Kai_Theana_Global_Talk_Flag, HubC_Kai_Theana_Temp_Talk_Flag)
+CheckIfHubCTalkLegalTwoChar(Matteo, Kurt, 33, 34, HubC_Matteo_Kurt_Global_Talk_Flag, HubC_Matteo_Kurt_Temp_Talk_Flag)
+CheckIfHubCTalkLegalThreeChar(Ondeh, Hermenegildo, Ruby, 11, 12, HubC_Ondeh_Hermenegildo_Ruby_Global_Talk_Flag, HubC_Ondeh_Hermenegildo_Ruby_Temp_Talk_Flag)
+CheckIfHubCTalkLegalTwoChar(Orlando, Remora, 23, 24, HubC_Orlando_Remora_Triana_Global_Talk_Flag, HubC_Orlando_Remora_Triana_Temp_Talk_Flag)
+
+// the conditional ones will only check for the first 2: third is irrelevant
+CheckIfHubBTalkLegalTwoChar(Desiderio, Noah, 21, 22, HubC_Desiderio_Noah_Medwyn_Global_Talk_Flag, HubC_Desiderio_Noah_Medwyn_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Fata, Neltume, 25, 26, HubC_Fata_Neltume_Husniye_Global_Talk_Flag, HubC_Fata_Neltume_Husniye_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Leonor, Estelle, 27, 28, HubC_Leonor_Estelle_Magdalena_Global_Talk_Flag, HubC_Leonor_Estelle_Magdalena_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Lexa, Suzanne, 29, 30, HubC_Lexa_Suzanne_Bartz_Global_Talk_Flag, HubC_Lexa_Suzanne_Bartz_Temp_Talk_Flag)
+CheckIfHubBTalkLegalTwoChar(Biko, Ernest, 31, 32, HubC_Biko_Ernest_Avocado_Global_Talk_Flag, HubC_Biko_Ernest_Avocado_Temp_Talk_Flag)
+NoFade
+ENDA

@@ -3294,14 +3294,19 @@ WOOOO-[.4]HOOOO! Thanks so much, captain![N]
 I'll go back right away! Lemme show[N]
 you just how fast I am! Let's go, Colt![A][X]
 
+## HubCWindyTalksToHerBuddyAndBooksItText
+[MidRight][LoadWindy][3LB][ToggleSmile]
+Ha[Beat] Ha[Beat] You see that, captain?![N]
+I'm telling you, I'll be useful![N]
+Now[Beat] Let's get you some grub, Colt![A][X]
+
 ## HubCLuaTakesShortcutText
 [MidRight][LoadLua][3LB]
-[Beat]What the[Beat] Windy took off before[N]
-I could even tell her that I'd brought[N]
-a shortcut. Well, that's her loss.[AN]
-Time to make use of this pocket[N]
-bridge that Ponte sold me a while[N]
-back and get the hell out of here.[AN][X]
+Useful, maybe, but[Beat] Impatient, too.[N]
+If she'd stuck around a bit longer, then[N]
+she could've taken a little shortcut.[AN]
+Time to make use of this ladder that[N]
+Ponte sold me, a while back[Beat][AN][X]
 
 ## HubCWindyFriendPostRecruitmentText
 [MidLeft][LoadHubCWindyFriend]

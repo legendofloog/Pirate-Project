@@ -8,10 +8,12 @@
  Hard: +3/5/7/9/10 autolevels.[X]
 
 ## EasyDesc
-A laid-back voyage.[X]
+A laid-back voyage. Weakened enemies[N]
+based on Hub (switches at end of Hub).[X]
 
 ## NormalDesc
 The intended adventure.[X]
 
 ## HardDesc
-A journey for the bold..[X]
+A journey for the bold. Bolstered enemies[N]
+based on Hub (switches at end of Hub).[X]

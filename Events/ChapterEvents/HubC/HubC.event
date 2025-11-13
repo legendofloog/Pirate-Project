@@ -60,33 +60,6 @@ LABEL 3
 NoFade
 ENDA
 
-SetAllHubCTalkFlags:
-//need to add conditional checks here for the convos where it could be 2 or 3 guys
-CheckIfHubBTalkLegalThreeChar(Adrian, Tangyuan, Rima, 1, 2, HubC_Adrian_Tangyuan_Rima_Global_Talk_Flag, HubC_Adrian_Tangyuan_Rima_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Jaime, Carmen, 3, 4, HubC_Jaime_Carmen_Global_Talk_Flag, HubC_Jaime_Carmen_Temp_Talk_Flag)
-CheckIfHubBTalkLegalThreeChar(Razvan, Valerie, Calista, 5, 6, HubC_Razvan_Valerie_Calista_Global_Talk_Flag, HubC_Razvan_Valerie_Calista_Temp_Talk_Flag)
-
-CheckIfHubBTalkLegalThreeChar(Indio, Dmitr, Leandra, 9, 10, HubC_Indio_Dmitr_Leandra_Global_Talk_Flag, HubC_Indio_Dmitr_Leandra_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Rahel, Ximo, 13, 14, HubC_Rahel_Ximo_Global_Talk_Flag, HubC_Rahel_Ximo_Temp_Talk_Flag)
-CheckIfHubBTalkLegalThreeChar(Durgham, Yodsen, Juan, 17, 18, HubC_Durgham_Yodsen_Juan_Global_Talk_Flag, HubC_Durgham_Yodsen_Juan_Temp_Talk_Flag)
-CheckIfHubBTalkLegalThreeChar(Ponte, Passarola, Bolton, 19, 20, HubC_Ponte_Passarola_Bolton_Global_Talk_Flag, HubC_Ponte_Passarola_Bolton_Temp_Talk_Flag)
-
-//hub c diff is it checks for allegiance as well
-CheckIfHubCTalkLegalTwoChar(Pilar, Windy, 7, 8, HubC_Pilar_Windy_Global_Talk_Flag, HubC_Pilar_Windy_Temp_Talk_Flag)
-CheckIfHubCTalkLegalTwoChar(Kai, Theana, 15, 16, HubC_Kai_Theana_Global_Talk_Flag, HubC_Kai_Theana_Temp_Talk_Flag)
-CheckIfHubCTalkLegalTwoChar(Matteo, Kurt, 33, 34, HubC_Matteo_Kurt_Global_Talk_Flag, HubC_Matteo_Kurt_Temp_Talk_Flag)
-CheckIfHubCTalkLegalThreeChar(Ondeh, Hermenegildo, Ruby, 11, 12, HubC_Ondeh_Hermenegildo_Ruby_Global_Talk_Flag, HubC_Ondeh_Hermenegildo_Ruby_Temp_Talk_Flag)
-CheckIfHubCTalkLegalTwoChar(Orlando, Remora, 23, 24, HubC_Orlando_Remora_Triana_Global_Talk_Flag, HubC_Orlando_Remora_Triana_Temp_Talk_Flag)
-
-// the conditional ones will only check for the first 2: third is irrelevant
-CheckIfHubBTalkLegalTwoChar(Desiderio, Noah, 21, 22, HubC_Desiderio_Noah_Medwyn_Global_Talk_Flag, HubC_Desiderio_Noah_Medwyn_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Fata, Neltume, 25, 26, HubC_Fata_Neltume_Husniye_Global_Talk_Flag, HubC_Fata_Neltume_Husniye_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Leonor, Estelle, 27, 28, HubC_Leonor_Estelle_Magdalena_Global_Talk_Flag, HubC_Leonor_Estelle_Magdalena_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Lexa, Suzanne, 29, 30, HubC_Lexa_Suzanne_Bartz_Global_Talk_Flag, HubC_Lexa_Suzanne_Bartz_Temp_Talk_Flag)
-CheckIfHubBTalkLegalTwoChar(Biko, Ernest, 31, 32, HubC_Biko_Ernest_Avocado_Global_Talk_Flag, HubC_Biko_Ernest_Avocado_Temp_Talk_Flag)
-NoFade
-ENDA
-
 CharacterBasedEvents:
 //hub C recruitment talks
 CharacterEvent(HubC_Kurt_Recruited_Flag, Kurt_Recruitment_Convo, Lua, Kurt)
@@ -175,12 +148,32 @@ LABEL 4
 Text(HubCKurtRecruitmentChoice)
 EVBIT_MODIFY 0
 SVAL s3 1000
-HubRecruitMoney(Kurt, 2, HubCKurtRecruitmentYes, 3, WelcomeAboardMateyID)
+HubRecruitMoneyEvent(KurtRecruitEvent, 2, 3)
 LABEL 2
 HubRejectUnit(HubCKurtRecruitmentNo, HubC_Kurt_Recruited_Flag) //unsets this flag if you decided not to recruit
 LABEL 3
 NoFade
 ENDA
+
+KurtRecruitEvent:
+MUSS WelcomeAboardMateyID
+Text(HubCKurtRecruitmentYes)
+CUSA Kurt
+SetAI(Kurt,0,0,0,0)
+FlashCursor(Kurt, 60)
+FADI 10
+LoadEnemies(KurtAllyHubCGroup)
+CHECK_ALIVE Matteo //his partner
+BEQ 20 s0 sC
+    ENUF HubC_Matteo_Kurt_Temp_Talk_Flag //if he's alive, turn off this flag
+LABEL 20
+FADU 10
+MURE 2
+SVAL s3 1000
+TAKEMONEY
+NoFade
+ENDA  
+
 
 Theana_Recruitment_Convo:
 HubFirstTimeTalkToUnit(HubC_TheanaSpokenToOnceFlag, 1, HubCTheanaRecruitmentFirstTime)
@@ -194,12 +187,31 @@ LABEL 4
 Text(HubCTheanaRecruitmentChoice)
 EVBIT_MODIFY 0
 SVAL s3 3000
-HubRecruitMoney(Theana, 2, HubCTheanaRecruitmentYes, 3, WelcomeAboardMateyID)
+HubRecruitMoneyEvent(TheanaRecruitEvent, 2, 3)
 LABEL 2
 HubRejectUnit(HubCTheanaRecruitmentNo, HubC_Theana_Recruited_Flag) //unsets this flag if you decided not to recruit
 LABEL 3
 NoFade
 ENDA
+
+TheanaRecruitEvent:
+MUSS WelcomeAboardMateyID
+Text(HubCTheanaRecruitmentYes)
+CUSA Theana
+SetAI(Theana,0,0,0,0)
+FlashCursor(Theana, 60)
+FADI 10
+LoadEnemies(TheanaAllyHubCGroup)
+CHECK_ALIVE Kai //her partner
+BEQ 20 s0 sC
+    ENUF HubC_Kai_Theana_Temp_Talk_Flag //if he's alive, turn off this flag
+LABEL 20
+FADU 10
+MURE 2
+SVAL s3 3000
+TAKEMONEY
+NoFade
+ENDA  
 
 HubC_Desiderio_Noah_Medwyn_Convo:
 DisplayConditionalTextOnCharAndSetEID(1, 2, Medwyn, HubC_Desiderio_Noah_Medwyn_Text, HubC_Desiderio_Noah_Text, HubC_Desiderio_Noah_Medwyn_Global_Talk_Flag)
@@ -366,6 +378,7 @@ ALIGN 4
 MiscBasedEvents:
 AREA 0 GoToHubCMaze [23,9] [23,10] //no flag required
 AREA GoToNextHubFlagID GotoChapter4 [11,3] [11,3]
+AREA DifficultyChangeFlag DifficultyChangeEvent [11,4] [11,4]
 AFEV 0 RefreshLua 0
 END_MAIN
 
@@ -420,6 +433,7 @@ ENDA
 Traps1:
 BlueSigil(23,9)
 BlueSigil(23,10)
+PurpleSigil(11,4)
 ENDTRAP
 ALIGN 4
 
@@ -432,6 +446,7 @@ UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
+ENUF DifficultyChangeFlag
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)
 STAL 1
