@@ -259,7 +259,6 @@ void UnsetBattleUnitDebuffBits(struct Unit* unit)
     UnsetBit(unitDebuffs, AstralBlessingLckOffset_Link);
     UnsetBit(unitDebuffs, LiquidCourageBitOffset_Link);
     ClearAllChapterKillCounters(); //hardworking's thing
-    UnsetBit(unitDebuffs, FortuneStaffBitOffset_Link);
     UnsetBit(unitDebuffs, MiraclemakerBitOffset_Link);
     UnsetBit(unitDebuffs, NailedDownBitOffset_Link);
     UnsetBit(unitDebuffs, DelegationBitOffset_Link);
@@ -268,8 +267,10 @@ void UnsetBattleUnitDebuffBits(struct Unit* unit)
     UnsetBit(unitDebuffs, NoMoveBitOffset_Link);
     UnsetBit(unitDebuffs, RushStaffBitOffset_Link);
     UnsetBit(unitDebuffs, DoubleFalconBitOffset_Link);
-    UnsetBit(unitDebuffs, ProtectStaffBitOffset_Link);
-    UnsetBit(unitDebuffs, ConcentrateStaffBitOffset_Link);
+    UnsetBarrierBits(unit);
+    UnsetProtectBits(unit);
+    UnsetConcentrateBits(unit);
+    UnsetFortuneBits(unit);
 }
 
 void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()

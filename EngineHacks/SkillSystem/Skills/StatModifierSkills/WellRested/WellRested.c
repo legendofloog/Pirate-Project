@@ -7,7 +7,8 @@ u32 WellRested(u32 stat, Unit* unit) {
 		//add our bonus value to the stat
 		stat += WellRested_GetBonus(unit);
 		//if we were deployed last time, -1 to bonus at prep
-		if (!WellRested_CheckUndeployedFlag(unit) && (gChapterData.chapterStateBits & 0x10)) stat--;
+		//commenting this part out for now: seems like it confuses some people as to whether the change has already happened or not - Loog
+		//if (!WellRested_CheckUndeployedFlag(unit) && (gChapterData.chapterStateBits & 0x10) && (gChapterData.chapterIndex != A3ChapterLink)) stat--;
 		
 	}
 	return stat;

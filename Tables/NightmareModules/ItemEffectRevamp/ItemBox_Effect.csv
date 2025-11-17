@@ -64,7 +64,7 @@ Rewarp Staff,0x802F90C
 Protect Staff,0x802F90C
 Concentrate Staff,0x802F90C
 Arms Scroll,ArmsScrollPrepEffectWrapper|IsPointer
-0x41,0x802F90C
+Tonic,TonicPrepEffectLadder|IsPointer
 0x42,0x802F90C
 0x43,0x802F90C
 0x44,0x802F90C

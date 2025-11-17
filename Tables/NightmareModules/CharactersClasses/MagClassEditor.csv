@@ -127,7 +127,7 @@ Cyclops,0,0,30,0
 Elder Bael,0,0,30,0
 Journeyman (2),0,0,30,0
 Pupil (2),2,55,30,1
-Captain,2,10,30,0
+Captain,0,5,30,0
 Ninja,2,15,30,0
 Vanguard,0,5,30,0
 Curate,10,55,30,0
@@ -173,7 +173,7 @@ Gryphoknight_D,4,30,40,0
 Kite,1,10,30,0
 Sage_Hermen,13,55,40,0
 Airship,1,10,30,0
-Admiral,12,10,40,0
+Admiral,10,5,40,0
 Champion_F,1,5,40,0
 Thief_F,0,5,30,0
 Rogue_F,1,5,40,0

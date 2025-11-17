@@ -20,8 +20,17 @@ prProtectStaffBonus:
 			rAddConst(10)
 
 ALIGN 4
+prBarrierStaffBonus:
+	rIf(prCheckIfBarrierBitActive)
+			rAddConst(5)
+
+ALIGN 4
 prCheckIfProtectBitActive:
 	rCallExternal(IsProtectBitSet)
+
+ALIGN 4
+prCheckIfBarrierBitActive:
+	rCallExternal(IsBarrierBitSet)
 
 ALIGN 4
 prHalveIfCapturing:

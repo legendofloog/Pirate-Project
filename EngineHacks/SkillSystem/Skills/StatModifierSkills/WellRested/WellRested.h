@@ -21,7 +21,7 @@ struct BWLData {
 extern BWLData gBWLDataArray[];
 
 struct WellRestedData {
-	u8 wellRestedBoost;
+	s8 wellRestedBoost;
 	u8 wellRestedFlag;
 } typedef WellRestedData;
 
@@ -40,3 +40,5 @@ bool WellRested_CheckUndeployedFlag(Unit* unit);
 BWLData* UnitGetBWLData(Unit* unit);
 WellRestedData* WellRested_SaveByte(WellRestedData* saveData);
 Unit* WellRested_LoadByte(WellRestedData* saveData);
+
+extern u8 A3ChapterLink;

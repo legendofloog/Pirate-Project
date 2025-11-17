@@ -1,15 +1,24 @@
 #include "FortuneStaff.h"
 
 bool IsFortuneBitSet(Unit* unit) {
-	return CheckBit(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link);
+	if (UnpackData(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link, 3)) return true;
+
+	return false;
 }
 
 void SetFortuneBit(Unit* unit) {
-	SetBit(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link);
+	PackData(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link, 3, 3);
 }
 
-void UnsetFortuneBit(Unit* unit) {
-	UnsetBit(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link);
+void ReduceFortuneBit(Unit* unit) {
+	if (IsFortuneBitSet(unit))
+	{
+		PackData(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link, 3, UnpackData(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link, 3) - 1);
+	}
+}
+
+void UnsetFortuneBits(Unit* unit) {
+	PackData(GetUnitDebuffEntry(unit), FortuneStaffBitOffset_Link, 3, 0);
 }
 
 void FortuneHitBoost(BattleUnit* bunitA, BattleUnit* bunitB) {
@@ -43,7 +52,7 @@ void ClearFortuneBitEachTurn() {
 		Unit* curUnit = GetUnit(unitID);
 		
 		//clear Fortune bit
-		UnsetFortuneBit(curUnit);
+		ReduceFortuneBit(curUnit);
 		
 		unitID++;
 	}	

@@ -1,0 +1,10 @@
+
+#define TonicTable DebuffTableRam + DebuffTableSize //doesn't matter because we won't actually be using this: when it's time to break saves, the save functions that reference this will be deleted
+
+ALIGN 4
+TonicIcons:
+#incbin "TonicIcons.dmp"
+
+ALIGN 4
+TonicInclusion:
+#include "Tonic.lyn.event"

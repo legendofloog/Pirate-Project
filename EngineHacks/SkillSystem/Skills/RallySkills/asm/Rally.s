@@ -151,7 +151,7 @@ RallyCommandEffect:
 
 	mov r1, r0 @ arg r1 = user argument
 
-	adr r0, RallyCommandEffect_apply
+	ldr r0, RallyCommandEffect_apply
 	add r0, #1 @ arg r0 = function
 	ldr r2, =gActiveUnit
 	ldr r2, [r2] @ arg r2 = active unit
@@ -178,8 +178,8 @@ RallyCommandEffect_NoneActive:
 	mov r4, r0 @ unit 
 	mov r5, r1 @ r1 = rally bits 
 
-
-	adr r0, RallyCommandEffect_apply
+	
+	ldr r0, RallyCommandEffect_apply	
 	add r0, #1 @ arg r0 = function
 	mov r2, r4 @ unit 
 	mov r1, #RALLY_EFFECT_RANGE
@@ -216,23 +216,23 @@ RallyCommandEffect_apply:
 	@ args: r0 = unit, r1 = rally bits
 
 	push {r4-r5,lr}
-	mov r4,r1
+	@ mov r4,r1		we are going to do absolutely nothing here because rallies don't exist
 	@ r0 = unit struct 
 	bl GetUnitDebuffEntry
-	mov r5, r0 @ debuff entry 
-	ldr r1, =RalliesOffset_Link
-	ldr r1, [r1] 
-	ldr r2, =RalliesNumberOfBits_Link
-	ldr r2, [r2] 
-	bl UnpackData 
-	mov r3, r0 @ data 
-	mov r0, r5 @ debuff entry 
-	ldr r1, =RalliesOffset_Link
-	ldr r1, [r1] 
-	ldr r2, =RalliesNumberOfBits_Link
-	ldr r2, [r2] 
-	orr r3, r4 @ data to store 
-	bl PackData 
+	@ mov r5, r0 @ debuff entry 
+	@ ldr r1, =RalliesOffset_Link
+	@ ldr r1, [r1] 
+	@ ldr r2, =RalliesNumberOfBits_Link
+	@ ldr r2, [r2] 
+	@ bl UnpackData 
+	@ mov r3, r0 @ data 
+	@ mov r0, r5 @ debuff entry 
+	@ ldr r1, =RalliesOffset_Link
+	@ ldr r1, [r1] 
+	@ ldr r2, =RalliesNumberOfBits_Link
+	@ ldr r2, [r2] 
+	@ orr r3, r4 @ data to store 
+	@ bl PackData 
 	pop {r4-r5}
 	pop {r0}
 	bx r0

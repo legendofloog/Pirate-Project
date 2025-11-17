@@ -1,0 +1,83 @@
+#include "Tonic_Old/Tonics.event"
+
+ALIGN 4 //something that i'll remove eventually
+TonicTablePointer:
+POIN TonicTableWord
+TonicTableWord:
+WORD TonicTable
+
+#include "Tonic_New.lyn.event"
+
+// No Touchy
+#define HPTonic 1
+#define StrTonic 2
+#define SklTonic 3
+#define SpdTonic 4
+#define DefTonic 5
+#define ResTonic 6
+#define LuckTonic 7
+#define MagTonic 8
+#define RainbowTonic 9
+
+#define TonicStatBonus(bonus) "BYTE bonus"
+
+ALIGN 4
+TonicItemID:
+WORD Tonic
+
+ALIGN 4
+TonicChapterExclusionTable: //for non-battle chapters
+BYTE HubA
+BYTE HubALibrary
+BYTE HubB
+BYTE HubBTheOutskirts
+BYTE HubB_2a
+BYTE HubC
+BYTE HubC_Maze
+BYTE HubD
+BYTE HubDTheOutskirts
+BYTE HubETheDecision
+BYTE 0xFF
+
+ALIGN 4
+TonicChapterExclusionTablePointer:
+POIN TonicChapterExclusionTable
+
+ALIGN 4
+TonicUseBoxTextPointer:
+POIN TonicUseBoxTextWord
+
+ALIGN 4
+TonicUseBoxTextWord:
+WORD TonicUseBoxText
+
+ALIGN 4
+TonicStatBonusTable: //it's in the same order as StatGetters: HP, Str, Skl, Spd, Def, Res, Lck, Mov + Con (filler unless implemented), Mag
+TonicStatBonus(5) 
+TonicStatBonus(2) 
+TonicStatBonus(2) 
+TonicStatBonus(2) 
+TonicStatBonus(3) 
+TonicStatBonus(5) 
+TonicStatBonus(3) 
+TonicStatBonus(0)
+TonicStatBonus(0)
+TonicStatBonus(2)
+
+ALIGN 4
+HangoverIDLink:
+BYTE HangoverID
+
+PUSH
+ORG 0xA4354
+jumpToHack(ClearTonicDebuffsHook)
+POP
+
+ALIGN 4
+TonicPopup: //thank you Pikmin1211
+Popup_SetSound(0x5A)
+Popup_Space(1)
+Popup_SetColor(0)
+Popup_StringId(TonicUseBoxText)
+Popup_Space(1)
+Popup_End

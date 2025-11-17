@@ -1,15 +1,24 @@
 #include "ProtectStaff.h"
 
 bool IsProtectBitSet(Unit* unit) {
-	return CheckBit(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link);
+	if (UnpackData(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link, 3)) return true;
+
+	return false;
 }
 
 void SetProtectBit(Unit* unit) {
-	SetBit(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link);
+	PackData(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link, 3, 3);
 }
 
-void UnsetProtectBit(Unit* unit) {
-	UnsetBit(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link);
+void ReduceProtectBit(Unit* unit) {
+	if (IsProtectBitSet(unit)) //don't wanna underflow...
+	{
+		PackData(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link, 3, UnpackData(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link, 3) - 1);
+	}	
+}
+
+void UnsetProtectBits(Unit* unit) {
+	PackData(GetUnitDebuffEntry(unit), ProtectStaffBitOffset_Link, 3, 0);
 }
 
 void ClearProtectBitEachTurn() {
@@ -39,7 +48,7 @@ void ClearProtectBitEachTurn() {
 		Unit* curUnit = GetUnit(unitID);
 		
 		//clear Protect bit
-		UnsetProtectBit(curUnit);
+		ReduceProtectBit(curUnit);
 		
 		unitID++;
 	}	

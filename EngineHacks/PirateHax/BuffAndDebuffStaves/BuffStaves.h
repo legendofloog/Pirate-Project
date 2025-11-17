@@ -58,3 +58,7 @@ extern void UnsetBit(u32* address, u8 bitOffset);
 extern bool CheckBit(u32* address, u8 bitOffset);
 extern u32* GetUnitDebuffEntry(Unit* unit);
 extern void Item_TURange(struct Unit* unit, void* func, int item);
+
+extern u32 UnpackData(u32* address, u8 bitOffset, u8 bitCount);
+extern u32 PackData(u32* address, u8 bitOffset, u8 bitCount, u32 data);
+

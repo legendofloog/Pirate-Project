@@ -380,20 +380,20 @@ Select an ally to buff.[X]
 Take Aim![X]
 
 ## TakeAimDesc
-+30 Hit to an ally[N]
-for 1 turn. +1 WEXP.[X]
++25 Hit to an ally[N]
+for 3 turns. +1 WEXP.[X]
 
 ## AssistStaffName
 Assist[X]
 
 ## AssistStaffDesc
 Heal an ally for (Mag+10) HP and grant[N]
-them +30 hit for 1 turn. +1 WEXP.[X]
+them +25 hit for 3 turns. +1 WEXP.[X]
 
 ## AssistStaffUseDesc
 Heals for Mag+10 HP[N]
-and gives +30 Hit[N]
-for 1 turn.[X]
+and gives +25 Hit[N]
+for 3 turns.[X]
 
 ## AssistStaffBottomText
 Select an ally to heal and buff.[X]
@@ -402,12 +402,12 @@ Select an ally to heal and buff.[X]
 Rush[X]
 
 ## RushStaffDesc
-Grant an ally +2 Mov and Canto+ [N]
-for 1 turn. Max Mov is 15. +1 WEXP.[X]
+Grant an ally +1 Mov and Canto+ [N]
+for 3 turns. Max Mov = 15. +1 WEXP.[X]
 
 ## RushStaffUseDesc
-Gives +2 Mov and[N]
-Canto+ for 1 turn.[X]
+Gives +1 Mov and[N]
+Canto+ for 3 turns.[X]
 
 ## RewarpName
 Rewarp[X]
@@ -423,26 +423,26 @@ a targeted tile.[X]
 Select a tile to warp to.[X]
 
 ## ProtectName
-Protect[X]
+Aegis[X]
 
 ## ProtectDesc
-+10 Def/Res to an ally[N]
-for 1 turn. +1 WEXP.[X]
++10 Def to an ally[N]
+for 3 turns. +1 WEXP.[X]
 
 ## ProtectUseDesc
-+10 Def/Res to ally[N]
-for 1 turn. +1 WEXP.[X]
++10 Def to ally[N]
+for 3 turns. +1 WEXP.[X]
 
 ## ConcentrateName
 Concentrate[X]
 
 ## ConcentrateDesc
 +50 Crit to an ally[N]
-for 1 turn. +1 WEXP.[X]
+for 3 turns. +1 WEXP.[X]
 
 ## ConcentrateUseDesc
 +50 Crit to ally[N]
-for 1 turn. +1 WEXP.[X]
+for 3 turns. +1 WEXP.[X]
 
 // EQUIPS/ITEMS
 

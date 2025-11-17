@@ -111,6 +111,7 @@ FILL(256*8)
 
 #define StartOfTurnBuffFunctionEntry(skillID, usability, effect) "PUSH; ORG StartOfTurn_BuffSkillTable+(skillID*8); POIN usability|1 effect|1; POP" 
 
+/*
 StartOfTurnBuffFunctionEntry(HoneMagID, IsHoneApplicable, HoneMag) 
 StartOfTurnBuffFunctionEntry(HoneStrID, IsHoneApplicable, HoneStr) 
 StartOfTurnBuffFunctionEntry(HoneSklID, IsHoneApplicable, HoneSkl) 
@@ -146,6 +147,7 @@ StartOfTurnBuffFunctionEntry(CalmInitID		, IsInitApplicable,		CalmInit	)
 StartOfTurnBuffFunctionEntry(NimbleInitID	, IsInitApplicable,		NimbleInit) 
 StartOfTurnBuffFunctionEntry(SpectrumInitID	, IsInitApplicable,		SpectrumInit) 
 StartOfTurnBuffFunctionEntry(RallyChaosID	, IsRallyApplicable,	RallyChaosFunc) 
+*/
 
 StartOfTurnBuffFunctionEntry(AstralBlessingID,	IsAstralBlessingApplicable, DoAstralBlessingBuffFx)
 

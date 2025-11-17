@@ -10,8 +10,7 @@ extern u8 ConcentrateStaffID_Link;
 //function prototypes
 bool IsConcentrateBitSet(Unit* unit);
 void SetConcentrateBit(Unit* unit);
-void UnsetConcentrateBit(Unit* unit);
-void ConcentrateHitBoost(BattleUnit* bunitA, BattleUnit* bunitB);
+void ReduceConcentrateBit(Unit* unit);
 void ClearConcentrateBitEachTurn();
 void AddUnitToTargetListIfUnfortunate(Unit* unit);
 void MakeTargetListForConcentrate(Unit* unit);

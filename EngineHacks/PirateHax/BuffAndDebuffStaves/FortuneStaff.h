@@ -10,7 +10,7 @@ extern u8 FortuneStaffID_Link;
 //function prototypes
 bool IsFortuneBitSet(Unit* unit);
 void SetFortuneBit(Unit* unit);
-void UnsetFortuneBit(Unit* unit);
+void ReduceFortuneBit(Unit* unit);
 void FortuneHitBoost(BattleUnit* bunitA, BattleUnit* bunitB);
 void ClearFortuneBitEachTurn();
 void AddUnitToTargetListIfUnfortunate(Unit* unit);

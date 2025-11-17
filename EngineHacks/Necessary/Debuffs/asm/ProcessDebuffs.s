@@ -198,13 +198,13 @@ ldr r1, =DebuffStatBitOffset_Mov
 ldr r1, [r1] 
 bl PackData_Signed 
 
-ldr r1, =RalliesOffset_Link 
-ldr r1, [r1] 
-mov r3, #0 @ value 
-mov r0, r5 @ debuff entry for unit 
-ldr r2, =RalliesNumberOfBits_Link 
-ldr r2, [r2] 
-bl PackData
+@ ldr r1, =RalliesOffset_Link 
+@ ldr r1, [r1] 
+@ mov r3, #0 @ value 
+@ mov r0, r5 @ debuff entry for unit 
+@ ldr r2, =RalliesNumberOfBits_Link 
+@ ldr r2, [r2] 
+@ bl PackData
 
 b UnitLoop
 DoneProcessDebuffs:

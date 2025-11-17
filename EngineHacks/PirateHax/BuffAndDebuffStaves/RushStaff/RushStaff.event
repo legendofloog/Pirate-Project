@@ -3,7 +3,7 @@
 ALIGN 4
 
 RushStaffMovAmountLink:
-BYTE 2
+BYTE 1
 ALIGN 4
 
 RushStaffTargetWindowTextLink:

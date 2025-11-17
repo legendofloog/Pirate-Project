@@ -1,6 +1,6 @@
 INLINE MagCharTable,Base Magic,Magic Growth
 None,0,0
-0x01 Lua,0,10
+0x01 Lua,0,5
 0x02 Pilar,1,15
 0x03 Desiderio,0,5
 0x04 Razvan,6,75

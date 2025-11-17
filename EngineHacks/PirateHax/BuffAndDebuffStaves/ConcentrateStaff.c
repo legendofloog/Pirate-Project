@@ -1,15 +1,24 @@
 #include "ConcentrateStaff.h"
 
 bool IsConcentrateBitSet(Unit* unit) {
-	return CheckBit(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link);
+	if (UnpackData(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link, 3)) return true;
+
+	return false;
 }
 
 void SetConcentrateBit(Unit* unit) {
-	SetBit(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link);
+	PackData(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link, 3, 3);
 }
 
-void UnsetConcentrateBit(Unit* unit) {
-	UnsetBit(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link);
+void ReduceConcentrateBit(Unit* unit) {
+	if (IsConcentrateBitSet(unit))
+	{	
+		PackData(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link, 3, UnpackData(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link, 3) - 1);
+	}	
+}
+
+void UnsetConcentrateBits(Unit* unit) {
+	PackData(GetUnitDebuffEntry(unit), ConcentrateStaffBitOffset_Link, 3, 0);
 }
 
 void ConcentrateCritBoost(BattleUnit* bunitA, BattleUnit* bunitB) {
@@ -42,8 +51,8 @@ void ClearConcentrateBitEachTurn() {
 		//get the unit unitID
 		Unit* curUnit = GetUnit(unitID);
 		
-		//clear Concentrate bit
-		UnsetConcentrateBit(curUnit);
+		//reduce Concentrate bit
+		ReduceConcentrateBit(curUnit);
 		
 		unitID++;
 	}	

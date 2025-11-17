@@ -10,8 +10,7 @@ extern u8 ProtectStaffID_Link;
 //function prototypes
 bool IsProtectBitSet(Unit* unit);
 void SetProtectBit(Unit* unit);
-void UnsetProtectBit(Unit* unit);
-void ProtectHitBoost(BattleUnit* bunitA, BattleUnit* bunitB);
+void ReduceProtectBit(Unit* unit);
 void ClearProtectBitEachTurn();
 void AddUnitToTargetListIfUnfortunate(Unit* unit);
 void MakeTargetListForProtect(Unit* unit);

@@ -110,7 +110,6 @@ END_MAIN
 MiscBasedEvents:
 AFEV 25 AlonsoDefeat 2
 AFEV 26 DalilaDefeat 10
-DefeatBoss(EndingScene)
 CauseGameOverIfLordDies
 END_MAIN
 

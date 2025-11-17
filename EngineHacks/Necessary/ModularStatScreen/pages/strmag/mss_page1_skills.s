@@ -33,9 +33,9 @@ draw_textID_at 13, 7, textID=0x4EC, growth_func=4 @skl
 draw_textID_at 13, 9, textID=0x4ED, growth_func=5 @spd
 draw_textID_at 13, 11, 0x4f6 @move
 
-draw_textID_at 21, 3, textID=0x4ee, growth_func=6 @luck
-draw_textID_at 21, 5, textID=0x4ef, growth_func=7 @def
-draw_textID_at 21, 7, textID=0x4f0, growth_func=8 @res
+draw_textID_at 21, 7, textID=0x4ee, growth_func=6 @luck
+draw_textID_at 21, 3, textID=0x4ef, growth_func=7 @def
+draw_textID_at 21, 5, textID=0x4f0, growth_func=8 @res
 draw_textID_at 21, 11, textID=0x4f8 @aid
 
 
@@ -80,14 +80,14 @@ ldr		r0,[sp,#0xC]
 ldr		r0,[r0,#16]		@spd growth getter
 draw_spd_growth_at 18, 9
 ldr		r0,[sp,#0xC]
-ldr		r0,[r0,#20]		@luk growth getter
-draw_lck_growth_at 26, 3
-ldr		r0,[sp,#0xC]
 ldr		r0,[r0,#24]		@def growth getter
-draw_def_growth_at 26, 5
+draw_def_growth_at 26, 3
 ldr		r0,[sp,#0xC]
 ldr		r0,[r0,#28]		@res growth getter
-draw_res_growth_at 26, 7
+draw_res_growth_at 26, 5
+ldr		r0,[sp,#0xC]
+ldr		r0,[r0,#20]		@luk growth getter
+draw_lck_growth_at 26, 7
 ldr		r0,[sp,#0xC]
 ldr		r0,[r0]			@hp growth getter
 draw_hp_growth_at 26, 9
@@ -121,9 +121,9 @@ draw_str_bar_at 16, 3
 draw_mag_bar_at 16, 5
 draw_skl_bar_at 16, 7
 draw_spd_bar_at 16, 9
-draw_luck_bar_at 24, 3
-draw_def_bar_at 24, 5
-draw_res_bar_at 24, 7
+draw_def_bar_at 24, 3
+draw_res_bar_at 24, 5
+draw_luck_bar_at 24, 7
 draw_textID_at 21, 9, textID=0x4f7 @con
 draw_con_bar_with_getter_at 24, 9
 b		NextColumn

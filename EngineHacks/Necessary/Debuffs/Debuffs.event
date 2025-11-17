@@ -121,32 +121,30 @@ DebuffStatBitOffset_Mov:
 WORD 7*DebuffStatNumberOfBits
 // 48 bits/6 bytes
 
-#define RalliesOffset 8*DebuffStatNumberOfBits
+#define TonicsOffset 8*DebuffStatNumberOfBits
 ALIGN 4 
-RalliesOffset_Link:
-WORD RalliesOffset 
+TonicsOffset_Link:
+WORD TonicsOffset 
 
-StrRallyOffset_Link: 
-WORD 0+RalliesOffset 
-SklRallyOffset_Link: 
-WORD 1+RalliesOffset 
-SpdRallyOffset_Link: 
-WORD 2+RalliesOffset 
-DefRallyOffset_Link: 
-WORD 3+RalliesOffset 
-ResRallyOffset_Link: 
-WORD 4+RalliesOffset 
-LukRallyOffset_Link: 
-WORD 5+RalliesOffset 
-MovRallyOffset_Link: 
-WORD 6+RalliesOffset 
-SpecRallyOffset_Link: 
-WORD 7+RalliesOffset 
-MagRallyOffset_Link: 
-WORD 8+RalliesOffset 
-// 57 bits/8 bytes
+StrTonicOffset_Link: //i'm actually not gonna use rallies at all I think, so let's replace these with tonic offsets
+WORD 0+TonicsOffset
+MagTonicOffset_Link:
+WORD 1+TonicsOffset 
+DexTonicOffset_Link: 
+WORD 2+TonicsOffset 
+SpdTonicOffset_Link: 
+WORD 3+TonicsOffset 
+DefTonicOffset_Link:
+WORD 4+TonicsOffset 
+ResTonicOffset_Link: 
+WORD 5+TonicsOffset 
+EvaTonicOffset_Link: 
+WORD 6+TonicsOffset
+HPTonicOffset_Link:
+WORD 7+TonicsOffset
+// 56 bits/7 bytes
 
-#define MiscOffset 9+RalliesOffset 
+#define MiscOffset 8+TonicsOffset 
 HalfStrBitOffset_Link: 
 WORD MiscOffset
 HalfMagBitOffset_Link:
@@ -171,45 +169,57 @@ LiquidCourageBitOffset_Link:
 WORD MiscOffset+10
 StudiousBlowBitOffset_Link:
 WORD MiscOffset+11
-// 69 bits/9 bytes
+// 68 bits/9 bytes
 
 HardworkingBitOffset_Link: // stores value 0-5, 3 bits
 WORD MiscOffset+12
-// 72 bits/9 bytes
+// 71 bits/9 bytes
 
-FortuneStaffBitOffset_Link:
-WORD MiscOffset+15
 MiraclemakerBitOffset_Link:
-WORD MiscOffset+16
+WORD MiscOffset+15
 NailedDownBitOffset_Link:
-WORD MiscOffset+17
+WORD MiscOffset+16
 DelegationBitOffset_Link:
-WORD MiscOffset+18
+WORD MiscOffset+17
 SwiftBitOffset_Link:
-WORD MiscOffset+19
-// 77 bits/10 bytes
+WORD MiscOffset+18
+// 75 bits/10 bytes
 
 PollenateBitOffset_Link: //stores value 0-5, 3 bits
-WORD MiscOffset+20
-// 80 bits/10 bytes
+WORD MiscOffset+19
+// 78 bits/10 bytes
 
 NoMoveBitOffset_Link:
-WORD MiscOffset+23
-// 81 bits/11 bytes
-
-RushStaffBitOffset_Link:
-WORD MiscOffset+24
-// 82 bits/11 bytes
+WORD MiscOffset+20
+// 79 bits/10 bytes
 
 DoubleFalconBitOffset_Link:
-WORD MiscOffset+25
-// 83 bits/11 bytes
+WORD MiscOffset+21
+// 80 bits/10 bytes
 
-ProtectStaffBitOffset_Link:
+FortuneStaffBitOffset_Link: //stores value 0-3, 2 bits
+WORD MiscOffset+22
+// 82 bits/11 bytes
+
+RushStaffBitOffset_Link: //stores value 0-3, 2 bits
+WORD MiscOffset+24
+// 84 bits/11 bytes
+
+ProtectStaffBitOffset_Link: //stores value 0-3, 2 bits
 WORD MiscOffset+26
+// 86 bits/11 bytes
 
-ConcentrateStaffBitOffset_Link:
-WORD MiscOffset+27
+ConcentrateStaffBitOffset_Link: //stores value 0-3, 2 bits
+WORD MiscOffset+28
+// 88 bits/11 bytes
+
+HolyHaymakerBitOffset_Link: //stores value 0-3, 2 bits
+WORD MiscOffset+30
+// 90 bits/12 bytes
+
+BarrierStaffBitOffset_Link: //stores value 0-3, 2 bits
+WORD MiscOffset+32
+// 92 bits/12 bytes
 
 //out of room after 12 bytes
 

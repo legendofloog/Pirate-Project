@@ -7,7 +7,7 @@ pDefenseModifiers: // Defense
 	POIN prAddUnitDefense prHalveIfCapturing 
 	POIN prProtectorRescuing
 	POIN prDebuffDef StrongCon prDefTonicBonus
-	POIN prAddEquipDefense prItemPassiveDefense prRallyDef prLifeAndDeathMinus VigorDanceCheck prSkillFury prFortressDefenseDef prDefiantDef prPushDef prEquipmentDef PotentBrew_Defense
+	POIN prAddEquipDefense prItemPassiveDefense prLifeAndDeathMinus VigorDanceCheck prSkillFury prFortressDefenseDef prDefiantDef prPushDef prEquipmentDef PotentBrew_Defense
 	POIN prProtectStaffBonus
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
@@ -28,7 +28,7 @@ prEquipmentDef:
 	rEquipmentBonus(STAT_DEFENSE)
 
 prDefTonicBonus:
-rTonicBonus(STAT_DEFENSE)
+	rTonicBonus(STAT_DEFENSE)
 
 prItemPassiveDefense:
 #ifndef DONT_STACK_BOOSTS

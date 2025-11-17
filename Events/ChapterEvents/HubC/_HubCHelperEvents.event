@@ -124,7 +124,7 @@ UNIT Medwyn Warden 0 Level(1,Ally,False) [21,9] 0 0 0 0 [0x0] NoAI
 UNIT
 
 WindyAllyHubCGroup:
-UNIT Windy SwordCav 0 Level(6,Ally,False) [3,19] 0 0 0 0 [0x0] NoAI
+UNIT Windy SwordCav 0 Level(5,Ally,False) [3,19] 0 0 0 0 [0x0] NoAI
 UNIT
 
 RimaHubCGroup:

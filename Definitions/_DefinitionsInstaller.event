@@ -12,3 +12,7 @@
 #include "BattleAnimDefinitions.event"
 #include "FlagDefinitions.event"
 #include "BattleBackgroundDefinitions.event"
+
+#define TonicTableSize 64 // 62 player units
+#define rTonicBonus(stat) "rAdd; rWithConstant(stat); rCallExternal(AddTonicBonus^1)"
+#define rHangoverPenalty(stat) "rSub; rWithConstant(stat); rCallExternal(ReturnHangoverPenalty^1)"

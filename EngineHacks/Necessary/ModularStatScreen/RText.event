@@ -107,13 +107,13 @@
 
 
   ST_Str:
-    RMenu(PersonalDataRText,ST_Mag,ST_Name,ST_Luck,0x66,0x18,0x546)
+    RMenu(PersonalDataRText,ST_Mag,ST_Name,ST_Def,0x66,0x18,0x546)
 
   ST_Mag:
-    RMenu(ST_Str,ST_Skl,ST_Name,ST_Def,0x66,0x28,0x547)
+    RMenu(ST_Str,ST_Skl,ST_Name,ST_Res,0x66,0x28,0x547)
 
   ST_Skl:
-    RMenu(ST_Mag,ST_Spd,ST_Name,ST_Res,0x66,0x38,0x548)
+    RMenu(ST_Mag,ST_Spd,ST_Name,ST_Luck,0x66,0x38,0x548)
 
   ST_Spd:
     RMenu(ST_Skl,ST_Mov,ST_Name,ST_Con,0x66,0x48,0x549)
@@ -124,17 +124,17 @@
   ST_Cond:
     RMenu(ST_Mov,ST_Skill1,ST_Class,ST_Talk,0x66,0x68,0x552,ConditionGetter)
 
-  ST_Luck:
-    RMenu(PersonalDataRText,ST_Def,ST_Str,0,0xa6,0x18,0x54a)
-
   ST_Def:
-    RMenu(ST_Luck,ST_Res,ST_Mag,0,0xa6,0x28,0x54b)
+    RMenu(PersonalDataRText,ST_Res,ST_Str,0,0xa6,0x18,0x54b)
 
   ST_Res:
-    RMenu(ST_Def,ST_Con,ST_Skl,0,0xa6,0x38,0x54c)
+    RMenu(ST_Def,ST_Luck,ST_Mag,0,0xa6,0x28,0x54c)
+
+  ST_Luck:
+    RMenu(ST_Res,ST_Con,ST_Skl,0,0xa6,0x38,0x54a)
 
   ST_Con:
-    RMenu(ST_Res,ST_Aid,ST_Spd,0,0xA6,0x48,0x54e)
+    RMenu(ST_Luck,ST_Aid,ST_Spd,0,0xA6,0x48,0x54e)
 
   ST_Aid:
     RMenu(ST_Con,ST_Talk,ST_Mov,0,0xa6,0x58,0x54F)

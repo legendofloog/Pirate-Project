@@ -1629,8 +1629,8 @@ with bows for every 2 tiles moved.[X]
 
 ## SD_Hangover
 Hangover: This unit's Tonic effects[N]
-are tripled, but when using a Tonic,[N]
--1 Mov for the rest of the chapter.[X]
+are tripled. For every 2 Tonics used,[N]
+this unit loses 1 Mov (1 Mov min. loss).[X]
 
 ## SD_StudiousBlow
 Studious Blow: After this unit initiates[N]

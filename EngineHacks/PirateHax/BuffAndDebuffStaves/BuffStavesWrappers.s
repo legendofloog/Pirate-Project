@@ -1,8 +1,14 @@
 .thumb
 .align
 
+.global BarrierUsabilityWrapper
+.type BarrierUsabilityWrapper, %function
+
 .global BarrierStaffTargetingWrapper
 .type BarrierStaffTargetingWrapper, %function
+
+.global BarrierStaffEffectWrapper
+.type BarrierStaffEffectWrapper, %function
 
 .global FortuneUsabilityWrapper
 .type FortuneUsabilityWrapper, %function
@@ -124,6 +130,28 @@ bx r0
 .ltorg
 .align
 
+BarrierStaffUsabilityWrapper:
+mov r0,r4
+mov r1,r5
+bl BarrierUsability
+pop {r4,r5}
+pop {r1}
+bx r1
+
+.ltorg
+.align
+
+BarrierUsabilityWrapper:
+mov r0,r4
+mov r1,r5
+bl BarrierUsability
+pop {r4,r5}
+pop {r1}
+bx r1
+
+.ltorg
+.align
+
 BarrierStaffTargetingWrapper:
 mov r0, r5
 mov r2, r4
@@ -131,6 +159,15 @@ bl BarrierStaffTargeting
 pop {r4-r5}
 pop {r0}
 bx r0
+
+BarrierStaffEffectWrapper:
+mov r0,r6
+bl ExecBarrierStaff
+ldr r0,=0x802FF77
+bx r0
+
+.ltorg
+.align
 
 .ltorg
 .align

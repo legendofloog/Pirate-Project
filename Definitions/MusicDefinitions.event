@@ -59,3 +59,5 @@
 #define AudienceCheerSoundID 0x8F
 
 #define AttackSnagSoundID 0xB0
+
+#define FimbulvetrWindSound 0x122

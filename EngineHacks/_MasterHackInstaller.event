@@ -12,9 +12,6 @@
 
 #include "Necessary/UnitMenu/_UnitMenuDefs.event"
 
-// Must be included before EMS / Durability based items 
-#include "PirateHax/Tonic/Tonics.event" 
-// Pikmin1211 
 
 ////////////////////////////////SUPPORTING CHANGES
 

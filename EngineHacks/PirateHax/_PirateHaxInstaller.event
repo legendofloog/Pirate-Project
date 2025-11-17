@@ -184,6 +184,9 @@ ALIGN 4
 
 #include "ArmsScroll/Installer.event"
 
+#include "Tonic/Installer.event" 
+// Pikmin1211 
+
 PUSH
 ORG $22F50 // installs thracia trade
 BYTE 0xC0 0x46

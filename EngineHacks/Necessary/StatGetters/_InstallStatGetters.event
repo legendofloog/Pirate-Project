@@ -14,7 +14,7 @@
 
 #include "_asm/Bitpack.lyn.event" 
 #include "_asm/HalfStatFunctions.lyn.event" 
-#include "_asm/RallyStat.lyn.event" 
+//#include "_asm/RallyStat.lyn.event" 
 #include "_asm/DebuffStat.lyn.event" 
 
 #include "MaxHP.event"
