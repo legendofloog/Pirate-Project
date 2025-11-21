@@ -1,7 +1,7 @@
 ///////Animation Install.event///////
     
 PUSH
-AnimTableEntry(ThiefFKnifeAnim) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
+AnimTableEntry(ThiefKnifeAnim) //CHANGE THIS TO THE SLOT YOU ARE REPLACING
 WORD 0 0 0 //empty name field, who cares
 POIN Anim_Knife_sectiondata
 POIN Anim_Knife_framedata

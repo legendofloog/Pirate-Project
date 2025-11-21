@@ -522,3 +522,6 @@ DalilaAssassinRematch:
 TheanaAssassin:
 	#incbin "./_palettes/TheanaAssassin.lzpal" 
 
+AssassinFTweak:
+	#incbin "./_palettes/AssassinFTweak.lzpal" 
+

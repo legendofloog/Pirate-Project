@@ -695,3 +695,6 @@
 // TheanaAssassin
 	setPalette(171,TheanaAssassin)
 	setCBSP(171,Theana, 3, Assassin_F)
+
+// AssassinFTweak
+	setGenericPalette(0x18,AssassinFTweak)

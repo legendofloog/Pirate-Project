@@ -21,7 +21,7 @@
 			#define BattleSpriteTable 0xE00008
 		#endif
 		#ifdef _FE8_
-			#define BattleSpriteTable 0xC00008
+			#define BattleSpriteTable NewAnimTable
 		#endif
 	#endif
 
