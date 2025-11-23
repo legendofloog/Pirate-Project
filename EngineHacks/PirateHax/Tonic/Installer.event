@@ -68,10 +68,12 @@ ALIGN 4
 HangoverIDLink:
 BYTE HangoverID
 
+/*
 PUSH
 ORG 0xA4354
 jumpToHack(ClearTonicDebuffsHook)
 POP
+*/
 
 ALIGN 4
 TonicPopup: //thank you Pikmin1211

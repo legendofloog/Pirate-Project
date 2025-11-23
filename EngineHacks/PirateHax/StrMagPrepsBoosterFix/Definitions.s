@@ -1,0 +1,8 @@
+
+.include "../reference/FE8U-20190316.s"
+
+SET_DATA gPlaySt, 0x202BCF0
+
+SET_DATA sub_800F8A8, 0x800F8A9
+
+SET_DATA LoadUnit_800F704, 0x800F705

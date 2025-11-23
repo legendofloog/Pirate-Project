@@ -713,7 +713,7 @@ struct Unit* LoadUnit(const struct UnitDefinition* uDef) {
             autolevelCount = (-1) * GetChapterDefinition(gChapterData.chapterIndex)->easyModeLevelMalus;
         }
 
-        if (autolevelCount != 0)
+        if (autolevelCount)
         {
             bool isUnitPlayer = (unit->pCharacterData->number <= 0x45);
             bool IsUnitBoss = (unit->pCharacterData->attributes & CA_BOSS);
@@ -821,7 +821,7 @@ void UnitAutolevelCore(struct Unit* unit, int classId, int levelCount) {
 
     autolevelCount += difficultyLevelChange; //add the levels from difficulty: example: level 6 fighter on easy gets +5, -5, same as a normal fighter at level 1
 
-    if (levelCount) {
+    if (autolevelCount) {
         if (isUnitPlayer){ //players do not get the easy/hard mode difficulty changes, so just use initial level count
             AutolevelUnit(unit, levelCount);
             

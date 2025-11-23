@@ -9,7 +9,7 @@ EventPointerTable(HubAEventsID, PointerList)
 #define Ch2ThisIsAChapter 12
 #define IgniswordsDead 13
 #define Ch2ReinforcementFlags 14
-#define GotoChapter2Flag 15
+#define ArmoryVendorFlag 15
 #define ElodiaChargeFlag 16
 
 // temp flags
@@ -375,8 +375,8 @@ NoFade
 ENDA
 
 LocationBasedEvents:
-Armory(HubAArmory,16,13)
-Vendor(HubAVendor,24,13)
+LOCA ArmoryVendorFlag HubAArmory [16,13] 0x16
+LOCA ArmoryVendorFlag HubAVendor [24,13] 0x17
 Village(HubAGreagorVillageVisitedFlag, SilenceVillage,4,6) //only accessible on layer 0
 CHES HubAGreagorDocksChestOpenedFlag KillerBow [13,4] 0x14 //chest, AFEV triggers giving the actual item and the event
 END_MAIN
@@ -399,6 +399,7 @@ ALIGN 4
 MiscBasedEvents:
 AREA PortToDocks PortGreagorDocks [29,15] [29,16]
 AREA WentToPortGreagorDocks PortGreagorDocksFirstTime [29,15] [29,16]
+
 AREA DocksToPort GotoPortFromDocks [0,13] [0,14]
 AREA CameBackFromDocks CameBackFromDocksFirstTime [0,13] [0,14]
 
@@ -407,8 +408,8 @@ AREA PortToBase BackToLuaBase [20,4] [21,4]
 
 AREA PortToTavern FromPortToTavern [8,20] [8,20]
 AREA TavernToPort ToPortFromTavern [8,20] [8,20]
-AREA HubAGreagorDocksChestReactionFlag LuaReactsToLootingDockChest [13,4] [13,4]
 
+AREA HubAGreagorDocksChestReactionFlag LuaReactsToLootingDockChest [13,4] [13,4]
 AFEV 0 RefreshLua 0
 
 CauseGameOverIfLordDies
@@ -418,6 +419,7 @@ LuaReactsToLootingDockChest:
 CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
 BEQ 776 s0 sC
 	Text(HubAKillerBowText) //if the chest flag's set, then this will play the first time that it's looted
+	GOTO 777
 LABEL 776
 ENUF HubAGreagorDocksChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
 LABEL 777
@@ -451,7 +453,7 @@ ENUT DeactivateFirstHubAEvent
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeCave)
 ENUT DocksToPort
 ENUT TavernToPort
-ENUT GotoChapter2Flag
+ENUT GoToNextHubFlagID
 CHECK_EVENTID HubAGreagorVillageVisitedFlag
 BEQ 777 s0 sC 
 	TILECHANGE 4
@@ -465,7 +467,7 @@ BNE 2 s1 sC
     MUSC MeetTheCrewID
     Text(HubALuaIsDone)
     CenterTextbox(HubAGoTime)
-    ENUF GotoChapter2Flag
+    ENUF GoToNextHubFlagID
     RemoveTrapAtCoords(20,4)
     RemoveTrapAtCoords(21,4)
     AddTrap(GreenSigilTrapID,20, 4)
@@ -589,6 +591,7 @@ BEQ 777 s0 sC
 LABEL 777
 InitiateTileChangeInHub(ClearHubATraps, AddTavernTraps, 1, LuaInDaTavern, TavernGreensSpawnEvent)
 ENUF TavernToPort
+ENUT ArmoryVendorFlag
 CallEventIfEIDNotSet(TavernFirstTime, 1, BarGangIntro)
 NoFade
 ENDA
@@ -611,6 +614,7 @@ ENDA
 ToPortFromTavern:
 InitiateTileRevertInHub(ClearTavernTraps, AddHubATraps, 1, LuaInFrontOfDaTavern, PortSpawnEvent)
 ENUF PortToTavern
+ENUF ArmoryVendorFlag
 CHECK_EVENTID HubAGreagorVillageVisitedFlag
 BEQ 777 s0 sC 
 	TILECHANGE 4
@@ -619,6 +623,11 @@ NoFade
 ENDA
 
 PortGreagorDocksFirstTime:
+ENUT ArmoryVendorFlag
+CHECK_EVENTID HubAGreagorVillageVisitedFlag
+BEQ 777 s0 sC 
+	TILEREVERT 4
+LABEL 777
 UnsetAllHubChapterFlags
 InitiateTileChangeInHub(ClearHubATrapsFirstTime, AddDockTraps, 0, LuaAtDaDocks, DocksSpawnEventFirstTime)
 ENUT DocksToPort
@@ -656,6 +665,7 @@ InitiateTileChangeInHub(ClearHubATraps, AddDockTraps, 0, LuaAtDaDocks, DocksSpaw
 ENUF DocksToPort
 ENUT PortToBase
 ENUT PortToTavern
+ENUT ArmoryVendorFlag
 CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
 BEQ 776 s0 sC 
 	TILECHANGE 2
@@ -664,24 +674,25 @@ NoFade
 ENDA
 
 CameBackFromDocksFirstTime:
+ENUF ArmoryVendorFlag
+CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
+BEQ 776 s0 sC 
+	TILEREVERT 2
+LABEL 776
 ENUF WentToHubA4
 ENUF WentToHubA5
 ENUF PeddlerHubAEncounterFlag
 HIDEUNIT Desiderio
 HIDEUNIT Pilar
 REMOVEUNIT Estelle
+InitiateTileRevertInHub(ClearDockTraps, AddHubABackToBaseTraps, 0, LuaBackFromDaDocks, PortSpawnEventFirstTime)
 CHECK_EVENTID HubAGreagorVillageVisitedFlag
 BEQ 777 s0 sC 
-	TILEREVERT 4
+	TILECHANGE 4 //just one wouldn't work for some reason HERE ONLY with ONLY THIS TILECHANGE, killing myself
 LABEL 777
-InitiateTileRevertInHub(ClearDockTraps, AddHubABackToBaseTraps, 0, LuaBackFromDaDocks, PortSpawnEventFirstTime)
 SetAllHubChapterFlags
 ENUT PortToBase
 ENUF WentToBaseAgain
-CHECK_EVENTID HubAGreagorDocksChestOpenedFlag
-BEQ 776 s0 sC 
-	TILECHANGE 2
-LABEL 776
 NoFade
 ENDA
 
@@ -704,6 +715,7 @@ InitiateTileRevertInHub(ClearDockTraps, AddHubATraps, 0, LuaBackFromDaDocks, Por
 ENUF PortToDocks
 ENUF PortToBase
 ENUF PortToTavern
+ENUF ArmoryVendorFlag
 CHECK_EVENTID HubAGreagorVillageVisitedFlag
 BEQ 777 s0 sC 
 	TILECHANGE 4
@@ -726,7 +738,7 @@ ENUT ReadyForTakeoffFlag
 ENUT IgniswordsDead
 ENUT ElodiaChargeFlag
 ENUT 4 //for keeping music consistent
-CHECK_EVENTID GotoChapter2Flag
+CHECK_EVENTID GoToNextHubFlagID
 BNE 776 s0 sC
     RemoveTrapAtCoords(7,4)
     AddTrap(GreenSigilTrapID,7, 4)
@@ -860,8 +872,9 @@ ENUT ReadyForTakeoffFlag
 ENUT IgniswordsDead
 ENUT PilarEstelleHubATalkFlag
 ENUT DesiderioIdaHubATalkFlag
-ENUT GotoChapter2Flag
+ENUT GoToNextHubFlagID
 ENUT ElodiaChargeFlag
+ENUT ArmoryVendorFlag
 CAMERA_CENTERED [2,0]
 STAL 5
 CenterTextbox(HubTutorial)
@@ -915,19 +928,6 @@ MrYodsenUnitGroup:
 UNIT MrYodsen Gunner 0 Level(9,NPC,False) [12,16] 0 0 0 0 [SteelMusket, Mortar, Vulnerary, PureWater] NoAI
 UNIT
 
-JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(4,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand] NoAI
-UNIT
-
-OndehBikoUnitGroup:
-UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
-UNIT Biko 0 0 Level(1,NPC,True) [24,19] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
-UNIT
-
-RochefortUnitGroup:
-UNIT Rochefort 0 0 Level(1,NPC,False) [20,14] 0x0 0x0 0 0 [SteelMusket] NoAI
-UNIT
-
 DesiderioPilarGroup:
 UNIT Desiderio 0 0 Level(4,Ally,True) [8,22] 0x0 0x0 0 0 [0x0] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [4,12] 0x0 0x0 0 0 [0x0] NoAI
@@ -948,28 +948,8 @@ UNIT
 
 //NPC Groups and Spawning
 
-NPCVillagerGroup: //main
-UNIT GreagorVillager VillagerMAdult 0 Level(1,NPC, False) [20,9] 0 0 0 0 [] NoAI
-UNIT
-
-NPCVillagerBGroup: //main
-UNIT GreagorVillagerB VillagerFAdult 0 Level(1,NPC, False) [12,5] 0 0 0 0 [] NoAI
-UNIT
-
-NPCVillagerCGroup: //main
-UNIT GreagorVillagerC VillagerMAdult 0 Level(1,NPC, False) [26,13] 0 0 0 0 [] NoAI
-UNIT
-
 NPCSailorGroup: //docks
 UNIT GreagorSailor Fighter 0 Level(3,NPC, True) [8,5] 0 0 0 0 [SlimAxe] NoAI
-UNIT
-
-NPCPatrollerGroup: //main
-UNIT GreagorPatroller PegasusRider 0 Level(5,NPC, False) [3, 15] 0 0 0 0 [IronSword, Tonic] NoAI
-UNIT
-
-NPCGuardGroup: //main
-UNIT GreagorGuard Deserter 0 Level(3,NPC, False) [11, 18] 0 0 0 0 [IronLance, Vulnerary] NoAI
 UNIT
 
 NPCSmugglerGroup: //docks
@@ -977,12 +957,12 @@ UNIT GreagorSmuggler Thief 0 Level(6,NPC, False) [2, 24] 0 0 0 0 [SteelKnife, To
 UNIT
 
 NPCDocksArguingGroup: //docks
-UNIT GreagorShipwright VillagerMAdult 0 Level(1,NPC,False) [11,14] 0 0 0 0 [] NoAI
+UNIT GreagorShipwright VillagerMAdult 0 Level(1,NPC,False) [11,14] 0 0 0 0 [0x0] NoAI
 UNIT GreagorCaptain Berserker 0 Level(14,NPC,False) [13,14] 0 0 0 0 [SilverAxe, Tomahawk, Elixir] NoAI
 UNIT
 
 NPCPatronDrinkingGroup: //inn
-UNIT GreagorPatron VillagerMAdult 0 Level(1,NPC,False) [3,18] 0 0 0 0 [] NoAI
+UNIT GreagorPatron VillagerMAdult 0 Level(1,NPC,False) [3,18] 0 0 0 0 [0x0] NoAI
 UNIT GreagorPatronB VillagerMAdult 0 Level(1,NPC,False) [5,18] 0 0 0 0 [GuBalg] NoAI
 UNIT
 
@@ -990,43 +970,13 @@ PeddlerGroup:
 UNIT GreagorPeddler Rogue 0 Level(1, NPC, False) [4,10] 0 0 0 0 [0x72] NoAI //0x72 is members card
 UNIT
 
-PeddlerGroupAfterInitial:
-UNIT GreagorPeddler Rogue 0 Level(1, NPC, False) [12,12] 0 0 0 0 [0x72] NoAI //0x72 is members card
-UNIT
-
-SpawnNPCVillagerA:
-LoadCutsceneUnits(NPCVillagerGroup)
-NoFade
-ENDA
-
-SpawnNPCVillagerB:
-LoadCutsceneUnits(NPCVillagerBGroup)
-NoFade
-ENDA
-
-SpawnNPCVillagerC:
-LoadCutsceneUnits(NPCVillagerCGroup)
-NoFade
-ENDA
-
 SpawnNPCSailor:
 LoadCutsceneUnits(NPCSailorGroup)
 NoFade
 ENDA
 
-SpawnNPCGuard:
-LoadCutsceneUnits(NPCGuardGroup)
-NoFade
-ENDA
-
 SpawnNPCSmuggler:
 LoadCutsceneUnits(NPCSmugglerGroup)
-NoFade
-ENDA
-
-SpawnNPCPatroller:
-LoadCutsceneUnits(NPCPatrollerGroup)
-SetUnitItemDurability(3, 15, 1, SpdTonic) //unique addition to give the pegasus knight a speed tonic
 NoFade
 ENDA
 
@@ -1096,43 +1046,12 @@ CALL SpawnPatronNPCs
 NoFade
 ENDA
 
-PortSpawnEvent:
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA2, 3, JaimeUnitGroup, A2Indicator)
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA3, 1, OndehBikoUnitGroup, A3Indicator)
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA6, 2, RochefortUnitGroup, A6Indicator)
-Call PortSpawnEventNPCs
-NoFade
-ENDA
-
 PortSpawnEventFirstTime:
 LoadNPCUnitGroupIfEIDNotSet(WentToHubA2, 3, JaimeUnitGroup)
 LoadNPCUnitGroupIfEIDNotSet(WentToHubA3, 1, OndehBikoUnitGroup)
 LoadNPCUnitGroupIfEIDNotSet(WentToHubA6, 2, RochefortUnitGroup)
 Call PortSpawnEventNPCsFirstTime
 NoFade
-ENDA
-
-// Villager C always spawned in. 
-// After 2 chapters cleared, spawn VillagerB and Guard.
-// After 4 chapters cleared, spawn VillagerA and Patrol. 
-// If the peddler is active, and hasn't been purchased from, spawn him. 
-PortSpawnEventNPCs:
-CALL SpawnNPCVillagerC
-CheckHowManyHubChaptersCompleted
-SVAL s1 2 //if 2 or more chapters completed
-BGT 776 s1 sC 
-	CALL SpawnNPCVillagerB
-	CALL SpawnNPCGuard
-	CheckHowManyHubChaptersCompleted
-	SVAL s1 4 //if 4 or more chapters completed
-	BGT 776 s1 sC
-		CALL SpawnNPCVillagerA
-		CALL SpawnNPCPatroller
-LABEL 776
-CHECK_EVENTID PeddlerHubAEncounterFlag
-BEQ 777 s0 sC
-	LoadCutsceneUnits(PeddlerGroupAfterInitial)
-LABEL 777
 ENDA
 
 PortSpawnEventNPCsFirstTime:
@@ -1156,23 +1075,8 @@ BGT 776 s1 sC
 LABEL 776
 ENDA
 
-A2Indicator:
-AddTrap(RedSigilTrapID, 11, 20)
-NoFade
-ENDA
-
-A3Indicator:
-AddTrap(RedSigilTrapID, 23, 19)
-NoFade
-ENDA
-
-A6Indicator:
-AddTrap(RedSigilTrapID, 20, 14)
-NoFade
-ENDA
-
 AddHubATraps:
-CHECK_EVENTID GotoChapter2Flag
+CHECK_EVENTID GoToNextHubFlagID
 BNE 776 s0 sC
     AddTrap(GreenSigilTrapID,20, 4)
     AddTrap(GreenSigilTrapID,21, 4)

@@ -65,6 +65,7 @@ PromoListEntry(Fighter, Warrior)
 PromoListEntry(Fighter_F, Warrior_F)
 PromoListEntry(SwordCav, Dragoon)
 PromoListEntry(Gunner, Marksman)
+PromoListEntry(Gunner_F, Marksman)
 PromoListEnd
 
 ALIGN 4
@@ -87,6 +88,7 @@ PromoListEntry(Mage_F, MageKnight_F)
 PromoListEntry(Mercenary, Ranger)
 PromoListEntry(Mercenary_F, Ranger_F)
 PromoListEntry(Gunner, Dragoon)
+PromoListEntry(Gunner_F, Dragoon)
 PromoListEntry(Thief, WolfKnight)
 PromoListEntry(Thief_F, WolfKnight)
 PromoListEntry(Deserter, WolfKnight)

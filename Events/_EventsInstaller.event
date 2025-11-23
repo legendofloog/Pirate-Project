@@ -69,3 +69,113 @@ ALIGN 4
 PrepShop1:
 SHLI IronSword IronLance IronAxe IronBow IronKnife IronDagger IronMusket Fire Heal Vulnerary (HPTonic << 8)|Tonic (StrTonic << 8)|Tonic (MagTonic << 8)|Tonic (SklTonic << 8)|Tonic (SpdTonic << 8)|Tonic (LuckTonic << 8)|Tonic  (DefTonic << 8)|Tonic (ResTonic << 8)|Tonic
 ALIGN 4
+
+PortSpawnEvent:
+LoadNPCUnitGroupIfEIDNotSet(WentToHubA2, 3, JaimeUnitGroup, A2Indicator)
+LoadNPCUnitGroupIfEIDNotSet(WentToHubA3, 1, OndehBikoUnitGroup, A3Indicator)
+LoadNPCUnitGroupIfEIDNotSet(WentToHubA6, 2, RochefortUnitGroup, A6Indicator)
+Call PortSpawnEventNPCs
+NoFade
+ENDA
+
+JaimeUnitGroup:
+UNIT Jaime PegasusRider 0 Level(4,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand] NoAI
+UNIT
+
+OndehBikoUnitGroup:
+UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Biko 0 0 Level(1,NPC,True) [24,19] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
+UNIT
+
+RochefortUnitGroup:
+UNIT Rochefort 0 0 Level(1,NPC,False) [20,14] 0x0 0x0 0 0 [SteelMusket] NoAI
+UNIT
+
+
+A2Indicator:
+AddTrap(RedSigilTrapID, 11, 20)
+NoFade
+ENDA
+
+A3Indicator:
+AddTrap(RedSigilTrapID, 23, 19)
+NoFade
+ENDA
+
+A6Indicator:
+AddTrap(RedSigilTrapID, 20, 14)
+NoFade
+ENDA
+
+// Villager C always spawned in. 
+// After 2 chapters cleared, spawn VillagerB and Guard.
+// After 4 chapters cleared, spawn VillagerA and Patrol. 
+// If the peddler is active, and hasn't been purchased from, spawn him. 
+PortSpawnEventNPCs:
+CALL SpawnNPCVillagerC
+CheckHowManyHubChaptersCompleted
+SVAL s1 2 //if 2 or more chapters completed
+BGT 776 s1 sC 
+	CALL SpawnNPCVillagerB
+	CALL SpawnNPCGuard
+	CheckHowManyHubChaptersCompleted
+	SVAL s1 4 //if 4 or more chapters completed
+	BGT 776 s1 sC
+		CALL SpawnNPCVillagerA
+		CALL SpawnNPCPatroller
+LABEL 776
+CHECK_EVENTID PeddlerHubAEncounterFlag
+BEQ 777 s0 sC
+	LoadCutsceneUnits(PeddlerGroupAfterInitial)
+LABEL 777
+ENDA
+
+PeddlerGroupAfterInitial:
+UNIT GreagorPeddler Rogue 0 Level(1, NPC, False) [12,12] 0 0 0 0 [0x72] NoAI //0x72 is members card
+UNIT
+
+SpawnNPCVillagerA:
+LoadCutsceneUnits(NPCVillagerGroup)
+NoFade
+ENDA
+
+SpawnNPCVillagerB:
+LoadCutsceneUnits(NPCVillagerBGroup)
+NoFade
+ENDA
+
+SpawnNPCVillagerC:
+LoadCutsceneUnits(NPCVillagerCGroup)
+NoFade
+ENDA
+
+SpawnNPCGuard:
+LoadCutsceneUnits(NPCGuardGroup)
+NoFade
+ENDA
+
+SpawnNPCPatroller:
+LoadCutsceneUnits(NPCPatrollerGroup)
+SetUnitItemDurability(3, 15, 1, SpdTonic) //unique addition to give the pegasus knight a speed tonic
+NoFade
+ENDA
+
+NPCVillagerGroup: //main
+UNIT GreagorVillager VillagerMAdult 0 Level(1,NPC, False) [20,9] 0 0 0 0 [] NoAI
+UNIT
+
+NPCVillagerBGroup: //main
+UNIT GreagorVillagerB VillagerFAdult 0 Level(1,NPC, False) [12,5] 0 0 0 0 [] NoAI
+UNIT
+
+NPCVillagerCGroup: //main
+UNIT GreagorVillagerC VillagerMAdult 0 Level(1,NPC, False) [26,13] 0 0 0 0 [] NoAI
+UNIT
+
+NPCPatrollerGroup: //main
+UNIT GreagorPatroller PegasusRider 0 Level(5,NPC, False) [3, 15] 0 0 0 0 [IronSword, Tonic] NoAI
+UNIT
+
+NPCGuardGroup: //main
+UNIT GreagorGuard Deserter 0 Level(3,NPC, False) [11, 18] 0 0 0 0 [IronLance, Vulnerary] NoAI
+UNIT

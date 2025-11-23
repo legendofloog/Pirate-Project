@@ -35,8 +35,8 @@ SHLI SteelBow KillerBow SilverBow Knifekiller Pursuer Scorpio DeadeyeBow BraveBo
 ALIGN 4
 
 ALIGN 4
-HubDVendor: // same thing and then 4 shields, 4 items, 1 awesome equip
-SHLI Elfire Thunder Arcfire Sagittae Nosferatu Bolt Bolting HerosFlare Mend Rewarp Physic AssistStaff RushStaff Rescue Protect Concentrate PureWater ArmsScroll Elixir Mine GlassShield HideShield HexlockShield HeavyShield Eyepatch Statuette  
+HubDVendor: // same thing and then 4 shields, 4 items, 1 awesome equip, promo items
+SHLI Elfire Thunder Arcfire Sagittae Nosferatu Bolt Bolting HerosFlare Mend Rewarp Physic AssistStaff RushStaff Rescue Protect Concentrate PureWater ArmsScroll Elixir Mine GlassShield HideShield HexlockShield HeavyShield Eyepatch Statuette BravesCrest MagiRing HuntersMark KnightsPlate RidersBadge FliersPermit
 ALIGN 4
 
 MiscBasedEvents:

@@ -609,7 +609,7 @@ decide on a name or face.[X]
 
 ## SD_Charisma
 Charisma: Grants +10 Hit/Avoid[N]
-to all allies within three tiles.[X]
+to allied units within three tiles.[X]
 
 ## SD_HeroesDeathBlow
 Death Blow: +6 Attack[N]
@@ -1644,8 +1644,8 @@ follow-up attack immediately after.[X]
 
 ## SD_LiquidCourage
 Liquid Courage: Once a turn, this unit[N]
-can consume an item without using[N]
-their action. +2 Str/Dex/Spd (decays).[X]
+can use an item without using an action,[N]
+also gaining +2 Str/Dex/Spd (decays).[X]
 
 ## SD_ArmsMastery
 Arms Mastery: If this unit initiates[N]

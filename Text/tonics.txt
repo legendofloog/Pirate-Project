@@ -6,7 +6,8 @@ Boosts stats for a chapter.[X]
 
 ## TonicUseText
 Boosts stats[N]
-for a chapter.[X]
+for a chapter.[N]
+Preps use only.[X]
 
 ## TonicUseBoxText
 Stat increased.[X]
@@ -15,93 +16,110 @@ Stat increased.[X]
 HP Tonic[X]
 
 ## HPTonicDescription
-HP +5 for one chapter.[X]
+HP +5 for one chapter.[N]
+Only usable in preps.[X]
 
 ## HPTonicUseText
 HP +5 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## StrTonicName
 Str Tonic[X]
 
 ## StrTonicDescription
-Str +2 for one chapter.[X]
+Str +2 for one chapter.[N]
+Only usable in preps.[X]
 
 ## StrTonicUseText
 Str +2 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## SklTonicName
 Dex Tonic[X]
 
 ## SklTonicDescription
-Dex +2 for one chapter.[X]
+Dex +2 for one chapter.[N]
+Only usable in preps.[X]
 
 ## SklTonicUseText
 Dex +2 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## SpdTonicName
 Spd Tonic[X]
 
 ## SpdTonicDescription
-Spd +2 for one chapter.[X]
+Spd +2 for one chapter.[N]
+Only usable in preps.[X]
 
 ## SpdTonicUseText
 Spd +2 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## DefTonicName
 Def Tonic[X]
 
 ## DefTonicDescription
-Def +3 for one chapter.[X]
+Def +3 for one chapter.[N]
+Only usable in preps.[X]
 
 ## DefTonicUseText
 Def +3 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## ResTonicName
 Res Tonic[X]
 
 ## ResTonicDescription
-Res +5 for one chapter.[X]
+Res +5 for one chapter.[N]
+Only usable in preps.[X]
 
 ## ResTonicUseText
 Res +5 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## LuckTonicName
 Eva Tonic[X]
 
 ## LuckTonicDescription
-Eva +3 for one chapter.[X]
+Eva +3 for one chapter.[N]
+Only usable in preps.[X]
 
 ## LuckTonicUseText
 Eva +3 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## MagTonicName
 Mag Tonic[X]
 
 ## MagTonicDescription
-Mag +2 for one chapter.[X]
+Mag +2 for one chapter.[N]
+Only usable in preps.[X]
 
 ## MagTonicUseText
 Mag +2 for[N]
-one chapter.[X]
+one chapter.[N]
+Preps use only.[X]
 
 ## RainbowTonicName
 Rnbw Tonic[X]
 
 ## RainbowTonicDescription
 HP/Res +5, Def/Eva +3, and all[N]
-other stats +2 for one chapter.[X]
+other stats +2 for one chapter.[N]
+Only usable in preps.[X]
 
 ## RainbowTonicUseText
 HP/Res +5, Def/Eva +3,[N]
-and others +2 for[N]
-one chapter.[X]
+and others +2.[N]
+Preps use only.[X]
 
 ## DebugText
 Debug[X]

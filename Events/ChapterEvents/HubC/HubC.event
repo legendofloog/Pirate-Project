@@ -371,8 +371,8 @@ SHLI SteelBow KillerBow ShiningBow SilverBow Slimshot Greatbow BraveBow SteelKni
 ALIGN 4
 
 ALIGN 4
-HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip
-SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir ArmsScroll GlassShield HideShield HexlockShield AshQuiver
+HubCVendorOne: // same thing and then 3 shields, 3 items, 1 awesome equip, promo items
+SHLI Elfire Elsurge Thunder Arcfire Tornado Bolt HerosFlare Mend Silence Rewarp Physic AssistStaff Sleep Fortify PureWater Elixir ArmsScroll GlassShield HideShield HexlockShield AshQuiver BravesCrest MagiRing HuntersMark KnightsPlate RidersBadge FliersPermit
 ALIGN 4
 
 MiscBasedEvents:
@@ -446,6 +446,8 @@ UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
+LOAD1 1 MedwynHubCGroup
+ENUN
 ENUF DifficultyChangeFlag
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)

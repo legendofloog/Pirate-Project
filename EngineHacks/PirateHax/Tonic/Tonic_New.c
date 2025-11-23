@@ -4,22 +4,7 @@
 
 bool TonicUsabilityFunc(struct Unit* unit, int item)
 {
-    int usedTonicBit = GetUsedTonicBit(unit, item);
-
-    if (usedTonicBit == 0xFFFF)
-    {
-        if (CheckNumberOfTonics(unit) == 8) return false;
-
-        return true; //return true if they aren't all set
-    }
-    else if (usedTonicBit == 0x0)
-    {
-        return false; //dunno how'd this happen, but return false if so
-    }
-
-    if (CheckBit(GetUnitDebuffEntry(unit), usedTonicBit)) return false; //if it's already set, then don't allow
-    
-    return true; //otherwise, go ahead
+    return false; //cannot be used on map, i guess
 }
 
 int GetUsedTonicBit(struct Unit* unit, int item)
@@ -66,7 +51,22 @@ int GetUsedTonicBit(struct Unit* unit, int item)
 
 bool TonicPrepUsabilityFunc(struct Unit* unit, int item)
 {
-    return TonicUsabilityFunc(unit, item); //no specific preps rules afaik
+    int usedTonicBit = GetUsedTonicBit(unit, item);
+
+    if (usedTonicBit == 0xFFFF)
+    {
+        if (CheckNumberOfTonics(unit) == 8) return false;
+
+        return true; //return true if they aren't all set
+    }
+    else if (usedTonicBit == 0x0)
+    {
+        return false; //dunno how'd this happen, but return false if so
+    }
+
+    if (CheckBit(GetUnitDebuffEntry(unit), usedTonicBit)) return false; //if it's already set, then don't allow
+    
+    return true; //otherwise, go ahead
 }
 
 void TonicEffectFunc(Proc* proc)
@@ -162,42 +162,6 @@ int ReturnHangoverPenalty(struct Unit* unit)
     if (CheckNumberOfTonics(unit) == 1) return 1; //minimum value
 
     return (CheckNumberOfTonics(unit) / 2);
-}
-
-void ClearTonicDebuffs() //don't think there are any inputs
-{
-    int i = 0;
-    u8 chapterNum = gChapterData.chapterIndex;
-    bool isExcludedChapter = false;
-    while(TonicChapterExclusionTable[i] != 0xFF)
-    {
-        if (chapterNum == TonicChapterExclusionTable[i])
-        {
-            isExcludedChapter = true;
-            break;
-        }
-    }
-
-    if (isExcludedChapter) return;
-
-    struct Unit* curUnit;
-    u32* address;
-
-    for (int i = 0; i < FACTION_PURPLE; i++) //should loop through blues, greens, reds, and unset all tonic bits
-    {   
-        curUnit = GetUnit(i);
-        address = GetUnitDebuffEntry(curUnit);
-
-        UnsetBit(address, HPTonicOffset_Link); //unsets all of these at the end of a chapter
-        UnsetBit(address, StrTonicOffset_Link);
-        UnsetBit(address, MagTonicOffset_Link);
-        UnsetBit(address, DexTonicOffset_Link);
-        UnsetBit(address, SpdTonicOffset_Link);
-        UnsetBit(address, DefTonicOffset_Link);
-        UnsetBit(address, ResTonicOffset_Link);
-        UnsetBit(address, EvaTonicOffset_Link);
-    }   
-
 }
 
 void DoTonicEffect(struct Unit* unit, int itemSlot)

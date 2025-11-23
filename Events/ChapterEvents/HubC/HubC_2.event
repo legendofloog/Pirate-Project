@@ -43,7 +43,7 @@ END_MAIN
 
 LocationBasedEvents:
 Chest(DeadeyeBow, 21, 9)
-Village(20,HuntersMarkVillage,13,24)
+Village(FlagC2_Village,HuntersMarkVillage,13,24)
 END_MAIN
 
 HuntersMarkVillage:
@@ -630,7 +630,6 @@ AddTrap(MineTrapID,0,6)
 LoadEnemies(ValerieInDaSquad)
 SetUnitItemDurability(Valerie, 2, StrTonic) //Give valerie a str tonic
 SetUnitItemDurability(14, 5, 1, RainbowTonic) //Give a fighter a droppable rainbow tonic
-
 GotoPrepScreen
 NoFade
 ENDA
@@ -638,14 +637,6 @@ ENDA
 ValerieInDaSquad:
 UNIT Valerie Archer_F 0 Level(5,Ally,True) [7,26] 0 0 0 0 [SteelBow, Snapshot, Tonic] NoAI
 UNIT
-
-QuickdrawVillage:
-//SetBackground(HouseBG)
-//Text(A2Village)
-//EraseBackground
-GiveItem(Quickdraw,0xFFFF)
-NoFade
-ENDA
 
 HiddenOutpost:
 //SetBackground(HouseBG)

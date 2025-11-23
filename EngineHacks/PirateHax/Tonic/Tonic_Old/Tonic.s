@@ -33,9 +33,6 @@
 	.global DelayedTonicDeletion
 	.type 	DelayedTonicDeletion, function
 
-	.global ClearTonicDebuffsHook
-	.type ClearTonicDebuffHook, function
-
 	.macro blh to, reg = r3
     ldr \reg, =\to
     mov lr, \reg
@@ -191,21 +188,4 @@ DelayedTonicDeletion:		@ i don't care to rewrite this piece since it seems to be
 	
 	.pool
 	
-	.align
-
-ClearTonicDebuffsHook:
-
-	@ Hook to A4354
-
-	blh ClearTonicDebuffs
-
-	@ vanilla code
-	blh 0x80A42BC+1
-	blh 0x80A429C+1
-
-	ldr r3, =0x80A435C+1
-	bx r3
-
-	.pool
-
 	.align

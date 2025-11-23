@@ -162,6 +162,7 @@
 #define HuntersMark $66
 #define FliersPermit $67
 #define MagesRing $68
+#define MagiRing $68
 #define RidersBadge $97
 #define RiderBadge $97
 #define MarchRing 0x99

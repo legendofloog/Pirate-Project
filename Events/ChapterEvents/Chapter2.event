@@ -240,7 +240,7 @@ AREA LuaQuartersToMainRoom GoBackToMainRoomFromLuaQuarters [19,25] [19,25]
 AREA WentToPortGreagor GotoPortGreagorFirstTime [1,0] [3,0]
 AREA MainRoomToPort GotoPortGreagor [1,0] [3,0]
 
-AREA GotoChapter2Flag AllDoneWithHubA [24,21] [24,21]
+AREA GoToNextHubFlagID AllDoneWithHubA [24,21] [24,21]
 
 AREA HubALuaBaseChestReactionFlag LuaReactsToLootingTreasureChest [32,13] [32,13]
 
@@ -254,6 +254,7 @@ LuaReactsToLootingTreasureChest:
 CHECK_EVENTID HubALuaBaseChestOpenedFlag
 BEQ 776 s0 sC
 	Text(HubASilverAxeText) //if the chest flag's set, then this will play the first time that it's looted
+    GOTO 777
 LABEL 776
 ENUF HubALuaBaseChestReactionFlag //if you step on the chest but didn't loot it already, reset the flag
 LABEL 777
@@ -303,7 +304,7 @@ NoFade
 ENDA
 
 AddLuaQuartersTraps:
-CHECK_EVENTID GotoChapter2Flag
+CHECK_EVENTID GoToNextHubFlagID
 BNE 776 s0 sC
     AddTrap(GreenSigilTrapID,24, 21)
 LABEL 776
@@ -313,7 +314,12 @@ NoFade
 ENDA
 
 ClearLuaQuartersTraps:
+CHECK_EVENTID GoToNextHubFlagID
+BNE 776 s0 sC
+    RemoveTrapAtCoords(24,21)
+LABEL 776
 RemoveTrapAtCoords(19, 25)
+RemoveTrapAtCoords(19, 18)
 NoFade
 ENDA
 
@@ -435,6 +441,7 @@ ENUT PortToTavern
 ENUT PortToOtherAreas
 ENUT DocksToPort
 ENUT PortToBase
+ENUF ArmoryVendorFlag
 ENUF WentToPortGreagorDocks //sets the temp flag version and allows global to be triggered
 GiveGold(5000)
 ENUF 4
@@ -460,19 +467,12 @@ NoFade
 ENDA
 
 GotoPortGreagor:
-InitiateLoadMapHub(HubA, LuaInDaHub, PortGreagorSpawnEvent)
+InitiateLoadMapHub(HubA, LuaInDaHub, PortSpawnEvent)
 ENUF PortToBase
 CHECK_EVENTID HubAGreagorVillageVisitedFlag
 BEQ 777 s0 sC 
 	TILECHANGE 4
 LABEL 777
-NoFade
-ENDA
-
-PortGreagorSpawnEvent:
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA2, 3, JaimeUnitGroup, A2Indicator)
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA3, 1, OndehBikoUnitGroup, A3Indicator)
-LoadNPCUnitGroupIfEIDNotSet(WentToHubA6, 2, RochefortUnitGroup, A6Indicator)
 NoFade
 ENDA
 
@@ -580,7 +580,7 @@ AddChapter2Traps:
 AddTrap(BlueSigilTrapID,1,0)
 AddTrap(BlueSigilTrapID,2,0)
 AddTrap(BlueSigilTrapID,3,0)
-CHECK_EVENTID GotoChapter2Flag
+CHECK_EVENTID GoToNextHubFlagID
 BNE 776 s0 sC
     AddTrap(GreenSigilTrapID,7, 4)
     GOTO 777
@@ -627,7 +627,7 @@ ENUT TreasureRoomToMainRoom
 ENUT LuaQuartersToMainRoom
 ENUT LibraryToMainRoom
 ENUT MainRoomToPort
-ENUT GotoChapter2Flag
+ENUT GoToNextHubFlagID
 ENUT HubALuaBaseChestReactionFlag
 ENUT DifficultyChangeFlag
 //these are all set for the objective to work
