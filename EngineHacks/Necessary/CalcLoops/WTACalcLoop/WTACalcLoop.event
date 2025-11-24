@@ -3,9 +3,6 @@
 
 #include "WTACalcLoop.lyn.event"
 WTACalcFunctions:
-#ifdef ANIMA_TRIANGLE
-	POIN AnimaTriangle
-#endif // ANIMA_TRIANGLE
 POIN PanacheWTA
 POIN Nonconforming
 POIN TriangleAdept

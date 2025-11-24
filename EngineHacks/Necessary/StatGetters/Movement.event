@@ -13,7 +13,7 @@ pMovModifiers: // Movement
 	POIN StairsMoveDebuff
 	#endif
 	POIN prNullifyIfFreeze prNullifyIfGuardAI ContraryWinds_NoMove
-	POIN prDeftHandsCheck NailedDownMovPenalty // Nailed Down needs to go last cause it sets all other move bonus sources to 0
+	POIN prDeftHandsCheck prLiquidCourageCheck NailedDownMovPenalty // Nailed Down needs to go last cause it sets all other move bonus sources to 0
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
 	#endif
@@ -65,6 +65,11 @@ prLuaHubMovement:
 prDeftHandsCheck:
 	rIfUnitHasState(0x400)
 		rIfUnitHasSkill(DeftHandsID)
+			rConstant(0)
+
+prLiquidCourageCheck:
+	rIfUnitHasState(0x400)
+		rIfUnitHasSkill(LiquidCourageID)
 			rConstant(0)
 
 prRebelRebelMovNerf:

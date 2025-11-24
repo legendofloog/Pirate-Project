@@ -20,3 +20,5 @@ void DrawUnitResChangeText(struct TextHandle* text, struct Unit* unit, int bonus
 #include "BarrierStaff.c"
 
 #include "DebuffStaff.c"
+
+#include "RushStaff.c"

@@ -271,6 +271,7 @@ void UnsetBattleUnitDebuffBits(struct Unit* unit)
     UnsetProtectBits(unit);
     UnsetConcentrateBits(unit);
     UnsetFortuneBits(unit);
+    UnsetRushBits(unit);
 }
 
 void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()

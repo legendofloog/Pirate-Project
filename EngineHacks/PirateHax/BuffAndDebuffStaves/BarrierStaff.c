@@ -17,6 +17,39 @@ void ReduceBarrierBit(Unit* unit) {
 	}		
 }
 
+void ClearBarrierBitEachTurn() {
+	//this runs in start of turn calc loop
+	//for each unit of the current phase, look for one with the bit set
+	
+	int faction = gChapterData.currentPhase;
+	int unitID = faction+1;
+	int maxCount = 0;
+	
+	switch (faction) {
+		case UA_BLUE:
+		maxCount = 62;
+		break;
+		
+		case UA_RED:
+		maxCount = 50;
+		break;
+		
+		case UA_GREEN:
+		maxCount = 20;
+		break;
+	}
+	
+	while ((unitID - faction) < maxCount) {
+		//get the unit unitID
+		struct Unit* curUnit = GetUnit(unitID);
+		
+		//reduce Concentrate bit
+		ReduceBarrierBit(curUnit);
+		
+		unitID++;
+	}	
+}
+
 void UnsetBarrierBits(Unit* unit)
 {
 	PackData(GetUnitDebuffEntry(unit), BarrierStaffBitOffset_Link, 3, 0);

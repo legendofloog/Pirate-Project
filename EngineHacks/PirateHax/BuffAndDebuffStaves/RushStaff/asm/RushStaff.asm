@@ -29,9 +29,6 @@
 .global RushStaffEffect
 .type RushStaffEffect, %function
 
-.global RushStaffClearBit
-.type RushStaffClearBit, %function
-
 .global RushStaffExtraMov
 .type RushStaffExtraMov, %function
 
@@ -341,10 +338,7 @@
 		blh		SetupTargetBattleUnitForStaff, r1
 		
 		mov		r0, r7
-		blh		GetUnitDebuffEntry, r1
-		ldr		r1, =RushStaffBitOffset_Link
-		ldr		r1, [r1]
-		blh		SetBit, r2
+		blh		SetRushBit, r1
 		
 		mov		r0, r6
 		blh		FinishUpItemBattle, r1
@@ -362,77 +356,6 @@
 		
 		.align
 		.ltorg
-
-
-@-------------------------------------------
-@IsRushStaffBitSet
-@-------------------------------------------
-
-
-		IsRushStaffBitSet:
-		push	{r14}
-		blh		GetUnitDebuffEntry, r1
-		ldr		r1, =RushStaffBitOffset_Link
-		ldr		r1, [r1]
-		blh		CheckBit, r2
-		pop		{r1}
-		bx		r1
-		
-		.align
-		.ltorg
-
-
-@-------------------------------------------
-@RushStaffClearBit
-@-------------------------------------------
-
-
-		RushStaffClearBit:
-		push	{r4-r6,r14}
-		
-		ldr		r0, =gChapterData
-		ldrb	r0, [r0,#0x0F]
-		add		r5, r0, #1 @unit to check
-		mov		r6, r0
-		add		r6, #0x40 @stop once all units of this faction have been checked
-		
-		RushStaffClearBit_Loop:
-		ldr		r1, =gUnitLookup
-		mov		r0, #0xFF
-		and		r0, r5
-		lsl		r0, #2
-		add		r0, r1
-		ldr		r4, [r0]
-		cmp		r4, #0
-		
-			ldr		r0, [r4]
-			cmp		r0, #0
-			beq		RushStaffClearBit_Next
-			
-				@don't clear if rescued
-				ldr		r1, [r4,#0x0C]
-				mov		r2, #0x20
-				tst		r1, r2
-				bne		RushStaffClearBit_Next
-				
-					mov		r0, r4
-					blh		GetUnitDebuffEntry, r1
-					ldr		r1, =RushStaffBitOffset_Link
-					ldr		r1, [r1]
-					blh		UnsetBit, r2
-					
-					RushStaffClearBit_Next:
-					add		r5, #1
-					cmp		r5, r6
-					blt		RushStaffClearBit_Loop
-					
-		pop		{r4-r6}
-		pop		{r0}
-		bx		r0
-		
-		.align
-		.ltorg
-
 
 @-------------------------------------------
 @RushStaffExtraMov

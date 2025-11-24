@@ -158,3 +158,4 @@ extern void UnsetBarrierBits(Unit* unit);
 extern void UnsetProtectBits(Unit* unit);
 extern void UnsetConcentrateBits(Unit* unit);
 extern void UnsetFortuneBits(Unit* unit);
+extern void UnsetRushBits(Unit* unit);

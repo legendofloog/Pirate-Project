@@ -22,7 +22,7 @@ void Equalizer(BattleUnit* bunitA, BattleUnit* bunitB) {
 	}
 
 	if(AuraSkillCheck(&bunitA->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
-		if(bunitA->battleAttack < bunitB->battleAttack && (bunitB->canCounter == true))
+		if(bunitA->battleAttack < bunitB->battleAttack && (bunitB->canCounter) && (bunitA->canCounter))
 		{	//if equalizer unit's damage is less than enemy's damage
 			meanAtk = (bunitA->battleAttack + bunitB->battleAttack) / 2;
 			bunitA->battleAttack = meanAtk;
@@ -30,7 +30,7 @@ void Equalizer(BattleUnit* bunitA, BattleUnit* bunitB) {
 		}
 	}
 	else if (AuraSkillCheck(&bunitB->unit, EqualizerID_Link, 0x0, EqualizerRange_Link)) { //does an ally check for equalizer skill
-		if(bunitB->battleAttack < bunitA->battleAttack && (bunitA->canCounter == true))
+		if(bunitB->battleAttack < bunitA->battleAttack && (bunitA->canCounter) && (bunitB->canCounter))
 		{	//if equalizer unit's damage is less than enemy's damage
 			meanAtk = (bunitA->battleAttack + bunitB->battleAttack) / 2;
 			bunitA->battleAttack = meanAtk;

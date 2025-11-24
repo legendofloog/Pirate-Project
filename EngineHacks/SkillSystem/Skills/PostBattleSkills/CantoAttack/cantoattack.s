@@ -11,28 +11,18 @@ ldrb	r0, [r4,#0x13]
 cmp	r0, #0x00
 beq	End
 
-@check if current chracter
-ldrb  r0, [r6,#0x11]  @action taken this turn
-cmp r0, #0x1E @check if found enemy in the fog
-beq End
-ldrb  r0, [r6,#0x0C]  @allegiance byte of the current character taking action
-ldrb  r1, [r4,#0x0B]  @allegiance byte of the character we are checking
-cmp r0, r1    @check if same character
-bne End
-
 @check if attacked, otherwise do nothing
 ldrb  r0, [r6,#0x11]  @action taken this turn
 cmp r0, #0x2
 bne End
 
-@check if moved all the squares
-ldr	r0,=0x8019224	@mov getter
-mov	lr, r0
-mov	r0, r4		@attacker
-.short	0xF800
-ldrb 	r1, [r6,#0x10]	@squares moved this turn
-cmp	r0,r1
-beq	End
+@check if flag 0x3 set; if so, cannot canto
+ldr r0,=0x8083da8 @CheckEventId
+mov r14,r0
+mov r0,#3
+.short 0xF800
+cmp r0,#1
+beq End
 
 blh 0x801A1F5 @first refresh the entity map
 ldr	r1,=0x8018BD8	@check if can move again
@@ -45,7 +35,7 @@ beq	End
 @check if already cantoing, and is not in a ballista
 ldr	r0, [r4,#0x0C]	@status bitfield
 mov	r1, #0x21
-lsl	r1, #0x06 	@has moved already and is in a ballista
+lsl	r1, #0x06	@has moved already and is in a ballista
 and	r0, r1
 cmp	r0, #0x00
 bne	End
@@ -71,18 +61,14 @@ lsr r2,r2,#6
 cmp r3, #1 
 beq Refresh 
 cmp r2, #0 
-bne End @ no canto ai and not a player 
+bne End @ no canto ai and not a player
+
 Refresh: 
-@if canto, unset 0x2 and set 0x40
-ldr	r0, [r4,#0x0C]	@status bitfield
-mov	r1, #0x02
-mvn	r1, r1
-and	r0, r1		@unset bit 0x2
-mov	r1, #0x40	@set canto bit
-orr	r0, r1
-str	r0, [r4,#0x0C]
-cmp r2, #0 
-beq End @ player who has been refreshed, so no need for ai 
+@check if unit already activated a Canto effect
+ldr r0, [r4,#0x0C]
+mov r1, #0x40
+tst r0, r1
+bne End
 
 mov r0, r4 @ unit 
 add r0, #0x41 
@@ -90,6 +76,25 @@ ldrb r0, [r0]
 mov r1, #0x20 
 tst r0, r1 
 bne End @ do not canto if cannot move 
+
+@give unit ability to move after combat
+@ldr	r0, [r4,#0x0C]	@status bitfield
+mov	r1, #0x02
+mvn	r1, r1
+and	r0, r1		@unset bit 0x2
+mov	r1, #0x40	@set canto bit
+orr	r0, r1
+str	r0, [r4,#0x0C]
+
+@canto amount = unit's move - how much they moved, so we change how much they moved to (unit's move - 2).
+ldr	r0,=0x8019224	@mov getter
+mov	lr, r0
+mov	r0, r4
+.short	0xF800
+sub r0, #0x2 
+strb r0, [r6,#0x10]
+b End @ player who has been refreshed, so no need for ai 
+
 
 @ debuff movement while finding the ideal place to move to after attacking 
 ldr r0, =CurrentUnit 

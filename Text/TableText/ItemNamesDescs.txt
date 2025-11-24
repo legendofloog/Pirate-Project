@@ -674,7 +674,7 @@ Inflicts Break on attack.[X]
 Ignisignia[X]
 
 ## IgnisTriggerDesc
-[LockIcon]Lua. Sword at 1 RNG. Hits Res at RNG.[X]
+[LockIcon]Lua. Gun that hits Res at range.[X]
 
 ## SuperbiaName
 Superbia[X]

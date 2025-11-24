@@ -1643,9 +1643,9 @@ Breaks an enemy, they gain an additional[N]
 follow-up attack immediately after.[X]
 
 ## SD_LiquidCourage
-Liquid Courage: Once a turn, this unit[N]
-can use an item without using an action,[N]
-also gaining +2 Str/Dex/Spd (decays).[X]
+Liquid Courage: Once a turn, when this[N]
+unit uses an item, they act, not move,[N]
+again, gaining 1 Str/Dex/Spd (decays).[X]
 
 ## SD_ArmsMastery
 Arms Mastery: If this unit initiates[N]
@@ -1810,8 +1810,9 @@ is increased by +2 for this unit.[X]
 Finesse: Unit gains Crit = Dex / 2.[X]
 
 ## SD_ReapingBlade
-Reaping Blade: On kill, unit moves[N]
-again, but their weapon is destroyed.[X]
+Reaping Blade: Command. When selected,[N]
+this unit moves again after killing an[N]
+enemy, but their weapon is destroyed.[X]
 
 ## SD_HandCannon
 Hand Cannon: Weapon breaks with[N]
