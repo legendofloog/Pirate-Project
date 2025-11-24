@@ -40,8 +40,13 @@
 		asr		r1, #0x18
 		blh		FillMovementMapForUnitAndMovement, r3
 		
-		@Change from vanilla: regardless of Canto result, clear gMapMovement2
+		@Change from vanilla: regardless of Canto result, clear gMapMovement2 and gMapRange
 		ldr		r0, =gMapMovement2
+		ldr		r0, [r0]
+		mov		r1, #0
+		blh		ClearMapWith, r2
+		
+		ldr		r0, =gMapRange
 		ldr		r0, [r0]
 		mov		r1, #0
 		blh		ClearMapWith, r2
@@ -71,10 +76,6 @@
 			blh		MapSetInMagicSealedRange, r1
 				
 		NoMagicRange:
-		ldr		r0, =gMapRange
-		ldr		r0, [r0]
-		mov		r1, #0
-		blh		ClearMapWith, r2
 		ldr		r0, [r5]
 		blh		GetUnitUseFlags, r1
 		cmp		r0, #2
