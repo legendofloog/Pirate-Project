@@ -695,3 +695,72 @@
 // TheanaAssassin
 	setPalette(171,TheanaAssassin)
 	setCBSP(171,Theana, 3, Assassin_F)
+
+// AssassinFTweak
+	setGenericPalette(0x130,AssassinFTweak)
+	setGenericPalette( 0x12F,AssassinFTweak)
+
+// AxeKnightTweak
+	setGenericPalette(0x136,AxeKnightTweak)
+	setGenericPalette( 0x137,AxeKnightTweak)
+	setGenericPalette( 0x138,AxeKnightTweak)
+
+// ChampionTweak
+	setGenericPalette(0x13F,ChampionTweak)
+	setGenericPalette( 0x140,ChampionTweak)
+	setGenericPalette( 0x141,ChampionTweak)
+	setGenericPalette( 0x160,ChampionTweak)
+	setGenericPalette( 0x161,ChampionTweak)
+	setGenericPalette( 0x162,ChampionTweak)
+
+// ConjurerTweak
+	setGenericPalette(0xED,ConjurerTweak)
+
+// CurateTweak
+	setGenericPalette(0xD7,CurateTweak)
+	setGenericPalette(0xD8,CurateTweak)
+
+// FighterFTweak
+	setGenericPalette(0xE4,FighterFTweak)
+	setGenericPalette( 0xE5,FighterFTweak)
+	setGenericPalette( 0xE6,FighterFTweak)
+
+// GunnerTweak
+	setGenericPalette(0x169,GunnerTweak)
+	setGenericPalette( 0x16A,GunnerTweak)
+	setGenericPalette( 0x16B,GunnerTweak)
+	setGenericPalette( 0x16C,GunnerTweak)
+
+// MageKnightTweak
+	setGenericPalette(0x14D,MageKnightTweak)
+	setGenericPalette( 0x14E,MageKnightTweak)
+	setGenericPalette( 0x14F,MageKnightTweak)
+	setGenericPalette( 0x150,MageKnightTweak)
+
+// MaligKnightTweak
+	setGenericPalette(0x119,MaligKnightTweak)
+	setGenericPalette( 0x11A,MaligKnightTweak)
+	setGenericPalette( 0x11B,MaligKnightTweak)
+
+// SageTweak
+	setGenericPalette(0x149,SageTweak)
+	setGenericPalette( 0x14A,SageTweak)
+
+// SageFTweak
+	setGenericPalette(0x14B,SageFTweak)
+	setGenericPalette( 0x14C,SageFTweak)
+
+// SeraphTweak
+	setGenericPalette(0x11C,SeraphTweak)
+	setGenericPalette( 0x11D,SeraphTweak)
+	setGenericPalette( 0x11E,SeraphTweak)
+
+// WolfriderTweak
+	setGenericPalette(0x131,WolfriderTweak)
+	setGenericPalette( 0x132,WolfriderTweak)
+	setGenericPalette( 0x133,WolfriderTweak)
+
+// DragonRiderTweak
+	setGenericPalette(0xDD,DragonRiderTweak)
+	setGenericPalette( 0xDE,DragonRiderTweak)
+	setGenericPalette( 0xDF,DragonRiderTweak)

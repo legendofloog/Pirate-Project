@@ -522,3 +522,45 @@ DalilaAssassinRematch:
 TheanaAssassin:
 	#incbin "./_palettes/TheanaAssassin.lzpal" 
 
+AssassinFTweak:
+	#incbin "./_palettes/AssassinFTweak.lzpal" 
+
+AxeKnightTweak:
+	#incbin "./_palettes/AxeKnightTweak.lzpal" 
+
+ChampionTweak:
+	#incbin "./_palettes/ChampionTweak.lzpal" 
+
+ConjurerTweak:
+	#incbin "./_palettes/ConjurerTweak.lzpal" 
+
+CurateTweak:
+	#incbin "./_palettes/CurateTweak.lzpal" 
+
+FighterFTweak:
+	#incbin "./_palettes/FighterFTweak.lzpal" 
+
+GunnerTweak:
+	#incbin "./_palettes/GunnerTweak.lzpal" 
+
+MageKnightTweak:
+	#incbin "./_palettes/MageKnightTweak.lzpal" 
+
+MaligKnightTweak:
+	#incbin "./_palettes/MaligKnightTweak.lzpal" 
+
+SageTweak:
+	#incbin "./_palettes/SageTweak.lzpal" 
+
+SageFTweak:
+	#incbin "./_palettes/SageFTweak.lzpal" 
+
+SeraphTweak:
+	#incbin "./_palettes/SeraphTweak.lzpal" 
+
+WolfriderTweak:
+	#incbin "./_palettes/WolfriderTweak.lzpal" 
+
+DragonRiderTweak:
+	#incbin "./_palettes/DragonRiderTweak.lzpal" 
+
