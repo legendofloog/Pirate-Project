@@ -720,11 +720,6 @@
 	setGenericPalette(0xD7,CurateTweak)
 	setGenericPalette(0xD8,CurateTweak)
 
-// FighterFTweak
-	setGenericPalette(0xE4,FighterFTweak)
-	setGenericPalette( 0xE5,FighterFTweak)
-	setGenericPalette( 0xE6,FighterFTweak)
-
 // GunnerTweak
 	setGenericPalette(0x169,GunnerTweak)
 	setGenericPalette( 0x16A,GunnerTweak)
