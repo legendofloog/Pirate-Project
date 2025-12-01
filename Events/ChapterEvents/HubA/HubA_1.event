@@ -147,8 +147,8 @@ UNIT
 
 UndergroundReinforcements:
 UNIT Geraldo Mercenary Geraldo Level(7, Enemy, True) [4, 4] 0 0 0 0 [SteelSword, IronBlade] ChargeAI
-UNIT Sentinel Archer Sanz Level(4, Enemy, True) [3, 10] 0 0 0 0 [IronBow] ChargeAI
-UNIT Sentinel Archer Sanz Level(4, Enemy, True) [21, 12] 0 0 0 0 [IronBow] ChargeAI
+UNIT Contractor Archer Sanz Level(4, Enemy, True) [3, 10] 0 0 0 0 [IronBow] ChargeAI
+UNIT Contractor Archer Sanz Level(4, Enemy, True) [21, 12] 0 0 0 0 [IronBow] ChargeAI
 UNIT Contractor Brigand Sanz Level(3, Enemy, True) [5, 16] 0 0 0 0 [IronAxe] ChargeAI
 UNIT Contractor Myrmidon Sanz Level(3, Enemy, True) [7, 17] 0 0 0 0 [IronSword] ChargeAI
 UNIT Contractor Brigand Sanz Level(3, Enemy, True) [22, 4] 0 0 0 0 [IronAxe] ChargeAI
@@ -303,12 +303,12 @@ Text(ChA1LeandraRecruitedDialogue)
 SVAL s3 1000
 TAKEMONEY
 CUSA Leandra
+POPUP ChA1LeandraRecruitPopup 0x5a // Item get! sfx, will hopefully get a def later
 ENUT 0x16 //set the enemy death flag since it won't be needed anymore
 MURE 2
 GOTO 3
 LABEL 2
 ENUF A1_LeandraRecruited
-POPUP ChA1LeandraRecruitPopup 0x5a // Item get! sfx, will hopefully get a def later
 LABEL 3
 NoFade
 ENDA
@@ -331,11 +331,11 @@ SVAL s3 1000
 TAKEMONEY 
 CUSA Leandra
 ENUT 0x16 //set the enemy death flag since it won't be needed anymore
+POPUP ChA1LeandraRecruitPopup 0x5a // Item get! sfx, will hopefully get a def later
 MURE 2
 GOTO 6
 LABEL 5
 ENUF A1_LeandraRecruited
-POPUP ChA1LeandraRecruitPopup 0x5a // Item get! sfx, will hopefully get a def later
 LABEL 6
 NoFade
 ENDA

@@ -7,13 +7,14 @@ ALIGN 4
 pMovModifiers: // Movement
 	POIN prAddUnitBaseMov prAddUnitMovBonus prGetItemMovBonus 
 	POIN prDebuffMov 
-	POIN prItemPassiveMov prSkillCelerity prSkillPoise prHangoverTonicCheck prArmorMarchCheck prEquipmentMov prHubMovement prLuaHubMovement
+	POIN prItemPassiveMov prSkillCelerity prSkillPoise prHangoverTonicCheck prArmorMarchCheck prEquipmentMov 
 	POIN WellRested SwiftBoost ContraryWinds_KiteDebuff prRebelRebelMovNerf RushStaffExtraMov
 	#ifdef STAIRS_ASM
 	POIN StairsMoveDebuff
 	#endif
 	POIN prNullifyIfFreeze prNullifyIfGuardAI ContraryWinds_NoMove
 	POIN prDeftHandsCheck prLiquidCourageCheck NailedDownMovPenalty // Nailed Down needs to go last cause it sets all other move bonus sources to 0
+	POIN prHubMovement prLuaHubMovement //put these at the end
 	#ifdef DEBUFFS_MIN_ZERO
 	POIN prMinZero
 	#endif

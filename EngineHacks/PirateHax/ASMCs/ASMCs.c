@@ -291,3 +291,32 @@ void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()
 	}	
 }
 
+void SetA6BombHPASMC() //idk why this gives glitched HP bars sometimes, but just dispensing with set unit status
+{
+    struct Unit* unit;
+    int j;
+
+    for (int i = FACTION_RED; i < FACTION_PURPLE; i++)
+    {
+        unit = GetUnit(i);
+        if (unit->pCharacterData->number != BombCharIDLink)
+        {
+            continue; //just go next if not bomb
+        }
+        
+        j = 0;
+        while (BombHPTable[j].bombHP != 0xFF)
+        {
+            if ((unit->xPos == BombHPTable[j].xCoord) && (unit->yPos == BombHPTable[j].yCoord))
+            {
+                unit->curHP = BombHPTable[j].bombHP;
+                break; //for this unit, we have found the bomb and set the HP; go to the next loop for the next unit
+            }
+            
+            j++;
+        }
+
+    }
+
+    //DisplayUnitAdditionalBlinkingIcons(); //refresh since otherwise the game cries for some reason?
+}

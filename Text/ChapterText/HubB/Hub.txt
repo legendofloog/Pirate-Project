@@ -682,7 +682,7 @@ Ch. B-1: What Once Was[X]
 Objective: Defeat Boss[X]
 
 ## HubB1Units
-Units: Dmitr (Brigand)[X]
+Units: Dmitr (Brute)[X]
 
 ## HubB1Loot
 Loot: A varied treasure collection.[X]
@@ -820,7 +820,7 @@ we'll be able to get what we need.[N]
 Hopefully, without any trouble[Beat][A][X]
 
 ## HubB2Confirm
-Stop at Port Receloso?[X]
+Visit Port Receloso?[X]
 
 ## HubB2Selection_No
 [ML][LoadRahel]
@@ -1027,7 +1027,7 @@ Ch. B-5: Green Mirage[X]
 Objective: Arrive[X]
 
 ## HubB5Units
-Unit: Fata (Monk)[X]
+Unit: Fata (Conjurer)[X]
 
 ## HubB5Loot
 Loot: Staves, as well as nonweapon items.[X]
@@ -1059,9 +1059,6 @@ Either way, they don't mean well.[A]
 [MR]
 We'll need to get these[N]
 pursuers off our tail, then.[AN]
-The armada is too slow to[N]
-confront them with broadsides,[AN]
-so we'll need some other way[Beat][A]
 [ML]
 On that note. I have a[N]
 suggestion, if you'll take it.[AN]
@@ -1880,8 +1877,8 @@ No.[A][X]
 [MidLeft][LoadBartz]
 [MidRight][LoadLua]
 [MidLeft]
-Ah, the good captain! You look busy,
-as always. What brings you here?
+Ah, the good captain! You look busy,[N]
+as always. What brings you here?[AN]
 [MidRight][3LB]
 Just doing my rounds, Bartz.[N]
 And checking how people feel about[Beat][N]
@@ -1890,7 +1887,7 @@ Everything that's happened, I guess.[AN]
 Ah, you mean becoming fugitives?[N]
 Certainly, that was more than[N]
 I bargained for when I joined[Beat][AN]
-But on the other hand, we certainly[N]
+But on the other hand, we at least[N]
 aren't kneeling to Incendivis, are we?[N]
 That's all I really wanted, captain.[AN]
 [MidRight]

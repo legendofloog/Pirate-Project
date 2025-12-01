@@ -22,6 +22,7 @@
 #define Fighter_F 0x96
 //#define Brigand 0x41
 #define Barbarian 0x41
+#define Brute Barbarian
 
 //#define Archer 0x19
 //#define Archer_F 0x1a
@@ -235,10 +236,10 @@
 #define Thief_FMapSprite 0xa3
 #define Rogue_FMapSprite 0xa4
 #define Berserker_FMapSprite 0xa5
+#define KiteMapSprite 0xa6
 
 //placeholders for now
 #define DragoonMapSprite SwordKnightMapSprite 
-#define KiteMapSprite LogMapSprite // 0x9e
 #define AdmiralMapSprite CaptainMapSprite
 
 #define Gunner_FMapSprite GunnerMapSprite

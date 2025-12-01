@@ -52,7 +52,7 @@ Lance Cav[X]
 
 ## LanceCavDesc
 Weapons: Lance[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## WardenName
 Warden[X]
@@ -112,7 +112,7 @@ Traits: Flight, Canto, Aid+[X]
 
 ## TroubadourDesc
 Weapons: Staff[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## SoldierDesc
 Weapons: Lance[N]
@@ -123,14 +123,14 @@ Sword Cav[X]
 
 ## SwordCavDesc
 Weapons: Sword[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## AxeCavName
 Axe Cav[X]
 
 ## AxeCavDesc
 Weapons: Axe[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## GriffinRiderName
 Griffin Rider[X]
@@ -162,7 +162,7 @@ Cataphract[X]
 
 ## CataphractDesc
 Weapons: Axe, Lance[N]
-Traits: Unbreakable, Canto, Aid+[X]
+Traits: Unbreakable, Canto+, Aid+[X]
 
 ## MasterNinjaName
 Master Ninja[X]
@@ -198,7 +198,7 @@ Mage Knight[X]
 
 ## MageKnightDesc
 Weapons: Tome, Lance[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## BombardierName
 Bombardier[X]
@@ -226,7 +226,7 @@ Bow Cav[X]
 
 ## BowCavDesc
 Weapons: Bow[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## RuneshieldName
 Runeshield[X]
@@ -240,7 +240,7 @@ Wolfrider[X]
 
 ## WolfKnightDesc
 Weapons: Knife, Lance[N]
-Traits: Steal, Locktouch, Canto[X]
+Traits: Steal, Locktouch, Canto+[X]
 
 ## ClericDesc
 Weapons: Staves[N]
@@ -288,10 +288,10 @@ Traits: Steal, Locktouch[X]
 
 ## RangerDesc
 Weapons: Bows, Swords[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## MaligKnightName
-Malig Knight[X]
+Malig Rider[X]
 
 ## MaligKnightDesc
 Weapons: Axes, Tomes[N]
@@ -306,7 +306,7 @@ Dragoon[X]
 
 ## DragoonDesc
 Weapons: Swords, Guns[N]
-Traits: Canto, Aid+[X]
+Traits: Canto+, Aid+[X]
 
 ## DeadPeerName
 Corpse[X]
@@ -353,35 +353,35 @@ Savior[X]
 
 ## SaviorDesc
 Weapons: Staves[N]
-Traits: Canto+, Aid+[X]
+Traits: Canto+, Aid+, Move+[X]
 
 ## SwordKnightName
 Sword Knight[X]
 
 ## SwordKnightDesc
 Weapons: Swords[N]
-Traits: Canto+, Aid+[X]
+Traits: Canto+, Aid+, Move+[X]
 
 ## AxeKnightName
 Axe Knight[X]
 
 ## AxeKnightDesc
 Weapons: Axes[N]
-Traits: Canto+, Aid+[X]
+Traits: Canto+, Aid+, Move+[X]
 
 ## LanceKnightName
 Lance Knight[X]
 
 ## LanceKnightDesc
 Weapons: Lances[N]
-Traits: Canto+, Aid+[X]
+Traits: Canto+, Aid+, Move+[X]
 
 ## BowKnightName
 Bow Knight[X]
 
 ## BowKnightDesc
 Weapons: Bows[N]
-Traits: Canto+, Aid+[X]
+Traits: Canto+, Aid+, Move+[X]
 
 ## HorseName
 Horse[X]

@@ -1,34 +1,20 @@
 #define NormalBattleBackground 0x0
-
 #define SnowFortBattleBackground 0x1
 
-#define FortBattleBackground 0x2
-
 #define PirateCoveBattleBackground 0x3
-
 #define AirshipBattleBackground 0x4
-
-#define OutdoorFortBattleBackground 0x5
 
 #define VillageBattleBackground 0x6
 
 #define DesertBattleBackground 0x9
 
+#define FortBattleBackground 0xA
+
 #define CastleBattleBackground 0xF
-
-#define MountainousSkyBattleBackground 0xB
-
-#define MountainousBattleBackground 0xC
-
-#define ForestBattleBackground 0xD
-
-#define DesertTownBattleBackground 0x10
 
 #define NightCastleBattleBackground 0x11
 
 #define MountainBattleBackground 0x12
-
-#define TempleBattleBackground 0x13
 
 #define SunsetTempleBattleBackground 0x14
 

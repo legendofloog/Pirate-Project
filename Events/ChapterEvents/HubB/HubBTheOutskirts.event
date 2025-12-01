@@ -125,8 +125,8 @@ HubBArmory1: //1/1-2 range, steels, and silvers: 15 items
 SHLI LightBrand SteelSword SilverSword Javelin SteelLance SilverLance HandAxe SteelAxe SilverAxe MiniBow SteelBow SilverBow SteelKnife SteelDagger SilverKnife SteelMusket Blunderbuss SilverMusket 
 
 ALIGN 4
-HubBArmory2: //Effectives + quirked up weapons that are not common: 12 items
-SHLI Estoc Wingclipper Harpoon Horseslayer Hammer Oversize Longbow Tomereaver Stiletto RuneDagger Culverin Pistol
+HubBArmory2: //Effectives + quirked up weapons that are not common: 15 items
+SHLI Estoc Wingclipper Peacekeeper Harpoon Horseslayer Sidepierce Hammer RecoilAxe Oversize Tomereaver ShiningBow Snapshot Stiletto RuneDagger Bloodletter Blunderbuss Culverin Pistol 
 ALIGN 4
 
 //neltume recruitment (visit an odd tile in a forest and have one unit with forest friend skill) (lol)

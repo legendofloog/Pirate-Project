@@ -9,7 +9,7 @@ None,0,0
 0x07 Estelle,2,50
 0x08 Hermenegildo,9,65
 0x09 MrYodsen,5,20
-0x0A Durgham,2,30
+0x0A Durgham,1,25
 0x0B Indio,1,70
 0x0C Leandra,3,14
 0x0D Jaime,2,30
@@ -128,7 +128,7 @@ None,0,0
 0x7E BlackheartPlus,2,5
 0x7F - Keeper,5,30
 0x80 Grado Soldier (Main),3,5
-0x81 - Horse,8,50
+0x81 - Horse,0,0
 0x82 - C2BerserkerThatGetsShot,0,0
 0x83 Explorer,10,65
 0x84 Armorer,10,45

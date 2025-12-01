@@ -732,3 +732,14 @@ Berserker_FSMS:
 ALIGN 4
 Berserker_FMMS:
 #incbin "Dmp/Berserker (F) Hawkzerker Axe {Pikmin, Der}-walk.dmp"
+
+StandingMapSprite(KiteMapSprite,MapSprite16x16,KiteSMS)
+MovingMapSprite(Kite, $1C3D7C, KiteMMS)
+
+ALIGN 4
+KiteSMS:
+#incbin "Dmp/G5 Sentry Bot (U) (Colored plating, Colored Visor) {Shuusuke}-stand.dmp"
+
+ALIGN 4
+KiteMMS:
+#incbin "Dmp/G5 Sentry Bot (U) (Colored plating, Colored Visor) {Shuusuke}-walk.dmp"

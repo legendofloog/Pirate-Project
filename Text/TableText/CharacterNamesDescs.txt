@@ -238,7 +238,7 @@ Tangyuan[X]
 Drifter[X]
 
 ## TangyuanDesc
-A former carpenter that abandoned her[N]
+A former carpenter who abandoned her[N]
 wife and children to seek [OpenQuote]adventure[CloseQuote].[X]
 
 ## OrlandoName

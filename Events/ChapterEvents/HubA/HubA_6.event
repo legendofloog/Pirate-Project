@@ -15,15 +15,6 @@ POIN BeginningScene EndingScene
 #define A6PirateLevel 2
 #define A6RebelLevel 4
 
-#define Bomb1Timer 11
-#define Bomb2Timer 8
-#define Bomb3Timer 10
-#define Bomb4Timer 9
-#define Bomb5Timer 3
-#define Bomb6Timer 5
-#define Bomb7Timer 8
-#define Bomb8Timer 6
-
 TurnBasedEvents:
 TurnEventPlayer(0, LeftThiefEvent, 5)
 TurnEventPlayer(0, RightThiefEvent, 6)
@@ -456,25 +447,14 @@ REMOVE_CURSORS
 SetBackground(0x34)
 Text(ChA6Pre4)
 FADI 15
-
-WEATHER 7
-CLEN 0
-CLEE 0
-CLEA 0
+RemoveAll
 LoadPlayerUnits(NewUnits)
 LoadEnemies(EnemyUnitsBosses)
 LoadEnemies(EnemyUnits1)
 LoadEnemies(EnemyUnits2)
 LoadEnemies(EnemyUnits3)
 LoadEnemies(EnemyUnitsBombs)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb1Timer,AnyDeployed,AnyArmy,AnyClass,Area(13,2,13,2),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb2Timer,AnyDeployed,AnyArmy,AnyClass,Area(5,8,5,8),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb3Timer,AnyDeployed,AnyArmy,AnyClass,Area(12,10,12,10),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb4Timer,AnyDeployed,AnyArmy,AnyClass,Area(19,6,19,6),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb5Timer,AnyDeployed,AnyArmy,AnyClass,Area(3,16,3,16),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb6Timer,AnyDeployed,AnyArmy,AnyClass,Area(11,14,11,14),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb7Timer,AnyDeployed,AnyArmy,AnyClass,Area(14,12,14,12),AnyItem)
-SetUnitStatusAll(Bomb,CurrentHP,Bomb8Timer,AnyDeployed,AnyArmy,AnyClass,Area(21,16,21,16),AnyItem)
+SetA6BombHP
 ENUN
 GotoPrepScreen
 NoFade

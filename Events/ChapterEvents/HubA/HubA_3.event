@@ -26,8 +26,8 @@ TurnEventPlayer(0, A3Explanation, 1)
 TurnEventPlayer(A3Spawn1TurnFlag, A3Reinforce1, 1, 255) //bottom left fort spawn
 TurnEventPlayer(A3Spawn2TurnFlag, A3Reinforce2, 1, 255)
 TurnEventPlayer(A3Spawn3TurnFlag, A3Reinforce3, 1, 255)
-TurnEventPlayer(0, SpiritWarning, 7)
-Survive(GameOverYeaaaaah,13)
+TurnEventPlayer(0, SpiritWarning, 9)
+Survive(GameOverYeaaaaah,12)
 END_MAIN
 
 SpiritWarning:
@@ -185,13 +185,13 @@ ENDA
 
 CutsceneUnits:
 UNIT Lua 0 0 Level(10,Ally,False) [2,15]  0 0 1 REDA2R6 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Ondeh 0 0 Level(4,Ally,True) [2,16]  0x0 0 1 REDA3R7 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,Ally,True) [2,16]  0x0 0 1 REDA3R7 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,Ally,True) [3,16]   0x0 0 1 REDA1R7 [IronLance,Vulnerary] NoAI
 UNIT
 
 Units1:
 UNIT Lua 0 0 Level(10,Ally,False) [2,6] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Ondeh 0 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,Ally,False) [3,5] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
 UNIT Pilar 0 0 Level(8,Ally,False) [2,5] 0 0 0 0 [Vulnerary] NoAI
 UNIT Pilar 0 0 Level(8,Ally,False) [1,4] 0 0 0 0 [Vulnerary] NoAI
@@ -204,7 +204,7 @@ UNIT
 
 Units2:
 UNIT Lua 0 0 Level(10,Ally,False) [2,6] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Ondeh 0 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,Ally,False) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,Ally,False) [3,5] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
 UNIT Pilar 0 0 Level(8,Ally,False) [2,5] 0 0 0 0 [Vulnerary] NoAI
 UNIT Pilar 0 0 Level(8,Ally,False) [1,4] 0 0 0 0 [Vulnerary] NoAI
@@ -218,7 +218,7 @@ UNIT Pilar 0 0 Level(8,Ally,False) [4,3] 0 0 0 0 [Vulnerary] NoAI
 UNIT
 
 NewPlayerUnits:
-UNIT Ondeh 0 0 Level(4,Ally,True) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,Ally,True) [1,5] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,Ally,True) [3,5] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
 UNIT
 
@@ -235,9 +235,9 @@ ENDTRAP
 ALIGN 4
 
 BossGroup:
-UNIT Sargargala 0 0 Level(7,Enemy,True) [18,14]  0 0 1 REDA17R14 [KillerLance, LightBrand] BossAI
-UNIT RiojaReaper Vanguard 0 Level(3, Enemy, True) [18,13] 0 0 1 REDA17R13 [HandAxe] BossAI
-UNIT RiojaReaper Vanguard 0 Level(3, Enemy, True) [18,15] 0 0 1 REDA17R15 [HandAxe] BossAI
+UNIT Sargargala 0 0 Level(7,Enemy,True) [18,14]  0 0 1 REDA18R14 [KillerLance, LightBrand] BossAI
+UNIT RiojaReaper Vanguard 0 Level(3, Enemy, True) [18,13] 0 0 1 REDA18R13 [HandAxe, SteelLance] BossAI
+UNIT RiojaReaper Vanguard 0 Level(3, Enemy, True) [18,15] 0 0 1 REDA18R15 [Javelin, SteelAxe] BossAI
 UNIT
 
 EnemyGroup:
@@ -246,20 +246,26 @@ UNIT RiojaReaper Deserter 0 Level(3, Enemy, True) [3,13] 0 0 1 REDA4R8 [SteelLan
 
 UNIT RiojaReaper Archer 0 Level(3, Enemy, True) [10,11] 0 0 1 REDA10R9 [Longbow, TealGem] AttackWhenInRangeAI
 
-UNIT RiojaReaper Brigand 0 Level(3, Enemy, True) [10,14] 0 0 0 0 [HandAxe] BossAI
+UNIT RiojaReaper Fighter 0 Level(3, Enemy, True) [10,14] 0 0 0 0 [HandAxe] BossAI
 UNIT RiojaReaper Shaman 0 Level(3, Enemy, True) [10,15] 0 0 0 0 [Elfire] BossAI
 
 UNIT RiojaReaper Shaman 0 Level(3, Enemy, True) [16,10] 0 0 0 0 [Elfire] BossAI
 UNIT RiojaReaper Deserter 0 Level(3, Enemy, True) [17,10] 0 0 0 0 [Javelin] BossAI
 
 UNIT RiojaReaper Fighter 0 Level(3, Enemy, True) [2,11] 0 0 0 0 [SteelAxe] GroupOneAI
-UNIT RiojaReaper Archer 0 Level(4, Enemy, True) [0,13] 0 0 0 0 [Tomereaver, Longbow] GroupOneAI
+UNIT RiojaReaper Archer 0 Level(4, Enemy, True) [0,13] 0 0 0 0 [SteelBow, Longbow] GroupOneAI
 UNIT RiojaReaper Myrmidon 0 Level(3, Enemy, True) [5,15] 0 0 0 0 [Onigiri] GroupOneAI
 UNIT RiojaReaper Thief 0 Level(3, Enemy, True) [8,12] 0 0 0 0 [SteelKnife] AttackWhenInRangeAI
 
-UNIT RiojaReaper Mage 0 Level(3, Enemy, True) [14,1] 0 0 1 REDA6R0 [Fire] GroupTwoAI
-UNIT RiojaReaper Soldier 0 Level(4, Enemy, True) [14,4] 0 0 1 REDA12R4 [Pike, Pitchfork] AttackInTwoAI
-UNIT RiojaReaper Brigand 0 Level(3, Enemy, True) [15,0] 0 0 0 0 [IronAxe] GroupTwoAI
+UNIT RiojaReaper Warlock 0 Level(3, Enemy, True) [14,1] 0 0 1 REDA6R0 [Fire] AttackInRangeAI
+UNIT RiojaReaper Deserter 0 Level(4, Enemy, True) [14,4] 0 0 1 REDA12R4 [Pike, Pitchfork] AttackInTwoAI
+
+
+
+UNIT RiojaReaper Brute 0 Level(3, Enemy, True) [15,0] 0 0 0 0 [IronAxe] GroupTwoAI
+UNIT RiojaReaper Archer 0 Level(4, Enemy, True) [18,0] 0 0 0 0 [SteelBow, Tomereaver] GroupTwoAI
+UNIT RiojaReaper Brute 0 Level(3, Enemy, True) [18,3] 0 0 0 0 [IronAxe] GroupTwoAI
+
 
 UNIT RiojaReaper Archer 0 Level(4, Enemy, True) [12,9] 0 0 0 0 [IronBow] AttackWhenInRangeAI
 

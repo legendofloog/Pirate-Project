@@ -1161,7 +1161,7 @@ Shade+: Enemies won't[N]
 target this unit.[X]
 
 ## SD_Imbue
-Imbue: Heal HP equal to magic[N]
+Imbue: Heal HP equal to Mag[N]
 at the start of each turn.[X]
 
 ## SD_Thighdeology
@@ -1600,9 +1600,9 @@ Biding Blow: If the opponent[N]
 cannot counter, this unit doubles.[X]
 
 ## SD_SuppressiveFire
-Suppressive Fire: If an ally battles[N]
-an enemy within range of this unit's[N]
-weapon, ally ignores half of enemy Avo.[X]
+Suppressive Fire: Enemies within this[N]
+unit's weapon's range have their Avo[N]
+halved (maximum effect range: 8 tiles).[X]
 
 ## SD_SurpriseAttack
 Surprise Attack: If foe cannot counter,[N]
@@ -1643,9 +1643,9 @@ Breaks an enemy, they gain an additional[N]
 follow-up attack immediately after.[X]
 
 ## SD_LiquidCourage
-Liquid Courage: Once a turn, when this[N]
-unit uses an item, they act, not move,[N]
-again, gaining 1 Str/Dex/Spd (decays).[X]
+Liquid Courage: Once a turn, when unit[N]
+uses Item (drinks), they act, not move,[N]
+again, gaining 2 Str/Dex/Spd (decays).[X]
 
 ## SD_ArmsMastery
 Arms Mastery: If this unit initiates[N]
@@ -1659,8 +1659,8 @@ allies within 3 spaces randomly gain[N]
 
 ## SD_CatchingUp
 Catching Up: If an enemy would follow[N]
-up against this unit, Atk increases by[N]
-(Enemy Spd - Unit Spd - 5).[X]
+up against this unit, Atk increases[N]
+by (Enemy AS - Unit AS).[X]
 
 ## SD_Nonconforming
 Nonconforming: This unit can reverse[N]
@@ -1716,9 +1716,9 @@ Dogfight: If unit's AS > foe's AS, unit[N]
 can counter regardless of foe's range.[X]
 
 ## SD_Equalizer
-Equalizer: If an ally within 3 tiles[N]
-has less Atk than their target, ally[N]
-and target Atk = average of both.[X]
+Equalizer: If an ally within 3 tiles has[N]
+< Atk than target, ally and target Atk[N]
+is average of both (if both can counter).[X]
  
 ## SD_Fuse
 Countdown: Lose one HP each turn.[N]
@@ -1772,7 +1772,7 @@ max HP damage at the start of the turn.[X]
 ## SD_ArcaneArtifice
 Arcane Artifice: If this unit's weapon[N]
 uses MAG and the enemy's doesn't,[N]
-Avo+50% (unit must be able to counter).[X]
+Avo x 1.5 (unit must be able to counter).[X]
 
 ## SD_Dismount
 Scouting Ahead: This unit can switch[N]
@@ -1826,7 +1826,7 @@ an ally using the Pollinate command.[X]
 ## SD_BoardingParty
 Boarding Party: This unit can place[N]
 bridges on adjacent unoccupied tiles.[N]
-Costs 250 gold to use.[X]
+Costs 200 gold to use.[X]
 
 ## SD_ContraryWinds
 Contrary Winds: This unit can Summon[N]

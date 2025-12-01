@@ -58,7 +58,7 @@ Estoc[X]
 Peacekeeper[X]
 
 ## PeacekeeperDesc
-Can't be countered.[X]
+Can't be countered or counter.[X]
 
 ## LunarBladeName
 Lunar Blade[X]

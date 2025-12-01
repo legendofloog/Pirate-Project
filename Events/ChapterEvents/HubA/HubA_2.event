@@ -21,7 +21,7 @@ TurnBasedEvents:
 TurnEventPlayer(0,JaimeConvo,1)
 TurnEventPlayer(0,Reinforcements1,3)
 TurnEventPlayer(0,Reinforcements1,5)
-TurnEventPlayer(0,GameOverMan,9)
+TurnEventPlayer(0,GameOverMan,10)
 TurnEventPlayer(0x13, SierraCharge, 1, 255)
 END_MAIN
 
@@ -122,7 +122,7 @@ ENDA
 
 Units1:
 UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, IronSword, Vulnerary] NoAI
+UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, LightBrand, Vulnerary] NoAI
 UNIT Leonor Cleric_F 0 Level(6,Ally,True) [10,11] 0 0 0 0 [Barrier, Heal, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
@@ -135,7 +135,7 @@ UNIT
 
 Units2:
 UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
-UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, IronSword, Vulnerary] NoAI
+UNIT Jaime PegasusRider 0 Level(4,Ally,True) [10,13] 0 0 0 0 [SteelSword, LightBrand, Vulnerary] NoAI
 UNIT Leonor Cleric_F 0 Level(6,Ally,True) [10,11] 0 0 0 0 [Barrier, Heal, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [8,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(10,Ally,False) [9,12] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
@@ -149,7 +149,7 @@ UNIT Pilar 0 0 Level(10,Ally,False) [12,15] 0 0 0 0 [Cutlass, IronSword, IronMus
 UNIT
 
 JaimeAndLua:
-UNIT Jaime PegasusRider 0 Level(4,Ally,True) [11,18] 0 0 0 0 [SteelSword, IronSword, Vulnerary] NoAI
+UNIT Jaime PegasusRider 0 Level(4,Ally,True) [11,18] 0 0 0 0 [SteelSword, LightBrand, Vulnerary] NoAI
 UNIT Lua Captain 0 Level(10,Ally,False) [12,18] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT
 

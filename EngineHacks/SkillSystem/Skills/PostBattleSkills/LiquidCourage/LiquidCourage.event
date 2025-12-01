@@ -6,13 +6,13 @@ LiquidCourageIDLink:
 BYTE LiquidCourageID
 
 LiquidCourageStrLink:
-BYTE 1
+BYTE 2
 
 LiquidCourageSklLink:
-BYTE 1
+BYTE 2
 
 LiquidCourageSpdLink:
-BYTE 1
+BYTE 2
 
 LiquidCourageConsumables:
 BYTE Vulnerary Elixir PureWater Tonic

@@ -44,6 +44,13 @@ ldrb r0, [r0,r1]
 ldr r3, =0x08017684 @max range getter
 mov lr, r3
 .short 0xF800
+
+cmp r0, #8
+blt CheckAura		
+
+	mov r0, #8	@ if the range is higher than 8, then set max to 8
+	
+CheckAura:
 push {r0} @preserve the range cause we need it for later
 
 @now we check enemies in skill holder's attack range

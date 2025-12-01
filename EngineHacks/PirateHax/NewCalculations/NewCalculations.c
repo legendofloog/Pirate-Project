@@ -392,17 +392,29 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
     if (unit->pow > promotedClass->maxPow){
         unit->pow = promotedClass->maxPow;
     }
+    else if (unit->pow < 0)
+    {
+        unit->pow = 0;
+    }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
 	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
         unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
+    else if (unit->mag < 0)
+    {
+        unit->mag = 0;
+    }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
     if (unit->skl > promotedClass->maxSkl){
         unit->skl = promotedClass->maxSkl;
+    }
+    else if (unit->skl < 0)
+    {
+        unit->skl = 0;
     }
         
 
@@ -411,6 +423,10 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
     if (unit->spd > promotedClass->maxSpd){
         unit->spd = promotedClass->maxSpd;
     }
+    else if (unit->spd < 0)
+    {
+        unit->spd = 0;
+    }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
@@ -418,17 +434,29 @@ void ApplyUnitDefaultPromotion(struct Unit* unit) {
     if (unit->def > promotedClass->maxDef){
         unit->def = promotedClass->maxDef;
     }
+    else if (unit->def < 0)
+    {
+        unit->def = 0;
+    }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
     if (unit->res > promotedClass->maxRes){
 		unit->res = promotedClass->maxRes;
 	}
+    else if (unit->res < 0)
+    {
+        unit->res = 0;
+    }
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
 	if (unit->lck > 40){ //ok it's always 40 on promo so
         unit->lck = 40;
+    }
+    else if (unit->lck < 0)
+    {
+        unit->lck = 0;
     }
 
     // Remove base class' base wexp from unit wexp
@@ -476,17 +504,29 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
     if (unit->pow > promotedClass->maxPow){
         unit->pow = promotedClass->maxPow;
     }
+    else if (unit->pow < 0)
+    {
+        unit->pow = 0;
+    }
 
 	unit->mag += (MagClassTable[promotedClass->number].baseMag - MagClassTable[currentClass->number].baseMag);
 
 	if (unit->mag > MagClassTable[promotedClass->number].maxMag){
         unit->mag = MagClassTable[promotedClass->number].maxMag;
     }
+    else if (unit->mag < 0)
+    {
+        unit->mag = 0;
+    }
 		
     unit->skl += (promotedClass->baseSkl - currentClass->baseSkl);
 
     if (unit->skl > promotedClass->maxSkl){
         unit->skl = promotedClass->maxSkl;
+    }
+    else if (unit->skl < 0)
+    {
+        unit->skl = 0;
     }
         
 
@@ -495,6 +535,10 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
     if (unit->spd > promotedClass->maxSpd){
         unit->spd = promotedClass->maxSpd;
     }
+    else if (unit->spd < 0)
+    {
+        unit->spd = 0;
+    }
         
 
     unit->def += (promotedClass->baseDef - currentClass->baseDef);
@@ -502,17 +546,29 @@ void ApplyUnitPromotion(struct Unit* unit, u8 classId) {
     if (unit->def > promotedClass->maxDef){
         unit->def = promotedClass->maxDef;
     }
+    else if (unit->def < 0)
+    {
+        unit->def = 0;
+    }
 
     unit->res += (promotedClass->baseRes - currentClass->baseRes);
 
     if (unit->res > promotedClass->maxRes){
 		unit->res = promotedClass->maxRes;
 	}
+    else if (unit->res < 0)
+    {
+        unit->res = 0;
+    }
 
 	unit->lck += (promotedClass->baseLck - currentClass->baseLck);
 
 	if (unit->lck > 40){ //ok it's always 40 on promo so
         unit->lck = 40;
+    }
+    else if (unit->lck < 0)
+    {
+        unit->lck = 0;
     }
 		
 
@@ -1146,4 +1202,49 @@ void UnitChangeFaction(struct Unit* unit, int faction) {
     {
         GetUnit(newUnit->rescueOtherUnit)->rescueOtherUnit = newUnit->index;
     }
+}
+
+void ExecPureWaterItem(Proc* proc) {
+    BattleInitItemEffect(GetUnit(gActionData.subjectIndex),
+        gActionData.itemSlotIndex);
+
+    GetUnit(gActionData.subjectIndex)->barrierDuration = 5; //i'm a hater.
+
+    BattleApplyItemEffect(proc);
+    BeginBattleAnimations();
+
+    return;
+}
+
+void TryAddUnitToTradeTargetList(struct Unit* unit) {
+
+    if (!AreAllegiancesEqual(gUnitSubject->index, unit->index)) {
+        return;
+    }
+
+    if (unit->statusIndex != UNIT_STATUS_BERSERK) {
+
+        if (gUnitSubject->items[0] != 0 || unit->items[0] != 0) {
+
+            if (!(UNIT_CATTRIBUTES(unit) & CA_SUPPLY)) {
+                AddTarget(unit->xPos, unit->yPos, unit->index, 0);
+            }
+        }
+    }
+
+    if (unit->state & US_RESCUING) {
+        struct Unit* rescue = GetUnit(unit->rescueOtherUnit);
+
+        if (UNIT_FACTION(rescue) != FACTION_BLUE) {
+            return;
+        }
+
+        if (gUnitSubject->items[0] == 0 && rescue->items[0] == 0 ) {
+            return;
+        }
+
+        AddTarget(unit->xPos, unit->yPos, rescue->index, 0);
+    }
+
+    return;
 }

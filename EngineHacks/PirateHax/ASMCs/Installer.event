@@ -9,6 +9,9 @@
 #define CheckTileChangeTriggered(tileChangeId) "SVAL s1 tileChangeId; ASMC CheckIfTileChangeTriggered"
 #define SetDifficulty(difficultyId) "SVAL s1 difficultyId; ASMC SetDifficultyASMC"
 #define ClearAllDebuffsBeforePreps "ASMC UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC"
+#define SetA6BombHP "ASMC SetA6BombHPASMC"
+#define BombHPTableEntry(xCoord, yCoord, HP) "BYTE xCoord yCoord HP"
+#define BombHPTableTerminator "BYTE 0xFF 0xFF 0xFF"
 
 ALIGN 4
 SuppliesItemIDLink:
@@ -21,3 +24,24 @@ BYTE Bomb
 ALIGN 4
 ForestFriendIDLink:
 BYTE ForestFriendID
+
+#define Bomb1Timer 11
+#define Bomb2Timer 8
+#define Bomb3Timer 10
+#define Bomb4Timer 9
+#define Bomb5Timer 3
+#define Bomb6Timer 5
+#define Bomb7Timer 8
+#define Bomb8Timer 6
+
+ALIGN 4
+BombHPTable:
+BombHPTableEntry(13, 2, Bomb1Timer)
+BombHPTableEntry(5, 8, Bomb2Timer)
+BombHPTableEntry(12, 10, Bomb3Timer)
+BombHPTableEntry(19, 6, Bomb4Timer)
+BombHPTableEntry(3, 16, Bomb5Timer)
+BombHPTableEntry(11, 14, Bomb6Timer)
+BombHPTableEntry(14, 12, Bomb7Timer)
+BombHPTableEntry(21, 16, Bomb8Timer)
+BombHPTableTerminator

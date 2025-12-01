@@ -168,11 +168,11 @@ Sword Knight,1,5,40,0
 Axe Knight,1,5,40,0
 Lance Knight,6,25,40,0
 Bow Knight,1,5,30,0
-Horse,1,10,30,0
+Horse,0,0,30,0
 Gryphoknight_D,4,30,40,0
 Kite,1,10,30,0
 Sage_Hermen,13,55,40,0
-Airship,1,10,30,0
+Airship,0,5,30,0
 Admiral,10,5,40,0
 Champion_F,1,5,40,0
 Thief_F,0,5,30,0

@@ -2,6 +2,9 @@ bool CanBattleUnitGainExp(BattleUnit* actor, BattleUnit* target);
 bool CanBattleUnitGainLevels(BattleUnit* battleUnit);
 int GetLevelDifference(BattleUnit* actor, BattleUnit* target);
 int GetNPCStatIncrease(int growth);
+void TryAddUnitToTradeTargetList(struct Unit* unit);
+bool AreAllegiancesEqual(int left, int right);
+extern struct Unit* gUnitSubject;
 
 #define BITPACKED __attribute__((aligned(4), packed))
 
@@ -280,3 +283,8 @@ enum
     FACTION_ID_RED    = 2,
     FACTION_ID_PURPLE = 3,
 };
+
+void ExecPureWaterItem(Proc* proc);
+
+void BattleApplyItemEffect(struct Proc* proc);
+void BeginBattleAnimations(void);

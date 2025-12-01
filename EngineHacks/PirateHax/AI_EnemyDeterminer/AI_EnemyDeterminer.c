@@ -43,23 +43,22 @@ s8 IsUnitEnemyWithActiveUnit(struct Unit* unit) { //for AI specifically, unit is
 }
 
 
-/*
+
 bool IsUnitAValidTarget(Unit* actor, Unit* target){ //this is for player units i believe, don't actually need anything for this currently but copied it over in case I do
     if (AreUnitsAllied(target->index, actor->index)){
         return false;
     }
-    if (gSkillTester(target, NonCombatantIDLink)){
-        return false;
+    if (target->pCharacterData->number == OrlandoCharIDLink){
+        return false; //can't attack orlando in A-1!!
     }
     return true;
 }
-*/
 
-/*
+
 void AddUnitToTargetListIfNotAllied(struct Unit* unit) {
 
     if (IsUnitAValidTarget(gActiveUnit, unit)){
         AddTarget(unit->xPos, unit->yPos, unit->index, 0);
     }
     return;
-}*/
+}

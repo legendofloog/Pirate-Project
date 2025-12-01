@@ -5,28 +5,28 @@ EventPointerTable(FlasubanVillageTileAnimationsID, FlasubanVillageTileAnimations
 
 ALIGN 4
 FlasubanVillageTileAnimations0:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims000.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_000.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations1:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims001.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_001.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations2:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims002.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_002.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations3:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims003.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_003.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations4:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims004.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_004.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations5:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims005.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_005.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations6:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims006.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_006.dmp"
 ALIGN 4
 FlasubanVillageTileAnimations7:
-#incbin "TilesetAnimations/FlasubanVillage/snowvillageanims007.dmp"
+#incbin "TilesetAnimations/FlasubanVillage/flasubanvillage.mapanime1_007.dmp"
 
 ALIGN 4
 FlasubanVillageTileAnimations:
@@ -186,28 +186,28 @@ EventPointerTable(FlasubanFrontierAnimationsID, FlasubanFrontierAnimations)
 
 ALIGN 4
 FlasubanFrontierTileAnim0:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_000.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_000.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim1:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_001.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_001.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim2:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_002.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_002.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim3:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_003.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_003.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim4:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_004.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_004.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim5:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_005.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_005.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim6:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_006.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_006.dmp"
 ALIGN 4
 FlasubanFrontierTileAnim7:
-#incbin "TilesetAnimations/Frontier/frontieranims.mapanime_1_007.dmp"
+#incbin "TilesetAnimations/Frontier/frontieranims.mapanime1_007.dmp"
 
 ALIGN 4
 FlasubanFrontierAnimations:

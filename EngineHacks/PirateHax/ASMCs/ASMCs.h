@@ -159,3 +159,16 @@ extern void UnsetProtectBits(Unit* unit);
 extern void UnsetConcentrateBits(Unit* unit);
 extern void UnsetFortuneBits(Unit* unit);
 extern void UnsetRushBits(Unit* unit);
+
+typedef struct BombHPTimerEntry BombHPTimerEntry;
+
+struct BombHPTimerEntry
+{
+    u8 xCoord;
+    u8 yCoord;
+    u8 bombHP;
+};
+
+extern struct BombHPTimerEntry BombHPTable[];
+
+extern void DisplayUnitAdditionalBlinkingIcons();

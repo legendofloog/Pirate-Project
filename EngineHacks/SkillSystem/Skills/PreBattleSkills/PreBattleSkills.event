@@ -378,9 +378,12 @@ WORD StunningSmileID
 
 ALIGN 4
 SurpriseAttack:
-#incbin "SurpriseAttack/SurpriseAttack.dmp"
-POIN SkillTester
-WORD SurpriseAttackID
+#include "SurpriseAttack/SurpriseAttack.lyn.event"
+
+ALIGN 4
+SurpriseAttackIDLink:
+BYTE SurpriseAttackID
+
 
 ALIGN 4
 CatchingUp:

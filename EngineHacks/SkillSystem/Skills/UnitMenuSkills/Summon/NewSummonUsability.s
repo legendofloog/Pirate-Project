@@ -3,6 +3,7 @@
 
 .equ SummonID,SkillTester+4
 .equ AlsoUseVanillaCheck,SummonID+4
+.equ HubFlagID,AlsoUseVanillaCheck+4
 
 .equ gActiveUnit,0x3004E50
 .equ ListSummonTargets,0x8025CA5
@@ -19,6 +20,13 @@
 @old at 80243D8
 
 push {r4-r6,r14}
+
+ldr r0,HubFlagID
+ldr r1,=CheckEventId
+mov r14,r1
+.short 0xF800
+cmp r0,#1		@ if we are in a hub, then no dice
+beq ReturnFalse
 
 ldr r5,=gActiveUnit
 ldr r2,[r5]

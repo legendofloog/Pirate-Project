@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="Tilesets/FlasubanVillage.tsx"/>
  <layer id="1" name="Tile Layer 1" width="38" height="38">
   <properties>
-   <property name="Anims1" value="0"/>
+   <property name="Anims1" value="FlasubanVillageTileAnimationsID"/>
    <property name="Anims2" value="0"/>
    <property name="ChapterID" value="HubBTheOutskirts"/>
    <property name="Main" value=""/>

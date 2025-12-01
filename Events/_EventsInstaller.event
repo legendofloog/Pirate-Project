@@ -79,11 +79,11 @@ NoFade
 ENDA
 
 JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(4,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand] NoAI
+UNIT Jaime PegasusRider 0 Level(4,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand, Vulnerary] NoAI
 UNIT
 
 OndehBikoUnitGroup:
-UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,NPC,True) [24,19] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
 UNIT
 

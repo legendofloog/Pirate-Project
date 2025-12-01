@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="22" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="22" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="1">
  <tileset firstgid="1" name="Frontier" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/FlasubanFrontier.png" width="512" height="512"/>
  </tileset>
  <layer id="1" name="MainLayer" width="22" height="30">
   <properties>
-   <property name="Anims1" value="0"/>
+   <property name="Anims1" value="FlasubanFrontierAnimationsID"/>
    <property name="Anims2" value="0"/>
    <property name="ChapterID" value="HubC_2"/>
    <property name="Main" value=""/>

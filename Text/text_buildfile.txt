@@ -9,8 +9,20 @@ HP Bars[.][X]
 Set health bar display[X]
 
 # 0x047F
-Increases an ally's Res by 7,[NL]
-reducing by 1 each turn. +1 WEXP.[X]
+Increases an ally's Res[NL]
+by 5 for 3 turns. +1 WEXP.[X]
+
+# 0x04BD
+Raises resistance[N]
+by 5 for 3 turns.[X]
+
+# 0x0496
+A draught that boosts Res by 5.[NL]
+Grows weaker each turn.[X]
+
+# 0x4D4
+Boosts Res by 5[N]
+when used.[X]
 
 # 0x471
 Restores Mag + 5 HP.[X]

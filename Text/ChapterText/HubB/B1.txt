@@ -473,7 +473,7 @@ Raz, you're invited to try it too.[AN]
 N-No thank you, Desiderio.[AN]
 Still[Beat]to think we'll be[N]
 spending a night out here.[AN]
-Do you all think T.O.R.C.H[N]
+Do you all think TORCH[N]
 will catch wind of us?[AN]
 
 
@@ -595,7 +595,7 @@ what Ernie felt with his beast[Beat])[AN]
 Once we get back, indeed[Beat][AN]
 To think we'll be spending[N]
 a night out in that village.[AN]
-Do you all think T.O.R.C.H[N]
+Do you all think TORCH[N]
 will catch wind of us?[AN]
 
 [MR]

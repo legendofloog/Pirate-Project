@@ -473,6 +473,7 @@ BNE 2 s1 sC
     AddTrap(GreenSigilTrapID,20, 4)
     AddTrap(GreenSigilTrapID,21, 4)
 LABEL 2
+CheckHowManyHubChaptersCompleted
 SVAL s1 2 //if 2 chapters completed, and only 2. 
 BNE 3 s1 sC
 	ENUF DeactivateFirstHubAEvent
@@ -915,7 +916,7 @@ UNIT Hermenegildo Myrmidon 0 Level(2,Ally,False) [14,5] 0 0 0 0 [LightBrand, Iro
 UNIT
 
 DurghamUnitGroup:
-UNIT Durgham LanceCav 0 Level(4,NPC,True) [1,20] 0 0 0 0 [Horseslayer, IronLance, Vulnerary] NoAI
+UNIT Durgham LanceCav 0 Level(6,NPC,True) [1,20] 0 0 0 0 [SilverLance, Horseslayer, Vulnerary] NoAI
 UNIT
 
 SamsonArranUnitGroup:
@@ -937,12 +938,12 @@ UNIT Docksman Mercenary 0 Level(4, NPC, True) [18,13] 0 0 0 0 [KillingEdge] NoAI
 UNIT
 
 EstelleOrlandoDocksGroup:
-UNIT Estelle Troubadour 0 Level(2,NPC,False) [8,4] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Estelle Troubadour 0 Level(2,NPC,False) [8,4] 0 0 0 0 [Heal, PureWater] NoAI
 UNIT Orlando 0 0 Level(15,NPC,False) [8,20] 0x0 0x0 0 0 [SilverDagger, Thani] NoAI
 UNIT
 
 DocksGroup:
-UNIT Estelle Troubadour 0 Level(2,Ally,False) [4,14] 0 0 0 0 [Heal, Torch] NoAI
+UNIT Estelle Troubadour 0 Level(2,Ally,False) [4,14] 0 0 0 0 [Heal, PureWater] NoAI
 UNIT Ida 0 0 Level(20, NPC, False) [8,21] 0 0 0 0 [SilverAxe] NoAI
 UNIT
 

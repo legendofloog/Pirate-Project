@@ -12,25 +12,46 @@ void NewComputeBattleUnitDefense(struct BattleUnit* attacker, struct BattleUnit*
     {
         if (GetUnitDistance(&attacker->unit, &defender->unit) == 1) //if they are adjacent
         {
-            attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
+            attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
             return;
         }
         else
         {
-            attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
+            attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
             return;
         }
     }
-    if (GetItemAttributes(defender->weapon) & IA_MAGICDAMAGE)
-        attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
-    else if (GetItemAttributes(defender->weapon) & IA_MAGIC)
-        attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
-	else if (CheckBit(GetUnitDebuffEntry(&defender->unit), DelegationBitOffset_Link)) {
+
+    if (defender->weaponAttributes & IA_NEGATE_DEFENSE)
+    {
+        attacker->battleDefense = 0; //ignored, entirely
+        return;
+    }
+
+    if (defender->weaponAttributes & IA_MAGICDAMAGE)
+    {
+        attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+    }
+    else if (defender->weaponAttributes & IA_MAGIC)
+    {
+        attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+    }
+	else if (CheckBit(GetUnitDebuffEntry(&defender->unit), DelegationBitOffset_Link))
+    {
 		if (attacker->unit.def > attacker->unit.res)
-			attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
+        {
+            attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+        }    
 		else
-			attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
+        {
+            attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
+        }
 	}
-    else
-        attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
+    else 
+    {
+        attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
+    }    
+        
+
+        
 }

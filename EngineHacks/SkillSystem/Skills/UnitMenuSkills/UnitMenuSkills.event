@@ -30,6 +30,11 @@ POIN SkillTester
 //WORD SummonID
 WORD ContraryWindsID
 WORD ALSO_USE_VANILLA_SUMMON_CHECK
+WORD LuaInAHubFlag
+
+ALIGN 4
+InAHubFlagLink:
+SHORT InAHubFlag
 
 
 #define SummonedUnitItem 0

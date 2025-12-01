@@ -19,7 +19,13 @@ BlackBackgroundPal:
 #define SetBattleBackground(Index, ImagePointer, TSAPointer, PalettePointer) "PUSH; ORG BattleBackgroundTable + ((Index - 1) * 0xC); POIN ImagePointer TSAPointer PalettePointer; POP"
 
 #define FF5CaveBattleBackground 0x42
+#define AirshipBattleBG 0x43
+#define SunsetTempleBattleBG 0x44
 SetBattleBackground(FF5CaveBattleBackground, FF5CaveBattleBackgroundImage, FF5CaveBattleBackgroundTSA, FF5CaveBattleBackgroundPal)
+SetBattleBackground(AirshipBattleBG, AirshipBattleBGImage, AirshipBattleBGTSA, AirshipBattleBGPal)
+SetBattleBackground(SunsetTempleBattleBG, SunsetTempleBattleBGImage, SunsetTempleBattleBGTSA, SunsetTempleBattleBGPal)
+
+
 
 ALIGN 4
 FF5CaveBattleBackgroundImage:
@@ -33,27 +39,124 @@ ALIGN 4
 FF5CaveBattleBackgroundPal:
 #incbin "Dmp/Cave 02 - Day - Reduced_pal.dmp"
 
+ALIGN 4
+AirshipBattleBGImage:
+#incbin "Dmp/Airship.png.dmp"
+
+ALIGN 4
+AirshipBattleBGTSA:
+#incbin "Dmp/Airship.png.tsa.dmp"
+
+ALIGN 4
+AirshipBattleBGPal:
+#incbin "Dmp/Airship.png.pal.dmp"
+
+ALIGN 4
+SunsetTempleBattleBGImage:
+#incbin "Dmp/SunsetTemple.png.dmp"
+
+ALIGN 4
+SunsetTempleBattleBGTSA:
+#incbin "Dmp/SunsetTemple.png.tsa.dmp"
+
+ALIGN 4
+SunsetTempleBattleBGPal:
+#incbin "Dmp/SunsetTemple.png.pal.dmp"
+
 //setting the cave background to specific tiles
 #define TerrainBGTable $80CD1B
-#define CaveBGTable 3 //unused BGTable
 #define SetTerrainBGTable(BGTable, Index, BattleBackground) "PUSH; ORG TerrainBGTable + (BGTable * 0x41) + Index; BYTE BattleBackground; POP"
 
-SetTerrainBGTable(CaveBGTable, 0x01, FF5CaveBattleBackground) //plain
-SetTerrainBGTable(CaveBGTable, 0x0B, FF5CaveBattleBackground) //gate
-SetTerrainBGTable(CaveBGTable, 0x13, FF5CaveBattleBackground) //bridge
-SetTerrainBGTable(CaveBGTable, 0x14, FF5CaveBattleBackground) //bridge
-SetTerrainBGTable(CaveBGTable, 0x15, FF5CaveBattleBackground) //sea
-SetTerrainBGTable(CaveBGTable, 0x16, FF5CaveBattleBackground) //lake
-SetTerrainBGTable(CaveBGTable, 0x17, FF5CaveBattleBackground) //floor
-SetTerrainBGTable(CaveBGTable, 0x18, FF5CaveBattleBackground) //floor
-SetTerrainBGTable(CaveBGTable, 0x1D, FF5CaveBattleBackground) //pillar
-SetTerrainBGTable(CaveBGTable, 0x20, FF5CaveBattleBackground) //chest
-SetTerrainBGTable(CaveBGTable, 0x21, FF5CaveBattleBackground) //chest
-SetTerrainBGTable(CaveBGTable, 0x23, FF5CaveBattleBackground) //gate
-SetTerrainBGTable(CaveBGTable, 0x2D, FF5CaveBattleBackground) //stairs
-SetTerrainBGTable(CaveBGTable, 0x39, FF5CaveBattleBackground) //barrel
-SetTerrainBGTable(CaveBGTable, 0x3C, FF5CaveBattleBackground) //water
-SetTerrainBGTable(CaveBGTable, 0x3E, FF5CaveBattleBackground) //deck
+
+
+SetTerrainBGTable(PirateCoveBattleBackground, 0x01, FF5CaveBattleBackground) //plain
+SetTerrainBGTable(PirateCoveBattleBackground, 0x0B, FF5CaveBattleBackground) //gate
+SetTerrainBGTable(PirateCoveBattleBackground, 0x13, FF5CaveBattleBackground) //bridge
+SetTerrainBGTable(PirateCoveBattleBackground, 0x14, FF5CaveBattleBackground) //bridge
+SetTerrainBGTable(PirateCoveBattleBackground, 0x15, FF5CaveBattleBackground) //sea
+SetTerrainBGTable(PirateCoveBattleBackground, 0x16, FF5CaveBattleBackground) //lake
+SetTerrainBGTable(PirateCoveBattleBackground, 0x17, FF5CaveBattleBackground) //floor
+SetTerrainBGTable(PirateCoveBattleBackground, 0x18, FF5CaveBattleBackground) //floor
+SetTerrainBGTable(PirateCoveBattleBackground, 0x1D, FF5CaveBattleBackground) //pillar
+SetTerrainBGTable(PirateCoveBattleBackground, 0x20, FF5CaveBattleBackground) //chest
+SetTerrainBGTable(PirateCoveBattleBackground, 0x21, FF5CaveBattleBackground) //chest
+SetTerrainBGTable(PirateCoveBattleBackground, 0x23, FF5CaveBattleBackground) //gate
+SetTerrainBGTable(PirateCoveBattleBackground, 0x2D, FF5CaveBattleBackground) //stairs
+SetTerrainBGTable(PirateCoveBattleBackground, 0x39, FF5CaveBattleBackground) //barrel
+SetTerrainBGTable(PirateCoveBattleBackground, 0x3C, FF5CaveBattleBackground) //water
+SetTerrainBGTable(PirateCoveBattleBackground, 0x3E, FF5CaveBattleBackground) //deck
+
+SetTerrainBGTable(AirshipBattleBackground, 0x00, AirshipBattleBG) //plain
+SetTerrainBGTable(AirshipBattleBackground, 0x01, AirshipBattleBG) //plain
+SetTerrainBGTable(AirshipBattleBackground, 0x06, AirshipBattleBG) //plain
+SetTerrainBGTable(AirshipBattleBackground, 0x07, AirshipBattleBG) //plain
+SetTerrainBGTable(AirshipBattleBackground, 0x0B, AirshipBattleBG) //gate
+SetTerrainBGTable(AirshipBattleBackground, 0x13, AirshipBattleBG) //bridge
+SetTerrainBGTable(AirshipBattleBackground, 0x14, AirshipBattleBG) //bridge
+SetTerrainBGTable(AirshipBattleBackground, 0x17, AirshipBattleBG) //floor
+SetTerrainBGTable(AirshipBattleBackground, 0x18, AirshipBattleBG) //floor
+SetTerrainBGTable(AirshipBattleBackground, 0x19, AirshipBattleBG) //fence
+SetTerrainBGTable(AirshipBattleBackground, 0x1A, AirshipBattleBG) //wall
+SetTerrainBGTable(AirshipBattleBackground, 0x1B, AirshipBattleBG) //wall damaged
+SetTerrainBGTable(AirshipBattleBackground, 0x1D, AirshipBattleBG) //pillar
+SetTerrainBGTable(AirshipBattleBackground, 0x1E, AirshipBattleBG) //door
+SetTerrainBGTable(AirshipBattleBackground, 0x1F, AirshipBattleBG) //throne
+SetTerrainBGTable(AirshipBattleBackground, 0x20, AirshipBattleBG) //chest
+SetTerrainBGTable(AirshipBattleBackground, 0x21, AirshipBattleBG) //chest
+
+SetTerrainBGTable(AirshipBattleBackground, 0x23, AirshipBattleBG) //gate
+SetTerrainBGTable(AirshipBattleBackground, 0x25, AirshipBattleBG) //ruins
+
+SetTerrainBGTable(AirshipBattleBackground, 0x23, AirshipBattleBG) //gate
+SetTerrainBGTable(AirshipBattleBackground, 0x2D, AirshipBattleBG) //stairs
+SetTerrainBGTable(AirshipBattleBackground, 0x2E, AirshipBattleBG) //flyable
+SetTerrainBGTable(AirshipBattleBackground, 0x32, AirshipBattleBG) //fence
+SetTerrainBGTable(AirshipBattleBackground, 0x33, AirshipBattleBG) //snag
+SetTerrainBGTable(AirshipBattleBackground, 0x34, AirshipBattleBG) //bridge
+SetTerrainBGTable(AirshipBattleBackground, 0x35, AirshipBattleBG) //sky
+
+SetTerrainBGTable(AirshipBattleBackground, 0x39, AirshipBattleBG) //barrel
+SetTerrainBGTable(AirshipBattleBackground, 0x3D, AirshipBattleBG) //gunnels
+SetTerrainBGTable(AirshipBattleBackground, 0x3E, AirshipBattleBG) //deck
+SetTerrainBGTable(AirshipBattleBackground, 0x3F, AirshipBattleBG) //brace
+SetTerrainBGTable(AirshipBattleBackground, 0x40, AirshipBattleBG) //mast
+
+
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x00, SunsetTempleBattleBG) //plain
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x01, SunsetTempleBattleBG) //plain
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x06, SunsetTempleBattleBG) //plain
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x07, SunsetTempleBattleBG) //plain
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x0B, SunsetTempleBattleBG) //gate
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x13, SunsetTempleBattleBG) //bridge
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x14, SunsetTempleBattleBG) //bridge
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x17, SunsetTempleBattleBG) //floor
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x18, SunsetTempleBattleBG) //floor
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x19, SunsetTempleBattleBG) //fence
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x1A, SunsetTempleBattleBG) //wall
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x1B, SunsetTempleBattleBG) //wall damaged
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x1D, SunsetTempleBattleBG) //pillar
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x1E, SunsetTempleBattleBG) //door
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x1F, SunsetTempleBattleBG) //throne
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x20, SunsetTempleBattleBG) //chest
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x21, SunsetTempleBattleBG) //chest
+
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x23, SunsetTempleBattleBG) //gate
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x25, SunsetTempleBattleBG) //ruins
+
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x23, SunsetTempleBattleBG) //gate
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x2D, SunsetTempleBattleBG) //stairs
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x2E, SunsetTempleBattleBG) //flyable
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x32, SunsetTempleBattleBG) //fence
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x33, SunsetTempleBattleBG) //snag
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x34, SunsetTempleBattleBG) //bridge
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x35, SunsetTempleBattleBG) //sky
+
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x39, SunsetTempleBattleBG) //barrel
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x3D, SunsetTempleBattleBG) //gunnels
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x3E, SunsetTempleBattleBG) //deck
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x3F, SunsetTempleBattleBG) //brace
+SetTerrainBGTable(SunsetTempleBattleBackground, 0x40, SunsetTempleBattleBG) //mast
+
 
 //setting terrain floor since this is related
 PUSH

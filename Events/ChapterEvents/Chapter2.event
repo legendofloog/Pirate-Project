@@ -16,7 +16,7 @@ TurnBasedEvents:
 TurnEventPlayer(0, JulianaDialogue, 2)
 TurnEventPlayer(0, IgnacioBoatReinforcements, 3)
 //TurnEventPlayer(0, HugoReinforcements, 4)
-TurnEventPlayer(0, IgnacioBoatReinforcements2, 5)
+//TurnEventPlayer(0, IgnacioBoatReinforcements2, 5)
 TurnEventPlayer(0, ElodiaDecidesToCharge, 6) //settled on this
 
 TurnEventPlayer(LuaInAHubFlag, ObjectiveExplanation, 1)
@@ -159,6 +159,9 @@ ENDA
 ObjectiveExplanation:
 CenterTextbox(Chapter2Explanation)
 ENUF LuaInAHubFlag
+CameraCursor(11,4)
+CameraCursor(Rahel)
+Text(Ch2RahelGivesAHint)
 NoFade
 ENDA
 
@@ -263,6 +266,7 @@ ENDA
 
 AllDoneWithHubA:
 FADI 10
+ENUF LuaInAHubFlag
 //SetBackground(Inn)
 //Text(HubAFinalText)
 MNC2 Chapter2 
@@ -355,7 +359,7 @@ LoadPlayerUnits(HubALibraryHermenegildoGroup)
 LoadCutsceneUnits(NPCLibrarianBGroup)
 CheckHowManyHubChaptersCompleted
 SVAL s1 2 //if 2 or more chapters completed
-BLT 776 s1 sC 
+BLT 776 sC s1
 	LoadCutsceneUnits(NPCLibrarianAGroup)
 LABEL 776
 NoFade
@@ -505,7 +509,7 @@ NoFade
 ENDA
 
 OndehBikoUnitGroup:
-UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,Vulnerary] NoAI
+UNIT Ondeh 0 0 Level(4,NPC,True) [23,19] 0x0 0x0 0 0 [ShiningBow,IronBow,AshQuiver] NoAI
 UNIT Biko 0 0 Level(1,NPC,True) [24,19] 0x0 0x0 0 0 [IronLance,Vulnerary] NoAI
 UNIT
 
@@ -514,7 +518,7 @@ UNIT Rochefort 0 0 Level(1,NPC,False) [20,14] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 JaimeUnitGroup:
-UNIT Jaime PegasusRider 0 Level(2,NPC,True) [11,20] 0 0 0 0 [Onigiri, IronSword] NoAI
+UNIT Jaime PegasusRider 0 Level(2,NPC,True) [11,20] 0 0 0 0 [SteelSword, LightBrand, Vulnerary] NoAI
 UNIT
 
 LuaInDaHub:

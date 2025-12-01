@@ -32,6 +32,7 @@ cmp r1, r2 @if we're being doubled, attacker's AS+5 <= defender's AS
 bgt SwapAttackerDefender @if we're not being doubled, no boost for us
 
 @add amount above being doubled by as extra damage
+sub r1, #0x5
 mov r0, #0x5A
 ldrh r3, [r4,r0] @atk
 sub r2, r1 @amount above doubled by = defender's AS - (attacker's AS+5)
@@ -57,6 +58,7 @@ cmp r1, r2 @if we're being doubled, defender's AS+5 <= attacker's AS
 bgt End @if we're not being doubled, no boost for us
 
 @add amount above being doubled by as extra damage
+sub r1, #0x5
 mov r0, #0x5A
 ldrh r3, [r5,r0] @atk
 sub r2, r1 @amount above doubled by = attacker's AS - (defender's AS+5)
