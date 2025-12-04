@@ -12,12 +12,12 @@ void NewComputeBattleUnitDefense(struct BattleUnit* attacker, struct BattleUnit*
     {
         if (GetUnitDistance(&attacker->unit, &defender->unit) == 1) //if they are adjacent
         {
-            attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
+            attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
             return;
         }
         else
         {
-            attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+            attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
             return;
         }
     }
@@ -30,26 +30,26 @@ void NewComputeBattleUnitDefense(struct BattleUnit* attacker, struct BattleUnit*
 
     if (defender->weaponAttributes & IA_MAGICDAMAGE)
     {
-        attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+        attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
     }
     else if (defender->weaponAttributes & IA_MAGIC)
     {
-        attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+        attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
     }
 	else if (CheckBit(GetUnitDebuffEntry(&defender->unit), DelegationBitOffset_Link))
     {
 		if (attacker->unit.def > attacker->unit.res)
         {
-            attacker->battleDefense = attacker->terrainResistance + GetUnitResistance(&attacker->unit);
+            attacker->battleDefense = attacker->terrainResistance + attacker->unit.res;
         }    
 		else
         {
-            attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
+            attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
         }
 	}
     else 
     {
-        attacker->battleDefense = attacker->terrainDefense + GetUnitDefense(&attacker->unit);
+        attacker->battleDefense = attacker->terrainDefense + attacker->unit.def;
     }    
         
 

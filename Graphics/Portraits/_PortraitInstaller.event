@@ -421,7 +421,7 @@ FataMugData:
 #incbin "Dmp/Fata_frames.dmp"
 #incbin "Dmp/Fata_palette.dmp"
 #incbin "Dmp/Fata_minimug.dmp"
-setMugEntry(FataMug, FataMugData, 3, 5, 3, 3)
+setMugEntryExtend(FataMug, FataMugData, 3, 5, 3, 3, 4, 254, 6, 254)
 
 ALIGN 16
 NicodemusMugData:

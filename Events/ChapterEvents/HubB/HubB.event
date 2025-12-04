@@ -82,6 +82,11 @@ ENUT Flag_Midship_ToDeck
 ENUT Flag_MidShip_ToFloor2
 ENUT Flag_MidShip_ToFloor3 //turn off all flags except the ones that go to floor 1
 ENUF Flag_Midship_ToFloor1
+ENUT Flag_MidShip_ToFloor2
+ENUT HubBManeuver_Floor3ToFloor2
+ENUT HubBManeuver_Floor3ToDeck
+ENUT HubBManeuver_Floor2ToFloor1
+ENUT HubBManeuver_Floor2ToDeck
 FADU 15
 CheckHowManyHubChaptersCompleted
 SVAL s1 0 
@@ -358,11 +363,11 @@ AREA Flag_Midship_ToDeck Travel_MidshipFloor1_ToDeck [13,12] [13,12]
 AREA Flag_Midship_ToDeck Travel_MidshipFloor1_ToDeck [15,23] [15,23]
 AREA Flag_MidShip_ToFloor2 Travel_MidshipFloor1_ToFloor2 [19,11] [20,11]
 //Floor2
-AREA Flag_Midship_ToFloor1 Travel_MidshipFloor2_ToFloor1 [19,10] [20,11]
+AREA HubBManeuver_Floor2ToFloor1 Travel_MidshipFloor2_ToFloor1 [19,10] [20,11]
 AREA Flag_MidShip_ToFloor3 Travel_MidshipFloor2_ToFloor3 [15,22] [16,23]
 //Floor3
-AREA Flag_MidShip_ToFloor2 Travel_MidshipFloor3_ToFloor2 [15,22] [16,23]
-AREA Flag_Midship_ToDeck Travel_MidshipFloor3_ToDeck [20,8] [20,8]
+AREA HubBManeuver_Floor3ToFloor2 Travel_MidshipFloor3_ToFloor2 [15,22] [16,23]
+AREA HubBManeuver_Floor3ToDeck Travel_MidshipFloor3_ToDeck [20,8] [20,8]
 
 //Right ship
 AREA Flag_Midship_ToFloor1 Travel_RightShipDeck_ToFloor1 [27,17] [27,17]
@@ -374,8 +379,8 @@ AREA Flag_Midship_ToDeck Travel_RightShipFloor1_ToDeck [32,17] [32,17]
 AREA Flag_Midship_ToDeck Travel_RightShipFloor1_ToDeck [33,12] [33,12]
 AREA Flag_MidShip_ToFloor2 Travel_RightShipFloor1_ToFloor2 [29,9] [30,10]
 //Floor2 
-AREA Flag_Midship_ToFloor1 Travel_RightShipFloor2_ToFloor1 [29,9] [30,10]
-AREA Flag_Midship_ToDeck Travel_RightShipFloor2_ToDeck [33,12] [33,12]
+AREA HubBManeuver_Floor2ToFloor1 Travel_RightShipFloor2_ToFloor1 [29,9] [30,10]
+AREA HubBManeuver_Floor2ToDeck Travel_RightShipFloor2_ToDeck [33,12] [33,12]
 
 AREA DifficultyChangeFlag DifficultyChangeEvent [5,18] [5,18]
 AFEV 0 RefreshLua 0
@@ -518,6 +523,7 @@ ENDA
 Travel_MidshipFloor1_ToDeck:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToFloor1
+ENUT Flag_MidShip_ToFloor2 //can't go to floor 2 anymore
 InitiateFloorRevertHubB_Midship(Traps_Deck)
 NoFade
 ENDA
@@ -551,7 +557,7 @@ UNIT
 
 Travel_MidshipFloor1_ToFloor2:
 CALL RemoveAllTraps
-ENUF Flag_Midship_ToFloor1
+ENUF HubBManeuver_Floor2ToFloor1
 ENUF Flag_MidShip_ToFloor3
 InitiateFloorSwapHubB_Midship(Traps_MidshipFloor2, TC_MidshipFloor2, LoadMidshipFloor2Units)
 NoFade
@@ -560,6 +566,7 @@ ENDA
 Travel_MidshipFloor2_ToFloor1:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToDeck
+ENUT HubBManeuver_Floor2ToFloor1 //not on floor 2 anymore
 ENUF Flag_MidShip_ToFloor2
 InitiateFloorSwapHubB_Midship(Traps_MidshipFloor1, TC_MidshipFloor1, SpawnMidshipFloor1Units) 
 NoFade
@@ -567,8 +574,9 @@ ENDA
 
 Travel_MidshipFloor2_ToFloor3:
 CALL RemoveAllTraps
-ENUF Flag_MidShip_ToFloor2
+ENUT HubBManeuver_Floor2ToFloor1 //not on floor 2 anymore
 ENUF Flag_Midship_ToDeck
+ENUF HubBManeuver_Floor3ToFloor2 // on floor 3 so can go back to floor 2
 InitiateFloorSwapHubB_Midship(Traps_MidshipFloor3, TC_MidshipFloor3, LoadMidshipFloor3Units)
 NoFade
 ENDA
@@ -595,7 +603,7 @@ UNIT
 
 Travel_MidshipFloor3_ToFloor2:
 CALL RemoveAllTraps
-ENUF Flag_Midship_ToFloor1
+ENUF HubBManeuver_Floor2ToFloor1 //on floor 2 now
 ENUF Flag_MidShip_ToFloor3
 InitiateFloorSwapHubB_Midship(Traps_MidshipFloor2, TC_MidshipFloor2, LoadMidshipFloor2Units)
 NoFade
@@ -622,6 +630,7 @@ UNIT
 Travel_MidshipFloor3_ToDeck:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToFloor1
+ENUT HubBManeuver_Floor3ToFloor2
 InitiateFloorRevertHubB_Midship(Traps_Deck)
 NoFade
 ENDA
@@ -637,14 +646,15 @@ ENDA
 Travel_RightShipFloor1_ToDeck:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToFloor1
+ENUT Flag_MidShip_ToFloor2 //can't go to floor 2 anymore
 InitiateFloorRevertHubB_Rightship(Traps_Deck)
 NoFade
 ENDA
 
 Travel_RightShipFloor1_ToFloor2:
 CALL RemoveAllTraps
-ENUF Flag_Midship_ToDeck
-ENUF Flag_Midship_ToFloor1
+ENUF HubBManeuver_Floor2ToDeck // on floor 2 now
+ENUF HubBManeuver_Floor2ToFloor1 // same
 InitiateFloorSwapHubB_Rightship(Traps_RightshipFloor2, TC_RightshipFloor2, SpawnRightShipFloor2Units)
 NoFade
 ENDA
@@ -672,6 +682,8 @@ Travel_RightShipFloor2_ToFloor1:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToDeck
 ENUF Flag_MidShip_ToFloor2
+ENUT HubBManeuver_Floor2ToDeck //can't do these anymore
+ENUT HubBManeuver_Floor2ToFloor1
 InitiateFloorSwapHubB_Rightship(Traps_RightshipFloor1, TC_RightshipFloor1, SpawnRightShipFloor1Units)
 NoFade
 ENDA
@@ -711,6 +723,8 @@ UNIT
 Travel_RightShipFloor2_ToDeck:
 CALL RemoveAllTraps
 ENUF Flag_Midship_ToFloor1
+ENUT HubBManeuver_Floor2ToDeck //can't do these anymore
+ENUT HubBManeuver_Floor2ToFloor1
 InitiateFloorRevertHubB_Rightship(Traps_Deck)
 NoFade
 ENDA

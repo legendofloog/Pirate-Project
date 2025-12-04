@@ -60,6 +60,9 @@ void ContraryWinds_PostBattle() {
 		//set kite's BWL data for turn died on to current turn count
 		struct UnitUsageStats* bwl = BWL_GetEntry(KiteSummon);
 		bwl->deathTurn = gChapterData.turnNumber;
+
+		// set the kite's axe rank down to 0, because apparently i need to do that
+		kite->ranks[ITYPE_AXE] = 0;
 		
 	}
 }
@@ -96,6 +99,8 @@ long long ContraryWinds_KiteDebuff(u8 stat, Unit* unit) {
 			Unit* unit;
 		};
 	} result;
+
+	if (stat <= 0) stat = 0;
 
 	result.stat = stat;
 	result.unit = unit;

@@ -1,0 +1,35 @@
+#ifndef _FE8_
+ERROR "You're not assembling to an FE8 ROM!"
+#endif
+
+#include EAStdlib.event
+#include "Extensions/Hack Installation.txt"
+
+#define StealableItemCache 0x203B1F0
+
+
+#ifndef callHackNew 
+	#define callHackNew(offset) 		"BYTE $01 $4B $9E $46 $00 $F8 $01 $E0; POIN (offset|0x1)"
+#endif 
+
+PUSH
+
+ORG $187C4 
+jumpToHack(Hook_SetUpCacheForStealableItems)
+
+ORG $37754
+callHackNew(Hook_RefreshCacheAfterStealing)
+
+ORG 0x2793E
+SHORT 0x46C0
+callHack_r0(FOG)
+
+POP
+ALIGN 4
+FOG:
+#include "DroppableItem.lyn.event"
+WORD StealableItemCache
+WORD False // Not using DangerRadius 
+WORD 0x65|0x800 // Stealable 
+WORD 0x65|0x800 // Danger radius icon 
+WORD 0x69|0x800 // Droppable 

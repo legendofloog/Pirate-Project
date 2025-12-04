@@ -159,6 +159,7 @@ extern void UnsetProtectBits(Unit* unit);
 extern void UnsetConcentrateBits(Unit* unit);
 extern void UnsetFortuneBits(Unit* unit);
 extern void UnsetRushBits(Unit* unit);
+extern void SetUnitPollenateValue(Unit* unit, u32 value);
 
 typedef struct BombHPTimerEntry BombHPTimerEntry;
 

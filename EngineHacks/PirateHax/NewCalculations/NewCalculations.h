@@ -288,3 +288,77 @@ void ExecPureWaterItem(Proc* proc);
 
 void BattleApplyItemEffect(struct Proc* proc);
 void BeginBattleAnimations(void);
+
+struct MenuRect { s8 x, y, w, h; };
+
+struct StatScreenPageNameProc
+{
+    /* 00 */ PROC_HEADER;
+
+    // Page Num Sprite Control proc only
+    /* 2A */ short xLeftCursor;
+    /* 2C */ short xRightCursor;
+    /* 2E */ u16 animTimerLeft;
+    /* 30 */ u16 animTimerRight;
+    /* 32 */ short animSpeedLeft;
+    /* 34 */ short animSpeedRight;
+
+    // Page Name Sprite Control proc only
+    /* 36 */ u8 pageNum;
+    /* 38 */ short yScale; // 6 == times 1
+};
+
+struct MenuItemProc
+{
+    /* 00 */ PROC_HEADER;
+
+    /* 2A */ short xTile;
+    /* 2C */ short yTile;
+
+    /* 30 */ const struct MenuItemDef* def;
+
+    /* 34 */ struct TextHandle text;
+
+    /* 3C */ s8 itemNumber;
+    /* 3D */ u8 availability;
+};
+
+struct MenuItemDef
+{
+    /* 00 */ const char* name;
+
+    /* 04 */ u16 nameMsgId, helpMsgId;
+    /* 08 */ u8 color, overrideId;
+
+    /* 0C */ u8(*isAvailable)(const struct MenuItemDef*, int number);
+
+    /* 10 */ int(*onDraw)(struct MenuProc*, struct MenuItemProc*);
+
+    /* 14 */ u8(*onSelected)(struct MenuProc*, struct MenuItemProc*);
+    /* 18 */ u8(*onIdle)(struct MenuProc*, struct MenuItemProc*);
+
+    /* 1C */ int(*onSwitchIn)(struct MenuProc*, struct MenuItemProc*);
+    /* 20 */ int(*onSwitchOut)(struct MenuProc*, struct MenuItemProc*);
+};
+
+struct MenuDef
+{
+    /* 00 */ struct MenuRect rect;
+    /* 04 */ u8 style;
+    /* 08 */ const struct MenuItemDef* menuItems;
+
+    /* 0C */ void(*onInit)(struct MenuProc*);
+    /* 10 */ void(*onEnd)(struct MenuProc*);
+    /* 14 */ void(*_u14)(struct MenuProc*);
+    /* 18 */ u8(*onBPress)(struct MenuProc*, struct MenuItemProc*);
+    /* 1C */ u8(*onRPress)(struct MenuProc*);
+    /* 20 */ u8(*onHelpBox)(struct MenuProc*, struct MenuItemProc*);
+};
+
+bool IsAdjacentForSupply(u8 pid);
+void AddAsTarget_IfPositionCleanForSummon(int x, int y);
+#define KiteSummon 0x3D
+
+bool CanClassCrossTerrain(int classId, int terrain);
+const s8* GetClassMovementCost(int classId);
+extern u8 KiteClassIDLink;

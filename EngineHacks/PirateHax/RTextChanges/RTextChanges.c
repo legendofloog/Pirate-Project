@@ -88,10 +88,23 @@ void DrawHelpBoxLabels(struct HelpBox8A01650Proc* proc) {
 int DrawHelpBoxStaffLabels(Item item) {
     Text_InsertString(&gHelpBoxSt.text[0], 0, 8, GetStringFromIndex(0x509)); // TODO: msg id "Staff[.]"
     Text_InsertString(&gHelpBoxSt.text[0], 30, 7, GetItemDisplayRankString(item));
-    Text_InsertString(&gHelpBoxSt.text[0], 48, 8, GetStringFromIndex(0x500)); // TODO: msg id "Rng[.]"
-    Text_InsertString(&gHelpBoxSt.text[0], 70, 7, GetItemDisplayRangeString(item));
-    Text_InsertString(&gHelpBoxSt.text[0], 107, 8, GetStringFromIndex(0x502)); // TODO: msg id "Wt"
-    Text_InsertNumberOr2Dashes(&gHelpBoxSt.text[0], 135, 7, GetItemWeight(item));
+
+    int index = GetItemIndex(item);
+
+    if (GetItemData(index)->encodedRange == 0x10 || index == 0x54) //0x10 staff or warp
+    {
+        Text_InsertString(&gHelpBoxSt.text[0], 40, 8, GetStringFromIndex(0x500)); // TODO: msg id "Rng[.]"
+        Text_InsertString(&gHelpBoxSt.text[0], 56, 7, GetStringFromIndex(0x522));
+        Text_InsertString(&gHelpBoxSt.text[0], 107, 8, GetStringFromIndex(0x502)); // TODO: msg id "Wt"
+        Text_InsertNumberOr2Dashes(&gHelpBoxSt.text[0], 135, 7, GetItemWeight(item));
+    }
+    else
+    {
+        Text_InsertString(&gHelpBoxSt.text[0], 48, 8, GetStringFromIndex(0x500)); // TODO: msg id "Rng[.]"
+        Text_InsertString(&gHelpBoxSt.text[0], 70, 7, GetItemDisplayRangeString(item));
+        Text_InsertString(&gHelpBoxSt.text[0], 107, 8, GetStringFromIndex(0x502)); // TODO: msg id "Wt"
+        Text_InsertNumberOr2Dashes(&gHelpBoxSt.text[0], 135, 7, GetItemWeight(item));
+    }
     
     return 1;
 }

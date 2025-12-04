@@ -124,6 +124,10 @@
 #define HubBYodsenDmitrGlobalTalkFlag 0xAE
 #define HubBJaimeLeonorGlobalTalkFlag 0xAF
 
+#define HubBManeuver_Floor3ToFloor2 0xB0
+#define HubBManeuver_Floor3ToDeck 0xB1
+#define HubBManeuver_Floor2ToFloor1 0xB2
+#define HubBManeuver_Floor2ToDeck 0xB2
 
 
 //and again for Hub C - Loog

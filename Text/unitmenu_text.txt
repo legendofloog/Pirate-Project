@@ -243,7 +243,13 @@ Select a unit to disarm.[X]
  Reverse[X]
 
 ## UM_ReverseDesc
-Switches weapon triangle.[X]
+Swaps weapon triangle.[X]
+
+## UM_Unreverse
+ Unreverse[X]
+
+## UM_UnreverseDesc
+Reverts weapon triangle.[X]
 
 ## UM_ReapingBlade
  Reap[X]

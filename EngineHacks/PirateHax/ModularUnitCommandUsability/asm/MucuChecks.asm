@@ -668,7 +668,7 @@
 		
 			mov		r0, r5 @StealPlus change
 			mov		r1, r6 @StealPlus change
-			blh		IsItemStealable, r2
+			blh		NewIsItemStealable, r2
 			cmp		r0, #0
 			beq		MucuTargetRequireStealableItem_NextItem
 			

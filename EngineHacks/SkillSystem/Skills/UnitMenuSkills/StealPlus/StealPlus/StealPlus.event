@@ -30,7 +30,6 @@ ALIGN 4
 Rogue_Robbery:
 #include "NewIsItemStealable.lyn.event"
 ALIGN 4
-
 WatchfulIDLink:
 BYTE WatchfulID
 ALIGN 4

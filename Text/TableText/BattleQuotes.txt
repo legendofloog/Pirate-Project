@@ -409,8 +409,7 @@ to peck away at him[Beat])[A][X]
 [FarLeft][LoadKiril]
 [Beat]The Antlions have stalked[N]
 these sands for years.[AN]
-We will not be your prey![AN]
-[A][X]
+We will not be your prey![AN][X]
 
 ## B2_BQ_YadneyDesiderio
 [MR][LoadDesiderio]

@@ -685,7 +685,7 @@ Objective: Defeat Boss[X]
 Units: Dmitr (Brute)[X]
 
 ## HubB1Loot
-Loot: A varied treasure collection.[X]
+Loot: Flier Whip + varied treasure.[X]
 
 ## HubB1Confirm
 Explore the desert?[X]
@@ -1011,7 +1011,7 @@ Objective: Rout[X]
 Units: Adrian (Fgtr.), Lexa (Myrm.), Noa (Ward.)[X]
 
 ## HubB4Loot
-Loot: Varied loot and wealth[X]
+Loot: Varied loot and Hunter Mark.[X]
 
 ## HubB4Confirm
 Swindle supplies?[X]
@@ -1030,7 +1030,7 @@ Objective: Arrive[X]
 Unit: Fata (Conjurer)[X]
 
 ## HubB5Loot
-Loot: Staves, as well as nonweapon items.[X]
+Loot: Staves, items, and Rider Badge.[X]
 
 ## HubB5Confirm
 Fly to the Ghostwood?[X]
@@ -1924,7 +1924,7 @@ useful enough to keep around.[A][X]
 [MidRight]
 Avocado, it's been a while.[N]
 How are you holding up?[AN]
-[MidLeft]
+[MidLeft][3LB]
 [Beat]As best I can, given the situation.[N]
 With each battle, my lance strikes[N]
 with more surety[Beat] more purpose.[AN]

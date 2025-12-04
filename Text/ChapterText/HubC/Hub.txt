@@ -547,7 +547,7 @@ Objective: Defeat Boss[X]
 Unit: Ruby (Hero)[X]
 
 ## HubC1Loot
-Loot: Sword and tome users will benefit.[X]
+Loot: Sword and tome users benefit. MR.[X]
 
 ## HubC1Confirm
 Accept Ruby's request?[X]
@@ -565,7 +565,7 @@ Objective: Defeat Boss[X]
 Units: Calista (Dragoon), Valerie (Archer)[X]
 
 ## HubC2Loot
-Loot: Bows and gun users will benefit.[X]
+Loot: Bow and gun users benefit. HM, BC.[X]
 
 ## HubC2Confirm
 Inspect the brawl?[X]
@@ -645,7 +645,7 @@ Objective: Escort Traitors[X]
 Units: Bolton (Dark Knight), Rima (Axe Cav)[X]
 
 ## HubC3Loot
-Loot: Unique staves and equippables.[X]
+Loot: Unique staves, items, and KP.[X]
 
 ## HubC3Confirm
 Take Boru's job?[X]
@@ -718,7 +718,7 @@ Objective: Escape[X]
 Units: Remora (Berserker)[X]
 
 ## HubC4Loot
-Loot: Rare treasure beyond compare.[X]
+Loot: Very rare treasure and FW + RB.[X]
 
 ## HubC4Confirm
 Should I take this job?[X]

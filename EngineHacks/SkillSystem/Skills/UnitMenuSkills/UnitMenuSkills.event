@@ -156,8 +156,14 @@ ShiftEffect:
 #include "Disarm/Installer.event"
 
 ALIGN 4
-NonconformingUsability:
-#include "Nonconforming/NonconformingUsability.lyn.event"
+ReverseUsability:
+#include "Nonconforming/ReverseUsability.lyn.event"
+POIN SkillTester
+WORD NonconformingID
+
+ALIGN 4
+UnreverseUsability:
+#include "Nonconforming/UnreverseUsability.lyn.event"
 POIN SkillTester
 WORD NonconformingID
 

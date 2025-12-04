@@ -1,4 +1,5 @@
 bool DidUnitBreak();
+bool CanUnitBreak(struct Unit* target);
 void BreakPostBattle();
 void ClearActiveFactionBreakStatus();
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="22" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="22" height="27" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" source="Tilesets/FlasubanVillage.tsx"/>
  <tileset firstgid="1025" source="Tilesets/FlasubanVillageNight.tsx"/>
  <layer id="1" name="Tile Layer 1" width="22" height="27">
@@ -76,7 +76,7 @@
    <tile gid="912"/>
    <tile gid="913"/>
    <tile gid="945"/>
-   <tile gid="710"/>
+   <tile gid="741"/>
    <tile gid="37"/>
    <tile gid="893"/>
    <tile gid="290"/>
@@ -142,7 +142,7 @@
    <tile gid="944"/>
    <tile gid="913"/>
    <tile gid="945"/>
-   <tile gid="710"/>
+   <tile gid="679"/>
    <tile gid="37"/>
    <tile gid="68"/>
    <tile gid="100"/>
@@ -165,7 +165,7 @@
    <tile gid="776"/>
    <tile gid="776"/>
    <tile gid="679"/>
-   <tile gid="1005"/>
+   <tile gid="37"/>
    <tile gid="420"/>
    <tile gid="35"/>
    <tile gid="498"/>
@@ -325,7 +325,7 @@
    <tile gid="385"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="857"/>
+   <tile gid="563"/>
    <tile gid="499"/>
    <tile gid="565"/>
    <tile gid="566"/>
@@ -348,7 +348,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="857"/>
+   <tile gid="563"/>
    <tile gid="531"/>
    <tile gid="531"/>
    <tile gid="403"/>
@@ -611,7 +611,7 @@
    <tile gid="514"/>
   </data>
  </layer>
- <layer id="2" name="Tile Layer 2" width="22" height="27">
+ <layer id="2" name="Tile Layer 2" width="22" height="27" visible="0">
   <data>
    <tile/>
    <tile/>
@@ -1209,7 +1209,7 @@
    <tile/>
   </data>
  </layer>
- <layer id="3" name="Tile Layer 3" width="22" height="27">
+ <layer id="3" name="Tile Layer 3" width="22" height="27" visible="0">
   <data>
    <tile/>
    <tile/>

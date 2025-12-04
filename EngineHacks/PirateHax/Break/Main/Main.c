@@ -1,30 +1,11 @@
 #include  "Main.h"
 
 bool DidUnitBreak(){
-	u32* entry = GetUnitDebuffEntry(&gBattleTarget.unit);
-	if (CheckBit(entry, BreakBitOffset_Link)){
+	if (!CanUnitBreak(&gBattleTarget.unit)) // does a check of other stuff unrelated to battle
+	{
 		return false;
 	}
-	
-	if (GetUnitEquippedItem(&gBattleTarget.unit).number == KnightRingIDLink)
-	{
-		return false; // if enemy has the knight ring, they can't be broken
-	}
 
-	int j = 0;
-	while (BreakExemptCharacterList[j] != 0){
-		if (BreakExemptCharacterList[j] == gBattleTarget.unit.pCharacterData->number){
-			return false; //if target's char ID is on exempt list, no break allowed
-		}
-		j++;
-	}
-	int k = 0;
-	while (BreakExemptClassList[k] != 0){
-		if (BreakExemptClassList[k] == gBattleTarget.unit.pClassData->number){
-			return false; //if target's class ID is on exempt list, no break allowed
-		}
-		k++;
-	}
 	if ((gBattleActor.battleAttack > gBattleTarget.battleDefense)){ //did unit do damage
 		if (gBattleActor.wTriangleHitBonus > 0 && gBattleTarget.wTriangleHitBonus < 0)
 		{
@@ -41,6 +22,37 @@ bool DidUnitBreak(){
 		return true;
 	}
 	return false;
+}
+
+bool CanUnitBreak(struct Unit* target)
+{
+	u32* entry = GetUnitDebuffEntry(target);
+	if (CheckBit(entry, BreakBitOffset_Link)){
+		return false;
+	}
+	
+	if (GetUnitEquippedItem(target).number == KnightRingIDLink)
+	{
+		return false; // if enemy has the knight ring, they can't be broken
+	}
+
+	int j = 0;
+	while (BreakExemptCharacterList[j] != 0){
+		if (BreakExemptCharacterList[j] == target->pCharacterData->number){
+			return false; //if target's char ID is on exempt list, no break allowed
+		}
+		j++;
+	}
+	int k = 0;
+	while (BreakExemptClassList[k] != 0){
+		if (BreakExemptClassList[k] == target->pClassData->number){
+			return false; //if target's class ID is on exempt list, no break allowed
+		}
+		k++;
+	}
+
+	return true;
+
 }
 
 void BreakPostBattle(){
@@ -99,7 +111,7 @@ void PulverizePreBattle(BattleUnit* unit1, BattleUnit* unit2)
 		u32* entry = GetUnitDebuffEntry(&unit2->unit);
 		if (CheckBit(entry, BreakBitOffset_Link))
 		{
-			unit1->battleCritRate += 40; //add 40 crit to the unit with Pulverize if target is broken
+			unit1->battleCritRate += 66; //add 40 crit to the unit with Pulverize if target is broken
 		}
 	}
 }

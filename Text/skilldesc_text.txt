@@ -1664,8 +1664,8 @@ by (Enemy AS - Unit AS).[X]
 
 ## SD_Nonconforming
 Nonconforming: This unit can reverse[N]
-or unreverse the weapon triangle[N]
-in combat, using the Reverse command.[X]
+or unreverse the weapon triangle,[N]
+using the Reverse/Unreverse commands.[X]
 
 ## SD_Panache
 Panache: Unit can initiate combat[N]
@@ -1740,16 +1740,16 @@ damage once (lasts until end of turn).[X]
 
 ## SD_Shuffle
 Shuffle: Command. Equips target with a[N]
-weapon in their inventory and allows[N]
-this unit to act, but not move, again.[X]
+random, different weapon that they have.[N]
+Then, this unit can act again (not move).[X]
 
 ## SD_NailedDown
 Nailed Down: When this unit initiates[N]
 battle, target's Mov = 0 for a turn.[X]
 
 ## SD_Analyze
-Analyze: When an ally battles an enemy[N]
-adjacent to this unit, ally gains WTA.[X]
+Analyze: When ally battles an enemy that[N]
+is adjacent to this unit, ally gains WTA.[X]
 
 ## SD_Delegation
 Distracting Delusion: After combat, the[N]
@@ -1786,7 +1786,7 @@ WTA for all counterattacks they make.[X]
 
 ## SD_Pulverize
 Pulverize: If this unit attacks[N]
-an enemy affected by Break, +40 Crt.[X]
+an enemy affected by Break, +66 Crit.[X]
 
 ## SD_Breather
 Breather: When this unit uses Wait,[N]
@@ -1794,8 +1794,7 @@ they heal their HP back to 100%.[X]
 
 ## SD_Disarm
 Disarm: Command. This unit Breaks an[N]
-enemy, reduces their Def by 5, and then,[N]
-this unit can act again (but not move).[X]
+enemy and can act, but not move, again.[X]
 
 ## SD_Momentum
 Momentum: If this unit moves half or[N]

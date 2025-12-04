@@ -190,35 +190,35 @@ WORD MiscOffset+19
 // 78 bits/10 bytes
 
 NoMoveBitOffset_Link:
-WORD MiscOffset+20
+WORD MiscOffset+22
 // 79 bits/10 bytes
 
 DoubleFalconBitOffset_Link:
-WORD MiscOffset+21
+WORD MiscOffset+23
 // 80 bits/10 bytes
 
 FortuneStaffBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+22
+WORD MiscOffset+24
 // 82 bits/11 bytes
 
 RushStaffBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+24
+WORD MiscOffset+26
 // 84 bits/11 bytes
 
 ProtectStaffBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+26
+WORD MiscOffset+28
 // 86 bits/11 bytes
 
 ConcentrateStaffBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+28
+WORD MiscOffset+30
 // 88 bits/11 bytes
 
 HolyHaymakerBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+30
+WORD MiscOffset+32
 // 90 bits/12 bytes
 
 BarrierStaffBitOffset_Link: //stores value 0-3, 2 bits
-WORD MiscOffset+32
+WORD MiscOffset+34
 // 92 bits/12 bytes
 
 //out of room after 12 bytes

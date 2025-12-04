@@ -14,3 +14,6 @@ ALIGN 4
 SnapshotIDLink:
 BYTE Snapshot
 
+ALIGN 4
+KiteClassIDLink:
+BYTE Kite

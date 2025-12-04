@@ -36,10 +36,6 @@ ldr r1, SupplyID
 cmp r0, #1
 beq ReturnTrue
 
-bl IsPhantom
-cmp r0,#0x1
-beq ReturnFalse
-
 bl IsAdjacent
 cmp r0,#0x1
 beq ReturnTrue
@@ -63,39 +59,6 @@ GoBack:
 pop {r4}
 pop {r1}
 bx r1
-
-
-IsPhantom:
-push {lr}
-ldr r1,=gActiveUnit
-ldr r3,[r1]
-
-ldr r0,[r3,#4]  @RAMUnit->Class
-ldrb r0,[r0,#4] @RAMUnit->Class->ID
-
-ldr r1,=0x08023F78  @SupplyUsability => cmp r0, #0x51
-ldrb r1,[r1]
-cmp r0,r1           @check #0x51
-beq IsPhantom_ReturnTrue
-
-@check 7743's summon
-ldrb r1, [r3, #0xF] @ramunit->status4
-lsr  r1,#0x7
-cmp r1,#0x01
-beq IsPhantom_ReturnTrue
-
-IsPhantom_ReturnFalse:
-mov r0,#0x0
-b IsPhantom_Exit
-
-IsPhantom_ReturnTrue:
-mov r0,#0x01
-
-IsPhantom_Exit:
-pop {r1}
-bx r1
-
-
 
 IsAdjacent:
 push {r4,r5,r6,r7,lr}

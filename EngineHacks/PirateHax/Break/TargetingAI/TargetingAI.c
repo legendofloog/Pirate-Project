@@ -10,8 +10,8 @@ void ComputeAiAttackWeight(struct AiCombatSimulationSt* st) {
 
     score -= AiBattleGetDamageTakenWeight(); //minimum score: -110
 
-    if (score < 0) {
-        score = 0;
+    if (score < 1) {
+        score = 1;
     }
 
     if (DidUnitBreak() && gBattleActor.battleEffectiveHitRate > 0){
@@ -26,7 +26,7 @@ void ComputeAiAttackWeight(struct AiCombatSimulationSt* st) {
 
     if (gSkillTester(&gBattleTarget.unit, ShadeIDLink))
     {
-        score = 0; // if you have shade, then they're gonna ignore you unless they have no other option
+        score = 0; // if you have shade, then they're gonna ignore you unless they have literally no other option
     }
 
     st->score = score;

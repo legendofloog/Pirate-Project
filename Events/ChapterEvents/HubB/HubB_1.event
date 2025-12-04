@@ -141,7 +141,7 @@ UNIT Antlion Thief 0 Level(9, Enemy, True) [0,8] 0 0 0 0 [IronKnife,ChestKey,Doo
 UNIT
 
 DmitrSpawn:
-UNIT Dmitr Brigand 0 Level(6,Ally,True) [1,1] 0 0 0 0 [KillerAxe, IronAxe, Vulnerary] NoAI
+UNIT Dmitr Brigand 0 Level(11,Ally,True) [1,1] 0 0 0 0 [KillerAxe, IronAxe, Vulnerary] NoAI
 UNIT
 
 IntroCutsceneNPCs:
@@ -410,6 +410,7 @@ EndingScene:
 	FADI 5
 	RemoveAll
 	SetBackground(Fort_2)
+	MUSC StillZephyrsID
 	CHECK_ALIVE Dmitr
 	BNE 1 0xC 0x0 //If Dmitr does not exist continue, otherwise jump to 1
 		Text(HubB_1EndingScene1_B)

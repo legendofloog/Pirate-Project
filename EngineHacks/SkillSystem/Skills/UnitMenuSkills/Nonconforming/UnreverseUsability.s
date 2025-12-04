@@ -1,4 +1,4 @@
-@ Str > Spd
+.equ CheckEventId,0x8083da8
 
 .equ NonconformingID, SkillTester+4
 .thumb
@@ -19,8 +19,15 @@ ldr r2, SkillTester
 mov lr, r2
 .short 0xf800 @test if unit has the skill
 cmp r0, #0
-bne True
-b False
+beq False
+
+ldr r0,=ReverseFlagLink	@ this is the Unreverse Usability, so we want this flag to be set to do it
+ldrh r0,[r0]
+ldr r1,=CheckEventId
+mov r14,r1
+.short 0xF800
+cmp r0,#1
+bne False
 
 True:
 mov r0,#1

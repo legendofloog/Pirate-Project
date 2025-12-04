@@ -95,7 +95,7 @@ UNIT Husniye 0 0 Level(10,NPC,False) [16,14] 0 0 0 0 [TealGem] NoAI
 UNIT
 
 OutroCruz:
-UNIT CruzFake 0 0 Level(11,NPC,False) [16,14] 0 0 0 0 [TealGem] NoAI
+UNIT CruzFake 0 0 Level(11,NPC,False) [16,14] 0 0 0 0 [TealGem] BossAI
 UNIT
 
 CutsceneMagdalena:
@@ -104,7 +104,7 @@ UNIT
 
 //These are used when Cruz is free, and not accused.
 CutsceneCruz_Free:
-UNIT Cruz Shaman CruzFake Level(11,Enemy,True) [14,7] 0 0 0 0 [Sagittae, Elfire, Vulnerary, Eyepatch] NoAI
+UNIT Cruz Shaman CruzFake Level(11,Enemy,True) [14,7] 0 0 0 0 [Sagittae, Elfire, Vulnerary, Eyepatch] BossAI
 UNIT
 
 CutsceneYadney_CruzFree:
@@ -123,7 +123,7 @@ UNIT Yadney GriffinRider Cruz Level(15,Enemy,True) [17,1] 0 0 0 0 [ShortSpear,Ki
 UNIT
 
 CutsceneCruz_Captured:
-UNIT Cruz Shaman CruzFake Level(11,Enemy,True) [11,1] 0 0 0 0 [Sagittae, Elfire, Vulnerary, Eyepatch] NoAI
+UNIT Cruz Shaman CruzFake Level(11,Enemy,True) [11,1] 0 0 0 0 [Sagittae, Elfire, Vulnerary, Eyepatch] BossAI
 UNIT
 
 
@@ -137,7 +137,7 @@ VillagerGroup:
 UNIT Magdalena 0 0 Level(15,NPC,True) [5,10] 0 0 0 0 [Thunder,Mend,TakeAim] NoAI
 UNIT Avocado 0 0 Level(12,NPC,True) [4,19] 0 0 0 0 [SteelLance,Javelin] NoAI
 UNIT Husniye 0 0 Level(10,NPC,True) [14,12] 0 0 0 0 [Bloodletter,Stiletto,TealGem] NoAI
-UNIT CruzFake 0 0 Level(11,NPC,False) [15,22] 0 0 0 0 [Sagittae,Elfire,Vulnerary] NoAI
+UNIT CruzFake 0 0 Level(11,NPC,False) [15,22] 0 0 0 0 [Sagittae,Elfire,Vulnerary] BossAI
 
 UNIT RecelosoPriest 0 0 Level(1,NPC,False) [11,5] 0 0 0 0 [Heal,PureWater] NoAI
 UNIT RecelosoCorpse 0 0 Level(1,NPC,False) [16,3] 0 0 0 0 [Mend,RedGem] NoAI

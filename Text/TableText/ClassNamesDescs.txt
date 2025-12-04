@@ -172,7 +172,7 @@ Weapons: Knife, Sword[N]
 Traits: Steal, Locktouch[X]
 
 ## DreadnoughtName
-Marshall[X]
+Marshal[X]
 
 ## DreadnoughtDesc
 Weapons: Axe, Lance, Bow[N]
@@ -243,69 +243,69 @@ Weapons: Knife, Lance[N]
 Traits: Steal, Locktouch, Canto+[X]
 
 ## ClericDesc
-Weapons: Staves[N]
+Weapons: Staff[N]
 Traits: Steal, Locktouch[X]
 
 ## HeroDesc
-Weapons: Swords, Axes[N]
+Weapons: Sword, Axe[N]
 Traits: Steal, Locktouch[X]
 
 ## SwordmasterDesc
-Weapons: Swords[N]
+Weapons: Sword[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## SlayerName
 Slayer[X]
 
 ## SlayerDesc
-Weapons: Swords, Tomes[N]
+Weapons: Sword, Tome[N]
 Traits: Steal, Locktouch[X]
 
 ## BerserkerDesc
-Weapons: Axes[N]
+Weapons: Axe[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## WarMonkName
 War Monk[X]
 
 ## WarMonkDesc
-Weapons: Axes, Staves[N]
+Weapons: Axe, Staff[N]
 Traits: Steal, Locktouch[X]
 
 ## HalberdierName
 Halberdier[X]
 
 ## HalberdierDesc
-Weapons: Lances[N]
+Weapons: Lance[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## AdventurerName
 Adventurer[X]
 
 ## AdventurerDesc
-Weapons: Bows, Staves[N]
+Weapons: Bow, Staff[N]
 Traits: Steal, Locktouch[X]
 
 ## RangerDesc
-Weapons: Bows, Swords[N]
+Weapons: Bow, Sword[N]
 Traits: Canto+, Aid+[X]
 
 ## MaligKnightName
 Malig Rider[X]
 
 ## MaligKnightDesc
-Weapons: Axes, Tomes[N]
+Weapons: Axe, Tome[N]
 Traits: Flight, Canto, Aid+[X]
 
 ## WarriorDesc
-Weapons: Axes, Bows[N]
+Weapons: Axe, Bow[N]
 Traits: Steal, Locktouch[X]
 
 ## DragoonName
 Dragoon[X]
 
 ## DragoonDesc
-Weapons: Swords, Guns[N]
+Weapons: Sword, Gun[N]
 Traits: Canto+, Aid+[X]
 
 ## DeadPeerName
@@ -319,68 +319,68 @@ Traits: Dead[X]
 Gryphoknight[X]
 
 ## GryphknightDesc
-Weapons: Lances[N]
+Weapons: Lance[N]
 Traits: Flight+, Canto, Aid+[X]
 
 ## GryphknightDismountedDesc
-Weapons: Lances[N]
+Weapons: Lance[N]
 Traits: Steal, Locktouch[X]
 
 ## DracoknightName
 Dracoknight[X]
 
 ## DracoknightDesc
-Weapons: Axes[N]
+Weapons: Axe[N]
 Traits: Flight+, Canto, Aid+[X]
 
 ## FalcoknightDesc
-Weapons: Swords[N]
+Weapons: Sword[N]
 Traits: Flight+, Canto, Aid+[X]
 
 ## RogueDesc
-Weapons: Knives[N]
+Weapons: Knife[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## MarksmanName
 Marksman[X]
 
 ## MarksmanDesc
-Weapons: Guns[N]
+Weapons: Gun[N]
 Traits: Armsmaster, Steal, Locktouch[X]
 
 ## SaviorName
 Savior[X]
 
 ## SaviorDesc
-Weapons: Staves[N]
+Weapons: Staff[N]
 Traits: Canto+, Aid+, Move+[X]
 
 ## SwordKnightName
 Sword Knight[X]
 
 ## SwordKnightDesc
-Weapons: Swords[N]
+Weapons: Sword[N]
 Traits: Canto+, Aid+, Move+[X]
 
 ## AxeKnightName
 Axe Knight[X]
 
 ## AxeKnightDesc
-Weapons: Axes[N]
+Weapons: Axe[N]
 Traits: Canto+, Aid+, Move+[X]
 
 ## LanceKnightName
 Lance Knight[X]
 
 ## LanceKnightDesc
-Weapons: Lances[N]
+Weapons: Lance[N]
 Traits: Canto+, Aid+, Move+[X]
 
 ## BowKnightName
 Bow Knight[X]
 
 ## BowKnightDesc
-Weapons: Bows[N]
+Weapons: Bow[N]
 Traits: Canto+, Aid+, Move+[X]
 
 ## HorseName
@@ -415,7 +415,7 @@ Traits: Steal, Locktouch[X]
 Spellsword[X]
 
 ## SpellswordDesc
-Weapons: Swords, Tomes, Staves[N]
+Weapons: Sword, Tome, Staff[N]
 Traits: Steal, Locktouch[X]
 
 ## BarbarianName

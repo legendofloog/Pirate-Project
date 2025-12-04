@@ -470,6 +470,10 @@ Hexlock Shield[X]
 ## HexlockShieldDesc
 Grants +1 Def, +4 Res.[X]
 
+## HexlockUseShieldDesc
+When equipped, gives[N]
+Def and Res to unit.[X]
+
 ## HeavyShieldName ^
 Heavy Shield[X]
 
@@ -499,7 +503,7 @@ A common gemstone. Worth 1000 Gold.[X]
 Eyepatch[X]
 
 ## EyepatchDesc
-Grants +30 crit, but reduces hit by 30.[X]
+Grants +33 Crit, but reduces Hit by 33.[X]
 
 ## AshArrowName
 Ash Quiver[X]

@@ -7,6 +7,7 @@ void UnsetEventId(int eventId);
 extern u8 BombCharIDLink;
 extern bool(*gSkillTester)(Unit* unit, int skillID);
 extern u8 ForestFriendIDLink;
+extern u8 ReverseFlagLink;
 
 void A3ReturnLogDroppedStatusASMC(){
 
@@ -263,7 +264,7 @@ void UnsetBattleUnitDebuffBits(struct Unit* unit)
     UnsetBit(unitDebuffs, NailedDownBitOffset_Link);
     UnsetBit(unitDebuffs, DelegationBitOffset_Link);
     UnsetBit(unitDebuffs, SwiftBitOffset_Link);
-    UnsetBit(unitDebuffs, PollenateBitOffset_Link);
+    SetUnitPollenateValue(unit, 0);
     UnsetBit(unitDebuffs, NoMoveBitOffset_Link);
     UnsetBit(unitDebuffs, RushStaffBitOffset_Link);
     UnsetBit(unitDebuffs, DoubleFalconBitOffset_Link);
@@ -272,6 +273,8 @@ void UnsetBattleUnitDebuffBits(struct Unit* unit)
     UnsetConcentrateBits(unit);
     UnsetFortuneBits(unit);
     UnsetRushBits(unit);
+    UnsetEventId(ReverseFlagLink);
+
 }
 
 void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()

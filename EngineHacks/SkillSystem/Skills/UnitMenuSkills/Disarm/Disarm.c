@@ -1,5 +1,7 @@
 #include "Disarm.h"
 
+extern bool CanUnitBreak(struct Unit* target);
+
 struct SelectInfo const SelectInfo_Disarm =
 {
     .onInit = DisarmSelection_OnInit,
@@ -55,8 +57,6 @@ void DoDisarmEffect(int targetUid) { //left off here, keep it going
 	struct Unit* targetUnit = GetUnit(targetUid);
 	u32* entry = GetUnitDebuffEntry(targetUnit);
 	SetBit(entry, BreakBitOffset_Link);
-    ApplyDebuff(targetUnit, 5, 3);
-    ApplyDebuff(targetUnit, 5, 2);
     CallMapEventEngine(DisarmMapEvent, EV_EXEC_CUTSCENE);
     //BeginMapAnimForSteal();
 }
@@ -75,6 +75,12 @@ void TryAddUnitToDisarmTargetList(struct Unit* unit) {
 	if (AreUnitsAllied(gSubjectUnit->index, unit->index)) { //if they're allies, don't do it
         return;
     }
+
+    if (!CanUnitBreak(unit))
+    {
+        return;
+    }
+
     AddTarget(unit->xPos, unit->yPos, unit->index, 0);
     return;
 }

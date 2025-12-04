@@ -1248,3 +1248,83 @@ void TryAddUnitToTradeTargetList(struct Unit* unit) {
 
     return;
 }
+
+void StatScreenSprites_PutRescueMarkers(struct StatScreenPageNameProc* proc)
+{
+    return; //does nothin now, fuck you
+    
+    //s8 displayIcon = (GetGameClock() % 32) < 20;
+
+    //u16 palidLut[3] = { 0xC, 0xE, 0xD }; // TODO: palid constants
+
+    /*
+    if (!gStatScreen.inTransition)
+    {
+        if ((gStatScreen.page == STATSCREEN_PAGE_0) && (gStatScreen.unit->state & US_RESCUING))
+        {
+            UpdateStatArrowSprites(120, 40, 1);
+            UpdateStatArrowSprites(120, 56, 1);
+
+            if (displayIcon)
+            {
+                PutSprite(4,
+                    184, 78, gObject_8x8,
+                    TILEREF(3, 0xF & palidLut[gStatScreen.unit->rescue >> 6]) + OAM2_LAYER(2));
+            }
+        }
+
+        if (gStatScreen.unit->state & US_RESCUED)
+        {
+            if (displayIcon)
+            {
+                PutSprite(4,
+                    10, 86, gObject_8x8,
+                    TILEREF(3, 0xF & palidLut[gStatScreen.unit->rescue>>6]) + OAM2_LAYER(2));
+            }
+        }
+    }
+    */
+}
+
+u8 SupplyUsability(const struct MenuItemDef * def, int number)
+{
+    if (gActiveUnit->pCharacterData->number == 1) //Lua's char id
+    {
+        return MENU_ENABLED;
+    }
+
+    if (IsAdjacentForSupply(1))
+    {
+        return MENU_ENABLED;
+    }
+
+    return MENU_NOTSHOWN;
+}
+
+void AddAsTarget_IfPositionCleanForSummon(int x, int y) {
+
+    if (gMapUnit[y][x] != 0) {
+        return;
+    }
+
+    if (gChapterData.visionRange != 0 && gMapFog[y][x] == 0) {
+        return;
+    }
+
+    if (!CanClassCrossTerrain(KiteClassIDLink, gMapTerrain[y][x])) {
+        return;
+    }
+
+    AddTarget(x, y, 0, 0);
+
+    return;
+}
+
+bool CanClassCrossTerrain(int classId, int terrain) {
+    const s8* lookup = GetClassMovementCost(classId);
+    return (lookup[terrain] > 0) ? TRUE : FALSE;
+}
+
+const s8* GetClassMovementCost(int classId) {
+    return GetClassData(classId)->pMovCostTable[0];
+}

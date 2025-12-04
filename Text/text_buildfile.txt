@@ -42,7 +42,7 @@ Makes target unable to[N]
 move or act for 3 turns.[X]
 
 # 0x0522
-5 + MP/3[X]
+1-5+MP/3[X]
 
 # 0x479
 Spurs target to attack[N]

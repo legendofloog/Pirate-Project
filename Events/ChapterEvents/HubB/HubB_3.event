@@ -42,11 +42,11 @@ NoFade
 ENDA
 
 TopThief:
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [21,1] 0 0 0 0 [ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [21,1] 0 0 0 0 [ChestKey] ThieveryAI
 UNIT
 
 BotThief:
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [19,17] 0 0 0 0 [ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [19,17] 0 0 0 0 [ChestKey] ThieveryAI
 UNIT
 
 B3FirstTurnEvent:
@@ -221,10 +221,10 @@ UNIT Rebel Deserter 0 Level(10,Enemy,True) [4,12] 0 0 0 0 [SteelLance] PursueWit
 UNIT Rebel Mercenary 0 Level(10,Enemy,True) [8,4] 0 0 0 0 [SteelSword] PursueWithoutHeedAI
 
 //fleeing thieves
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [7,8] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [16,7] 0 0 0 0 [ChestKey] ThieveryAI
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [11,0] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
-UNIT RebelThief Thief 0 Level(5,Enemy,True) [12,16] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [7,8] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [16,7] 0 0 0 0 [ChestKey] ThieveryAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [11,0] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
+UNIT RebelThief Thief 0 Level(1,Enemy,True) [12,16] 0 0 0 0 [SuppliesItem] EscapeOnlyAI
 
 //turn 2
 UNIT Rebel Deserter 0 Level(10,Enemy,True) [17,5] 0 0 0 0 [SteelLance] AttackInTwoAI

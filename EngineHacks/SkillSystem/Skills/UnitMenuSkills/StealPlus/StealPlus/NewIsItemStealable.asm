@@ -12,11 +12,14 @@
 .equ GetItemWeight, 0x0801760C
 .equ GetUnitSpeed, 0x08019211
 
-.global IsItemStealable
-.type IsItemStealable, %function
+.global NewIsItemStealable
+.type NewIsItemStealable, %function
+
+.global NewIsItemStealable_Pre
+.type NewIsItemStealable_Pre, %function
 
 
-		IsItemStealable:
+		NewIsItemStealable:
 		push	{r4-r7,r14}
 		mov		r4, r0
 		mov		r5, r1
@@ -107,6 +110,43 @@
 		mov		r0, #1
 		
 		End:
+		pop		{r4-r7}
+		pop		{r1}
+		bx		r1
+		
+		.align
+		.ltorg
+
+NewIsItemStealable_Pre:	@ this is just for checking beforehand whether you can steal the item: for display purposes
+		push	{r4-r7,r14}
+		mov		r4, r0
+		mov		r5, r1
+		ldr		r6, =gActiveUnit
+		mov		r7, #0 @rusty hook "saves" remaining
+		
+		@Cannot steal weapon/tome if equipped
+		blh		GetUnitEquippedItemSlot, r1
+		cmp		r0, r5
+		beq		RetFalse_Pre
+
+		@Cannot steal if target has Watchful
+		mov		r0,r4
+		ldr		r1, =WatchfulIDLink
+		ldrb		r1,[r1]
+		ldr		r3, =SkillTester
+		mov		r14,r3
+		.short	0xF800
+		cmp		r0,#1
+		beq		RetFalse_Pre		@can't steal if they have watchful
+		
+		RetTrue_Pre:
+		mov		r0, #1
+		b		End_Pre
+			
+		RetFalse_Pre:
+		mov		r0, #0
+		
+		End_Pre:
 		pop		{r4-r7}
 		pop		{r1}
 		bx		r1
