@@ -15,7 +15,7 @@ ClearAllDebuffs:
 	mov r3, #1
 	lsl r3, #24
 
-	ldr r2, =DebuffAndTonicsTableSize_Link
+	ldr r2, =DebuffTableSize_Link
 	ldr r2, [r2] 
 	lsr r2, #1
 	orr r2, r3

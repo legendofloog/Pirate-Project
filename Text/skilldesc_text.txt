@@ -1660,7 +1660,7 @@ allies within 3 spaces randomly gain[N]
 ## SD_CatchingUp
 Catching Up: If an enemy would follow[N]
 up against this unit, Atk increases[N]
-by (Enemy AS - Unit AS).[X]
+by (Enemy AS - Unit AS) / 2.[X]
 
 ## SD_Nonconforming
 Nonconforming: This unit can reverse[N]
@@ -1829,8 +1829,8 @@ Costs 200 gold to use.[X]
 
 ## SD_ContraryWinds
 Contrary Winds: This unit can Summon[N]
-a Kite unit and act again (0 Mov).[N]
-Kites lose 2 Mov each turn.[X]
+a Kite unit and act again (with no Mov).[N]
+Kites lose 2 Mov each turn (min: 1).[X]
 
 ## SD_LikeDominoes
 Like Dominoes: If this unit initiates,[N]

@@ -44,6 +44,8 @@
 #define InAHubFlag 0xA0
 #define GoToNextHubFlagID 0xA8 //for going to the next hub
 #define DifficultyChangeFlag 0xEC //for switching difficulties mid-hub
+#define BossBGMChangeFlag 0xEE
+#define ReverseFlagID 0xEF
 
 // Hub A globals
 #define WentToHubA1 0x83
@@ -90,11 +92,9 @@
 
 // Hub B globals
 // not sure where exactly these are meant to go, but eh -RW
-#define HusniyeAccused 0xEC
-#define CruzAccused 0xED
-#define AvocadoAccused 0xEE
-#define ReverseFlagID 0xEF
-
+#define HusniyeAccused 0xB3
+#define CruzAccused 0xB4
+#define AvocadoAccused 0xB5
 #define NeltumeRecruitedFlag 0x78
 #define PassarolaRecruitedFlag 0x79
 #define FlintGeraldGunGiveoutFlag 0x7A

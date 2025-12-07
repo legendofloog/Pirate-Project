@@ -68,6 +68,10 @@ ALIGN 4
 HangoverIDLink:
 BYTE HangoverID
 
+ALIGN 4
+PotentBrewIDLink:
+BYTE PotentBrewID
+
 /*
 PUSH
 ORG 0xA4354

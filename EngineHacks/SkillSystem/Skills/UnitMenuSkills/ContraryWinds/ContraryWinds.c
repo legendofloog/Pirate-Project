@@ -35,7 +35,7 @@ extern struct UnitUsageStats* BWL_GetEntry(u8 charID);
 //prototypes
 void ContraryWinds_PostBattle();
 long long ContraryWinds_NoMove(u8 stat, Unit* unit);
-long long ContraryWinds_KiteDebuff(u8 stat, Unit* unit);
+long long ContraryWinds_KiteDebuff(s8 stat, Unit* unit);
 void ContraryWinds_ClearNoMoveBit();
 
 
@@ -85,7 +85,7 @@ long long ContraryWinds_NoMove(u8 stat, Unit* unit) {
 	
 }
 
-long long ContraryWinds_KiteDebuff(u8 stat, Unit* unit) {
+long long ContraryWinds_KiteDebuff(s8 stat, Unit* unit) {
 	if (unit->pCharacterData->number == KiteSummon) {
 		struct UnitUsageStats* bwl = BWL_GetEntry(KiteSummon);
 		//debuff stat by 2*(turnNumber - deathTurn)
@@ -100,7 +100,7 @@ long long ContraryWinds_KiteDebuff(u8 stat, Unit* unit) {
 		};
 	} result;
 
-	if (stat <= 0) stat = 0;
+	if (stat <= 1) stat = 1;
 
 	result.stat = stat;
 	result.unit = unit;

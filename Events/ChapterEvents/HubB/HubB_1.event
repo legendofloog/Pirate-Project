@@ -141,7 +141,7 @@ UNIT Antlion Thief 0 Level(9, Enemy, True) [0,8] 0 0 0 0 [IronKnife,ChestKey,Doo
 UNIT
 
 DmitrSpawn:
-UNIT Dmitr Brigand 0 Level(11,Ally,True) [1,1] 0 0 0 0 [KillerAxe, IronAxe, Vulnerary] NoAI
+UNIT Dmitr Brigand 0 Level(11,Ally,True) [1,1] 0 0 0 0 [WildAxe, KillerAxe, Vulnerary] NoAI
 UNIT
 
 IntroCutsceneNPCs:

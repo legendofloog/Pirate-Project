@@ -167,7 +167,7 @@ gSuspendSaveChunks:
 	DeclSaveChunk($004C, $0038, MSu_SaveActionState,  MSu_LoadActionState)  // Action State
 	DeclSaveChunk($0084, $0018, MSa_SaveDungeonState, MSa_LoadDungeonState) // Valni/Lagdou permanent data
 	DeclSaveChunk($009C, $0200, $0A6370+1,            $0A638C+1)            // Trap data
-		DeclSaveChunk($029C, $00B0, $0A31E4+1,            $0A326C+1)            // Convoy Items
+	DeclSaveChunk($029C, $00B0, $0A31E4+1,            $0A326C+1)            // Convoy Items
 	DeclSaveChunk($034C, $0460, $0A4264+1,            $0A421C+1)            // BWL Entries
 	DeclSaveChunk($07AC, $00C0, $0A4288+1,            $0A4248+1)            // Previous chapters turn count & time & stuff
 	DeclSaveChunk($086C, $0010, MSu_SaveMenuRelated,  MSu_LoadMenuRelated)  // "menu related list" related

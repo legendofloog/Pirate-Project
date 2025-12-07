@@ -320,7 +320,7 @@ Gryphoknight[X]
 
 ## GryphknightDesc
 Weapons: Lance[N]
-Traits: Flight+, Canto, Aid+[X]
+Traits: Flight, Canto, Aid+, Move+[X]
 
 ## GryphknightDismountedDesc
 Weapons: Lance[N]
@@ -331,11 +331,11 @@ Dracoknight[X]
 
 ## DracoknightDesc
 Weapons: Axe[N]
-Traits: Flight+, Canto, Aid+[X]
+Traits: Flight, Canto, Aid+, Move+[X]
 
 ## FalcoknightDesc
 Weapons: Sword[N]
-Traits: Flight+, Canto, Aid+[X]
+Traits: Flight, Canto, Aid+, Move+[X]
 
 ## RogueDesc
 Weapons: Knife[N]
@@ -395,7 +395,7 @@ Kite[X]
 
 ## KiteDesc
 Weapons: None[N]
-Traits: None[X]
+Traits: Flight[X]
 
 ## AirshipName
 Airship[X]

@@ -281,8 +281,7 @@ void UnsetAllBattleUnitDebuffBitsOnPrepScreenASMC()
 {
 	int unitID = 0;
 	int maxCount = FACTION_PURPLE; //we want to loop through blue/red/green and clear all these bits on preps
-	
-	
+		
 	while (unitID < maxCount) {
 		//get the unit unitID
 		struct Unit* curUnit = GetUnit(unitID);

@@ -93,6 +93,8 @@ PackData_Signed 		@ r0 = address, r1 = bit offset, r2 = number of bits, r3 = dat
 //#define DebuffStatNumberOfBits 7   // Up to +/- 63 in a stat // Requires 70 bits / 9 bytes per entry 
 // more than +63 in a stat is not currently supported by buffs
 #define RalliesNumberOfBits 9 
+#define TonicsNumberOfBits 8
+
 
 ALIGN 4 
 DebuffStatNumberOfBits_Link:
@@ -227,7 +229,9 @@ ALIGN 4
 RalliesNumberOfBits_Link:
 WORD RalliesNumberOfBits
 
-
+ALIGN 4
+TonicNumberOfBits_Link:
+WORD TonicsNumberOfBits
 
 
 

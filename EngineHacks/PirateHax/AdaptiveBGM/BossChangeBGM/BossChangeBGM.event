@@ -5,7 +5,7 @@ POIN BossBGMTable
 
 //This is the flag used to denote that the boss music should be playing.
 BossMusicActiveFlagID:
-SHORT 0xEE //free global flag
+SHORT BossBGMChangeFlag //free global flag
 
 // This is the location that the current boss song ID is stored.
 // It needs to go somewhere that gets saved through suspend.

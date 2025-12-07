@@ -46,6 +46,7 @@ extern u32 EvaTonicOffset_Link;
 
 extern u8 TonicStatBonusTable[];
 extern u8 HangoverIDLink;
+extern u8 PotentBrewIDLink;
 extern u16 TonicUseBoxTextPointer;
 int GetTonicBitFromStat(int statIndex);
 

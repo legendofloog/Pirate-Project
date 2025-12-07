@@ -99,7 +99,7 @@ int AddTonicBonus(struct Unit* unit, int statIndex)
 
     u8 tonicBoost = TonicStatBonusTable[statIndex]; //gets the associated boost
 
-    if (unit->pCharacterData->number == 0x44) tonicBoost *= 3; //hard checking for the unit since checking for the skill is often puzzlingly bad
+    if (gSkillTester(unit, HangoverIDLink)) tonicBoost *= 3; //hard checking for the unit since checking for the skill is often puzzlingly bad
 
     return tonicBoost;
 }
@@ -175,9 +175,14 @@ void DoTonicEffect(struct Unit* unit, int itemSlot)
     if (tonicBit == 0xFFFF || tonicBit == HPTonicOffset_Link) //we need to increase their current HP here when this happens
     {
         hpBonus += TonicStatBonusTable[STAT_HP];
-        if (unit->pCharacterData->number == 0x44) //apparently a skilltester check won't work here: seems like it doesn't work in prep screen item use because there's no battle units?
+        if (gSkillTester(unit, HangoverIDLink)) //apparently a skilltester check won't work here: seems like it doesn't work in prep screen item use because there's no battle units?
         {
             hpBonus += TonicStatBonusTable[STAT_HP] * 2; //do it twice more since the boost is triple: just hard checking for medwyn
+        }
+
+        if (gSkillTester(unit, PotentBrewIDLink)) 
+        {
+            hpBonus += 2;
         }
     } 
 

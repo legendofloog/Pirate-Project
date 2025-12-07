@@ -1,6 +1,7 @@
 #include "gbafe.h"
 
 extern bool SkillTester(Unit* unit, u8 skillID);
+extern s8 AreUnitsAllied(int left, int right);
 
 extern u8 MiraclemakerID_Link;
 extern u32 MiraclemakerBitOffset_Link;
@@ -12,7 +13,7 @@ extern u32* GetUnitDebuffEntry(Unit* unit);
 extern bool IsUnitOnField(Unit* unit);
 
 void Miraclemaker(Unit* unit) {
-	if(gActionData.unitActionType == UNIT_ACTION_STAFF && SkillTester(unit, MiraclemakerID_Link)) {
+	if(gActionData.unitActionType == UNIT_ACTION_STAFF && SkillTester(unit, MiraclemakerID_Link) && AreUnitsAllied(gActionData.subjectIndex, gActionData.targetIndex)) {
 		u32* entry = GetUnitDebuffEntry(GetUnit(gActionData.targetIndex));
 		SetBit(entry, MiraclemakerBitOffset_Link);
 	}
