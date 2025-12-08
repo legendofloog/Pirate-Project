@@ -1328,3 +1328,118 @@ bool CanClassCrossTerrain(int classId, int terrain) {
 const s8* GetClassMovementCost(int classId) {
     return GetClassData(classId)->pMovCostTable[0];
 }
+
+void ClearTemporaryUnits(void) {
+    int i;
+    int j;
+    int item;
+
+    // player units
+    for (i = 1; i < 0x40; ++i) {
+        struct Unit* unit = GetUnit(i);
+
+        if (!UNIT_IS_VALID(unit))
+            continue;
+
+        unit->state |= US_HIDDEN;
+
+        if (unit->pClassData->number == KiteClassIDLink)
+        {
+            for (j = 0; j < 5; j++)
+            {
+                item = unit->items[j];
+                if (item)
+                {
+                    AddItemToConvoy(item); 
+                }
+                else
+                {
+                    break; //if there's no item in that slot, then we're done
+                }
+                
+            }
+            ClearUnit(unit); //once items are dumped, 
+        }
+    }
+
+    // red units and green units
+    for (i = 0x41; i < 0xC0; ++i) {
+        struct Unit* unit = GetUnit(i);
+
+        if (UNIT_IS_VALID(unit))
+            ClearUnit(unit);
+    }
+
+    RefreshEntityBmMaps();
+    SMS_UpdateFromGameData();
+}
+
+void ChapterEndUnitCleanup(void) {
+    int i, j;
+    int item;
+
+    // Clear phantoms
+    for (i = 1; i < 0x40; ++i) {
+        struct Unit* unit = GetUnit(i);
+
+        if (unit && unit->pCharacterData)
+            if (unit->pClassData->number == KiteClassIDLink)
+            {
+                for (j = 0; j < 5; j++)
+                {
+                    item = unit->items[j];
+                    if (item)
+                    {
+                        AddItemToConvoy(item); 
+                    }
+                    else
+                    {
+                        break; //if there's no item in that slot, then we're done
+                    }
+                    
+                }
+                ClearUnit(unit); //once items are dumped, 
+            }
+    }
+
+    // Clear all non player units (green & red units)
+    for (i = 0x41; i < 0xC0; ++i) {
+        struct Unit* unit = GetUnit(i);
+
+        if (unit && unit->pCharacterData)
+            ClearUnit(unit);
+    }
+
+    // Reset player unit "temporary" states (HP, status, some state flags, etc)
+    for (j = 1; j < 0x40; ++j) {
+        struct Unit* unit = GetUnit(j);
+
+        if (unit && unit->pCharacterData) {
+            SetUnitHp(unit, GetUnitMaxHp(unit));
+            SetUnitStatus(unit, UNIT_STATUS_NONE);
+
+            unit->torchDuration = 0;
+            unit->barrierDuration = 0;
+
+            if (unit->state & US_NOT_DEPLOYED)
+                unit->state = unit->state | US_BIT21;
+            else
+                unit->state = unit->state &~ US_BIT21;
+
+            unit->state &= (
+                US_DEAD | US_GROWTH_BOOST | US_SOLOANIM_1 | US_SOLOANIM_2 |
+                US_BIT16 | US_BIT20 | US_BIT21 | US_BIT25 | US_BIT26
+            );
+
+            if (UNIT_CATTRIBUTES(unit) & CA_SUPPLY)
+                unit->state = unit->state &~ US_DEAD;
+
+            unit->state |= US_HIDDEN | US_NOT_DEPLOYED;
+
+            unit->rescueOtherUnit = 0;
+            unit->supportBits = 0;
+        }
+    }
+
+    gPlaySt.chapterStateBits = gPlaySt.chapterStateBits &~ PLAY_FLAG_PREPSCREEN;
+}

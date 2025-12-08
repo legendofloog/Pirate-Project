@@ -32,7 +32,7 @@ Equippable Items[X]
 Tonics[X]
 
 ## FormulaChangesSubPageTitle
-Formula Changes[X]
+Vanilla Changes[X]
 
 ## AhoyAvastSubPageTitle
 Ahoy/Avast[X]
@@ -471,7 +471,10 @@ Walls now take half damage[N]
 from unit attacks. Also,[N]
 they combine horizontally,[N]
 instead of just vertically,[N]
-and can extend past 2 tiles.[N][X]
+and can extend past 2 tiles.[N]
+[N]
+Units now send their inventory[N]
+to the convoy on death.[N][X]
 
 ## AhoyAvastDesc
 Ahoy/Avast, aka Calm/Ablaze,[N]
