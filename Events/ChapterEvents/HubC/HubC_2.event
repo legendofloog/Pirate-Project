@@ -121,7 +121,7 @@ UNIT BlackheartElite Sniper 0 Level(18,Enemy,True) [16,17] 0 0 0 0 [SilverBow] C
 UNIT BlackheartPlus Deserter 0 Level(16,Enemy,True) [15,18] 0 0 0 0 [SteelLance] ChargeAI
 UNIT BlackheartPlus Mercenary 0 Level(16,Enemy,True) [17,19] 0 0 0 0 [SteelSword] ChargeAI
 UNIT BlackheartPlus Berserker 0 Level(17,Enemy,True) [15,15] 0 0 0 0 [SteelAxe] ChargeAI
-UNIT BlackheartPlus Shaman 0 Level(16,Enemy,True) [15,12] 0 0 0 0 [Luna, SecretBook] WaitOneTurnAI
+UNIT BlackheartPlus Shaman 0 Level(16,Enemy,True) [15,12] 0 0 0 0 [Luna, RedGem] WaitOneTurnAI
 UNIT BlackheartPlus Gunner 0 Level(16,Enemy,True) [16,11] 0 0 0 0 [Blunderbuss] WaitOneTurnAI
 UNIT BlackheartPlus WyvernRider 0 Level(16,Enemy,True) [19,12] 0 0 0 0 [Tomahawk, TealGem] WaitOneTurnAI
 UNIT 

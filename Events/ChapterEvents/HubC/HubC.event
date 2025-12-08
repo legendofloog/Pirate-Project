@@ -311,7 +311,7 @@ ENDA
 HubCCallback:
 SpawnQuestSigil(WentToHub1, 1, RedSigilTrapID, 2, 21)
 SpawnQuestSigil(WentToHub2, 2, RedSigilTrapID, 0, 8)
-SpawnQuestSigil(WentToHub3, 3, RedSigilTrapID, 23, 5)
+SpawnQuestSigil(WentToHub3, 3, RedSigilTrapID, 22, 5)
 SpawnQuestSigil(WentToHub4, 4, RedSigilTrapID, 22, 15)
 WEATHER 7
 NoFade
@@ -446,8 +446,6 @@ UNIT Lua Captain 0 Level(10,Ally,False) [12,13] 0 0 0 0 [Cutlass, IronSword, Iro
 UNIT
 
 BeginningScene:
-LOAD1 1 MedwynHubCGroup
-ENUN
 ENUF DifficultyChangeFlag
 ENUT LuaInAHubFlag
 BranchIfHubNotVisited(1, BeginningSceneFirstTimeInHubC)

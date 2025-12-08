@@ -357,7 +357,7 @@ int CanUnitRescue(const struct Unit* actor, const struct Unit* target){
         //return false; //cannot be rescued 
     //} // I have renounced my 1984 ways
 
-    if (LuaIsInHub(gActiveUnit)){ //unit doesn't matter
+    if (LuaIsInHub(gActiveUnit) || gChapterData.chapterIndex == 29){ //unit doesn't matter, this chapter id is the hub C maze
         return false;
     }
 

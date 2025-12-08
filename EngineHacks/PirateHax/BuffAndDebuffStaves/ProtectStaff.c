@@ -115,7 +115,14 @@ void DrawUnitDefChangeText(struct TextHandle* text, struct Unit* unit, int bonus
 	Text_InsertString(text, 16, 3, GetStringFromIndex(0x20D)); // :
     Text_InsertString(text, 44, 3, GetStringFromIndex(HealArrowIDLink)); // ->
 
-    Text_InsertNumberOr2Dashes(text, 64, 2, (GetUnitDefense(unit)) + bonus);
+	if (IsProtectBitSet(unit)) //shows if you've got the boost already
+	{
+		Text_InsertNumberOr2Dashes(text, 64, 2, (GetUnitDefense(unit)));
+	} 
+	else
+	{
+		Text_InsertNumberOr2Dashes(text, 64, 2, (GetUnitDefense(unit)) + bonus);
+	}
     Text_InsertNumberOr2Dashes(text, 32, 2, (GetUnitDefense(unit)));
 }
 
@@ -126,7 +133,6 @@ void RefreshUnitDefChangeInfoWindow(struct Unit* unit) {
     struct UnitInfoWindowProc* proc = UnitInfoWindow_DrawBase(0, unit, x, y, 11, 2); // last parameter is lines
 	
     DrawUnitDefChangeText(proc->lines, unit, ProtectStaffBuffAmount_Link);
-	DrawUnitResChangeText(proc->lines + 1, unit, ProtectStaffBuffAmount_Link);
 
     Text_Display(proc->lines, gBg0MapBuffer + TILEMAP_INDEX(x + 1, y + 3));
 	Text_Display(proc->lines + 1, gBg0MapBuffer + TILEMAP_INDEX(x + 1, y + 5));

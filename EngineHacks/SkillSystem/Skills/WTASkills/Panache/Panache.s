@@ -23,9 +23,16 @@ cmp		r3, #4
 beq		End
 
 @check range
-ldr r0,=#0x203A4D4 @battle stats
+ldr r0,=0x203A4D4 @battle stats
 ldrh r0,[r0,#2] @range
 cmp r0,#1
+bne End
+
+@check that weapon type is a gun
+mov r0, r4
+mov r1, #0x50
+ldrb r0, [r0, r1]
+cmp r0, #7 
 bne End
 
 @add WTA for attacker

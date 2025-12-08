@@ -23,19 +23,12 @@ ldr r1, CatchingUpID
 cmp r0, #0
 beq SwapAttackerDefender
 
-@after that, we check that we're being doubled
 mov r0, #0x5E
 ldrh r1, [r4,r0] @load attacker's AS into r1
 ldrh r2, [r5,r0] @load defender's AS into r2
-add r1, #0x5
-cmp r1, r2 @if we're being doubled, attacker's AS+5 <= defender's AS
-bgt SwapAttackerDefender @if we're not being doubled, no boost for us
-
-@add amount above being doubled by as extra damage / 2
-sub r1, #0x5
 mov r0, #0x5A
 ldrh r3, [r4,r0] @atk
-sub r2, r1 @amount above doubled by = defender's AS - (attacker's AS+5)
+sub r2, r1 @amount above doubled by = defender's AS - (attacker's AS)
 lsr r2, #1 @ equivalent of dividing this difference by 2
 add r3, r2
 strh r3, [r4,r0]
@@ -54,15 +47,9 @@ beq End
 mov r0, #0x5E
 ldrh r1, [r5,r0] @load defender's AS into r1
 ldrh r2, [r4,r0] @load attacker's AS into r2
-add r1, #0x5
-cmp r1, r2 @if we're being doubled, defender's AS+5 <= attacker's AS
-bgt End @if we're not being doubled, no boost for us
-
-@add amount above being doubled by as extra damage
-sub r1, #0x5
 mov r0, #0x5A
 ldrh r3, [r5,r0] @atk
-sub r2, r1 @amount above doubled by = attacker's AS - (defender's AS+5)
+sub r2, r1 @amount above doubled by = attacker's AS - (defender's AS)
 lsr r2, #1 @ equivalent of dividing this difference by 2
 add r3, r2
 strh r3, [r5,r0]

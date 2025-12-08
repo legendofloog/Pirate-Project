@@ -928,7 +928,7 @@ I can see the ambition in your eyes.[N]
 You've got big plans here, right?[AN]
 Hire me, and I'll see them through[N]
 by killing anyone in your way.[AN]
-Upfront, I want[Beat] Mm, 3000 gold.[X]
+Upfront, I want[Beat] Mm, 3000 gold.[A][X]
 
 ## HubCTheanaTellsLuaShesBroke
 [MidLeft][LoadTheana]

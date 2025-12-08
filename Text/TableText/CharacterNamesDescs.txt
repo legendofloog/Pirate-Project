@@ -1357,25 +1357,31 @@ Now, only a broken man.[X]
 Windy[X]
 
 ## WindyDesc
-Questant[N]
 A trainee Keeper whose... fervent[N]
 wanderlust outweighs self-preservation.[X]
+
+## WindyOccupation
+Questant[X]
 
 ## BurtName
 Kurt[X]
 
 ## BurtDesc
-Drifter[N]
 A mercenary who is in constant search[N]
 of money but has constant misfortune.[X]
+
+## KurtOccupation
+Drifter[X]
 
 ## TheanaName
 Theana[X]
 
 ## TheanaDesc
-Manslayer[N]
 A drifting hitman for hire who[N]
 doesn't like to talk about her past.[X]
+
+## TheanaOccupation
+Manslayer[X]
 
 ## ExplorerName
 Explorer[X]

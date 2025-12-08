@@ -1658,8 +1658,7 @@ allies within 3 spaces randomly gain[N]
 +3 Spd, +4 Dex, or +5 Eva for 1 turn.[X]
 
 ## SD_CatchingUp
-Catching Up: If an enemy would follow[N]
-up against this unit, Atk increases[N]
+Catching Up: This unit's Atk increases[N]
 by (Enemy AS - Unit AS) / 2.[X]
 
 ## SD_Nonconforming
@@ -1874,9 +1873,9 @@ Incantation: Command. Gain +4 Mt[N]
 and +30% Crit on unit's next attack.[X]
 
 ## SD_ThunderingHooves
-Thundering Hooves: Each turn, enemies[N]
-within 2 tiles of this unit take[N]
-damage equal to 25% of their max HP.[X]
+Thundering Hooves: Each Player Phase,[N]
+enemies within 2 tiles of this unit[N]
+take damage = 25% of their max HP.[X]
 
 ## SD_Precision
 Killer's Precision: When attacking at[N]

@@ -20,7 +20,7 @@ SkysEnd_0:
         BYTE           N24     En3   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v+12
-        BYTE           VOL     112
+        BYTE           VOL     62
         BYTE   W24
         BYTE           N24     Dn3
         BYTE   W24
@@ -545,7 +545,7 @@ SkysEnd_1:
         BYTE           N06     En2   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v-12
-        BYTE           VOL     100
+        BYTE           VOL     50
         BYTE   W06
         BYTE           N06     Fn2
         BYTE   W06
@@ -1103,7 +1103,7 @@ SkysEnd_2:
         BYTE           VOICE   52
         BYTE           BENDR   12
         BYTE           PAN     c_v+19
-        BYTE           VOL     75
+        BYTE           VOL     25
         BYTE   W96
         BYTE   W24
 // 001   ----------------------------------------
@@ -1241,7 +1241,7 @@ SkysEnd_3:
         BYTE           VOICE   62
         BYTE           BENDR   12
         BYTE           PAN     c_v+5
-        BYTE           VOL     74
+        BYTE           VOL     24
         BYTE   W96
         BYTE   W24
 // 001   ----------------------------------------
@@ -1570,7 +1570,7 @@ SkysEnd_4:
         BYTE           VOICE   24
         BYTE           BENDR   12
         BYTE           PAN     c_v-6
-        BYTE           VOL     100
+        BYTE           VOL     50
         BYTE   W96
         BYTE   W24
 // 001   ----------------------------------------
@@ -1720,7 +1720,7 @@ SkysEnd_5:
         BYTE           TIE     En2   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v-25
-        BYTE           VOL     100
+        BYTE           VOL     50
         BYTE   W96
         BYTE   W24
 // 001   ----------------------------------------
@@ -1863,7 +1863,7 @@ SkysEnd_6:
         BYTE           N12     En2   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v+25
-        BYTE           VOL     119
+        BYTE           VOL     69
         BYTE   W18
         BYTE           N12
         BYTE   W12
@@ -2425,7 +2425,7 @@ SkysEnd_7:
         BYTE           N06     Fs1   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v-19
-        BYTE           VOL     107
+        BYTE           VOL     57
         BYTE   W06
         BYTE           N06
         BYTE   W06
@@ -2672,7 +2672,7 @@ SkysEnd_8:
         BYTE           TIE     An2   v100
         BYTE           BENDR   12
         BYTE           PAN     c_v-19
-        BYTE           VOL     100
+        BYTE           VOL     50
         BYTE   W06
         BYTE           N06     Cn1   v127
         BYTE   W06

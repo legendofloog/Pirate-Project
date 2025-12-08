@@ -32,6 +32,13 @@ ldrh r0,[r0,#2] @range
 cmp r0,#1
 bne End
 
+@check that weapon type is a gun
+mov r0, r4
+mov r1, #0x50
+ldrb r0, [r0, r1]
+cmp r0, #7 
+bne End
+
 @increase AS by 5
 mov r1, #0x5E
 ldrh r0, [r4,r1]

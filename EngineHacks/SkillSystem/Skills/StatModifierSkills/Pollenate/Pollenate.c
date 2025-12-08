@@ -19,6 +19,7 @@ extern u16 PollenateSubtitleHelpTextID_Link;
 extern void GenericSelection_DeleteBBAndBG(TargetSelectionProc* proc);
 extern Unit* gUnitSubject;
 extern void AddUnitToTargetListIfAllied(Unit* unit);
+Proc* StartBottomHelpText(Proc*, const char*);
 
 // function prototypes
 u32 GetUnitPollenateValue(Unit* unit);
@@ -55,10 +56,7 @@ void SetUnitPollenateValue(Unit* unit, u32 value) {
 }
 
 void IncrementUnitPollenateValue(Unit* unit) {
-	PackData(GetUnitDebuffEntry(unit), 
-			 PollenateBitOffset_Link, 3, 
-			 UnpackData(GetUnitDebuffEntry(unit), PollenateBitOffset_Link, 3) + 1
-			);
+	SetUnitPollenateValue(unit, UnpackData(GetUnitDebuffEntry(unit), PollenateBitOffset_Link, 3) + 1);
 }
 
 
@@ -96,12 +94,13 @@ void Pollenate_IncrementFromStaff() {
 
 int PollenateUsability(MenuCommandDefinition* command, int number) {
 	
-	//true if pollenate value isn't 0 and target list isn't empty and has skill
+	//true if pollenate value isn't 0 and target list isn't empty and has skill and isn't cantoing
 	MakeTargetListForPollenate(gActiveUnit);
 	if (
 		GetUnitPollenateValue(gActiveUnit) != 0 
 		&& GetTargetListSize() > 0
 		&& SkillTester(gActiveUnit, PollenateID_Link)
+		&& !(gActiveUnit->state & US_HAS_MOVED)
 	) {
 		return MCA_USABLE;
 	}
@@ -148,7 +147,7 @@ int PollenateSelection_OnSelect(TargetSelectionProc* proc, TargetEntry* target) 
 }
 
 void PollenateAction() {
-	gBattleActor.hasItemEffectTarget = 0;
+	//gBattleActor.hasItemEffectTarget = 0;
 	Unit* actor = GetUnit(gActionData.subjectIndex);
 	Unit* target = GetUnit(gActionData.targetIndex);
 	

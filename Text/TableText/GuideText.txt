@@ -366,7 +366,10 @@ equipped (only one at a time).[N]
 [N]
 Some equippable items have[N]
 durability and can break,[N]
-but most are infinite use.[N][X]
+but most are infinite use.[N]
+Durability reduces when the[N]
+user of the item takes a hit[N]
+in battle (for shields).[N][X]
 
 ## TonicsDesc
 Tonics are items that can give[N]

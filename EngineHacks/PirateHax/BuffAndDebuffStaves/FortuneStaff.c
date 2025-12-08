@@ -118,7 +118,15 @@ void DrawUnitHitChangeText(struct TextHandle* text, struct Unit* unit, int bonus
 	Text_InsertString(text, 12, 3, GetStringFromIndex(0x20D)); // :
     Text_InsertString(text, 44, 3, GetStringFromIndex(HealArrowIDLink)); // ->
 
-    Text_InsertNumberOr2Dashes(text, 72, 2, (GetUnitSkill(unit) * 4) + GetItemHit(GetUnitEquippedWeapon(unit)) + bonus);
+	if (IsFortuneBitSet(unit))
+	{
+		Text_InsertNumberOr2Dashes(text, 72, 2, (GetUnitSkill(unit) * 4) + GetItemHit(GetUnitEquippedWeapon(unit)));
+	}
+	else
+	{
+		Text_InsertNumberOr2Dashes(text, 72, 2, (GetUnitSkill(unit) * 4) + GetItemHit(GetUnitEquippedWeapon(unit)) + bonus);
+	}
+    
     Text_InsertNumberOr2Dashes(text, 32, 2, (GetUnitSkill(unit) * 4) + GetItemHit(GetUnitEquippedWeapon(unit)));
 
     return;

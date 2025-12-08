@@ -118,7 +118,15 @@ void DrawUnitCritChangeText(struct TextHandle* text, struct Unit* unit, int bonu
 	Text_InsertString(text, 16, 3, GetStringFromIndex(0x20D)); // :
     Text_InsertString(text, 52, 3, GetStringFromIndex(HealArrowIDLink)); // ->
 
-    Text_InsertNumberOr2Dashes(text, 80, 2, GetItemCrit(GetUnitEquippedWeapon(unit)) + bonus);
+	if (IsConcentrateBitSet(unit))
+	{
+		Text_InsertNumberOr2Dashes(text, 80, 2, GetItemCrit(GetUnitEquippedWeapon(unit)));
+	}
+	else
+	{
+		Text_InsertNumberOr2Dashes(text, 80, 2, GetItemCrit(GetUnitEquippedWeapon(unit)) + bonus);
+	}
+
     Text_InsertNumberOr2Dashes(text, 40, 2, GetItemCrit(GetUnitEquippedWeapon(unit)));
 
     return;

@@ -91,7 +91,7 @@ UNIT Pilar Ninja 0 Level(10,Ally,False) [5,2] 0 0 0 0 [Cutlass, IronSword, IronM
 UNIT
 
 NewUnit_Bolton:
-UNIT Bolton DarkKnight 0 Level(16,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,Sidepierce,RustyHook] NoAI
+UNIT Bolton DarkKnight 0 Level(16,Ally,True) [1,21] 0 0 0 0 [HeroFlare,Elfire,RustyHook] NoAI
 UNIT
 
 NewUnit_RimaOffscreen:
@@ -131,8 +131,8 @@ UNIT C3Pirate Fighter 0 Level(16,Enemy,True) [7,5] 0 0 0 0 [Hammer] NoAI
 //Northeast
 UNIT C3Pirate Adventurer 0 Level(18,Enemy,True) [21,9] 0 0 0 0 [SteelBow,RushStaff] AttackInRangeAI
 UNIT C3Pirate Archer 0 Level(16,Enemy,True) [16,9] 0 0 0 0 [SteelBow] AttackInRangeAI
-UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [21,7] 0 0 0 0 [ShortSpear] BossAI
-UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [20,6] 0 0 0 0 [HandAxe,Oversize] BossAI
+UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [21,7] 0 0 0 0 [Spear] BossAI
+UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [20,6] 0 0 0 0 [Tomahawk,Oversize] BossAI
 UNIT C3Pirate Fighter 0 Level(16,Enemy,True) [19,6] 0 0 0 0 [SteelAxe] AttackInTwoAI
 UNIT C3Pirate GriffinRider 0 Level(16,Enemy,True) [17,5] 0 0 0 0 [SteelLance] AttackInRangeAI
 UNIT C3Pirate WyvernRider 0 Level(16,Enemy,True) [14,7] 0 0 0 0 [SteelAxe] NoAI
@@ -150,8 +150,8 @@ UNIT C3Pirate Hero 0 Level(18,Enemy,True) [3,21] 0 0 0 0 [SilverSword] AttackInR
 UNIT C3Pirate Sage 0 Level(18,Enemy,True) [0,22] 0 0 0 0 [Elfire] AttackInRangeAI
 
 //Bridge
-UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [8,21] 0 0 0 0 [ShortSpear,PureWater] BossAI
-UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [8,22] 0 0 0 0 [HandAxe] BossAI
+UNIT C3Pirate Halberdier 0 Level(18,Enemy,True) [8,21] 0 0 0 0 [Spear,PureWater] BossAI
+UNIT C3Pirate Marshall 0 Level(18,Enemy,True) [8,22] 0 0 0 0 [Tomahawk] BossAI
 UNIT C3Pirate Adventurer 0 Level(18,Enemy,True) [9,22] 0 0 0 0 [Greatbow,AssistStaff] BossAI
 UNIT C3Pirate Mercenary 0 Level(16,Enemy,True) [5,23] 0 0 0 0 [IronBlade] NoAI
 UNIT C3Pirate Gunner 0 Level(16,Enemy,True) [5,24] 0 0 0 0 [SteelMusket,GlassShield] NoAI

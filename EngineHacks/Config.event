@@ -274,7 +274,7 @@
 // #define COMBAT_ARTS
 
 //If true, Combat Arts will not be allowed to hit more than once.
-#define ARTS_HIT_ONCE True
+#define ARTS_HIT_ONCE False
 
 //If uncommented, ModularPreBattleSkill will be installed.
 //This modularly affects combat arts. See: SkillSystem\Skills\PreBattleSkills\ModularPreBattleSkills

@@ -76,6 +76,25 @@ int BarrierStaffInitSelect(struct Proc* proc) {
 	return 1;
 }
 
+void DrawUnitResChangeText(struct TextHandle* text, struct Unit* unit, int bonus) {
+	Text_Clear(text);
+
+	Text_InsertString(text, 0, 3, GetStringFromIndex(0x4f0)); // Def[.][X]
+	Text_InsertString(text, 16, 3, GetStringFromIndex(0x20D)); // :
+    Text_InsertString(text, 44, 3, GetStringFromIndex(HealArrowIDLink)); // ->
+
+	if (IsBarrierBitSet(unit))
+	{
+		Text_InsertNumberOr2Dashes(text, 64, 2, (GetUnitResistance(unit)));
+	}
+	else
+	{
+		Text_InsertNumberOr2Dashes(text, 64, 2, (GetUnitResistance(unit)) + bonus);
+	}
+
+    Text_InsertNumberOr2Dashes(text, 32, 2, (GetUnitResistance(unit)));
+}
+
 void RefreshUnitResChangeInfoWindow(struct Unit* unit) {
 	int y = 0;
     int x = GetUnitInfoWindowX(unit, 11);
@@ -128,3 +147,4 @@ void ExecBarrierStaff(Proc* proc) {
 	BattleApplyItemEffect(proc);
 	BeginBattleAnimations();
 }
+

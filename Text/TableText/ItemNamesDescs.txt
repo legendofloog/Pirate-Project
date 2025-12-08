@@ -647,8 +647,8 @@ at 2 cost per tile. -2 Def, +2 Eva.[X]
 Rusty Hook[X]
 
 ## RustyHookDesc
-Unit can ignore Spd or Wt when[N]
-stealing, but stolen goods have[N]
+Unit can ignore Spd OR Wt (not both)[N]
+when stealing, but stolen goods have[N]
 25% durability (min. 1 use).[X]
 
 ## RustyHookUseDesc
