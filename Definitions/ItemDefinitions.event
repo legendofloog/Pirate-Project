@@ -196,6 +196,8 @@
 // Avaritia
 #define Avaritia 0xFC
 // Luxuria
-#define Luxuria 0xFD
+#define Luxuria 0xB0
+#define Invidia Luxuria
+
 // Acedia
-#define Acedia 0xFE
+#define Acedia 0xB1
