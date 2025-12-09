@@ -142,6 +142,7 @@ ENDTRAP
 ALIGN 4
 
 BeginningScene:
+COUNTER_SET 0 0
 SetBackground(Ship)
 MUSC SwabbieTalkID
 Text(ThePlan)
