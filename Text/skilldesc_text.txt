@@ -1658,8 +1658,8 @@ allies within 3 spaces randomly gain[N]
 +3 Spd, +4 Dex, or +5 Eva for 1 turn.[X]
 
 ## SD_CatchingUp
-Catching Up: This unit's Atk increases[N]
-by (Enemy AS - Unit AS) / 2.[X]
+Catching Up: This unit's Atk and defenses[N]
+increase by (Enemy AS - Unit AS) / 2.[X]
 
 ## SD_Nonconforming
 Nonconforming: This unit can reverse[N]
@@ -1671,8 +1671,8 @@ Panache: Unit can initiate combat[N]
 with guns at 1 RNG, giving WTA + 5 AS.[X]
 
 ## SD_Canter
-Canter: Unit can move 2[N]
-spaces after combat.[X]
+Canter: Unit can move[N]
+2 spaces after combat.[X]
 
 ## SD_Protector
 Protector: Gain +10 Aid. Increase Def[N]
@@ -1734,7 +1734,7 @@ but not move, after stealing.[X]
 
 ## SD_FaithsAegis
 Miraclemaker: If this unit uses a staff[N]
-on an ally, the ally will survive fatal[N]
+on an ally, that ally will survive fatal[N]
 damage once (lasts until end of turn).[X]
 
 ## SD_Shuffle
@@ -1875,7 +1875,7 @@ and +30% Crit on unit's next attack.[X]
 ## SD_ThunderingHooves
 Thundering Hooves: Each Player Phase,[N]
 enemies within 2 tiles of this unit[N]
-take damage = 25% of their max HP.[X]
+take 25% of max HP as dmg (cannot die).[X]
 
 ## SD_Precision
 Killer's Precision: When attacking at[N]
@@ -1900,7 +1900,7 @@ mines also Break the triggering unit.[X]
 
 ## SD_HolyHaymaker
 Holy Haymaker: If this unit uses a staff[N]
-on an ally, the ally gains +10 Atk[N]
+on an ally, that ally gains +10 Atk[N]
 (lasts until end of turn).[X]
 
 ## SD_Conviction

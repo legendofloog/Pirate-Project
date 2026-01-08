@@ -12,7 +12,7 @@ void ComputeBattleUnitHitRate(BattleUnit* bu) {
 }
 
 void ComputeBattleUnitAvoidRate(BattleUnit* bu) {
-    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 3) + bu->battleSpeed;
+    bu->battleAvoidRate = bu->terrainAvoid + (bu->unit.lck * 2) + bu->battleSpeed;
 
     if (bu->battleAvoidRate < 0){
         bu->battleAvoidRate = 0;

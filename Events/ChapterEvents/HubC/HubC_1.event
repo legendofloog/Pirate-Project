@@ -410,7 +410,7 @@ EndingScene:
 		STAL 30
 		Text(C1_Outro_HermReturns)
 		REVEAL Hermenegildo
-		SendAll(Hermenegildo)
+		CALL RefundHermenItemEvent
 		PROMOTE Hermenegildo Sage_Hermen HoardersCharm
 		STAL 30
 	LABEL 0x1D
@@ -420,7 +420,7 @@ EndingScene:
 		ENUT 0xB5
 		STAL 30
 		Text(C1_Outro_HermMonologues)
-		SendAll(Hermenegildo)
+		CALL RefundHermenItemEvent	
 		PROMOTE Hermenegildo Sage_Hermen HoardersCharm
 		STAL 30
 	LABEL 0x23
@@ -438,6 +438,19 @@ Text(C1_TutorialText)
 NoFade
 ENDA
 
+RefundHermenItemEvent:
+CHECK_CLASS Hermen
+SVAL s1 Slayer
+BNE 776 s1 sC 
+	SilentGiveItem(MagiRing, Hermenegildo)
+	GOTO 777
+LABEL 776
+SVAL s1 Swordmaster
+BNE 777 s1 sC 
+	SilentGiveItem(BravesCrest, Hermenegildo)
+LABEL 777
+NoFade
+ENDA
 
 Island2Unset:
 ENUF 0xB
@@ -554,7 +567,6 @@ MusicChangeWarning:
 FadeOutMusic
 CameraCursor(Lua)
 Text(C1_MusicWarning)
-MUSC TimesTickingID
 NoFade
 ENDA
 
@@ -571,7 +583,7 @@ ENDA
 
 WarnChest1:
 CAM1 [11,13]
-STAL 30
+STAL 60
 Text(C1_Warn_Chest1)
 NoFade
 ENDA
@@ -579,14 +591,14 @@ ENDA
 
 WarnChest2:
 CAM1 [19,22]
-STAL 30
+STAL 60
 Text(C1_Warn_ChestLater)
 NoFade
 ENDA
 
 WarnChest3:
 CAM1 [24,8]
-STAL 30
+STAL 60
 Text(C1_Warn_ChestLater)
 NoFade
 ENDA
@@ -594,7 +606,7 @@ ENDA
 T2_Sanz_Scene:
 Music(OrlandoThemeID)
 CAM1 [15,2]
-STAL 30
+STAL 60
 FadeToBlack
 SetBackground(0x2F)
 FadeBackFromBlack

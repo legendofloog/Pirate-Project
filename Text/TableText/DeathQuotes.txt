@@ -645,7 +645,11 @@ And you're[Beat] just[Beat][N]
 [X]
 
 ## QuispeDQChapter4
-[X]
+[ML][LoadQuispe][ToggleSmile]
+Heh[Beat] Not bad, Skysabers.[N]
+Keep your prize, then.[AN]
+We'll meet again, though[Beat][N]
+I can promise you that.[A][X]
 
 // HUB D
 

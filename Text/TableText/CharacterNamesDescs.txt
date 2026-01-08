@@ -19,7 +19,7 @@ Captain[X]
 
 ## LuaDesc
 Leader of the crew and the ship's pilot,[N]
-she flies the Liberator with ease.[X]
+she commands flying vessels with ease.[X]
 
 ## PilarName
 Pilar[X]
@@ -1338,17 +1338,21 @@ no matter the price that must be paid.[X]
 Solange[X]
 
 ## SolangeDesc
-Rebel Captain[N]
 One of the former Roseblades,[N]
 and Rogelio's closest companion.[X]
+
+## SolangeOccupation
+Rebel Captain[X]
 
 ## RogelioName
 Rogelio[X]
 
 ## RogelioDesc
-Traitor[N]
 A pirate, once. A rebel, once.[N]
 Now, only a broken man.[X]
+
+## RogelioOccupation
+Traitor[X]
 
 // hub C interlude units
 // rw helped :)
@@ -1463,7 +1467,7 @@ greatly increasing their odds of escape.[X]
 
 ## D3BanditPrisonerDesc
 Ne'er-do-wells captured by the Redwings,[N]
-for who freedom only come from death.[X]
+whose freedom only comes from death.[X]
 
 ## D3IncendivisOccupation
 Mage[X]

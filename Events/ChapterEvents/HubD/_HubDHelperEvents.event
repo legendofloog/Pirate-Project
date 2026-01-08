@@ -1,8 +1,8 @@
 HubD_Traps_Deck:
 AddTrap(BlueSigilTrapID, 7, 14)
 AddTrap(BlueSigilTrapID, 8, 14)
-AddTrap(GreenSigilTrapID, 7, 8)
-AddTrap(GreenSigilTrapID, 8, 8)
+AddTrap(GreenSigilTrapID, 7, 7)
+AddTrap(GreenSigilTrapID, 8, 7)
 AddTrap(BlueSigilTrapID, 5, 20)
 AddTrap(BlueSigilTrapID, 10, 20)
 AddTrap(BlueSigilTrapID, 11, 23)
@@ -59,7 +59,7 @@ LoadAllyUnitGroupIfAlive(Yodsen, 9, YodsenHubDGroup)
 LoadAllyUnitGroupIfAlive(Durgham, 10, DurghamHubDGroup)
 LoadAllyUnitGroupIfAlive(Leandra, 13, LeandraHubDGroup)
 LoadAllyUnitGroupIfAlive(Juan, 14, JuanHubDGroup)
-LoadAllyUnitGroupIfAlive(IdaReal, 14, IdaHubDGroup)
+LoadAllyUnitGroupIfAlive(IdaReal, 15, IdaHubDGroup)
 NoFade
 ENDA
 

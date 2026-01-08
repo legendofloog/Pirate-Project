@@ -86,9 +86,9 @@ UNIT
 EnemyUnits1:
 // Bosses
 UNIT C4Elite Slayer 0 Level(21, Enemy, True) [9,6] 0 0 0 0 [HeroFlare, BraveSword] BossAI
-UNIT C4Elite Marksman 0 Level(20, Enemy, True) [8,2] 0 0 0 0 [SilverMusket] AttackInRangeAI
-UNIT C4Elite Assassin 0 Level(20, Enemy, True) [5,5] 0 0 0 0 [Heartpiercer, Pursuer] AttackInRangeAI
-UNIT C4Elite Warrior 0 Level(20, Enemy, True) [14,2] 0 0 0 0 [BattleAxe, SilverBow] AttackInRangeAI
+UNIT C4Phantom Marksman 0 Level(20, Enemy, True) [8,2] 0 0 0 0 [SilverMusket] AttackInRangeAI
+UNIT C4Phantom Assassin 0 Level(20, Enemy, True) [5,5] 0 0 0 0 [Heartpiercer, Pursuer] AttackInRangeAI
+UNIT C4Phantom Warrior 0 Level(20, Enemy, True) [14,2] 0 0 0 0 [BattleAxe, SilverBow] AttackInRangeAI
 
 // Chest guards, north
 UNIT C4Elite General 0 Level(C4LevelElite, Enemy, True) [0,7] 0 0 0 0 [Spear, SilverSword] BossAI

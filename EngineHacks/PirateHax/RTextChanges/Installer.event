@@ -152,6 +152,8 @@ SetOccupation(KaisaDesc, KaisaOccupation)
 SetOccupation(FlorenciaDesc, FlorenciaOccupation)
 SetOccupation(AristidesDesc, AristidesOccupation)
 SetOccupation(GreagorShirkerDesc, GreagorShirkerOccupation)
+SetOccupation(SolangeDesc, SolangeOccupation)
+SetOccupation(RogelioDesc, RogelioOccupation)
 
 SHORT 0 0 // terminator
 

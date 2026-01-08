@@ -17,7 +17,7 @@ TurnEventPlayer(0, JulianaDialogue, 2)
 TurnEventPlayer(0, IgnacioBoatReinforcements, 3)
 //TurnEventPlayer(0, HugoReinforcements, 4)
 //TurnEventPlayer(0, IgnacioBoatReinforcements2, 5)
-TurnEventPlayer(0, ElodiaDecidesToCharge, 6) //settled on this
+TurnEventPlayer(0, ElodiaDecidesToCharge, 7) 
 
 TurnEventPlayer(LuaInAHubFlag, ObjectiveExplanation, 1)
 TurnEventPlayer(Ch2ReinforcementFlags, BoatPursuerReinforcements, 1, 255)

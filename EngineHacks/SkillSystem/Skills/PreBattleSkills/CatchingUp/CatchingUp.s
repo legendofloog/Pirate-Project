@@ -32,6 +32,10 @@ sub r2, r1 @amount above doubled by = defender's AS - (attacker's AS)
 lsr r2, #1 @ equivalent of dividing this difference by 2
 add r3, r2
 strh r3, [r4,r0]
+mov r0, #0x5C
+ldrh r3, [r4, r0] @ battle def
+add r3, r2
+strh r3, [r4, r0] @ add diff / 2 to atk and def
 
 @now we do the same thing but swap attacker and defender
 SwapAttackerDefender:
@@ -53,6 +57,10 @@ sub r2, r1 @amount above doubled by = attacker's AS - (defender's AS)
 lsr r2, #1 @ equivalent of dividing this difference by 2
 add r3, r2
 strh r3, [r5,r0]
+mov r0, #0x5C
+ldrh r3, [r5, r0] @ battle def
+add r3, r2
+strh r3, [r5, r0] @ add diff / 2 to atk and def
 
 End:
 pop {r4-r7, r15}

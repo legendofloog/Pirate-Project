@@ -191,6 +191,9 @@ ALIGN 4
 
 #include "DisplayObtainableItem/Installer.event"
 
+#include "SupplyView/SupplyView.event"
+
+
 PUSH
 ORG $22F50 // installs thracia trade
 BYTE 0xC0 0x46

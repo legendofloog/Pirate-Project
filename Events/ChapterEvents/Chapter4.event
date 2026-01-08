@@ -207,7 +207,7 @@ UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [16,21] 0 0 0 0 [Tomahawk]
 UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [1,31] 0 0 0 0 [Tomahawk] BossAI
 UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [28,31] 0 0 0 0 [Spear] BossAI
 UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [10,35] 0 0 0 0 [Tomahawk] BossAI
-UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [18,36] 0 0 0 0 [Spear] BossAI
+UNIT Keeper General 0 Level(Ch4EliteLevel,Enemy,True) [18,35] 0 0 0 0 [Spear] BossAI
 
 
 UNIT Keeper MasterNinja 0 Level(Ch4EliteLevel,Enemy,True) [0,22] 0 0 0 0 [Rapier, SteelKnife] AttackInTwoAI

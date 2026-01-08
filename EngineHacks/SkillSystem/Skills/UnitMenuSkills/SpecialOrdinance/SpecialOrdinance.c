@@ -8,6 +8,7 @@
 #define TARGETSELECTION_ACTION_CLEARBGS 1<<4
 
 #define ITEM_MINE 0x7A
+#define TRAP_MINE 11
 #define TRAP_FIRE_THIEF 15
 #define TRAP_MINE_ASSASSIN 16
 
@@ -15,13 +16,16 @@ extern void SetBit(u32* address, u8 bitOffset);
 extern void UnsetBit(u32* address, u8 bitOffset);
 extern bool CheckBit(u32* address, u8 bitOffset);
 extern u32* GetUnitDebuffEntry(struct Unit* unit);
+extern u8 NoMoveBitOffset_Link;
 extern u32 GaleforceEvent;
 
 extern int BreakBitOffset_Link;
 extern int BreakInBattleBitOffset_Link;
 
-
-
+void RunPostActionEvents(void);
+s8 CheckForPostActionEvents(void);
+void ApplyHazardHealing(Proc* proc, struct Unit* unit, int hp, int status);
+void NewPopup2_PlanA(Proc* parent, int iconIndex, char *str);
 
 struct SelectTarget
 {
@@ -57,6 +61,8 @@ int SpecialOrdinanceEffect(MenuProc* menu, MenuCommandProc* menuItem);
 void DoUsePutTrap_BreakMine(Unit* unit);
 u8 OnSelectPutTrap_BreakMine(Proc* proc, struct SelectTarget* target);
 void ExecBreakMine(Proc* proc);
+void MakeTargetListForMine(struct Unit* unit);
+
 //Override
 void MineFireTrap_80375A0(struct ProcBmTrap* proc);
 void SpecialOrdinance_PostBattle();
@@ -97,7 +103,7 @@ void DoUsePutTrap_BreakMine(Unit* unit) {
         StartTargetSelectionExt((0x859D2D8), OnSelectPutTrap_BreakMine),
         GetStringFromIndex(0x87D));
 
-    PlaySoundEffect(SONG_SE_SYS_WINDOW_SELECT1);
+    PlaySfx(SONG_SE_SYS_WINDOW_SELECT1);
 }
 
 
@@ -107,7 +113,7 @@ u8 OnSelectPutTrap_BreakMine(Proc* proc, struct SelectTarget* target) {
 
     HideMoveRangeGraphics();
 
-    BG_Fill(gBg2MapBuffer, 0);
+    FillBgMap(gBg2MapBuffer, 0);
     EnableBgSyncByMask(BG2_SYNC_BIT);
 
     gActionData.unitActionType = BreakMineActionID_Link;
@@ -142,6 +148,9 @@ void SpecialOrdinance_PostBattle() {
 		newState = newState & (0xFFFFFFFF - 0x42); //unset 0x42
 		newState = newState | 0x400; //set 0x400
 		gActiveUnit->state = newState;
+        u32* entry = GetUnitDebuffEntry(gActiveUnit);
+
+        SetBit(entry,NoMoveBitOffset_Link);
 		CallMapEventEngine(&GaleforceEvent,1); //play sfx
 		}
 	}
@@ -181,6 +190,7 @@ int ExecTrap(Proc* proc, Unit* unit, int exec_type)
 {
     struct ProcBmTrap * proc2;
 
+    int tmp = 0;
     switch (GetTriggeredTrapType(unit)) {
         case TRAP_8:
             proc2 = ProcStartBlocking(0x859E5AC, proc);
@@ -189,7 +199,7 @@ int ExecTrap(Proc* proc, Unit* unit, int exec_type)
             break;
 
         case TRAP_MINE:
-            int tmp = GetSpecificTrapAt(unit->xPos, unit->yPos, TRAP_MINE)->data[0];
+            tmp = GetSpecificTrapAt(unit->xPos, unit->yPos, TRAP_MINE)->data[0];
 			RemoveTrap(GetSpecificTrapAt(unit->xPos, unit->yPos, TRAP_MINE));
 			proc2 = ProcStartBlocking(0x859E5FC, proc);
             proc2->post_exec_type = exec_type;
@@ -199,13 +209,13 @@ int ExecTrap(Proc* proc, Unit* unit, int exec_type)
 
         case TRAP_FIRE_THIEF:
             RemoveTrap(GetTrapAt(unit->xPos, unit->yPos));
-            PlaySoundEffect(0xB1);
+            PlaySfx(0xB1);
             NewPopup2_PlanA(proc, -1, GetStringFromIndex(0x20));    /* Disabled trap. */
             break;
 
         case TRAP_MINE_ASSASSIN:
             RemoveTrap(GetTrapAt(unit->xPos, unit->yPos));
-            PlaySoundEffect(0xB1);
+            PlaySfx(0xB1);
             NewPopup2_PlanA(proc, -1, GetStringFromIndex(0x21));    /* Recovered mine. */
             UnitAddItem(unit, MakeNewItem(ITEM_MINE));
             break;

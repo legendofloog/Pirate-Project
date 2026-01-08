@@ -10,11 +10,11 @@ endif
 include $(DEVKITARM)/base_tools
 
 # defining path of lyn
-LYN := /mnt/c/devkitpro/lyn
+LYN := C://devkitpro/lyn.exe
 
 # setting up compilation flags
-ARCH   := -mcpu=arm7tdmi -mthumb -mthumb-interwork -I "/mnt/c/devkitpro/FE-Clib/include"
-CFLAGS := $(ARCH) -Wall -Os -mtune=arm7tdmi -mlong-calls
+ARCH   := -mcpu=arm7tdmi -mthumb -mthumb-interwork -I "C://devkitpro/FE-CLib/include"
+CFLAGS := $(ARCH) -Wall -O2 -mtune=arm7tdmi -mlong-calls
 
 # C to ASM rule
 %.asm: %.c

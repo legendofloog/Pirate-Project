@@ -363,7 +363,7 @@ AvocadoMugData:
 #incbin "Dmp/Avocado_frames.dmp"
 #incbin "Dmp/Avocado_palette.dmp"
 #incbin "Dmp/Avocado_minimug.dmp"
-setMugEntry(AvocadoMug, AvocadoMugData, 2, 5, 2, 3)
+setMugEntry(AvocadoMug, AvocadoMugData, 3, 6, 3, 4)
 
 ALIGN 16
 CruzMugData:
@@ -519,7 +519,7 @@ LeandraMugData:
 #incbin "Dmp/Leandra_frames.dmp"
 #incbin "Dmp/Leandra_palette.dmp"
 #incbin "Dmp/Leandra_minimug.dmp"
-setMugEntry(LeandraMug, LeandraMugData, 4, 5, 3, 3)
+setMugEntry(LeandraMug, LeandraMugData, 3, 4, 3, 2)
 
 ALIGN 16
 RubyMugData:
@@ -798,3 +798,35 @@ C2SupplyCaptainMugData:
 #incbin "Dmp/C2SupplyCaptain_palette.dmp"
 #incbin "Dmp/C2SupplyCaptain_minimug.dmp"
 setMugEntry(C2SupplyCaptainMug, C2SupplyCaptainMugData, 3, 5, 3, 3)
+
+ALIGN 16
+BigBrickMugData:
+#incbin "Dmp/BigBrick_mug.dmp"
+#incbin "Dmp/BigBrick_frames.dmp"
+#incbin "Dmp/BigBrick_palette.dmp"
+#incbin "Dmp/BigBrick_minimug.dmp"
+setMugEntry(BigBrickMug, BigBrickMugData, 3, 6, 3, 4)
+
+ALIGN 16
+MrMistMugData:
+#incbin "Dmp/MrMist_mug.dmp"
+#incbin "Dmp/MrMist_frames.dmp"
+#incbin "Dmp/MrMist_palette.dmp"
+#incbin "Dmp/MrMist_minimug.dmp"
+setMugEntry(MrMistMug, MrMistMugData, 3, 6, 3, 3)
+
+ALIGN 16
+YaoguaiMugData:
+#incbin "Dmp/Yaoguai_mug.dmp"
+#incbin "Dmp/Yaoguai_frames.dmp"
+#incbin "Dmp/Yaoguai_palette.dmp"
+#incbin "Dmp/Yaoguai_minimug.dmp"
+setMugEntry(YaoguaiMug, YaoguaiMugData, 3, 6, 3, 3)
+
+ALIGN 16
+HakmanMugData:
+#incbin "Dmp/Hakman_mug.dmp"
+#incbin "Dmp/Hakman_frames.dmp"
+#incbin "Dmp/Hakman_palette.dmp"
+#incbin "Dmp/Hakman_minimug.dmp"
+setMugEntry(HakmanMug, HakmanMugData, 3, 6, 3, 4)

@@ -16,9 +16,16 @@ void AvaritiaEffect(BattleUnit* bunitA, BattleUnit* bunitB) {
 
     if (gSkillTester(&bunitA->unit, AvaritiaEffectIDLink)) //if the first unit has avaritia
     {
-        int targetHalfAtk = bunitB->battleAttack;
+        int targetAtkReduction = bunitB->battleAttack / 4;
 
-        bunitA->battleAttack += targetHalfAtk; //they steal half of their enemy's atk
-        bunitB->battleAttack -= targetHalfAtk;
+        bunitA->battleAttack += targetAtkReduction; //they steal half of their enemy's atk
+        bunitB->battleAttack -= targetAtkReduction;
+    }
+    else if (gSkillTester(&bunitB->unit, AvaritiaEffectIDLink)) //if the first unit has avaritia
+    {
+        int targetAtkReduction = bunitA->battleAttack / 4;
+
+        bunitB->battleAttack += targetAtkReduction; //they steal half of their enemy's atk
+        bunitA->battleAttack -= targetAtkReduction;
     } 
 }

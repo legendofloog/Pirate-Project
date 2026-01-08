@@ -1,5 +1,8 @@
 #include "gbafe.h"
 
+unsigned GetTargetListSize(void);
+struct Unit* GetUnitByCharId(u8 charId);
+
 typedef int (heal_func)(struct Unit * unit, int item);
 
 extern heal_func* HealFunctionTable[];
@@ -91,7 +94,7 @@ void ExecLatona(ProcPtr proc) {
         gActionData.itemSlotIndex);
 
     BattleInitItemEffectTarget(
-        GetUnitFromCharId(GetPlayerLeaderUnitId())
+        GetUnitByCharId(GetPlayerLeaderUnitId())
     );
 
     MakeTargetListForLatona(GetUnit(gActionData.subjectIndex));
@@ -101,7 +104,7 @@ void ExecLatona(ProcPtr proc) {
         GetUnit(gActionData.subjectIndex)->items[gActionData.itemSlotIndex]
     );
 
-    targetCount = GetSelectTargetCount();
+    targetCount = GetTargetListSize();
 
     for (i = 0; i < targetCount; i++) {
         struct Unit* target = GetUnit(GetTarget(i)->uid);
@@ -114,4 +117,18 @@ void ExecLatona(ProcPtr proc) {
     BeginBattleAnimations();
 
     return;
+}
+
+void AddUnitHp(struct Unit* unit, int amount) {
+    int hp = unit->curHP;
+
+    hp += amount;
+
+    if (hp > GetUnitMaxHp(unit))
+        hp = GetUnitMaxHp(unit);
+
+    if (hp < 0)
+        hp = 0;
+
+    unit->curHP = hp;
 }

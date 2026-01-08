@@ -9,9 +9,17 @@ ldrb	r0, [r4,#0x13]
 cmp	r0, #0x00
 beq	End
 
-@check if waited
+@check if attacked, otherwise do nothing
 ldrb  r0, [r6,#0x11]  @action taken this turn
-cmp r0, #0x1
+cmp r0, #0x2
+bne End
+
+@check if flag 0x3 set; if so, cannot canto
+ldr r0,=0x8083da8 @CheckEventId
+mov r14,r0
+mov r0,#3
+.short 0xF800
+cmp r0,#1
 beq End
 
 @check that unit has Canter
@@ -39,7 +47,7 @@ orr	r0, r1
 str	r0, [r4,#0x0C]
 
 @canto amount = unit's move - how much they moved, so we change how much they moved to (unit's move - 2).
-ldr	r0,=#0x8019224	@mov getter
+ldr	r0,=0x8019224	@mov getter
 mov	lr, r0
 mov	r0, r4
 .short	0xF800

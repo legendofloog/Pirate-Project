@@ -203,3 +203,43 @@ void DoTonicEffect(struct Unit* unit, int itemSlot)
     unit->items[itemSlot] = 0; //lastly, we remove the tonic and wrap it up
     UnitRemoveInvalidItems(unit);
 }
+
+void UnitRemoveInvalidItems(struct Unit* unit) {
+    u16 items[UNIT_ITEM_COUNT + 1], i;
+    u16* it = items;
+
+    // Build item buffer by iterating through unit's items and skipping blanks
+
+    for (i = 0; i < UNIT_ITEM_COUNT; ++i) {
+        if (unit->items[i])
+            *it++ = unit->items[i];
+
+        unit->items[i] = 0; // Null the item from the unit
+    }
+
+
+    *it = 0; // null-terminate buffer
+
+    // Write buffered items
+
+    int j = 0;
+    for (i = 0; i < UNIT_ITEM_COUNT; ++i) {
+        if (!items[i]) //if the next item isn't real
+            break; //we're at the end, done
+
+        unit->items[j] = items[i];
+        j++;
+    }
+
+    /*
+    i = 0;
+    for (int j = 0; j < UNIT_ITEM_COUNT; ++j)
+    {
+        if (items[j])
+        {
+            unit->items[i] = items[j]; //should loop through the items in the buffer, and it adds the first item in the buffer that exists
+            i++; //once an item has been added, we add to the index of the unit's items to indicate that we're looking to add whatever next item exists at the next index
+        }
+    }
+    */
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="22" height="26" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="22" height="26" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
  <tileset firstgid="1" name="FF5Cave" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="Tilesets/FF5CaveExpandedTileset.png" width="512" height="512"/>
  </tileset>
@@ -17,8 +17,8 @@
   </properties>
   <data encoding="csv">
 551,551,551,891,892,892,893,487,198,301,301,301,458,459,460,301,301,301,43,202,203,204,
-765,405,487,768,36,36,924,925,230,336,337,333,490,491,492,333,336,337,75,234,202,203,
-797,798,799,800,36,917,886,551,230,368,369,365,522,523,524,365,368,369,107,75,234,202,
+765,405,487,768,36,36,924,925,230,336,337,333,490,366,492,333,336,337,75,234,202,203,
+797,798,799,800,36,917,886,551,230,368,369,365,522,41,524,365,368,369,107,75,234,202,
 829,830,830,928,36,887,551,486,340,311,311,2,308,547,58,2,308,164,171,107,75,234,
 861,862,927,36,36,887,551,550,340,91,58,181,59,58,91,178,59,59,151,139,107,75,
 919,919,919,919,919,886,551,246,340,547,547,91,59,547,59,547,581,59,59,139,139,107,

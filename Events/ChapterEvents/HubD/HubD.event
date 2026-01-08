@@ -285,7 +285,7 @@ AREA Flag_HubD_CaptainsQuarters_ToDeck GotoDeck [7,14] [8,14]
 AREA Flag_HubD_DiningQuarters_ToDeck GotoDeck [5,20] [5,20]
 AREA Flag_HubD_DiningQuarters_ToDeck GotoDeck [10,20] [10,20]
 AREA Flag_HubD_LivingQuarters_ToDeck GotoDeck [11,23] [11,24]
-AREA 0 SwitchToFlyingMode [7,8] [8,8]
+AREA 0 SwitchToFlyingMode [7,7] [8,7]
 AFEV 0 RefreshLua 0
 END_MAIN
 
@@ -336,8 +336,8 @@ NoFade
 ENDA
 
 RemoveAllTraps: //clears all traps, disables all hub movement flags
-RemoveTrapAtCoords(7,8)
-RemoveTrapAtCoords(8,8)
+RemoveTrapAtCoords(7,7)
+RemoveTrapAtCoords(8,7)
 RemoveTrapAtCoords(7,14)
 RemoveTrapAtCoords(8,14)
 RemoveTrapAtCoords(5,20)

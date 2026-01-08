@@ -23,7 +23,10 @@
 #define OrlandoMug $16
 #define RahelMug $17
 #define TangyuanMug $18
-
+#define TrianaMug $43
+#define MedwynMug $44
+#define BartzMug $45
+#define LuaHatlessMug $46
 
 //Hub B
 #define DmitrMug 0x1E
@@ -44,7 +47,7 @@
 #define FataMug $57
 
 
-// assorted
+// assorted Hub A bosses and NPCs
 #define KhazhakMug $31
 #define GeraldoMug $32
 #define BozoMug $33
@@ -57,14 +60,18 @@
 #define IgnacioMug $3A
 #define JulianaMug $AD
 #define HugoMug $BA
+#define BigBrickMug $13
+#define MrMistMug $29
+#define YaoguaiMug $3B
+#define HakmanMug $3C
 
-#define TrianaMug $43
-#define MedwynMug $44
-#define BartzMug $45
-#define LuaHatlessMug $46
 #define ElodiaMug $47
 #define AlonsoMug $48
 #define RebelLeaderMug $B9
+
+
+
+
 
 #define IdaMug $51
 #define SargargalaMug $52

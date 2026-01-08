@@ -5,6 +5,7 @@
 .endm
 .equ CantoAttackID, SkillTester+4
 .thumb
+
 push	{r4, lr}
 @check if dead
 ldrb	r0, [r4,#0x13]
@@ -23,14 +24,6 @@ mov r0,#3
 .short 0xF800
 cmp r0,#1
 beq End
-
-blh 0x801A1F5 @first refresh the entity map
-ldr	r1,=0x8018BD8	@check if can move again
-mov	lr, r1
-.short	0xF800
-lsl	r0, #0x18
-cmp	r0, #0x00
-beq	End
 
 @check if already cantoing, and is not in a ballista
 ldr	r0, [r4,#0x0C]	@status bitfield

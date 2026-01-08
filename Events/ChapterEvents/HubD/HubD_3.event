@@ -435,7 +435,7 @@ UNIT
 
 TORCHUnits:
 //center boss group
-UNIT Enrique General 0 Level(25,Enemy,True) [13,22] 0 0 0 0 [Saunion, SilverAxe, BraveLance, KnightRing] GroupSevenAI
+UNIT Enrique General 0 Level(25,Enemy,True) [13,22] 0 0 0 0 [Saunion, SilverAxe, BraveLance] GroupSevenAI
 UNIT D3TorchUnit Baron 0 Level(IncendivisEliteLevel,Enemy,True) [12,22] 0 0 0 0 [Arcfire, SilverLance] GroupSevenAI
 UNIT D3TorchUnit Marshall 0 Level(IncendivisEliteLevel,Enemy,True) [14,22] 0 0 0 0 [SilverAxe, SilverBow] GroupSevenAI
 
@@ -550,6 +550,7 @@ FADI 15
 FadeOutMusic
 STAL 60
 SetBackground(Outside_Village_Day)
+//GiveItem(Avaritia,Lua)
 MUSC AvastMeHeartiesID
 Text(HubDBeginningScene6)
 ENUT D3TopLeftTreasureFlag

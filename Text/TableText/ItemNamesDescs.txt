@@ -292,7 +292,7 @@ Iron Dagger[X]
 Steel Dagger[X]
 
 ## SilverDaggerName
-Silver Dagger[X]
+Slv. Dagger[X]
 
 ## BloodletterName
 Bloodletter[X]
@@ -678,7 +678,7 @@ Inflicts Break on attack.[X]
 Ignisignia[X]
 
 ## IgnisTriggerDesc
-[LockIcon]Lua. Gun that hits Res at range.[X]
+[LockIcon]Lua. At range, acts as Gun + hits Res.[X]
 
 ## SuperbiaName
 Superbia[X]
@@ -708,7 +708,7 @@ Drains HP.[X]
 Avaritia[X]
 
 ## AvaritiaDesc
-User steals 50% of enemy's Atk.[X]
+User steals 25% of enemy's Atk.[X]
 
 ## LuxuriaName
 Invidia[X]

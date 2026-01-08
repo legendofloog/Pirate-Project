@@ -143,6 +143,8 @@ UnspecifiedBattleConvo(Sanz,HubC_1,0x1,C1_BQ_SanzGeneric)
 // Chapter C-2
 UnspecifiedAttackerConvo(Calista, HubC_2, 20, C2_CalistaBattleQuote)
 
+UnspecifiedBattleConvo(QuispeChapter4, Chapter4, 1, Chapter4_BQ_Quispe)
+
 // Chapter D-1
 // DalilaRematch
 SpecifiedBattleConvo(DalilaRematch,Lua,HubD_1, 0xA, D1_BQ_DalilaLua)

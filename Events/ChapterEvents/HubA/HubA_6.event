@@ -18,7 +18,6 @@ POIN BeginningScene EndingScene
 TurnBasedEvents:
 TurnEventPlayer(0, LeftThiefEvent, 5)
 TurnEventPlayer(0, RightThiefEvent, 6)
-
 TurnEventPlayer(0, BombWarningEvent, 1)
 
 TurnEventEnemy(0, Turn1EP, 1)

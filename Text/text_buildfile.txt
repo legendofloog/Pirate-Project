@@ -134,7 +134,7 @@ Skl x 4 + Weapon Hit + Triangle Adv.[X]
 
 # 0x0560
 Ability to dodge enemy attacks.[NL]
-Eva x 3 + AS + Terrain Avoid[X]
+Eva x 2 + AS + Terrain Avoid[X]
 
 # 0x055C
 Amount of damage this weapon causes.[NL]

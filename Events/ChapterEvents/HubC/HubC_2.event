@@ -112,7 +112,7 @@ UNIT BlackheartPlus Hunter 0 Level(16,Enemy,True) [3,21] 0 0 0 0 [Longbow] Group
 UNIT BlackheartPlus Champion 0 Level(17,Enemy,True) [2,24] 0 0 0 0 [Javelin, SilverLance, Vulnerary] GroupOneAI
 UNIT BlackheartPlus WyvernRider 0 Level(16,Enemy,True) [7,15] 0 0 0 0 [SteelAxe, Vulnerary] ChargeAI
 //Middle Units
-UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [5,17] 0 0 0 0 [ArcaneKnife] ChargeAI 
+UNIT BlackheartPlus Ninja 0 Level(16,Enemy,True) [5,17] 0 0 0 0 [SteelKnife, ArcaneKnife] ChargeAI 
 UNIT BlackheartPlus Hero 0 Level(17,Enemy,True) [9,23] 0 0 0 0 [SilverSword, Elixir] ChargeAI
 UNIT BlackheartPlus Fighter 0 Level(16,Enemy,True) [10,22] 0 0 0 0 [SteelAxe] ChargeAI
 UNIT BlackheartPlus Vanguard 0 Level(16,Enemy,True) [9,18] 0 0 0 0 [HandAxe, Vulnerary] ChargeAI
@@ -185,7 +185,7 @@ UNIT BlackheartPlus Dracoknight 0 Level(18,Enemy,True) [4,0] 0 0 0 0 [Swordreave
 UNIT
 
 CalistaTrapped:
-UNIT Calista Dragoon 0 Level(18,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, HandCannon, Elixir] BossHealAI
+UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, HandCannon, Elixir] BossHealAI
 UNIT
 
 // The keeper units have slightly improved stats that'll let them handle their own early in Hub C,
@@ -222,6 +222,7 @@ UNIT 0x59 			Hunter 1 Level(15,Enemy,True) 	[16,4] 0 0 0 0 [Longbow, Vulnerary] 
 UNIT 0x5A 			Hero_F 1 Level(18,Enemy,True) 	[16,5] 0 0 0 0 [SilverSword] WaitOneTurnAI
 UNIT
 
+/*
 IntroCutsceneImperials_Forest:
 UNIT Valerie Archer_F 0 Level(5,Enemy,True) 	[5,2] 0 0 0 0 [SteelBow, Snapshot, Tonic,] NoAI
 UNIT Calista Dragoon 0 Level(18,Enemy,True) [5,5] 0 0 0 0 [Toradar, SteelSword, Elixir, Mine] BossAI
@@ -231,6 +232,7 @@ UNIT 0x33 SwordCav 0 Level(3, Enemy, True) 	[4,3] 0 0 0 0 [] ChargeAI
 UNIT 0x34 Soldier 0 Level(3, Enemy, True) 	[3,2] 0 0 0 0 [] ChargeAI
 UNIT 0x35 Knight 0 Level(3, Enemy, True) 	[2,4] 0 0 0 0 [] ChargeAI
 UNIT
+*/
 
 IntroCutsceneBlackheart_Scout:
 UNIT 0x36 WyvernRider 0 Level(16,Enemy,True) 	[0,8] 	0 0 0 0 [Longbow] GroupOneAI
@@ -257,10 +259,10 @@ UNIT Rebel Fighter 0 Level(4,NPC,True) [7,10] 0x0 0x0 0 0 [0x0] NoAI
 UNIT
 
 IntroCutsceneImperialDuoFleeing:
-UNIT Calista Dragoon 0 Level(18,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, Elixir, Mine] BossAI
+UNIT Calista Dragoon 0 Level(20,NPC,True) [0,5] 0 0 0 0 [Toradar, SilverSword, Elixir, Mine] BossAI
 UNIT
 
-
+/*
 IntroCutsceneVillage_AttackIncoming:
 UNIT Lua Captain 0 Level(10,Ally,False) [10,15] 0 0 0 0 [Cutlass, IronSword, IronMusket, Vulnerary] NoAI
 UNIT Pilar 0 0 Level(1,Ally,True) [13,15] 0x0 0x0 0 0 [0x0] NoAI
@@ -289,6 +291,7 @@ UNIT 0x90 SwordCav 0 Level(4,NPC,True) [12,9] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x66 Gunner 0 Level(4,NPC,True) [4,11] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 0x67 LanceCav 0 Level(4,NPC,True) [2,9] 0x0 0x0 0 0 [0x0] NoAI
 UNIT 
+*/
 
 //these guys are going to appear in-frame, starting to take position
 IntroCutsceneVillage_PiratesSwarming:
@@ -625,9 +628,10 @@ Text(HubC_2_BeginningScene8_3)
 FADI 15
 TILECHANGE TC_C2Snag //callista is now exposed...
 AddTrap(MineTrapID,1,5) //...but she's got explosives, baby. 
-AddTrap(MineTrapID,1,6)
 AddTrap(MineTrapID,0,6)
-LoadEnemies(ValerieInDaSquad)
+AddTrap(MineTrapID,1,6)
+AddTrap(MineTrapID,0,7)
+LoadPlayerUnits(ValerieInDaSquad)
 SetUnitItemDurability(Valerie, 2, StrTonic) //Give valerie a str tonic
 SetUnitItemDurability(14, 5, 1, RainbowTonic) //Give a fighter a droppable rainbow tonic
 GotoPrepScreen
@@ -662,17 +666,17 @@ ENDA
 
 Turn5_BridgeLowered:
 //Turn 5, the right side bridge gets pushed down one space, allowing for more units to swoop in.
-CameraCursor(19,1)
+CameraCursor(Salvador)
 Text(C2BridgeLowered_T4)
-CameraCursor(11,28)
+CameraCursor(16,6)
 STAL 30
 SOUN 0x2D7 //snag falling
 TILECHANGE TC_C2Bridge
 //This is used to set the enemy AIs here to 0. 
 SVAL s1 0
-CHAI [14, 5]
-CHAI [17, 6]
-CHAI [16, 5]
+SetAI(14,5,0,0,0,0)
+SetAI(17,6,0,0,0,0)
+SetAI(16,5,0,0,0,0)
 LoadReinforcements(Reinforcements_T5)
 NoFade
 ENDA
